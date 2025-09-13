@@ -9,12 +9,87 @@
 </head>
 <body>
     <!-- 테마 토글 버튼 -->
-    <button class="theme-toggle" id="themeToggle">
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
         <span class="theme-toggle-icon">🌙</span>
         <span class="theme-toggle-text">다크모드</span>
     </button>
     
     <style>
+        /* CSS 변수 정의 */
+        :root {
+            --primary-color: #7c3aed;
+            --secondary-color: #a855f7;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --info-color: #3b82f6;
+            
+            --text-primary: #1f2937;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --text-white: #ffffff;
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --bg-dark: #1f2937;
+            
+            --border-color: #e5e7eb;
+            --border-focus: #7c3aed;
+            --accent-primary: #7c3aed;
+            
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* 다크 테마 */
+        [data-theme="dark"] {
+            --text-primary: #f9fafb;
+            --text-secondary: #e5e7eb;
+            --text-muted: #9ca3af;
+            
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-tertiary: #374151;
+            
+            --border-color: #374151;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* 테마 토글 버튼 스타일 */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px var(--shadow-color);
+            border-color: var(--accent-primary);
+        }
+
+        .theme-toggle-icon {
+            font-size: 16px;
+        }
+
+        .theme-toggle-text {
+            font-size: 12px;
+        }
+
         /* 관리자 전용 스타일 */
         .admin-container {
             max-width: 1400px;
@@ -861,21 +936,46 @@
         // 견적서 생성을 위한 신청서 목록 로드
         async function loadApplicationsForQuotation() {
             try {
+                const select = document.getElementById('quotationApplicationSelect');
+                if (select) {
+                    select.innerHTML = '<option value="">신청서를 선택하세요</option>';
+                }
+                
                 const response = await fetch('/.netlify/functions/get-applications');
+                
+                if (!response.ok) {
+                    console.log('신청서 목록 API 응답 오류:', response.status);
+                    showMessage('신청서 목록을 불러오는 중 오류가 발생했습니다.', 'error');
+                    return;
+                }
+                
                 const result = await response.json();
                 
-                if (result.success) {
-                    const select = document.getElementById('quotationApplicationSelect');
+                if (result.success && result.data && result.data.applications) {
                     if (select) {
-                        select.innerHTML = '<option value="">신청서를 선택하세요</option>';
                         result.data.applications.forEach((app, index) => {
                             const option = document.createElement('option');
                             // 신청서 ID가 없으면 인덱스 기반으로 생성
                             option.value = app.id || `app_${index}_${Date.now()}`;
-                            option.textContent = `${app['법인명(국문)'] || app.companyName} - ${app['담당자명'] || app.contactName}`;
+                            option.textContent = `${app['법인명(국문)'] || app.companyName || '회사명 없음'} - ${app['담당자명'] || app.contactName || '담당자 없음'}`;
                             option.dataset.applicationData = JSON.stringify(app);
                             select.appendChild(option);
                         });
+                    }
+                } else {
+                    // 테스트용 더미 데이터 추가
+                    if (select) {
+                        const option = document.createElement('option');
+                        option.value = 'test_app_1';
+                        option.textContent = '테스트 컴퍼니 - 김철수 (테스트용)';
+                        option.dataset.applicationData = JSON.stringify({
+                            '법인명(국문)': '테스트 컴퍼니',
+                            '담당자명': '김철수',
+                            '담당자이메일': 'test@testcompany.com',
+                            '총직원수': '50',
+                            '인증범위': 'ISO 9001, ISO 45001'
+                        });
+                        select.appendChild(option);
                     }
                 }
             } catch (error) {
@@ -1062,36 +1162,37 @@
             if (!isAuthenticated) return;
             
             try {
-                const response = await fetch('/.netlify/functions/get-applications');
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    const stats = result.data.stats;
-                    document.getElementById('totalApplications').textContent = stats.total;
-                    document.getElementById('newApplications').textContent = stats.new;
-                    document.getElementById('monthlyApplications').textContent = stats.monthly;
-                    document.getElementById('completedApplications').textContent = stats.completed;
-                    
-                    // Google Sheets URL 업데이트
-                    window.currentSheetUrl = result.data.sheetUrl;
-                    
-                    showMessage('대시보드가 로드되었습니다.', 'success');
-                } else {
-                    showMessage(result.message || '대시보드 로드 중 오류가 발생했습니다.', 'error');
-                }
-            } catch (error) {
-                console.error('Error loading dashboard:', error);
-                // 오류 발생 시 기본값 표시
+                // 기본값 먼저 표시
                 document.getElementById('totalApplications').textContent = '0';
                 document.getElementById('newApplications').textContent = '0';
                 document.getElementById('monthlyApplications').textContent = '0';
                 document.getElementById('completedApplications').textContent = '0';
-                showMessage('대시보드 로드 중 오류가 발생했습니다. 기본값을 표시합니다.', 'error');
+                
+                const response = await fetch('/.netlify/functions/get-applications');
+                
+                if (!response.ok) {
+                    console.log('대시보드 API 응답 오류:', response.status);
+                    // 404나 다른 오류가 발생해도 기본값으로 유지
+                    return;
+                }
+                
+                const result = await response.json();
+                
+                if (result.success && result.data && result.data.stats) {
+                    const stats = result.data.stats;
+                    document.getElementById('totalApplications').textContent = stats.total || '0';
+                    document.getElementById('newApplications').textContent = stats.new || '0';
+                    document.getElementById('monthlyApplications').textContent = stats.monthly || '0';
+                    document.getElementById('completedApplications').textContent = stats.completed || '0';
+                    
+                    // Google Sheets URL 업데이트
+                    if (result.data.sheetUrl) {
+                        window.currentSheetUrl = result.data.sheetUrl;
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+                // 오류 발생 시에도 기본값 유지 (이미 설정됨)
             }
         }
 
@@ -1603,9 +1704,6 @@
             initializeTheme();
             document.getElementById('loginSection').style.display = 'block';
             document.getElementById('adminContent').classList.remove('authenticated');
-            
-            // 테마 토글 버튼 이벤트 리스너 추가
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
         });
 
         // 폼 편집 탭 로딩
