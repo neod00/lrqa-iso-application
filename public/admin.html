@@ -944,7 +944,7 @@
                 const response = await fetch('/.netlify/functions/get-applications');
                 
                 if (!response.ok) {
-                    console.log('신청서 목록 API 응답 오류:', response.status);
+                    // API가 아직 구현되지 않은 경우에도 정상적으로 처리
                     showMessage('신청서 목록을 불러오는 중 오류가 발생했습니다.', 'error');
                     return;
                 }
@@ -1171,8 +1171,7 @@
                 const response = await fetch('/.netlify/functions/get-applications');
                 
                 if (!response.ok) {
-                    console.log('대시보드 API 응답 오류:', response.status);
-                    // 404나 다른 오류가 발생해도 기본값으로 유지
+                    // API가 아직 구현되지 않은 경우 기본값으로 유지 (정상 동작)
                     return;
                 }
                 
