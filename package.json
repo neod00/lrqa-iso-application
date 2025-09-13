@@ -1,0 +1,31 @@
+{
+  "name": "lrqa-iso-application",
+  "version": "1.0.0",
+  "description": "LRQA Korea ISO 인증심사 신청서 웹 애플리케이션",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required for static site'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "lrqa",
+    "iso",
+    "certification",
+    "application",
+    "form"
+  ],
+  "author": "LRQA Korea",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "cheerio": "^1.1.2",
+    "docx": "^8.5.0",
+    "googleapis": "^126.0.1",
+    "nodemailer": "^6.9.7",
+    "openai": "^5.15.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.10.1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "client_name": "아이폰 주식회사",
+  "client_name_en": "iPhone Corporation Ltd.",
+  "sites": [
+    {
+      "name": "본사",
+      "address": "서울시 광진구 중곡동 45",
+      "total_headcount": 590,
+      "standards": ["ISO9001", "ISO14001", "ISO45001"]
+    }
+  ],
+  "standards": ["ISO9001", "ISO14001", "ISO45001"],
+  "integration": {
+    "is_integrated": true,
+    "standards": ["ISO9001", "ISO14001", "ISO45001"]
+  },
+  "options": {
+    "stage1": true,
+    "surveillance": true,
+    "recert": false,
+    "remote_audit_ratio": 0.0
+  },
+  "contact_person": "김아이폰",
+  "contact_email": "iphone@example.com",
+  "contact_phone": "02-1234-5678"
+}

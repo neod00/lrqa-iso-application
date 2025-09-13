@@ -1,0 +1,124 @@
+{
+  "client_name": "아이폰 주식회사",
+  "client_name_en": "iPhone Corporation Ltd.",
+  "standards": [
+    "ISO9001",
+    "ISO14001",
+    "ISO45001"
+  ],
+  "sites": [
+    {
+      "name": "사업장 1",
+      "address": "서울시 강남구 테헤란로 123",
+      "standards": [
+        "ISO9001",
+        "ISO14001",
+        "ISO45001"
+      ],
+      "total_headcount": 150,
+      "enp": 150.0
+    },
+    {
+      "name": "사업장 2",
+      "address": "부산시 해운대구 센텀중앙로 456",
+      "standards": [
+        "ISO9001",
+        "ISO14001",
+        "ISO45001"
+      ],
+      "total_headcount": 80,
+      "enp": 80.0
+    },
+    {
+      "name": "사업장 3",
+      "address": "대구시 수성구 동대구로 789",
+      "standards": [
+        "ISO9001",
+        "ISO14001",
+        "ISO45001"
+      ],
+      "total_headcount": 30,
+      "enp": 30.0
+    }
+  ],
+  "total_audit_days": 165.29999999999998,
+  "manday_rate": 1300000.0,
+  "subtotal": 214889999.99999997,
+  "vat": 21489000.0,
+  "total_cost": 236378999.99999997,
+  "program_breakdown": [
+    {
+      "standard": "ISO9001",
+      "stage1_days": 2.6999999999999997,
+      "stage2_days": 9.0,
+      "surveillance_days": 5.3999999999999995,
+      "recert_days": 9.0,
+      "total_days": 26.099999999999998
+    },
+    {
+      "standard": "ISO14001",
+      "stage1_days": 2.6999999999999997,
+      "stage2_days": 9.0,
+      "surveillance_days": 5.3999999999999995,
+      "recert_days": 9.0,
+      "total_days": 26.099999999999998
+    },
+    {
+      "standard": "ISO45001",
+      "stage1_days": 2.6999999999999997,
+      "stage2_days": 9.0,
+      "surveillance_days": 5.3999999999999995,
+      "recert_days": 9.0,
+      "total_days": 26.099999999999998
+    },
+    {
+      "standard": "ISO9001",
+      "stage1_days": 1.7999999999999998,
+      "stage2_days": 6.0,
+      "surveillance_days": 3.5999999999999996,
+      "recert_days": 6.0,
+      "total_days": 17.4
+    },
+    {
+      "standard": "ISO14001",
+      "stage1_days": 1.7999999999999998,
+      "stage2_days": 6.0,
+      "surveillance_days": 3.5999999999999996,
+      "recert_days": 6.0,
+      "total_days": 17.4
+    },
+    {
+      "standard": "ISO45001",
+      "stage1_days": 1.7999999999999998,
+      "stage2_days": 6.0,
+      "surveillance_days": 3.5999999999999996,
+      "recert_days": 6.0,
+      "total_days": 17.4
+    },
+    {
+      "standard": "ISO9001",
+      "stage1_days": 1.2,
+      "stage2_days": 4.0,
+      "surveillance_days": 2.4,
+      "recert_days": 4.0,
+      "total_days": 11.6
+    },
+    {
+      "standard": "ISO14001",
+      "stage1_days": 1.2,
+      "stage2_days": 4.0,
+      "surveillance_days": 2.4,
+      "recert_days": 4.0,
+      "total_days": 11.6
+    },
+    {
+      "standard": "ISO45001",
+      "stage1_days": 1.2,
+      "stage2_days": 4.0,
+      "surveillance_days": 2.4,
+      "recert_days": 4.0,
+      "total_days": 11.6
+    }
+  ],
+  "generated_at": "2025-09-12T00:52:57.763130"
+}

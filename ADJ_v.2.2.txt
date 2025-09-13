@@ -1,0 +1,4605 @@
+Audit Day Justification (ADJ) for ISO 9001, ISO 14001 and/or ISO 45001 
+
+Version 2.2 
+Intent of Use: 
+
+Auditors shall use the present file to calculate audit days for the upcoming Certification Cycle (i.e. CR & SVs visits), or in case any interim changes have taken place, whereas 
+Sales colleagues need to use this for any new Opportunity (i.e. IA, CTA, ToA) for certifications on our Core products (i.e. ISO 9001, ISO 14001 and/or ISO 45001). 
+
+The purpose of this is to ensure that the correct information needed is collected and validated: 
+-for the completion of the Technical Review, 
+-the provision of proper justification for Accreditation purposes, 
+-to have realistic and correct information in our systems, and 
+-to update the contract(s) between LRQA and the clients. 
+
+Therefore, it is crucial that Sales enter the information as provided by the client while Auditors confirm this information with the clients, as a minimum, during the Focus Visit. 
+
+Using the file: 
+
+For your convenience, start entering information in the sheets following from left to right tabs. All information in 'Client Info' sheet shall be completed in full in order for the 
+other sheets to be filled in automatically. 
+In the 'Client Info' tab you shall enter the information applicable to the Client (i.e. applicable Products, Codes, ), including all Sites (e.g. site name, address, whatever will 
+distinguish the site), marking the applicable Standards with 'Yes' in the corresponding columns. 
+
+Clarifications: The cells that cannot be modified are greyed out, whereas the cells that need your input are color tinted. 
+Furthermore, throughout this file, you will see at several points text showing in Dark Mint color; note that this is automatically calculated and cannot be changed. 
+
+For guidance on how to correctly complete the ADJ, please click on the icons and refer to the training guides available: 
+
+Guidance Document 
+
+Naming the file: 
+
+Training Video Training Document Q&As 
+When it comes to under which name the file shall be saved, note that the file name will need to begin with the letters ADJ, followed by anything else. You can include 
+descriptive information, such as 
+-for Auditors, the BOS Contract ID, the Job Number, the visit type etc., 
+-for Sales, the Company Name, Opportunity Type, etc. 
+as there is not limitation on this. 
+But, you DEFINITELY need to use the ADJ letters as a prefix For example the file can be stored under the name structure since it starts with 'ADJ': 
+
+ADJ_[BOSContractID]_[JobNo]_[VisitType].xlsx 
+
+
+Mandatory! 
+
+Storing the file: 
+
+Once completed, 
+
+-Sales need to upload in the Opportunity's respective folder in CS20/Prospects. 
+
+-Auditors must upload the xls file as Attachment in LAD in order to be used on the next visit when needed. By doing so, it will be automatically saved in CS20 upon 
+completion of the job in the respective Job folder. 
+
+Editing the file: 
+
+The present is a controlled document and therefore no local changes shall be made or any formulas/macros altered, as this will result in challenges in calculations and the 
+team supporting this initiative in not being able to provide technical support. But, most importantly, modifications could also be a potential accreditation risk: this is a global 
+tool, so using different/altered versions could lead to findings from our accreditors. 
+Us will i l d to nterthe i d data nd ll l l ti will bedo uto ti ll 
+
+Sharing the file with clients: 
+
+The ADJ shall not be shared with clients, as at the moment it is strictly for internal use only. 
+
+
+Client Information 
+
+For your convenience, start entering information in tabs from left to right. Information in the present sheet shall be completed in full in order for the other sheets to be filled in automatically! 
+Clarifications: The cells that cannot be modified are greyed out, whereas the cells that need your input are color tinted. 
+
+ALWAYS use a new file from the template; do NOT use an existing file from another client and 'Save as...'. 
+
+Cell color description: 
+
+Input 
+(mandatory) 
+Input 
+(optional) 
+Output 
+(automatically calculated) 
+Errors 
+(entries need to be fixed) 
+Link to follow for Guidance 
+Throughout this file, you will see at several points text showing in italic format and in grey color. These are Notes that will help you by providing clarifications of the nearby cells 
+If text showing in Dark Mint color, note that this is automatically calculated and cannot be changed. 
+If text showing in Coral color, then this area needs attention. 
+
+Please enter the basic information below, which you should already have (from the Job Note, etc): 
+
+Report Data 
+
+IAF MD5 Issue 4 Version 3 (Rev Date: 14-Jun-2023) 
+
+Date created: Created by: 
+Enter (Team) Lead Auditor name / Sales Opportunity Owner 
+Client Details 
+Client/Account name: 
+BOS Contract Number ID: 
+(for existing clients) 
+Any special comments for this Account(s)? 
+Opportunity Name/link: 
+(only for Sales) 
+Standard(s): Risk/Complexity Reason for selection of Risk/Complexity: Mark as applicable with "Yes" 
+ISO 9001 
+
+ISO 14001 
+
+ISO 45001 
+
+Notes: 
+
+Complexity/Risk category shall be determined based on MD5, Annexes 1, 2 and 3 respectively. 
+
+For examples of Linkage between Business Sectors and Complexity Categories Risks, see Tables QMS 1, EMS 2 and OH&SMS 2 by clicking on the MD5 file link below: 
+It is expected that business activities defined as low risk may require less audit time than the time calculated using Tables QMS 1, EMS 2 and OH&SMS 2 activities defined as 
+medium risk will take the time calculated in the tables and activities defined as high risk will take more time; thus, audit days shall be decreased/increased accordingly by 
+adding adequate Adjustment Factors. 
+
+Audit Frequency 
+Transfer / Takeover of Approval (ToA) 
+
+Does this regard a ToA? 
+
+
+At what stage is the client transferring? 
+
+
+Change to Approval (CTA) 
+
+Does this regard a CTA? 
+
+What does this CTA cover? 
+
+Describe what changes have been made to the client's certification, that affect upcoming audit visit's duration 
+
+e.g. new site has been added, number of ENP has changed, addition of new process/production line changing Risk/Complexity level etc 
+Sites Details 
+
+Please enter Site details and delete all Sites and Standards that are not applicable. 
+
+E.g. if you only have 1 site (Main/H.O.) for ISO 9001 only, enter by replacing existing information in the cell that contains "Site 01" and delete the info in the cells for the rest Sites 2 to 100 as well as the "Yes" entries under columns ISO 
+14001 and ISO 45001. 
+Sites and Multi-Site Certification 
+
+Is this a Multi-Site Certification? No 
+Reduction % Due to Multi-Site: 
+by selecting Yes, you indicate that this Certification satisfy the Eligibility criteria of MD 1 for a Multi-Site Certification 
+Site Name/Description Address 
+Main Site/H.O. shall always be in the first row! 
+Standards Applicable 
+Is the Main Site excluded from Calculation? 
+
+Overview 
+
+Client Details 
+
+Account Name: 
+BOS Contract Number: Opportunity Name/link: 
+Product Summary 
+Int Reduction: % 
+Product Name Is Product Integrated? 
+(select Yes or No, as applicable) 
+Complexity IA SV1 FALSE FV CR 
+--#N/A #N/A #N/A 
+--#N/A #N/A #N/A 
+--#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+Does this regard a ToA? No 
+At what stage is the client 
+transferring? 
+Does this regard a CTA? No Reason for CTA 
+Total Number of Days (for all products combined) 
+Remarks 
+Created by: 
+Proposed Audit Days, per visit type / per product 
+(Team) Lead Auditor / Sales Opportunity Owner 
+Calculate Audit Details 
+
+Sites (if appicable): 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+N/A 
+N/A 
+N/A 
+
+ENP Nominal Days Calculated Adjusted Days, per site / per product 
+(for IA) 
+
+IA SV1 FALSE FV CR 
+Stage 1 Stage 2 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+#N/A #N/A #N/A 
+
+
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+
+
+N/A #N/A #N/A #N/A N/A #N/A #N/A #N/A 
+
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+
+
+N/A #N/A #N/A #N/A N/A #N/A #N/A #N/A 
+
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+
+
+N/A #N/A #N/A #N/A 
+
+
+Integrated Reduction 
+Audit Reduction for Integrated Products 
+Integrated Products: Return to Overview 
+
+Characterisations that have been Considered for Reduction (as per MD 11, Annex 1): 
+Yes 
+Yes 
+Yes 
+Yes 
+Yes 
+Yes 
+Yes 
+Level of Integration Percentage: 
+Level of Integration Percentage Remarks: 
+Team's Ability to Perform Integrated Audit: 100 Note: 
+Ability to Perform Integrated Audit Remarks: 
+Reduction Percent: % 
+An integrated documentation set, including work instructions to a good level of 
+development, as appropriate 
+Management Reviews that consider the overall business strategy and plan 
+An integrated approach to internal audits 
+An integrated approach to policy and objectives 
+Reduction Percent Calculation 
+The Management Systems are not integrated 
+Based on what is applicable, the Level of Integration will need to be adjusted accordingly. For 
+more information see 'Level of Integration Percentage Remarks' below 
+Each team member is qualified for all products 
+An integrated approach to systems processes 
+An integrated approach to improvement mechanisms 
+(corrective and preventive action, measurement and continual improvement) 
+Integrated management support and responsibilities 
+It is strongly advised not to use a 
+reduction percent greater than 10% so as 
+In most cases the Audit team cannot be defined beforehand; therefore users 
+should select 80% or, in case they know that the audit team can perform an 
+integrated audit, to select 100% 
+
+Effective Number of Personnel (ENP) / Effective Employees 
+
+See MD1, MD5 and MD22 for definitions etc.; for further information on determining ENP pls see Quotation Guidance Effective Employees -Guidance 
+Product Name Site 
+Total Head Count 
+(client input) 
+Total No of FTE 
+* enter the total number of 
+employees 
+Total Effective No of Emp 
+(Effective Number of 
+Personnel -ENP) 
+* including contractors 
+personnel working on the site, 
+Remarks 
+For your easy reference, select from/copy the below (ref. MD5/Clause 2.3): 
+No Staff Reduction 
+Part time personnel and/or employees partially in scope 
+Similar or repetitive process within scope 
+Consider also the below: 
+-Personnel working on shifts 
+-Administrative and all categories of office staff 
+-Employment of large numbers of unskilled personnel 
+-Low Complexity/Risk Activities 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+where applicable 
+(see Notes on the right) 
+Shift work employees 
+Temporary unskilled personnel-Seasonal operations 
+→ calculate based on the personnel typically present in 
+peak season operations 
+
+
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+
+
+
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+
+Summary Remarks 
+
+Standards: -- , -- , -
+
+
+
+Effective Employee Count 
+Product Name Site Product Name Site 
+See MD1, MD5 and MD22 for definitions etc.; for further information on determining ENP pls see 
+Adjustment Factor Variance 
+Adjustment Factors 
+Quotation Guidance 
+Var % Total Reduction per Site for each Standard Remarks 
+ISO 9001 ISO 14001 ISO 45001 
+
+
+Remarks 
+
+--
+---
+
+See MD1 for definitions etc.; for further information on Sampling Methodologies please see 
+Sampling Question 
+Yes 
+Yes 
+Yes 
+Yes 
+Yes 
+Summary box 
+Product Name Total # of Sites 
+(excluding Main Site) 
+Sample Size IA Sample Size per SV Sample Size CR 
+Product Name Site Name ENP 
+IA SV1 FALSE FV CR 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+Sites and Sampling 
+Multi-Site -Guidance 
+Number of sites remaining to be selected per visit type: 
+Is the single management system subject to a centralized management review? 
+Does the organization have a single management system? 
+Do all sites have a legal or contractual link with the central function of the organization? 
+Does the central function have the authority to exert operational control of the single management system at all sites? 
+Are all sites subject to the organization's internal audit programme? 
+Site/location will be visited during 
+Remarks (if any) 
+Assign Site Samples 
+See MD1 for definitions etc.; for further information on Sampling Methodologies please see 
+Sampling Question 
+Yes 
+Yes 
+Yes 
+Yes 
+Yes 
+Summary box 
+Product Name Total # of Sites 
+(excluding Main Site) 
+Sample Size IA Sample Size per SV Sample Size CR 
+Product Name Site Name ENP 
+IA SV1 FALSE FV CR 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+N/A N/A 
+Sites and Sampling 
+Multi-Site -Guidance 
+Number of sites remaining to be selected per visit type: 
+Is the single management system subject to a centralized management review? 
+Does the organization have a single management system? 
+Do all sites have a legal or contractual link with the central function of the organization? 
+Does the central function have the authority to exert operational control of the single management system at all sites? 
+Are all sites subject to the organization's internal audit programme? 
+Site/location will be visited during 
+Remarks (if any) 
+Assign Site Samples 
+
+N/A N/A 
+N/A N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A N/A 
+
+
+N/A N/A 
+N/A N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A N/A 
+N/A N/A 
+
+
+full 
+Proposed Audit Time per Product 
+Product Name Total SV1 FALSE FV CR 
+Stage 1 Stage 2 
+----#N/A #N/A #N/A 
+Minimum Days for Product as per MD #N/A #N/A #N/A 
+----#N/A #N/A #N/A 
+Minimum Days for Product as per MD #N/A #N/A #N/A 
+----#N/A #N/A #N/A 
+Minimum Days for Product as per MD #N/A #N/A #N/A 
+Proposed Total Audit Days #N/A #N/A #N/A 
+Minimum Total Days as per MD (for all products combined) #N/A #N/A #N/A 
+Do you want half day or full day rounding to be applied? 
+Manual Adjustments 
+Justification for deviation 
+from Minimum No of Days 
+IA 
+full 
+Proposed Audit Time per Product 
+Product Name Total SV1 FALSE FV CR 
+Stage 1 Stage 2 
+----#N/A #N/A #N/A 
+Minimum Days for Product as per MD #N/A #N/A #N/A 
+----#N/A #N/A #N/A 
+Minimum Days for Product as per MD #N/A #N/A #N/A 
+----#N/A #N/A #N/A 
+Minimum Days for Product as per MD #N/A #N/A #N/A 
+Proposed Total Audit Days #N/A #N/A #N/A 
+Minimum Total Days as per MD (for all products combined) #N/A #N/A #N/A 
+Do you want half day or full day rounding to be applied? 
+Manual Adjustments 
+Justification for deviation 
+from Minimum No of Days 
+IA 
+Calculated Adjusted AProduct Name 
+udit Time, per Product 
+Site Name ENP Nominal 
+days for IA 
+(without 
+reductions, as 
+per MD 5) 
+IA SV1 
+Adjusted Days for 
+FALSE FV CR 
+Stage 1 Stage 2 
+N/A N/A #N/A #N/A #N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+
+
+N/A N/A #N/A #N/A #N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+
+
+N/A N/A #N/A #N/A #N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+
+
+N/A N/A #N/A #N/A #N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+N/A 
+N/A 
+N/A 
+N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+#N/A 
+
+Note: If there are outstanding non-conformities, please make sure the extra time needed at next visit is taken into consideration in the final audit days 
+
+
+Justification for SalesForce 
+
+This section is to be used by Sales only! 
+In the "Justification for the audit duration" field of the Opportunity in SalesForce, copy-
+
+FALSE 
+
+
+
+Effective Employees - Notes / Useful Tips 
+
+For further information on definitions etc, see MD1, MD5 and MD22. For further information on determining ENP and specific examples, please click the link to open the relevant chapter: 
+
+Quotation Guidance 
+
+-Justifications on how you have concluded to this specific effective number of personnel (ENP) need to be entered in the 'Remarks' field. 
+-Use the effective number of personnel as a basis for the calculation of audit duration. 
+-Only include those personnel under the scope of the certification to be assessed. 
+-In case of shifts, the justification for not auditing each shift shall be documented. 
+-A determination of ENP may need to consider personnel employed by another organisation but under the control of a client seeking certification – for example, for ISO 45001 certification, 
+-Consider the following types or groups of workers for further reductions: 
+
+1.PART TIME WORKERS: Depending on the hours worked, part time personnel numbers may be reduced and converted to an equivalent number of full time personnel (convert hours 
+2.TEMPORARY UNSKILLED WORKERS: This normally only applies for organisations due to a low level of technology and automation or low risk. Make appropriate reduction who may be 
+3.STAFF CARRYING OUT SIMILAR AND/OR REPETITIVE TASKS: A reduction to the ENP can be made where a significant proportion of staff carry out similar or simple functions or tasks, for 
+-The assessment team can also recommend additional time or less time for future assessments based upon knowledge gained following assessment performance or better understanding of 
+-ENP doesn't necessarily have to be the same number for QMS / EMS and OH&SMS 
+-Consider risk when applying a reduction of personnel 
+-Various examples where ENP depends on the standard considered 
+-For multisite organisations, it is not authorized to calculate the duration of the total amount of the organisations' ENP and to split this duration to sampled sites. 
+-Effective number of personnel has to be obtained for each site. 
+-The MD5 audit-day tables are applicable for 1 site only. 
+-For QMS audits, the effective number of personnel consists of all full time personnel involved within the scope of certification including those working on each shift. Non-permanent 
+-For EMS audits, it is appropriate to base audit duration on the effective number of personnel of the organization and the nature, number and gravity of the environmental aspects of the 
+LRQA shall agree with the organization to be audited the timing of the audit which will best demonstrate the full scope of the client. 
+
+
+Multi-Site -Notes / Useful Tips 
+
+For further information on definitions etc, see MD1. For further information on determining which Methodology to apply, please refer to MD1 / Sections 6.1, 6.2 and 6.3 
+
+IAF MD1 Issue 3 
+
+In case of a multi-site certification, there are 3 Methodologies that can be applied: 
+
+-MD1, Section 6.1: Methodology for Auditing of a Multi-site Organization Using Site Sampling 
+Conditions: Sampling of a set of sites is permitted where the sites are each performing very similar processes/activities (e.g. all sites are Sales/Retail sites). Note that not all organizations 
+
+fulfilling thedefinitionof “multi-site organization”willbe eligible for sampling. 
+
+
+Not all management systems standards are suitable for consideration for multi-site certification. For example, multi-site sampling would be unsuitable where the audit of variable local 
+factors is a requirement of the standard. Specific rules also apply for some schemes, for example those including aerospace (AS 9100 series) or automotive (IATF 16949) and the 
+requirements of such schemes shall take precedence. 
+
+When selecting the sites to be visited, consider all possible aspects. 
+
+Size of Sample: The minimum number of sites to be audited per audit is: 
+Initial audit:thesize of thesample shallbe thesquare root of the number of sites:(y=√x), roundedup to thenext whole number,where y=number of sites to be sampledandx=total 
+number of sites. 
+Surveillance audit:thesize of theannual sample shallbe thesquare root of the number of sites with 0.6asacoefficient (y=0.6√x), roundedup to thenext whole number. 
+Certificate Renewal/Re-certification audit: the size of the sample shall be the same as for an initial audit. Nevertheless, where the management system has proved to be effective over the 
+
+certificationcycle, thesize of thesample could be reducedto,y=0.8√x,roundedup to thenext whole number. 
+
+
+In case -during the risk analysis of the process/activity covered by the management system subject to certification -indicates special circumstances, the size or frequency of the sample 
+shall be increased. 
+
+-MD1, Section 6.2: Methodology for Auditing of Multi-site Organizations Where Site Sampling Using Section 6.1 is not Appropriate 
+In this methodology, all sites need to be visited per specific visit types. 
+The audit programme shall consist of an initial audit and recertification audit of all sites. In surveillance audits, 30% of sites, rounded up to the whole number, shall be covered in a calendar 
+year. The sites selected for the second surveillance audit will normally be different from the sites selected for the first surveillance audit, leading to all sites being visited at least once 
+throughout the certification cycle. 
+
+The audit programme shall be designed to ensure that all processes covered by the certification scope are audited over each cycle. 
+
+-
+
+MD1, Section 6.3: Methodology for Auditing Multi-site Organizations that Include a Combination of Sites that can be Sampled and Other Sites that Cannot be Sampled 
+
+The audit programme shall be established using Section 6.1 for those sites that can be sampled and Section 6.2 for the remaining part of the organization where Section 6.1 is not 
+appropriate. 
+
+Note that, regardless of which Methodology is used, the Main Site needs to be visited during the initial certification, re-certification visits and as a minimum once per calendar 
+year. 
+
+
+IAF Informative Document for QMS, EMS and OH&S Scopes of Accreditation 
+
+For further information on what scope falls under each EA Code and to see the corresponding NACE v.2 description, please click the link to open the relevant file: 
+
+EA codes with NACE division descriptions.pdf 
+
+LRQA/EA Code NACE Rev 2 division NACE Rev 2 section Description 
+EA01 
+1 A agriculture, hunting, farming 
+2 A forestry 
+3 A fishing, fish farming 
+EA02 05 to 09 B mining, quarrying, oil and gas 
+EA03 
+10, 11 C food products, beverages 
+12 C tobacco 
+EA04 13, 14 C textiles and textile products -clothing 
+EA05 15 C leather and leather products 
+EA06 16 C wood and wooden products 
+EA07 17 C pulp, paper and paper products 
+EA08 58.1, 59.2 J Publishing, 22.1 
+EA09 18 C Printing, 22.2; reproduction of recorded media, 22.3 
+EA10 19 C fuels -coke, refined petroleum, 23.1, .2 
+EA11 24.46 C fuels–nuclear,23.3 
+EA12 20 C chemicals, chemical products (not 24.4) 
+EA13 21 C Pharmaceuticals, medicinal products 24.4 
+EA14 22 C rubber and plastic products 
+EA15 23, less 23.5 and 23.6) C non-metallic mineral products (not 26.5, .6) 
+EA16 23.5, 23.6 C concrete, cement, lime, plaster, etc, 26.5, .6 
+EA17 
+24 except 24.46 C basic metals 
+25 except 25.4 
+33.11 
+C fabricated metal products 
+EA18 
+25.4, 28, 33.12, 33.2 C mechanical machinery and equipment 
+30.4 C military vehicles 
+EA19 
+26, 95.1 C computers, office machinery 
+26 C electronic components, PCBs 
+26, 33.13 C electronic equipment 
+27, 33.14 C electrical equipment 
+EA20 30.1, 33.15 C shipbuilding 
+EA21 30.3, 33.16 C aerospace 
+EA22 
+29, 33.17 C motor vehicles 
+30.2, 30.9 C othertransport equipment –railway;motorcycles,etc 
+EA23 31, 32, 33.19 C 
+other manufacturing -coins, sporting goods, toys. See also electronic equipment. For 
+furniture, see plastic products, metal products, etc 
+EA24 38.3 E recycling 
+EA25 35.1 D utilities–electricitysupply 
+EA26 35.2 D utilities–gassupply 
+EA27 35.3, 36 E utilities–watersupply 
+EA28 41, 42, 43 F construction 
+EA29 45, 46, 47, 95.2 G wholesale, retail (including repair of motor vehicles) 
+EA30 55, 56 H hotelsandrestaurants–caterers 
+EA31 
+49, 50, 51, 52 H transport and storage 
+53 H Post 
+61 J Telecoms 
+EA32 
+64, 65, 66 K financial and insurance 
+68, 77 K real estate and renting 
+EA33 58.2, 62, 63.1 K informationtechnology–software 
+EA34 71, 72, 74 except 74.2 and 74.3 M engineering services -professional and technical 
+EA35 
+69, 70, 73, 74.2, 74.3 M other services -professional and technical 
+78, 80, 81, 82 N other services -professional and technical 
+EA36 84 O Public administration–government 
+EA37 85 P education 
+EA38 75, 86, 87, 88 Q health and social 
+EA39 
+37, 38.1, 38.2, 39 E 
+other social services 
+waste disposal 
+59.1, 60, 63.9 J tv, radio, news agency activities 
+79 N travel agency, tour operator 
+90, 91, 92, 93 R performing arts, zoos, libraries, museums, gambling, sports 
+94 S membership organisations 
+96 S personal services 
+
+
+Revision History 
+
+Change log: 
+Version 1 First draft edition of the Audit Day Justification Sheet for Core 
+products, based on the IAF MD 1 / MD 5 / MD 11 Rev. 2023 
+requirements with the inclusion of factors to decrease/increase audit 
+time and guidance on use of the tool, for Single/Multi-Site and 
+Single/Multi Products, all in one tool. 
+Version 1.3 Version used for the Testing phase 
+Version 1.4 Signed off version to be used globally 
+Version 1.5 Slight changes based on feedback received by RAMs. 
+Auto-save fixed. 
+Version 2.0 Rename to ADJ for simplification. 
+Increased number of Sites to 100, 
+Incorporated improvements suggested by users after Phase 1 of the 
+release of ADJS, to be used by Auditors and Sales. 
+Version 2.1 Fixed formula in Manual Adjustments tab, for ISO 45001 Low 
+Complexity CR audit time, in case of more than 29 sites. 
+Version 2.2 Corrected formula on Manual Adjustments page, Site 4 wasn't 
+showing the number of days 
+
+

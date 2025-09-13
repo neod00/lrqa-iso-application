@@ -1,0 +1,1 @@
+module.exports = require('./netlify/functions/submit-application-with-gap-analysis.js')

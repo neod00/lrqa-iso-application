@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Inc. - ISO Management Standards Gap Analysis Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-bottom: 4px solid #3498db;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .meta-info {
+            background: #ecf0f1;
+            padding: 20px 30px;
+            border-bottom: 2px solid #bdc3c7;
+        }
+        
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .meta-value {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #34495e;
+            margin: 20px 0 10px 0;
+        }
+        
+        .gap-category {
+            background: #ffffff;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .gap-category.category-a {
+            border-color: #e74c3c;
+        }
+        
+        .gap-category.category-b {
+            border-color: #f39c12;
+        }
+        
+        .gap-category.category-c {
+            border-color: #f1c40f;
+        }
+        
+        .gap-header {
+            padding: 15px 20px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .gap-category.category-a .gap-header {
+            background: #e74c3c;
+        }
+        
+        .gap-category.category-b .gap-header {
+            background: #f39c12;
+        }
+        
+        .gap-category.category-c .gap-header {
+            background: #f1c40f;
+            color: #2c3e50;
+        }
+        
+        .gap-content {
+            padding: 20px;
+        }
+        
+        .gap-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .gap-item-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .gap-item-clause {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .gap-item-description {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .gap-item-requirement {
+            font-size: 13px;
+            background: #e8f4f8;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .readiness-status {
+            background: #d5edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .readiness-status.not-ready {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        
+        .readiness-status.partially-ready {
+            background: #fff3cd;
+            border-color: #ffeaa7;
+        }
+        
+        .status-indicator {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .status-indicator.ready {
+            color: #155724;
+        }
+        
+        .status-indicator.not-ready {
+            color: #721c24;
+        }
+        
+        .status-indicator.partially-ready {
+            color: #856404;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .table th,
+        .table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .not-covered-list {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .timeline {
+            background: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-phase {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 30px;
+            font-size: 12px;
+        }
+        
+        .disclaimer {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        
+        @media print {
+            body { font-size: 12px; }
+            .container { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Pre-Assessment Gap Analysis Report</h1>
+            <div class="subtitle">ISO Management Standards Gap Analysis</div>
+        </div>
+        
+        <!-- Meta Information -->
+        <div class="meta-info">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">Client Organization</div>
+                    <div class="meta-value">Apple Inc.</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Assessment Standards</div>
+                    <div class="meta-value">ISO 9001:2015 (Quality Management)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Assessment Date</div>
+                    <div class="meta-value">2025년 1월 16일</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">LRQA Reference</div>
+                    <div class="meta-value">GAP-2025-APPLE-001</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Assessment Team</div>
+                    <div class="meta-value">Lead Assessor: [Name]</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Client Representative</div>
+                    <div class="meta-value">[To be confirmed]</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Executive Summary -->
+            <div class="section">
+                <div class="section-title">1. Executive Summary</div>
+                <p>This pre-assessment gap analysis has been conducted for Apple Inc. against the requirements of ISO 9001:2015 Quality Management Systems standard. The assessment was conducted remotely through document review and virtual interviews to identify potential gaps that may require attention prior to a formal certification assessment.</p>
+                
+                <p>This report identifies potential areas of nonconformance categorized according to LRQA methodology and provides guidance on the requirements of the assessment standard as they relate to Apple Inc.'s current management system implementation.</p>
+                
+                <div class="disclaimer">
+                    <strong>Important Note:</strong> This gap analysis does not constitute a formal assessment. The findings are based on limited examination and are intended to assist in preparation for formal assessment. Areas not specifically mentioned should not be considered as satisfactory, as the depth of assessment was not equivalent to that of a full certification assessment.
+                </div>
+            </div>
+            
+            <!-- Assessment Scope and Methodology -->
+            <div class="section">
+                <div class="section-title">2. Assessment Scope & Methodology</div>
+                <div class="subsection-title">2.1 Scope of Assessment</div>
+                <p><strong>Organization:</strong> Apple Inc.<br>
+                <strong>Sites Covered:</strong> Cupertino Headquarters (representative assessment)<br>
+                <strong>Activities:</strong> Design, development, and marketing of consumer electronics, computer software, and online services<br>
+                <strong>Standard:</strong> ISO 9001:2015 Quality Management Systems</p>
+                
+                <div class="subsection-title">2.2 Methodology</div>
+                <p>This gap analysis was conducted through:</p>
+                <ul>
+                    <li>Review of available documentation</li>
+                    <li>Analysis of public information regarding Apple's quality management practices</li>
+                    <li>Remote assessment methodology due to current constraints</li>
+                </ul>
+            </div>
+            
+            <!-- Areas NOT Covered -->
+            <div class="section">
+                <div class="section-title">3. Areas NOT Covered During Assessment</div>
+                <div class="not-covered-list">
+                    <p>The following areas were not covered during this pre-assessment and will require evaluation during formal assessment:</p>
+                    <ul>
+                        <li>On-site verification of manufacturing processes at production facilities</li>
+                        <li>Detailed review of supplier qualification processes</li>
+                        <li>Employee competency records verification</li>
+                        <li>Customer complaint handling system operation</li>
+                        <li>Management review meeting records and effectiveness</li>
+                        <li>Internal audit program implementation</li>
+                        <li>Corrective action effectiveness verification</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Potential Gaps Analysis -->
+            <div class="section">
+                <div class="section-title">4. Potential Gaps Analysis</div>
+                <p>The following potential nonconformances have been identified and categorized according to LRQA methodology:</p>
+                
+                <!-- Category A: Clear Potential Nonconformances -->
+                <div class="gap-category category-a">
+                    <div class="gap-header">
+                        Category A: Clear and Obvious Potential Nonconformances
+                    </div>
+                    <div class="gap-content">
+                        <div class="gap-item">
+                            <div class="gap-item-title">Quality Manual and Documented Information</div>
+                            <div class="gap-item-clause">Related to ISO 9001:2015 Clause 7.5 - Documented Information</div>
+                            <div class="gap-item-description">
+                                Based on available information, evidence of a comprehensive quality manual specifically addressing ISO 9001:2015 requirements was not readily accessible for review.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>Standard Requirement:</strong> ISO 9001:2015 Clause 7.5 requires organizations to establish, maintain and retain documented information as determined necessary for the effectiveness of the quality management system and as required by the standard.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">Risk and Opportunities Management</div>
+                            <div class="gap-item-clause">Related to ISO 9001:2015 Clause 6.1 - Actions to address risks and opportunities</div>
+                            <div class="gap-item-description">
+                                Evidence of systematic identification and assessment of risks and opportunities affecting quality management system conformity and customer satisfaction requires verification.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>Standard Requirement:</strong> ISO 9001:2015 Clause 6.1 requires organizations to determine the risks and opportunities that need to be addressed to ensure the QMS can achieve its intended outcomes, prevent or reduce undesired effects, and achieve continual improvement.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category B: Areas requiring intensive examination -->
+                <div class="gap-category category-b">
+                    <div class="gap-header">
+                        Category B: Areas Requiring More Intensive Examination
+                    </div>
+                    <div class="gap-content">
+                        <div class="gap-item">
+                            <div class="gap-item-title">Supplier Management and Control</div>
+                            <div class="gap-item-clause">Related to ISO 9001:2015 Clause 8.4 - Control of externally provided processes, products and services</div>
+                            <div class="gap-item-description">
+                                The extent of Apple's supplier evaluation, selection, monitoring and control processes requires detailed examination to verify compliance with standard requirements, particularly given the global supply chain complexity.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>Standard Requirement:</strong> ISO 9001:2015 Clause 8.4 requires organizations to ensure that externally provided processes, products and services conform to requirements through appropriate controls applied to external providers and their outputs.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">Customer Satisfaction Monitoring</div>
+                            <div class="gap-item-clause">Related to ISO 9001:2015 Clause 9.1.2 - Customer satisfaction</div>
+                            <div class="gap-item-description">
+                                While Apple has various customer feedback mechanisms, detailed examination is required to verify systematic monitoring and measurement of customer satisfaction levels and trends.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>Standard Requirement:</strong> ISO 9001:2015 Clause 9.1.2 requires organizations to monitor customers' perceptions of the degree to which their needs and expectations have been fulfilled.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">Design and Development Process Control</div>
+                            <div class="gap-item-clause">Related to ISO 9001:2015 Clause 8.3 - Design and development</div>
+                            <div class="gap-item-description">
+                                Verification required of systematic design and development planning, inputs, controls, outputs, reviews, verification, validation, and changes management processes compliance with standard requirements.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>Standard Requirement:</strong> ISO 9001:2015 Clause 8.3 requires organizations to establish, implement and maintain a design and development process appropriate to ensure the provision of products and services.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category C: Borderline cases -->
+                <div class="gap-category category-c">
+                    <div class="gap-header">
+                        Category C: Borderline Cases Subject to Interpretation
+                    </div>
+                    <div class="gap-content">
+                        <div class="gap-item">
+                            <div class="gap-item-title">Context of Organization</div>
+                            <div class="gap-item-clause">Related to ISO 9001:2015 Clause 4.1 - Understanding the organization and its context</div>
+                            <div class="gap-item-description">
+                                The extent to which Apple has formally documented and regularly reviews external and internal issues relevant to its purpose and strategic direction may vary in interpretation based on assessor judgment.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>Standard Requirement:</strong> ISO 9001:2015 Clause 4.1 requires organizations to determine external and internal issues relevant to its purpose and strategic direction and that affect its ability to achieve intended outcomes of its QMS.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">Leadership and Commitment Demonstration</div>
+                            <div class="gap-item-clause">Related to ISO 9001:2015 Clause 5.1 - Leadership and commitment</div>
+                            <div class="gap-item-description">
+                                The specific ways in which top management demonstrates leadership and commitment for the quality management system may be subject to different interpretations regarding adequacy.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>Standard Requirement:</strong> ISO 9001:2015 Clause 5.1 requires top management to demonstrate leadership and commitment with respect to the quality management system.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Areas for Management Attention -->
+            <div class="section">
+                <div class="section-title">5. Areas for Management Attention</div>
+                <p>The following areas require specific management attention prior to formal assessment:</p>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Priority</th>
+                            <th>Area</th>
+                            <th>Required Action</th>
+                            <th>Timeline</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>High</td>
+                            <td>Quality Manual Development</td>
+                            <td>Establish comprehensive QMS documentation aligned with ISO 9001:2015</td>
+                            <td>2-3 months</td>
+                        </tr>
+                        <tr>
+                            <td>High</td>
+                            <td>Risk Management Framework</td>
+                            <td>Implement systematic risk and opportunities assessment process</td>
+                            <td>2-4 months</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td>Supplier Control System</td>
+                            <td>Document and verify supplier evaluation and monitoring processes</td>
+                            <td>3-4 months</td>
+                        </tr>
+                        <tr>
+                            <td>Medium</td>
+                            <td>Internal Audit Program</td>
+                            <td>Establish systematic internal audit program for QMS</td>
+                            <td>2-3 months</td>
+                        </tr>
+                        <tr>
+                            <td>Low</td>
+                            <td>Management Review Process</td>
+                            <td>Formalize management review process and documentation</td>
+                            <td>1-2 months</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Readiness Assessment -->
+            <div class="section">
+                <div class="section-title">6. Readiness Assessment for Formal Certification</div>
+                
+                <div class="readiness-status not-ready">
+                    <div class="status-indicator not-ready">⚠️ NOT READY FOR FORMAL ASSESSMENT</div>
+                    <p>Based on this pre-assessment, Apple Inc. is currently <strong>not ready</strong> for formal ISO 9001:2015 certification assessment.</p>
+                    <p><strong>Primary reasons:</strong></p>
+                    <ul>
+                        <li>Insufficient documented information readily available for verification</li>
+                        <li>Risk and opportunities management system requires establishment</li>
+                        <li>Quality management system documentation needs development</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection-title">6.1 Estimated Preparation Timeline</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-phase">Phase 1</div>
+                        <div>QMS Documentation Development (2-3 months)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase">Phase 2</div>
+                        <div>System Implementation & Training (2-3 months)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase">Phase 3</div>
+                        <div>Internal Audits & Management Review (1-2 months)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase">Ready</div>
+                        <div>Formal Assessment (Estimated 5-8 months from now)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Next Steps and Recommendations -->
+            <div class="section">
+                <div class="section-title">7. Next Steps and Recommendations</div>
+                
+                <div class="subsection-title">7.1 Immediate Actions Required</div>
+                <ol>
+                    <li>Engage qualified ISO 9001 consultant or internal resource for QMS development</li>
+                    <li>Establish project team with appropriate authority and resources</li>
+                    <li>Develop detailed implementation plan addressing identified gaps</li>
+                    <li>Schedule regular progress reviews with LRQA</li>
+                </ol>
+                
+                <div class="subsection-title">7.2 Special Considerations for Formal Assessment</div>
+                <ul>
+                    <li><strong>Multi-site Assessment:</strong> Coordination required across Apple's global operations</li>
+                    <li><strong>Technical Expertise:</strong> Assessors with technology industry experience recommended</li>
+                    <li><strong>Language Requirements:</strong> English assessment capability confirmed</li>
+                    <li><strong>Assessment Duration:</strong> Extended timeframe anticipated due to organizational complexity</li>
+                </ul>
+                
+                <div class="subsection-title">7.3 Recommended Next Steps with LRQA</div>
+                <p>Following system implementation and gap closure:</p>
+                <ol>
+                    <li>Schedule follow-up gap analysis (optional) in 3-4 months</li>
+                    <li>Submit formal application for Stage 1 assessment</li>
+                    <li>Plan Stage 1 assessment (documentation review)</li>
+                    <li>Schedule Stage 2 assessment (implementation verification)</li>
+                </ol>
+            </div>
+            
+            <!-- Limitations and Confidentiality -->
+            <div class="section">
+                <div class="section-title">8. Assessment Limitations and Confidentiality</div>
+                <p>This gap analysis was conducted with the following limitations:</p>
+                <ul>
+                    <li>Remote assessment methodology due to current constraints</li>
+                    <li>Limited access to internal documentation and systems</li>
+                    <li>Based primarily on publicly available information</li>
+                    <li>No verification of implementation effectiveness</li>
+                </ul>
+                
+                <p>This report is confidential to Apple Inc. and LRQA. Information contained herein shall not be disclosed to third parties without written consent from both parties.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>LRQA Business Assurance</strong> | Gap Analysis Report</p>
+            <p>Report Generated: 2025년 1월 16일 | Reference: GAP-2025-APPLE-001 | Page 1 of 1</p>
+            <p>This report is issued subject to LRQA's General Terms and Conditions available at www.lrqa.com</p>
+        </div>
+    </div>
+</body>
+</html>

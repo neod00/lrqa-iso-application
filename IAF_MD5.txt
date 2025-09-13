@@ -1,0 +1,4915 @@
+
+
+ 
+
+
+ 
+
+ IAF Mandatory Document 
+
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+DETERMINATION OF AUDIT TIME OF 
+QUALITY
+, 
+ENVIRONMENTAL
+, 
+AND 
+OCCUPATIONAL HEALTH 
+& SAFETY 
+MANAGEMENT SYSTEMS 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+Issue 
+4
+, Version 
+3 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+(IAF 
+MD 
+5
+:
+2023
+) 
+
+
+ 
+
+
+ 
+
+
+
+The International Accreditation Forum, Inc. (IAF) 
+facilitates trade and supports industry 
+and regulators by operating a worldwide mutual recognition arrangement among 
+Accreditation Bodies (ABs) in order that the results issued by Conformity Assessment 
+Bodi
+es (CABs) accredited by IAF members can be accepted globally. 
+
+
+Accreditation reduces risk for business and its customers by assuring them that 
+accredited CABs are competent to carry out the work they undertake within their scope 
+of accreditation. ABs that a
+re members of IAF and their accredited CABs are required to 
+comply with appropriate international standards and IAF mandatory documents for the 
+consistent application of those standards. 
+
+
+ABs that are signatories to the IAF Multilateral Recognition Arrangem
+ent (MLA) are 
+evaluated regularly by an appointed team of peers to provide confidence in the 
+operation of their accreditation programs. The structure of the IAF MLA is detailed in IAF 
+PL 3 
+- 
+Policies and Procedures on the IAF MLA Structure and for Expansio
+n of the 
+Scope of the IAF MLA. The scope of the IAF MLA is detailed in the IAF MLA Status 
+document. 
+
+
+The IAF MLA is structured in five levels: Level 1 specifies mandatory criteria that apply 
+to all ABs, ISO/IEC 17011. The combination of a Level 2 
+activity(ies) and the 
+corresponding Level 3 normative document(s) is called the main scope of the MLA, and 
+the combination of Level 4 (if applicable) and Level 5 relevant normative documents is 
+called a sub
+-
+scope of the MLA. 
+
+
+• The main scope of the MLA includes activities e.g. product certification and 
+associated mandated standards e.g. ISO/IEC 17065. The attestations made by 
+CABs at the main scope level are considered to be equally reliable. 
+• The sub scope of the MLA includes co
+nformity assessment requirements e.g. ISO 
+9001 and scheme specific requirements, where applicable, e.g. ISO 22003
+-
+1. The 
+attestations made by CABs at the sub scope level are considered to be equivalent. 
+
+
+The IAF MLA delivers the confidence needed for marke
+t acceptance of conformity 
+assessment outcomes. An attestation issued, within the scope of the IAF MLA, by a 
+body that is accredited by an IAF MLA signatory AB can be recognized worldwide, 
+thereby facilitating international trade. 
+
+
+
+TABLE 
+OF CONTENTS 
+0. 
+INTRODUCTION 
+................................
+................................
+................................
+.. 
+6 
+1. 
+DEFINITIONS 
+................................
+................................
+................................
+....... 
+7 
+1.1. 
+Management Systems Certific
+ation Scheme 
+................................
+.................... 
+7 
+1.2. 
+Client Organization 
+................................
+................................
+........................... 
+7 
+1.3. 
+Permanent Site 
+................................
+................................
+................................
+. 
+7 
+1.4. 
+Virt
+ual Site 
+................................
+................................
+................................
+........ 
+7 
+1.5. 
+Temporary Site 
+................................
+................................
+................................
+. 
+7 
+1.6. 
+Audit Time 
+................................
+................................
+................................
+........ 
+7 
+1.7. 
+Duration of Manag
+ement System Certification Audits 
+................................
+...... 
+8 
+1.8. 
+Audit Day 
+................................
+................................
+................................
+.......... 
+8 
+1.9. 
+Effective Number of Personnel 
+................................
+................................
+......... 
+8 
+1.10. 
+Risk Category (QMS only) 
+................................
+................................
+................ 
+8 
+1.11. 
+Complexity Category (EMS only) 
+................................
+................................
+..... 
+9 
+1.12. 
+Co
+mplexity Category (OH&SMS only) 
+................................
+.............................. 
+9 
+2. 
+APPLICATION 
+................................
+................................
+................................
+...... 
+9 
+2.1. 
+Audit Time 
+................................
+................................
+................................
+........ 
+9 
+2.2
+. 
+Audit Day(s) 
+................................
+................................
+................................
+..... 
+9 
+2.3. 
+Calculation of the Effective Number of Personnel 
+................................
+.......... 
+10 
+3. 
+METHODOLOGY FOR DETERMINING AUDIT TIME OF MANAGEMENT 
+SYS
+TEMS 
+................................
+................................
+................................
+..................... 
+12 
+4. 
+INITIAL MANAGEMENT SYSTEMS CERTIFICATION AUDITS (STAGE 1 
+PLUS STAGE 2) 
+................................
+................................
+................................
+............ 
+14 
+5. 
+SURVEILLANCE 
+................................
+................................
+................................ 
+15 
+6. 
+RECERTIFIC
+ATION 
+................................
+................................
+........................... 
+15 
+7. 
+INDIVIDUALIZED SECOND AND SUBSEQUENT CERTIFICATION CYCLES 
+.. 
+15 
+8. 
+FACTORS FOR ADJUSTM
+ENTS 
+OF AUDIT TIME OF MANAGEMENT 
+SYSTEMS 
+(QMS, EMS
+, 
+and OH&SMS) 
+................................
+................................
+....... 
+15 
+9. 
+TEMPORARY SITES 
+................................
+................................
+.......................... 
+18 
+10. 
+AUDIT TIME OF A 
+MULTI
+-
+SITE MANAGEMENT SYSTE
+M 
+................................ 
+19 
+
+11. 
+CONTROL OF EXTERNALLY PROVIDED FUNCTIONS OR PROCESSES 
+(OUTSOURCING) 
+................................
+................................
+................................
+......... 
+19 
+ANNEX A 
+– 
+QUALITY MANAGEMENT SYSTEMS 
+................................
+....................... 
+21 
+ANNEX B 
+– 
+ENVIRONMENTAL MANAGEMENT SYSTEMS 
+................................
+....... 
+24 
+ANNEX C 
+– 
+OCCUPATIONAL HEALTH AND SAFETY MANAGEMENT SYSTEMS 
+.... 
+29 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+Issue No 
+4
+, Version 
+3 
+
+
+Pre
+pared by: IAF Technical Committee 
+
+
+Approved by: IAF Members 
+Date: 
+17 
+December 
+201
+8 
+
+
+Issue Date: 
+14 June 
+2023 
+Application Date: 
+07 May 
+20
+20 
+
+
+Name for Enquiries: Elva Nilsen 
+
+
+ 
+IAF 
+Co
+rporate Secr
+etar
+y 
+
+
+Telephone
+: 
++1 
+613 
+454
+-
+8159 
+
+
+Email: 
+secretary@iaf.nu 
+
+
+
+INTRODUCTION TO IAF MANDATORY DOCUMENTS 
+
+
+The term “should” is used in this document to indicate recognised means of meeting the 
+requirements of the standard. A Conformity Assessment Body (CAB) can meet these in 
+an equivalent way provided this can be demonstrated to an Accreditation Body (AB). 
+The term “shall” is used in this document to indicate those provisions which, reflecting 
+the requirements of the relevant standard, are mandatory. 
+
+
+0.1. The correct determination of the audit time for an initial audit (Stage 1 plus Stage 
+2) is an integral part of the application review for any client organization. 
+0.2. This document provides mandatory prov
+is
+ions and gui
+danc
+e for 
+CABs 
+to develop 
+their own 
+processes 
+for determining the amount of time required for the a
+uditing of 
+clients 
+of differing sizes and complexity over a broad spectrum of activities. It is 
+intended that this will lead to consistency of 
+th
+e 
+determinat
+ion 
+of audit time 
+of 
+mana
+gement systems 
+between 
+CABs
+, as well as 
+between similar clients of the same 
+CAB. 
+0.3. C
+ABs 
+shall identify the 
+audit time 
+of 
+t
+he 
+S
+tage 1 and 
+S
+tage 2 initial audit 
+and 
+of 
+surveillance 
+and re
+-
+certification audits for each app
+li
+cant and cer
+tifi
+ed 
+client
+. 
+0.4. This manda
+tory document provides a framework that shall be utilized within a 
+CAB’s 
+processes 
+to determine appropriate a
+udit time of management systems
+, taking 
+into account the specifics of the client to be audited. 
+0.5. Although t
+hi
+s document i
+s se
+t up for EMS/QMS
+/OH&S
+MS 
+certification, a number 
+of elements may be used for other 
+ISO/IEC 
+17021
+-
+1 based certification schemes. 
+Examples of these elements are the application of audit time duration or audit day and 
+effective personnel
+. 
+0.6. Not
+wi
+thstanding t
+he g
+uidance provided by t
+his document, the time allocated for a 
+specific audit should be sufficient to plan and accomplish a complete and effective audit 
+of the client's management system
+. 
+
+
+
+
+
+DETERMINATION OF AUDIT TIME OF QUALITY, 
+ENVIRONMENTAL, AND OCCUPATIONAL HEALTH & 
+SAFETY MANAGEMENT SYSTEMS 
+
+This document is mandatory for the consistent application of 
+the relevant clauses of 
+ISO/IEC 
+17021
+-
+1 
+f
+or audits of 
+qua
+lity
+, 
+environmental 
+a
+nd occupational health and safety 
+management systems. All clauses of ISO/IEC 
+17021
+-
+1 
+continue to apply and this 
+document does not supersede any of the requirements in that standard. 
+Although 
+personnel numbers (permane
+nt
+, temporary
+, 
+and 
+part time) of the cl
+ient are used as the 
+starting point when considering the 
+determination of audit time 
+of management systems
+, 
+this is not the sole consideration and account shall be taken of other factors affecting 
+the audit time
+, incl
+ud
+ing all thos
+e li
+sted in ISO/IEC 
+17021
+-
+1
+. 
+
+
+0. INTRODUCTION 
+
+
+ 
+
+
+
+1. DEFINITION
+S 
+
+
+For the purposes of this document, the f
+ol
+lowing defin
+itio
+ns apply: 
+
+
+1.1. Management 
+Systems 
+C
+ertification 
+S
+cheme 
+
+
+C
+onformity assessment system related to management systems to which the same 
+specified requirements, 
+specific rules and 
+processes 
+apply
+. 
+
+
+1.2. C
+lient 
+O
+rganization 
+
+
+E
+ntity or defined part of an en
+ti
+ty operating 
+a m
+anagement system
+. 
+
+
+1.3. P
+er
+manent 
+S
+ite 
+
+
+L
+ocation (physical or virtual) where a client organization 
+(1.2) 
+performs work or 
+provides 
+a service on a 
+continuing basis
+. 
+
+
+1.4. Virtual Site 
+
+
+Virtual locat
+ion where a client organization 
+performs work or 
+provid
+es 
+a service u
+sing 
+an 
+o
+n
+-
+line environme
+nt allowing persons irrespective of physical locations to execute 
+processes. 
+
+
+Note 1: A virtual site cannot be considered where the processes must be executed in a 
+physical environment, e.g., warehousing, manufacturing, physical testing 
+laboratories, installation or repairs to physical products. 
+
+Note 2: A virtual site (e.g. company intranet) is considered a single site for the calculation of 
+audit time. 
+
+1.5. T
+emporary 
+S
+ite 
+
+
+L
+ocation (physical or virtual) where a client or
+ga
+nization 
+(1.
+2
+) p
+erforms specific work 
+or 
+provides a 
+service for a finite period of time and wh
+ich is not intended to become a 
+permanent site 
+(1.
+3
+)
+. 
+
+
+1.6. A
+udit 
+T
+ime 
+
+
+T
+ime needed to plan and accomplish a complete and effective audit of the client 
+organization’s 
+m
+a
+nagement sys
+tem 
+(ISO
+/
+IEC 
+17021
+-
+1
+)
+. 
+
+
+
+1.7. D
+u
+ration of 
+M
+anagement 
+S
+ystem 
+C
+ertification 
+A
+udits 
+
+
+P
+art of audit time 
+(1.
+6
+) spent conducting audit activities from the opening meeting to the 
+closing 
+meeting, inclusive
+. 
+
+
+Note: Audit activities normally include: 
+
+• conducting the opening meeting 
+• performing document review while conducting the audit 
+• communicating during the audit 
+• assigning roles and responsibilities of guides and observers 
+• collecting and verifying information 
+• generating audit findings 
+• preparing audit conclusions 
+• conducting the closing meeting 
+
+
+1.8. Aud
+it 
+Day 
+
+
+The duration of an audit day is normally 8 hours and may or may not include 
+a 
+lunch 
+break 
+depending upon local legislation. 
+
+
+1.9. Effective Number of 
+Personnel 
+
+
+The effective numbe
+r of personnel consists of all 
+pers
+on
+nel 
+(permanent, temporary, and 
+part-time) 
+involved within the scope 
+of certification including those working on each 
+shift. 
+When included within the scope of 
+certification
+, it shall 
+also include n
+on
+-
+permanent 
+(e.g. contractors) 
+personnel. 
+
+
+For OH&SMS it shall also include personnel from contractors and subcontractors 
+performing work or work-related activities that are under the control or influence of the 
+organization, that can have impact on the organization’s OH&SMS performance. 
+
+Refer to 2.3 for calcul
+at
+ion of effec
+tive 
+number of personnel. 
+
+
+1.10. Risk Category (QMS 
+only
+) 
+
+
+For QMS, the provisions in this document are based on three categories, dependant on 
+the risks posed by failure of the product or service of the client 
+organization
+. These 
+categories 
+can be c
+on
+sidered as h
+igh, 
+medium or low risk. 
+High risk activities (
+e.g. 
+nuclear
+, medical, pharmaceutical, food, construction) normally require more audit time. 
+Medium risk activities (e
+.
+g
+.
+, 
+simple manufacturing) are likely to require the average time 
+to carry ou
+t 
+an effective 
+aud
+it an
+d low risk activ
+ities less time. 
+(See Annex A, Table QMS 
+2
+)
+. 
+
+
+
+1.11. Complexity Category 
+(EMS only) 
+
+
+For environmental management systems, t
+he provisions specified in this document are 
+based on five primary complexity categories of the nature
+, 
+number and g
+ravi
+ty of the 
+environment
+al aspects of an organization that fundamentally affect the audit time. 
+(See 
+Annex B, Table EMS 2)
+. 
+
+
+1.12. Complexity 
+C
+ategory 
+(OH&SMS only) 
+
+
+For OH&SMS, the provisions specified in this document are based on three primary 
+complexity categories based on the nature, number and severity of the OH&S risks of 
+an organization that fundamentally affect the audit time (See Annex C, Table OH&SMS 
+2). 
+
+2. APPLICATION 
+
+
+2.1. Audit Time 
+
+
+2.1.1. The audit time for all types of audits includes the total time on-site at a client's 
+location (physical or virtual) (1.7) and time spent off-site carrying out planning, 
+document review, interacting with client personnel and report writing. 
+
+2.1.2. The duration of a management system certification audit (1.7) should typically not 
+be less than 80% of the audit time calculated following the methodology in Section 3. 
+This applies to initial, surveillance and recertification audits. 
+
+2.1.3. Travel (en-route or between sites) and any breaks are not included in the on-site 
+duration of management system certification audits. 
+
+Note: See 1.8. There may be a local legal requirement to include lunch breaks. 
+
+2.2. Audit Day
+(s) 
+
+
+2.2
+.1
+. 
+Tables QMS 1
+, 
+EMS 1
+, 
+and OH&SMS 1 
+present 
+the 
+average 
+audit time of 
+management systems 
+certificati
+on 
+audits 
+calc
+ulat
+ed 
+in audit days
+. 
+Na
+tional adjustments 
+on the number of days may be needed to comply with local legislation for travel, lunch 
+breaks and working hours, to achieve the same total number of 
+days 
+of audit
+ing 
+from 
+Tables QMS 1
+, 
+EMS 1
+, 
+and OH
+&S
+MS 1
+. 
+
+
+2.2
+.2
+. 
+The 
+number of audit days 
+allocated shall not be reduced at the planning stages 
+by 
+programming 
+longer hours per working da
+y. 
+Consideration can be made to allow 
+efficient auditing of shift activities which ma
+y require additional hours in a 
+wor
+k
+i
+ng 
+day. 
+
+
+
+2.3.3. Part time personnel and employees partially in scope 
+2.3.4. Similar or repetitive process within scope 
+
+
+
+
+
+
+
+
+2.2
+.
+3
+. 
+I
+f after the 
+calculati
+on, 
+the result is a decimal number, the number of days should 
+be adjusted t
+o the nearest half day (e.g.: 5.3 
+audit days becomes 
+5.5 audit days, 
+5.2 
+audit days becomes 5 audit days). 
+
+
+2.2
+.4
+. 
+To 
+help ensure 
+the effective
+ne
+ss of the au
+dit, 
+the 
+CAB 
+should 
+also 
+consider the 
+composition and size of the audit team (
+e.g. 
+½ day with 2 auditors 
+may not be as 
+effective 
+as a one day audit 
+with 1 auditor 
+or 
+1 audit day with one lead auditor and one 
+technical expert is more effective 
+t
+han 1 audito
+r da
+y without the technic
+al expert
+). 
+
+
+Note 1: ABs may require a CAB to demonstrate that the average audit time of specified clients 
+is neither significantly more nor less than the audit time calculated from tables QMS1, EMS1, 
+and OH&SMS1. 
+
+Note 2: CABs that work primarily in high risk or complex industries are likely to have an average 
+higher than the tables and CABs that work primarily in low risk industries are likely to have an 
+average lower than the tables. 
+
+2.3. Calculation of the 
+Effective Numb
+er 
+of Personne
+l 
+
+
+2.3.1. The effective number of personnel as defined above is used as a basis for the 
+calculation of audit time of management systems. Considerations for determining the 
+effective number of employees include part-time personnel and employees partially in 
+scope, those working on shifts, administrative and all categories of office staff, similar or 
+repetitive processes (see 2.3.4) and the employment of large numbers of unskilled 
+personnel in some countries. 
+
+In case of seasonal operations (e.g. harvesting activities, holiday villages and hotels, 
+etc.) the calculation of the effective number of personnel shall be based on the 
+personnel typically present in peak season operations. 
+
+Reductions due to employment of large numbers of unskilled personnel shall not be 
+made without consideration of the associated OH&S risk (see 2.3.6). 
+
+2.3.2. The justification to determine the effective number of personnel shall be available 
+to the client organization and to the Accreditation Body for review during their 
+assessments and on request from the Accreditation Body. 
+
+Dependent upon the hours worked, part time personnel numbers and employees 
+partially in scope may be reduced or increased and converted to an equivalent number 
+of full time personnel. (e.g. 30 part time personnel working 4 hours/day equates to 15 
+full time personnel.) 
+
+
+2.3.5. Shift work employees 
+2.3.6. Temporary unskilled personnel 
+
+
+
+
+
+
+
+
+For QMS and EMS, when a high percentage of personnel perform certain 
+activities/positions that are considered repetitive (e.g. cleaners, security, transport, sales, 
+call centers, etc.) a reduction to the number of personnel which is coherent and 
+consistently applied on a company to company basis within the scope of certification is 
+permitted. The methods incorporated for the reduction shall be documented to include 
+any consideration of the risk of the activities/positions. 
+
+For OH&SMS: 
+
+a) When a high percentage of personnel perform certain activities/positions that 
+are considered similar or identica
+l 
+because they 
+exp
+ose personnel to simi
+lar 
+OH&S risks (e.g. cleaners, security, sales, call centers, etc.) a reduction in 
+the number of personnel which is coherent and consistently applied on a 
+company to company basis within the scope of certification is 
+pe
+rmitted. The 
+met
+hods incorporated for 
+the reduction shall be documented to include any 
+consideration of the risk of the activities/positions. 
+
+
+b) For groups of workers performing repetitive jobs which can reduce attention, 
+and raise the associated level of O
+H&
+S risk (e.g. 
+mou
+nting, assembling, 
+pa
+ckaging, sorting, etc.), the methods incorporated for possible reductions 
+shall be documented to include the assessment of the OH&S risk of any 
+activities/positions of workers. 
+
+
+The CAB shall determine the duration and timing of the audit which will best assess the 
+effective implementation of the management system for the full scope of the client 
+activities, including the need to audit outside normal working hours and various shift 
+patterns. This shall be agreed with the client. 
+
+The CAB should ensure that any variation in audit time does not compromise the 
+effectiveness of audits (see also clause 3.7). 
+
+This issue normally only applies for organizations with a low level of technology where 
+temporary unskilled personnel may be employed in considerable numbers to replace 
+automated processes. 
+
+For QMS and EMS, under these circumstances, a reduction in effective personnel may 
+be made. Being the consideration of processes more important than employee number, 
+this reduction is unusual and the justification for doing so shall be recorded and made 
+available to the AB. 
+
+
+3.1. The methodology used as 
+a 
+basis for t
+he c
+alculation of 
+audit t
+ime 
+of 
+management 
+systems 
+for 
+an initial audit (
+S
+tage 1 + 
+S
+tage 2) involves the 
+under
+standing 
+of tables and 
+figures in Annex A 
+for QMS
+, 
+Annex B for EMS
+, 
+and Annex C for OH&SMS 
+audits 
+respectively. 
+Annex A 
+(QMS) is 
+bas
+ed 
+upon the ef
+fect
+ive number of personn
+el (see 
+C
+lause 
+2.3 for guidance on the calculation of the effective number of personnel) 
+and the 
+level of risk
+, 
+but do
+es 
+not provide minimum or maximum 
+audit time
+. 
+In addition to 
+effective number of personnel, 
+Annex 
+B 
+(
+EMS) is base
+d al
+so on the environment
+al 
+complexity of the organization and does not provide minimum or maximum 
+audit time
+, 
+Annex C 
+(OH&SMS) 
+is based upon the effective nu
+mber of personnel 
+and the 
+complexity 
+category of OH&S risk associated with the busin
+es
+s sector of 
+the 
+organization and does 
+not provide a minimum or maximum audit time. Table OH&SMS 2 
+shows the linkage between business sectors and OH&S complexity categories based 
+on OH&S risks. 
+3.2. Using a suitab
+le multiplier, the same tables and figures may be used as the base 
+for calculating 
+audit time 
+for surveillance audits (Clause 5) and recertification audits 
+(Clause 6). 
+3.3. The CAB shall have 
+processe
+s that provide for the 
+a
+llocation of 
+ade
+quate time for 
+auditi
+ng of 
+relevant 
+process
+es 
+of the client. 
+Experience has shown 
+that apart from the 
+number of 
+personnel
+, the time required to carry out an effective audit depends upon 
+other factors for QMS
+, 
+EMS
+, 
+and OH&SMS
+. 
+These factor
+s 
+are explored 
+in 
+more depth in 
+Clause 
+8. 
+3.4. Th
+is 
+mandatory 
+document 
+lists the 
+provisions 
+which should be considered 
+when 
+establishing the amount of time needed 
+to perform an audit
+. 
+These and other factors 
+need to be examined during 
+the 
+CAB
+’s 
+application rev
+ie
+w 
+process 
+an
+d af
+ter Stage 1 
+and throu
+ghout the certification cycle and at recertification 
+for their potential impa
+ct on 
+the 
+determination of 
+audit time 
+regardless of the type of audit
+. 
+Therefore, 
+the relevant 
+tables, figures
+, 
+and diagrams for QMS
+, 
+EMS
+, 
+a
+nd 
+OH&SMS 
+whic
+h d
+e
+monstrate the 
+relatio
+nship between 
+effective number of personnel 
+and complexity, 
+cannot 
+be used in 
+isolation. 
+These tables and figures provide the framework for audit planning and 
+therefore required 
+adjustments 
+for 
+the determination of au
+di
+t time 
+for a
+ll t
+ypes of audit
+s
+. 
+
+
+
+
+
+For OH&SMS this reduction is in principle to be regarded as not applicable since the 
+employment of temporary unskilled personnel can be a source of OH&S risks. If, in 
+exceptional cases, a reduction is made, the justification for doing so shall be recorded 
+and made available to the AB. 
+
+3. METHODOLOGY FOR DETERMINING AUDIT TIME OF 
+MANAGEMENT 
+SYSTEMS 
+
+
+Note: Normal practice is that time spent for Stage 2 exceeds time spent for Stage 1. 
+
+
+3.5. For 
+QMS audits, 
+Figure 
+QMS 
+1 
+provides a visual guide to making adjustments 
+from the audit time 
+calculated from Table QMS 
+1 
+and provides the framework for a 
+process that should be used for audit planning by identifying a s
+ta
+rting point 
+base
+d on 
+the total 
+effect
+ive 
+number of 
+personnel 
+for all shifts
+. 
+3.6. For 
+an EMS 
+audit, 
+it is appropriate to base 
+audit time 
+on the effective number of 
+personnel 
+of the organization and the nature, number and gravity of the environmental 
+aspects 
+o
+f the typica
+l or
+gani
+zation in that in
+dustry sector. 
+Tables EMS 1 and EMS 2 
+provide the framework for the process that should be used for audit planning. 
+The 
+audit 
+time 
+of management systems 
+should then be adjusted based on any significant factors 
+that un
+iq
+uely apply t
+o th
+e organization to be 
+audited. 
+3.7. The starti
+ng p
+oint for determini
+ng 
+audit time 
+of management systems 
+shall be 
+identified based on the effective number of personnel, then adjusted for the significant 
+factors applying to the client to be audited, and attributing to each factor an additi
+ve 
+or 
+subtract
+ive 
+weighting to modify t
+he base figure. 
+In every 
+situation, 
+the basis for the 
+establishment of 
+audit time 
+of management systems 
+including adjustments made shall 
+be recorded
+. 
+The CAB should 
+ensure that any variation in audit time does not lea
+d 
+to a 
+comprom
+ise 
+on the effectiveness 
+of audits. 
+
+
+
+
+
+For an OH&SMS audit
+, 
+it is appropriate to base audit time on the effective number of 
+personnel of the organization and nature, number and severity of the OH&S risks of the 
+typical organization in that indust
+ry 
+sector. Tab
+les 
+OH&SM
+S 
+1 and OH&SM
+S 
+2 
+provide a 
+framework for the process that should be used for planning. The audit time of 
+management systems should then be adjusted based on any significant factors that 
+uniquely apply to the organization to be audite
+d. 
+
+
+For QMS and EMS, w
+here product or service realization processes operate on a shift 
+basis, the extent of auditing of each shift by the CAB depends on the processes done 
+on each shift, 
+and the level of contr
+ol 
+of each shi
+ft t
+hat 
+is demonstrated b
+y the client. 
+To 
+audit effective implementation, at least one of the shifts shall be audited. The 
+justification for not auditing the other shifts (e.g. those outside of regular office hours) 
+shall be documented
+. 
+
+
+For OH&SMS, where product or service realization processes operate on a shift basis, 
+the extent of auditing of each shift by the CAB depends on the processes done on each 
+shift, taking into consideration the associated OH&S risks, and the level of control of 
+each shift that is demonstrated by the client. To audit effective implementation, at least 
+one of the shifts inside and one outside of regular office hours shall be audited during 
+the first cycle of certification. During surveillance audits of the subsequent cycles, the 
+CB may decide not to audit the second shift based on the recognised maturity of the 
+organization’s OH&SMS. Adjustments for delaying the starting time of audit are 
+recommended whenever possible, in order to cover both shifts within the audit day. The 
+
+
+3.8. The a
+udit time 
+of management systems 
+determined 
+using the tables or figures in 
+Annexes A
+, 
+B
+, 
+and C 
+shall not include the time of “au
+di
+tors
+-
+in
+-
+trai
+ning
+”
+, observers 
+or the 
+t
+ime of technical experts. 
+3.9. T
+he 
+reduction of 
+audit time 
+of management systems 
+shall not 
+exceed 
+30% of the 
+times established from 
+T
+ables QMS 1
+, 
+EMS 1
+, 
+or OH&SMS 1
+. 
+4.1. Determination of audit time 
+of management systems 
+involved in 
+combined offsite 
+activities 
+(
+C
+lause 2.1) 
+should not reduce the total 
+on
+-
+site 
+duration of management 
+systems 
+audits 
+to less th
+an 
+80% of the 
+audi
+t 
+time calculated 
+fro
+m the tables 
+following 
+the methodology in Section 3. Where additional 
+audit 
+time is required for planning 
+and/or report writing, this will not be justification for reducing 
+the 
+on
+-
+site 
+duration of 
+management systems c
+er
+tification a
+udit
+s. 
+4.2. Table QMS 1
+, 
+Tabl
+e EMS 1
+, 
+and Table OH&SMS 1 
+provide a starting point for 
+estimating the 
+audit time 
+of an initial audit (Sta
+ge 1 + Stage 2) for QMS
+, 
+EMS
+, 
+and 
+OH&SMS 
+respectively
+. 
+4.3. The audit time determined by the 
+CAB 
+and the justifica
+ti
+on for the d
+eter
+mination 
+shall be rec
+orded. This calculation shall include details on the time to be allocated to 
+cover the entire scope of certification. 
+4.4. The CAB shall provide the audit time determination and the justification to the 
+client organization 
+a
+s part of th
+e co
+ntract and make it av
+ailable 
+to its Accreditation Body. 
+4.5. C
+ertification 
+audit
+s 
+may include remote auditing techniques such as interactive 
+web
+-
+based 
+collaboration
+, 
+web meetings, teleconferences and/or electronic verification 
+of the client’s 
+pr
+ocesses
+. 
+If 
+the 
+CAB plans an audit fo
+r which the remote auditing 
+activities are utilised, it shall apply the requirements defined in IAF MD4. 
+These 
+activities shall be identified in the audit plan, and 
+the time spent on these activities 
+may 
+be considered 
+a
+s contributi
+ng t
+o the total 
+duration 
+of management systems 
+audits. 
+
+
+
+
+
+justification for not auditing the other shifts shall be documented taking into account the 
+risk for not doing so. 
+
+Note: Clause 3.9 may not apply to the situations as described in IAF MD1 for the individual sites 
+in multi-site operations. In this situation, a limited number of processes may be present in such 
+sites and the implementation of all relevant requirements of the management system 
+standards(s) can be verified. 
+
+4. IN
+IT
+IAL 
+MANAGEME
+NT S
+YSTEMS CERTIFICATION 
+AUDITS 
+(
+S
+TAGE 1 PLUS 
+STAGE 2) 
+
+
+
+For OH&SMS
+, 
+these activities shall be limited to reviewing documents/records and to 
+interviewing staff and workers. 
+In addition for OH
+&SMS, processes control and OH&S 
+risk control cannot 
+b
+e 
+audited us
+ing 
+remote audit techniqu
+es
+. 
+
+
+5. SURVEILLANCE 
+
+
+During the initial 
+three
+-
+year 
+certification cycle, 
+audit time for 
+surveillance 
+audits 
+for 
+a 
+given organization should be proportional to the 
+audit 
+time spent 
+on 
+the 
+initial 
+certification audit (
+S
+tag
+e 
+1 + 
+S
+tage 2)
+, 
+wi
+th the total amount o
+f time spent annually on 
+surveillance being about 1/3 of the 
+audit 
+time spent on the initial 
+certification audit
+. 
+The 
+CAB shall obtain an 
+update of client data related to 
+its management system 
+as part of 
+each 
+surveill
+an
+ce audit. 
+Th
+e pl
+anned 
+audit time 
+of a 
+surveillance 
+audit 
+shall 
+be reviewed 
+at least at every surveillance 
+and recertification 
+audit 
+to take into account changes in the 
+organization, system maturity, etc. The evidence of review including any adjustments t
+o 
+the 
+audit ti
+me 
+o
+f management systems 
+audits shall be recorded. 
+
+
+Note: It is unlikely that a surveillance audit duration will be less than one (1) audit day. 
+
+
+6. RECERTIFICATION 
+
+
+The 
+audit time 
+for 
+the recertification audit should be 
+calculated on the basis o
+f 
+the 
+updated 
+info
+rmation of the client 
+and is normally 
+approximately 2/3 of the 
+audit 
+time that 
+would be required for an initial certification audit (Stage 1 + Stage 
+2) of the organization 
+if such an initial audit were to be carried out at the time 
+of rec
+er
+tification 
+(
+i.e. 
+not 
+2/3 of 
+the origi
+nal 
+time 
+spent on 
+the 
+initial 
+audit
+)
+. 
+The 
+audit time 
+of management systems 
+shall 
+take account 
+the outcome of the review of system 
+performance (ISO/IEC 17021
+-
+1
+). 
+The 
+review of system performance 
+does not itself form pa
+rt 
+of the 
+audi
+t ti
+me 
+for 
+recertificatio
+n audits. 
+
+
+Note: It is unlikely that a recertification audit duration will be less than one (1) audit day. 
+
+7. INDIVIDUALIZED SECOND AND SUBSEQUENT CERTIFICATION CYCLES 
+
+
+For the 
+second and subsequent 
+certification 
+cycles, t
+he 
+CAB 
+may cho
+ose 
+to design an 
+individu
+alized surveillance and recertification program 
+(see IAF MD3 for Advanced 
+Surveillance and Recertification Procedures 
+– 
+ASRP) 
+with approval by the Accreditation 
+Body
+. 
+If an ASRP approach is not chosen
+, 
+the 
+audit time 
+o
+f management 
+sys
+tems 
+should be calcul
+ated as indicated 
+in 
+C
+lause
+s 5 and 
+6. 
+
+
+For OH&
+SMS these requirements are not applicable. 
+
+
+8. FACTORS FOR ADJUSTMENTS OF 
+AUDIT TIME 
+OF MANAGEMENT 
+SYSTEMS 
+(QMS
+, 
+EMS
+, 
+and OH&SMS
+) 
+
+
+
+The additional factors that 
+shall 
+be consider
+ed 
+include but 
+are 
+not limited to: 
+
+
+i) Incr
+ease in 
+audit time 
+of 
+all 
+management systems
+: 
+a. Complicated logistics involving more than one building or location where 
+work is carried out
+, 
+e.g. a separate Design Centre must be audited
+. 
+b. Staff speaking in more than on
+e 
+language (re
+quir
+ing interpreter(s) or 
+preventing individual auditors from working independently)
+. 
+c. Very large site for 
+the 
+number of 
+personnel 
+(e.g. a forest)
+. 
+d. High degree of regulation (e
+.
+g. food, drugs, aerospace, nuclear power
+, 
+etc
+.
+)
+. 
+e. System covers hig
+hl
+y complex pr
+oces
+ses or relatively hig
+h number of 
+unique activities
+. 
+f. Activities that require visiting temporary sites to confirm the activities of 
+the permanent site(s) whose management system is subject to 
+certification
+. 
+ii) Increase in audit time of managem
+en
+t systems fo
+r QM
+S only: 
+a. Activities co
+nsidered to be of high risk (see Annex A, Table QMS 2)
+. 
+b. Outsourced 
+functions 
+or processes
+. 
+
+
+
+iii) Increase in 
+audit time 
+of management systems 
+f
+or EMS 
+o
+nly
+: 
+a. Higher sensitivity of receiving environment compared to typical loc
+at
+ion 
+for 
+the 
+indu
+stry sector
+. 
+b. Views of 
+interested parties
+. 
+c. Indirect aspects necessitating increase in 
+audit time
+. 
+d. Additional or unusual environmental aspects or regulated conditions for 
+the sector
+. 
+e. R
+isks of environmental accidents and impacts arising, or 
+li
+kely to aris
+e, 
+a
+s consequences of inc
+idents, accidents and potential emergency 
+situations, previous environmental problems that the 
+organization 
+has 
+contributed to
+. 
+f. Outsourced 
+functions 
+or processes
+. 
+iv) Increase 
+in audit time of management systems for 
+OH&SM
+S 
+only: 
+a. V
+iews 
+of i
+nterested parties, 
+b. R
+ate of accidents and occupational diseases higher than average for the 
+business sector, 
+
+
+
+c. I
+f the members of the public are present on the organization’s site (e.g. 
+hospitals, schools, airports, ports, train stations, p
+ub
+lic transpor
+t), 
+d. T
+he organization is 
+facing legal proceedings related to OH&S (depending 
+on the severity and impact of risk involved), 
+e. T
+he temporary large presence of many (sub)
+contractors’ 
+companies and 
+their employees causing an increase in complexity 
+o
+r OH&S risks 
+(e.
+g. 
+periodical shutdow
+ns or turnaround of refineries, chemical plants, steel 
+manufacturing plants
+, 
+and other large industrial complexes), 
+f. W
+here dangerous substances are present in quantities exposing the 
+plant to the risk of major industr
+ia
+l accidents, 
+in 
+accordance with the 
+a
+pplicable national regulations, and/or risk assessment documentation, 
+g. O
+rganization with sites included in the scope in other countries than the 
+mother site country (if legislation and language are not well known). 
+v) D
+ec
+rease in 
+aud
+it t
+ime 
+of management sys
+tems
+: 
+a. Client 
+is not "design responsible" or other standard elements are not 
+covered in the scope 
+(QMS only)
+. 
+b. Very small site for number of 
+personnel 
+(e.g. office complex only)
+. 
+c. Maturity of management system
+. 
+d. Prior kn
+ow
+ledge of 
+the 
+cli
+ent 
+management 
+system 
+(e.g. already certified 
+to another 
+s
+tandard by the same 
+CAB
+)
+. 
+For OH&S
+MS 
+this means 
+already 
+certified in another voluntary OH&SMS scheme
+. 
+e. Client preparedness for 
+certification 
+(e.g. already 
+certified 
+or recognized 
+by 
+a
+nother 3rd p
+arty 
+scheme)
+. 
+For OH&S
+MS 
+this mean
+s 
+already subject 
+to periodical audits by the National Authority for a mandatory 
+governmental OH&SMS scheme
+. 
+
+
+ Note: if audit is conducted in accordance with IAF MD 11 this justification is 
+invalid as reduction will be calculated from the level of integration. 
+
+f. High level of automation 
+(not applicable for OH&SMS)
+. 
+g. Where staff include a number of people who work “off location” e.g. 
+salespersons, drivers, service personnel, etc. and it is possible to 
+substantially 
+a
+udit complia
+nce 
+of their activities w
+ith the system through 
+review of records 
+(not applicable for OH&SMS). 
+
+
+
+9.1. In situations where the certification applicant or certified client provides their 
+product(s) or service(s) at temporary sites, such sites shall be inco
+rp
+orated into 
+the 
+audit programs. 
+9.2. Tempo
+rary sites could range from major project management sites to mi
+nor 
+service/installation sites. 
+The need to visit such sites and the extent of sampling should 
+be based on an evaluation of the risks of the failure of t
+he 
+QMS to cont
+rol 
+product or 
+service ou
+tput or the EMS to control environmental aspects and impacts 
+or 
+the 
+OH&SMS to control OH&S risks 
+associated with the client's operations. 
+9.3. Typically on
+-
+site audits of temporary sites would b
+e 
+performed. H
+owev
+er, the 
+following met
+hods could be considered as alternatives to replace some on
+-
+site audits
+: 
+
+
+
+
+
+Activities considered to be of 
+low 
+risk 
+(not applicable for OH&SMS)
+: 
+For QMS 
+see 
+Annex A, Table QMS 2 
+for examples 
+and 
+for EMS see Annex B 
+Table EM
+S 
+2
+. 
+Al
+l 
+attri
+bute
+s of the client
+’s sys
+tem, processes, and products/services should be considered 
+and a fair adjustment made for those factors that could justify more or less audit time for 
+an effective audit. Additive factors may be off
+-
+set by subtractive 
+f
+actors. 
+
+
+Any decision taken in relation to the requirements of this clause shall be justified and 
+recorded. 
+
+Note 1: Subtractive factors may be used once only for each calculation for each client 
+organization. 
+
+Note 2: Additional factors to consider when calculating the audit time of integrated management 
+systems are addressed in IAF MD 11. 
+
+9. TEMPORARY SITES 
+
+
+For QMS and EMS the sample of sites selected should represent the range of the 
+client’s scope of certification, competency needs and service variations having given 
+consideration to sizes and types of activities, and the various stages of projects in 
+progress and associated environmental aspects and impacts. 
+
+For OH&SMS the sites included in sampling should represent the client’s scope of 
+certification, sizes and types of activities and processes, type of hazards involved and 
+associated OH&S risks, and stages of projects in progress. 
+
+i) Interviews or progress meetings with the client and/or its customer in person or 
+by teleconference. 
+ii) Document review of temporary site activities
+. 
+
+
+
+iii) Remote acces
+s to 
+electronic site(s) t
+hat contains records or other information 
+that is relevant to the assessment of the management system and the 
+temporary site(s). 
+iv) Use of video and teleconference and other technology that enable effective 
+auditing to b
+e 
+conducted re
+mote
+ly. 
+9.4. In each case, the method of audit should be fully 
+d
+ocumented an
+d ju
+stified in 
+terms of i
+ts effectiveness. 
+10.1. In the case of a management system operated over multiple sites 
+it is necessary 
+to establish if sampling is permitted or not. 
+10.2. The requirements for 
+multiple site 
+management system certification 
+are covered 
+by 
+IAF MD 1 
+“
+IAF 
+Mandatory Document 
+for 
+the A
+udit and 
+C
+ertification of a 
+M
+anagement 
+S
+ystem 
+O
+perated 
+by a 
+M
+ulti
+-
+S
+ite 
+O
+rganization
+”
+. 
+11.1. I
+f an organization outsources 
+part 
+of its 
+functions or processes
+, 
+it is the 
+responsibility of the CAB 
+to obtain evidence that the organization has effectively 
+determined the type and exten
+t 
+of controls 
+to b
+e applied in order to 
+ensure 
+that the 
+externally provided 
+functions or processes 
+do not adversely affect 
+the effectiveness of 
+the MS, including 
+the organization’s ability to consistently deliver conforming products 
+and services to its cus
+to
+mers 
+or to c
+ontr
+ol its environmental 
+aspects 
+or 
+to control its 
+OH&S risks
+, 
+and commitments to 
+comply 
+with legal requirements
+. 
+11.2. For QMS and EMS t
+he C
+A
+B will audit and evaluate the effectiveness of the 
+client's management system in managing any supplied ac
+ti
+vity and the 
+ris
+k this poses to 
+the d
+elivery of objectives, custom
+er and conformity requirements. 
+This may include 
+gathering feedback on the level of 
+effectiveness from suppliers. 
+However, auditing the 
+supplier’s 
+management system is not required
+, consid
+er
+ing that it 
+is i
+ncluded in the 
+scope 
+of the organization’s management system only the control of the supplied activity, 
+
+
+
+
+
+For OH&SMS the ab
+ove methods 
+could be considered as alternatives to 
+replace only 
+those parts of on
+-
+site audits not related to witness the 
+process 
+control and other 
+OH&SMS 
+risk control
+. 
+
+
+10. AUDIT TIME OF 
+A 
+MULTI
+-
+SITE MANAGEMENT SYSTEM 
+
+
+For OH&SMS, the decision if site sampling is p
+ermitted or not, 
+shall be 
+based on the 
+evaluation of the level of OH&S risks associated with the activities and processes 
+carried out in each site included in the scope of certification. Records of such 
+evaluations and rationale of decisi
+on
+s taken shal
+l be 
+made available to th
+e AB. 
+
+
+11. CO
+NTROL OF EXT
+ERNA
+LLY PROVIDED FUNCTION
+S OR PROCESSES 
+(OUTSOURCING) 
+
+
+
+and not the performance of the activity itself. 
+From this understanding of risk any 
+additional audit time shall be determined. 
+11.3. For OH&
+SM
+S 
+the CAB wi
+ll a
+udit and evaluate the 
+effectiveness of the 
+organization's OH&SMS in managing any supplied activity and the risk this poses to 
+OH&S performance of its own activities and processes and conformity requirements. 
+
+
+
+
+
+a) This may include gathering fee
+db
+ack on the l
+evel 
+of effectiveness fro
+m 
+suppliers, based: 
+• on the criteria applied by the organization for the evaluation, selection, 
+monitoring of performance, and re-evaluation of these external providers 
+based on their ability to provide functions or processes in accordance with 
+specified requirements, in compliance with the legal requirements; and 
+• on the risk that the external providers can adversely affect the 
+organization’s ability to control its own OH&S risks. 
+b) Although the provider’s management system is not required to be audited, the 
+CAB shall audit those controls that the organization has implemented for the 
+processes or functions included within the scope of the organization’s 
+OH&SMS, which have been outsourced to external providers to plan and 
+complete an effective audit. 
+The con
+tractor’s personnel who operate at the organization’s premises, on 
+processes included in the scope of the organization’s OH&SMS, shall be 
+interviewed to evaluate their OH&S awareness. 
+c) The CAB should be able to establi
+sh 
+this during 
+the 
+preparation of the 
+c
+ertification programme and further verify it during the initial audit, and before 
+every surveillance and recertification audit. 
+
+
+ 
+
+
+A
+NNEX 
+A 
+– 
+QUALITY MANAGEMENT SYSTEMS 
+
+
+Table 
+QMS 
+1 
+– 
+Quality Management Systems 
+
+
+Relations
+hi
+p between 
+E
+f
+fect
+ive 
+N
+umber of 
+P
+ersonn
+el 
+and 
+Audit Time 
+
+
+(
+Initial Audit only) 
+
+
+Effective Number 
+of 
+Personnel 
+
+
+Audit Time 
+
+
+Stage 1 + Stage 2 
+(days) 
+
+
+Effective 
+Number of 
+Personnel 
+
+Audit Time 
+
+
+Stage 1 + Stage 2 
+(days) 
+
+
+1
+-
+5 
+
+
+1.5 
+
+
+626
+-
+875 
+
+
+12 
+
+
+6
+-
+10 
+
+
+2 
+
+
+876
+-
+1175 
+
+
+13 
+
+
+11
+-
+15 
+
+
+2
+.5 
+
+
+1176
+-
+1550 
+
+
+14 
+
+
+16
+-
+25 
+
+
+3 
+
+
+1551
+-
+2025 
+
+
+15 
+
+
+26
+-
+45 
+
+
+4 
+
+
+2026
+-
+2675 
+
+
+16 
+
+
+46
+-
+65 
+
+
+5 
+
+
+267
+6
+-
+3450 
+
+
+17 
+
+
+66
+-
+85 
+
+
+6 
+
+
+3451
+-
+4350 
+
+
+18 
+
+
+86
+-
+125 
+
+
+7 
+
+
+4351
+-
+5450 
+
+
+19 
+
+
+126
+-
+175 
+
+
+8 
+
+
+5451
+-
+6800 
+
+
+20 
+
+
+176
+-
+275 
+
+
+9 
+
+
+6801
+-
+8500 
+
+
+21 
+
+
+276
+-
+425 
+
+
+10 
+
+
+8501
+-
+10700 
+
+
+22 
+
+
+426
+-
+625 
+
+
+11 
+
+
+>10700 
+
+
+Follow progression 
+above 
+
+
+
+
+ 
+
+
+Note 1: The numbers of personnel in Table QMS 1 should be seen as a continuum rather than a 
+stepped change. I.e. if drawn as a graph, the line should start with the values in the lower band 
+and end with the endpoints of each band. The starting point of the graph should be personnel of 
+1 attracting 1.5 days. See clause 2.2 for dealing with parts of a day. 
+
+Note 2: The CAB’s procedure may provide for calculation of audit time for a number of 
+personnel exceeding 10700. Such time should follow the progression in Table QMS 1 in a 
+consistent fashion. 
+
+Note 3: See also clause 1.9 and 2.3. 
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+
+
+
+Figure QMS 
+1 
+– 
+Relationship 
+b
+etween Complexity 
+a
+nd 
+Audit Time 
+
+
+Large Simple 
+
+
+Multi
+-
+site 
+
+
+Few processes 
+
+
+Repetitive 
+processes 
+
+
+ 
+Or
+ganization 
+Distribution 
+
+
+Small scope 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Large Complex 
+
+
+Multi
+-
+site 
+
+
+Many processe
+s 
+
+
+Large scope 
+
+
+Uniq
+ue 
+processes 
+
+
+Design 
+r
+esponsible 
+
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+Starting point from 
+
+
+Table QMS 1 
+
+
+ 
+
+ 
+
+Few processes 
+
+
+Small scope 
+
+
+Repetitive 
+processes 
+
+
+Small Simple 
+
+
+ 
+
+ 
+
+ 
+
+Many processes 
+
+
+Design 
+responsible 
+
+
+Large scope 
+
+
+Unique 
+processes 
+
+
+Small Com
+pl
+ex 
+
+
+
+
+ 
+Client System Complexity 
+
+
+ 
+
+
+
+Table QMS 2 
+– 
+Examples of Risk 
+C
+ategories 
+
+
+These ris
+k categories are not definitive, they are examples only 
+that could be used 
+by a 
+CB when determining the risk category 
+of an audit
+. 
+
+
+High Risk 
+
+Where failure of the product or service causes economic catastrophe, or puts life at risk. 
+Examples include but are not limited to: 
+
+Food; pharmaceuticals; aircraft; shipbuilding; load bearing components and structures; 
+complex construction activity; electrical and gas equipment; medical and health 
+services; fishing; nuclear fuel; chemicals, chemical products and fibres. 
+
+Medium Risk 
+
+Where failure of the product or service could cause injury or illness. Examples include 
+but are not limited to: 
+
+Non load bearing components and structures; simple construction activities; basic 
+metals and fabricated products; non-metallic products; furniture; optical equipment; 
+leisure and personal services. 
+
+Low 
+R
+isk 
+
+
+Where failure of the product or service is unlikely to cause injury or illness. Examples 
+include but are not limited to: 
+
+Textiles and clothing; pulp, paper and paper products; publishing; office services
+; 
+education; 
+retailing
+, hotels and restaurants
+. 
+
+
+Note 1: It is expected that business activities defined as low risk may require less audit time 
+than the time calculated using Table QMS 1, activities defined as medium risk will take the time 
+calculated using Table QMS 1, and activities defined as high risk will take more time. 
+
+Note 2: If a company is providing a mixture of business activities (e.g.: construction company 
+that builds simple construction – medium risk - and bridges – high risk), it is up to the CAB to 
+determine the correct audit time, taking into consideration the number of personnel involved in 
+each of the activities. 
+
+ 
+
+ 
+
+
+
+A
+NNEX 
+B 
+– 
+E
+NVIRONMENTAL MANAGEMENT SYSTEMS 
+
+
+Table 
+EMS 1 
+– 
+Relationship 
+b
+etween Effective Number 
+o
+f Personnel, 
+
+
+Complexity 
+a
+nd 
+Audit Time 
+
+
+(
+Initial Audit 
+o
+nly
+- 
+Stage 1 + Stage 2
+) 
+
+
+Effective 
+Number of 
+Personnel 
+
+
+Audit Time 
+
+
+Stage 1 
++ 
+Stage 2 
+(day
+s) 
+
+
+Effective 
+Number of 
+Personnel 
+
+Audit Time 
+
+
+Stage 1 + Stage 2 
+(days) 
+
+
+ 
+
+
+High 
+
+
+Med 
+
+
+Low 
+
+
+Lim 
+
+
+ 
+
+
+High 
+
+
+Med 
+
+
+Low 
+
+
+Lim 
+
+
+1
+-
+5 
+
+
+3 
+
+
+2.5 
+
+
+2.5 
+
+
+2.5 
+
+
+626
+-
+875 
+
+
+17 
+
+
+13 
+
+
+10 
+
+
+6.5 
+
+
+6
+-
+10 
+
+
+3.5 
+
+
+3 
+
+
+3 
+
+
+3 
+
+
+876
+-
+1175 
+
+
+19 
+
+
+15 
+
+
+11 
+
+
+7 
+
+
+11
+-
+15 
+
+
+4.5 
+
+
+3.5 
+
+
+3 
+
+
+3 
+
+
+1176
+-
+1550 
+
+
+20 
+
+
+16 
+
+
+12 
+
+
+7.5 
+
+
+16
+-
+25 
+
+
+5.5 
+
+
+4.5 
+
+
+3.
+5 
+
+
+3 
+
+
+1551
+-
+2025 
+
+
+21 
+
+
+1
+7 
+
+
+12 
+
+
+8 
+
+
+26
+-
+45 
+
+
+7 
+
+
+5.5 
+
+
+4 
+
+
+3 
+
+
+2026
+-
+2675 
+
+
+23 
+
+
+18 
+
+
+13 
+
+
+8.5 
+
+
+46
+-
+65 
+
+
+8 
+
+
+6 
+
+
+4.5 
+
+
+3.5 
+
+
+2676
+-
+3450 
+
+
+25 
+
+
+19 
+
+
+14 
+
+
+9 
+
+
+66
+-
+85 
+
+
+9 
+
+
+7 
+
+
+5 
+
+
+3.5 
+
+
+3451
+-
+4350 
+
+
+27 
+
+
+20 
+
+
+15 
+
+
+10 
+
+
+86
+-
+125 
+
+
+11 
+
+
+8 
+
+
+5.5 
+
+
+4 
+
+
+4351
+-
+5450 
+
+
+28 
+
+
+21 
+
+
+16 
+
+
+11 
+
+
+126
+-
+175 
+
+
+12 
+
+
+9 
+
+
+6 
+
+
+4.5 
+
+
+5451
+-
+6800 
+
+
+30 
+
+
+23 
+
+
+17 
+
+
+12 
+
+
+176
+-
+275 
+
+
+13 
+
+
+10 
+
+
+7 
+
+
+5 
+
+
+6801
+-
+8500 
+
+
+32 
+
+
+25 
+
+
+19 
+
+
+13 
+
+
+2
+76
+-
+4
+25 
+
+
+15 
+
+
+11 
+
+
+8 
+
+
+5.5 
+
+
+8501
+-
+1
+0700 
+
+
+34 
+
+
+27 
+
+
+20 
+
+
+14 
+
+
+426
+-
+625 
+
+
+16 
+
+
+12 
+
+
+9 
+
+
+6 
+
+
+>10700 
+
+
+Follow progression above 
+
+
+
+
+Note 1: Audit time is shown for high, medium, low and limited complexity audits. 
+
+Note 2: The numbers of personnel in Table EMS 1 should be seen as a continuum rather than a 
+stepped change. I.e. if drawn as a graph, the line should start with the values in the lower band 
+and end with the endpoints of each band. The starting point of the graph should be personnel of 
+1 attracting 2.5 days. See clause 2.2 for dealing with parts of a day. 
+
+Note 3: The CAB’s procedure may provide for calculation of audit time for a number of 
+personnel exceeding 10700. Such time should follow the progression in Table EMS 1 in a 
+consistent fashion. 
+
+ 
+
+ 
+
+
+Table 
+EMS 2 
+– 
+Examples 
+o
+f 
+Li
+nkage 
+b
+etwee
+n Bu
+siness Sectors 
+a
+nd 
+
+
+Co
+mplexity Categories 
+o
+f Environmental Aspects 
+
+
+ 
+
+
+Complexity 
+C
+ategory 
+
+
+Business 
+S
+ector 
+
+
+ 
+
+
+ 
+
+
+High 
+
+
+– 
+mining and quarrying 
+
+
+ 
+
+
+– 
+oil and gas extraction 
+
+
+ 
+
+
+– 
+tanning of textiles and clothing 
+
+
+ 
+
+
+– 
+pulping part of paper manufactu
+ri
+ng
+, 
+includin
+g pa
+per recycling 
+processing 
+
+
+ 
+
+
+– 
+oil refining 
+
+
+ 
+
+
+– 
+chemicals and pharmaceuticals 
+
+
+ 
+
+
+– 
+primary productions 
+– 
+metals 
+
+
+ 
+
+
+– 
+non
+-
+metallics processing and products covering ceramics and 
+cement 
+
+
+ 
+
+
+– 
+coal
+-
+based electricity generation 
+
+
+ 
+
+
+– 
+ci
+vi
+l constructi
+on a
+nd demolition 
+
+
+ 
+
+
+– 
+ha
+zardous and non
+-
+hazardous waste processing
+, 
+e.g. 
+i
+ncineration
+, 
+etc. 
+
+
+ 
+
+
+– 
+effluent and sewerage processing 
+
+
+ 
+
+
+ 
+
+
+Medium 
+
+
+– 
+fishing/farming/forestry 
+
+
+ 
+
+
+– 
+textiles and clothing except for tanning 
+
+
+ 
+
+
+– 
+manufacturing of boar
+ds
+, treatment/
+impr
+egnation of wood and 
+wooden products 
+
+
+ 
+
+
+– 
+paper production and printing
+, 
+excluding pulping 
+
+
+ 
+
+
+– 
+non
+-
+metallics processing and products covering glass, clay, lime
+, 
+etc. 
+
+
+ 
+
+
+– 
+surface and other chemically
+-
+based treatment for metal fabricated 
+pr
+oducts
+, 
+excl
+ud
+in
+g 
+primary production 
+
+
+
+
+
+Complexity 
+C
+ategory 
+
+
+Business 
+S
+ector 
+
+
+ 
+
+
+– 
+surface and other chemically
+-
+based treatment for general 
+mechanical engineering 
+
+
+ 
+
+
+– 
+production of bare printed circuit boards for electronics industry 
+
+
+ 
+
+
+– 
+manufacturing of transport equipment 
+– 
+road, rail, air, 
+s
+hips 
+
+
+ 
+
+
+– 
+no
+n
+-
+co
+al
+-
+based electricity 
+generation and distribution 
+
+
+ 
+
+
+– 
+gas production, storage and distribution 
+(note
+: 
+extraction is 
+graded high) 
+
+
+ 
+
+
+– 
+water abstraction, purification and distribution
+, 
+including river 
+management 
+(note
+: 
+commercial effluent 
+tr
+eatment is g
+rade
+d as 
+high) 
+
+
+ 
+
+
+– 
+fossi
+l fuel wholesale and retail 
+
+
+ 
+
+
+– 
+food and tobacco processing 
+
+
+ 
+
+
+– 
+transport and distribution by sea, air, land 
+
+
+ 
+
+
+– 
+commercial estate agency, estate management, industrial 
+cleaning, hygiene cleaning, dry cleaning norm
+al
+ly part of g
+ener
+al 
+business services 
+
+
+ 
+
+
+– 
+recycling, composting, landfill (of non
+-
+hazardous waste) 
+
+
+ 
+
+
+– 
+technical testing and laboratories 
+
+
+ 
+
+
+– 
+healthcare/hospitals/veterinary 
+
+
+ 
+
+
+– 
+leisure services and personal services
+, 
+exclud
+ing 
+hotels/restaurants 
+
+
+ 
+
+
+ 
+
+
+Lo
+w 
+
+
+– 
+hotels/
+rest
+aurants 
+
+
+ 
+
+
+– 
+wood and 
+wooden products
+, 
+excluding manufacturing of boards, 
+treatment and impregnation of wood 
+
+
+ 
+
+
+– 
+paper products
+, 
+excluding printing, pulping
+, 
+and paper making 
+
+
+ 
+
+
+– 
+rubber and plastic injection moulding, forming and assemb
+ly
+, 
+exclud
+ing 
+manu
+facturing of rubber a
+nd plastic raw materials 
+that 
+are part of chemicals 
+
+
+
+
+
+Complexity 
+C
+ategory 
+
+
+Business 
+S
+ector 
+
+
+ 
+
+
+– 
+hot and cold forming and metal fabrication
+, 
+excluding surface 
+treatment and other chemical
+-
+based treatments and primary 
+production 
+
+
+ 
+
+
+– 
+general mechanical engin
+ee
+ring assembl
+y
+, 
+e
+xcluding surface 
+trea
+tment and other chemical
+-
+based treatments 
+
+
+ 
+
+
+– 
+wholesale and retail 
+
+
+ 
+
+
+– 
+electrical and electronic equipment assembly
+, 
+excluding 
+manufacturing of bare printed circuit boards 
+
+
+ 
+
+
+ 
+
+
+Limited 
+
+
+– 
+corporate activities and ma
+na
+gement, HQ a
+nd m
+anagement of 
+holding 
+companies 
+
+
+ 
+
+
+– 
+transport and distribution management services with no actual 
+fleet to manage 
+
+
+ 
+
+
+– 
+telecommunications 
+
+
+ 
+
+
+– 
+general business services
+, 
+except commercial estate agency, 
+estate management, industrial clean
+in
+g, hygiene c
+lean
+ing, dry 
+cleaning 
+
+
+ 
+
+
+– 
+education services 
+
+
+ 
+
+
+ 
+
+
+Special 
+Cases 
+
+
+– 
+nuclear 
+
+
+– 
+nuclear electricity generation 
+
+
+– 
+storage of large quantities of hazardous material 
+
+
+– 
+public administration 
+
+
+– 
+local authorities 
+
+
+– 
+organizations with environmen
+ta
+l sensitive 
+prod
+ucts or services
+, 
+
+
+ 
+financial institutions 
+
+
+
+
+Complexity 
+C
+ategories of 
+E
+nvironmental 
+A
+spects 
+
+
+
+The provisions specified in this document are based on five primary complexity 
+categories of the nature and gravity of the environmental aspects 
+of 
+an organiza
+tion 
+that 
+fundamentally a
+ffect the 
+audit time
+. These are: 
+
+
+High 
+– 
+environmental aspects with significant nature and gravity (typically 
+manufacturing or processing type organizations with significant impacts in severa
+l of the 
+environmental aspe
+ct
+s); 
+
+
+Medium 
+– 
+env
+ironmental aspects wi
+th medium nature and gravity (typically 
+manufacturing organizations with significant impacts in som
+e of the environmental 
+aspects); 
+
+
+Low 
+– 
+environmental aspects with low nature and gravity (typically organizations of a
+n 
+assembly typ
+e en
+vironment with few si
+gnificant aspects); 
+
+
+Limited 
+– 
+environmental aspects with limited nature and gravity (typically organizations 
+of an office type environment); 
+
+
+Special 
+– 
+these require additional and unique consideration at the audit pla
+nn
+ing stage. 
+
+
+T
+able 
+EMS 1 cover
+s 
+the abo
+ve four top complexity categories
+: 
+high, medium, low
+, 
+and 
+limited
+. 
+Table EMS 2 provides the link between the five complexity categories above 
+and the industry sectors that would typically fall into that category. 
+
+
+T
+he 
+CAB 
+should 
+reco
+gnise that not all or
+ganizations in a specific sector will always fall 
+i
+n the same complexity category. 
+The 
+CAB 
+should allow flexibility in its 
+application 
+review 
+procedure to ensure that the specific activities of the organization are co
+ns
+idered 
+in de
+term
+ining the complexity 
+category. For example, even though many businesses in 
+the chemical sector should be classified as “high complexity”, an organization which 
+would have only a mixing free from chemical reaction or emission and/or tradin
+g 
+operation co
+uld 
+be classified as “me
+d
+ium” or even “low complexity”. 
+The 
+CAB 
+shall 
+document all cases where they have lowered the complexity category for an 
+organization in a specific sector. 
+
+
+Table EMS 1 
+does not 
+cover the “special complexity” category a
+nd 
+the 
+audit t
+ime 
+of 
+management systems 
+audits 
+shall be developed and justified on an individual basis in 
+these cases. 
+
+
+
+A
+NNEX 
+C 
+– 
+OCCUPATIONAL HEALTH AND SAFETY MANAGEMENT SYSTEMS 
+
+
+Table OH&SMS 1 – Occupational Health and Safety Management Systems 
+
+Relationship between Effective Number of Personnel, 
+
+Complexity Category of OH&S Risk and Audit Time 
+
+(Initial Audit only – Stage 1 + Stage 2) 
+
+Effective 
+Number of 
+Personnel 
+
+
+Audit Time 
+
+
+Stage 1 + Stage 2 
+
+
+(days) 
+
+
+Effective 
+Number of 
+Personnel 
+
+
+Audit Time 
+
+
+Stage 1 + Stage 
+2 
+
+
+(days) 
+
+
+ 
+
+
+Hi
+gh 
+
+
+M
+ed 
+
+
+Low 
+
+
+ 
+
+
+High 
+
+
+Med 
+
+
+Low 
+
+
+1
+-
+5 
+
+
+3 
+
+
+2.5 
+
+
+2.5 
+
+
+626
+-
+875 
+
+
+17 
+
+
+13 
+
+
+10 
+
+
+6
+-
+10 
+
+
+3.5 
+
+
+3 
+
+
+3 
+
+
+876
+-
+1175 
+
+
+19 
+
+
+15 
+
+
+11 
+
+
+11
+-
+15 
+
+
+4.5 
+
+
+3.5 
+
+
+3 
+
+
+1176
+-
+1550 
+
+
+20 
+
+
+16 
+
+
+12 
+
+
+16
+-
+25 
+
+
+5.5 
+
+
+4.5 
+
+
+3.5 
+
+
+1551
+-
+2025 
+
+
+21 
+
+
+17 
+
+
+12 
+
+
+26
+-
+45 
+
+
+7 
+
+
+5.5 
+
+
+4 
+
+
+2026
+-
+2675 
+
+
+23 
+
+
+18 
+
+
+13 
+
+
+46
+-
+65 
+
+
+8 
+
+
+6 
+
+
+4.5 
+
+
+2676
+-
+3450 
+
+
+25 
+
+
+19 
+
+
+14 
+
+
+66
+-
+85 
+
+
+9 
+
+
+7 
+
+
+5 
+
+
+3451
+-
+4350 
+
+
+27 
+
+
+20 
+
+
+15 
+
+
+86
+-
+125 
+
+
+11 
+
+
+8 
+
+
+5.5 
+
+
+4
+351
+-
+5450 
+
+
+28 
+
+
+21 
+
+
+16 
+
+
+126
+-
+175 
+
+
+12 
+
+
+9 
+
+
+6 
+
+
+5451
+-
+6800 
+
+
+30 
+
+
+23 
+
+
+17 
+
+
+176
+-
+275 
+
+
+13 
+
+
+10 
+
+
+7 
+
+
+6801
+-
+8500 
+
+
+32 
+
+
+25 
+
+
+19 
+
+
+276
+-
+425 
+
+
+15 
+
+
+11 
+
+
+8 
+
+
+8501
+-
+10700 
+
+
+34 
+
+
+27 
+
+
+20 
+
+
+426
+-
+625 
+
+
+16 
+
+
+12 
+
+
+9 
+
+
+>10700 
+
+
+Follow progression 
+above 
+
+
+
+
+Note 1: Audit time is shown for audits at high, medium and low complexity category of OH&SM 
+risk. 
+
+Note 2: The numbers of personnel in Table OH&SMS 1 should be seen as a continuum rather 
+than a stepped change. If drawn as a graph, the line should start with the values in the lower 
+band. The starting point of the graph should be personnel of one attracting 2,5 days. See clause 
+2.2 for dealing with parts of a day. 
+
+Note 3: See also clause 1.9 and 2.3. 
+
+
+TABLE OH&SMS 2 - Examples of Linkage between Business Sectors and 
+Complexity Categories of OH&S Risks 
+
+Complexity 
+cat
+egory of 
+OH&S risk 
+
+
+Bu
+siness 
+S
+ector 
+
+
+ 
+
+
+High 
+
+
+• fishing (offshore, coastal dredging and diving) 
+• mining and quarrying 
+• manufacture of coke and refined petroleum products 
+• oil and gas extraction 
+• tanning of leather and leather products 
+• dyeing of 
+te
+xt
+iles and clo
+thin
+g 
+• pulping part of pap
+er manufacturing including paper recycling 
+processing 
+• oil refining 
+• chemicals (including pesticides, fabrication of batteries and 
+accumulators), and pharmaceuticals 
+• manufacturing of fibreglass 
+• gas production, storage a
+nd 
+distributio
+n 
+• el
+ectricity generation 
+and distribution 
+• nuclear 
+• storage of large quantities of hazardous material 
+• non
+-
+metallic processing and products covering ceramics, concrete, 
+cement, lime, plaster, etc. 
+• primary productions of metals 
+• hot and cold formi
+ng 
+and metal f
+abri
+cation 
+• manufacturing 
+and assembly of metal structures 
+• shipyards (depending on the activities could be medium) 
+• aerospace industry 
+• automotive industry 
+• manufacturing of weapons and explosives 
+• recycling of hazardous waste 
+• hazardous and non
+-
+ha
+za
+rdous waste 
+proc
+essing e.g. incinerat
+ion etc. 
+• effluent and sewerage processing 
+• industrial and civil construction and demolition (including building 
+completion with electrical, hydraulic and air conditioning installation 
+activities) 
+• slaughter houses 
+• trans
+po
+rt and distr
+ibut
+ion of dangerous good
+s (by land, air and water) 
+• defence activities/crisis management 
+• healthcare/hospitals/veterinary/social works 
+
+
+
+
+
+Complexity 
+cat
+egory of 
+OH&S risk 
+
+
+Bu
+siness 
+S
+ector 
+
+
+ 
+
+
+Medium 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+• aquaculture (breeding, rearing, and harvesting of plants and animals in 
+all types of water envir
+on
+ments) 
+• fish
+ing 
+(offshore fishing is 
+high) 
+• farming/forestry (depending on the activities could be high) 
+• food, beverage and tobacco 
+– 
+processing 
+• textiles and clothing except for 
+dyeing 
+• leather and leather product except for tanning 
+• manufacturing of wood 
+an
+d wooden pro
+duct
+s including manufactu
+ring 
+of boards, treatment/impregnation of wood 
+• paper production and paper products excluding pulping 
+• non
+-
+metallic processing and products covering glass, ceramics, clay, 
+etc. 
+• general mechanical engineering assembly 
+• m
+an
+ufacturing o
+f me
+tallic products 
+• surf
+ace and other chemically based treatment for metal fabricated 
+products excluding primary production and for general mechanical 
+engineering (depending on the treatment and the size of the 
+component could be high) 
+• produ
+ct
+ion of bare 
+prin
+ted circuit boards fo
+r electronics industry 
+• rubber and plastic injection moulding, forming and assembly 
+• electrical and electronic equipment assembly 
+• manufacturing of transport equipment and their repairs 
+- 
+road, rail and 
+air (depending on 
+t
+he size of t
+he e
+quipment, could be hi
+gh) 
+• recycling, composting, landfill (of non
+-
+hazardous waste) 
+• water abstraction, purification and distribution including river 
+management (note commercial effluent treatment is graded as high) 
+• fossil fuel wholesale and 
+r
+etail (depen
+ding 
+on the amount of fue
+l, could 
+be high) 
+• transport of passengers (by air, land and sea) 
+• transport and distribution of non
+-
+dangerous goods (by land, air and 
+water) 
+• industrial cleaning, hygiene cleaning, dry cleaning normally part of 
+general 
+bu
+siness servi
+ces 
+• research & developme
+nt in natural and technical sciences (depending 
+on the business sector could be high). Technical testing and 
+laboratories 
+• hotels, leisure services and personal services excludes restaurants 
+• education services (dependi
+ng 
+on the obje
+ct o
+f teaching activities 
+could 
+be high or low) 
+
+
+
+
+
+Complexity 
+cat
+egory of 
+OH&S risk 
+
+
+Bu
+siness 
+S
+ector 
+
+
+ 
+
+
+Low 
+
+
+• corporate activities and management, HQ and management of holding 
+companies 
+• wholesale and retail (depending on the product, could be medium or 
+high, e.g. fuel) 
+• general business services ex
+ce
+pt industria
+l cl
+eaning, hygiene clean
+ing, 
+dry cleaning and education services). 
+• transport and distribution 
+- 
+management services with no actual fleet to 
+manage 
+• engineering services (could be medium depending on type of services) 
+• telecommunications and po
+st 
+office serv
+ices 
+• restaurants and camp
+ings 
+• commercial estate agency, estate management 
+• research & development on social sciences and humanities 
+• public administration, local authorities 
+• financial institutions, advertising agency 
+
+
+
+
+Complexity Categories of OH&S Risks 
+
+The provisions specified in this document are based on three primary complexity 
+categories of OH&S risks based on the nature and severity of the OH&S risks of an 
+organization that fundamentally affect the auditor time. These are: 
+
+• High – OH&S risks with significant nature and severity (typically the construction 
+industry, heavy manufacturing or processing type organizations), 
+• Medium – OH&S risks with medium nature and severity (typically light 
+manufacturing organizations with some significant risks), and 
+• Low – OH&S risks with low nature and severity (typically office based 
+organizations). 
+
+
+Table OH&SMS 1 covers the above three complexity categories of OH&S risks. 
+
+Table OH&SMS 2 provides the link between the three complexity categories of OH&S 
+risks above and the industry sectors that would typically fall into that category. 
+
+The CAB should recognize that not all organizations in a specific sector will always fall 
+in the same OH&S risk category. The CAB should allow flexibility in its contract review 
+procedure to ensure that the specific activities of the organization are considered in 
+determining the complexity categories of OH&S risks. 
+
+
+For example, even though many businesses in shipbuilding should be classified as 
+“high risk”, an organization which would have only small boats of carbon fiber with lower 
+complexity activities could be classified as “medium”. 
+
+The CAB shall document all cases where they have lowered the complexity category of 
+OH&S risks of an organization in a specific business sector. 
+
+Note: The complexity category of OH&S risk of an organization may also be associated 
+with the consequences of a failure of the OH&SMS to control the risk: 
+
+• High – where failure to manage the risk could put life at risk or result in serious 
+injury or illness, 
+• Medium – where failure to manage the risk could result in injury or illness, and 
+• Low – where failure to manage the risk may result in minor injury or illness. 
+
+
+ 
+
+End of IAF Mandatory Document for 
+determination of audit time of QMS
+, 
+EMS
+, 
+and 
+OH&SM
+S 
+audits
+. 
+
+
+ 
+
+
+Further Information: 
+
+For fur
+ther Information on this document 
+or other IAF documents, contact any member 
+of IAF or the IAF Secretariat. 
+
+
+For cont
+act details of members of IAF see 
+the 
+IAF 
+websi
+te
+: 
+http://www.iaf.nu 
+
+
+Secretariat
+: 
+
+
+IAF 
+Corporate Secretary 
+
+
+Telephone
+: 
++1 
+613 454
+-
+8159 
+
+
+Email: 
+secretary@iaf.nu 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+

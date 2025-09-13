@@ -1,0 +1,59 @@
+{
+  "client_name": "아이폰 주식회사",
+  "client_name_en": "iPhone Corporation Ltd.",
+  "standards": ["ISO9001", "ISO14001", "ISO45001"],
+  "sites": [
+    {
+      "name": "본사",
+      "address": "서울시 광진구 중곡동 45",
+      "standards": ["ISO9001", "ISO14001", "ISO45001"],
+      "total_headcount": 590,
+      "part_time_count": 50,
+      "contractor_count": 30,
+      "shift_workers": 100,
+      "seasonal_factor": 1.0,
+      "repetitive_process": true,
+      "remote_audit_ratio": 0.0
+    },
+    {
+      "name": "부산공장",
+      "address": "부산시 해운대구 센텀중앙로 123",
+      "standards": ["ISO9001", "ISO14001", "ISO45001"],
+      "total_headcount": 200,
+      "part_time_count": 20,
+      "contractor_count": 15,
+      "shift_workers": 80,
+      "seasonal_factor": 1.2,
+      "repetitive_process": true,
+      "remote_audit_ratio": 0.0
+    },
+    {
+      "name": "대구지점",
+      "address": "대구시 수성구 동대구로 456",
+      "standards": ["ISO9001"],
+      "total_headcount": 50,
+      "part_time_count": 5,
+      "contractor_count": 3,
+      "shift_workers": 0,
+      "seasonal_factor": 1.0,
+      "repetitive_process": false,
+      "remote_audit_ratio": 0.3
+    }
+  ],
+  "integration": {
+    "is_integrated": true,
+    "integration_level": 0.8,
+    "shared_management_system": true,
+    "common_processes": true,
+    "same_audit_team": true
+  },
+  "options": {
+    "stage1": true,
+    "stage2": true,
+    "surveillance": true,
+    "recert": false,
+    "remote_audit_ratio": 0.0,
+    "day_rate": 1300000.0,
+    "vat_rate": 0.1
+  }
+}

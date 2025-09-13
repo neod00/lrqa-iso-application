@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Inc. - LRQA ISO 통합 갭분석 보고서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(50%, -50%);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            background: #007AFF;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .lrqa-logo {
+            background: #FF6B35;
+            font-size: 14px;
+        }
+        
+        .title-section h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .analysis-meta {
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .meta-value {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 5px solid #007AFF;
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .readiness-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left: none;
+        }
+        
+        .readiness-section h2 {
+            color: white;
+        }
+        
+        .readiness-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .readiness-card {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+        
+        .readiness-score {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .gap-category {
+            margin-bottom: 30px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .category-a .category-header {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        
+        .category-b .category-header {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .category-c .category-header {
+            background: #e8f5e8;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .category-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .category-desc {
+            font-size: 0.9em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        .gap-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #ddd;
+        }
+        
+        .category-a .gap-item {
+            border-left-color: #f44336;
+        }
+        
+        .category-b .gap-item {
+            border-left-color: #ff9800;
+        }
+        
+        .category-c .gap-item {
+            border-left-color: #4caf50;
+        }
+        
+        .gap-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .gap-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            flex: 1;
+        }
+        
+        .gap-standard {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        .gap-clause {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .gap-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .recommendations-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .recommendation-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #4caf50;
+        }
+        
+        .recommendation-number {
+            background: #4caf50;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: #64b5f6;
+        }
+        
+        .apple-insight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .apple-insight::before {
+            content: '🍎';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3em;
+            opacity: 0.2;
+        }
+        
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .insight-card {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .insight-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .print-date {
+            text-align: right;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="company-logo">🍎</div>
+                <div class="company-logo lrqa-logo">LRQA</div>
+                <div class="title-section">
+                    <h1>ISO 통합 갭분석 보고서</h1>
+                    <div class="subtitle">Apple Inc. - LRQA 전문가 수준 갭분석 결과</div>
+                </div>
+            </div>
+            
+            <div class="analysis-meta">
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <div class="meta-label">분석 방법론</div>
+                        <div class="meta-value">LRQA 6단계 갭분석 프로세스</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">적용 표준</div>
+                        <div class="meta-value">ISO 9001, 14001, 45001</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">평가자</div>
+                        <div class="meta-value">LRQA Certified Lead Assessor</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">분석일자</div>
+                        <div class="meta-value">2025년 1월 23일</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Executive Summary -->
+            <div class="section readiness-section">
+                <h2>
+                    <div class="section-icon" style="background: rgba(255,255,255,0.2);">📊</div>
+                    종합 준비도 평가
+                </h2>
+                <div class="readiness-grid">
+                    <div class="readiness-card">
+                        <div class="readiness-score">85점</div>
+                        <div>종합 점수</div>
+                        <small>(100점 만점)</small>
+                    </div>
+                    <div class="readiness-card">
+                        <div class="readiness-score">9개월</div>
+                        <div>예상 준비 기간</div>
+                        <small>통합 인증 기준</small>
+                    </div>
+                    <div class="readiness-card">
+                        <div class="readiness-score">90%</div>
+                        <div>성공 확률</div>
+                        <small>현재 수준 기준</small>
+                    </div>
+                    <div class="readiness-card">
+                        <div class="readiness-score">부분 준비</div>
+                        <div>준비도 수준</div>
+                        <small>PARTIALLY_READY</small>
+                    </div>
+                </div>
+                <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.15); border-radius: 10px;">
+                    <h3 style="margin-bottom: 15px;">💡 평가 요약</h3>
+                    <p>Apple Inc.는 강력한 기업 문화와 혁신적인 운영 시스템을 보유하고 있으나, ISO 표준의 형식적 요구사항에 대한 체계적 접근이 필요합니다. 2030 Carbon Neutral 목표와 같은 우수한 이니셔티브를 ISO 14001 체계와 연계하고, 혁신적 제품개발 프로세스를 ISO 9001 요구사항에 맞춰 문서화하면 높은 성공 가능성을 가집니다.</p>
+                </div>
+            </div>
+
+            <!-- Apple Inc. 특화 분석 -->
+            <div class="section apple-insight">
+                <h2>
+                    <div class="section-icon" style="background: rgba(255,255,255,0.2);">🍎</div>
+                    Apple Inc. 특화 갭분석
+                </h2>
+                <div class="insight-grid">
+                    <div class="insight-card">
+                        <div class="insight-title">🎯 혁신과 표준의 조화</div>
+                        <p>Apple의 혁신 문화와 ISO 관리시스템의 체계적 접근 방식을 조화시키는 것이 핵심 과제입니다.</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🌱 2030 Carbon Neutral</div>
+                        <p>기존 환경 이니셔티브를 ISO 14001:2016 환경경영시스템 요구사항과 완전히 정렬할 기회가 있습니다.</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">🏗️ 글로벌 공급망</div>
+                        <p>Foxconn 등 파트너사 관리를 ISO 45001 안전보건 요구사항에 체계적으로 통합 가능합니다.</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-title">👥 164,000명 직원</div>
+                        <p>대규모 조직의 강점을 활용한 체계적 관리시스템 구축이 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category A: Critical Gaps -->
+            <div class="section">
+                <h2>
+                    <div class="section-icon" style="background: #ffcdd2; color: #d32f2f;">🔴</div>
+                    Category A - 명확한 잠재적 부적합 (우선순위 높음)
+                </h2>
+                
+                <div class="gap-category category-a">
+                    <div class="category-header">
+                        <div>
+                            <div class="category-title">🎯 즉시 조치 필요한 핵심 갭</div>
+                            <div class="category-desc">LRQA 평가자가 명확한 잠재적 부적합으로 분류한 영역</div>
+                        </div>
+                    </div>
+                    
+                    <div class="gap-item">
+                        <div class="gap-header">
+                            <div class="gap-title">설계개발 프로세스 체계화</div>
+                            <div class="gap-standard">ISO 9001:2015</div>
+                        </div>
+                        <div class="gap-clause">📋 Clause 8.3 Design and development</div>
+                        <div class="gap-description">
+                            iPhone/Mac 등 혁신적 제품개발 프로세스와 ISO 9001:2015 Clause 8.3 설계개발 요구사항 간 체계적 연계 검증이 필요합니다. 현재 Apple의 우수한 제품개발 프로세스가 있으나, ISO 8.3 요구사항(기획, 입력, 관리, 출력, 변경)에 완전히 정렬되지 않은 상태입니다.
+                        </div>
+                    </div>
+                    
+                    <div class="gap-item">
+                        <div class="gap-header">
+                            <div class="gap-title">환경측면 식별 및 평가 방법론</div>
+                            <div class="gap-standard">ISO 14001:2016</div>
+                        </div>
+                        <div class="gap-clause">🌱 조항 6.1.2 환경측면</div>
+                        <div class="gap-description">
+                            2030 Carbon Neutral 목표는 우수하나, ISO 14001:2016 조항 6.1.2가 요구하는 체계적 환경측면 식별 방법론 확인이 필요합니다. 환경 이니셔티브는 강력하나 조항 6.1.2 요구사항(변경사항, 비정상상황, 비상상황 고려)의 체계적 적용 검증이 필요합니다.
+                        </div>
+                    </div>
+                    
+                    <div class="gap-item">
+                        <div class="gap-header">
+                            <div class="gap-title">위험성평가 및 기회 관리</div>
+                            <div class="gap-standard">ISO 45001:2018</div>
+                        </div>
+                        <div class="gap-clause">⚡ Clause 6.1.2 Hazard identification and risk assessment</div>
+                        <div class="gap-description">
+                            Apple Park 등 우수한 안전 환경이 조성되어 있으나, ISO 45001:2018 Clause 6.1.2가 요구하는 체계적 위험성평가 방법론 확인이 필요합니다. 안전한 작업환경이 제공되고 있으나 Clause 6.1.2 체계적 위험성평가 프로세스 문서화 검증이 필요합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category B: Important Gaps -->
+            <div class="section">
+                <h2>
+                    <div class="section-icon" style="background: #ffe0b2; color: #f57c00;">🟡</div>
+                    Category B - 집중 검토 필요 (우선순위 중간)
+                </h2>
+                
+                <div class="gap-category category-b">
+                    <div class="category-header">
+                        <div>
+                            <div class="category-title">🔍 강화 검토가 필요한 영역</div>
+                            <div class="category-desc">현재 우수한 수준이나 ISO 표준 요구사항과의 완전한 정렬 검토 필요</div>
+                        </div>
+                    </div>
+                    
+                    <div class="gap-item">
+                        <div class="gap-header">
+                            <div class="gap-title">고객만족도 모니터링 체계</div>
+                            <div class="gap-standard">ISO 9001:2015</div>
+                        </div>
+                        <div class="gap-clause">📊 Clause 9.1.2 Customer satisfaction</div>
+                        <div class="gap-description">
+                            App Store/제품 고객 피드백 시스템은 우수하나, ISO 9001:2015 체계적 고객만족도 모니터링 요구사항과의 정합성 검토가 필요합니다. 다양한 고객 피드백 채널이 있으나 ISO 9.1.2가 요구하는 체계적 모니터링 방법론 확인이 필요합니다.
+                        </div>
+                    </div>
+                    
+                    <div class="gap-item">
+                        <div class="gap-header">
+                            <div class="gap-title">환경 운용관리 체계</div>
+                            <div class="gap-standard">ISO 14001:2016</div>
+                        </div>
+                        <div class="gap-clause">🔄 조항 8.1 운용기획 및 관리</div>
+                        <div class="gap-description">
+                            글로벌 제조 파트너(Foxconn 등) 환경관리와 ISO 14001 조항 8.1 운용관리 요구사항의 통합 검토가 필요합니다. 환경관리 활동이 존재하나 ISO 8.1이 요구하는 체계적 운용기획 및 관리 절차 확인이 필요합니다.
+                        </div>
+                    </div>
+                    
+                    <div class="gap-item">
+                        <div class="gap-header">
+                            <div class="gap-title">근로자 참여 및 협의 체계</div>
+                            <div class="gap-standard">ISO 45001:2018</div>
+                        </div>
+                        <div class="gap-clause">👥 Clause 5.4 Consultation and participation of workers</div>
+                        <div class="gap-description">
+                            Apple 직원 복지 및 참여 프로그램은 우수하나, ISO 45001 Clause 5.4 근로자 참여 요구사항의 형식적 구조화 검토가 필요합니다. 우수한 직원 참여 문화가 있으나 ISO 45001 Clause 5.4가 요구하는 공식적 참여 및 협의 체계 확인이 필요합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category C: Borderline -->
+            <div class="section">
+                <h2>
+                    <div class="section-icon" style="background: #c8e6c9; color: #388e3c;">🟢</div>
+                    Category C - 해석 의존적 (우선순위 낮음)
+                </h2>
+                
+                <div class="gap-category category-c">
+                    <div class="category-header">
+                        <div>
+                            <div class="category-title">✅ 심사원 해석에 따라 평가 차이 가능</div>
+                            <div class="category-desc">현재 수준이 우수하나 심사원 해석에 따라 평가가 달라질 수 있는 영역</div>
+                        </div>
+                    </div>
+                    
+                    <div class="gap-item">
+                        <div class="gap-header">
+                            <div class="gap-title">최고경영자 리더십 체계</div>
+                            <div class="gap-standard">통합</div>
+                        </div>
+                        <div class="gap-clause">🎯 전체 표준 공통</div>
+                        <div class="gap-description">
+                            Tim Cook CEO의 리더십은 강력하나, 최고경영자의 관리시스템 리더십 및 의지표명 방식이 심사원 해석에 따라 평가 차이가 발생할 수 있습니다. 형식적 문서화를 통해 명확성을 높일 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="section">
+                <h2>
+                    <div class="section-icon" style="background: #c8e6c9; color: #388e3c;">💡</div>
+                    LRQA 전문가 권장사항
+                </h2>
+                
+                <div class="recommendations-list">
+                    <div class="recommendation-item">
+                        <div class="recommendation-number">1</div>
+                        <h3>통합 관리시스템(IMS) 구축</h3>
+                        <p>3개 표준 시너지 활용하여 효율적 통합 관리시스템 구축. Apple의 글로벌 운영 특성에 최적화된 통합 접근법 적용.</p>
+                    </div>
+                    
+                    <div class="recommendation-item">
+                        <div class="recommendation-number">2</div>
+                        <h3>통합 내부심사 프로그램 개발</h3>
+                        <p>ISO 9001, 14001, 45001을 동시에 커버하는 통합 내부심사 체계 구축으로 효율성 극대화.</p>
+                    </div>
+                    
+                    <div class="recommendation-item">
+                        <div class="recommendation-number">3</div>
+                        <h3>프로세스 접근 방식 체계 구축</h3>
+                        <p>Apple의 혁신적 프로세스를 ISO 9001 요구사항에 맞춘 체계적 문서화 및 관리 시스템 구축.</p>
+                    </div>
+                    
+                    <div class="recommendation-item">
+                        <div class="recommendation-number">4</div>
+                        <h3>환경측면 평가 방법론 표준화</h3>
+                        <p>2030 Carbon Neutral 전략과 ISO 14001 환경측면 평가를 완전 통합한 표준화된 방법론 개발.</p>
+                    </div>
+                    
+                    <div class="recommendation-item">
+                        <div class="recommendation-number">5</div>
+                        <h3>체계적 위험성평가 체계 구축</h3>
+                        <p>Apple Park의 우수한 안전 환경을 ISO 45001 요구사항에 맞춘 체계적 위험성평가 및 근로자 참여 체계로 발전.</p>
+                    </div>
+                    
+                    <div class="recommendation-item">
+                        <div class="recommendation-number">6</div>
+                        <h3>글로벌 공급망 ESG 통합</h3>
+                        <p>Foxconn 등 글로벌 파트너사 ESG 관리를 ISO 표준 요구사항과 통합하여 공급망 전체 품질·환경·안전 체계 구축.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Timeline -->
+            <div class="section">
+                <h2>
+                    <div class="section-icon" style="background: #e1f5fe; color: #0277bd;">⏱️</div>
+                    구현 로드맵 (9개월 계획)
+                </h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                    <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #4caf50;">
+                        <h3 style="color: #4caf50; margin-bottom: 15px;">1-3개월: 기반 구축</h3>
+                        <ul style="padding-left: 20px; line-height: 1.8;">
+                            <li>통합 관리시스템 설계</li>
+                            <li>갭분석 세부 실행계획 수립</li>
+                            <li>내부 팀 구성 및 교육</li>
+                            <li>문서 체계 구축 시작</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #ff9800;">
+                        <h3 style="color: #ff9800; margin-bottom: 15px;">4-6개월: 핵심 구현</h3>
+                        <ul style="padding-left: 20px; line-height: 1.8;">
+                            <li>Category A 갭 집중 해결</li>
+                            <li>프로세스 문서화 완료</li>
+                            <li>위험성평가 체계 구축</li>
+                            <li>환경측면 평가 표준화</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #2196f3;">
+                        <h3 style="color: #2196f3; margin-bottom: 15px;">7-9개월: 최종 준비</h3>
+                        <ul style="padding-left: 20px; line-height: 1.8;">
+                            <li>Category B/C 갭 해결</li>
+                            <li>통합 내부심사 실시</li>
+                            <li>경영검토 완료</li>
+                            <li>인증심사 준비 완료</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🏆 LRQA Korea</h3>
+                    <p>세계 최고 수준의 인증 서비스</p>
+                    <p>150년 전통의 검증 전문성</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>📞 문의처</h3>
+                    <p>Tel: +82 2 736 6231</p>
+                    <p>Email: korea-sales@lrqa.com</p>
+                    <p>Web: www.lrqa.com/ko-kr/</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>👨‍💼 담당자</h3>
+                    <p>김달성 과장</p>
+                    <p>Tel: +82 10 5438 3060</p>
+                    <p>Email: dal.kim@lrqa.com</p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; margin-top: 20px;">
+                <p>© 2025 LRQA Group Limited. All rights reserved.</p>
+                <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
+                    본 보고서는 LRQA 전문 갭분석 시스템으로 생성되었습니다. | 생성일시: 2025년 1월 23일
+                </p>
+            </div>
+            
+            <div class="print-date">
+                <strong>보고서 생성일시:</strong> 2025년 1월 23일 오후 11:47
+            </div>
+        </div>
+    </div>
+</body>
+</html>

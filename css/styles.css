@@ -1,0 +1,1527 @@
+/* CSS 변수 정의 */
+:root {
+    /* 라이트 모드 색상 */
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f8f9fa;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-muted: #666666;
+    --border-color: #dddddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --accent-primary: rgb(15,242,178);
+    --accent-secondary: rgb(8,140,138);
+    --accent-dark: rgb(15,18,50);
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --contact-bg: #f8f9fa;
+    --section-header-bg: linear-gradient(135deg, rgb(15,18,50) 0%, rgb(8,140,138) 100%);
+    --header-bg: linear-gradient(135deg, rgb(15,18,50) 0%, rgb(8,140,138) 100%);
+    --logo-bg: linear-gradient(135deg, rgb(15,242,178) 0%, rgb(8,140,138) 100%);
+}
+
+/* 다크 모드 색상 */
+:root[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #404040;
+    --text-primary: #ffffff;
+    --text-secondary: #f0f0f0;
+    --text-muted: #cccccc;
+    --border-color: #666666;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --accent-primary: rgb(15,242,178);
+    --accent-secondary: rgb(8,140,138);
+    --accent-dark: rgb(15,18,50);
+    --input-bg: #404040;
+    --input-border: #666666;
+    --contact-bg: #404040;
+    --section-header-bg: linear-gradient(135deg, rgb(15,18,50) 0%, rgb(8,140,138) 100%);
+    --header-bg: linear-gradient(135deg, rgb(15,18,50) 0%, rgb(8,140,138) 100%);
+    --logo-bg: linear-gradient(135deg, rgb(15,242,178) 0%, rgb(8,140,138) 100%);
+    
+    /* 다크모드 전용 추가 색상 */
+    --admin-bg: #1a1a1a;
+    --admin-card-bg: #2d2d2d;
+    --admin-hover-bg: #3a3a3a;
+    --admin-border: #555555;
+    --admin-text: #ffffff;
+    --admin-text-muted: #cccccc;
+    --modal-bg: #2d2d2d;
+    --modal-overlay: rgba(0, 0, 0, 0.8);
+    --table-stripe: #333333;
+    --button-bg: #404040;
+    --button-hover-bg: #505050;
+    --success-bg: #1e4d3a;
+    --success-color: #4ade80;
+    --error-bg: #4d1e1e;
+    --error-color: #f87171;
+    --warning-bg: #4d3e1e;
+    --warning-color: #fbbf24;
+}
+
+/* 테마 토글 버튼 */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.theme-toggle:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.theme-toggle-icon {
+    font-size: 16px;
+}
+
+.theme-toggle-text {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 테마 전환 애니메이션 */
+.theme-transitioning * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* 언어 토글 버튼 */
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 160px; /* 테마 토글 버튼 옆에 위치 */
+    z-index: 1000;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.language-toggle:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.language-toggle-icon {
+    font-size: 16px;
+}
+
+.language-toggle-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+/* LRQA 인증 심사 신청서 - 첨부 이미지 기반 스타일 */
+
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 전체 폼 컨테이너 */
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 0 10px var(--shadow-color);
+    padding: 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 페이지 구조 */
+.form-page {
+    display: none;
+    padding: 0;
+    min-height: 800px;
+    page-break-after: always;
+}
+
+/* 첫 번째 페이지는 JavaScript가 제어 */
+.form-page.active {
+    display: block;
+}
+
+/* 상단 헤더 - 정확한 PDF 색상 */
+.header-section {
+    background: var(--header-bg);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 오른쪽 사선 디자인 */
+.header-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.3) 100%);
+    transform: skewX(-15deg);
+    transform-origin: top right;
+}
+
+.header-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.logo-box {
+    background: var(--logo-bg);
+    border: 2px solid var(--accent-secondary);
+    border-radius: 8px;
+    padding: 15px 20px;
+    min-width: 90px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.lrqa-logo-img {
+    max-width: 60px;
+    height: auto;
+    /* 로고 이미지가 실제 로고 파일이므로 필터 제거 */
+    filter: none;
+}
+
+.header-content {
+    flex: 1;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.header-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* 연락처 정보 */
+.contact-info {
+    padding: 20px;
+    background-color: var(--contact-bg);
+    border-left: 4px solid var(--accent-primary);
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.contact-info p:last-child {
+    font-weight: 600;
+    color: var(--accent-secondary);
+}
+
+/* 섹션 헤더 */
+.section-header {
+    background: var(--section-header-bg);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 0 0;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* 폼 테이블 */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    table-layout: fixed; /* 테이블 크기 고정 */
+}
+
+.form-table td {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    vertical-align: middle;
+    transition: border-color 0.3s ease;
+}
+
+.label-cell {
+    background-color: var(--bg-tertiary);
+    font-weight: 500;
+    width: 180px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.input-cell, .input-cell-half {
+    background-color: var(--input-bg);
+    transition: background-color 0.3s ease;
+}
+
+.input-cell-half {
+    width: 120px;
+}
+
+.table-label {
+    background-color: var(--bg-tertiary);
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 입력 필드 */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="url"], 
+input[type="number"], 
+input[type="date"],
+input[type="month"],
+textarea {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--input-border);
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: inherit;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(15,242,178,0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* 질문 섹션 */
+.question-section {
+    padding: 15px 20px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+    background-color: var(--bg-secondary);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.question-text {
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+/* 라디오 그룹 */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+/* 체크박스 그리드 */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.checkbox-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox-column label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.checkbox-column input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* 폼 행 스타일 */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-field {
+    flex: 1;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+/* 하위 질문 스타일 */
+.sub-question {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.sub-question .question-text {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* 노트 텍스트 스타일 */
+.note-text {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ISO 표준 */
+.iso-standards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.iso-standards label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.iso-standards input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* 폼 그룹 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* 텍스트 영역 */
+.text-area {
+    margin: 15px 0;
+}
+
+.text-area label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* 날짜 필드 */
+.date-fields {
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.year-month {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.year-month label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.year-month input {
+    width: 160px;
+}
+
+.year-month input[type="month"] {
+    width: 160px;
+    font-size: 14px;
+}
+
+/* 직원 수 */
+.employee-counts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.count-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.count-item label {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.count-item input {
+    width: 100px;
+}
+
+/* 인증 테이블 */
+.certification-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.certification-table th,
+.certification-table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.certification-table th {
+    background-color: #e9ecef;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.certification-table input {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.certification-table input:focus {
+    background-color: #f8f9fa;
+}
+
+/* 컨설턴트 정보 */
+.consultant-info {
+    padding: 0 20px 20px 20px;
+}
+
+.consultant-info p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* 방문 정보 */
+.visit-info {
+    padding: 15px;
+}
+
+.visit-item {
+    margin-bottom: 15px;
+}
+
+.visit-item label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+/* 페이지 번호 */
+.page-number {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* 페이지 하단 푸터 */
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-img {
+    height: 24px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+.page-footer .page-number {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* 네비게이션 버튼 */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, rgb(15,18,50) 0%, rgb(8,140,138) 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15,242,178,0.3);
+}
+
+.nav-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 🆕 갭분석 버튼 특별 스타일 */
+.gap-analysis-btn {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.gap-analysis-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.gap-analysis-btn:hover::before {
+    left: 100%;
+}
+
+.gap-analysis-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+}
+
+.gap-analysis-btn .btn-icon {
+    font-size: 16px;
+    animation: pulse 2s infinite;
+}
+
+.gap-analysis-btn .btn-text {
+    font-size: 14px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* 🆕 갭분석 모달 스타일 */
+.gap-analysis-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.4s ease-out;
+    border: 1px solid var(--border-color);
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header h3 {
+    color: var(--text-primary);
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.analysis-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 16px;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.step.active {
+    background: linear-gradient(135deg, rgba(15,242,178,0.1), rgba(8,140,138,0.1));
+    border: 2px solid var(--accent-primary);
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.step.completed {
+    background: linear-gradient(135deg, rgba(76,175,80,0.1), rgba(56,142,60,0.1));
+    border: 2px solid #4caf50;
+    opacity: 1;
+}
+
+.step-icon {
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.step.active .step-icon {
+    transform: scale(1.2);
+    animation: stepPulse 1.5s infinite;
+}
+
+@keyframes stepPulse {
+    0%, 100% { transform: scale(1.2); }
+    50% { transform: scale(1.4); }
+}
+
+.step-text {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.estimated-time {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-style: italic;
+}
+
+#estimatedTime {
+    color: var(--accent-secondary);
+    font-weight: 600;
+}
+
+/* 임시저장 버튼 */
+.temp-save-btn {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+.temp-save-btn:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+}
+
+.temp-save-btn:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+.temp-save-btn.saving {
+    background: linear-gradient(135deg, #666666 0%, #888888 100%);
+    cursor: not-allowed;
+}
+
+/* 임시저장 메시지 */
+.temp-save-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    z-index: 1001;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+
+.temp-save-message.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .form-container {
+        margin: 10px;
+        max-width: none;
+    }
+    
+    .header-content-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-title {
+        font-size: 24px;
+    }
+    
+    .form-table {
+        font-size: 12px;
+    }
+    
+    .label-cell {
+        width: 140px;
+        font-size: 12px;
+    }
+    
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .employee-counts {
+        grid-template-columns: 1fr;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .year-month {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+    }
+    
+    .gap-analysis-btn {
+        padding: 16px 24px;
+        font-size: 14px;
+    }
+    
+    .modal-content {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .step {
+        padding: 10px 12px;
+    }
+    
+    .step-text {
+        font-size: 13px;
+    }
+}
+
+/* 인쇄 스타일 */
+@media print {
+    body {
+        font-size: 12px;
+    }
+    
+    .form-container {
+        box-shadow: none;
+        margin: 0;
+        max-width: none;
+    }
+    
+    .navigation-buttons {
+        display: none;
+    }
+    
+    .form-page {
+        display: block !important;
+        page-break-after: always;
+    }
+    
+    .form-page:last-child {
+        page-break-after: auto;
+    }
+    
+    .gap-analysis-modal {
+        display: none;
+    }
+}
+
+/* 페이지별 특별 스타일 */
+.scope-description, .iso14001-section, .iso45001-section {
+    padding: 20px;
+}
+
+.evaluation-requirements {
+    padding: 20px;
+}
+
+.transfer-section, .lrqa-visit {
+    padding: 20px;
+} 
+
+/* 작업 성격과 설명 테이블 */
+.work-nature-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.work-nature-label {
+    background-color: var(--bg-tertiary);
+    font-weight: 600;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.work-nature-input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.work-nature-input textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.work-nature-input input[type="number"] {
+    width: 100%;
+    text-align: center;
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.work-nature-input textarea:focus,
+.work-nature-input input:focus {
+    outline: none;
+} 
+
+/* 5페이지 - 교대 근무 설명 */
+.shift-work-description {
+    padding: 20px;
+    background-color: var(--contact-bg);
+    border-left: 4px solid var(--accent-primary);
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+.shift-work-description p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* 교대 근무 테이블 */
+.shift-work-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: fixed; /* 테이블 크기 고정 */
+}
+
+.shift-work-table th,
+.shift-work-table td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.shift-work-table th {
+    background-color: var(--bg-tertiary);
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.shift-work-table td {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.shift-work-table input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 4px;
+    text-align: center;
+}
+
+.shift-work-table input:focus {
+    outline: none;
+    background-color: rgba(15,242,178,0.1);
+}
+
+/* LRQA 방문 섹션 */
+.lrqa-visit-section {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.lrqa-visit-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.lrqa-visit-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.visit-documents {
+    display: flex;
+    gap: 40px;
+}
+
+.visit-documents-left {
+    flex: 1;
+}
+
+.visit-documents-right {
+    flex: 1;
+}
+
+.visit-documents .visit-item {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.visit-documents .visit-item:last-child {
+    border-bottom: none;
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+    .shift-work-table {
+        font-size: 12px;
+    }
+    
+    .shift-work-table th,
+    .shift-work-table td {
+        padding: 8px;
+    }
+    
+    .visit-documents {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .shift-work-description {
+        padding: 15px;
+        font-size: 13px;
+    }
+} 
+
+/* 6페이지 - ISO 14001 및 ISO 45001 섹션 */
+.iso14001-section,
+.iso45001-section {
+    margin-bottom: 40px;
+}
+
+.iso14001-section .question-text,
+.iso45001-section .question-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: var(--contact-bg);
+    border-left: 3px solid var(--accent-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.iso14001-section textarea,
+.iso45001-section textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    resize: vertical;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.iso14001-section textarea:focus,
+.iso45001-section textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(15,242,178,0.2);
+}
+
+/* ISO 섹션 구분을 위한 추가 스타일 */
+.iso45001-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .iso14001-section .question-text,
+    .iso45001-section .question-text {
+        font-size: 13px;
+        padding: 12px;
+    }
+    
+    .iso14001-section textarea,
+    .iso45001-section textarea {
+        min-height: 100px;
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .iso45001-section {
+        margin-top: 40px;
+        padding-top: 25px;
+    }
+} 
+
+/* 7페이지 - 추가 정보 및 데이터 보호 */
+.additional-info-section {
+    margin-bottom: 40px;
+}
+
+.additional-info-text {
+    padding: 15px;
+    background-color: var(--contact-bg);
+    border-left: 4px solid var(--accent-primary);
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+.additional-info-text p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* 데이터 수집 및 보호 섹션 */
+.data-protection-section {
+    margin-bottom: 30px;
+}
+
+.data-protection-text {
+    padding: 20px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.data-protection-text p {
+    margin: 0 0 15px 0;
+    color: var(--text-secondary);
+}
+
+.data-protection-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* 서명 섹션 */
+.signature-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.signature-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.signature-field {
+    flex: 1;
+}
+
+.signature-field label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.signature-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.signature-field input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(15,242,178,0.2);
+}
+
+.signature-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.signature-note p {
+    margin: 0;
+}
+
+/* 문의하기 섹션 - 특별한 녹색 배경 */
+.contact-footer {
+    background: linear-gradient(135deg, #00e676 0%, #00c853 100%);
+    color: white;
+    margin: 40px -20px -20px -20px;
+    padding: 30px 20px 20px 20px;
+    position: relative;
+}
+
+.contact-footer-header {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contact-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.contact-info-left {
+    flex: 1;
+}
+
+.contact-info-left .company-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.contact-info-left .department {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.contact-info-left .phone,
+.contact-info-left .email {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.contact-info-right {
+    flex: 0 0 auto;
+    margin-left: 40px;
+}
+
+.lrqa-logo-large {
+    text-align: center;
+}
+
+.contact-logo-img {
+    height: 60px;
+    width: auto;
+    /* 실제 로고 이미지 사용을 위해 필터 제거 */
+    filter: none;
+    margin-bottom: 10px;
+}
+
+.lrqa-slogan {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.copyright {
+    font-size: 10px;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+.page-number-final {
+    text-align: right;
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+    .signature-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-info-right {
+        margin-left: 0;
+        align-self: center;
+    }
+    
+    .contact-footer {
+        margin: 40px -15px -15px -15px;
+        padding: 25px 15px 15px 15px;
+    }
+    
+    .contact-footer-header {
+        font-size: 20px;
+    }
+    
+    .data-protection-text {
+        padding: 15px;
+        font-size: 12px;
+    }
+    
+    .additional-info-text {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
