@@ -21,9 +21,11 @@
     "axios": "^1.11.0",
     "cheerio": "^1.1.2",
     "docx": "^8.5.0",
+    "docxtemplater": "^3.66.3",
     "googleapis": "^126.0.1",
     "nodemailer": "^6.9.7",
-    "openai": "^5.15.0"
+    "openai": "^5.15.0",
+    "pizzip": "^3.2.0"
   },
   "devDependencies": {
     "netlify-cli": "^17.10.1"
