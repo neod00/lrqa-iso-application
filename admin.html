@@ -906,7 +906,7 @@
                 console.log('관리자 이메일:', adminEmailInput.value);
                 
                 // 견적서 생성 요청
-                const response = await fetch('/.netlify/functions/generate-word-quotation', {
+                const response = await fetch('/.netlify/functions/test-generate', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
