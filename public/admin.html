@@ -1168,7 +1168,7 @@
                 document.getElementById('monthlyApplications').textContent = '0';
                 document.getElementById('completedApplications').textContent = '0';
                 
-                const response = await fetch('/.netlify/functions/get-applications');
+                const response = await fetch('/.netlify/functions/get-dashboard');
                 
                 if (!response.ok) {
                     // API가 아직 구현되지 않은 경우 기본값으로 유지 (정상 동작)
@@ -1177,12 +1177,12 @@
                 
                 const result = await response.json();
                 
-                if (result.success && result.data && result.data.stats) {
-                    const stats = result.data.stats;
-                    document.getElementById('totalApplications').textContent = stats.total || '0';
-                    document.getElementById('newApplications').textContent = stats.new || '0';
-                    document.getElementById('monthlyApplications').textContent = stats.monthly || '0';
-                    document.getElementById('completedApplications').textContent = stats.completed || '0';
+                if (result.success && result.data) {
+                    const stats = result.data;
+                    document.getElementById('totalApplications').textContent = stats.totalApplications || '0';
+                    document.getElementById('newApplications').textContent = stats.newApplications || '0';
+                    document.getElementById('monthlyApplications').textContent = stats.monthlyApplications || '0';
+                    document.getElementById('completedApplications').textContent = stats.completedApplications || '0';
                     
                     // Google Sheets URL 업데이트
                     if (result.data.sheetUrl) {
