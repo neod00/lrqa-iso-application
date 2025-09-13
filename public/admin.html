@@ -1019,19 +1019,30 @@
                 });
 
                 console.log('견적서 생성 응답 상태:', response.status);
-                const result = await response.json();
-                console.log('견적서 생성 결과:', result);
                 
-                if (result.success) {
-                    showMessage('견적서가 성공적으로 생성되었습니다! 관리자 이메일로 전송되었습니다.', 'success');
-                    hideQuotationCreateModal();
+                if (response.ok) {
+                    // Word 문서 다운로드
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `quotation_${applicationData.id || 'quotation'}.docx`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
                     
-                    // 견적서 다운로드 또는 미리보기
-                    if (result.quotation) {
-                        downloadQuotation(result.quotation);
-                    }
+                    console.log('견적서 다운로드 완료:', `quotation_${applicationData.id || 'quotation'}.docx`);
+                    showMessage('견적서가 성공적으로 생성되어 다운로드되었습니다!', 'success');
+                    hideQuotationCreateModal();
                 } else {
-                    showMessage(result.message || '견적서 생성 중 오류가 발생했습니다.', 'error');
+                    // 오류 응답 처리
+                    try {
+                        const errorData = await response.json();
+                        showMessage(errorData.message || '견적서 생성 중 오류가 발생했습니다.', 'error');
+                    } catch (jsonError) {
+                        showMessage('견적서 생성 중 오류가 발생했습니다.', 'error');
+                    }
                 }
                 
             } catch (error) {
