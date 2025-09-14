@@ -2397,7 +2397,7 @@
                     return;
                 }
                 
-                const application = result.data.applications.find(app => app['신청시'] === timestamp);
+                const application = result.data.applications.find(app => app['신청일시'] === timestamp);
                 if (!application) {
                     showMessage('신청서를 찾을 수 없습니다.', 'error');
                     return;
