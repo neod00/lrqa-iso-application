@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEF 환경기업 - ISO 14001 갭분석 보고서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .section h2 {
+            color: #4CAF50;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .score-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .score-card {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+        }
+        
+        .score-card.warning {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        }
+        
+        .score-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .score-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .environmental-aspect {
+            background: #e8f5e8;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .impact-level {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .impact-significant {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .impact-moderate {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+        
+        .impact-minor {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌿 ISO 14001 갭분석 보고서</h1>
+            <div class="subtitle">DEF 환경기업 환경경영시스템 준비도 평가</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2><span>📊</span>종합 준비도 평가</h2>
+                <div class="score-container">
+                    <div class="score-card">
+                        <div class="score-number">78</div>
+                        <div class="score-label">종합 점수 / 100점</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-number">양호</div>
+                        <div class="score-label">준비도 수준</div>
+                    </div>
+                    <div class="score-card warning">
+                        <div class="score-number">2-4</div>
+                        <div class="score-label">인증까지 예상 개월</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span>🌱</span>환경 측면 및 영향 평가</h2>
+                
+                <div class="environmental-aspect">
+                    <div class="impact-level impact-significant">중요</div>
+                    <h3>폐수 배출 관리</h3>
+                    <p><strong>현재 상황:</strong> 폐수처리시설 운영 중, 배출허용기준 준수</p>
+                    <p><strong>개선사항:</strong> 실시간 모니터링 시스템 구축 필요</p>
+                    <p><strong>법규:</strong> 물환경보전법, 하수도법 적용</p>
+                </div>
+                
+                <div class="environmental-aspect">
+                    <div class="impact-level impact-moderate">보통</div>
+                    <h3>에너지 사용량 관리</h3>
+                    <p><strong>현재 상황:</strong> 전력 사용량 모니터링 중, 절약 프로그램 일부 운영</p>
+                    <p><strong>개선사항:</strong> 에너지 효율 개선 계획 수립</p>
+                    <p><strong>목표:</strong> 연간 5% 에너지 절약 달성</p>
+                </div>
+                
+                <div class="environmental-aspect">
+                    <div class="impact-level impact-moderate">보통</div>
+                    <h3>폐기물 분리수거</h3>
+                    <p><strong>현재 상황:</strong> 기본적 분리수거 시행, 재활용률 65%</p>
+                    <p><strong>개선사항:</strong> 폐기물 감량 및 재활용률 향상 프로그램</p>
+                    <p><strong>목표:</strong> 재활용률 80% 달성</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span>💡</span>핵심 권장사항</h2>
+                
+                <h3>🎯 즉시 개선 (1개월)</h3>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>환경 측면 등록부 완성:</strong> 전체 업무활동의 환경 영향 평가</li>
+                    <li><strong>법규 준수 평가:</strong> 적용 환경법규 목록 작성 및 준수 상태 점검</li>
+                    <li><strong>환경목표 설정:</strong> 측정 가능한 환경성과 목표 수립</li>
+                </ul>
+                
+                <h3>🚀 단계적 개선 (2-3개월)</h3>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>모니터링 계획:</strong> 주요 환경 지표 모니터링 체계 구축</li>
+                    <li><strong>비상사태 대응:</strong> 환경사고 대응 매뉴얼 작성</li>
+                    <li><strong>직원 교육:</strong> 환경 인식 제고 교육 프로그램 실시</li>
+                </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%); color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 40px;">
+                <h3>🤝 환경 전문 컨설팅</h3>
+                <p>📞 +82 10-5438-3060 | 📧 env.consultant@lrqa.com</p>
+                <p>🌿 ISO 14001 인증까지 함께하겠습니다!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

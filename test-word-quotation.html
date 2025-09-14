@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word 견적서 생성 테스트</title>
+    <script src="js/language-manager.js"></script>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .test-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+        
+        .btn-success:hover {
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .btn-info {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+        }
+        
+        .btn-info:hover {
+            box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        .test-data {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-list li:before {
+            content: "✅ ";
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Word 견적서 생성 테스트</h1>
+            <p>JavaScript 기반 Word 견적서 생성 기능을 테스트합니다.</p>
+        </div>
+        
+        <div class="test-section">
+            <h3>🎯 테스트 기능</h3>
+            <ul class="feature-list">
+                <li>JavaScript docx 라이브러리를 사용한 Word 문서 생성</li>
+                <li>LRQA 견적서 템플릿 기반 디자인</li>
+                <li>테이블, 헤더, 푸터 포함 완전한 견적서</li>
+                <li>실시간 Word 파일 다운로드</li>
+                <li>Netlify Functions를 통한 서버리스 처리</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>🚀 테스트 실행</h3>
+            <p>아래 버튼을 클릭하여 Word 견적서 생성 기능을 테스트해보세요.</p>
+            
+            <button class="btn btn-success" onclick="generateTestQuotation()">
+                📄 테스트 Word 견적서 생성
+            </button>
+            
+            <button class="btn btn-info" onclick="viewTestData()">
+                📊 테스트 데이터 보기
+            </button>
+            
+            <button class="btn" onclick="testAPI()">
+                🔧 API 연결 테스트
+            </button>
+        </div>
+        
+        <div id="status" class="status" style="display: none;"></div>
+        
+        <div id="testData" class="test-data" style="display: none;"></div>
+    </div>
+
+    <script>
+        // 테스트 Word 견적서 생성
+        async function generateTestQuotation() {
+            showStatus('테스트 Word 견적서를 생성 중입니다...', 'info');
+            
+            try {
+                // 테스트 데이터 로드
+                const response = await fetch('test-quotation-data.json');
+                const testData = await response.json();
+                
+                // Word 견적서 생성 API 호출
+                const wordResponse = await fetch('/.netlify/functions/generate-word-quotation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                if (wordResponse.ok) {
+                    // Word 파일 다운로드
+                    const blob = await wordResponse.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `LRQA_테스트_견적서_${new Date().toISOString().split('T')[0]}.docx`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                    
+                    showStatus('✅ 테스트 Word 견적서가 성공적으로 생성되었습니다!', 'success');
+                } else {
+                    const errorData = await wordResponse.json();
+                    showStatus(`❌ Word 견적서 생성 실패: ${errorData.message || '알 수 없는 오류'}`, 'error');
+                }
+            } catch (error) {
+                console.error('Word 견적서 생성 오류:', error);
+                showStatus(`❌ Word 견적서 생성 중 오류가 발생했습니다: ${error.message}`, 'error');
+            }
+        }
+        
+        // 테스트 데이터 보기
+        async function viewTestData() {
+            try {
+                const response = await fetch('test-quotation-data.json');
+                const testData = await response.json();
+                
+                const testDataDiv = document.getElementById('testData');
+                testDataDiv.innerHTML = '<h4>테스트 데이터:</h4><pre>' + JSON.stringify(testData, null, 2) + '</pre>';
+                testDataDiv.style.display = 'block';
+                
+                showStatus('📊 테스트 데이터를 로드했습니다.', 'info');
+            } catch (error) {
+                showStatus(`❌ 테스트 데이터 로드 실패: ${error.message}`, 'error');
+            }
+        }
+        
+        // API 연결 테스트
+        async function testAPI() {
+            showStatus('API 연결을 테스트 중입니다...', 'info');
+            
+            try {
+                const response = await fetch('/.netlify/functions/generate-word-quotation', {
+                    method: 'OPTIONS'
+                });
+                
+                if (response.ok) {
+                    showStatus('✅ API 연결이 정상적으로 작동합니다!', 'success');
+                } else {
+                    showStatus(`❌ API 연결 실패: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ API 연결 테스트 실패: ${error.message}`, 'error');
+            }
+        }
+        
+        // 상태 메시지 표시
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+            statusDiv.style.display = 'block';
+            
+            // 5초 후 자동 숨김
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        // 페이지 로드 시 초기화
+        window.addEventListener('load', function() {
+            showStatus('Word 견적서 생성 테스트 페이지가 로드되었습니다.', 'info');
+        });
+    </script>
+</body>
+</html>

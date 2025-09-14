@@ -1,0 +1,107 @@
+[
+    {
+        "id": "company_name_kr",
+        "label": "법인명(국문)",
+        "description": "한국어 법인명을 입력해주세요",
+        "type": "text",
+        "required": true
+    },
+    {
+        "id": "company_name_en",
+        "label": "법인명(영문)",
+        "description": "영어 법인명을 입력해주세요",
+        "type": "text",
+        "required": false
+    },
+    {
+        "id": "contact_name",
+        "label": "담당자명",
+        "description": "신청서 담당자 성명을 입력해주세요",
+        "type": "text",
+        "required": true
+    },
+    {
+        "id": "contact_phone",
+        "label": "담당자 전화",
+        "description": "담당자 연락처를 입력해주세요",
+        "type": "tel",
+        "required": true
+    },
+    {
+        "id": "contact_email",
+        "label": "담당자 이메일",
+        "description": "담당자 이메일 주소를 입력해주세요",
+        "type": "email",
+        "required": true
+    },
+    {
+        "id": "certification_scope",
+        "label": "인증범위",
+        "description": "희망하는 ISO 인증 표준을 선택해주세요",
+        "type": "checkbox",
+        "required": true,
+        "options": ["ISO 9001", "ISO 14001", "ISO 45001"]
+    },
+    {
+        "id": "employee_count",
+        "label": "총 직원수",
+        "description": "회사 전체 직원 수를 입력해주세요",
+        "type": "number",
+        "required": true
+    },
+    {
+        "id": "desired_year",
+        "label": "희망 년도",
+        "description": "인증을 받고자 하는 년도를 선택해주세요",
+        "type": "select",
+        "required": true,
+        "options": ["2025", "2026", "2027"]
+    },
+    {
+        "id": "desired_month",
+        "label": "희망 월",
+        "description": "인증을 받고자 하는 월을 선택해주세요",
+        "type": "select",
+        "required": true,
+        "options": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+    },
+    {
+        "id": "business_type",
+        "label": "업종",
+        "description": "회사의 주요 업종을 선택해주세요",
+        "type": "select",
+        "required": true,
+        "options": ["제조업", "서비스업", "건설업", "IT/소프트웨어", "의료/제약", "식품업", "기타"]
+    },
+    {
+        "id": "company_size",
+        "label": "회사 규모",
+        "description": "회사 규모를 선택해주세요",
+        "type": "select",
+        "required": true,
+        "options": ["소기업 (1-10명)", "중소기업 (11-50명)", "중견기업 (51-300명)", "대기업 (300명 이상)"]
+    },
+    {
+        "id": "current_management_system",
+        "label": "현재 운영 중인 경영시스템",
+        "description": "현재 운영 중인 경영시스템이 있다면 선택해주세요 (복수 선택 가능)",
+        "type": "checkbox",
+        "required": false,
+        "options": ["ISO 9001", "ISO 14001", "ISO 45001", "ISO 27001", "ISO 22000", "IATF 16949", "AS 9100", "기타", "없음"]
+    },
+    {
+        "id": "previous_certification",
+        "label": "이전 인증 이력",
+        "description": "이전에 받은 ISO 인증이 있다면 선택해주세요",
+        "type": "radio",
+        "required": true,
+        "options": ["최초 인증", "갱신 인증", "확장 인증"]
+    },
+    {
+        "id": "special_requirements",
+        "label": "특별 요구사항",
+        "description": "특별한 요구사항이나 문의사항이 있다면 입력해주세요",
+        "type": "textarea",
+        "required": false
+    }
+]

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애플 인크. - ISO 경영시스템 표준 갭분석 보고서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-bottom: 4px solid #3498db;
+            position: relative;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .lrqa-logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        .apple-logo {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: 300;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .meta-info {
+            background: #ecf0f1;
+            padding: 20px 30px;
+            border-bottom: 2px solid #bdc3c7;
+        }
+        
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .meta-value {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #34495e;
+            margin: 20px 0 10px 0;
+        }
+        
+        .gap-category {
+            background: #ffffff;
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .gap-category.category-a {
+            border-color: #e74c3c;
+        }
+        
+        .gap-category.category-b {
+            border-color: #f39c12;
+        }
+        
+        .gap-category.category-c {
+            border-color: #f1c40f;
+        }
+        
+        .gap-header {
+            padding: 15px 20px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .gap-category.category-a .gap-header {
+            background: #e74c3c;
+        }
+        
+        .gap-category.category-b .gap-header {
+            background: #f39c12;
+        }
+        
+        .gap-category.category-c .gap-header {
+            background: #f1c40f;
+            color: #2c3e50;
+        }
+        
+        .gap-content {
+            padding: 20px;
+        }
+        
+        .gap-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .gap-item-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .gap-item-clause {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .gap-item-description {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        
+        .gap-item-requirement {
+            font-size: 13px;
+            background: #e8f4f8;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .readiness-status {
+            background: #d5edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .readiness-status.not-ready {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        
+        .readiness-status.partially-ready {
+            background: #fff3cd;
+            border-color: #ffeaa7;
+        }
+        
+        .status-indicator {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .status-indicator.ready {
+            color: #155724;
+        }
+        
+        .status-indicator.not-ready {
+            color: #721c24;
+        }
+        
+        .status-indicator.partially-ready {
+            color: #856404;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .table th,
+        .table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .table th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .not-covered-list {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .timeline {
+            background: #e8f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-phase {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 30px;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            height: 30px;
+            width: auto;
+        }
+        
+        .disclaimer {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        
+        .apple-insight {
+            background: #e8f4f8;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .apple-insight h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        @media print {
+            body { font-size: 12px; }
+            .container { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="../lrqa-logo.png" alt="LRQA 로고" class="lrqa-logo">
+                <div class="apple-logo">🍎</div>
+            </div>
+            <h1>사전평가 갭분석 보고서</h1>
+            <div class="subtitle">ISO 경영시스템 표준 갭분석 - 애플 인크.</div>
+        </div>
+        
+        <!-- Meta Information -->
+        <div class="meta-info">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">고객 조직</div>
+                    <div class="meta-value">애플 인크. (Apple Inc.)</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">평가 표준</div>
+                    <div class="meta-value">ISO 9001:2015, ISO 14001:2016, ISO 45001:2018</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">평가 일자</div>
+                    <div class="meta-value">2025년 1월 23일</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">LRQA 참조번호</div>
+                    <div class="meta-value">GAP-2025-APPLE-IMS-001</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">평가팀</div>
+                    <div class="meta-value">수석심사원: LRQA 공인심사원</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">고객 담당자</div>
+                    <div class="meta-value">팀 쿡 (CEO) / 최고경영진</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Executive Summary -->
+            <div class="section">
+                <div class="section-title">1. 경영진 요약</div>
+                <p>본 사전평가 갭분석은 애플 인크.를 대상으로 ISO 9001:2015 품질경영시스템, ISO 14001:2016 환경경영시스템, 그리고 ISO 45001:2018 안전보건경영시스템 요구사항에 대하여 수행되었습니다. 본 평가는 LRQA의 검증된 6단계 갭분석 방법론을 활용하여 정식 인증심사 이전에 주의가 필요한 잠재적 영역을 식별하였습니다.</p>
+                
+                <div class="apple-insight">
+                    <h3>🍎 애플 인크. 특화 분석</h3>
+                    <p><strong>조직 규모:</strong> 전 세계 164,000명 직원</p>
+                    <p><strong>핵심 강점:</strong> 강력한 혁신 문화, 우수한 환경 이니셔티브 (2030 탄소중립), 탁월한 직원 안전 프로그램 (애플 파크), 견고한 품질 명성</p>
+                    <p><strong>특별 고려사항:</strong> 혁신 문화와 체계적 ISO 요구사항의 통합, 기존 환경 약속과 ISO 14001 프레임워크의 정렬, 우수한 안전 관행을 ISO 45001 구조에 맞게 공식화</p>
+                </div>
+                
+                <div class="disclaimer">
+                    <strong>중요 참고사항:</strong> 본 갭분석은 정식 심사를 구성하지 않습니다. 발견사항은 LRQA의 전문 방법론을 기반으로 하며, 정식 통합경영시스템 심사 준비를 지원하기 위한 목적입니다. 본 보고서는 애플의 기존 우수 관행을 ISO 표준 요구사항과 조화시킬 수 있는 기회를 식별합니다.
+                </div>
+            </div>
+            
+            <!-- Assessment Scope and Methodology -->
+            <div class="section">
+                <div class="section-title">2. 평가 범위 및 방법론</div>
+                <div class="subsection-title">2.1 평가 범위</div>
+                <p><strong>조직:</strong> 애플 인크.<br>
+                <strong>주요 사업장:</strong> 원 애플 파크 웨이, 쿠퍼티노<br>
+                <strong>활동:</strong> 소비자 전자제품, 컴퓨터 소프트웨어, 온라인 서비스의 설계, 개발, 제조 협업, 마케팅<br>
+                <strong>표준:</strong> ISO 9001:2015 (품질), ISO 14001:2016 (환경), ISO 45001:2018 (안전보건)<br>
+                <strong>직원 수:</strong> 전 세계 164,000명</p>
+                
+                <div class="subsection-title">2.2 적용된 LRQA 방법론</div>
+                <p>본 갭분석은 LRQA의 체계적 6단계 프로세스를 활용하였습니다:</p>
+                <ol>
+                    <li><strong>범위 결정:</strong> 중요하고 위험도가 높으며 취약한 영역에 집중</li>
+                    <li><strong>평가자 주도 평가:</strong> 표준 이해도 및 구현 계획 평가</li>
+                    <li><strong>문서 검토:</strong> 경영시스템 문서 및 웹사이트 정보 검토</li>
+                    <li><strong>현장 확인:</strong> 공개 정보 기반 운영 현황 확인</li>
+                    <li><strong>갭 분류:</strong> LRQA 카테고리 A/B/C 방법론 적용</li>
+                    <li><strong>해결 방안 논의:</strong> 구체적인 개선 계획 및 현실적 일정 추정</li>
+                </ol>
+            </div>
+            
+            <!-- Areas NOT Covered -->
+            <div class="section">
+                <div class="section-title">3. 평가 중 다루지 않은 영역</div>
+                <div class="not-covered-list">
+                    <p>다음 영역들은 본 사전평가에서 다루지 않았으며, 정식 심사 시 평가가 필요합니다:</p>
+                    <ul>
+                        <li>전 세계 생산 시설에서의 제조 프로세스 현장 확인</li>
+                        <li>공급업체 자격 프로세스의 세부 검토 (폭스콘 등)</li>
+                        <li>전체 164,000명 직원의 역량 기록 확인</li>
+                        <li>고객 불만 처리 시스템 운영 확인</li>
+                        <li>제조 시설에서의 환경측면 평가</li>
+                        <li>안전보건 성과 데이터 분석</li>
+                        <li>2030 탄소중립 목표를 위한 탄소발자국 계산 방법론</li>
+                        <li>통합경영시스템 전반의 내부심사 프로그램 효과성</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Potential Gaps Analysis -->
+            <div class="section">
+                <div class="section-title">4. LRQA 카테고리별 갭 분석</div>
+                <p>다음의 잠재적 부적합사항들이 LRQA의 검증된 분류 방법론을 사용하여 식별되었습니다:</p>
+                
+                <!-- Category A: Clear Potential Nonconformances -->
+                <div class="gap-category category-a">
+                    <div class="gap-header">
+                        카테고리 A: 명확하고 명백한 잠재적 부적합사항 (높은 우선순위)
+                    </div>
+                    <div class="gap-content">
+                        <div class="gap-item">
+                            <div class="gap-item-title">설계개발 프로세스의 체계화</div>
+                            <div class="gap-item-clause">ISO 9001:2015 조항 8.3 - 설계개발 관련</div>
+                            <div class="gap-item-description">
+                                애플의 아이폰/맥 혁신적인 제품 개발 프로세스는 우수하지만, ISO 9001:2015 조항 8.3 설계개발 요구사항과의 체계적 정렬이 확인 필요합니다. 현재의 우수한 제품 개발 프로세스는 ISO 8.3 요구사항(기획, 입력사항, 통제, 출력사항, 변경)과의 체계적 정렬이 필요합니다.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>표준 요구사항:</strong> ISO 9001:2015 조항 8.3은 조직이 제품 및 서비스 제공을 보장하기 위해 적절한 설계개발 프로세스를 수립, 구현, 유지하도록 요구합니다.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">환경측면 식별 및 평가 방법론</div>
+                            <div class="gap-item-clause">ISO 14001:2016 조항 6.1.2 - 환경측면 관련</div>
+                            <div class="gap-item-description">
+                                2030 탄소중립 목표는 우수하지만, ISO 14001:2016 조항 6.1.2에서 요구하는 체계적인 환경측면 식별 방법론이 확인 필요합니다. 환경 이니셔티브는 강력하지만, 조항 6.1.2 요구사항(변화, 비정상 상황, 응급상황 고려)의 체계적 적용이 확인 필요합니다.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>표준 요구사항:</strong> ISO 14001:2016 조항 6.1.2는 조직이 통제할 수 있고 영향을 줄 수 있는 활동, 제품, 서비스의 환경측면과 중요한 환경영향을 결정하도록 요구합니다.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">유해위험요인 식별 및 위험성평가</div>
+                            <div class="gap-item-clause">ISO 45001:2018 조항 6.1.2 - 유해위험요인 식별 및 위험성평가 관련</div>
+                            <div class="gap-item-description">
+                                애플 파크와 같은 우수한 안전 환경이 구축되어 있지만, ISO 45001:2018 조항 6.1.2에서 요구하는 체계적인 유해위험요인 식별 및 위험성평가 방법론이 확인 필요합니다. 안전한 근무 환경이 제공되고 있지만, 체계적인 위험성평가 프로세스 문서화 확인이 필요합니다.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>표준 요구사항:</strong> ISO 45001:2018 조항 6.1.2는 조직이 지속적인 유해위험요인 식별 및 안전보건 위험성평가 프로세스를 수립, 구현, 유지하도록 요구합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category B: Areas requiring intensive examination -->
+                <div class="gap-category category-b">
+                    <div class="gap-header">
+                        카테고리 B: 보다 집중적인 검토가 필요한 영역 (중간 우선순위)
+                    </div>
+                    <div class="gap-content">
+                        <div class="gap-item">
+                            <div class="gap-item-title">고객만족 모니터링 시스템</div>
+                            <div class="gap-item-clause">ISO 9001:2015 조항 9.1.2 - 고객만족 관련</div>
+                            <div class="gap-item-description">
+                                앱스토어/제품 고객 피드백 시스템은 우수하지만, ISO 9001:2015 체계적인 고객만족 모니터링 요구사항과의 정렬이 검토 필요합니다. 다양한 고객 피드백 채널이 존재하지만, ISO 9.1.2에서 요구하는 체계적 모니터링 방법론의 확인이 필요합니다.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>표준 요구사항:</strong> ISO 9001:2015 조항 9.1.2는 조직이 고객의 요구사항과 기대사항이 충족된 정도에 대한 고객의 인식을 모니터링하도록 요구합니다.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">환경 운용계획 및 관리</div>
+                            <div class="gap-item-clause">ISO 14001:2016 조항 8.1 - 운용계획 및 관리 관련</div>
+                            <div class="gap-item-description">
+                                글로벌 제조 파트너사(폭스콘 등) 환경관리와 ISO 14001 조항 8.1 운용통제 요구사항 간의 통합 검토가 필요합니다. 환경관리 활동이 존재하지만, ISO 8.1에서 요구하는 체계적인 운용계획 및 통제 절차의 확인이 필요합니다.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>표준 요구사항:</strong> ISO 14001:2016 조항 8.1은 조직이 환경경영시스템 요구사항을 충족하기 위해 필요한 프로세스를 수립, 구현, 통제, 유지하도록 요구합니다.
+                            </div>
+                        </div>
+                        
+                        <div class="gap-item">
+                            <div class="gap-item-title">근로자 협의 및 참여 시스템</div>
+                            <div class="gap-item-clause">ISO 45001:2018 조항 5.4 - 근로자의 협의 및 참여 관련</div>
+                            <div class="gap-item-description">
+                                애플 직원 복지 및 참여 프로그램은 우수하지만, ISO 45001 조항 5.4 근로자 참여 요구사항의 공식적 구조적 검토가 필요합니다. 우수한 직원 참여 문화가 존재하지만, ISO 45001 조항 5.4에서 요구하는 공식적인 참여 및 협의 시스템의 확인이 필요합니다.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>표준 요구사항:</strong> ISO 45001:2018 조항 5.4는 조직이 근로자와 근로자 대표의 협의 및 참여 프로세스를 수립, 구현, 유지하도록 요구합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category C: Borderline cases -->
+                <div class="gap-category category-c">
+                    <div class="gap-header">
+                        카테고리 C: 해석에 따라 달라질 수 있는 경계선 사례 (낮은 우선순위)
+                    </div>
+                    <div class="gap-content">
+                        <div class="gap-item">
+                            <div class="gap-item-title">최고경영진 리더십 및 의지표명 시스템</div>
+                            <div class="gap-item-clause">모든 표준 - 리더십 요구사항 관련</div>
+                            <div class="gap-item-description">
+                                팀 쿡 CEO의 리더십은 강력하지만, 경영시스템에 대한 최고경영진의 리더십과 의지표명 방식은 심사원 해석에 따라 평가 차이가 발생할 수 있습니다. 공식적 문서화가 명확성을 높일 수 있습니다.
+                            </div>
+                            <div class="gap-item-requirement">
+                                <strong>표준 요구사항:</strong> 모든 ISO 표준은 최고경영진이 경영시스템에 대한 리더십과 의지표명을 보여주도록 요구합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Areas for Management Attention -->
+            <div class="section">
+                <div class="section-title">5. 경영진 관심이 필요한 영역</div>
+                <p>정식 통합 심사 이전에 다음 영역들이 경영진의 특별한 관심이 필요합니다:</p>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>우선순위</th>
+                            <th>영역</th>
+                            <th>필요한 조치</th>
+                            <th>기간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>높음</td>
+                            <td>통합경영시스템(IMS) 구축</td>
+                            <td>3개 표준에 맞춘 포괄적인 품질-환경-안전보건경영시스템 통합 수립</td>
+                            <td>3-4개월</td>
+                        </tr>
+                        <tr>
+                            <td>높음</td>
+                            <td>설계개발 프로세스 체계화</td>
+                            <td>혁신적인 제품 개발을 ISO 9001:2015 조항 8.3에 맞게 정렬</td>
+                            <td>2-3개월</td>
+                        </tr>
+                        <tr>
+                            <td>높음</td>
+                            <td>환경측면 평가 방법론</td>
+                            <td>2030 탄소중립 전략을 ISO 14001 요구사항과 체계화</td>
+                            <td>3-4개월</td>
+                        </tr>
+                        <tr>
+                            <td>중간</td>
+                            <td>유해위험요인 식별 및 위험성평가 시스템</td>
+                            <td>애플 파크 안전 우수성을 ISO 45001 프레임워크로 공식화</td>
+                            <td>2-3개월</td>
+                        </tr>
+                        <tr>
+                            <td>중간</td>
+                            <td>통합 내부심사 프로그램</td>
+                            <td>3개 표준을 모두 다루는 체계적 통합 심사 프로그램 수립</td>
+                            <td>2-3개월</td>
+                        </tr>
+                        <tr>
+                            <td>낮음</td>
+                            <td>통합 경영검토 프로세스</td>
+                            <td>통합 경영검토 프로세스 및 문서화 공식화</td>
+                            <td>1-2개월</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Readiness Assessment -->
+            <div class="section">
+                <div class="section-title">6. 정식 인증을 위한 준비도 평가</div>
+                
+                <div class="readiness-status partially-ready">
+                    <div class="status-indicator partially-ready">⚡ 정식 심사를 위해 부분적으로 준비됨</div>
+                    <p>본 LRQA 갭분석을 기반으로, 애플 인크.는 정식 통합경영시스템 인증심사(ISO 9001/14001/45001)를 위해 <strong>부분적으로 준비되어</strong> 있습니다.</p>
+                    <p><strong>준비도 점수:</strong> 85/100점</p>
+                    <p><strong>성공 확률:</strong> 90% (적절한 준비 시)</p>
+                    <p><strong>준비 기간:</strong> 9개월 예상</p>
+                    
+                    <div class="subsection-title">주요 강점</div>
+                    <ul>
+                        <li>강력한 혁신 문화와 우수한 운영 시스템</li>
+                        <li>탁월한 환경 약속 (2030 탄소중립)</li>
+                        <li>뛰어난 직장 안전 (애플 파크 기준)</li>
+                        <li>견고한 품질 명성과 고객 중심</li>
+                        <li>대규모 조직 관리 역량 (164,000명 직원)</li>
+                    </ul>
+                    
+                    <div class="subsection-title">집중이 필요한 영역</div>
+                    <ul>
+                        <li>기존 우수성을 ISO 공식 요구사항과 체계적 정렬</li>
+                        <li>시너지를 위한 3개 경영시스템 통합</li>
+                        <li>비공식적 우수성을 체계적 프로세스로 문서화</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection-title">6.1 예상 준비 일정 (9개월)</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-phase">1단계</div>
+                        <div>기반 구축 및 IMS 설계 (1-3개월)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase">2단계</div>
+                        <div>핵심 구현 및 카테고리 A 갭 해결 (4-6개월)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase">3단계</div>
+                        <div>최종 준비 및 카테고리 B/C 해결 (7-9개월)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-phase">준비완료</div>
+                        <div>정식 통합 심사 (지금부터 9개월 후 예상)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Next Steps and Recommendations -->
+            <div class="section">
+                <div class="section-title">7. LRQA 전문가 권고사항</div>
+                
+                <div class="subsection-title">7.1 전략적 권고사항</div>
+                <ol>
+                    <li><strong>통합경영시스템(IMS) 구축:</strong> 3개 표준의 시너지를 활용한 효율적 통합경영시스템 구축</li>
+                    <li><strong>혁신-표준 조화:</strong> 애플의 혁신 문화를 ISO 체계적 접근법과 조화</li>
+                    <li><strong>2030 탄소중립-ISO 14001 통합:</strong> 기존 환경 이니셔티브를 ISO 14001 요구사항과 완전 통합</li>
+                    <li><strong>애플 파크 안전 우수성 체계화:</strong> 우수한 안전 환경을 체계적인 ISO 45001 프레임워크로 발전</li>
+                    <li><strong>글로벌 공급망 ESG 통합:</strong> 파트너 회사 ESG 관리를 ISO 표준 요구사항과 통합</li>
+                    <li><strong>대규모 조직 최적화:</strong> 164,000명 직원 조직력을 활용한 체계적 경영시스템 구축 최적화</li>
+                </ol>
+                
+                <div class="subsection-title">7.2 구현 우선순위</div>
+                <div class="apple-insight">
+                    <h3>🎯 애플 특화 구현 전략</h3>
+                    <p><strong>우선순위 1:</strong> 아이폰/맥 개발 프로세스를 ISO 9001 조항 8.3에 정렬</p>
+                    <p><strong>우선순위 2:</strong> 2030 탄소중립을 ISO 14001 환경측면과 체계화</p>
+                    <p><strong>우선순위 3:</strong> 애플 파크 안전 우수성을 ISO 45001 프레임워크로 구조화</p>
+                    <p><strong>우선순위 4:</strong> 폭스콘 및 파트너 관리를 체계적 접근법으로 통합</p>
+                </div>
+                
+                <div class="subsection-title">7.3 LRQA와의 권장 다음 단계</div>
+                <ol>
+                    <li>통합경영시스템 개발 컨설팅 일정 수립</li>
+                    <li>6개월 후 후속 갭분석 계획 (선택사항)</li>
+                    <li>1단계 통합 심사를 위한 정식 신청서 제출</li>
+                    <li>2단계 통합 심사 (구현 확인) 일정 수립</li>
+                </ol>
+            </div>
+            
+            <!-- Limitations and Confidentiality -->
+            <div class="section">
+                <div class="section-title">8. 평가 제한사항 및 기밀성</div>
+                <p>본 LRQA 전문 갭분석은 다음 범위로 수행되었습니다:</p>
+                <ul>
+                    <li>LRQA 6단계 갭분석 방법론 적용</li>
+                    <li>중요하고 위험도가 높으며 취약한 영역에 집중</li>
+                    <li>공개적으로 이용 가능한 정보 및 산업 지식 기반 평가</li>
+                    <li>LRQA 150년 이상의 경험을 바탕으로 한 전문 심사원 판단</li>
+                    <li>애플 인크. 특정 사업 특성 고려</li>
+                </ul>
+                
+                <p>본 보고서는 애플 인크.와 LRQA 비즈니스 어슈어런스에게 기밀입니다. 여기에 포함된 정보는 양측 당사자의 서면 동의 없이 제3자에게 공개되어서는 안 됩니다.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>
+                <p><strong>LRQA 비즈니스 어슈어런스</strong> | 통합경영시스템 갭분석 보고서</p>
+                <p>보고서 생성: 2025년 1월 23일 | 참조번호: GAP-2025-APPLE-IMS-001 | 1/1 페이지</p>
+                <p>본 보고서는 www.lrqa.com에서 확인 가능한 LRQA 일반 이용약관에 따라 발행됩니다</p>
+            </div>
+            <img src="../lrqa-logo-black.png" alt="LRQA 로고" class="footer-logo">
+        </div>
+    </div>
+</body>
+</html>
