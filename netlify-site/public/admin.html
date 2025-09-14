@@ -984,23 +984,31 @@
             }
         }
 
-        function viewApplication(timestamp) {
+        function viewApplication(applicationId) {
             // 신청서 상세 보기 기능 구현
-            openViewModal(timestamp);
+            openViewModal(applicationId);
         }
 
         // 보기 모달 열기
-        async function openViewModal(timestamp) {
+        async function openViewModal(applicationId) {
             try {
                 const response = await fetch('/.netlify/functions/get-applications');
                 const result = await response.json();
                 
                 if (result.success) {
-                    const application = result.data.applications.find(app => app['신청일시'] === timestamp);
+                    // applicationId로 신청서 찾기 (신청일시 또는 ID로 매칭)
+                    const application = result.data.applications.find(app => 
+                        app['신청일시'] === applicationId || 
+                        app.id === applicationId ||
+                        app['ID'] === applicationId
+                    );
+                    
                     if (application) {
+                        console.log('찾은 신청서:', application);
                         populateViewContent(application);
                         document.getElementById('viewModal').style.display = 'block';
                     } else {
+                        console.log('신청서를 찾을 수 없습니다. ID:', applicationId);
                         showMessage('신청서를 찾을 수 없습니다.', 'error');
                     }
                 } else {
@@ -1012,67 +1020,290 @@
             }
         }
 
-        // 보기 내용 생성
+        // 보기 내용 생성 - 원래 신청서 폼과 동일한 디자인
         function populateViewContent(application) {
             const viewContent = document.getElementById('viewContent');
             const timestamp = application['신청일시'] || '';
             
+            // ISO 표준 포맷팅 함수
+            function formatISOStandards(isoString) {
+                if (!isoString) return '';
+                return isoString.split(',').map(iso => 
+                    iso.trim().toUpperCase().replace('ISO', 'ISO ')
+                ).join(', ');
+            }
+            
+            // 라디오 버튼 값 포맷팅
+            function formatRadioValue(value, yesValue = '예', noValue = '아니요') {
+                if (value === 'yes' || value === '예') return yesValue;
+                if (value === 'no' || value === '아니요') return noValue;
+                return value || '';
+            }
+            
             viewContent.innerHTML = `
-                <div class="view-section">
-                    <h4>기본 정보</h4>
-                    <div class="view-field">
-                        <div class="view-label">신청일시</div>
-                        <div class="view-value">${formatDate(timestamp)}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">상태</div>
-                        <div class="view-value">
-                            <span class="view-status ${getStatusClass(application['상태'])}">${application['상태'] || '신규'}</span>
+                <style>
+                    .application-view {
+                        font-family: 'Noto Sans KR', sans-serif;
+                        line-height: 1.6;
+                        color: #333;
+                        max-width: 1000px;
+                        margin: 0 auto;
+                        padding: 20px;
+                    }
+                    .form-section {
+                        background: #f8f9fa;
+                        border: 1px solid #e9ecef;
+                        border-radius: 8px;
+                        padding: 25px;
+                        margin-bottom: 30px;
+                    }
+                    .section-title {
+                        font-size: 1.4em;
+                        font-weight: 700;
+                        color: #2c3e50;
+                        margin-bottom: 20px;
+                        padding-bottom: 10px;
+                        border-bottom: 2px solid #3498db;
+                    }
+                    .form-group {
+                        margin-bottom: 20px;
+                    }
+                    .form-label {
+                        display: block;
+                        font-weight: 600;
+                        color: #34495e;
+                        margin-bottom: 8px;
+                        font-size: 0.95em;
+                    }
+                    .form-value {
+                        background: white;
+                        border: 1px solid #ddd;
+                        border-radius: 4px;
+                        padding: 12px 15px;
+                        font-size: 0.95em;
+                        color: #2c3e50;
+                        min-height: 20px;
+                        word-wrap: break-word;
+                    }
+                    .form-row {
+                        display: flex;
+                        gap: 20px;
+                        margin-bottom: 20px;
+                    }
+                    .form-col {
+                        flex: 1;
+                    }
+                    .form-col-2 {
+                        flex: 2;
+                    }
+                    .form-col-3 {
+                        flex: 3;
+                    }
+                    .checkbox-group {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 15px;
+                        margin-top: 10px;
+                    }
+                    .checkbox-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+                    .checkbox-item input[type="checkbox"] {
+                        margin: 0;
+                    }
+                    .table-container {
+                        overflow-x: auto;
+                        margin: 15px 0;
+                    }
+                    .form-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        background: white;
+                        border: 1px solid #ddd;
+                    }
+                    .form-table th,
+                    .form-table td {
+                        border: 1px solid #ddd;
+                        padding: 12px;
+                        text-align: left;
+                    }
+                    .form-table th {
+                        background: #f8f9fa;
+                        font-weight: 600;
+                        color: #2c3e50;
+                    }
+                    .form-table .form-value {
+                        border: none;
+                        padding: 8px;
+                        margin: 0;
+                        background: transparent;
+                    }
+                    .page-break {
+                        page-break-before: always;
+                        margin-top: 40px;
+                    }
+                    .status-badge {
+                        display: inline-block;
+                        padding: 4px 12px;
+                        border-radius: 20px;
+                        font-size: 0.85em;
+                        font-weight: 600;
+                    }
+                    .status-new {
+                        background: #e3f2fd;
+                        color: #1976d2;
+                    }
+                    .status-progress {
+                        background: #fff3e0;
+                        color: #f57c00;
+                    }
+                    .status-completed {
+                        background: #e8f5e8;
+                        color: #388e3c;
+                    }
+                </style>
+                
+                <div class="application-view">
+                    <!-- 헤더 -->
+                    <div style="text-align: center; margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px;">
+                        <h1 style="margin: 0; font-size: 2em; font-weight: 700;">인증 심사 신청서</h1>
+                        <h2 style="margin: 10px 0 0 0; font-size: 1.2em; font-weight: 400;">표준 ISO 9001, 14001, 45001</h2>
+                        <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">
+                            신청일시: ${formatDate(timestamp)} | 
+                            상태: <span class="status-badge ${getStatusClass(application['상태'])}">${application['상태'] || '신규'}</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="view-section">
-                    <h4>회사 정보</h4>
-                    <div class="view-field">
-                        <div class="view-label">법인명(국문)</div>
-                        <div class="view-value ${!application['법인명(국문)'] ? 'empty' : ''}">${application['법인명(국문)'] || '미입력'}</div>
+                    <!-- 회사 정보 섹션 -->
+                    <div class="form-section">
+                        <div class="section-title">회사 정보</div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">법인명 (국문/영문) *</label>
+                            <div class="form-value">${application['법인명(국문)'] || ''}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">상호명 (해당되는 경우)</label>
+                            <div class="form-value">${application['상호명'] || ''}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">본사 주소 *</label>
+                            <div class="form-value">${application['본사주소'] || ''}</div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label">시</label>
+                                <div class="form-value">${application['도시'] || ''}</div>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label">행정 구역(도)</label>
+                                <div class="form-value">${application['행정구역'] || ''}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label">우편 번호</label>
+                                <div class="form-value">${application['우편번호'] || ''}</div>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label">국가</label>
+                                <div class="form-value">${application['국가'] || ''}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label">대표 전화 번호</label>
+                                <div class="form-value">${application['대표전화번호'] || ''}</div>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label">대표 이메일 주소</label>
+                                <div class="form-value">${application['대표이메일'] || ''}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label">웹사이트</label>
+                                <div class="form-value">${application['웹사이트'] || ''}</div>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label">사업자 등록번호</label>
+                                <div class="form-value">${application['사업자등록번호'] || ''}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label class="form-label">법인 등록 번호</label>
+                                <div class="form-value">${application['법인등록번호'] || ''}</div>
+                            </div>
+                            <div class="form-col">
+                                <label class="form-label">과세당국</label>
+                                <div class="form-value">${application['과세당국'] || ''}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">귀사는 그룹 계열사에 속해 있거나 모회사가 소유하고 있습니까?</label>
+                            <div class="form-value">${formatRadioValue(application['모회사/계열사여부'])}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">두 개 이상의 사이트를 운영하는 경우 경영시스템이 중앙에서 관리하고 있습니까?</label>
+                            <div class="form-value">${formatRadioValue(application['중앙관리시스템여부'])}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">본 인증에 포함되는 사업장은 몇개 인가요? *</label>
+                            <div class="form-value">${application['인증포함사업장수'] || ''}</div>
+                        </div>
                     </div>
-                    <div class="view-field">
-                        <div class="view-label">법인명(영문)</div>
-                        <div class="view-value ${!application['법인명(영문)'] ? 'empty' : ''}">${application['법인명(영문)'] || '미입력'}</div>
+
+                    <!-- 연락처 세부 정보 섹션 -->
+                    <div class="form-section">
+                        <div class="section-title">연락처 세부 정보</div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">담당자 성함 (직급/직책 포함) *</label>
+                            <div class="form-value">${application['담당자명'] || ''}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">부서 *</label>
+                            <div class="form-value">${application['부서'] || ''}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">이메일 주소 *</label>
+                            <div class="form-value">${application['담당자이메일'] || ''}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">전화 번호 *</label>
+                            <div class="form-value">${application['담당자전화'] || ''}</div>
+                        </div>
                     </div>
-                    <div class="view-field">
-                        <div class="view-label">상호명</div>
-                        <div class="view-value ${!application['상호명'] ? 'empty' : ''}">${application['상호명'] || '미입력'}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">본사주소</div>
-                        <div class="view-value ${!application['본사주소'] ? 'empty' : ''}">${application['본사주소'] || '미입력'}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">도시</div>
-                        <div class="view-value ${!application['도시'] ? 'empty' : ''}">${application['도시'] || '미입력'}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">우편번호</div>
-                        <div class="view-value ${!application['우편번호'] ? 'empty' : ''}">${application['우편번호'] || '미입력'}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">대표전화번호</div>
-                        <div class="view-value ${!application['대표전화번호'] ? 'empty' : ''}">${application['대표전화번호'] || '미입력'}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">국가</div>
-                        <div class="view-value ${!application['국가'] ? 'empty' : ''}">${application['국가'] || '미입력'}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">대표이메일</div>
-                        <div class="view-value ${!application['대표이메일'] ? 'empty' : ''}">${application['대표이메일'] || '미입력'}</div>
-                    </div>
-                    <div class="view-field">
-                        <div class="view-label">웹사이트</div>
-                        <div class="view-value ${!application['웹사이트'] ? 'empty' : ''}">${application['웹사이트'] || '미입력'}</div>
+
+                    <!-- 평가 요구 사항 섹션 -->
+                    <div class="form-section">
+                        <div class="section-title">평가 요구 사항</div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">인증 범위</label>
+                            <div class="form-value">${formatISOStandards(application['ISO표준'])}</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">2개 이상 인증 신청시 통합심사 진행 여부</label>
+                            <div class="form-value">${formatRadioValue(application['표준적용여부'])}</div>
+                        </div>
                     </div>
                 </div>
 
