@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LRQA 관리자 설정</title>
+    <title>LRQA 관리자 ?�정</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- 테마 토글 버튼 -->
+    <!-- ?�마 ?��? 버튼 -->
     <button class="theme-toggle" id="themeToggle">
-        <span class="theme-toggle-icon">🌙</span>
-        <span class="theme-toggle-text">다크모드</span>
+        <span class="theme-toggle-icon">?��</span>
+        <span class="theme-toggle-text">?�크모드</span>
     </button>
     
     <style>
-        /* 관리자 전용 스타일 */
+        /* 관리자 ?�용 ?��???*/
         .admin-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -228,7 +228,7 @@
             box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
         }
 
-        /* 검색 컨트롤 스타일 */
+        /* 검??컨트�??��???*/
         .list-controls {
             display: flex;
             justify-content: space-between;
@@ -300,7 +300,7 @@
             border-color: #7c3aed;
         }
 
-        /* 검색 결과 하이라이트 */
+        /* 검??결과 ?�이?�이??*/
         .highlight {
             background: #fef3c7;
             color: #92400e;
@@ -309,7 +309,7 @@
             font-weight: 500;
         }
 
-        /* 검색 결과 없음 스타일 */
+        /* 검??결과 ?�음 ?��???*/
         .no-results {
             text-align: center;
             padding: 40px 20px;
@@ -332,7 +332,7 @@
             opacity: 0.7;
         }
 
-        /* 페이지네이션 스타일 */
+        /* ?�이지?�이???��???*/
         .pagination-container {
             display: flex;
             justify-content: space-between;
@@ -460,7 +460,7 @@
             display: block;
         }
 
-        /* 수정 모달 스타일 */
+        /* ?�정 모달 ?��???*/
         .modal {
             position: fixed;
             z-index: 1000;
@@ -583,7 +583,7 @@
             background-color: #6d28d9;
         }
 
-        /* 신청서 보기 모달 스타일 */
+        /* ?�청??보기 모달 ?��???*/
         .view-content {
             max-height: 70vh;
             overflow-y: auto;
@@ -656,7 +656,7 @@
             color: #065f46;
         }
 
-        /* 신청서 보기용 스타일 (index.html 기반) */
+        /* ?�청??보기???��???(index.html 기반) */
         .application-view {
             font-family: 'Malgun Gothic', Arial, sans-serif;
             font-size: 11px;
@@ -878,130 +878,130 @@
 </head>
 <body>
     <div class="admin-container">
-        <!-- 로그인 섹션 -->
+        <!-- 로그???�션 -->
         <div id="loginSection" class="login-section">
-            <h2 style="text-align: center; margin-bottom: 30px;">LRQA 관리자 로그인</h2>
+            <h2 style="text-align: center; margin-bottom: 30px;">LRQA 관리자 로그??/h2>
             <form id="loginForm" class="login-form">
-                <input type="text" id="username" placeholder="사용자명" required>
-                <input type="password" id="password" placeholder="비밀번호" required>
-                <button type="submit" class="login-btn">로그인</button>
+                <input type="text" id="username" placeholder="?�용?�명" required>
+                <input type="password" id="password" placeholder="비�?번호" required>
+                <button type="submit" class="login-btn">로그??/button>
             </form>
         </div>
 
-        <!-- 관리자 콘텐츠 -->
+        <!-- 관리자 콘텐�?-->
         <div id="adminContent" class="admin-content">
-            <!-- 관리자 헤더 -->
+            <!-- 관리자 ?�더 -->
             <header class="admin-header">
-                <h1>LRQA 관리자 설정</h1>
-                <p>ISO 인증심사 신청서 관리 시스템</p>
-                <button onclick="logout()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">로그아웃</button>
+                <h1>LRQA 관리자 ?�정</h1>
+                <p>ISO ?�증?�사 ?�청??관�??�스??/p>
+                <button onclick="logout()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">로그?�웃</button>
             </header>
 
-            <!-- 관리자 탭 -->
+            <!-- 관리자 ??-->
             <div class="admin-tabs">
-                <button class="admin-tab active" onclick="showTab('dashboard')">대시보드</button>
-                <button class="admin-tab" onclick="showTab('applications')">신청서 목록</button>
-                <button class="admin-tab" onclick="showTab('export')">데이터 내보내기</button>
+                <button class="admin-tab active" onclick="showTab('dashboard')">?�?�보??/button>
+                <button class="admin-tab" onclick="showTab('applications')">?�청??목록</button>
+                <button class="admin-tab" onclick="showTab('export')">?�이???�보?�기</button>
             </div>
 
-            <!-- 대시보드 탭 -->
+            <!-- ?�?�보????-->
             <div id="dashboard" class="tab-content active">
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number" id="totalApplications">-</div>
-                        <div class="stat-label">총 신청서</div>
+                        <div class="stat-label">�??�청??/div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="newApplications">-</div>
-                        <div class="stat-label">신규 신청서</div>
+                        <div class="stat-label">?�규 ?�청??/div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="monthlyApplications">-</div>
-                        <div class="stat-label">이달의 신청서</div>
+                        <div class="stat-label">?�달???�청??/div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="completedApplications">-</div>
-                        <div class="stat-label">완료된 신청서</div>
+                        <div class="stat-label">?�료???�청??/div>
                     </div>
                 </div>
                 
-                <button onclick="loadDashboard()" class="export-btn">데이터 새로고침</button>
+                <button onclick="loadDashboard()" class="export-btn">?�이???�로고침</button>
             </div>
 
-            <!-- 신청서 목록 탭 -->
+            <!-- ?�청??목록 ??-->
             <div id="applications" class="tab-content">
-                <h3>신청서 목록</h3>
+                <h3>?�청??목록</h3>
                 <div class="list-controls">
                     <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="회사명, 담당자명, 연락처로 검색..." class="search-input">
-                        <button onclick="performSearch()" class="search-btn">검색</button>
-                        <button onclick="clearSearch()" class="clear-search-btn">초기화</button>
+                        <input type="text" id="searchInput" placeholder="?�사�? ?�당?�명, ?�락처로 검??.." class="search-input">
+                        <button onclick="performSearch()" class="search-btn">검??/button>
+                        <button onclick="clearSearch()" class="clear-search-btn">초기??/button>
                     </div>
-                    <button onclick="loadApplications()" class="export-btn">목록 새로고침</button>
+                    <button onclick="loadApplications()" class="export-btn">목록 ?�로고침</button>
                 </div>
                 
                 <div id="applicationsTableContainer">
                     <table class="applications-table">
                         <thead>
                             <tr>
-                                <th>신청일시</th>
-                                <th>회사명</th>
-                                <th>담당자</th>
-                                <th>연락처</th>
-                                <th>인증범위</th>
-                                <th>상태</th>
-                                <th>작업</th>
+                                <th>?�청?�시</th>
+                                <th>?�사�?/th>
+                                <th>?�당??/th>
+                                <th>?�락�?/th>
+                                <th>?�증범위</th>
+                                <th>?�태</th>
+                                <th>?�업</th>
                             </tr>
                         </thead>
                         <tbody id="applicationsTableBody">
-                            <!-- 데이터가 동적으로 로드됩니다 -->
+                            <!-- ?�이?��? ?�적?�로 로드?�니??-->
                         </tbody>
                     </table>
                     
-                    <!-- 페이지네이션 -->
+                    <!-- ?�이지?�이??-->
                     <div class="pagination-container">
                         <div class="pagination-info">
-                            <span id="paginationInfo">총 0개 신청서</span>
+                            <span id="paginationInfo">�?0�??�청??/span>
                         </div>
                         <div class="pagination-controls">
-                            <button id="prevPageBtn" class="pagination-btn" onclick="goToPreviousPage()" disabled>이전</button>
+                            <button id="prevPageBtn" class="pagination-btn" onclick="goToPreviousPage()" disabled>?�전</button>
                             <div id="pageNumbers" class="page-numbers">
-                                <!-- 페이지 번호가 동적으로 생성됩니다 -->
+                                <!-- ?�이지 번호가 ?�적?�로 ?�성?�니??-->
                             </div>
-                            <button id="nextPageBtn" class="pagination-btn" onclick="goToNextPage()" disabled>다음</button>
+                            <button id="nextPageBtn" class="pagination-btn" onclick="goToNextPage()" disabled>?�음</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 데이터 내보내기 탭 -->
+            <!-- ?�이???�보?�기 ??-->
             <div id="export" class="tab-content">
                 <div class="export-section">
-                    <h3>데이터 내보내기</h3>
-                    <p>신청서 데이터를 다양한 형식으로 내보낼 수 있습니다.</p>
+                    <h3>?�이???�보?�기</h3>
+                    <p>?�청???�이?��? ?�양???�식?�로 ?�보?????�습?�다.</p>
                     
-                    <button onclick="exportToCSV()" class="export-btn">CSV로 내보내기</button>
-                    <button onclick="openGoogleSheet()" class="export-btn">Google Sheets 열기</button>
+                    <button onclick="exportToCSV()" class="export-btn">CSV�??�보?�기</button>
+                    <button onclick="openGoogleSheet()" class="export-btn">Google Sheets ?�기</button>
                 </div>
             </div>
 
-            <!-- 폼 편집 탭 (숨김) -->
+            <!-- ???�집 ??(?��?) -->
             <div id="formedit" class="tab-content" style="display: none;">
-                <h3>신청서 폼 편집</h3>
+                <h3>?�청?????�집</h3>
                 <div id="formEditContainer">
-                    <p>질문/라벨/설명 텍스트를 수정할 수 있습니다.</p>
+                    <p>질문/?�벨/?�명 ?�스?��? ?�정?????�습?�다.</p>
                     <form id="formEditForm"></form>
-                    <button type="button" class="export-btn" onclick="saveFormDefinition()">저장</button>
+                    <button type="button" class="export-btn" onclick="saveFormDefinition()">?�??/button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 수정 모달 -->
+    <!-- ?�정 모달 -->
     <div id="editModal" class="modal" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>신청서 수정</h3>
+                <h3>?�청???�정</h3>
                 <span class="close" onclick="closeEditModal()">&times;</span>
             </div>
             <div class="modal-body">
@@ -1010,73 +1010,73 @@
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editCompanyName">법인명(국문)</label>
+                            <label for="editCompanyName">법인�?�?��)</label>
                             <input type="text" id="editCompanyName" name="editCompanyName">
                         </div>
                         <div class="form-group">
-                            <label for="editCompanyNameEn">법인명(영문)</label>
+                            <label for="editCompanyNameEn">법인�??�문)</label>
                             <input type="text" id="editCompanyNameEn" name="editCompanyNameEn">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editContactName">담당자명</label>
+                            <label for="editContactName">?�당?�명</label>
                             <input type="text" id="editContactName" name="editContactName">
                         </div>
                         <div class="form-group">
-                            <label for="editContactPhone">담당자 전화</label>
+                            <label for="editContactPhone">?�당???�화</label>
                             <input type="text" id="editContactPhone" name="editContactPhone">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editContactEmail">담당자 이메일</label>
+                            <label for="editContactEmail">?�당???�메??/label>
                             <input type="email" id="editContactEmail" name="editContactEmail">
                         </div>
                         <div class="form-group">
-                            <label for="editStatus">상태</label>
+                            <label for="editStatus">?�태</label>
                             <select id="editStatus" name="editStatus">
-                                <option value="신규">신규</option>
-                                <option value="진행중">진행중</option>
-                                <option value="완료">완료</option>
+                                <option value="?�규">?�규</option>
+                                <option value="진행�?>진행�?/option>
+                                <option value="?�료">?�료</option>
                             </select>
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editCertificationScope">인증범위</label>
+                            <label for="editCertificationScope">?�증범위</label>
                             <input type="text" id="editCertificationScope" name="editCertificationScope">
                         </div>
                         <div class="form-group">
-                            <label for="editTotalEmployees">총 직원수</label>
+                            <label for="editTotalEmployees">�?직원??/label>
                             <input type="number" id="editTotalEmployees" name="editTotalEmployees">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editPreferredYear">희망 년도</label>
+                            <label for="editPreferredYear">?�망 ?�도</label>
                             <input type="number" id="editPreferredYear" name="editPreferredYear">
                         </div>
                         <div class="form-group">
-                            <label for="editPreferredMonth">희망 월</label>
+                            <label for="editPreferredMonth">?�망 ??/label>
                             <select id="editPreferredMonth" name="editPreferredMonth">
-                                <option value="">선택하세요</option>
-                                <option value="1">1월</option>
-                                <option value="2">2월</option>
-                                <option value="3">3월</option>
-                                <option value="4">4월</option>
-                                <option value="5">5월</option>
-                                <option value="6">6월</option>
-                                <option value="7">7월</option>
-                                <option value="8">8월</option>
-                                <option value="9">9월</option>
-                                <option value="10">10월</option>
-                                <option value="11">11월</option>
-                                <option value="12">12월</option>
+                                <option value="">?�택?�세??/option>
+                                <option value="1">1??/option>
+                                <option value="2">2??/option>
+                                <option value="3">3??/option>
+                                <option value="4">4??/option>
+                                <option value="5">5??/option>
+                                <option value="6">6??/option>
+                                <option value="7">7??/option>
+                                <option value="8">8??/option>
+                                <option value="9">9??/option>
+                                <option value="10">10??/option>
+                                <option value="11">11??/option>
+                                <option value="12">12??/option>
                             </select>
                         </div>
                     </div>
@@ -1084,56 +1084,56 @@
             </div>
             <div class="modal-footer">
                 <button type="button" onclick="closeEditModal()" class="btn btn-cancel">취소</button>
-                <button type="button" onclick="saveEdit()" class="btn btn-save">저장</button>
+                <button type="button" onclick="saveEdit()" class="btn btn-save">?�??/button>
             </div>
         </div>
     </div>
 
-    <!-- 신청서 보기 모달 -->
+    <!-- ?�청??보기 모달 -->
     <div id="viewModal" class="modal" style="display: none;">
         <div class="modal-content" style="max-width: 95%; max-height: 95vh; width: 1200px;">
             <div class="modal-header">
-                <h3>신청서 상세 보기</h3>
+                <h3>?�청???�세 보기</h3>
                 <div style="display: flex; gap: 10px;">
-                    <button type="button" onclick="downloadPDF()" class="btn btn-save">PDF 다운로드</button>
+                    <button type="button" onclick="downloadPDF()" class="btn btn-save">PDF ?�운로드</button>
                     <span class="close" onclick="closeViewModal()">&times;</span>
                 </div>
             </div>
             <div class="modal-body" style="padding: 0;">
                 <div id="viewContent" class="view-content" style="max-height: 80vh; overflow-y: auto;">
-                    <!-- 신청서 내용이 동적으로 로드됩니다 -->
+                    <!-- ?�청???�용???�적?�로 로드?�니??-->
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" onclick="closeViewModal()" class="btn btn-cancel">닫기</button>
-                <button type="button" onclick="editFromView()" class="btn btn-save">수정</button>
+                <button type="button" onclick="closeViewModal()" class="btn btn-cancel">?�기</button>
+                <button type="button" onclick="editFromView()" class="btn btn-save">?�정</button>
             </div>
         </div>
     </div>
 
     <script>
-        // 인증 상태 확인
+        // ?�증 ?�태 ?�인
         let isAuthenticated = false;
         
-        // 로그인 처리
+        // 로그??처리
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            // 간단한 인증 (실제 환경에서는 더 안전한 방법 사용)
+            // 간단???�증 (?�제 ?�경?�서?????�전??방법 ?�용)
             if (username === 'admin' && password === 'lrqa2025') {
                 isAuthenticated = true;
                 document.getElementById('loginSection').style.display = 'none';
                 document.getElementById('adminContent').classList.add('authenticated');
                 loadDashboard();
             } else {
-                alert('로그인 정보가 올바르지 않습니다.');
+                alert('로그???�보가 ?�바르�? ?�습?�다.');
             }
         });
 
-        // 로그아웃
+        // 로그?�웃
         function logout() {
             isAuthenticated = false;
             document.getElementById('loginSection').style.display = 'block';
@@ -1142,21 +1142,21 @@
             document.getElementById('password').value = '';
         }
 
-        // 탭 전환
+        // ???�환
         function showTab(tabName) {
-            // 모든 탭 비활성화
+            // 모든 ??비활?�화
             const tabs = document.querySelectorAll('.admin-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
             
-            // 선택된 탭 활성화
+            // ?�택?????�성??
             event.target.classList.add('active');
             document.getElementById(tabName).classList.add('active');
         }
 
-        // 대시보드 로드
+        // ?�?�보??로드
         async function loadDashboard() {
             if (!isAuthenticated) return;
             
@@ -1171,44 +1171,44 @@
                     document.getElementById('monthlyApplications').textContent = stats.monthly;
                     document.getElementById('completedApplications').textContent = stats.completed;
                     
-                    // Google Sheets URL 업데이트
+                    // Google Sheets URL ?�데?�트
                     window.currentSheetUrl = result.data.sheetUrl;
                     
-                    showMessage('대시보드가 로드되었습니다.', 'success');
+                    showMessage('?�?�보?��? 로드?�었?�니??', 'success');
                 } else {
-                    showMessage(result.message || '대시보드 로드 중 오류가 발생했습니다.', 'error');
+                    showMessage(result.message || '?�?�보??로드 �??�류가 발생?�습?�다.', 'error');
                 }
             } catch (error) {
                 console.error('Error loading dashboard:', error);
-                showMessage('대시보드 로드 중 오류가 발생했습니다.', 'error');
+                showMessage('?�?�보??로드 �??�류가 발생?�습?�다.', 'error');
             }
         }
 
-        // 페이지네이션 변수
+        // ?�이지?�이??변??
         let allApplications = [];
         let filteredApplications = [];
         let currentPage = 1;
         const itemsPerPage = 10;
         let currentSearchTerm = '';
 
-        // 신청서 목록 로드
+        // ?�청??목록 로드
         async function loadApplications() {
             if (!isAuthenticated) return;
             
             try {
                 const tbody = document.getElementById('applicationsTableBody');
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">데이터를 불러오는 중...</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">?�이?��? 불러?�는 �?..</td></tr>';
                 
                 const response = await fetch('/.netlify/functions/get-applications');
                 const result = await response.json();
                 
                 if (result.success) {
                     allApplications = result.data.applications;
-                    filteredApplications = [...allApplications]; // 초기에는 모든 신청서
-                    currentPage = 1; // 첫 페이지로 리셋
-                    currentSearchTerm = ''; // 검색어 초기화
+                    filteredApplications = [...allApplications]; // 초기?�는 모든 ?�청??
+                    currentPage = 1; // �??�이지�?리셋
+                    currentSearchTerm = ''; // 검?�어 초기??
                     
-                    // 검색 입력창 초기화
+                    // 검???�력�?초기??
                     document.getElementById('searchInput').value = '';
                     
                     if (filteredApplications.length === 0) {
@@ -1217,35 +1217,35 @@
                                 <tr>
                                     <td colspan="7">
                                         <div class="no-results">
-                                            <div class="icon">🔍</div>
-                                            <div class="message">검색 결과가 없습니다</div>
-                                            <div class="suggestion">"${currentSearchTerm}"에 대한 검색 결과를 찾을 수 없습니다.<br>다른 검색어를 시도해보세요.</div>
+                                            <div class="icon">?��</div>
+                                            <div class="message">검??결과가 ?�습?�다</div>
+                                            <div class="suggestion">"${currentSearchTerm}"???�??검??결과�?찾을 ???�습?�다.<br>?�른 검?�어�??�도?�보?�요.</div>
                                         </div>
                                     </td>
                                 </tr>
                             `;
                         } else {
-                            tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">신청서가 없습니다.</td></tr>';
+                            tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">?�청?��? ?�습?�다.</td></tr>';
                         }
                         updatePaginationInfo();
                     } else {
                         displayCurrentPage();
                     }
                     
-                    showMessage('신청서 목록이 로드되었습니다.', 'success');
+                    showMessage('?�청??목록??로드?�었?�니??', 'success');
                 } else {
-                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">데이터 로드 중 오류가 발생했습니다.</td></tr>';
-                    showMessage(result.message || '신청서 목록 로드 중 오류가 발생했습니다.', 'error');
+                    tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">?�이??로드 �??�류가 발생?�습?�다.</td></tr>';
+                    showMessage(result.message || '?�청??목록 로드 �??�류가 발생?�습?�다.', 'error');
                 }
             } catch (error) {
                 console.error('Error loading applications:', error);
                 const tbody = document.getElementById('applicationsTableBody');
-                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">데이터 로드 중 오류가 발생했습니다.</td></tr>';
-                showMessage('신청서 목록 로드 중 오류가 발생했습니다.', 'error');
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center;">?�이??로드 �??�류가 발생?�습?�다.</td></tr>';
+                showMessage('?�청??목록 로드 �??�류가 발생?�습?�다.', 'error');
             }
         }
 
-        // 현재 페이지 표시
+        // ?�재 ?�이지 ?�시
         function displayCurrentPage() {
             const tbody = document.getElementById('applicationsTableBody');
             const startIndex = (currentPage - 1) * itemsPerPage;
@@ -1254,19 +1254,19 @@
             
             tbody.innerHTML = currentApplications.map(app => `
                 <tr>
-                    <td>${formatDate(app['신청일시'])}</td>
-                    <td>${currentSearchTerm ? highlightSearchTerm(app['법인명(국문)'] || app['법인명(영문)'] || '-', currentSearchTerm) : (app['법인명(국문)'] || app['법인명(영문)'] || '-')}</td>
-                    <td>${currentSearchTerm ? highlightSearchTerm(app['담당자명'] || '-', currentSearchTerm) : (app['담당자명'] || '-')}</td>
-                    <td>${currentSearchTerm ? highlightSearchTerm(app['담당자전화'] || '-', currentSearchTerm) : (app['담당자전화'] || '-')}</td>
-                    <td>${app['인증범위'] || '-'}</td>
+                    <td>${formatDate(app['?�청?�시'])}</td>
+                    <td>${currentSearchTerm ? highlightSearchTerm(app['법인�?�?��)'] || app['법인�??�문)'] || '-', currentSearchTerm) : (app['법인�?�?��)'] || app['법인�??�문)'] || '-')}</td>
+                    <td>${currentSearchTerm ? highlightSearchTerm(app['?�당?�명'] || '-', currentSearchTerm) : (app['?�당?�명'] || '-')}</td>
+                    <td>${currentSearchTerm ? highlightSearchTerm(app['?�당?�전??] || '-', currentSearchTerm) : (app['?�당?�전??] || '-')}</td>
+                    <td>${app['?�증범위'] || '-'}</td>
                     <td>
-                        <span class="status-badge ${getStatusClass(app['상태'])}">${app['상태'] || '신규'}</span>
+                        <span class="status-badge ${getStatusClass(app['?�태'])}">${app['?�태'] || '?�규'}</span>
                     </td>
                     <td>
                         <div class="action-buttons">
-                            <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')">보기</button>
-                            <button class="action-btn edit" onclick="editApplication('${app['신청일시']}')">수정</button>
-                            <button class="action-btn quote" onclick="generateQuotation('${app['신청일시']}')">견적서</button>
+                            <button class="action-btn view" onclick="viewApplication('${app['?�청?�시']}')">보기</button>
+                            <button class="action-btn edit" onclick="editApplication('${app['?�청?�시']}')">?�정</button>
+                            <button class="action-btn quote" onclick="generateQuotation('${app['?�청?�시']}')">견적??/button>
                         </div>
                     </td>
                 </tr>
@@ -1276,57 +1276,57 @@
             updatePaginationControls();
         }
 
-        // 페이지네이션 정보 업데이트
+        // ?�이지?�이???�보 ?�데?�트
         function updatePaginationInfo() {
             const totalItems = filteredApplications.length;
             const startItem = totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
             const endItem = Math.min(currentPage * itemsPerPage, totalItems);
             
-            let infoText = `총 ${totalItems}개 신청서 (${startItem}-${endItem}번째)`;
+            let infoText = `�?${totalItems}�??�청??(${startItem}-${endItem}번째)`;
             if (currentSearchTerm) {
-                infoText += ` - "${currentSearchTerm}" 검색 결과`;
+                infoText += ` - "${currentSearchTerm}" 검??결과`;
             }
             
             document.getElementById('paginationInfo').textContent = infoText;
         }
 
-        // 페이지네이션 컨트롤 업데이트
+        // ?�이지?�이??컨트�??�데?�트
         function updatePaginationControls() {
             const totalPages = Math.ceil(filteredApplications.length / itemsPerPage);
             const pageNumbersContainer = document.getElementById('pageNumbers');
             const prevBtn = document.getElementById('prevPageBtn');
             const nextBtn = document.getElementById('nextPageBtn');
             
-            // 이전/다음 버튼 상태 업데이트
+            // ?�전/?�음 버튼 ?�태 ?�데?�트
             prevBtn.disabled = currentPage === 1;
             nextBtn.disabled = currentPage === totalPages;
             
-            // 페이지 번호 생성
+            // ?�이지 번호 ?�성
             let pageNumbersHTML = '';
             
             if (totalPages <= 7) {
-                // 7페이지 이하면 모든 번호 표시
+                // 7?�이지 ?�하�?모든 번호 ?�시
                 for (let i = 1; i <= totalPages; i++) {
                     pageNumbersHTML += `<button class="page-number ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
                 }
             } else {
-                // 7페이지 초과면 스마트 페이지네이션
+                // 7?�이지 초과�??�마???�이지?�이??
                 if (currentPage <= 4) {
-                    // 앞쪽 페이지들
+                    // ?�쪽 ?�이지??
                     for (let i = 1; i <= 5; i++) {
                         pageNumbersHTML += `<button class="page-number ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
                     }
                     pageNumbersHTML += `<span class="page-number dots">...</span>`;
                     pageNumbersHTML += `<button class="page-number" onclick="goToPage(${totalPages})">${totalPages}</button>`;
                 } else if (currentPage >= totalPages - 3) {
-                    // 뒤쪽 페이지들
+                    // ?�쪽 ?�이지??
                     pageNumbersHTML += `<button class="page-number" onclick="goToPage(1)">1</button>`;
                     pageNumbersHTML += `<span class="page-number dots">...</span>`;
                     for (let i = totalPages - 4; i <= totalPages; i++) {
                         pageNumbersHTML += `<button class="page-number ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
                     }
                 } else {
-                    // 중간 페이지들
+                    // 중간 ?�이지??
                     pageNumbersHTML += `<button class="page-number" onclick="goToPage(1)">1</button>`;
                     pageNumbersHTML += `<span class="page-number dots">...</span>`;
                     for (let i = currentPage - 1; i <= currentPage + 1; i++) {
@@ -1340,7 +1340,7 @@
             pageNumbersContainer.innerHTML = pageNumbersHTML;
         }
 
-        // 특정 페이지로 이동
+        // ?�정 ?�이지�??�동
         function goToPage(page) {
             if (page >= 1 && page <= Math.ceil(filteredApplications.length / itemsPerPage)) {
                 currentPage = page;
@@ -1348,14 +1348,14 @@
             }
         }
 
-        // 이전 페이지로 이동
+        // ?�전 ?�이지�??�동
         function goToPreviousPage() {
             if (currentPage > 1) {
                 goToPage(currentPage - 1);
             }
         }
 
-        // 다음 페이지로 이동
+        // ?�음 ?�이지�??�동
         function goToNextPage() {
             const totalPages = Math.ceil(filteredApplications.length / itemsPerPage);
             if (currentPage < totalPages) {
@@ -1363,22 +1363,22 @@
             }
         }
 
-        // 검색 수행
+        // 검???�행
         function performSearch() {
             const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
             currentSearchTerm = searchTerm;
             
             if (searchTerm === '') {
-                // 검색어가 없으면 모든 신청서 표시
+                // 검?�어가 ?�으�?모든 ?�청???�시
                 filteredApplications = [...allApplications];
-                showMessage('검색이 초기화되었습니다.', 'info');
+                showMessage('검?�이 초기?�되?�습?�다.', 'info');
             } else {
-                // 검색어로 필터링
+                // 검?�어�??�터�?
                 filteredApplications = allApplications.filter(app => {
-                    const companyName = (app['법인명(국문)'] || app['법인명(영문)'] || '').toLowerCase();
-                    const contactName = (app['담당자명'] || '').toLowerCase();
-                    const contactPhone = (app['담당자전화'] || '').toLowerCase();
-                    const contactEmail = (app['담당자이메일'] || '').toLowerCase();
+                    const companyName = (app['법인�?�?��)'] || app['법인�??�문)'] || '').toLowerCase();
+                    const contactName = (app['?�당?�명'] || '').toLowerCase();
+                    const contactPhone = (app['?�당?�전??] || '').toLowerCase();
+                    const contactEmail = (app['?�당?�이메일'] || '').toLowerCase();
                     const address = (app['주소'] || '').toLowerCase();
                     
                     return companyName.includes(searchTerm) ||
@@ -1390,28 +1390,28 @@
                 
                 const resultCount = filteredApplications.length;
                 if (resultCount > 0) {
-                    showMessage(`"${searchTerm}" 검색 결과: ${resultCount}개 신청서를 찾았습니다.`, 'success');
+                    showMessage(`"${searchTerm}" 검??결과: ${resultCount}�??�청?��? 찾았?�니??`, 'success');
                 } else {
-                    showMessage(`"${searchTerm}" 검색 결과가 없습니다.`, 'warning');
+                    showMessage(`"${searchTerm}" 검??결과가 ?�습?�다.`, 'warning');
                 }
             }
             
-            // 첫 페이지로 이동하고 결과 표시
+            // �??�이지�??�동?�고 결과 ?�시
             currentPage = 1;
             displayCurrentPage();
         }
 
-        // 검색 초기화
+        // 검??초기??
         function clearSearch() {
             document.getElementById('searchInput').value = '';
             currentSearchTerm = '';
             filteredApplications = [...allApplications];
             currentPage = 1;
             displayCurrentPage();
-            showMessage('검색이 초기화되었습니다.', 'info');
+            showMessage('검?�이 초기?�되?�습?�다.', 'info');
         }
 
-        // 검색어 하이라이트 함수
+        // 검?�어 ?�이?�이???�수
         function highlightSearchTerm(text, searchTerm) {
             if (!searchTerm || !text) return text;
             
@@ -1419,7 +1419,7 @@
             return text.replace(regex, '<span class="highlight">$1</span>');
         }
 
-        // Enter 키로 검색 실행
+        // Enter ?�로 검???�행
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('searchInput');
             if (searchInput) {
@@ -1431,12 +1431,12 @@
             }
         });
 
-        // CSV 내보내기
+        // CSV ?�보?�기
         async function exportToCSV() {
             if (!isAuthenticated) return;
             
             try {
-                showMessage('CSV 파일을 준비 중입니다...', 'info');
+                showMessage('CSV ?�일??준�?중입?�다...', 'info');
                 
                 const response = await fetch('/.netlify/functions/export-csv');
                 if (response.ok) {
@@ -1450,17 +1450,17 @@
                     document.body.removeChild(a);
                     window.URL.revokeObjectURL(url);
                     
-                    showMessage('CSV 파일이 다운로드되었습니다.', 'success');
+                    showMessage('CSV ?�일???�운로드?�었?�니??', 'success');
                 } else {
-                    showMessage('CSV 내보내기 중 오류가 발생했습니다.', 'error');
+                    showMessage('CSV ?�보?�기 �??�류가 발생?�습?�다.', 'error');
                 }
             } catch (error) {
                 console.error('Error exporting CSV:', error);
-                showMessage('CSV 내보내기 중 오류가 발생했습니다.', 'error');
+                showMessage('CSV ?�보?�기 �??�류가 발생?�습?�다.', 'error');
             }
         }
 
-        // Google Sheets 열기
+        // Google Sheets ?�기
         function openGoogleSheet() {
             if (!isAuthenticated) return;
             
@@ -1468,7 +1468,7 @@
             window.open(sheetUrl, '_blank');
         }
 
-        // 헬퍼 함수들
+        // ?�퍼 ?�수??
         function formatDate(dateString) {
             if (!dateString) return '-';
             try {
@@ -1487,435 +1487,435 @@
 
         function getStatusClass(status) {
             switch(status) {
-                case '신규': return 'status-new';
-                case '진행중': return 'status-progress';
-                case '완료': return 'status-completed';
+                case '?�규': return 'status-new';
+                case '진행�?: return 'status-progress';
+                case '?�료': return 'status-completed';
                 default: return 'status-new';
             }
         }
 
         function viewApplication(timestamp) {
-            // 신청서 상세 보기 기능 구현
+            // ?�청???�세 보기 기능 구현
             openViewModal(timestamp);
         }
 
 
 
-        // 보기 모달 열기
+        // 보기 모달 ?�기
         async function openViewModal(timestamp) {
             try {
                 const response = await fetch('/.netlify/functions/get-applications');
                 const result = await response.json();
                 
                 if (result.success) {
-                    const application = result.data.applications.find(app => app['신청일시'] === timestamp);
+                    const application = result.data.applications.find(app => app['?�청?�시'] === timestamp);
                     if (application) {
                         populateViewContent(application);
                         document.getElementById('viewModal').style.display = 'block';
                     } else {
-                        showMessage('신청서를 찾을 수 없습니다.', 'error');
+                        showMessage('?�청?��? 찾을 ???�습?�다.', 'error');
                     }
                 } else {
-                    showMessage('신청서 데이터를 불러올 수 없습니다.', 'error');
+                    showMessage('?�청???�이?��? 불러?????�습?�다.', 'error');
                 }
             } catch (error) {
                 console.error('Error loading application:', error);
-                showMessage('신청서 로드 중 오류가 발생했습니다.', 'error');
+                showMessage('?�청??로드 �??�류가 발생?�습?�다.', 'error');
             }
         }
 
-        // 보기 내용 생성 (index.html 형태 - 7페이지 전체)
+        // 보기 ?�용 ?�성 (index.html ?�태 - 7?�이지 ?�체)
         function populateViewContent(application) {
             const viewContent = document.getElementById('viewContent');
-            const timestamp = application['신청일시'] || '';
+            const timestamp = application['?�청?�시'] || '';
             
             viewContent.innerHTML = `
                 <div class="application-view">
                     <div class="container">
-                        <!-- Page 1: 헤더 및 회사 정보 -->
+                        <!-- Page 1: ?�더 �??�사 ?�보 -->
                         <div class="header">
                             <div class="lrqa-logo"></div>
-                            <h1>인증 심사 신청서</h1>
-                            <h2>표준 ISO 9001, 14001, 45001</h2>
+                            <h1>?�증 ?�사 ?�청??/h1>
+                            <h2>?��? ISO 9001, 14001, 45001</h2>
                         </div>
                         
                         <div class="intro-text">
-                            LRQA의 무료 견적을 받고 싶다면 다음 양식을 완전히 작성하여 제출해 주시기 바랍니다.:
+                            LRQA??무료 견적??받고 ?�다�??�음 ?�식???�전???�성?�여 ?�출??주시�?바랍?�다.:
                         </div>
                         
-                        <!-- 회사 정보 -->
+                        <!-- ?�사 ?�보 -->
                         <div class="section">
-                            <div class="section-title">회사 정보</div>
+                            <div class="section-title">?�사 ?�보</div>
                             <div class="form-row">
-                                <div class="form-label">법인명(국문)</div>
-                                <div class="form-input">${application['법인명(국문)'] || ''}</div>
+                                <div class="form-label">법인�?�?��)</div>
+                                <div class="form-input">${application['법인�?�?��)'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">법인명(영문)</div>
-                                <div class="form-input">${application['법인명(영문)'] || ''}</div>
+                                <div class="form-label">법인�??�문)</div>
+                                <div class="form-input">${application['법인�??�문)'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">상호명</div>
-                                <div class="form-input">${application['상호명'] || ''}</div>
+                                <div class="form-label">?�호�?/div>
+                                <div class="form-input">${application['?�호�?] || ''}</div>
                             </div>
                             <div class="form-row">
                                 <div class="form-label">본사주소</div>
                                 <div class="form-input">${application['본사주소'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">도시</div>
-                                <div class="form-input short">${application['도시'] || ''}</div>
-                                <div class="form-label">우편번호</div>
-                                <div class="form-input short">${application['우편번호'] || ''}</div>
+                                <div class="form-label">?�시</div>
+                                <div class="form-input short">${application['?�시'] || ''}</div>
+                                <div class="form-label">?�편번호</div>
+                                <div class="form-input short">${application['?�편번호'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">대표전화번호</div>
-                                <div class="form-input medium">${application['대표전화번호'] || ''}</div>
-                                <div class="form-label">국가</div>
-                                <div class="form-input short">${application['국가'] || ''}</div>
+                                <div class="form-label">?�?�전?�번??/div>
+                                <div class="form-input medium">${application['?�?�전?�번??] || ''}</div>
+                                <div class="form-label">�??</div>
+                                <div class="form-input short">${application['�??'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">대표이메일</div>
-                                <div class="form-input">${application['대표이메일'] || ''}</div>
+                                <div class="form-label">?�?�이메일</div>
+                                <div class="form-input">${application['?�?�이메일'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">웹사이트</div>
-                                <div class="form-input">${application['웹사이트'] || ''}</div>
+                                <div class="form-label">?�사?�트</div>
+                                <div class="form-input">${application['?�사?�트'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">법인등록번호</div>
-                                <div class="form-input medium">${application['법인등록번호'] || ''}</div>
+                                <div class="form-label">법인?�록번호</div>
+                                <div class="form-input medium">${application['법인?�록번호'] || ''}</div>
                             </div>
                         </div>
 
-                        <!-- 연락처 정보 -->
+                        <!-- ?�락�??�보 -->
                         <div class="section">
-                            <div class="section-title">연락처 정보</div>
+                            <div class="section-title">?�락�??�보</div>
                             <div class="form-row">
-                                <div class="form-label">담당자명</div>
-                                <div class="form-input medium">${application['담당자명'] || ''}</div>
-                                <div class="form-label">부서</div>
-                                <div class="form-input medium">${application['부서'] || ''}</div>
+                                <div class="form-label">?�당?�명</div>
+                                <div class="form-input medium">${application['?�당?�명'] || ''}</div>
+                                <div class="form-label">부??/div>
+                                <div class="form-input medium">${application['부??] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">담당자이메일</div>
-                                <div class="form-input">${application['담당자이메일'] || ''}</div>
+                                <div class="form-label">?�당?�이메일</div>
+                                <div class="form-input">${application['?�당?�이메일'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">담당자전화</div>
-                                <div class="form-input medium">${application['담당자전화'] || ''}</div>
-                                <div class="form-label">휴대폰번호</div>
-                                <div class="form-input medium">${application['휴대폰번호'] || ''}</div>
+                                <div class="form-label">?�당?�전??/div>
+                                <div class="form-input medium">${application['?�당?�전??] || ''}</div>
+                                <div class="form-label">?��??�번??/div>
+                                <div class="form-input medium">${application['?��??�번??] || ''}</div>
                             </div>
                         </div>
 
-                        <!-- 컨설턴트 정보 -->
+                        <!-- 컨설?�트 ?�보 -->
                         <div class="section">
-                            <div class="section-title">컨설턴트 정보</div>
+                            <div class="section-title">컨설?�트 ?�보</div>
                             <div style="margin-bottom: 15px; font-size: 11px;">
-                                경영시스템 준비를 위해 컨설턴트의 자문을 받는 경우 세부정보를 입력하세요.
+                                경영?�스??준비�? ?�해 컨설?�트???�문??받는 경우 ?��??�보�??�력?�세??
                             </div>
                             <div class="form-row">
-                                <div class="form-label">컨설턴트 이름</div>
-                                <div class="form-input">${application['컨설턴트이름'] || ''}</div>
+                                <div class="form-label">컨설?�트 ?�름</div>
+                                <div class="form-input">${application['컨설?�트?�름'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">컨설팅 기관</div>
-                                <div class="form-input">${application['컨설팅기관'] || ''}</div>
+                                <div class="form-label">컨설??기�?</div>
+                                <div class="form-input">${application['컨설?�기관'] || ''}</div>
                             </div>
                         </div>
 
-                        <!-- LRQA 인지 경로 -->
+                        <!-- LRQA ?��? 경로 -->
                         <div style="margin: 20px 0; font-size: 11px;">
-                            <div style="margin-bottom: 10px;">LRQA에 대해 어떻게 알게 되었습니까?</div>
+                            <div style="margin-bottom: 10px;">LRQA???�???�떻�??�게 ?�었?�니�?</div>
                             <div class="section-title" style="margin-bottom: 15px; background-color: #00d4aa; color: white; padding: 8px 12px; font-size: 11px;">
-                                LRQA 인지 경로
+                                LRQA ?��? 경로
                             </div>
                             <div style="font-size: 11px; margin-bottom: 10px;">
-                                ${application['LRQA인지경로'] || '미입력'}
+                                ${application['LRQA?��?경로'] || '미입??}
                             </div>
                         </div>
 
-                        <!-- 향후 이벤트 정보 수신 -->
+                        <!-- ?�후 ?�벤???�보 ?�신 -->
                         <div class="form-row">
-                            <div style="font-size: 11px; margin-right: 10px;">향후 LRQA에서 신청 규격 관련한 이벤트에 대한 세부 정보를 받고 싶으시다면 "예"를 눌러주세요.</div>
-                            <div style="font-size: 11px;">${application['향후이벤트정보수신'] || '미입력'}</div>
+                            <div style="font-size: 11px; margin-right: 10px;">?�후 LRQA?�서 ?�청 규격 관?�한 ?�벤?�에 ?�???��? ?�보�?받고 ?�으?�다�?"??�??�러주세??</div>
+                            <div style="font-size: 11px;">${application['?�후?�벤?�정보수??] || '미입??}</div>
                         </div>
 
-                        <!-- 평가 요구사항 -->
+                        <!-- ?��? ?�구?�항 -->
                         <div class="section">
-                            <div class="section-title">평가 요구사항</div>
+                            <div class="section-title">?��? ?�구?�항</div>
                             <div style="font-size: 11px; margin-bottom: 10px;">
-                                ${application['ISO표준'] || '미입력'}
+                                ${application['ISO?��?'] || '미입??}
                             </div>
                             <div class="form-row">
-                                <div class="form-label">기타(인증 규격 작성)</div>
-                                <div class="form-input">${application['기타인증규격'] || ''}</div>
+                                <div class="form-label">기�?(?�증 규격 ?�성)</div>
+                                <div class="form-input">${application['기�??�증규격'] || ''}</div>
                             </div>
                             <div class="form-row">
-                                <div style="font-size: 11px; margin-right: 10px;">2개 이상 인증 신청시 통합심사 진행 여부</div>
-                                <div style="font-size: 11px;">${application['다중표준시스템'] || '미입력'}</div>
+                                <div style="font-size: 11px; margin-right: 10px;">2�??�상 ?�증 ?�청???�합?�사 진행 ?��?</div>
+                                <div style="font-size: 11px;">${application['?�중?��??�스??] || '미입??}</div>
                             </div>
                             <div class="form-row">
-                                <div class="form-label">희망하는 심사일정</div>
-                                <div class="form-input medium">${application['희망심사일정'] || ''}</div>
+                                <div class="form-label">?�망?�는 ?�사?�정</div>
+                                <div class="form-input medium">${application['?�망?�사?�정'] || ''}</div>
                             </div>
                         </div>
 
                         <div class="footer">
                             <div class="lrqa-footer-logo">LRQA</div>
-                            <div>인증 심사 신청서 |2</div>
+                            <div>?�증 ?�사 ?�청??|2</div>
                         </div>
                         
-                        <!-- Page 3: 인증 범위 및 법적 의무 -->
+                        <!-- Page 3: ?�증 범위 �?법적 ?�무 -->
                         <div class="page-break">
-                            <!-- 인증 범위 확인 -->
+                            <!-- ?�증 범위 ?�인 -->
                             <div class="section">
-                                <div class="section-title">인증 범위 확인</div>
+                                <div class="section-title">?�증 범위 ?�인</div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">인증서에 활동 내용을 어떻게 기재하고 싶으십니까?</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['인증범위'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">?�증?�에 ?�동 ?�용???�떻�?기재?�고 ?�으??���?</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['?�증범위'] || ''}</div>
                                 </div>
                             </div>
                             
-                            <!-- 법적 의무 -->
+                            <!-- 법적 ?�무 -->
                             <div class="section">
-                                <div class="section-title">법적 의무</div>
+                                <div class="section-title">법적 ?�무</div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">조직이 운영하기 위해 필요한 사업장 허가, 라이선스 또는 이와 유사한 규제 기관의 승인이 있습니까?</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['규제기관승인'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">조직???�영?�기 ?�해 ?�요???�업???��?, ?�이?�스 ?�는 ?��? ?�사??규제 기�????�인???�습?�까?</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['규제기�??�인'] || ''}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">법적 의무와 관련하여 해결되지 않은 미해결 문제가 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['미해결문제'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">법적 ?�무?� 관?�하???�결?��? ?��? 미해�?문제가 ?�습?�까?</div>
+                                    <div style="font-size: 11px;">${application['미해결문??] || '미입??}</div>
                                 </div>
                             </div>
                             
-                            <!-- 기존 인증 -->
+                            <!-- 기존 ?�증 -->
                             <div class="section">
-                                <div class="section-title">기존 인증</div>
+                                <div class="section-title">기존 ?�증</div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">현재 기존 경영시스템 인증을 보유하고 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['기존인증보유여부'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">?�재 기존 경영?�스???�증??보유?�고 ?�습?�까?</div>
+                                    <div style="font-size: 11px;">${application['기존?�증보유?��?'] || '미입??}</div>
                                 </div>
-                                <div style="font-size: 11px; margin-bottom: 10px;">기존 인증 정보:</div>
+                                <div style="font-size: 11px; margin-bottom: 10px;">기존 ?�증 ?�보:</div>
                                 <div style="font-size: 11px; margin-bottom: 10px;">
-                                    ${application['기존표준'] || '미입력'} - ${application['기존인증기관'] || '미입력'}
+                                    ${application['기존?��?'] || '미입??} - ${application['기존?�증기�?'] || '미입??}
                                 </div>
                             </div>
                             
                             <div class="footer">
                                 <div class="lrqa-footer-logo">LRQA</div>
-                                <div>인증 심사 신청서 |3</div>
+                                <div>?�증 ?�사 ?�청??|3</div>
                             </div>
                         </div>
                         
-                        <!-- Page 4: 직원 현황 상세 -->
+                        <!-- Page 4: 직원 ?�황 ?�세 -->
                         <div class="page-break">
                             <div class="section">
-                                <div class="section-title">직원 현황</div>
+                                <div class="section-title">직원 ?�황</div>
                                 <div class="form-row">
-                                    <div class="form-label">총직원수</div>
-                                    <div class="form-input short">${application['총직원수'] ? application['총직원수'] + '명' : ''}</div>
-                                    <div class="form-label">정규직수</div>
-                                    <div class="form-input short">${application['정규직수'] ? application['정규직수'] + '명' : ''}</div>
-                                    <div class="form-label">비정규직수</div>
-                                    <div class="form-input short">${application['비정규직수'] ? application['비정규직수'] + '명' : ''}</div>
+                                    <div class="form-label">총직?�수</div>
+                                    <div class="form-input short">${application['총직?�수'] ? application['총직?�수'] + '�? : ''}</div>
+                                    <div class="form-label">?�규직수</div>
+                                    <div class="form-input short">${application['?�규직수'] ? application['?�규직수'] + '�? : ''}</div>
+                                    <div class="form-label">비정규직??/div>
+                                    <div class="form-input short">${application['비정규직??] ? application['비정규직??] + '�? : ''}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-label">협력업체 직원수</div>
-                                    <div class="form-input short">${application['협력업체직원수'] || ''}</div>
-                                    <div class="form-label">임시직 직원수</div>
-                                    <div class="form-input short">${application['임시직직원수'] || ''}</div>
+                                    <div class="form-label">?�력?�체 직원??/div>
+                                    <div class="form-input short">${application['?�력?�체직원??] || ''}</div>
+                                    <div class="form-label">?�시�?직원??/div>
+                                    <div class="form-input short">${application['?�시직직?�수'] || ''}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">다수 사업장인 경우 사업장별로 직원 수를 표기했습니까?</div>
-                                    <div style="font-size: 11px;">${application['다수사업장직원수'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">?�수 ?�업?�인 경우 ?�업?�별�?직원 ?��? ?�기?�습?�까?</div>
+                                    <div style="font-size: 11px;">${application['?�수?�업?�직?�수'] || '미입??}</div>
                                 </div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">직원 수 또는 사업장이 계절에 따라 변동된다면 설명하세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['계절변동설명'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">직원 ???�는 ?�업?�이 계절???�라 변?�된?�면 ?�명?�세??</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['계절변?�설�?] || ''}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">경영시스템 범위에 포함된 활동이 사내외주처리 되는 활동이 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['외주처리활동'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">경영?�스??범위???�함???�동???�내?�주처리 ?�는 ?�동???�습?�까?</div>
+                                    <div style="font-size: 11px;">${application['?�주처리?�동'] || '미입??}</div>
                                 </div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">만약 예라면 사내외주활동의 세부사항 및 인원을 기술하여 주십시오.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['외주활동세부사항'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">만약 ?�라�??�내?�주?�동???��??�항 �??�원??기술?�여 주십?�오.</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['?�주?�동?��??�항'] || ''}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">반복적인 작업을 수행하는 직원 그룹이 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['반복작업직원그룹'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">반복?�인 ?�업???�행?�는 직원 그룹???�습?�까?</div>
+                                    <div style="font-size: 11px;">${application['반복?�업직원그룹'] || '미입??}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">오전 9시부터 오후 6시까지 시간(일 근무 8시간) 외에만 진행되는 승인에 중요한 활동이 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['시간외중요활동'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">?�전 9?��????�후 6?�까지 ?�간(??근무 8?�간) ?�에�?진행?�는 ?�인??중요???�동???�습?�까?</div>
+                                    <div style="font-size: 11px;">${application['?�간?�중?�활??] || '미입??}</div>
                                 </div>
                             </div>
                             
                             <div class="footer">
                                 <div class="lrqa-footer-logo">LRQA</div>
-                                <div>인증 심사 신청서 |4</div>
+                                <div>?�증 ?�사 ?�청??|4</div>
                             </div>
                         </div>
                         
-                        <!-- Page 5: 교대 근무 및 인증 변경 -->
+                        <!-- Page 5: 교�? 근무 �??�증 변�?-->
                         <div class="page-break">
-                            <!-- 교대 근무 -->
+                            <!-- 교�? 근무 -->
                             <div style="font-size: 11px; margin-bottom: 15px;">
-                                조직의 교대 근무 방식에 대해 전반적으로 설명하며, 각 교대 근무 방식에 해당하는 근무 시간 또는 인원을 표시하세요.
+                                조직??교�? 근무 방식???�???�반?�으�??�명?�며, �?교�? 근무 방식???�당?�는 근무 ?�간 ?�는 ?�원???�시?�세??
                             </div>
                             
                             <div style="font-size: 11px; margin-bottom: 10px;">
-                                ${application['교대근무설명'] || '미입력'}
+                                ${application['교�?근무?�명'] || '미입??}
                             </div>
                             
                             <div class="form-row">
-                                <div style="font-size: 11px; margin-right: 10px;">임시 사업장이 있나요?</div>
-                                <div style="font-size: 11px;">${application['임시사업장'] || '미입력'}</div>
+                                <div style="font-size: 11px; margin-right: 10px;">?�시 ?�업?�이 ?�나??</div>
+                                <div style="font-size: 11px;">${application['?�시?�업??] || '미입??}</div>
                             </div>
                             
                             <div class="form-row">
-                                <div style="font-size: 11px; margin-right: 10px;">고객사 위치에서 서비스를 제공하나요?</div>
-                                <div style="font-size: 11px;">${application['고객사위치서비스'] || '미입력'}</div>
+                                <div style="font-size: 11px; margin-right: 10px;">고객???�치?�서 ?�비?��? ?�공?�나??</div>
+                                <div style="font-size: 11px;">${application['고객?�위치서비스'] || '미입??}</div>
                             </div>
                             
-                            <!-- 인증 변경 -->
+                            <!-- ?�증 변�?-->
                             <div class="section">
-                                <div class="section-title">인증 변경</div>
+                                <div class="section-title">?�증 변�?/div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">기존 인증을 LRQA로 전환하기 위해 견적을 요청하십니까?</div>
-                                    <div style="font-size: 11px;">${application['LRQA전환'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">기존 ?�증??LRQA�??�환?�기 ?�해 견적???�청?�십?�까?</div>
+                                    <div style="font-size: 11px;">${application['LRQA?�환'] || '미입??}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">현재 보유한 인증이 인정기관(KAB, UKAS, ANAB 등)에서 인정받은 인증입니까?</div>
-                                    <div style="font-size: 11px;">${application['공식인정인증'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">?�재 보유???�증???�정기�?(KAB, UKAS, ANAB ???�서 ?�정받�? ?�증?�니�?</div>
+                                    <div style="font-size: 11px;">${application['공식?�정?�증'] || '미입??}</div>
                                 </div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">현재 인증 기관에서 LRQA로 전환하려는 이유를 알려주세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['전환이유'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">?�재 ?�증 기�??�서 LRQA�??�환?�려???�유�??�려주세??</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['?�환?�유'] || ''}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-label">LRQA 마지막 방문 일자</div>
-                                    <div class="form-input medium">${application['LRQA마지막방문'] || ''}</div>
+                                    <div class="form-label">LRQA 마�?�?방문 ?�자</div>
+                                    <div class="form-input medium">${application['LRQA마�?막방�?] || ''}</div>
                                 </div>
                             </div>
                             
                             <div class="footer">
                                 <div class="lrqa-footer-logo">LRQA</div>
-                                <div>인증 심사 신청서 |5</div>
+                                <div>?�증 ?�사 ?�청??|5</div>
                             </div>
                         </div>
                         
-                        <!-- Page 6: ISO 14001, 45001 특별 요구사항 -->
+                        <!-- Page 6: ISO 14001, 45001 ?�별 ?�구?�항 -->
                         <div class="page-break">
-                            <!-- ISO 14001 인증을 신청한 경우에만 작성 -->
+                            <!-- ISO 14001 ?�증???�청??경우?�만 ?�성 -->
                             <div class="section">
-                                <div class="section-title">ISO 14001 인증을 신청한 경우에만 작성</div>
+                                <div class="section-title">ISO 14001 ?�증???�청??경우?�만 ?�성</div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">조직이 운영하는 사업 분야와 사업장 위치를 간략하게 설명하세요. 또한 조직이 보유하고 있는 환경 관련 법적 허가가 있는지 여부와 종류를 기재하세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO14001사업분야'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">조직???�영?�는 ?�업 분야?� ?�업???�치�?간략?�게 ?�명?�세?? ?�한 조직??보유?�고 ?�는 ?�경 관??법적 ?��?가 ?�는지 ?��??� 종류�?기재?�세??</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO14001?�업분야'] || ''}</div>
                                 </div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">주요 프로세스를 나열하고 각 프로세스와 관련된 주요 환경 위험을 간략하게 설명하세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO14001환경위험'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">주요 ?�로?�스�??�열?�고 �??�로?�스?� 관?�된 주요 ?�경 ?�험??간략?�게 ?�명?�세??</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO14001?�경?�험'] || ''}</div>
                                 </div>
                             </div>
                             
-                            <!-- ISO 45001 인증을 신청한 경우에만 작성 -->
+                            <!-- ISO 45001 ?�증???�청??경우?�만 ?�성 -->
                             <div class="section">
-                                <div class="section-title">ISO 45001 인증을 신청한 경우에만 작성</div>
+                                <div class="section-title">ISO 45001 ?�증???�청??경우?�만 ?�성</div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">조직이 운영하는 사업 분야와 현장 위치를 간략하게 설명하세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO45001사업분야'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">조직???�영?�는 ?�업 분야?� ?�장 ?�치�?간략?�게 ?�명?�세??</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO45001?�업분야'] || ''}</div>
                                 </div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">주요 프로세스를 나열하고 주요 유해 및 위험 요소와 해당 법적 요건/허가 사항을 간략하게 설명하세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO45001위험요소'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">주요 ?�로?�스�??�열?�고 주요 ?�해 �??�험 ?�소?� ?�당 법적 ?�건/?��? ?�항??간략?�게 ?�명?�세??</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO45001?�험?�소'] || ''}</div>
                                 </div>
                             </div>
                             
                             <div class="footer">
                                 <div class="lrqa-footer-logo">LRQA</div>
-                                <div>인증 심사 신청서 |6</div>
+                                <div>?�증 ?�사 ?�청??|6</div>
                             </div>
                         </div>
                         
-                        <!-- Page 7: 추가 정보 및 동의 서명 -->
+                        <!-- Page 7: 추�? ?�보 �??�의 ?�명 -->
                         <div class="page-break">
-                            <!-- 추가 정보 -->
+                            <!-- 추�? ?�보 -->
                             <div class="section">
-                                <div class="section-title">추가 정보</div>
+                                <div class="section-title">추�? ?�보</div>
                                 <div style="margin-bottom: 15px; font-size: 11px;">
-                                    아래 정보는 인증에 포함될 활동을 더 잘 정의하고 견적을 올바르게 작성하기 위해 필요합니다.
+                                    ?�래 ?�보???�증???�함???�동???????�의?�고 견적???�바르게 ?�성?�기 ?�해 ?�요?�니??
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">원격 심사가 가능하다면 원격 심사를 받으시겠습니까?</div>
-                                    <div style="font-size: 11px;">${application['원격심사'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">?�격 ?�사가 가?�하?�면 ?�격 ?�사�?받으?�겠?�니�?</div>
+                                    <div style="font-size: 11px;">${application['?�격?�사'] || '미입??}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">예비 심사에 대한 견적을 받으시겠습니까?</div>
-                                    <div style="font-size: 11px;">${application['예비심사견적'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">?�비 ?�사???�??견적??받으?�겠?�니�?</div>
+                                    <div style="font-size: 11px;">${application['?�비?�사견적'] || '미입??}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">신청한 인증과 관련된 교육 과정에 대한 정보를 받으시겠습니까?</div>
-                                    <div style="font-size: 11px;">${application['교육과정정보'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">?�청???�증�?관?�된 교육 과정???�???�보�?받으?�겠?�니�?</div>
+                                    <div style="font-size: 11px;">${application['교육과정?�보'] || '미입??}</div>
                                 </div>
                                 <div class="form-row full-width">
-                                    <div style="font-size: 11px; margin-bottom: 10px;">추가 참고해야 할 정보를 입력해 주세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['추가참고정보'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 10px;">추�? 참고?�야 ???�보�??�력??주세??</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['추�?참고?�보'] || ''}</div>
                                 </div>
                             </div>
                             
-                            <!-- 데이터 수집 및 보존 -->
+                            <!-- ?�이???�집 �?보존 -->
                             <div class="section">
-                                <div class="section-title">데이터 수집 및 보존</div>
+                                <div class="section-title">?�이???�집 �?보존</div>
                                 <div style="font-size: 11px; line-height: 1.4; margin-bottom: 15px;">
-                                    적용 가능한 규정에 따라, 데이터 수집의 목적은 필요한 견적을 작성하기 위한 것입니다. 신청자는 자신의 책임 하에 데이터를 제공하지 않을 권리가 있지만, 이는 제안 내용의 정확성에 영향을 미칠 수 있음을 알려드립니다.
+                                    ?�용 가?�한 규정???�라, ?�이???�집??목적?� ?�요??견적???�성?�기 ?�한 것입?�다. ?�청?�는 ?�신??책임 ?�에 ?�이?��? ?�공?��? ?�을 권리가 ?��?�? ?�는 ?�안 ?�용???�확?�에 ?�향??미칠 ???�음???�려?�립?�다.
                                 </div>
                                 <div style="font-size: 11px; line-height: 1.4; margin-bottom: 15px;">
-                                    작성된 데이터는 전자 아카이브에 저장되고, 가장 엄격한 기밀로 취급되며, 법률에 의해 요구되거나 인증과 관련된 활동을 수행하기 위한 목적으로만 LRQA가 자체적으로 업무를 위임한 제3자와의 거래에 대해서만 보고됩니다.
+                                    ?�성???�이?�는 ?�자 ?�카?�브???�?�되�? 가???�격??기�?�?취급?�며, 법률???�해 ?�구?�거???�증�?관?�된 ?�동???�행?�기 ?�한 목적?�로�?LRQA가 ?�체?�으�??�무�??�임?????��???거래???�?�서�?보고?�니??
                                 </div>
                                 <div class="form-row">
-                                    <div style="font-size: 11px; margin-right: 10px;">LRQA의 데이터 프로세스에 대해 동의하십니까?</div>
-                                    <div style="font-size: 11px;">${application['데이터처리동의'] || '미입력'}</div>
+                                    <div style="font-size: 11px; margin-right: 10px;">LRQA???�이???�로?�스???�???�의?�십?�까?</div>
+                                    <div style="font-size: 11px;">${application['?�이?�처리동??] || '미입??}</div>
                                 </div>
                             </div>
                             
-                            <!-- 서명 -->
+                            <!-- ?�명 -->
                             <div class="signature-section">
                                 <div>
-                                    <div style="font-size: 11px; margin-bottom: 5px;">서명</div>
-                                    <div class="form-input" style="border: 1px solid #333; padding: 8px; width: 200px;">${application['서명'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 5px;">?�명</div>
+                                    <div class="form-input" style="border: 1px solid #333; padding: 8px; width: 200px;">${application['?�명'] || ''}</div>
                                 </div>
                                 <div>
-                                    <div style="font-size: 11px; margin-bottom: 5px;">날짜</div>
-                                    <div class="form-input" style="border: 1px solid #333; padding: 8px; width: 200px;">${application['서명날짜'] || ''}</div>
+                                    <div style="font-size: 11px; margin-bottom: 5px;">?�짜</div>
+                                    <div class="form-input" style="border: 1px solid #333; padding: 8px; width: 200px;">${application['?�명?�짜'] || ''}</div>
                                 </div>
                             </div>
                             
                             <div class="footer">
                                 <div class="lrqa-footer-logo">LRQA</div>
-                                <div>인증 심사 신청서 |7</div>
+                                <div>?�증 ?�사 ?�청??|7</div>
                             </div>
                         </div>
                         
-                        <!-- Page 8: 문의하기 섹션 -->
+                        <!-- Page 8: 문의?�기 ?�션 -->
                         <div class="page-break">
-                            <!-- 문의하기 섹션 -->
+                            <!-- 문의?�기 ?�션 -->
                             <div class="contact-section" style="background: linear-gradient(135deg, #00d4aa 0%, #00b894 100%); padding: 20px; border-radius: 10px; margin: 20px 0; position: relative; overflow: hidden; display: flex; align-items: stretch; min-height: 200px;">
                                 <div class="contact-left" style="flex: 1; background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 8px; margin-right: 20px;">
-                                    <div class="contact-title" style="background: rgba(0, 0, 0, 0.1); color: #333; padding: 8px 15px; border-radius: 5px; font-weight: bold; margin-bottom: 15px; display: inline-block; font-size: 14px;">문의하기</div>
+                                    <div class="contact-title" style="background: rgba(0, 0, 0, 0.1); color: #333; padding: 8px 15px; border-radius: 5px; font-weight: bold; margin-bottom: 15px; display: inline-block; font-size: 14px;">문의?�기</div>
                                     
                                     <div class="contact-form" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
-                                        <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid #ddd; padding: 8px 12px; border-radius: 5px; font-size: 13px; color: #333; width: 100%; box-sizing: border-box;">로이드인증원(LRQA Korea) 사업개발본부</div>
+                                        <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid #ddd; padding: 8px 12px; border-radius: 5px; font-size: 13px; color: #333; width: 100%; box-sizing: border-box;">로이?�인증원(LRQA Korea) ?�업개발본�?</div>
                                         <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid #ddd; padding: 8px 12px; border-radius: 5px; font-size: 13px; color: #333; width: 100%; box-sizing: border-box;">T. +82 2 736 6231</div>
                                         <div style="background: rgba(255, 255, 255, 0.8); border: 1px solid #ddd; padding: 8px 12px; border-radius: 5px; font-size: 13px; color: #333; width: 100%; box-sizing: border-box;">E. zzzkorea-sales@lrqa.com</div>
                                     </div>
                                     
                                     <div class="contact-footer" style="font-size: 9px; line-height: 1.3; color: #333; margin-top: 15px; padding: 8px; background: rgba(255, 255, 255, 0.8); border-radius: 5px;">
-                                        모든 정보는 정확하고 최신의 상태를 유지하기 위해 최선을 다했으나, 일부 내용의 부정확성이나 변경 사항에 대해 LRQA는 책임을 지지 않습니다. LRQA에 대한 자세한 내용은 <a href="https://www.lrqa.com/ko-kr/" target="_blank" style="color: #10b981;">여기</a>를 참조하세요. © LRQA Group Limited 2023
+                                        모든 ?�보???�확?�고 최신???�태�??��??�기 ?�해 최선???�했?�나, ?��? ?�용??부?�확?�이??변�??�항???�??LRQA??책임??지지 ?�습?�다. LRQA???�???�세???�용?� <a href="https://www.lrqa.com/ko-kr/" target="_blank" style="color: #10b981;">?�기</a>�?참조?�세?? © LRQA Group Limited 2023
                                     </div>
                                 </div>
                                 
@@ -1929,33 +1929,33 @@
                             
                             <div class="footer">
                                 <div class="lrqa-footer-logo">LRQA</div>
-                                <div>인증 심사 신청서 |8</div>
+                                <div>?�증 ?�사 ?�청??|8</div>
                             </div>
                         </div>
                     </div>
                 </div>
             `;
             
-            // 현재 보고 있는 신청서 타임스탬프 저장
+            // ?�재 보고 ?�는 ?�청???�?�스?�프 ?�??
             window.currentViewTimestamp = timestamp;
         }
 
-        // PDF 다운로드 기능
+        // PDF ?�운로드 기능
         async function downloadPDF() {
             try {
-                showMessage('PDF를 생성 중입니다...', 'info');
+                showMessage('PDF�??�성 중입?�다...', 'info');
                 
-                // 현재 보기 모달의 내용을 가져옴
+                // ?�재 보기 모달???�용??가?�옴
                 const viewContent = document.getElementById('viewContent');
                 const content = viewContent.innerHTML;
                 
-                // 새로운 창에서 PDF용 페이지 열기
+                // ?�로??창에??PDF???�이지 ?�기
                 const printWindow = window.open('', '_blank');
                 printWindow.document.write(`
                     <!DOCTYPE html>
                     <html>
                     <head>
-                        <title>LRQA 신청서</title>
+                        <title>LRQA ?�청??/title>
                         <style>
                             body {
                                 font-family: 'Malgun Gothic', Arial, sans-serif;
@@ -2125,28 +2125,28 @@
                 
                 printWindow.document.close();
                 
-                // 페이지 로드 후 인쇄 다이얼로그 열기
+                // ?�이지 로드 ???�쇄 ?�이?�로�??�기
                 printWindow.onload = function() {
                     setTimeout(() => {
                         printWindow.print();
                         printWindow.close();
-                        showMessage('PDF 다운로드가 시작되었습니다.', 'success');
+                        showMessage('PDF ?�운로드가 ?�작?�었?�니??', 'success');
                     }, 500);
                 };
                 
             } catch (error) {
                 console.error('Error generating PDF:', error);
-                showMessage('PDF 생성 중 오류가 발생했습니다.', 'error');
+                showMessage('PDF ?�성 �??�류가 발생?�습?�다.', 'error');
             }
         }
 
-        // 보기 모달 닫기
+        // 보기 모달 ?�기
         function closeViewModal() {
             document.getElementById('viewModal').style.display = 'none';
             window.currentViewTimestamp = null;
         }
 
-        // 보기에서 수정으로 전환
+        // 보기?�서 ?�정?�로 ?�환
         function editFromView() {
             const timestamp = window.currentViewTimestamp;
             if (timestamp) {
@@ -2156,63 +2156,63 @@
         }
 
         function editApplication(timestamp) {
-            // 신청서 수정 기능 구현
+            // ?�청???�정 기능 구현
             openEditModal(timestamp);
         }
 
-        // 수정 모달 열기
+        // ?�정 모달 ?�기
         async function openEditModal(timestamp) {
             try {
                 const response = await fetch('/.netlify/functions/get-applications');
                 const result = await response.json();
                 
                 if (result.success) {
-                    const application = result.data.applications.find(app => app['신청일시'] === timestamp);
+                    const application = result.data.applications.find(app => app['?�청?�시'] === timestamp);
                     if (application) {
                         populateEditForm(application);
                         document.getElementById('editModal').style.display = 'block';
                     } else {
-                        showMessage('신청서를 찾을 수 없습니다.', 'error');
+                        showMessage('?�청?��? 찾을 ???�습?�다.', 'error');
                     }
                 } else {
-                    showMessage('신청서 데이터를 불러올 수 없습니다.', 'error');
+                    showMessage('?�청???�이?��? 불러?????�습?�다.', 'error');
                 }
             } catch (error) {
                 console.error('Error loading application:', error);
-                showMessage('신청서 로드 중 오류가 발생했습니다.', 'error');
+                showMessage('?�청??로드 �??�류가 발생?�습?�다.', 'error');
             }
         }
 
-        // 수정 폼에 데이터 채우기
+        // ?�정 ?�에 ?�이??채우�?
         function populateEditForm(application) {
-            document.getElementById('editTimestamp').value = application['신청일시'] || '';
-            document.getElementById('editCompanyName').value = application['법인명(국문)'] || '';
-            document.getElementById('editCompanyNameEn').value = application['법인명(영문)'] || '';
-            document.getElementById('editContactName').value = application['담당자명'] || '';
-            document.getElementById('editContactPhone').value = application['담당자전화'] || '';
-            document.getElementById('editContactEmail').value = application['담당자이메일'] || '';
-            document.getElementById('editCertificationScope').value = application['인증범위'] || '';
-            document.getElementById('editTotalEmployees').value = application['총직원수'] || '';
-            document.getElementById('editPreferredYear').value = application['희망년도'] || '';
-            document.getElementById('editPreferredMonth').value = application['희망월'] || '';
-            document.getElementById('editStatus').value = application['상태'] || '신규';
+            document.getElementById('editTimestamp').value = application['?�청?�시'] || '';
+            document.getElementById('editCompanyName').value = application['법인�?�?��)'] || '';
+            document.getElementById('editCompanyNameEn').value = application['법인�??�문)'] || '';
+            document.getElementById('editContactName').value = application['?�당?�명'] || '';
+            document.getElementById('editContactPhone').value = application['?�당?�전??] || '';
+            document.getElementById('editContactEmail').value = application['?�당?�이메일'] || '';
+            document.getElementById('editCertificationScope').value = application['?�증범위'] || '';
+            document.getElementById('editTotalEmployees').value = application['총직?�수'] || '';
+            document.getElementById('editPreferredYear').value = application['?�망?�도'] || '';
+            document.getElementById('editPreferredMonth').value = application['?�망??] || '';
+            document.getElementById('editStatus').value = application['?�태'] || '?�규';
         }
 
-        // 수정 사항 저장
+        // ?�정 ?�항 ?�??
         async function saveEdit() {
             const timestamp = document.getElementById('editTimestamp').value;
             const updatedData = {
-                '신청일시': timestamp,
-                '상태': document.getElementById('editStatus').value,
-                '법인명(국문)': document.getElementById('editCompanyName').value,
-                '법인명(영문)': document.getElementById('editCompanyNameEn').value,
-                '담당자명': document.getElementById('editContactName').value,
-                '담당자전화': document.getElementById('editContactPhone').value,
-                '담당자이메일': document.getElementById('editContactEmail').value,
-                '인증범위': document.getElementById('editCertificationScope').value,
-                '총직원수': document.getElementById('editTotalEmployees').value,
-                '희망년도': document.getElementById('editPreferredYear').value,
-                '희망월': document.getElementById('editPreferredMonth').value
+                '?�청?�시': timestamp,
+                '?�태': document.getElementById('editStatus').value,
+                '법인�?�?��)': document.getElementById('editCompanyName').value,
+                '법인�??�문)': document.getElementById('editCompanyNameEn').value,
+                '?�당?�명': document.getElementById('editContactName').value,
+                '?�당?�전??: document.getElementById('editContactPhone').value,
+                '?�당?�이메일': document.getElementById('editContactEmail').value,
+                '?�증범위': document.getElementById('editCertificationScope').value,
+                '총직?�수': document.getElementById('editTotalEmployees').value,
+                '?�망?�도': document.getElementById('editPreferredYear').value,
+                '?�망??: document.getElementById('editPreferredMonth').value
             };
 
             try {
@@ -2230,25 +2230,25 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    showMessage('신청서가 성공적으로 수정되었습니다.', 'success');
+                    showMessage('?�청?��? ?�공?�으�??�정?�었?�니??', 'success');
                     closeEditModal();
-                    loadApplications(); // 목록 새로고침
-                    loadDashboard(); // 대시보드 새로고침
+                    loadApplications(); // 목록 ?�로고침
+                    loadDashboard(); // ?�?�보???�로고침
                 } else {
-                    showMessage(result.message || '수정 중 오류가 발생했습니다.', 'error');
+                    showMessage(result.message || '?�정 �??�류가 발생?�습?�다.', 'error');
                 }
             } catch (error) {
                 console.error('Error saving edit:', error);
-                showMessage('수정 중 오류가 발생했습니다.', 'error');
+                showMessage('?�정 �??�류가 발생?�습?�다.', 'error');
             }
         }
 
-        // 수정 모달 닫기
+        // ?�정 모달 ?�기
         function closeEditModal() {
             document.getElementById('editModal').style.display = 'none';
         }
 
-        // 메시지 표시
+        // 메시지 ?�시
         function showMessage(message, type) {
             const messageElement = document.createElement('div');
             messageElement.className = `message ${type}`;
@@ -2284,10 +2284,10 @@
             }, 5000);
         }
 
-        // 테마 관련 변수
+        // ?�마 관??변??
         let currentTheme = 'light';
 
-        // 테마 초기화
+        // ?�마 초기??
         function initializeTheme() {
             const savedTheme = localStorage.getItem('theme') || 'light';
             currentTheme = savedTheme;
@@ -2295,46 +2295,46 @@
             updateThemeToggleButton();
         }
 
-        // 테마 토글 버튼 업데이트
+        // ?�마 ?��? 버튼 ?�데?�트
         function updateThemeToggleButton() {
             const toggleButton = document.getElementById('themeToggle');
             const icon = toggleButton.querySelector('.theme-toggle-icon');
             const text = toggleButton.querySelector('.theme-toggle-text');
             
             if (currentTheme === 'dark') {
-                icon.textContent = '☀️';
-                text.textContent = '라이트모드';
+                icon.textContent = '?��?;
+                text.textContent = '?�이?�모??;
             } else {
-                icon.textContent = '🌙';
-                text.textContent = '다크모드';
+                icon.textContent = '?��';
+                text.textContent = '?�크모드';
             }
         }
 
-        // 테마 토글 기능
+        // ?�마 ?��? 기능
         function toggleTheme() {
             currentTheme = currentTheme === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', currentTheme);
             localStorage.setItem('theme', currentTheme);
             updateThemeToggleButton();
             
-            // 부드러운 전환 효과
+            // 부?�러???�환 ?�과
             document.body.classList.add('theme-transitioning');
             setTimeout(() => {
                 document.body.classList.remove('theme-transitioning');
             }, 300);
         }
 
-        // 페이지 로드 시 로그인 화면 표시
+        // ?�이지 로드 ??로그???�면 ?�시
         window.addEventListener('load', function() {
             initializeTheme();
             document.getElementById('loginSection').style.display = 'block';
             document.getElementById('adminContent').classList.remove('authenticated');
             
-            // 테마 토글 버튼 이벤트 리스너 추가
+            // ?�마 ?��? 버튼 ?�벤??리스??추�?
             document.getElementById('themeToggle').addEventListener('click', toggleTheme);
         });
 
-        // 폼 편집 탭 로딩
+        // ???�집 ??로딩
         async function loadFormEdit() {
             const res = await fetch('form-definition.json');
             const definition = await res.json();
@@ -2342,25 +2342,25 @@
             form.innerHTML = definition.map(q => `
                 <div style="margin-bottom:18px;">
                     <label><b>질문 ID:</b> <code>${q.id}</code></label><br>
-                    <label>라벨: <input type="text" name="label-${q.id}" value="${q.label}" style="width:300px"></label><br>
-                    <label>설명: <input type="text" name="desc-${q.id}" value="${q.description||''}" style="width:400px"></label>
+                    <label>?�벨: <input type="text" name="label-${q.id}" value="${q.label}" style="width:300px"></label><br>
+                    <label>?�명: <input type="text" name="desc-${q.id}" value="${q.description||''}" style="width:400px"></label>
                 </div>
             `).join('');
         }
-        // 폼 편집 탭 진입 시 자동 로드 (숨김 처리됨)
+        // ???�집 ??진입 ???�동 로드 (?��? 처리??
         function showTab(tabName) {
-            // 모든 탭 비활성화
+            // 모든 ??비활?�화
             const tabs = document.querySelectorAll('.admin-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
             
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
             
-            // 선택된 탭 활성화
+            // ?�택?????�성??
             event.target.classList.add('active');
             document.getElementById(tabName).classList.add('active');
         }
-        // 폼 정의 저장
+        // ???�의 ?�??
         async function saveFormDefinition() {
             const res = await fetch('form-definition.json');
             const definition = await res.json();
@@ -2369,36 +2369,36 @@
                 q.label = form.elements['label-'+q.id].value;
                 q.description = form.elements['desc-'+q.id].value;
             });
-            // 저장: Netlify 정적 호스팅에서는 직접 파일 저장 불가이므로, 안내 메시지
-            alert('수정된 폼 정의는 현재 로컬에서만 반영됩니다. (실제 저장/배포는 개발자가 form-definition.json을 교체해야 합니다)');
-            // 콘솔에 출력 (개발자용)
-            console.log('수정된 폼 정의:', JSON.stringify(definition, null, 2));
+            // ?�?? Netlify ?�적 ?�스?�에?�는 직접 ?�일 ?�??불�??��?�? ?�내 메시지
+            alert('?�정?????�의???�재 로컬?�서�?반영?�니?? (?�제 ?�??배포??개발?��? form-definition.json??교체?�야 ?�니??');
+            // 콘솔??출력 (개발?�용)
+            console.log('?�정?????�의:', JSON.stringify(definition, null, 2));
         }
 
-        // 견적서 생성 함수
+        // 견적???�성 ?�수
         async function generateQuotation(timestamp) {
             if (!isAuthenticated) return;
             
             try {
-                showMessage('견적서를 생성 중입니다...', 'info');
+                showMessage('견적?��? ?�성 중입?�다...', 'info');
                 
-                // 신청서 데이터 가져오기
+                // ?�청???�이??가?�오�?
                 const response = await fetch('/.netlify/functions/get-applications');
                 const result = await response.json();
                 
                 if (!result.success) {
-                    showMessage('신청서 데이터를 불러올 수 없습니다.', 'error');
+                    showMessage('?�청???�이?��? 불러?????�습?�다.', 'error');
                     return;
                 }
                 
-                const application = result.data.applications.find(app => app['신청일시'] === timestamp);
+                const application = result.data.applications.find(app => app['?�청?�시'] === timestamp);
                 if (!application) {
-                    showMessage('신청서를 찾을 수 없습니다.', 'error');
+                    showMessage('?�청?��? 찾을 ???�습?�다.', 'error');
                     return;
                 }
-                
-                // 견적서 생성 요청
-                const quotationResponse = await fetch('/.netlify/functions/generate-word-quotation', {
+
+                // Python 백엔??API ?�출 (로컬 ?�스?�용)
+                const quotationResponse = await fetch('https://lrqa-iso-application-lij5k3tlw-dal-kims-projects.vercel.app/generate-quotation', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -2409,35 +2409,27 @@
                     })
                 });
                 
-                const quotationResult = await quotationResponse.json();
-                
-                if (quotationResult.success) {
-                    // Base64 데이터를 Blob으로 변환
-                    const binaryString = atob(quotationResult.fileData);
-                    const bytes = new Uint8Array(binaryString.length);
-                    for (let i = 0; i < binaryString.length; i++) {
-                        bytes[i] = binaryString.charCodeAt(i);
-                    }
-                    const blob = new Blob([bytes], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-                    
-                    // 파일 다운로드
+                if (quotationResponse.ok) {
+                    // Word ?�일 ?�운로드
+                    const blob = await quotationResponse.blob();
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = url;
-                    a.download = quotationResult.filename;
+                    a.download = `LRQA_견적??${application['법인�?�?��)']}_${new Date().toISOString().split('T')[0]}.docx`;
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
                     window.URL.revokeObjectURL(url);
                     
-                    showMessage('견적서가 성공적으로 생성되었습니다.', 'success');
+                    showMessage('견적?��? ?�공?�으�??�성?�었?�니??', 'success');
                 } else {
-                    showMessage(quotationResult.message || '견적서 생성 중 오류가 발생했습니다.', 'error');
+                    const errorData = await quotationResponse.json();
+                    showMessage(errorData.message || '견적???�성 �??�류가 발생?�습?�다.', 'error');
                 }
                 
             } catch (error) {
                 console.error('Error generating quotation:', error);
-                showMessage('견적서 생성 중 오류가 발생했습니다.', 'error');
+                showMessage('견적???�성 �??�류가 발생?�습?�다.', 'error');
             }
         }
     </script>
