@@ -1,7 +1,4 @@
-const DocxTemplate = require('docxtemplater');
-const PizZip = require('pizzip');
-const fs = require('fs');
-const path = require('path');
+const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, AlignmentType, HeadingLevel, BorderStyle } = require('docx');
 
 exports.handler = async (event, context) => {
     const headers = {
@@ -54,8 +51,8 @@ exports.handler = async (event, context) => {
         // 견적서 데이터 변환
         const quotationData = convertApplicationToQuotationData(applicationData);
         
-        // LRQA 템플릿 기반 Word 문서 생성
-        const buffer = await createQuotationFromTemplate(quotationData);
+        // LRQA 스타일 Word 문서 생성
+        const buffer = await createLRQAQuotationDocument(quotationData);
         
         // Base64로 인코딩
         const base64File = buffer.toString('base64');
@@ -192,72 +189,404 @@ function calculateAuditDays(employees, standardCount) {
 }
 
 /**
- * LRQA 템플릿을 사용한 Word 문서 생성
+ * LRQA 스타일 Word 문서 생성
  */
-async function createQuotationFromTemplate(data) {
-    try {
-        // 템플릿 파일 경로
-        const templatePath = path.join(__dirname, 'templates', 'LRQA_quotation.docx');
-        
-        // 템플릿 파일 읽기
-        const templateBuffer = fs.readFileSync(templatePath);
-        
-        // PizZip으로 압축 해제
-        const zip = new PizZip(templateBuffer);
-        
-        // DocxTemplate 인스턴스 생성
-        const doc = new DocxTemplate(zip);
-        
-        // 템플릿 데이터 설정
-        doc.setData({
-            // 회사 정보
-            client_name: data.companyName,
-            client_name_en: data.companyNameEn,
-            client_address: data.address,
-            contact_person: data.contactName,
-            contact_email: data.contactEmail,
-            contact_phone: data.contactPhone,
-            
-            // 견적 정보
-            quotation_number: data.quotationNumber,
-            quotation_date: data.quotationDate,
-            valid_until: data.validUntil,
-            
-            // 표준 정보
-            standards_text: data.standardsText,
-            has_iso9001: data.standards.includes('ISO 9001'),
-            has_iso14001: data.standards.includes('ISO 14001'),
-            has_iso45001: data.standards.includes('ISO 45001'),
-            
-            // 직원 정보
-            total_employees: data.totalEmployees,
-            
-            // 견적 상세
-            total_audit_days: data.auditDays,
-            day_rate: data.dayRate,
-            subtotal: data.subtotal,
-            vat_amount: data.vat,
-            total_cost: data.totalCost,
-            
-            // 추가 정보
-            is_integrated: data.isIntegrated,
-            remote_audit: data.remoteAudit,
-            
-            // 기타
-            prepared_by: 'LRQA Korea',
-            prepared_title: '사업개발본부'
-        });
-        
-        // 템플릿 렌더링
-        doc.render();
-        
-        // Buffer로 변환
-        const buffer = doc.getZip().generate({ type: 'nodebuffer' });
-        
-        return buffer;
-        
-    } catch (error) {
-        console.error('템플릿 기반 문서 생성 오류:', error);
-        throw new Error(`템플릿 기반 문서 생성 실패: ${error.message}`);
-    }
+async function createLRQAQuotationDocument(data) {
+    const doc = new Document({
+        sections: [{
+            properties: {},
+            children: [
+                // 헤더 - LRQA 로고 및 제목
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "LRQA Korea",
+                            bold: true,
+                            size: 32,
+                            color: "1f4e79"
+                        })
+                    ],
+                    alignment: AlignmentType.CENTER,
+                    spacing: { after: 400 }
+                }),
+                
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "ISO 인증심사 견적서",
+                            bold: true,
+                            size: 28,
+                            color: "1f4e79"
+                        })
+                    ],
+                    alignment: AlignmentType.CENTER,
+                    spacing: { after: 600 }
+                }),
+                
+                // 견적서 정보 테이블
+                new Table({
+                    width: { size: 100, type: WidthType.PERCENTAGE },
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "견적서 번호", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.quotationNumber })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "작성일", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.quotationDate })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "유효기간", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.validUntil })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "작성자", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "LRQA Korea" })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        })
+                    ]
+                }),
+                
+                new Paragraph({ children: [new TextRun({ text: "" })] }), // 빈 줄
+                
+                // 고객사 정보
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "고객사 정보",
+                            bold: true,
+                            size: 24,
+                            color: "1f4e79"
+                        })
+                    ],
+                    spacing: { before: 400, after: 200 }
+                }),
+                
+                new Table({
+                    width: { size: 100, type: WidthType.PERCENTAGE },
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "회사명", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.companyName })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "영문명", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.companyNameEn })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "주소", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.address })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "담당자", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.contactName })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "연락처", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.contactPhone })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "이메일", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.contactEmail })] })],
+                                    width: { size: 30, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        })
+                    ]
+                }),
+                
+                new Paragraph({ children: [new TextRun({ text: "" })] }), // 빈 줄
+                
+                // 인증 범위
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "인증 범위",
+                            bold: true,
+                            size: 24,
+                            color: "1f4e79"
+                        })
+                    ],
+                    spacing: { before: 400, after: 200 }
+                }),
+                
+                new Table({
+                    width: { size: 100, type: WidthType.PERCENTAGE },
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "신청 표준", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: data.standardsText })] })],
+                                    width: { size: 80, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        },
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "총 직원 수", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: `${data.totalEmployees}명` })] })],
+                                    width: { size: 80, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        })
+                    ]
+                }),
+                
+                new Paragraph({ children: [new TextRun({ text: "" })] }), // 빈 줄
+                
+                // 견적 상세
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "견적 상세",
+                            bold: true,
+                            size: 24,
+                            color: "1f4e79"
+                        })
+                    ],
+                    spacing: { before: 400, after: 200 }
+                }),
+                
+                new Table({
+                    width: { size: 100, type: WidthType.PERCENTAGE },
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "항목", bold: true })] })],
+                                    width: { size: 40, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "수량", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "단가", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "금액", bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        },
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "ISO 인증심사 (Stage 1 + Stage 2)" })] })],
+                                    width: { size: 40, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: `${data.auditDays}일` })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: `${data.dayRate.toLocaleString()}원` })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: `${data.subtotal.toLocaleString()}원` })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        },
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "소계" })] })],
+                                    width: { size: 40, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "" })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "" })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: `${data.subtotal.toLocaleString()}원` })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        },
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "VAT (10%)" })] })],
+                                    width: { size: 40, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "" })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "" })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: `${data.vat.toLocaleString()}원` })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        },
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "총 견적 금액", bold: true })] })],
+                                    width: { size: 40, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "" })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: "" })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                }),
+                                new TableCell({
+                                    children: [new Paragraph({ children: [new TextRun({ text: `${data.totalCost.toLocaleString()}원`, bold: true })] })],
+                                    width: { size: 20, type: WidthType.PERCENTAGE }
+                                })
+                            ]
+                        })
+                    ]
+                }),
+                
+                new Paragraph({ children: [new TextRun({ text: "" })] }), // 빈 줄
+                
+                // 주의사항
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "주의사항",
+                            bold: true,
+                            size: 20,
+                            color: "1f4e79"
+                        })
+                    ],
+                    spacing: { before: 400, after: 200 }
+                }),
+                
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "• 본 견적서는 유효기간 내에만 유효합니다.",
+                            size: 20
+                        })
+                    ],
+                    spacing: { after: 100 }
+                }),
+                
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "• 견적서 승인 후 계약서 체결이 필요합니다.",
+                            size: 20
+                        })
+                    ],
+                    spacing: { after: 100 }
+                }),
+                
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "• 심사 일정은 계약 체결 후 협의하여 결정됩니다.",
+                            size: 20
+                        })
+                    ],
+                    spacing: { after: 100 }
+                }),
+                
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "• 문의사항이 있으시면 언제든지 연락주시기 바랍니다.",
+                            size: 20
+                        })
+                    ],
+                    spacing: { after: 200 }
+                }),
+                
+                // 푸터
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "LRQA Korea | 사업개발본부 | Tel: 02-1234-5678 | Email: info@lrqa.co.kr",
+                            size: 16,
+                            color: "666666"
+                        })
+                    ],
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 400 }
+                })
+            ]
+        }]
+    });
+    
+    return await Packer.toBuffer(doc);
 }

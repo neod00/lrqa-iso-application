@@ -19,8 +19,6 @@
   "license": "MIT",
   "dependencies": {
     "docx": "^8.5.0",
-    "docxtemplater": "^3.44.0",
-    "pizzip": "^3.1.4",
     "google-spreadsheet": "^4.1.2",
     "google-auth-library": "^9.4.1",
     "googleapis": "^126.0.1",
