@@ -1,0 +1,11 @@
+[
+  { "id": "companyNameKo", "label": "법인명(국문)", "type": "text", "required": true, "description": "사업자등록증 상의 공식 한글명" },
+  { "id": "companyNameEn", "label": "법인명(영문)", "type": "text", "required": false, "description": "공식 영문명 (선택)" },
+  { "id": "contactName", "label": "담당자명", "type": "text", "required": true, "description": "실제 담당자 이름" },
+  { "id": "contactPhone", "label": "담당자 전화", "type": "text", "required": true, "description": "예: 010-1234-5678" },
+  { "id": "contactEmail", "label": "담당자 이메일", "type": "email", "required": true, "description": "연락 가능한 이메일 주소" },
+  { "id": "certificationScope", "label": "인증범위", "type": "text", "required": true, "description": "신청하는 인증의 범위" },
+  { "id": "totalEmployees", "label": "총 직원수", "type": "number", "required": false, "description": "숫자만 입력" },
+  { "id": "preferredYear", "label": "희망년도", "type": "number", "required": false, "description": "예: 2025" },
+  { "id": "preferredMonth", "label": "희망월", "type": "number", "required": false, "description": "예: 7" }
+] 
