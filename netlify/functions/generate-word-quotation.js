@@ -48,15 +48,11 @@ exports.handler = async (event, context) => {
 
         console.log('견적서 데이터:', applicationData);
 
-        // 견적서 데이터 변환
-        const quotationData = convertApplicationToQuotationData(applicationData);
-        
-        // 간단한 JSON 응답 테스트
+        // 간단한 성공 응답만 반환
         const testData = {
-            message: "견적서 생성 테스트",
-            companyName: quotationData.companyName,
-            quotationNumber: quotationData.quotationNumber,
-            totalCost: quotationData.totalCost
+            message: "견적서 생성 테스트 성공",
+            timestamp: timestamp,
+            companyName: applicationData['법인명(국문)'] || 'Unknown'
         };
         
         const base64File = Buffer.from(JSON.stringify(testData, null, 2)).toString('base64');
