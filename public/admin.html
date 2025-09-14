@@ -221,6 +221,11 @@
             color: white;
         }
         
+        .action-btn.quote {
+            background-color: #10b981;
+            color: white;
+        }
+        
         .action-btn:hover {
             opacity: 0.8;
         }
@@ -1238,12 +1243,13 @@
                                 <td>
                                     <span class="status-badge ${getStatusClass(app['상태'])}">${app['상태'] || '신규'}</span>
                                 </td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')">보기</button>
-                                        <button class="action-btn edit" onclick="editApplication('${app['신청일시']}')">수정</button>
-                                    </div>
-                                </td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')">보기</button>
+                            <button class="action-btn edit" onclick="editApplication('${app['신청일시']}')">수정</button>
+                            <button class="action-btn quote" onclick="generateQuotation('${app['신청일시']}')">견적서</button>
+                        </div>
+                    </td>
                             </tr>
                         `).join('');
                     }
@@ -1777,6 +1783,72 @@
             alert('수정된 폼 정의는 현재 로컬에서만 반영됩니다. (실제 저장/배포는 개발자가 form-definition.json을 교체해야 합니다)');
             // 콘솔에 출력 (개발자용)
             console.log('수정된 폼 정의:', JSON.stringify(definition, null, 2));
+        }
+
+        // 견적서 생성 함수
+        async function generateQuotation(timestamp) {
+            if (!isAuthenticated) return;
+            
+            try {
+                showMessage('견적서를 생성 중입니다...', 'info');
+                
+                // 신청서 데이터 가져오기
+                const response = await fetch('/.netlify/functions/get-applications');
+                const result = await response.json();
+                
+                if (!result.success) {
+                    showMessage('신청서 데이터를 불러올 수 없습니다.', 'error');
+                    return;
+                }
+                
+                const application = result.data.applications.find(app => app['신청일시'] === timestamp);
+                if (!application) {
+                    showMessage('신청서를 찾을 수 없습니다.', 'error');
+                    return;
+                }
+                
+                // 견적서 생성 요청
+                const quotationResponse = await fetch('/.netlify/functions/generate-word-quotation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        timestamp: timestamp,
+                        applicationData: application
+                    })
+                });
+                
+                const quotationResult = await quotationResponse.json();
+                
+                if (quotationResult.success) {
+                    // Base64 데이터를 Blob으로 변환
+                    const binaryString = atob(quotationResult.fileData);
+                    const bytes = new Uint8Array(binaryString.length);
+                    for (let i = 0; i < binaryString.length; i++) {
+                        bytes[i] = binaryString.charCodeAt(i);
+                    }
+                    const blob = new Blob([bytes], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+                    
+                    // 파일 다운로드
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = quotationResult.filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                    
+                    showMessage('견적서가 성공적으로 생성되었습니다.', 'success');
+                } else {
+                    showMessage(quotationResult.message || '견적서 생성 중 오류가 발생했습니다.', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error generating quotation:', error);
+                showMessage('견적서 생성 중 오류가 발생했습니다.', 'error');
+            }
         }
     </script>
     
