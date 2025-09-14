@@ -51,8 +51,8 @@ exports.handler = async (event, context) => {
         // 견적서 데이터 변환
         const quotationData = convertApplicationToQuotationData(applicationData);
         
-        // LRQA 스타일 Word 문서 생성
-        const buffer = await createLRQAQuotationDocument(quotationData);
+        // 간단한 테스트용 Word 문서 생성
+        const buffer = await createSimpleTestDocument(quotationData);
         
         // Base64로 인코딩
         const base64File = buffer.toString('base64');
@@ -189,7 +189,56 @@ function calculateAuditDays(employees, standardCount) {
 }
 
 /**
- * LRQA 스타일 Word 문서 생성
+ * 간단한 테스트용 Word 문서 생성
+ */
+async function createSimpleTestDocument(data) {
+    const doc = new Document({
+        sections: [{
+            properties: {},
+            children: [
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: "LRQA 견적서 테스트",
+                            bold: true,
+                            size: 32
+                        })
+                    ],
+                    alignment: AlignmentType.CENTER
+                }),
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: `회사명: ${data.companyName}`,
+                            size: 20
+                        })
+                    ]
+                }),
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: `견적서 번호: ${data.quotationNumber}`,
+                            size: 20
+                        })
+                    ]
+                }),
+                new Paragraph({
+                    children: [
+                        new TextRun({
+                            text: `총 견적 금액: ${data.totalCost.toLocaleString()}원`,
+                            size: 20
+                        })
+                    ]
+                })
+            ]
+        }]
+    });
+    
+    return await Packer.toBuffer(doc);
+}
+
+/**
+ * LRQA 스타일 Word 문서 생성 (원본)
  */
 async function createLRQAQuotationDocument(data) {
     const doc = new Document({
