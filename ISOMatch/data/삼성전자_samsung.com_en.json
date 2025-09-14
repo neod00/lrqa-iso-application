@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-08-12T17:00:43Z",
+  "input": {
+    "company_name": "삼성전자",
+    "url": "https://www.samsung.com",
+    "country_hint": null,
+    "lang": "en"
+  },
+  "entity": {
+    "name": "삼성전자",
+    "domain": "samsung.com"
+  },
+  "news": [
+    {
+      "title": "The request / response that are contrary to the Web firewall security policies have been blocked. - 전자신문",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1zNExIVFp3TXZaRWl5TDlZWEJjdU9NLUwzYlJuVjJGbnpHM2xfVDZaYlhUeUtpX3lLU25oTjRUSDZFZHlGVHlxNngyekdFdw?oc=5",
+      "published": "Tue, 05 Aug 2025",
+      "excerpt": "The request / response that are contrary to the Web firewall security policies have been blocked. - 전자신문"
+    },
+    {
+      "title": "Forging the Future of Semiconductor Talent at Hanyang: Inside the 2025 Samsung Electronics T&C Forum - 뉴스H",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE85eDM4QnBBYTRuMXFZbVVYQ1dMY3dmMU90RjhEYmNqYldVcTRUT2NuZy11ZXBrYXpWMnJ4RmNScG12MkItU2czTHpmbW9yNE9vbGxHbG5RRGlOSEJEazUzTl9RM0tMaUo0RDJV?oc=5",
+      "published": "Mon, 11 Aug 2025",
+      "excerpt": "Forging the Future of Semiconductor Talent at Hanyang: Inside the 2025 Samsung Electronics T&C Forum - 뉴스H"
+    },
+    {
+      "title": "Samsung to Shock the Market with World’s First Global Tri-Fold Phone in October - 엠투데이",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WVEIzVEJjTFpnNzBoX0wyandLSXFTZ3hyMUxydmJhMVNuTV9Qb281TDhxS0tzY3hSb3lpWUdxTWdSXzZ5VUlJZ0t5ZmMtOU9vdllNQVZzMHZLQ1Q0NS1CY2hwNG1TcUt1dWw0eVhLONIBc0FVX3lxTE91Njd5R1phbV9YR1BONjlhQWFjN18tM3BQZm1VaDlJV0FYVWhQUVFBMTVuOWU2SnYtSVA1bjdPbll2RnQ1YzJfWlZQODc4Z3ZxWURMcTlvZmhUQzFGNUlVZjNyWk9qNnplSXFPUk1QYnpIWlU?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "Samsung to Shock the Market with World’s First Global Tri-Fold Phone in October - 엠투데이"
+    },
+    {
+      "title": "The request / response that are contrary to the Web firewall security policies have been blocked. - 전자신문",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPWE1KZmJoejA0Y253ZlhEZHI4RWRhTl9Hbk1uRm5YZUJ3OS15dFFDVm9TWk1ZUFE3QlEycVNUSC00VjVvMlVFVXJJTGFvOFMyZUJoS3dicUVRMWZ6SEh4SExfSUFCVmlJYmdaNXl1YlByc2J1cTRqdlpheXFHd3dZaFlCRVJzbzZ5QWhlTDB5emVrQXh0RzB3OFNJdGlNR0pTcEhQNG9QWGYxMVd3bkhzOW5ZeE51eW8ySXAybnJYR3VVRjVsdURTMHJCX01jR3RFQV9fUHNtUQ?oc=5",
+      "published": "Thu, 31 Jul 2025",
+      "excerpt": "The request / response that are contrary to the Web firewall security policies have been blocked. - 전자신문"
+    },
+    {
+      "title": "Samsung Electronics Grants ₩51.3 Billion in Stock Awards to Executives as Long-Term Incentives — TM Roh Tops List - 알파경제",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1jTUVjaFJqbzc4XzM5Tkhnb0o4WnRXc2lLT3AzQ0djeGx2M1JINFMxY2twR1ZiMVgtdi1yalFhaXFwWmhDS2tsUF9oRWcyR3dIZmhzdFQ2VWhKbTZvR3fSAW5BVV95cUxQYXRvWjk5YUd3aU5NZmhDNGwyQ3k2YUs2WUVFakZrSmh4R213NklzVG5DOGh0dUtOUno1RHhzTUtwOC1lNTdCZjUyZkgyT3FmU25URkRtcG85WUdTb1N6Y21kaktSdjN6Vl9HRDViZw?oc=5",
+      "published": "Sun, 03 Aug 2025",
+      "excerpt": "Samsung Electronics Grants ₩51.3 Billion in Stock Awards to Executives as Long-Term Incentives — TM Roh Tops List - 알파경제"
+    },
+    {
+      "title": "CNOOC Limited Announces Yellowtail Project Commences Production - KIPOST",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9aMkpaOVVmLWZrSWhVZ3JSOEpGU19DNDNYaVZBM2JxV25NU2plWjYtZ0RRcVNwV3daejZ0OENrV3p4d3R5Rm5RMHVXXy1wVUtReVcxcWUzT0dIclNaSzEydnZUQ0xRUkRk0gFsQVVfeXFMTnNQYjRMTTQ4WkNyUlBMM2lZY2Ntc1NKcS02Y1VUbk1pMTQ4el9JUGxsSVhtX0VpNWx5d3JTd3JRTThXVFNmQ21uOVdIWG5UYXJaT0FhVlI5MUJrLWc0VnlPSW40X2RfcTRTNGx5?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "CNOOC Limited Announces Yellowtail Project Commences Production - KIPOST"
+    },
+    {
+      "title": "Korean Defense Firms Show Diverging Q2 Results: Hanwha Systems Faces Profit Decline, KAI Rebounds with Double-Digit Margins - 알파경제",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBqb25nUEZTM1Z0R3A0c0Y0cjc5NndaU2RCYkI5OWdNdDFyQ2dHMUVSUmNYZlYtQWNNZndNVXJzOTJ0c0VneHBZZkJYWHlXby02Rl84U2NrT3lqUTJmQmfSAW5BVV95cUxPYkVnaEFoUWZqcG5SUzFZVk93d1VzcTBZSVRWUmFsSjE5SlNldGdwMXlBcFRqVDBZdkxmTVdnRm4wZXhfOWRWMThtWHBhbkxsMjZMRWpWUDFRdEdPck9OWW5PLUw5QUFMcGU2YTljdw?oc=5",
+      "published": "Wed, 30 Jul 2025",
+      "excerpt": "Korean Defense Firms Show Diverging Q2 Results: Hanwha Systems Faces Profit Decline, KAI Rebounds with Double-Digit Margins - 알파경제"
+    },
+    {
+      "title": "Agoda Unveils Top Visa-Free Asian and European Destinations for South Korean Travelers - KIPOST",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBkTkZKUk4xRjd3UTVRSlNJVjFCZHdoVEdIWjhNSFhESG54cVlyQURBQlRzSDlLbmI2YWlYOWdmeXd4UzMtUFVYZmhPWDR3NFlVNU9YUmdJaWdIeEhHak5xenBZak1Jamlm0gFsQVVfeXFMUExkNnczd19kc19NMkJ0eGdsR3ZfTnFDdG91eWpoeldJMjd4ZjFZSFpaSHVwM29ySXRfQzRBVjBHUmdPZWI0UG1JYnRyX2htVFhhUG53d3h3bnJmbkdacEtIWFE3MHRSZWY2WFNr?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "Agoda Unveils Top Visa-Free Asian and European Destinations for South Korean Travelers - KIPOST"
+    }
+  ],
+  "risk": {
+    "keyword_hits": {
+      "recall|product recall|defect|quality issue|non-conformity": 0,
+      "customer complaint|complaint|dissatisfaction|feedback": 0,
+      "product accident|accident|incident|failure": 0,
+      "quality management|QC|QA|process control": 0,
+      "environmental accident|pollution|contamination|spill": 0,
+      "waste|disposal|treatment|emission": 0,
+      "energy consumption|electricity|power|resource": 0,
+      "carbon emission|CO2|greenhouse gas|climate": 0,
+      "resource saving|recycling|sustainability|eco-friendly": 0,
+      "industrial accident|workplace accident|disaster|injury": 0,
+      "safety accident|accident|incident|hazard": 0,
+      "work environment|labor|occupational|ergonomics": 0,
+      "health check|examination|wellness|safety training": 0,
+      "lawsuit|litigation|class action|legal action": 0,
+      "breach|hack|data leak|ransomware|cyber attack": 0,
+      "sanction|embargo|penalty|fine|violation": 0,
+      "fraud|accounting scandal|financial misconduct": 0,
+      "non-compliance|violation|regulatory issue|compliance": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.2
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "14001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "45001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      }
+    },
+    "overall_score": 85.0,
+    "overall_status": "Ready"
+  },
+  "_base_id": "삼성전자_samsung.com",
+  "_lang_base_id": "삼성전자_samsung.com_en"
+}

@@ -1,0 +1,136 @@
+[build]
+  # 빌드 명령어
+  command = "npm run build"
+  
+  # 빌드 출력 디렉토리
+  publish = "frontend"
+  
+  # 함수 디렉토리
+  functions = "backend/netlify/functions"
+
+[build.environment]
+  # Node.js 버전
+  NODE_VERSION = "18"
+  
+  # Python 버전
+  PYTHON_VERSION = "3.9"
+  
+  # 환경 변수
+  PYTHON_PATH = "python"
+  LOG_LEVEL = "info"
+  NODE_ENV = "production"
+
+# 함수 설정
+[functions]
+  # 함수 타임아웃 (초)
+  timeout = 30
+  
+  # 메모리 제한 (MB)
+  memory = 1024
+
+# 리다이렉션 설정
+[[redirects]]
+  # SPA 라우팅을 위한 리다이렉션
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 헤더 설정
+[[headers]]
+  # 모든 경로에 적용
+  for = "/*"
+  [headers.values]
+    # CORS 헤더
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    
+    # 보안 헤더
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # 캐시 헤더
+    Cache-Control = "public, max-age=3600"
+
+# 정적 파일 캐시 설정
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# 함수별 설정
+[functions."ai-chat"]
+  # AI 채팅 함수 설정
+  timeout = 60
+  memory = 2048
+
+[functions."lrqa-data"]
+  # LRQA 데이터 함수 설정
+  timeout = 30
+  memory = 1024
+
+# 폼 처리 설정
+[build.processing]
+  # HTML 미니파이
+  skip_processing = false
+
+[build.processing.css]
+  # CSS 미니파이
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  # JavaScript 미니파이
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  # HTML 미니파이
+  pretty_urls = true
+
+# 개발 서버 설정
+[dev]
+  # 개발 서버 포트
+  port = 8888
+  
+  # 개발 서버 명령어
+  command = "netlify dev"
+  
+  # 자동 재시작
+  auto_launch = true
+
+# 플러그인 설정
+[[plugins]]
+  # Netlify Functions 플러그인
+  package = "@netlify/plugin-functions"
+
+# 환경별 설정
+[context.production]
+  # 프로덕션 환경 변수
+  [context.production.environment]
+    NODE_ENV = "production"
+    LOG_LEVEL = "warn"
+
+[context.deploy-preview]
+  # 미리보기 환경 변수
+  [context.deploy-preview.environment]
+    NODE_ENV = "development"
+    LOG_LEVEL = "debug"
+
+[context.branch-deploy]
+  # 브랜치 배포 환경 변수
+  [context.branch-deploy.environment]
+    NODE_ENV = "development"
+    LOG_LEVEL = "debug"

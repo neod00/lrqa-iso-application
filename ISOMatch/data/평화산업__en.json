@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-08-12T17:02:46Z",
+  "input": {
+    "company_name": "평화산업",
+    "url": null,
+    "country_hint": null,
+    "lang": "en"
+  },
+  "entity": {
+    "name": "평화산업",
+    "domain": null
+  },
+  "news": [],
+  "risk": {
+    "keyword_hits": {
+      "recall|product recall|defect|quality issue|non-conformity": 0,
+      "customer complaint|complaint|dissatisfaction|feedback": 0,
+      "product accident|accident|incident|failure": 0,
+      "quality management|QC|QA|process control": 0,
+      "environmental accident|pollution|contamination|spill": 0,
+      "waste|disposal|treatment|emission": 0,
+      "energy consumption|electricity|power|resource": 0,
+      "carbon emission|CO2|greenhouse gas|climate": 0,
+      "resource saving|recycling|sustainability|eco-friendly": 0,
+      "industrial accident|workplace accident|disaster|injury": 0,
+      "safety accident|accident|incident|hazard": 0,
+      "work environment|labor|occupational|ergonomics": 0,
+      "health check|examination|wellness|safety training": 0,
+      "lawsuit|litigation|class action|legal action": 0,
+      "breach|hack|data leak|ransomware|cyber attack": 0,
+      "sanction|embargo|penalty|fine|violation": 0,
+      "fraud|accounting scandal|financial misconduct": 0,
+      "non-compliance|violation|regulatory issue|compliance": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.2
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "14001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "45001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      }
+    },
+    "overall_score": 85.0,
+    "overall_status": "Ready"
+  },
+  "_base_id": "평화산업_",
+  "_lang_base_id": "평화산업__en"
+}

@@ -1,0 +1,230 @@
+{
+  "document_info": {
+    "title": "IAF Mandatory Document - Determination of Audit Time of Quality, Environmental, and Occupational Health & Safety Management Systems",
+    "version": "Issue 4, Version 3",
+    "document_code": "IAF MD 5:2023",
+    "issue_date": "14 June 2023",
+    "application_date": "07 May 2020",
+    "prepared_by": "IAF Technical Committee",
+    "approved_by": "IAF Members",
+    "contact": {
+      "name": "Elva Nilsen",
+      "title": "IAF Corporate Secretary",
+      "phone": "+1 613 454-8159",
+      "email": "secretary@iaf.nu",
+      "website": "http://www.iaf.nu"
+    }
+  },
+  "introduction": {
+    "purpose": "This document provides mandatory provisions and guidance for CABs to develop their own processes for determining the amount of time required for the auditing of clients of differing sizes and complexity over a broad spectrum of activities.",
+    "scope": "QMS, EMS, and OH&SMS certification",
+    "key_principles": [
+      "Consistency in determination of audit time between CABs",
+      "Adequate time allocation for effective auditing",
+      "Consideration of client-specific factors",
+      "Framework for audit planning"
+    ]
+  },
+  "definitions": {
+    "management_systems_certification_scheme": "Conformity assessment system related to management systems to which the same specified requirements, specific rules and processes apply",
+    "client_organization": "Entity or defined part of an entity operating a management system",
+    "permanent_site": "Location (physical or virtual) where a client organization performs work or provides a service on a continuing basis",
+    "virtual_site": "Virtual location where a client organization performs work or provides a service using an on-line environment allowing persons irrespective of physical locations to execute processes",
+    "temporary_site": "Location (physical or virtual) where a client organization performs specific work or provides a service for a finite period of time and which is not intended to become a permanent site",
+    "audit_time": "Time needed to plan and accomplish a complete and effective audit of the client organization's management system",
+    "audit_day": "The duration of an audit day is normally 8 hours and may or may not include a lunch break depending upon local legislation",
+    "effective_number_of_personnel": "The effective number of personnel consists of all personnel (permanent, temporary, and part-time) involved within the scope of certification including those working on each shift"
+  },
+  "audit_time_calculation": {
+    "base_requirements": {
+      "minimum_duration": "The duration of a management system certification audit should typically not be less than 80% of the audit time calculated following the methodology in Section 3",
+      "decimal_rounding": "If after the calculation, the result is a decimal number, the number of days should be adjusted to the nearest half day",
+      "maximum_reduction": "The reduction of audit time of management systems shall not exceed 30% of the times established from Tables QMS 1, EMS 1, or OH&SMS 1"
+    },
+    "personnel_calculation": {
+      "includes": [
+        "All personnel (permanent, temporary, and part-time)",
+        "Personnel working on each shift",
+        "Non-permanent personnel (e.g. contractors) when included within scope",
+        "Contractors and subcontractors for OH&SMS"
+      ],
+      "adjustments": [
+        "Part-time personnel: reduced or increased based on hours worked",
+        "Repetitive processes: reduction permitted for QMS and EMS",
+        "Shift work: additional consideration required",
+        "Seasonal operations: based on peak season personnel"
+      ]
+    }
+  },
+  "audit_types": {
+    "initial_audit": {
+      "description": "Stage 1 plus Stage 2 certification audit",
+      "calculation_basis": "Effective number of personnel and complexity factors",
+      "tables": ["QMS 1", "EMS 1", "OH&SMS 1"]
+    },
+    "surveillance_audit": {
+      "description": "Annual surveillance during 3-year certification cycle",
+      "time_allocation": "About 1/3 of the initial certification audit time",
+      "minimum_duration": "Unlikely to be less than one (1) audit day"
+    },
+    "recertification_audit": {
+      "description": "Audit at the end of 3-year cycle",
+      "time_allocation": "Approximately 2/3 of the audit time that would be required for an initial certification audit",
+      "minimum_duration": "Unlikely to be less than one (1) audit day"
+    }
+  },
+  "complexity_categories": {
+    "qms_risk_categories": {
+      "high_risk": {
+        "description": "Where failure of the product or service causes economic catastrophe, or puts life at risk",
+        "examples": [
+          "Food; pharmaceuticals; aircraft; shipbuilding",
+          "Load bearing components and structures",
+          "Complex construction activity",
+          "Electrical and gas equipment",
+          "Medical and health services",
+          "Nuclear fuel; chemicals, chemical products and fibres"
+        ]
+      },
+      "medium_risk": {
+        "description": "Where failure of the product or service could cause injury or illness",
+        "examples": [
+          "Non load bearing components and structures",
+          "Simple construction activities",
+          "Basic metals and fabricated products",
+          "Non-metallic products; furniture; optical equipment",
+          "Leisure and personal services"
+        ]
+      },
+      "low_risk": {
+        "description": "Where failure of the product or service is unlikely to cause injury or illness",
+        "examples": [
+          "Textiles and clothing",
+          "Pulp, paper and paper products",
+          "Publishing; office services",
+          "Education; retailing, hotels and restaurants"
+        ]
+      }
+    },
+    "ems_complexity_categories": {
+      "high": "Environmental aspects with significant nature and gravity (typically manufacturing or processing type organizations with significant impacts in several of the environmental aspects)",
+      "medium": "Environmental aspects with medium nature and gravity (typically manufacturing organizations with significant impacts in some of the environmental aspects)",
+      "low": "Environmental aspects with low nature and gravity (typically organizations of an assembly type environment with few significant aspects)",
+      "limited": "Environmental aspects with limited nature and gravity (typically organizations of an office type environment)",
+      "special": "These require additional and unique consideration at the audit planning stage"
+    },
+    "ohsms_complexity_categories": {
+      "high": "OH&S risks with significant nature and severity (typically the construction industry, heavy manufacturing or processing type organizations)",
+      "medium": "OH&S risks with medium nature and severity (typically light manufacturing organizations with some significant risks)",
+      "low": "OH&S risks with low nature and severity (typically office based organizations)"
+    }
+  },
+  "adjustment_factors": {
+    "increase_factors": {
+      "all_management_systems": [
+        "Complicated logistics involving more than one building or location",
+        "Staff speaking in more than one language",
+        "Very large site for the number of personnel",
+        "High degree of regulation",
+        "System covers highly complex processes",
+        "Activities that require visiting temporary sites"
+      ],
+      "qms_specific": [
+        "Activities considered to be of high risk",
+        "Outsourced functions or processes"
+      ],
+      "ems_specific": [
+        "Higher sensitivity of receiving environment",
+        "Views of interested parties",
+        "Indirect aspects necessitating increase in audit time",
+        "Additional or unusual environmental aspects",
+        "Risks of environmental accidents and impacts",
+        "Outsourced functions or processes"
+      ],
+      "ohsms_specific": [
+        "Views of interested parties",
+        "Rate of accidents and occupational diseases higher than average",
+        "Members of the public present on the organization's site",
+        "Legal proceedings related to OH&S",
+        "Temporary large presence of many contractors",
+        "Dangerous substances in quantities exposing to major industrial accidents",
+        "Organization with sites in other countries"
+      ]
+    },
+    "decrease_factors": [
+      "Client is not 'design responsible' (QMS only)",
+      "Very small site for number of personnel",
+      "Maturity of management system",
+      "Prior knowledge of the client management system",
+      "Client preparedness for certification",
+      "High level of automation (not applicable for OH&SMS)",
+      "Staff working 'off location' where compliance can be audited through records"
+    ]
+  },
+  "special_considerations": {
+    "temporary_sites": {
+      "requirement": "Temporary sites shall be incorporated into the audit programs",
+      "evaluation_criteria": "Based on an evaluation of the risks of the failure of the management system to control product or service output or environmental aspects and impacts or OH&S risks",
+      "audit_methods": [
+        "On-site audits of temporary sites",
+        "Interviews or progress meetings with client and/or customer",
+        "Document review of temporary site activities",
+        "Remote access to electronic sites",
+        "Use of video and teleconference technology"
+      ]
+    },
+    "multi_site_management_systems": {
+      "requirement": "Necessary to establish if sampling is permitted or not",
+      "reference_document": "IAF MD 1",
+      "sampling_criteria": "Sites should represent the range of the client's scope of certification, competency needs and service variations"
+    },
+    "outsourcing": {
+      "responsibility": "CAB must obtain evidence that the organization has effectively determined the type and extent of controls to be applied",
+      "audit_focus": "Effectiveness of the client's management system in managing any supplied activity and the risk this poses",
+      "scope": "Control of the supplied activity, not the performance of the activity itself"
+    }
+  },
+  "audit_tables": {
+    "qms_table_1": {
+      "description": "Relationship between Effective Number of Personnel and Audit Time (Initial Audit only)",
+      "note": "Numbers should be seen as a continuum rather than a stepped change"
+    },
+    "ems_table_1": {
+      "description": "Relationship between Effective Number of Personnel, Complexity and Audit Time (Initial Audit only - Stage 1 + Stage 2)",
+      "complexity_levels": ["High", "Med", "Low", "Lim"]
+    },
+    "ohsms_table_1": {
+      "description": "Relationship between Effective Number of Personnel, Complexity Category of OH&S Risk and Audit Time (Initial Audit only - Stage 1 + Stage 2)",
+      "complexity_levels": ["High", "Med", "Low"]
+    }
+  },
+  "faq": [
+    {
+      "question": "IAF MD5는 무엇인가요?",
+      "answer": "IAF MD5는 품질경영시스템(QMS), 환경경영시스템(EMS), 직업건강안전경영시스템(OH&SMS) 인증심사 시간을 결정하기 위한 IAF 필수 문서입니다. 인증기관(CAB)이 다양한 규모와 복잡성을 가진 고객의 심사에 필요한 시간을 일관성 있게 결정할 수 있도록 가이드라인을 제공합니다."
+    },
+    {
+      "question": "심사 시간은 어떻게 계산되나요?",
+      "answer": "심사 시간은 유효인원수(Effective Number of Personnel)를 기준으로 하며, 각 관리시스템별로 다른 복잡성 요인을 고려합니다. QMS는 위험도, EMS는 환경복잡성, OH&SMS는 안전보건 위험 복잡성을 추가로 고려합니다."
+    },
+    {
+      "question": "유효인원수에는 누가 포함되나요?",
+      "answer": "정규직, 임시직, 파트타임 직원 모두 포함되며, 교대근무자, 외주업체 직원(인증 범위에 포함된 경우), 계절직원(성수기 기준)도 포함됩니다. OH&SMS의 경우 조직의 안전보건경영시스템 성과에 영향을 미칠 수 있는 하청업체 직원도 포함됩니다."
+    },
+    {
+      "question": "심사 시간을 줄일 수 있는 경우는?",
+      "answer": "설계 책임이 없거나, 매우 작은 사업장, 관리시스템의 성숙도가 높거나, 동일한 CAB에서 다른 표준으로 이미 인증받은 경우, 높은 수준의 자동화, 사무실 외부에서 근무하는 직원의 경우 등입니다. 단, 최대 30%까지만 감축 가능합니다."
+    },
+    {
+      "question": "심사 시간을 늘려야 하는 경우는?",
+      "answer": "여러 건물이나 장소에서 작업하는 복잡한 물류, 다국어 사용, 매우 큰 사업장, 높은 규제 수준, 고도로 복잡한 프로세스, 임시 사이트 방문이 필요한 활동, 고위험 활동, 외주 기능이나 프로세스 등이 있습니다."
+    }
+  ],
+  "related_documents": [
+    "ISO/IEC 17021-1",
+    "IAF MD 1 (Multi-site Management Systems)",
+    "IAF MD 3 (Advanced Surveillance and Recertification Procedures)",
+    "IAF MD 4 (Remote Auditing)",
+    "IAF MD 11 (Integrated Management Systems)"
+  ]
+}

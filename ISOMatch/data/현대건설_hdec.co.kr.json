@@ -1,0 +1,787 @@
+{
+  "timestamp": "2025-08-19T04:27:16Z",
+  "input": {
+    "company_name": "현대건설",
+    "url": "https://hdec.co.kr",
+    "country_hint": "KR",
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "현대건설",
+    "domain": "hdec.co.kr"
+  },
+  "filings": [
+    {
+      "title": "지급수단별ㆍ지급기간별지급금액및분쟁조정기구에관한사항",
+      "date": "20250814",
+      "rcp_no": "20250814003653",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "지급수단별ㆍ지급기간별지급금액및분쟁조정기구에관한사항",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814003653"
+    },
+    {
+      "title": "반기보고서 (2025.06)",
+      "date": "20250814",
+      "rcp_no": "20250814002545",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "반기보고서 (2025.06)",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814002545"
+    },
+    {
+      "title": "단일판매ㆍ공급계약체결              ",
+      "date": "20250814",
+      "rcp_no": "20250814800219",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "단일판매ㆍ공급계약체결              ",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814800219"
+    },
+    {
+      "title": "풍문또는보도에대한해명(미확정)              ",
+      "date": "20250813",
+      "rcp_no": "20250813800757",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "풍문또는보도에대한해명(미확정)              ",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250813800757"
+    },
+    {
+      "title": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "date": "20250813",
+      "rcp_no": "20250813800735",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250813800735"
+    },
+    {
+      "title": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "date": "20250806",
+      "rcp_no": "20250806800260",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250806800260"
+    },
+    {
+      "title": "의결권대리행사권유참고서류",
+      "date": "20250730",
+      "rcp_no": "20250730000333",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "의결권대리행사권유참고서류",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250730000333"
+    },
+    {
+      "title": "주주총회소집공고",
+      "date": "20250730",
+      "rcp_no": "20250730000252",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "주주총회소집공고",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250730000252"
+    },
+    {
+      "title": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "date": "20250725",
+      "rcp_no": "20250725800639",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250725800639"
+    },
+    {
+      "title": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "date": "20250724",
+      "rcp_no": "20250724800687",
+      "corp_name": "현대건설",
+      "corp_code": "00164478",
+      "type": "[기재정정]단일판매ㆍ공급계약체결              ",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250724800687"
+    }
+  ],
+  "news": [
+    {
+      "title": "[단독]‘연대보증’ 현대건설, 공사비 못 받고 조합원은 1인당 분담금만 11억…2300억 자금난 겪는 강남 아파트 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeGxESFZGUm9VY0w4Mm1mNmhZSl84Q01NNzI5LXMwckZXY1pXdEtjVlVvZzdrVWJlVkNtelo2ekM3ZHRzUndlMHJVbUF0NEZaREE0TTAta3MzU1RjM3BRVkk3WFpDN1plcmxpUGJ1Z0dwQWliN0RDZVROUnI2V2U1QUNuQjd0cy02cEE5cldkY0c2S1RhN3lsUdIBrAFBVV95cUxOVWdralN5VXV6NDVTNExxZmhGay1oOWxYNGlJZlBlYVhMVkxvM203bDlQQXQ5R3QzY2ZUTjFhbUEyVFkwa01Ra3VqMFprd2N3c0RnWnFKbC1SaDRHUjNIcGJPWHNPWjdWeEFidlVBekhMQXJUXzIwWFl1bU8zV2ZhMGpCTTlEWTFIY3pudE14YkQxdlgyTkQxdW5zZF9ZcUtsRUJqMWpCQ3hNLW4y?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "[단독]‘연대보증’ 현대건설, 공사비 못 받고 조합원은 1인당 분담금만 11억…2300억 자금난 겪는 강남 아파트 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "현대건설, '디에이치 아델스타' 8월 분양 - 헬로티",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fU1M2MFVIZkNHSlJ1RlJSZENwSE0zVnFvS2hKZm5QN0taWGVoSEJOMGF1OWVRNnkxV3ZCcV9zYzFFaC1GQW15MURQNE9CNTZ3eWt2Y01va2ZzNXlJM1hB?oc=5",
+      "published": "Wed, 06 Aug 2025",
+      "excerpt": "현대건설, '디에이치 아델스타' 8월 분양 - 헬로티"
+    },
+    {
+      "title": "[단독] 현대건설, 윤 관저 공사 대가로 ‘800억 영빈관’ 신축 수주 정황 - hani.co.kr",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE05eHFxRWNWdThodTV6UUc1T3RoLXhDWGpxdWxOQU4zMlFzMkE1RmEtRXFxU1JnX0d2cjZYd3l6a3UwTmJGVFB0c0NJVUEwWVBLakRQTTE2M3JwNEl3eUQzV0psUkpPdlZuX2otZFNXS1d1dw?oc=5",
+      "published": "Tue, 19 Aug 2025",
+      "excerpt": "[단독] 현대건설, 윤 관저 공사 대가로 ‘800억 영빈관’ 신축 수주 정황 - hani.co.kr"
+    },
+    {
+      "title": "현대건설, 세계 최초 부유식 CCS 기술로 글로벌 온실가스 저감 나선다 - hyundai.co.kr",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1QU1AtZEZPa1JTc1ZXamFQalZpTlVjZmVCUEN1Z2VsaWtqZkJCcjY2dFlRTW5MakhMRDJKRmptTFR3QXBoRXkyTFFrSzVHdFRMU3dZUGxDUWJYTnBpbGVhMQ?oc=5",
+      "published": "Mon, 18 Aug 2025",
+      "excerpt": "현대건설, 세계 최초 부유식 CCS 기술로 글로벌 온실가스 저감 나선다 - hyundai.co.kr"
+    },
+    {
+      "title": "현대건설, 동남아 고갈 유·가스전 활용 ‘부유식 CCS’ 개발나서 - 백세시대",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5YWVdVQjNkdkJGTGo1a1ZpVEc5ZkVYc1RnVmx3dmFTeXBNUTQ0c0FiNEstX0ctaWxuY1Axd0JuTjBqUHl5S3lXeVh2SDJYRHF5TlRINDh3R1ZPVTRyS0pDSTAtRjRGNEE2eEpF?oc=5",
+      "published": "Thu, 14 Aug 2025",
+      "excerpt": "현대건설, 동남아 고갈 유·가스전 활용 ‘부유식 CCS’ 개발나서 - 백세시대"
+    },
+    {
+      "title": "현대건설, 과천 '디에이치 아델스타' 14일 견본주택 개관 - 뉴스1",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE03RHE2VjQwcFJtNXdRNUdfRWkxeThSTWtiajhhSzVrSHJXNFl4XzVPeXJJRS1VbHh1THU2bVpZSS1rbC1mM29Eb0JqUGQtM3QxNkQxNXhvX1FMbWM?oc=5",
+      "published": "Wed, 13 Aug 2025",
+      "excerpt": "현대건설, 과천 '디에이치 아델스타' 14일 견본주택 개관 - 뉴스1"
+    },
+    {
+      "title": "현대건설, 1조5138억 규모 개포주공 6·7단지 공사 수주 - 블로터",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9kMVZzWnd3ZnFRUVJRbEExaDYxZy05WWdod25BczBhVXpMOXB2QXZ2WjFRT1dXLW9EV0d2WGlFNXNiMGFxTG9qU1pIbEFoYVMwLWdGVDJSc1hWQ2xhX2JNd1BNVVhwX1pl0gFsQVVfeXFMTzY0VmZtcnFWaHl6cmg0Y3pPX2RHX0tpZk55bWxtMUpvRWFkNzB1NngtMGZGRmFZR0t0bWpDNkNjNTh0MlJpaWRaYlVQMEJvSm9PRGZMUS1qYnpNcVpaNXFsTmt4NHZVQnRraXVp?oc=5",
+      "published": "Thu, 14 Aug 2025",
+      "excerpt": "현대건설, 1조5138억 규모 개포주공 6·7단지 공사 수주 - 블로터"
+    },
+    {
+      "title": "현대건설, ‘디에이치 아델스타’ 견본주택 개관 - 환경일보",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9rOTNDX0o2anVXdldvWTY2UHc5MVBUNzhHcGRHWGZiQllRci1VQnNZTnZyeUwzVGRiYTVVeUlJUUd2NUkydzNyNVVMQWU3WEZsY2xIOXhzdFdXMkwxbVo2Qi00Zy1ScTZv?oc=5",
+      "published": "Thu, 14 Aug 2025",
+      "excerpt": "현대건설, ‘디에이치 아델스타’ 견본주택 개관 - 환경일보"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "serpapi": {},
+  "risk": {
+    "finbert": {
+      "neg": 0.025981026701629162,
+      "neu": 0.8812405839562416,
+      "pos": 0.09277835278771818
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 2,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 2,
+    "risk_score_0to1": 0.146
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 70.2,
+        "status": "준비됨",
+        "standard_name": "품질경영시스템",
+        "clause_details": {
+          "context": {
+            "name": "조직과 상황",
+            "score": 60,
+            "weight": 0.15,
+            "requirements": [
+              "조직의 내외부 이슈 파악",
+              "이해관계자 요구사항 분석",
+              "품질경영시스템 범위 결정"
+            ],
+            "gaps": [
+              "조직의 내외부 이슈 파악이 부족하여 리스크 관리에 어려움이 있음.",
+              "이해관계자 요구사항 분석이 체계적이지 않음.",
+              "품질경영시스템 범위 결정이 명확하지 않음."
+            ]
+          },
+          "leadership": {
+            "name": "리더십",
+            "score": 70,
+            "weight": 0.2,
+            "requirements": [
+              "최고경영자의 리더십과 의지",
+              "고객중심 문화",
+              "품질방침 수립과 전파",
+              "조직 역할과 책임 할당"
+            ],
+            "gaps": [
+              "최고경영자의 리더십과 의지가 명확히 드러나지 않음.",
+              "고객중심 문화가 조직 전반에 잘 확립되지 않음.",
+              "품질방침의 수립 및 전파가 미흡함."
+            ]
+          },
+          "planning": {
+            "name": "기획",
+            "score": 65,
+            "weight": 0.15,
+            "requirements": [
+              "리스크와 기회 관리",
+              "품질목표 설정과 달성 계획",
+              "변경사항 관리"
+            ],
+            "gaps": [
+              "리스크와 기회 관리 체계가 부족함.",
+              "품질목표 설정이 구체적이지 않음.",
+              "변경사항 관리 프로세스가 미비함."
+            ]
+          },
+          "support": {
+            "name": "지원",
+            "score": 75,
+            "weight": 0.2,
+            "requirements": [
+              "자원 확보 및 관리",
+              "역량 있는 인적자원",
+              "인식 및 소통",
+              "문서화된 정보 관리"
+            ],
+            "gaps": [
+              "자원 확보 및 관리가 체계적이지 않음.",
+              "인적자원의 역량 개발이 부족함.",
+              "문서화된 정보 관리가 미흡함."
+            ]
+          },
+          "operation": {
+            "name": "운영",
+            "score": 70,
+            "weight": 0.2,
+            "requirements": [
+              "운영 계획 및 관리",
+              "제품/서비스 요구사항",
+              "외부 공급자 관리",
+              "제품/서비스 제공"
+            ],
+            "gaps": [
+              "운영 계획 및 관리가 비효율적임.",
+              "제품/서비스 요구사항에 대한 명확한 이해가 부족함.",
+              "외부 공급자 관리 체계가 미비함."
+            ]
+          },
+          "evaluation": {
+            "name": "평가",
+            "score": 65,
+            "weight": 0.1,
+            "requirements": [
+              "모니터링과 측정",
+              "고객만족도 평가",
+              "내부심사",
+              "경영검토"
+            ],
+            "gaps": [
+              "모니터링과 측정 체계가 부족함.",
+              "고객만족도 평가가 정기적으로 이루어지지 않음.",
+              "내부심사 및 경영검토 프로세스가 체계적이지 않음."
+            ]
+          }
+        },
+        "industry_bonus": 2,
+        "assessment_method": "ChatGPT Enhanced Analysis"
+      },
+      "14001": {
+        "readiness_score": 78.0,
+        "status": "준비됨",
+        "standard_name": "환경경영시스템",
+        "clause_details": {
+          "context": {
+            "name": "조직과 상황",
+            "score": 75,
+            "weight": 0.15,
+            "requirements": [
+              "환경경영시스템 범위 결정",
+              "환경 이슈와 요구사항 파악",
+              "이해관계자 요구사항"
+            ],
+            "gaps": [
+              "환경 이슈 및 요구사항의 체계적인 파악 부족",
+              "이해관계자 요구사항에 대한 명확한 분석 부족"
+            ]
+          },
+          "leadership": {
+            "name": "리더십",
+            "score": 80,
+            "weight": 0.2,
+            "requirements": [
+              "환경방침 수립과 의지",
+              "환경 책임과 권한",
+              "환경보호 약속"
+            ],
+            "gaps": [
+              "환경방침의 구체적인 실행 계획 부족",
+              "환경 책임과 권한의 명확한 정의 부족"
+            ]
+          },
+          "planning": {
+            "name": "기획",
+            "score": 70,
+            "weight": 0.25,
+            "requirements": [
+              "환경측면 식별과 평가",
+              "법규 및 기타 요구사항",
+              "환경목표와 달성 계획",
+              "리스크와 기회"
+            ],
+            "gaps": [
+              "환경측면 식별 및 평가의 체계 부족",
+              "법규 및 기타 요구사항의 철저한 검토 부족",
+              "환경목표 설정의 구체성 부족"
+            ]
+          },
+          "support": {
+            "name": "지원",
+            "score": 65,
+            "weight": 0.15,
+            "requirements": [
+              "자원 확보",
+              "환경 역량과 인식",
+              "소통과 참여",
+              "문서화된 정보"
+            ],
+            "gaps": [
+              "환경 역량과 인식 제고를 위한 교육 부족",
+              "소통 및 참여의 체계적인 방법 부족",
+              "문서화된 정보의 관리 및 접근성 부족"
+            ]
+          },
+          "operation": {
+            "name": "운영",
+            "score": 70,
+            "weight": 0.15,
+            "requirements": [
+              "운영 관리",
+              "비상상황 대비와 대응"
+            ],
+            "gaps": [
+              "운영 관리의 일관성 부족",
+              "비상상황 대비 및 대응 계획의 구체성 부족"
+            ]
+          },
+          "evaluation": {
+            "name": "평가",
+            "score": 60,
+            "weight": 0.1,
+            "requirements": [
+              "모니터링과 측정",
+              "법규 준수 평가",
+              "내부심사",
+              "경영검토"
+            ],
+            "gaps": [
+              "모니터링 및 측정의 체계 부족",
+              "법규 준수 평가의 정기성 부족",
+              "내부심사 및 경영검토의 체계적인 접근 부족"
+            ]
+          }
+        },
+        "industry_bonus": 7,
+        "assessment_method": "ChatGPT Enhanced Analysis"
+      },
+      "45001": {
+        "readiness_score": 77.5,
+        "status": "준비됨",
+        "standard_name": "안전보건경영시스템",
+        "clause_details": {
+          "context": {
+            "name": "조직과 상황",
+            "score": 70,
+            "weight": 0.15,
+            "requirements": [
+              "안전보건경영시스템 범위",
+              "작업환경과 이해관계자",
+              "근로자와 이해관계자 요구사항"
+            ],
+            "gaps": [
+              "안전보건경영시스템의 범위가 명확하지 않음",
+              "이해관계자 요구사항에 대한 체계적인 분석 부족"
+            ]
+          },
+          "leadership": {
+            "name": "리더십과 근로자 참여",
+            "score": 75,
+            "weight": 0.25,
+            "requirements": [
+              "리더십과 의지",
+              "안전보건방침",
+              "조직 역할과 책임",
+              "근로자 참여와 협의"
+            ],
+            "gaps": [
+              "안전보건방침의 구체적인 실행 계획 부족",
+              "근로자 참여를 위한 공식적인 채널 미비"
+            ]
+          },
+          "planning": {
+            "name": "기획",
+            "score": 65,
+            "weight": 0.25,
+            "requirements": [
+              "위험요인과 기회",
+              "법규 및 기타 요구사항",
+              "안전보건목표와 달성 계획"
+            ],
+            "gaps": [
+              "위험요인 및 기회에 대한 포괄적인 평가 부족",
+              "법규 및 기타 요구사항의 체계적인 검토 부족"
+            ]
+          },
+          "support": {
+            "name": "지원",
+            "score": 70,
+            "weight": 0.15,
+            "requirements": [
+              "자원",
+              "역량",
+              "인식",
+              "소통",
+              "문서화된 정보"
+            ],
+            "gaps": [
+              "자원 배분의 명확성이 부족함",
+              "근로자 교육 및 인식 증진 프로그램 부족"
+            ]
+          },
+          "operation": {
+            "name": "운영",
+            "score": 60,
+            "weight": 0.15,
+            "requirements": [
+              "운영 계획과 관리",
+              "비상상황 대비와 대응"
+            ],
+            "gaps": [
+              "운영 계획의 구체성이 부족함",
+              "비상상황 대비 및 대응 계획의 미비"
+            ]
+          },
+          "evaluation": {
+            "name": "평가",
+            "score": 50,
+            "weight": 0.05,
+            "requirements": [
+              "모니터링과 측정",
+              "법규 준수 평가",
+              "내부심사",
+              "경영검토"
+            ],
+            "gaps": [
+              "모니터링 및 측정 체계의 부족",
+              "내부 심사 및 경영 검토 프로세스의 미비"
+            ]
+          }
+        },
+        "industry_bonus": 10,
+        "assessment_method": "ChatGPT Enhanced Analysis"
+      }
+    },
+    "overall_score": 75.2,
+    "overall_status": "준비됨",
+    "_industry": "construction",
+    "_assessment_method": "enhanced_chatgpt",
+    "_focus_standards": []
+  },
+  "iso_recommendation": {
+    "standard": "45001",
+    "readiness_score": 77.5,
+    "status": "준비됨",
+    "rationale": "[construction] 안전·보건 리스크가 상대적으로 강조됩니다. ISO 45001(안전보건) 인증으로 재해예방, 작업안전 절차 및 교육체계를 선진화하십시오.",
+    "next_steps": [
+      "위험성 평가(JSA/JHA) 갱신 및 우선순위 위험 저감 계획",
+      "안전 리더십·근로자 참여 메커니즘 정착",
+      "비상대응 및 성과측정 체계 점검"
+    ],
+    "secondary": {
+      "standard": "14001",
+      "readiness_score": 78.0,
+      "status": "준비됨",
+      "rationale": "[construction] 중장기적으로 환경 리스크 대응 역량을 강화하면 ESG 요구 대응과 규제 리스크를 줄일 수 있습니다.",
+      "next_steps": [
+        "환경 법규 레지스터 최신화",
+        "모니터링·측정 장비 교정/검증 체계 정비",
+        "폐기물/에너지/탄소 데이터 계량화"
+      ]
+    }
+  },
+  "baseline_risk_analysis": {
+    "overall_score": 83.7,
+    "finbert_analysis": {
+      "neg": 0.025981026701629162,
+      "neu": 0.8812405839562416,
+      "pos": 0.09277835278771818
+    },
+    "keyword_analysis": {
+      "total_hits": 2,
+      "detail": {
+        "리콜|recall": 0,
+        "소송|lawsuit|litigation|class action": 0,
+        "해킹|유출|breach|hack|data leak|ransom": 0,
+        "제재|sanction|embargo": 0,
+        "회계\\s?부정|fraud|accounting scandal": 0,
+        "규제\\s?위반|non-?compliance|violation": 0,
+        "폐업|bankruptcy|insolvency|파산": 0,
+        "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+        "손실|loss|deficit|적자": 0,
+        "부채|debt|liability|채무": 0,
+        "유동성\\s?위기|liquidity\\s?crisis|자금난": 2,
+        "인수합병|M&A|merger|acquisition|합병": 0,
+        "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+        "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+        "내부\\s?고발|whistleblower|내부신고": 0,
+        "파업|strike|노사갈등|labor\\s?dispute": 0,
+        "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+        "품질\\s?문제|quality\\s?issue|불량품": 0,
+        "안전\\s?사고|safety\\s?accident|사고": 0,
+        "환경\\s?문제|environmental|pollution|오염": 0,
+        "건강\\s?위험|health\\s?risk|건강피해": 0,
+        "서비스\\s?중단|service\\s?outage|장애": 0,
+        "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+        "반독점|antitrust|monopoly|독점규제": 0,
+        "세금\\s?문제|tax\\s?issue|세무조사": 0,
+        "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+        "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+        "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+        "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+        "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+        "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+        "경기\\s?침체|recession|경기하락": 0,
+        "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+        "네트워크\\s?보안|network\\s?security|보안위협": 0,
+        "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+        "지적재산권|intellectual\\s?property|특허분쟁": 0,
+        "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+        "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+        "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+        "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+        "보이콧|boycott|불매운동": 0,
+        "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+        "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+        "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+        "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+        "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+        "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+        "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+        "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+        "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+        "테러|terrorism|테러위협": 0,
+        "자연재해|natural\\s?disaster|천재지변": 0
+      }
+    },
+    "risk_level": "낮음",
+    "assessment_method": "FinBERT + Keyword Analysis"
+  },
+  "chatgpt_enhanced_analysis": {
+    "contextual_analysis": {
+      "hidden_risks": [
+        "연대보증으로 인한 자금 유동성 리스크: 강남 아파트 조합원들이 1인당 11억 원의 분담금을 부담해야 하는 상황은 현대건설의 재무적 부담을 증가시킬 수 있으며, 이는 자금 유동성에 부정적인 영향을 미칠 수 있다.",
+        "공사비 미수금 문제: 현대건설이 공사비를 제때 받지 못하는 상황은 현금 흐름에 악영향을 미치고, 추가적인 재정적 압박을 초래할 수 있다.",
+        "신규 프로젝트의 성공 여부: '디에이치 아델스타'와 같은 신규 분양 프로젝트의 성과가 불확실할 경우, 매출 및 수익성에 부정적인 영향을 미칠 수 있다.",
+        "환경 규제 변화: 부유식 CCS 기술 개발과 같은 환경 관련 프로젝트는 규제 변화에 민감할 수 있으며, 예상치 못한 규제 강화는 추가 비용을 초래할 수 있다."
+      ],
+      "market_context": "현재 건설업계는 지속 가능한 개발과 환경 친화적인 기술에 대한 수요가 증가하고 있으며, 이는 현대건설의 부유식 CCS 기술 개발과 같은 혁신적인 접근 방식에 긍정적인 영향을 미칠 수 있다. 그러나, 강남 지역의 고급 아파트 시장은 경쟁이 치열하고, 경제적 불확실성이 존재하여 소비자 수요에 영향을 미칠 수 있다.",
+      "competitive_analysis": "현대건설은 국내외에서 다양한 프로젝트를 수행하고 있으며, 특히 고급 아파트 시장에서의 입지가 강하다. 그러나, 경쟁사들도 지속 가능한 기술 개발에 투자하고 있어, 현대건설이 기술적 우위를 유지하기 위해서는 지속적인 혁신이 필요하다. 또한, 경쟁사들의 가격 정책과 마케팅 전략에 대한 분석이 필요하다.",
+      "regulatory_implications": "환경 관련 규제가 강화될 가능성이 있으며, 이는 현대건설의 부유식 CCS 프로젝트와 같은 혁신적인 기술 개발에 영향을 미칠 수 있다. 또한, 건설업계 전반에 걸쳐 안전 및 품질 관련 규제가 강화될 가능성이 있어 이에 대한 대비가 필요하다.",
+      "investor_sentiment": "현재 현대건설에 대한 투자자들의 신뢰도는 다소 낮아질 수 있으며, 이는 자금 유동성 문제와 신규 프로젝트의 성공 여부에 따라 달라질 수 있다. 따라서, 투자자들에게 긍정적인 신호를 줄 수 있는 전략이 필요하다.",
+      "recommendations": [
+        "재무 구조 개선을 위한 자금 조달 방안 모색: 연대보증으로 인한 자금 유동성 리스크를 줄이기 위해 다양한 자금 조달 방안을 고려해야 한다.",
+        "신규 프로젝트에 대한 리스크 관리 강화: '디에이치 아델스타'와 같은 신규 프로젝트의 성과를 높이기 위해 시장 조사 및 소비자 분석을 강화해야 한다.",
+        "환경 규제 변화에 대한 사전 대응 체계 구축: 부유식 CCS 기술 개발과 관련하여 예상되는 규제 변화에 대한 모니터링 및 대응 체계를 마련해야 한다.",
+        "투자자와의 소통 강화: 투자자들에게 현대건설의 비전과 전략을 명확히 전달하여 신뢰를 구축하고, 긍정적인 투자 심리를 유도해야 한다."
+      ]
+    },
+    "risk_scenarios": [
+      {
+        "scenario_id": "RISK-001",
+        "title": "공사비 미지급으로 인한 자금 유동성 위기",
+        "description": "현대건설이 강남 아파트 프로젝트에서 공사비를 받지 못해 조합원에게 11억 원의 분담금을 부과하면서 자금 유동성 위기가 발생할 수 있다. 이는 추가적인 소송이나 리콜로 이어질 가능성이 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "매우 높음",
+        "triggers": [
+          "공사비 미지급",
+          "조합원 불만",
+          "소송 발생"
+        ],
+        "mitigation_strategies": [
+          "자금 관리 강화",
+          "조합원과의 소통 강화",
+          "법적 대응 준비"
+        ],
+        "timeline": "2025년 09월 - 2025년 12월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-002",
+        "title": "사이버 공격에 의한 데이터 유출",
+        "description": "현대건설의 시스템이 해킹당해 고객 및 프로젝트 관련 데이터가 유출될 위험이 있다. 이는 회사의 평판에 심각한 영향을 미칠 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "해킹 시도 증가",
+          "보안 시스템 취약점"
+        ],
+        "mitigation_strategies": [
+          "보안 시스템 강화",
+          "정기적인 보안 점검",
+          "직원 보안 교육"
+        ],
+        "timeline": "2025년 09월 - 2025년 12월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-003",
+        "title": "환경 규제 강화로 인한 프로젝트 지연",
+        "description": "글로벌 온실가스 저감 정책에 따라 현대건설의 프로젝트가 환경 규제에 저촉될 경우, 프로젝트가 지연되고 추가 비용이 발생할 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "환경 규제 강화",
+          "프로젝트 승인 지연"
+        ],
+        "mitigation_strategies": [
+          "규제 변화 모니터링",
+          "ESG 전략 강화",
+          "환경 전문가와 협력"
+        ],
+        "timeline": "2025년 09월 - 2026년 02월",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "RISK-004",
+        "title": "소송 발생으로 인한 법적 리스크 증가",
+        "description": "현대건설이 진행 중인 프로젝트에서 발생한 문제로 인해 소송이 제기될 경우, 법적 비용이 증가하고 회사의 평판이 손상될 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "보통",
+        "triggers": [
+          "프로젝트 관련 분쟁",
+          "고객 불만"
+        ],
+        "mitigation_strategies": [
+          "법률 자문 강화",
+          "분쟁 조정 기구 활용",
+          "투명한 소통"
+        ],
+        "timeline": "2025년 09월 - 2025년 12월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-005",
+        "title": "회계 부정 의혹으로 인한 신뢰도 하락",
+        "description": "회계 부정 의혹이 제기될 경우, 현대건설의 신뢰도가 하락하고 주가에 부정적인 영향을 미칠 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "회계 감사 결과",
+          "언론 보도"
+        ],
+        "mitigation_strategies": [
+          "투명한 회계 관리",
+          "외부 감사 강화",
+          "내부 통제 시스템 강화"
+        ],
+        "timeline": "2025년 09월 - 2026년 02월",
+        "confidence": "보통"
+      }
+    ],
+    "personalized_reports": {
+      "executive": "# 현대건설 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\n현대건설은 최근 몇 가지 중요한 프로젝트를 수주하며 긍정적인 성장세를 보이고 있으나, 자금난과 같은 리스크 요소가 존재합니다. 특히, 강남 아파트 조합원들이 겪고 있는 자금난과 관련된 연대보증 문제는 회사의 재무 건전성에 부정적인 영향을 미칠 수 있습니다. 반면, '디에이치 아델스타'와 같은 신규 분양 프로젝트는 시장에서 긍정적인 반응을 얻고 있으며, 세계 최초의 부유식 CCS 기술 개발은 환경 문제 해결에 기여할 수 있는 기회로 작용할 것입니다.\n\n## 2. 주요 리스크 요인\n- **자금난**: 강남 아파트 프로젝트에서 2300억 원의 자금난이 발생하고 있으며, 이는 회사의 유동성에 부정적인 영향을 미칠 수 있습니다.\n- **부채 및 유동성 위기**: 자금난과 관련하여 부채 수준이 증가할 가능성이 있으며, 이는 재무 건전성에 대한 우려를 초래할 수 있습니다.\n- **시장 경쟁**: 신규 분양 시장에서의 경쟁 심화로 인한 시장 점유율 하락 위험이 존재합니다.\n\n## 3. 시장 기회\n- **신규 프로젝트**: '디에이치 아델스타'와 같은 신규 분양 프로젝트는 시장에서 긍정적인 반응을 얻고 있으며, 이는 매출 증대의 기회로 작용할 수 있습니다.\n- **환경 기술 개발**: 부유식 CCS 기술 개발은 글로벌 온실가스 저감에 기여할 수 있으며, 이는 현대건설의 브랜드 이미지를 강화하고 새로운 시장을 창출할 수 있는 기회입니다.\n- **해외 진출**: 동남아시아 지역의 유·가스전 활용을 통한 부유식 CCS 개발은 해외 시장에서의 성장 가능성을 높일 수 있습니다.\n\n## 4. 권장사항\n- **재무 관리 강화**: 자금난 문제를 해결하기 위해 재무 구조를 재점검하고, 필요 시 외부 자금 조달 방안을 모색해야 합니다.\n- **프로젝트 다각화**: 신규 프로젝트를 지속적으로 발굴하고, 기존 프로젝트의 리스크를 분산시킬 수 있는 전략을 수립해야 합니다.\n- **환경 기술 투자**: 부유식 CCS와 같은 혁신적인 기술에 대한 투자를 확대하여 시장에서의 경쟁력을 강화해야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 자금난 문제 해결을 위한 조치가 필요하며, 신규 프로젝트의 성공적인 분양이 매출에 긍정적인 영향을 미칠 것으로 예상됩니다.\n- **중기(2-3년)**: 부유식 CCS 기술 개발이 성공적으로 진행된다면, 환경 관련 프로젝트에서의 입지를 강화할 수 있으며, 해외 시장 진출이 본격화될 것입니다.\n- **장기(3-5년)**: 현대건설은 지속적인 기술 혁신과 프로젝트 다각화를 통해 안정적인 성장세를 유지할 수 있을 것으로 보이며, 글로벌 시장에서의 경쟁력을 더욱 강화할 수 있을 것입니다.\n\n이 보고서는 현대건설의 현재 상황과 향후 전략을 제시하여 경영진이 보다 나은 의사결정을 내릴 수 있도록 돕기 위해 작성되었습니다.",
+      "investor": "# 현대건설 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\n현대건설은 현재 자금난과 관련된 리스크를 겪고 있으며, 특히 강남 아파트 프로젝트에서 2300억 원의 자금 부족 문제를 직면하고 있습니다. 그러나 '디에이치 아델스타'와 같은 신규 분양 프로젝트를 통해 시장에서의 기회를 모색하고 있으며, 세계 최초의 부유식 CCS 기술 개발을 통해 환경 문제 해결에도 기여하고 있습니다. 이러한 요소들은 현대건설의 중장기 성장 가능성을 높이는 긍정적인 신호로 작용할 수 있습니다.\n\n## 2. 주요 리스크 요인\n- **자금난**: 강남 아파트 프로젝트에서 발생한 2300억 원의 자금 부족은 현대건설의 재무 건전성에 부정적인 영향을 미칠 수 있습니다.\n- **유동성 위기**: 최근 리스크 분석에 따르면 유동성 위기와 관련된 우려가 존재하며, 이는 단기적인 운영에 영향을 미칠 수 있습니다.\n- **시장 경쟁**: 건설 시장의 경쟁이 치열해짐에 따라, 현대건설의 시장 점유율 유지가 어려울 수 있습니다.\n\n## 3. 시장 기회\n- **신규 분양 프로젝트**: '디에이치 아델스타'와 같은 신규 분양 프로젝트는 현대건설의 매출 성장에 기여할 것으로 예상됩니다.\n- **환경 기술 개발**: 부유식 CCS 기술 개발은 현대건설의 지속 가능한 성장 가능성을 높이며, 글로벌 시장에서의 경쟁력을 강화할 수 있습니다.\n- **국제 프로젝트 수주**: 해외 시장에서의 프로젝트 수주는 현대건설의 매출 다각화와 안정성을 높이는 기회가 될 수 있습니다.\n\n## 4. 권장사항\n- **재무 구조 개선**: 자금난 해결을 위해 외부 자본 유치 및 비용 절감 방안을 모색해야 합니다.\n- **프로젝트 다각화**: 신규 프로젝트와 기존 프로젝트의 균형을 맞추어 리스크를 분산시키는 전략이 필요합니다.\n- **환경 기술 투자 강화**: 부유식 CCS와 같은 혁신적인 기술 개발에 대한 투자를 확대하여 시장에서의 차별성을 확보해야 합니다.\n\n## 5. 향후 전망\n- **단기 전망**: 자금난 문제 해결을 위한 즉각적인 조치가 필요하며, 신규 분양 프로젝트의 성공 여부가 단기 실적에 큰 영향을 미칠 것입니다.\n- **중기 전망**: 환경 기술 개발과 해외 프로젝트 수주가 성과를 내기 시작하면, 현대건설의 매출 성장세가 강화될 것으로 예상됩니다.\n- **장기 전망**: 지속 가능한 건설 기술과 글로벌 시장에서의 경쟁력을 바탕으로 현대건설은 안정적인 성장 경로를 유지할 가능성이 높습니다.\n\n이 보고서는 현대건설의 현재 상황과 미래 가능성을 종합적으로 분석하여 투자자에게 유용한 정보를 제공하고자 하였습니다. 투자 결정을 내리는 데 있어 참고하시기 바랍니다."
+    },
+    "analysis_method": "ChatGPT GPT-4o-mini + 기존 분석 시스템",
+    "ai_enhanced": true
+  },
+  "previous_scenario_titles": [
+    "공사비 미지급으로 인한 재정적 압박",
+    "소송으로 인한 법적 리스크 증가",
+    "해킹 및 데이터 유출 위험",
+    "해수공급시설 공사 입찰 실패",
+    "회계 부정 의혹에 따른 평판 리스크"
+  ],
+  "previous_scenario_scores": {
+    "공사비 미지급으로 인한 재정적 압박": 0,
+    "소송으로 인한 법적 리스크 증가": 0,
+    "해킹 및 데이터 유출 위험": 0,
+    "해수공급시설 공사 입찰 실패": 0,
+    "회계 부정 의혹에 따른 평판 리스크": 0
+  },
+  "current_scenario_titles": [
+    "공사비 미지급으로 인한 자금 유동성 위기",
+    "사이버 공격에 의한 데이터 유출",
+    "환경 규제 강화로 인한 프로젝트 지연",
+    "소송 발생으로 인한 법적 리스크 증가",
+    "회계 부정 의혹으로 인한 신뢰도 하락"
+  ],
+  "current_scenario_scores": {
+    "공사비 미지급으로 인한 자금 유동성 위기": 0,
+    "사이버 공격에 의한 데이터 유출": 0,
+    "환경 규제 강화로 인한 프로젝트 지연": 0,
+    "소송 발생으로 인한 법적 리스크 증가": 0,
+    "회계 부정 의혹으로 인한 신뢰도 하락": 0
+  },
+  "_base_id": "현대건설_hdec.co.kr"
+}

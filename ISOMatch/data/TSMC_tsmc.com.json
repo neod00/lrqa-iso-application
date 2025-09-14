@@ -1,0 +1,385 @@
+{
+  "timestamp": "2025-08-17T12:45:51Z",
+  "input": {
+    "company_name": "TSMC",
+    "url": "https://www.tsmc.com",
+    "country_hint": "US",
+    "lang": "en"
+  },
+  "entity": {
+    "name": "TSMC",
+    "domain": "tsmc.com"
+  },
+  "filings": [],
+  "news": [
+    {
+      "title": "TSMC July 2025 Revenue Report - Taiwan Semiconductor",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBHTFB3aUVKdkdWWC1DZG44d0w3VmJQRlZpSGZkaGk1eWlkcE8wX2ZCTmR6NGE2Vlp3bU9vdmxmem1LeXRNRDdERkFLcTg2QQ?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "TSMC July 2025 Revenue Report - Taiwan Semiconductor"
+    },
+    {
+      "title": "Taiwan Investigates TSMC Employees Over Possible Trade Secret Theft - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWnE1djM5Q09DN3RtdzF4SXV6aHV1b3JEaHRHN3VhUF9lS2ZqcTBrT0w3NjRhZ3phX2RMWTlRbFJjcnZSa3pKTDdPeDRfSklyUVpaNENVbTgxdzJUQzRDZVNqWEJGMnhvbWYxamxkczVFSklPc2lhbnlwR3FUSnlwSXA3WnUwWGw0UzhNdnpR?oc=5",
+      "published": "Tue, 05 Aug 2025",
+      "excerpt": "Taiwan Investigates TSMC Employees Over Possible Trade Secret Theft - The New York Times"
+    },
+    {
+      "title": "TSMC to phase out 6-inch wafer production over two years - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYTl0YzhFZnRMNG9mSDhqaHJtRFd5YlIxaHJQOEtiZHVWSEZJQTdvTWRBakQ2NHpWZUoyMVZBd1JubmdrRzVoU0xzRkNSUU0yYWtUajJlYjlVMnJCa1FOUnEyVnRLdzBqUmVhMEM3cHF1NWg5bHZrczctcTFBYnpNWnd6ZmJfMDhZU01nVlN0bk1KRVdqRUVRczRSWE4xQm1Zd2ZaMUdabHExdEQz?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "TSMC to phase out 6-inch wafer production over two years - Reuters"
+    },
+    {
+      "title": "TSMC gets a reprieve from Trump's 100% chip tariffs thanks to its U.S. factories, Taiwan says - Fortune",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9uU0cyaXhJbldIQjNKTTVFUjhkdlo4VVMyUjRrdGg2QXdFa2FVbUxIQ1RvNnlKSlk5aVhRM2xCYnVFXzZFekxjMGU4bGJiQnpreFlLbDE2T2RmV2tUOFNNN3pmYVcyOGtBVWVUYTJPTWs0R3lTdXhfR3dzY1RNZUE?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "TSMC gets a reprieve from Trump's 100% chip tariffs thanks to its U.S. factories, Taiwan says - Fortune"
+    },
+    {
+      "title": "World's largest chipmaker TSMC says it has discovered potential trade secret leaks - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNTHVoZ3dwNVJCNUZ1Yk9wek5ZVEctZkE0bllrX0psbzNUbGdzNWtZTEdfdkZVbW9FVElmbHBvTFVLSlN2YURMQ0ptM0llZEhvZTVXWENkR2xoV0NkRlQydmNVSzVGcERnWXo2eGJ3cFV5UjZMRjBLQlhWQTFfYnBiRGtYamY4YnBXOE5TTlFta1Rrckk2OVZxOXV3MnhwWDdaXzFITlh30gGrAUFVX3lxTE80cExnaWZtR1JOWmY2a3B1SjlqSjBqbnFyWUsyemhIWkprQVh4MVd0RzFZNHpia0Z5d0ljQnhILWF0WEdsR3RlRjk0SGp4bmFua2pFaXo4alNZNUZzYVotVWtUczBBYmNCb0JfXzlnX0E3dEFCLUZuVWN4ck5SVzJqLTl1el8wbWtZc3ZGY3lPN1VvSTVWYk1ZOGU2bFc5Nk1LLWRJNkg0NC1Vbw?oc=5",
+      "published": "Tue, 05 Aug 2025",
+      "excerpt": "World's largest chipmaker TSMC says it has discovered potential trade secret leaks - CNBC"
+    },
+    {
+      "title": "TSMC Secrets Leak Puts Japan’s Tokyo Electron on Hot Seat - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE50clI1QVd5cm82WUJOeU1UY3RDOG1kVG5fWS1lNXZoWlBHZnBpNUpla1FvRGVyNVBRbmtqQlNEdl8tZFhBZUlVbDFEOGFmWlJYUDFRbVEyWWRQRGVEMkt4WlZGdnZVLTFSYlk1VEdma2h4M0ozVjhObWhMRlo0V1U?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "TSMC Secrets Leak Puts Japan’s Tokyo Electron on Hot Seat - Yahoo Finance"
+    },
+    {
+      "title": "TSMC fires employees suspected of stealing chip trade secrets - KTAR News 92.3 FM",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBpak51bWZ4djFxOVQ5OFFZZ09FTjlfNVFzcXhaZmYtSFpEY2Y1eXlXakRIZ3NVVVRGSXFaVFEyQjNhNVBSTXpkU3NaZWthZHNWb0hGUy02YTZFbEVoWmNaQzVQdkFwRzIxWjlTUms0VU81R2U4QlZYT1BFTQ?oc=5",
+      "published": "Wed, 06 Aug 2025",
+      "excerpt": "TSMC fires employees suspected of stealing chip trade secrets - KTAR News 92.3 FM"
+    },
+    {
+      "title": "Taiwan detains TSMC staff for alleged theft of key technology trade secrets - CNN",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRFRFWHViZnZoYU9FcktCakpnSTEyQXUzZGpjdWR1NDMzOXZZazRVdjFfVTJ4OVhaS0d2SXdaV1lvam1UaVB3Sy1Rd0U0aUd5YnlYZk1wdHItNWFJdUdlNEpsd29Md1Fvcm10VUlBN25JckpYN19aMnZMQ0RTSjFvd1gyVVBMYjgzcUxhbWhB0gGTAUFVX3lxTE5uNTRDTUFEY3djYXhERHFJRW5XOGNSSlJ6b1Z4aVFFdHlTOHQtaHNlWnJ2NEZRR1BjcFlFbTVkeFozd05WM09iLXNjUFViZUI5T3hFRXBYWVVteGlLQVpOQVdGNWRVeDBocUdmelhuT0NNNllwMmNQV1NfSTNRQlIzNVc3VDNSVV9MZXNYUktFY0hiWQ?oc=5",
+      "published": "Wed, 06 Aug 2025",
+      "excerpt": "Taiwan detains TSMC staff for alleged theft of key technology trade secrets - CNN"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "serpapi": {},
+  "risk": {
+    "finbert": {
+      "neg": 0.29996142419986427,
+      "neu": 0.5591979501768947,
+      "pos": 0.1408406188711524
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.182
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 90,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "14001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "45001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      }
+    },
+    "overall_score": 86.7,
+    "overall_status": "Ready",
+    "_industry": "manufacturing"
+  },
+  "iso_recommendation": {
+    "standard": "9001",
+    "readiness_score": 90,
+    "status": "Ready",
+    "rationale": "[manufacturing] Quality/customer/process signals suggest ISO 9001 to drive consistency and customer satisfaction.",
+    "next_steps": [
+      "Standardize core process maps and procedures",
+      "Optimize complaints and CAPA system",
+      "Institutionalize PDCA through internal audits and management review"
+    ],
+    "secondary": {
+      "standard": "45001",
+      "readiness_score": 85,
+      "status": "Ready",
+      "rationale": "[manufacturing] Secondary: ISO 45001 reduces incident likelihood via safety culture.",
+      "next_steps": [
+        "Consider behavior-based safety (BBS)",
+        "Check alignment with local OHS regulations",
+        "Institutionalize emergency drill scenarios"
+      ]
+    }
+  },
+  "baseline_risk_analysis": {
+    "overall_score": 73.0,
+    "finbert_analysis": {
+      "neg": 0.29996142419986427,
+      "neu": 0.5591979501768947,
+      "pos": 0.1408406188711524
+    },
+    "keyword_analysis": {
+      "total_hits": 0,
+      "detail": {
+        "리콜|recall": 0,
+        "소송|lawsuit|litigation|class action": 0,
+        "해킹|유출|breach|hack|data leak|ransom": 0,
+        "제재|sanction|embargo": 0,
+        "회계\\s?부정|fraud|accounting scandal": 0,
+        "규제\\s?위반|non-?compliance|violation": 0,
+        "폐업|bankruptcy|insolvency|파산": 0,
+        "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+        "손실|loss|deficit|적자": 0,
+        "부채|debt|liability|채무": 0,
+        "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+        "인수합병|M&A|merger|acquisition|합병": 0,
+        "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+        "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+        "내부\\s?고발|whistleblower|내부신고": 0,
+        "파업|strike|노사갈등|labor\\s?dispute": 0,
+        "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+        "품질\\s?문제|quality\\s?issue|불량품": 0,
+        "안전\\s?사고|safety\\s?accident|사고": 0,
+        "환경\\s?문제|environmental|pollution|오염": 0,
+        "건강\\s?위험|health\\s?risk|건강피해": 0,
+        "서비스\\s?중단|service\\s?outage|장애": 0,
+        "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+        "반독점|antitrust|monopoly|독점규제": 0,
+        "세금\\s?문제|tax\\s?issue|세무조사": 0,
+        "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+        "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+        "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+        "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+        "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+        "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+        "경기\\s?침체|recession|경기하락": 0,
+        "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+        "네트워크\\s?보안|network\\s?security|보안위협": 0,
+        "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+        "지적재산권|intellectual\\s?property|특허분쟁": 0,
+        "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+        "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+        "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+        "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+        "보이콧|boycott|불매운동": 0,
+        "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+        "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+        "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+        "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+        "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+        "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+        "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+        "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+        "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+        "테러|terrorism|테러위협": 0,
+        "자연재해|natural\\s?disaster|천재지변": 0
+      }
+    },
+    "risk_level": "낮음",
+    "assessment_method": "FinBERT + Keyword Analysis"
+  },
+  "chatgpt_enhanced_analysis": {
+    "contextual_analysis": {
+      "hidden_risks": [
+        "무역 비밀 유출로 인한 기술적 우위 상실",
+        "6인치 웨이퍼 생산 중단으로 인한 공급망 불안정성",
+        "인력 관리 및 내부 보안 문제",
+        "정치적 불안정성으로 인한 대외 거래 리스크",
+        "사이버 공격 및 데이터 유출 위험"
+      ],
+      "market_context": "반도체 산업은 지속적인 기술 발전과 수요 증가로 성장하고 있지만, 동시에 무역 전쟁과 기술 유출 문제로 인해 불확실성이 커지고 있습니다. TSMC는 글로벌 반도체 공급망의 핵심 플레이어로 자리잡고 있으며, 특히 미국과의 관계가 중요해지고 있습니다. 그러나 최근의 무역 비밀 유출 사건은 경쟁사와의 기술 격차를 줄일 수 있는 위험 요소로 작용할 수 있습니다.",
+      "competitive_analysis": "TSMC는 현재 세계 최대의 반도체 제조업체로, 삼성전자와 인텔과 같은 경쟁사와 치열한 경쟁을 벌이고 있습니다. 특히 삼성전자는 메모리 반도체 시장에서 강력한 입지를 가지고 있으며, 인텔은 파운드리 서비스 확대를 통해 TSMC와의 경쟁을 강화하고 있습니다. TSMC의 기술 유출 문제는 경쟁사들에게 기회를 제공할 수 있으며, 이는 TSMC의 시장 점유율에 부정적인 영향을 미칠 수 있습니다.",
+      "regulatory_implications": "무역 비밀 유출 사건은 TSMC에 대한 규제 기관의 조사를 촉발할 수 있으며, 이는 기업의 운영에 추가적인 부담을 줄 수 있습니다. 또한, 미국과 중국 간의 무역 갈등이 지속됨에 따라 TSMC의 미국 내 공장 운영 및 수출에 대한 규제가 강화될 가능성이 있습니다.",
+      "investor_sentiment": "투자자들은 TSMC의 기술 유출 사건과 6인치 웨이퍼 생산 중단 소식에 우려를 표명하고 있으며, 이는 주가에 부정적인 영향을 미칠 수 있습니다. 그러나 TSMC의 강력한 시장 지배력과 기술력은 여전히 긍정적인 투자 심리를 유지하는 요소로 작용하고 있습니다.",
+      "recommendations": [
+        "내부 보안 시스템 강화 및 직원 교육 프로그램 확대",
+        "생산 라인 다각화 및 공급망 안정성을 위한 전략 수립",
+        "무역 비밀 보호를 위한 법적 조치 및 규제 준수 강화",
+        "정치적 리스크 관리 방안 마련 및 대외 관계 강화"
+      ]
+    },
+    "risk_scenarios": [
+      {
+        "scenario_id": "RISK-001",
+        "title": "Trade Secret Theft Investigation",
+        "description": "Ongoing investigations into TSMC employees for potential trade secret theft could lead to legal repercussions and reputational damage.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "employee misconduct",
+          "regulatory scrutiny"
+        ],
+        "mitigation_strategies": [
+          "enhance internal security protocols",
+          "conduct regular audits"
+        ],
+        "timeline": "2025-09-01 to 2026-02-28",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-002",
+        "title": "Cybersecurity Breach",
+        "description": "A potential data breach or hacking incident could compromise sensitive information and lead to significant financial and reputational damage.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "increased cyber attacks",
+          "vulnerabilities in systems"
+        ],
+        "mitigation_strategies": [
+          "strengthen cybersecurity measures",
+          "increase employee training on security"
+        ],
+        "timeline": "2025-09-01 to 2026-02-28",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-003",
+        "title": "Product Recall Due to Quality Issues",
+        "description": "A significant quality issue may arise leading to a product recall, impacting customer trust and financial performance.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "보통",
+        "triggers": [
+          "manufacturing defects",
+          "supplier quality failures"
+        ],
+        "mitigation_strategies": [
+          "implement stricter quality control measures",
+          "enhance supplier evaluations"
+        ],
+        "timeline": "2025-09-01 to 2026-05-31",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-004",
+        "title": "Regulatory Sanctions from Trade Policies",
+        "description": "Changes in trade policies or sanctions could adversely affect TSMC's operations and market access, particularly in the U.S.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "political changes",
+          "trade negotiations"
+        ],
+        "mitigation_strategies": [
+          "diversify supply chains",
+          "engage in policy advocacy"
+        ],
+        "timeline": "2025-09-01 to 2026-05-31",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-005",
+        "title": "Employee Turnover and Governance Issues",
+        "description": "High turnover rates among key employees could lead to governance challenges and loss of institutional knowledge, affecting operational efficiency.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "보통",
+        "triggers": [
+          "market competition",
+          "employee dissatisfaction"
+        ],
+        "mitigation_strategies": [
+          "improve employee engagement",
+          "offer competitive compensation packages"
+        ],
+        "timeline": "2025-09-01 to 2026-05-31",
+        "confidence": "보통"
+      }
+    ],
+    "personalized_reports": {
+      "executive": "# TSMC 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\nTSMC(대만 반도체 제조 회사)는 최근 몇 가지 중요한 이슈와 기회를 마주하고 있습니다. 2025년 7월 매출 보고서가 발표되었으며, 이는 향후 매출 성장에 대한 긍정적인 신호로 해석될 수 있습니다. 그러나, 내부 직원의 무역 비밀 유출 사건과 같은 리스크 요소가 존재하여, 기업의 평판과 기술적 우위를 위협하고 있습니다. TSMC는 6인치 웨이퍼 생산을 단계적으로 중단할 계획을 세우고 있으며, 이는 생산 효율성을 높이고 최신 기술로의 전환을 촉진할 수 있는 기회로 작용할 수 있습니다.\n\n## 2. 주요 리스크 요인\n- **무역 비밀 유출**: TSMC 직원들이 무역 비밀을 유출한 혐의로 조사를 받고 있으며, 이는 기업의 기술적 우위를 약화시킬 수 있습니다. 이러한 사건은 고객 신뢰도와 기업의 평판에 부정적인 영향을 미칠 수 있습니다.\n- **생산 중단**: 6인치 웨이퍼 생산 중단은 단기적으로 생산 능력 감소로 이어질 수 있으며, 고객 요구에 대한 즉각적인 대응이 어려워질 수 있습니다.\n- **정치적 불안정성**: 대만의 정치적 상황은 TSMC의 운영에 영향을 미칠 수 있으며, 이는 공급망 및 생산에 리스크를 초래할 수 있습니다.\n\n## 3. 시장 기회\n- **기술 혁신**: TSMC는 최신 기술로의 전환을 통해 경쟁력을 강화할 수 있는 기회를 가지고 있습니다. 특히, 5nm 및 3nm 공정 기술은 반도체 시장에서의 우위를 지속할 수 있는 중요한 요소입니다.\n- **미국 내 생산 확대**: 미국 내 공장 덕분에 TSMC는 트럼프 행정부의 100% 칩 관세에서 면제받을 수 있는 기회를 가지고 있으며, 이는 미국 시장에서의 경쟁력을 높이는 데 기여할 수 있습니다.\n- **글로벌 반도체 수요 증가**: 전 세계적으로 반도체 수요가 증가하고 있으며, 이는 TSMC의 매출 성장으로 이어질 가능성이 높습니다.\n\n## 4. 권장사항\n- **내부 보안 강화**: 무역 비밀 유출 사건을 방지하기 위해 내부 보안 시스템을 강화하고, 직원 교육을 통해 보안 의식을 높이는 것이 필요합니다.\n- **생산 계획 재조정**: 6인치 웨이퍼 생산 중단에 따른 고객 요구에 대한 대안을 마련하고, 생산 라인을 최신 기술로 전환하는 계획을 수립해야 합니다.\n- **정치적 리스크 관리**: 대만의 정치적 상황을 지속적으로 모니터링하고, 리스크 관리 계획을 수립하여 잠재적인 영향을 최소화해야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 무역 비밀 유출 사건의 결과와 6인치 웨이퍼 생산 중단의 영향을 면밀히 모니터링해야 하며, 고객 신뢰 회복을 위한 노력이 필요합니다.\n- **중기(2-3년)**: 기술 혁신과 미국 내 생산 확대가 매출 성장에 긍정적인 영향을 미칠 것으로 예상되며, 새로운 고객 확보를 위한 마케팅 전략이 필요합니다.\n- **장기(3-5년)**: 반도체 시장의 지속적인 성장과 TSMC의 기술적 우위를 바탕으로 안정적인 매출 성장이 기대됩니다. 그러나, 정치적 불안정성과 경쟁사 대응에 대한 전략적 준비가 필요합니다.\n\n이 보고서는 TSMC의 현재 상황과 향후 전략을 수립하는 데 유용한 정보를 제공하며, 경영진의 의사결정에 기여할 것입니다.",
+      "investor": "# TSMC 투자자 맞춤형 보고서\n\n## 1. 실행 요약\nTSMC(대만 반도체 제조 회사)는 반도체 산업의 글로벌 리더로 자리잡고 있으며, 최근 몇 가지 중요한 사건이 발생했습니다. 2025년 7월 매출 보고서가 발표되었고, 직원들의 무역 비밀 도난 사건이 발생하여 회사의 평판과 운영에 영향을 미칠 수 있는 리스크가 존재합니다. 그러나 TSMC는 미국 내 공장 덕분에 무역 관세에서 면제되는 혜택을 누리고 있으며, 이는 회사의 재무 안정성에 긍정적인 영향을 미칠 수 있습니다.\n\n## 2. 주요 리스크 요인\n- **무역 비밀 유출**: TSMC 직원들이 무역 비밀을 도난당한 사건이 발생하여, 법적 문제와 평판 손상 가능성이 있습니다. 이는 고객 신뢰도에 부정적인 영향을 미칠 수 있습니다.\n- **생산 라인 조정**: 6인치 웨이퍼 생산을 단계적으로 중단할 계획이 있어, 이는 단기적으로 생산 능력에 영향을 미칠 수 있습니다.\n- **정치적 불안정성**: 대만의 정치적 상황과 미국과의 무역 관계가 불확실하여, 글로벌 공급망에 영향을 미칠 수 있습니다.\n\n## 3. 시장 기회\n- **반도체 수요 증가**: 전 세계적으로 반도체 수요가 증가하고 있으며, 특히 AI 및 IoT 기술의 발전으로 인해 TSMC의 성장 가능성이 큽니다.\n- **미국 내 생산 확대**: TSMC는 미국 내 공장을 통해 무역 관세에서 면제되는 혜택을 누리고 있으며, 이는 경쟁력을 높이는 요소입니다.\n- **기술 혁신**: TSMC는 지속적인 연구개발을 통해 기술 혁신을 이루고 있으며, 이는 시장 점유율 확대에 기여할 수 있습니다.\n\n## 4. 권장사항\n- **위험 관리 강화**: 무역 비밀 유출 사건에 대한 철저한 조사를 실시하고, 내부 보안 시스템을 강화하여 재발 방지 대책을 마련해야 합니다.\n- **생산 계획 조정**: 6인치 웨이퍼 생산 중단에 따른 대체 생산 계획을 수립하여 생산 차질을 최소화해야 합니다.\n- **투자 다각화**: 미국 내 생산 확대와 함께 다른 지역으로의 투자 다각화를 고려하여 정치적 리스크를 분산시켜야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 무역 비밀 유출 사건의 영향이 단기적으로 회사의 평판에 부정적인 영향을 미칠 수 있으나, 반도체 수요 증가로 인해 매출은 안정세를 유지할 것으로 예상됩니다.\n- **중기(1-3년)**: TSMC의 기술 혁신과 미국 내 생산 확대가 긍정적인 영향을 미치며, 시장 점유율이 증가할 것으로 보입니다.\n- **장기(3년 이상)**: 반도체 산업의 지속적인 성장과 TSMC의 기술적 우위가 지속된다면, 회사의 재무 안정성과 시장 지배력이 강화될 것으로 예상됩니다.\n\n이 보고서는 TSMC에 대한 투자 결정을 내리는 데 있어 유용한 정보를 제공하며, 투자자 여러분의 성공적인 투자에 기여할 수 있기를 바랍니다."
+    },
+    "analysis_method": "ChatGPT GPT-4o-mini + 기존 분석 시스템",
+    "ai_enhanced": true
+  },
+  "previous_scenario_titles": [],
+  "previous_scenario_scores": {},
+  "current_scenario_titles": [
+    "Trade Secret Theft Investigation",
+    "Cybersecurity Breach",
+    "Product Recall Due to Quality Issues",
+    "Regulatory Sanctions from Trade Policies",
+    "Employee Turnover and Governance Issues"
+  ],
+  "current_scenario_scores": {
+    "Trade Secret Theft Investigation": 0,
+    "Cybersecurity Breach": 0,
+    "Product Recall Due to Quality Issues": 0,
+    "Regulatory Sanctions from Trade Policies": 0,
+    "Employee Turnover and Governance Issues": 0
+  },
+  "_base_id": "TSMC_tsmc.com"
+}

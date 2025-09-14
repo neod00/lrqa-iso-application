@@ -1,0 +1,326 @@
+{
+  "timestamp": "2025-08-13T11:45:13Z",
+  "input": {
+    "company_name": "한국전력",
+    "url": "https://www.kepco.co.kr",
+    "country_hint": "KR",
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "한국전력",
+    "domain": "kepco.co.kr"
+  },
+  "filings": [],
+  "news": [
+    {
+      "title": "\"8년 만에 최고가\"…외인이 쓸어 담더니 '불기둥' 폭발 [종목+] - 한국경제",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5SUldzNFc5dHZxdjczbC1rbkViTndGaHI3N2lBTXpMcVhac0hweDFnRlZjVXhfM2RHaEM3OW03Z1dudDZXaWNIVFNNNUZsOEYzUHBIekZ3Y0FGQdIBVEFVX3lxTE0xWGRKVVdSOHdjT1FEenVMMTJwVmxIdktXTDVZWEVDNUdzQUN3ai16Q2I5Yk5JVGIzMjJNcnhoRlgwampabWJIUFI1RjdEMGx5WDVEVw?oc=5",
+      "published": "Wed, 06 Aug 2025",
+      "excerpt": "\"8년 만에 최고가\"…외인이 쓸어 담더니 '불기둥' 폭발 [종목+] - 한국경제"
+    },
+    {
+      "title": "한전, 2분기 영업익 전년비 두 배 전망…요금 족쇄 풀릴까 - 연합인포맥스",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBNdV9ZeklBMkhHeDJKX3ktVmp1dDRJeVBsM2tZeU9XemRPUzltOFEtcS1tMUtfQTF4Y2ZBaXJjNC1Nd3U1MnZTbC1lb1NlcXZOR2VZZWxBRjJBZHdOUDVBbTRLZzdjbVlFY01tMkJjNUk?oc=5",
+      "published": "Mon, 04 Aug 2025",
+      "excerpt": "한전, 2분기 영업익 전년비 두 배 전망…요금 족쇄 풀릴까 - 연합인포맥스"
+    },
+    {
+      "title": "신고가랠리 한국전력···전력판매 증가·원전사업 기대감에 올 들어 100%↑ - 동양뉴스",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1STnhoRUlCN0FVQXVLd3NJRUJETUh1Y3p3SVN3X0ZLM0ZEZXZCMXIzd3R0SkNqalQ2VlF0MkZxS3IxR0cyc3R6a3p2ZXFUVjBFWktXTU5IWnptMGVUMXZ3aA?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "신고가랠리 한국전력···전력판매 증가·원전사업 기대감에 올 들어 100%↑ - 동양뉴스"
+    },
+    {
+      "title": "메리츠증권, 한국전력 목표가↑…\"美 원전시장 진출 기대감\" - 연합뉴스",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE13bmRleHA2azcyRjJGaFFYeGJQaDFWcGtFaWJRNEYzLXBpcHltVDdTeExKa0ZYbEk1cm4xNXlvT29qcF96Zm5mOHRoMjJ6Q0NVazItRkgzdjJOTDg?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "메리츠증권, 한국전력 목표가↑…\"美 원전시장 진출 기대감\" - 연합뉴스"
+    },
+    {
+      "title": "한국전력, 상반기 영업이익 5.9조…작년보다 3.3조 늘어 - 한겨레",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5hYkRUTWlyd3IxYjQ0V2E4cF9odHkzT2FRZnlpTmN6eXpPazZvSC1WRHlQX1pzMnBZdDlaWGF1Z01qUmVKN25maHlJRVVrMHBIenJaaFhRQV9HckRxa25UVG0zVXNEQVVnUFRBWA?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "한국전력, 상반기 영업이익 5.9조…작년보다 3.3조 늘어 - 한겨레"
+    },
+    {
+      "title": "한국전력, 2분기 영업이익 2조원...8분기 연속 흑자 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOUXlVeFBCUkdVZ3pUd2NRSWJCM3p1YTU5V0J5MjU3SUZ5YXN1YkRyNC1weHZpQ25uZDBENU1wUkFfUGxjTVpIemlvbTRuMlRGT2pVT19kU2RlcTNzMGRhSUxFT1lwMHNsYktXNDVIY3RHay1YRjl4OGhRXzVrbHZveDNXNDjSAZgBQVVfeXFMTTZXd0ExZjdCekRaZ0FkYUQ0dlZJdmViTV9HeWVMRUYwVXQtVnU0ZHotMGtfaGsyYU9WZzMyMlhUaU5fendWZElYdWVXclp3WUxMenIwR1ZWRzNzRkhMblpvQ3pIRHBNQ3NUR3hwWHhMRXFWbnN6SmJzSlZLRlBsdC1CclJZTlhWR1NzM3c4ZU1FT0djU0dVLVM?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "한국전력, 2분기 영업이익 2조원...8분기 연속 흑자 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "한국전력 상반기 영업익 5조8895억…별도 기준 2조8575억 기록 - 중소기업신문",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9YOG5WNWxhMnBFZU9jWUpORDI5ZU9XNnVNanEzczlLdnlaUVVCZ0RlNmp6b0wzRUt0eUJNbGhLcVlodlJmSkZPYUJROXNFaXJLOE9RNDJ6bkFvSjBySjBwTkgxaXdtN3poeHJHdlB3?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "한국전력 상반기 영업익 5조8895억…별도 기준 2조8575억 기록 - 중소기업신문"
+    },
+    {
+      "title": "한국전력기술, 창립 50주년 기념 '전력계통 변화와 대응 전략' 세미나 열어 - 일렉트릭파워",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE81Ukcyclloc3FaYjk2MFFZZXE0RHR5NjNlVWUybU5tNlNCMGhUanY4Z21Da05GcFk5aklyUWNXQWc1TXlkSVFkWl9JaHVmbHhqbEJQRkFRZUtycEhpbzA5OV9rd0N4UQ?oc=5",
+      "published": "Wed, 13 Aug 2025",
+      "excerpt": "한국전력기술, 창립 50주년 기념 '전력계통 변화와 대응 전략' 세미나 열어 - 일렉트릭파워"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "risk": {
+    "finbert": {
+      "neg": 0.033281924203038216,
+      "neu": 0.8890490606427193,
+      "pos": 0.07766901748254895
+    },
+    "neg": {
+      "neg": 0.033281924203038216,
+      "neu": 0.8890490606427193,
+      "pos": 0.07766901748254895
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.1
+  },
+  "iso31000_risk_analysis": {
+    "iso31000_assessment": {
+      "risk_assessment": [
+        {
+          "risk_id": "sentiment_low_positive",
+          "name": "낮은 긍정적 감성",
+          "category": "평판 리스크",
+          "probability": 3,
+          "impact": 3,
+          "risk_score": 9,
+          "risk_level": "보통",
+          "description": "FinBERT 긍정적 감성 점수: 0.078",
+          "detection_date": "2025-08-13T20:45:13.234776",
+          "trend_analysis": {
+            "trend": "신규 감지",
+            "change_rate": 0.0,
+            "stability": "불안정"
+          },
+          "correlation_analysis": {
+            "correlated_risks": [],
+            "total_correlations": 0
+          },
+          "vulnerability_assessment": {
+            "vulnerability_score": 3.0,
+            "vulnerability_level": "보통",
+            "exposure_time": "간헐적"
+          },
+          "acceptability": "조건부 수용",
+          "priority": 10,
+          "urgency": "정기 모니터링",
+          "business_impact": {
+            "financial_impact": "일부 영향",
+            "operational_impact": "일부 영향",
+            "reputational_impact": "일부 영향",
+            "regulatory_impact": "일부 영향"
+          }
+        }
+      ],
+      "treatment_plans": [
+        {
+          "risk_id": "sentiment_low_positive",
+          "risk_name": "낮은 긍정적 감성",
+          "current_level": "보통",
+          "target_level": "낮음",
+          "strategies": [
+            "완화(Mitigate)",
+            "전이(Transfer)",
+            "수용(Accept)"
+          ],
+          "action_items": [
+            {
+              "action": "리스크 완화 조치",
+              "description": "낮은 긍정적 감성 완화를 위한 구체적 조치",
+              "responsible": "리스크 관리팀",
+              "deadline": "1개월"
+            },
+            {
+              "action": "리스크 전이",
+              "description": "보험 가입 또는 계약 조건 변경",
+              "responsible": "법무팀",
+              "deadline": "2주"
+            },
+            {
+              "action": "리스크 수용",
+              "description": "정기 모니터링 및 대응 계획 수립",
+              "responsible": "리스크 관리팀",
+              "deadline": "지속적"
+            }
+          ],
+          "timeline": "1개월 - 3개월",
+          "resources_needed": "보통 규모 (담당자 + 지원)",
+          "success_metrics": [
+            "낮은 긍정적 감성 발생 빈도 감소",
+            "낮은 긍정적 감성 영향도 감소",
+            "리스크 점수 9에서 목표 수준으로 감소",
+            "리스크 대응 조치 완료율 100%"
+          ],
+          "monitoring_plan": {
+            "frequency": "월간",
+            "indicators": [
+              "낮은 긍정적 감성 발생 여부",
+              "리스크 점수 변화"
+            ],
+            "reporting": "리스크 관리 보고서",
+            "escalation": "리스크 점수 증가 시 즉시 보고"
+          }
+        }
+      ],
+      "overall_risk_score": 9.0,
+      "overall_risk_level": "매우 높음",
+      "risk_trends": {
+        "trend_direction": "안정",
+        "trend_strength": "보통",
+        "key_drivers": [
+          "뉴스 감성",
+          "키워드 히트",
+          "소셜 미디어 반응"
+        ],
+        "volatility": "낮음",
+        "forecast": "향후 3개월 안정적 전망"
+      },
+      "compliance_status": {
+        "iso31000_compliance": "준수",
+        "risk_governance": "적절",
+        "risk_culture": "양호",
+        "risk_communication": "효과적",
+        "continuous_improvement": "진행 중"
+      },
+      "assessment_date": "2025-08-13T20:45:13.234825",
+      "iso31000_compliance": "준수",
+      "risk_categories_summary": {
+        "평판 리스크": {
+          "count": 1,
+          "total_score": 9,
+          "high_risks": 0,
+          "average_score": 9.0
+        }
+      }
+    },
+    "finbert_analysis": {
+      "neg": 0.033281924203038216,
+      "neu": 0.8890490606427193,
+      "pos": 0.07766901748254895
+    },
+    "keyword_analysis": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "integrated_risk_score": 9.0,
+    "risk_level": "매우 높음",
+    "assessment_method": "ISO 31000 + FinBERT + Keyword Analysis",
+    "compliance_status": "ISO 31000:2018 준수"
+  },
+  "_base_id": "한국전력_kepco.co.kr"
+}

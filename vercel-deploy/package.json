@@ -1,0 +1,20 @@
+{
+  "name": "lrqa-iso-quotation",
+  "version": "1.0.0",
+  "description": "LRQA ISO 인증 견적서 생성 시스템",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'",
+    "start": "echo 'No start script required'",
+    "download-template": "node scripts/download-template.js",
+    "setup-gcs": "node scripts/setup-gcs.js"
+  },
+  "dependencies": {
+    "docx": "^8.5.0",
+    "docx-templates": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

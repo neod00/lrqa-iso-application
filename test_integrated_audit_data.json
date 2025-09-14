@@ -1,0 +1,28 @@
+{
+  "company_name": "통합심사 테스트 주식회사",
+  "address": "서울시 강남구 테헤란로 123",
+  "contact_person": "김통합",
+  "phone": "02-1234-5678",
+  "email": "integrated@test.com",
+  "sites": [
+    {
+      "name": "본사",
+      "address": "서울시 강남구 테헤란로 123",
+      "headcount": 590,
+      "part_time_ratio": 0.1,
+      "contractor_ratio": 0.05,
+      "shift_workers": 0,
+      "seasonal_workers": 0,
+      "repetitive_processes": false
+    }
+  ],
+  "standards": ["ISO9001", "ISO14001", "ISO45001"],
+  "options": {
+    "stage1": true,
+    "surveillance": true,
+    "recert": false,
+    "integrated_audit": true
+  },
+  "environmental_impact": "MEDIUM",
+  "safety_risk": "MEDIUM"
+}

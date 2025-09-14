@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-08-12T17:02:45Z",
+  "input": {
+    "company_name": "평화산업",
+    "url": null,
+    "country_hint": null,
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "평화산업",
+    "domain": null
+  },
+  "news": [
+    {
+      "title": "평화홀딩스, 자회사 평화산업 120억 채무보증 결정 - 네이트",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE8tdGpjZE8xaFdmWGFaMzZ4WlNvLVFoLWhCTFdOdWtpbHROZ05vWl9wQ1Fuc2RkNjRxVWp4NGYyN09iRXliYktGSmhkcXNxWklUZzR3?oc=5",
+      "published": "Mon, 11 Aug 2025",
+      "excerpt": "평화홀딩스, 자회사 평화산업 120억 채무보증 결정 - 네이트"
+    },
+    {
+      "title": "‘검은 금요일’ 뒤 급해진 여당 “노란봉투법은 산업평화법” - 중앙일보",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9wMDhCcmVFM0NWSEtJb01XT1JFS0VGVWxYV1dKVUNMak9OSkVtb043dWRNZ20wT2xhX0g4a0x5QzZRMWZzWUdLaC1yYkdUYkVPYUpIMGtR?oc=5",
+      "published": "Sun, 03 Aug 2025",
+      "excerpt": "‘검은 금요일’ 뒤 급해진 여당 “노란봉투법은 산업평화법” - 중앙일보"
+    },
+    {
+      "title": "\"접경지역, 평화의 전초기지로\"…강원도 평화경제특구 실현 위한 법·제도 개선 절실 - 남북경협뉴스",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE54VmtNcFU3dWFHdEQ0NmRIdlVsaE0wUGJwTWI5OEJqSnVLQ2FEZS13NnBSRnJ1V1RHdmNmd2V3V1AzdGMyaHJ2ZmxoRWRKOXNMODBmbFBqZ2pEQ0p5ZWZ3SkhrZWd6NEk?oc=5",
+      "published": "Fri, 01 Aug 2025",
+      "excerpt": "\"접경지역, 평화의 전초기지로\"…강원도 평화경제특구 실현 위한 법·제도 개선 절실 - 남북경협뉴스"
+    },
+    {
+      "title": "원일티엔아이, +10.84% VI 발동 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQamRjNjdseFBUbHVyUzRVUnJxazMwZ05ER0xPc0pDeDlJdVFMNzFYcVlFU0JjVlNyRUVvUEVsRzl5bS1ic3RXV1B6RzJ1N2htbXIyNWttZ2NnejRNRFBFMTUyMFFxZXdOTzA4ZnNqcmVObGhSUnpxb1c2X00xeDdHc09Kc9IBlwFBVV95cUxOSDRGNHZiOFN2N3NtUEJFQ3AtWUlqNVpLZ08tWXc3ZXZGQ3hsWHVjVFJYMFAzSEJlSE1qN1pRR0F1d0hkYy1JekZYMzhOZkwxRTEtRTgwb25qd2o0djNMR3VsMlJSeEl6ejVyWFpCVFF3b2EzRExUcnRtaFRyWXhKUFJiMmNIMmhmT3BIYzlnRTdVNElOcVVV?oc=5",
+      "published": "Thu, 31 Jul 2025",
+      "excerpt": "원일티엔아이, +10.84% VI 발동 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "與 \"산업평화 촉진법\" 野 \"파업 시한폭탄\"…노란봉투법 전운 고조 - 뉴스1",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1NYlQ1cDRoZ1Y0ZTJYc1BfcURWRmh0TDNpaE9ZTE5lOEg4dU5vMzN3bExYc1d4SzN6emxXbXU4Q1dqbndEeE5hN053TDVqSHZiOTBTc1hTOHhpZw?oc=5",
+      "published": "Sun, 03 Aug 2025",
+      "excerpt": "與 \"산업평화 촉진법\" 野 \"파업 시한폭탄\"…노란봉투법 전운 고조 - 뉴스1"
+    },
+    {
+      "title": "原子力硏究次 - 부산일보",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE01eV9XODJOdEMyTFM5NTE4amtYQlFybzNEUjhtUGZheEhsRVAtTV9PMWN5NmNmWVhmaTVnR1BVYXZQTEJRQTI1VklYQ0ptRHI4RUpsNDMxbk5ISjRtWVRvd3d2UmZoWk1FTUlhdzN3?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "原子力硏究次 - 부산일보"
+    },
+    {
+      "title": "제이에스링크, 미국 현지 종속회사 설립…영구자석 생산·공급망 확대 - 디지털투데이",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1ZQzZJYjREbFlwT1lFN3lBb3JHdVRKMjA0Y3QtV2tVT0Z1VFRrOU85SkRpd2ZidGRmRE0zN255dTI5YWVfQkpoVFFKV1B4eHVHRWRSSmUyZHVCWWxkbzF0bWJBUzEybDh6N3lBMzQ3eVBpdW8?oc=5",
+      "published": "Mon, 11 Aug 2025",
+      "excerpt": "제이에스링크, 미국 현지 종속회사 설립…영구자석 생산·공급망 확대 - 디지털투데이"
+    },
+    {
+      "title": "與 “노란봉투법은 ‘산업평화촉진법’”…재계 우려 일축 - 서울신문",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4yYkZXa2hWbDRHVmgxdXJ3YnFaUFRMUFRpZURISmJMVG4xSzZRdjBNd0h0c2l3NjBldjVfazBQbUs2bFhtc3ZiU1dYeGJpaW1seDFQX1RTU0o0WXA5SERSUWRnOWhBOWJLS3Vpd2txUFlSQmtHbFlIOFdsakY?oc=5",
+      "published": "Sun, 03 Aug 2025",
+      "excerpt": "與 “노란봉투법은 ‘산업평화촉진법’”…재계 우려 일축 - 서울신문"
+    }
+  ],
+  "risk": {
+    "keyword_hits": {
+      "리콜|recall|품질\\s?불량|defect|quality issue": 0,
+      "고객\\s?불만|customer complaint|불만|complaint": 0,
+      "제품\\s?사고|product accident|사고|accident": 0,
+      "품질\\s?관리|quality management|QC|QA": 0,
+      "환경\\s?사고|environmental accident|오염|pollution": 0,
+      "폐기물|waste|disposal|처리": 0,
+      "에너지\\s?사용|energy consumption|전력|electricity": 0,
+      "탄소\\s?배출|carbon emission|CO2|온실가스": 0,
+      "자원\\s?절약|resource saving|재활용|recycling": 0,
+      "산업\\s?재해|industrial accident|재해|disaster": 0,
+      "안전\\s?사고|safety accident|사고|accident": 0,
+      "근로\\s?환경|work environment|노동|labor": 0,
+      "건강\\s?검진|health check|검진|examination": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo|penalty|fine": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.2
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "준비됨"
+      },
+      "14001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "준비됨"
+      },
+      "45001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "준비됨"
+      }
+    },
+    "overall_score": 85.0,
+    "overall_status": "준비됨"
+  },
+  "_base_id": "평화산업_",
+  "_lang_base_id": "평화산업__ko"
+}

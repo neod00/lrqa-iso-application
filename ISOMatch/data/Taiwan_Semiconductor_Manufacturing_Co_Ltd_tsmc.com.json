@@ -1,0 +1,487 @@
+{
+  "timestamp": "2025-08-17T13:44:53Z",
+  "input": {
+    "company_name": "Taiwan Semiconductor Manufacturing Co Ltd",
+    "url": "https://www.tsmc.com",
+    "country_hint": "US",
+    "lang": "en"
+  },
+  "entity": {
+    "name": "Taiwan Semiconductor Manufacturing Co Ltd",
+    "domain": "tsmc.com"
+  },
+  "filings": [
+    {
+      "title": "6-K",
+      "date": "2025-08-14",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000097/tsm-fsx20250814x6k.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-08-12",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000095/a20250812directorsresoluti.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-08-12",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000093/tsm-boardx20250812x6k.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-08-08",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000091/tsm-revenue20250808.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-08-01",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000089/global-treasurer20250801.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-07-25",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000086/tsm-monthend6kx20250725.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-07-17",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000082/tsm-20250717x6k.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-07-10",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000080/tsm-revenue20250710.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-07-01",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000078/a20250701azdirectorchange.htm"
+    },
+    {
+      "title": "6-K",
+      "date": "2025-06-25",
+      "cik": "0001046179",
+      "company": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "type": "6-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617925000074/tsm-monthend6kx20250625.htm"
+    }
+  ],
+  "news": [
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWk5jYm9wNEtlbXVwaHYyQWJLOEpmRWJfRy1Lby1Jb3dVVG8yX0dTSkFCTmYyaWQwXzZHaWt2dUswVnZVUEEtekxNZFJ0aW40MmRpWTlyNlVEVmZUTXlmR3ByOXRiQTB2LVlBVmhJd3dlLURTcC1VQ3BuZm5FVzhGcVRzam9OT3ZuTmF4dVVnOEdUZjFjVnU0?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) Stock Holdings Lifted by Ethic Inc. - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQVFFVNUR3ZzZyUWZ0QW1tbW5sZU95c2ZGMnBlLXBrWnBDWDJPb0lLT05OenQtWkphdXJEZDA4cnNlSlJfWEo3YWJnV3ZKNFRiT1R3Q1pVSUx4c1JuNFp6LUZPTjkyc19wUWUybWgzREdudm45SUZrQVZlZXlQV2VzaTUtZzZtQlNnVjhPVFd4WXEzSjRLUmFXd1RLcUZnLWd4S1FQVXgtUWhCV1BOd1NmbUw3NEtzZ1pHNmFFTXR5X3lkZTFxdFU3TmJXVE9NQ0lnTGpSQjlFSzlybzd5YXM2QlYzMFg?oc=5",
+      "published": "Sat, 16 Aug 2025",
+      "excerpt": "Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) Stock Holdings Lifted by Ethic Inc. - MarketBeat"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing (TSM) Announces Net Revenue for July 2025 - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPLWNuM0ZxX1RiQVFCSTI1bzdpblRqWlN2eFNvQkl5ZS1mbGhmdDZxMGpsUGpaTDZnT2xwS1ZoSlItcWwxRjdlZDlEYWlVNHk5dGhfT2JZR3hUMFFIUVozTnlSc3A2OFVlMldJU25QZy1Fdm1ReGt3SmZCdUxIUXJQRmRsUlFRUkZEaXdNeVBSN3gxS3hsZXBaWlZR?oc=5",
+      "published": "Sat, 16 Aug 2025",
+      "excerpt": "Taiwan Semiconductor Manufacturing (TSM) Announces Net Revenue for July 2025 - Yahoo Finance"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) Shares Sold by American Century Companies Inc. - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPbWNXOW5LRFZndjZyZ0JNd1dmMWllM3drb1FSNXZxU09SMWJqeTFWOFdHc0dJSW5NQ0liRzdnWTJueTMwSzJSWnFyUWhMV3gtcVdrcFd2RnI3V21rZXQ3TngyVW80X1pYaEd4TjJVSkxRMGEtNDhJNzR0enUxZTZCVWFtdmlFcmJHY0FrMk1ENzlKdGJjQzhIelljRS0tMlcxeTZFMHdpbHJfMUJsUTRIdWh2MHFFbWVLM21ieTNkcldRRkJJX3Q0VTZHb29tV2dBajJXREY5TWlpRVQzVjFqN0swdHA3WUtDaTJmZTFKU0YwNEk?oc=5",
+      "published": "Sat, 16 Aug 2025",
+      "excerpt": "Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) Shares Sold by American Century Companies Inc. - MarketBeat"
+    },
+    {
+      "title": "Headwater Capital Co Ltd Lowers Stake in Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQOGRPSWVoTGFiRnBXR2NLWGRjUFQwc0dUQVU3LUt6aWRMUjJqdy0xbG5BRWNJQmxGSy1aOHVjaVhxSks1N3NDaWFTVzBXZmhOMGsya2FhSmpJTXp5ZkJLalZheE9qbFBRSlZNMjI3R2dmazRwRU0wX2xyMzJLM0ZlOUNLMVA1WmgxdXExc1RsdUpFc3lzU3NYeVduc2hYMjhHczVveGNCS1pRVldZcktPQk13OUU4ZkIyc0JZR0dERHhlZTFrSDItRVhKNVRtZUlPQm5hMEoyVFJoSGExSlZFcTRmTEZOdXBVT0dyV2xUUWF3NXUwNHllX0dn?oc=5",
+      "published": "Sun, 10 Aug 2025",
+      "excerpt": "Headwater Capital Co Ltd Lowers Stake in Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) - MarketBeat"
+    },
+    {
+      "title": "Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) is Russell Investments Group Ltd.'s 9th Largest Position - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxOWm1laGZzT05Tb0RuckthaGtpVm90dWZjT0FCYzA1NU9Eb3gwZUdSbWMtSUpMMjFBaUM5VGRUUG9iLVl5R3pfdVhkRzNlRkNoUGw3R2VkLUk1dU1LVktqbGN4QUxNNjJnRUxWZzZkMmxpbG16clRjM0ZqU2lMVl9fbjZrRUp5cHJUMFROUWU0LTNtRk90OW8tU052NXJuQzY5ZHVIXzJ2b3NHZkZmWFZZbi1jRlp0WG1uV05NcUduOV9PRW1sT2VSeVAtemZpZWx3MWhYeC1LdDRoUjJQRWl5RmNHVFk2OGk4WFR0OVNIWEx4Y0wzdlNBa2l3Y2pWTzQ?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) is Russell Investments Group Ltd.'s 9th Largest Position - MarketBeat"
+    },
+    {
+      "title": "Trajan Wealth LLC Raises Holdings in Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQZkx0cDNKUzZTYkVnekV4LVhOeU1lWDkxMEhOaFNvREhXbkFjeVhici1oMWZrTWJ6YWkzV25zYlZ2RDU1LXZ4c1ViWUtuRlYtSFZTTGU3ZXV1NmtaUTBra0YwbGUyQXFHMVNKOWpXejdMTXVBTjFLS3dBQk9XN0htcXJqbHRMTnpBci1TaVMtT1d3Ni1lSTZJV3Zkc1pUc0lVUk9rcGc0c2lKVFRYMzFHQWM0cGVuSjJHNFVSdHdXakgxZ2UtNGxkaWE3STVMU1ZsdTdaTlVQRVNMdGYycDdoTE1XcGR5c0k?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "Trajan Wealth LLC Raises Holdings in Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) - MarketBeat"
+    },
+    {
+      "title": "LHM Inc. Sells 2,528 Shares of Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdHhqRFJBZkVLcXRNY045S2QzRTdJdWJEX0oxWW1uQkx1ZEJOMTFnVXp3cUhDMnoxQ21DMVZUb2liM19fckhYdzVUQm11T2RYNmZrZS1NV3N0aU1LaUtWZGhVUC16MDhidE9jcjJEVVRVT3M3MUpmcktZZVg3a2lRN242QTVrb1JlV3BrTkthSmUwR3NHQjJxSThib3NUR2FKelNMaGM1U0U5NDVsckZXNUYzaWpIWFJUSlJlVlFkRi1WakFzYk4yZEM0X19ER2R6Ry1Udks0d0twYlhsRHc?oc=5",
+      "published": "Sat, 16 Aug 2025",
+      "excerpt": "LHM Inc. Sells 2,528 Shares of Taiwan Semiconductor Manufacturing Company Ltd. (NYSE:TSM) - MarketBeat"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "serpapi": {},
+  "risk": {
+    "finbert": {
+      "neg": 0.1372039836132899,
+      "neu": 0.6430173208937049,
+      "pos": 0.2197786953765899
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.113
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 90,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "14001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "45001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      }
+    },
+    "overall_score": 86.7,
+    "overall_status": "Ready",
+    "_industry": "manufacturing"
+  },
+  "iso_recommendation": {
+    "standard": "9001",
+    "readiness_score": 90,
+    "status": "Ready",
+    "rationale": "[manufacturing] Quality/customer/process signals suggest ISO 9001 to drive consistency and customer satisfaction.",
+    "next_steps": [
+      "Standardize core process maps and procedures",
+      "Optimize complaints and CAPA system",
+      "Institutionalize PDCA through internal audits and management review"
+    ],
+    "secondary": {
+      "standard": "45001",
+      "readiness_score": 85,
+      "status": "Ready",
+      "rationale": "[manufacturing] Secondary: ISO 45001 reduces incident likelihood via safety culture.",
+      "next_steps": [
+        "Consider behavior-based safety (BBS)",
+        "Check alignment with local OHS regulations",
+        "Institutionalize emergency drill scenarios"
+      ]
+    }
+  },
+  "baseline_risk_analysis": {
+    "overall_score": 84.4,
+    "finbert_analysis": {
+      "neg": 0.1372039836132899,
+      "neu": 0.6430173208937049,
+      "pos": 0.2197786953765899
+    },
+    "keyword_analysis": {
+      "total_hits": 0,
+      "detail": {
+        "리콜|recall": 0,
+        "소송|lawsuit|litigation|class action": 0,
+        "해킹|유출|breach|hack|data leak|ransom": 0,
+        "제재|sanction|embargo": 0,
+        "회계\\s?부정|fraud|accounting scandal": 0,
+        "규제\\s?위반|non-?compliance|violation": 0,
+        "폐업|bankruptcy|insolvency|파산": 0,
+        "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+        "손실|loss|deficit|적자": 0,
+        "부채|debt|liability|채무": 0,
+        "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+        "인수합병|M&A|merger|acquisition|합병": 0,
+        "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+        "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+        "내부\\s?고발|whistleblower|내부신고": 0,
+        "파업|strike|노사갈등|labor\\s?dispute": 0,
+        "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+        "품질\\s?문제|quality\\s?issue|불량품": 0,
+        "안전\\s?사고|safety\\s?accident|사고": 0,
+        "환경\\s?문제|environmental|pollution|오염": 0,
+        "건강\\s?위험|health\\s?risk|건강피해": 0,
+        "서비스\\s?중단|service\\s?outage|장애": 0,
+        "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+        "반독점|antitrust|monopoly|독점규제": 0,
+        "세금\\s?문제|tax\\s?issue|세무조사": 0,
+        "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+        "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+        "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+        "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+        "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+        "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+        "경기\\s?침체|recession|경기하락": 0,
+        "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+        "네트워크\\s?보안|network\\s?security|보안위협": 0,
+        "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+        "지적재산권|intellectual\\s?property|특허분쟁": 0,
+        "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+        "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+        "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+        "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+        "보이콧|boycott|불매운동": 0,
+        "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+        "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+        "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+        "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+        "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+        "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+        "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+        "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+        "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+        "테러|terrorism|테러위협": 0,
+        "자연재해|natural\\s?disaster|천재지변": 0
+      }
+    },
+    "risk_level": "낮음",
+    "assessment_method": "FinBERT + Keyword Analysis"
+  },
+  "chatgpt_enhanced_analysis": {
+    "contextual_analysis": {
+      "hidden_risks": [
+        "공급망 중단 위험: TSMC는 글로벌 반도체 공급망의 핵심 기업으로, 지정학적 긴장이나 자연재해로 인한 공급망 중단이 큰 영향을 미칠 수 있음.",
+        "기술 혁신의 압박: 반도체 산업은 빠른 기술 발전이 요구되며, 경쟁사들이 새로운 기술을 선보일 경우 TSMC의 시장 점유율이 감소할 수 있음.",
+        "사이버 보안 위협: 반도체 제조 과정에서의 데이터 유출이나 사이버 공격은 기업의 신뢰도와 재무적 손실로 이어질 수 있음.",
+        "규제 변화에 대한 민감성: 각국의 반독점 및 규제 정책 변화가 TSMC의 운영에 부정적인 영향을 미칠 수 있음."
+      ],
+      "market_context": "반도체 산업은 전 세계적으로 높은 수요를 보이고 있으며, 특히 AI, IoT, 5G 기술의 발전으로 인해 TSMC와 같은 기업의 성장 가능성이 높아지고 있습니다. 그러나 공급망의 복잡성과 지정학적 리스크가 동시에 존재하여 불확실성이 커지고 있습니다.",
+      "competitive_analysis": "TSMC는 인텔, 삼성전자 등과 경쟁하고 있으며, 이들 기업은 기술 혁신과 생산 능력 확대를 위해 막대한 투자를 하고 있습니다. 특히 삼성전자는 메모리 반도체 시장에서 강력한 입지를 가지고 있으며, TSMC의 파운드리 서비스에 도전하고 있습니다.",
+      "regulatory_implications": "미국과 중국 간의 무역 갈등 및 반독점 규제 강화가 TSMC의 글로벌 운영에 영향을 미칠 수 있습니다. 특히 미국의 반도체 관련 정책 변화는 TSMC의 해외 시장 진출에 제약을 줄 수 있습니다.",
+      "investor_sentiment": "최근 투자자들은 TSMC의 성장 가능성에 긍정적인 반응을 보이고 있으며, 여러 투자 기관들이 TSMC의 주식을 매입하고 있습니다. 그러나 일부 기관은 보유 주식을 줄이는 움직임을 보이고 있어, 투자자 심리가 혼재되어 있는 상황입니다.",
+      "recommendations": [
+        "공급망 다각화를 통해 리스크를 최소화하고, 주요 부품 공급업체와의 관계를 강화할 필요가 있음.",
+        "사이버 보안 강화를 위한 투자 및 시스템 점검을 정기적으로 실시하여 데이터 유출 위험을 줄여야 함.",
+        "기술 혁신을 지속적으로 추진하고, R&D 투자 비율을 높여 경쟁사 대비 우위를 유지해야 함.",
+        "규제 변화에 대한 모니터링을 강화하고, 법률 자문을 통해 대응 전략을 마련해야 함."
+      ]
+    },
+    "risk_scenarios": [
+      {
+        "scenario_id": "RISK-001",
+        "title": "품질 리콜로 인한 생산 지연",
+        "description": "최근 제품의 품질 문제가 발생하여 리콜이 필요하게 되어 생산 일정에 차질이 생길 수 있다. 이는 고객 신뢰도 하락 및 매출 감소로 이어질 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "품질 문제 발생",
+          "고객 불만 증가"
+        ],
+        "mitigation_strategies": [
+          "품질 관리 강화",
+          "신속한 리콜 프로세스 구축"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-002",
+        "title": "사이버 공격으로 인한 데이터 유출",
+        "description": "해킹 공격으로 인해 고객 데이터 및 기업 기밀 정보가 유출될 위험이 있으며, 이는 법적 소송 및 평판 손상으로 이어질 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "매우 높음",
+        "triggers": [
+          "해킹 시도 증가",
+          "보안 시스템 취약점 발견"
+        ],
+        "mitigation_strategies": [
+          "강화된 사이버 보안 시스템 도입",
+          "정기적인 보안 점검"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "RISK-003",
+        "title": "규제 변화로 인한 제재 위험",
+        "description": "글로벌 반도체 시장의 규제가 강화됨에 따라 새로운 제재가 부과될 가능성이 있으며, 이는 운영 비용 증가 및 시장 접근성 저하로 이어질 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "정책 변화 발표",
+          "무역 전쟁 심화"
+        ],
+        "mitigation_strategies": [
+          "규제 동향 모니터링",
+          "법률 자문 강화"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-004",
+        "title": "소송으로 인한 재정적 손실",
+        "description": "소송이 발생할 경우, 법적 비용 및 잠재적 배상금으로 인해 재정적 부담이 증가할 수 있으며, 이는 투자자 신뢰도에도 영향을 미칠 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "소송 제기",
+          "법적 분쟁 증가"
+        ],
+        "mitigation_strategies": [
+          "법률 리스크 관리 강화",
+          "소송 대응 전략 수립"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-005",
+        "title": "브랜드 평판 손상",
+        "description": "품질 문제나 사이버 공격으로 인해 브랜드 이미지가 손상되면 고객 이탈 및 매출 감소로 이어질 수 있다.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "부정적 미디어 보도",
+          "소셜 미디어 반응 악화"
+        ],
+        "mitigation_strategies": [
+          "위기 관리 계획 수립",
+          "커뮤니케이션 전략 강화"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      }
+    ],
+    "personalized_reports": {
+      "executive": "# Taiwan Semiconductor Manufacturing Co Ltd (TSMC) 분석 보고서\n\n## 1. 실행 요약\nTaiwan Semiconductor Manufacturing Company Ltd. (TSMC)는 반도체 제조 분야에서 세계적인 선두주자로 자리매김하고 있으며, 최근 투자자들의 관심을 끌고 있습니다. 2025년 7월의 순수익 발표를 통해 긍정적인 재무 성과를 보였으며, 여러 기관 투자자들이 TSMC의 주식을 매입하거나 보유를 늘리고 있습니다. 그러나 일부 투자자들은 지분을 줄이고 있는 상황도 관찰되고 있습니다. 전반적으로 TSMC는 안정적인 성장세를 유지하고 있으며, 향후에도 긍정적인 전망이 예상됩니다.\n\n## 2. 주요 리스크 요인\n- **투자자 신뢰도 변화**: 최근 일부 기관 투자자들이 TSMC의 주식을 매도하고 있어, 시장에서의 신뢰도에 영향을 미칠 수 있습니다.\n- **경쟁 심화**: 글로벌 반도체 시장에서의 경쟁이 치열해지고 있으며, 기술 혁신 및 가격 경쟁이 심화될 가능성이 있습니다.\n- **정치적 불안정성**: 대만의 정치적 상황이 불안정할 경우, TSMC의 운영 및 공급망에 부정적인 영향을 미칠 수 있습니다.\n\n## 3. 시장 기회\n- **반도체 수요 증가**: 인공지능, IoT, 자율주행차 등 신기술의 발전으로 반도체 수요가 지속적으로 증가하고 있습니다.\n- **글로벌 공급망 재편**: 많은 국가들이 반도체 자립을 위해 자국 내 생산을 늘리려는 움직임을 보이고 있어, TSMC의 생산 능력 확대에 기회가 될 수 있습니다.\n- **신기술 개발**: TSMC는 5nm 및 3nm 공정 기술을 통해 경쟁력을 강화하고 있으며, 이는 향후 고부가가치 제품으로의 전환을 촉진할 것입니다.\n\n## 4. 권장사항\n- **투자자 관계 강화**: 투자자와의 소통을 강화하고, 주식 매도에 대한 우려를 해소하기 위한 전략을 마련해야 합니다.\n- **기술 혁신 지속**: R&D 투자 확대를 통해 기술 혁신을 지속하고, 경쟁사 대비 우위를 유지해야 합니다.\n- **위험 관리 체계 강화**: 정치적 불안정성 및 공급망 리스크에 대한 대응 방안을 마련하여, 잠재적인 위협에 대비해야 합니다.\n\n## 5. 향후 전망\n- **단기 전망**: TSMC는 안정적인 매출 성장을 이어갈 것으로 보이며, 2025년 하반기에는 긍정적인 실적을 기록할 가능성이 높습니다.\n- **중기 전망**: 반도체 수요의 지속적인 증가로 인해 TSMC의 시장 점유율이 더욱 확대될 것으로 예상됩니다. 특히, AI 및 IoT 분야에서의 성장이 두드러질 것입니다.\n- **장기 전망**: TSMC는 기술 혁신과 생산 능력 확대를 통해 글로벌 반도체 시장에서의 리더십을 유지할 것으로 보이며, 지속 가능한 성장을 위한 기반을 마련할 것입니다.\n\n이 보고서는 TSMC의 현재 상황과 향후 전망을 종합적으로 분석한 결과입니다. 경영진의 전략적 의사결정에 도움이 되기를 바랍니다.",
+      "investor": "# Taiwan Semiconductor Manufacturing Co Ltd (TSMC) 투자 분석 보고서\n\n## 1. 실행 요약\nTaiwan Semiconductor Manufacturing Company Ltd. (TSMC)는 반도체 제조 분야에서 세계적인 선두주자로, 최근 투자자들의 관심을 끌고 있습니다. 2025년 7월의 순수익 발표와 여러 기관 투자자들의 주식 보유 변화가 주목받고 있으며, TSMC의 주가는 안정적인 성장세를 보이고 있습니다. 그러나, 일부 기관의 주식 매도와 같은 리스크 요소도 존재합니다. \n\n## 2. 주요 리스크 요인\n- **주식 매도**: American Century Companies Inc.와 Headwater Capital Co Ltd.가 TSMC의 주식을 매도한 사례가 있으며, 이는 투자자들에게 불안감을 줄 수 있습니다.\n- **시장 변동성**: 반도체 산업은 기술 발전과 글로벌 수요 변화에 민감하여, 외부 요인에 따른 시장 변동성이 존재합니다.\n- **리스크 점수**: TSMC의 리스크 점수는 0.162로, 이는 상대적으로 낮지만 여전히 주의가 필요합니다. 특히, 경쟁사 대응 및 공급망 문제와 같은 요소가 잠재적 리스크로 작용할 수 있습니다.\n\n## 3. 시장 기회\n- **성장 가능성**: TSMC는 인공지능, 자율주행차, 5G 통신 등 신기술 분야에서의 수요 증가로 인해 지속적인 성장이 예상됩니다.\n- **투자자 관심**: TSMC에 대한 기관 투자자들의 관심이 높아지고 있으며, 이는 회사의 안정성과 성장 가능성을 반영합니다.\n- **재무 성과**: 2025년 7월의 순수익 발표는 긍정적인 신호로, 회사의 재무 건전성을 강화하고 있습니다.\n\n## 4. 권장사항\n- **투자 포트폴리오 다각화**: TSMC의 주식에 대한 투자는 긍정적이나, 리스크 관리 차원에서 포트폴리오를 다각화하는 것이 필요합니다.\n- **시장 동향 모니터링**: 반도체 산업의 동향과 TSMC의 경쟁사 분석을 지속적으로 모니터링하여, 시장 변화에 신속하게 대응할 수 있도록 합니다.\n- **장기 투자 전략 수립**: TSMC의 장기적인 성장 가능성을 고려하여, 단기적인 변동성에 흔들리지 않는 장기 투자 전략을 수립합니다.\n\n## 5. 향후 전망\n- **단기 전망**: TSMC는 안정적인 수익을 유지할 것으로 예상되며, 기관 투자자들의 지속적인 관심이 주가에 긍정적인 영향을 미칠 것입니다.\n- **중기 전망**: 반도체 수요가 증가함에 따라 TSMC의 매출 성장이 기대되며, 새로운 기술 개발과 생산 능력 확장이 중요한 과제가 될 것입니다.\n- **장기 전망**: TSMC는 글로벌 반도체 시장에서의 리더십을 유지하며, 지속적인 기술 혁신과 고객 기반 확대를 통해 안정적인 성장세를 이어갈 것으로 보입니다.\n\n이 보고서는 TSMC에 대한 투자 결정을 내리는 데 유용한 정보를 제공하며, 투자자 여러분의 성공적인 투자에 기여할 수 있기를 바랍니다."
+    },
+    "analysis_method": "ChatGPT GPT-4o-mini + 기존 분석 시스템",
+    "ai_enhanced": true
+  },
+  "previous_scenario_titles": [
+    "고급 반도체 기술 유출",
+    "소송 및 법적 분쟁 증가",
+    "사이버 공격 및 데이터 유출",
+    "제재 및 무역 제한",
+    "회계 부정 및 내부 통제 실패"
+  ],
+  "previous_scenario_scores": {
+    "고급 반도체 기술 유출": 0,
+    "소송 및 법적 분쟁 증가": 0,
+    "사이버 공격 및 데이터 유출": 0,
+    "제재 및 무역 제한": 0,
+    "회계 부정 및 내부 통제 실패": 0
+  },
+  "current_scenario_titles": [
+    "품질 리콜로 인한 생산 지연",
+    "사이버 공격으로 인한 데이터 유출",
+    "규제 변화로 인한 제재 위험",
+    "소송으로 인한 재정적 손실",
+    "브랜드 평판 손상"
+  ],
+  "current_scenario_scores": {
+    "품질 리콜로 인한 생산 지연": 0,
+    "사이버 공격으로 인한 데이터 유출": 0,
+    "규제 변화로 인한 제재 위험": 0,
+    "소송으로 인한 재정적 손실": 0,
+    "브랜드 평판 손상": 0
+  },
+  "_base_id": "Taiwan_Semiconductor_Manufacturing_Co_Ltd_tsmc.com"
+}

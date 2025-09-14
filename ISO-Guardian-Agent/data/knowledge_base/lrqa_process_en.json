@@ -1,0 +1,44 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "name": "Application Submission",
+      "description": "Complete application form through ISO-Guardian"
+    },
+    {
+      "id": 2,
+      "name": "Stage 1 Audit",
+      "description": "Document review and preliminary audit"
+    },
+    {
+      "id": 3,
+      "name": "Stage 2 Audit",
+      "description": "On-site audit and certification audit"
+    },
+    {
+      "id": 4,
+      "name": "Certificate Issuance",
+      "description": "Certificate issued upon successful audit"
+    }
+  ],
+  "timeline": "Typically 3-6 months",
+  "requirements": [
+    "Prepare necessary documents",
+    "System implementation",
+    "Employee training"
+  ],
+  "cost_factors": [
+    "Company size (number of employees)",
+    "Number of locations",
+    "Selected ISO standards",
+    "Certification scope",
+    "Integrated audit option"
+  ],
+  "benefits": [
+    "Enhanced credibility",
+    "Market competitiveness",
+    "Process improvement",
+    "Risk management",
+    "Customer satisfaction"
+  ]
+}

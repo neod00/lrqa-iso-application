@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page.title">ISO-Guardian AI 에이전트 | LRQA Korea</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 현대적인 채팅 위젯 -->
+        <div class="chat-widget">
+            <!-- 카카오톡 스타일 헤더 -->
+            <div class="chat-header-kakao">
+                <div class="header-left-kakao">
+                    <div class="ai-avatar-kakao">
+                        <span class="icon">🤖</span>
+                    </div>
+                    <div class="header-info-kakao">
+                        <h3 data-i18n="header.title">ISO-Guardian</h3>
+                        <p data-i18n="ai.status">온라인</p>
+                    </div>
+                </div>
+                <div class="header-controls-kakao">
+                    <button class="control-btn-kakao" id="languageToggle" title="언어 변경">
+                        <span class="icon">🌐</span>
+                    </button>
+                    <button class="control-btn-kakao" id="themeToggle" title="테마 변경">
+                        <span class="icon">☀️</span>
+                    </button>
+                    <button class="control-btn-kakao" id="helpBtn" title="도움말">
+                        <span class="icon">❓</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 환영 메시지 -->
+            <div class="welcome-message" id="welcomeMessage">
+                <div class="message ai-message">
+                    <div class="message-content">
+                        <p data-i18n="welcome.description">ISO 인증 과정에 대한 궁금한 점을 언제든 물어보세요. 저는 교육적 정보와 LRQA 프로세스 안내를 도와드립니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 빠른 액션 버튼들 -->
+            <div class="quick-actions-compact">
+                <button class="quick-btn-compact" data-action="iso-intro" data-i18n="quickActions.isoIntro">📚 ISO란?</button>
+                <button class="quick-btn-compact" data-action="certification-process" data-i18n="quickActions.certificationProcess">🔄 인증 프로세스</button>
+                <button class="quick-btn-compact" data-action="start-application" data-i18n="quickActions.startApplication">📝 신청서</button>
+                <button class="quick-btn-compact" data-action="get-quote" data-i18n="quickActions.getQuote">💰 견적</button>
+            </div>
+
+            <!-- 채팅 메시지 영역 -->
+            <div class="chat-messages-compact" id="chatMessages">
+                <!-- 메시지들이 여기에 동적으로 추가됩니다 -->
+            </div>
+
+            <!-- 채팅 입력 영역 - 명확하게 표시 -->
+            <div class="chat-input-compact">
+                <div class="input-wrapper">
+                    <input type="text" id="chatInput" placeholder="ISO에 대해 궁금한 점을 입력하세요..." data-i18n-placeholder="chat.placeholder">
+                    <button id="sendBtn" class="send-btn">
+                        <span class="icon">📤</span>
+                    </button>
+                </div>
+                <div class="chat-controls-compact">
+                    <button id="voiceBtn" class="control-btn-small" title="음성 입력">
+                        <span class="icon">🎤</span>
+                    </button>
+                    <button id="attachBtn" class="control-btn-small" title="파일 첨부">
+                        <span class="icon">📎</span>
+                    </button>
+                    <button id="clearChat" class="control-btn-small" title="대화 초기화">
+                        <span class="icon">🗑️</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달들 -->
+    <!-- ISO 표준 정보 모달 -->
+    <div id="isoStandardsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="modals.isoStandards.title">ISO 표준 정보</h3>
+                <button class="close-modal" data-modal="isoStandardsModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="iso-standards-grid">
+                    <div class="standard-card">
+                        <h4>ISO 9001:2015</h4>
+                        <p data-i18n="modals.isoStandards.9001.desc">품질경영시스템</p>
+                        <button class="learn-more-btn">자세히 보기</button>
+                    </div>
+                    <div class="standard-card">
+                        <h4>ISO 14001:2015</h4>
+                        <p data-i18n="modals.isoStandards.14001.desc">환경경영시스템</p>
+                        <button class="learn-more-btn">자세히 보기</button>
+                    </div>
+                    <div class="standard-card">
+                        <h4>ISO 45001:2018</h4>
+                        <p data-i18n="modals.isoStandards.45001.desc">직업건강안전경영시스템</p>
+                        <button class="learn-more-btn">자세히 보기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 인증 프로세스 모달 -->
+    <div id="certificationProcessModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="modals.process.title">LRQA 인증 프로세스</h3>
+                <button class="close-modal" data-modal="certificationProcessModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4 data-i18n="modals.process.step1.title">신청서 제출</h4>
+                            <p data-i18n="modals.process.step1.desc">필요 서류 제출 및 초기 검토</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4 data-i18n="modals.process.step2.title">1단계 심사</h4>
+                            <p data-i18n="modals.process.step2.desc">문서 심사 및 준비 상태 확인</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4 data-i18n="modals.process.step3.title">2단계 심사</h4>
+                            <p data-i18n="modals.process.step3.desc">현장 심사 및 시스템 운영 확인</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4 data-i18n="modals.process.step4.title">인증서 발급</h4>
+                            <p data-i18n="modals.process.step4.desc">심사 결과 검토 후 인증서 발급</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 견적 요청 모달 -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="modals.quote.title">견적 요청</h3>
+                <button class="close-modal" data-modal="quoteModal">×</button>
+            </div>
+            <div class="modal-body">
+                <p data-i18n="modals.quote.description">ISO 인증 견적을 받으시려면 신청서 작성을 진행해주세요.</p>
+                <div class="quote-actions">
+                    <button class="btn btn-primary" onclick="app.startApplication()">
+                        <span data-i18n="modals.quote.startApplication">신청서 작성하기</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="app.closeModal('quoteModal')">
+                        <span data-i18n="modals.quote.contactLRQA">LRQA에 직접 문의</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 도움말 모달 -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-i18n="modals.help.title">도움말</h3>
+                <button class="close-modal" data-modal="helpModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="help-sections">
+                    <section>
+                        <h4 data-i18n="modals.help.howToUse.title">사용법</h4>
+                        <ul>
+                            <li data-i18n="modals.help.howToUse.step1">채팅창에 질문을 입력하세요</li>
+                            <li data-i18n="modals.help.howToUse.step2">빠른 액션 버튼을 클릭하세요</li>
+                            <li data-i18n="modals.help.howToUse.step3">사이드바에서 메뉴를 선택하세요</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4 data-i18n="modals.help.shortcuts.title">키보드 단축키</h4>
+                        <ul>
+                            <li>Enter - 메시지 전송</li>
+                            <li>Ctrl + / - 도움말 열기</li>
+                            <li>Ctrl + M - 사이드바 토글</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 로딩 인디케이터 -->
+    <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+        <div class="loading-spinner"></div>
+        <p data-i18n="loading.message">ISO-Guardian이 답변을 준비하고 있습니다...</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/i18n.js"></script>
+    <script src="js/ai-agent.js"></script>
+    <script src="js/lrqa-links.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-08-12T17:00:34Z",
+  "input": {
+    "company_name": "삼성전자",
+    "url": "https://www.samsung.com",
+    "country_hint": null,
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "삼성전자",
+    "domain": "samsung.com"
+  },
+  "news": [
+    {
+      "title": "삼성전자, 2025년 2분기 실적 발표 - Samsung Newsroom",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNaXBIb1lTOEo5U28zSjdJTUt3VDY3eU93c09fckpYSjE1UEJ5QTI1c2k5RXRRbDd2dHZLYVowdVJkUFlFbnhLLXBDcjByNDVOSDFwRFhBOFJlVGxUcHBBSTI1QlNmVHhmUDJ4ZzBFTFhIcFVFNXR6c1RJRzJSWEcxUWVucE9KS28tWXQ1R3VnVEFEQ1I1bDhkMTdpV2RpZm9feTRLOTZYRTAxNFdRRnZGTUFHbEJvNW8wUHZ5SHc2bkVJc3Ewdm1LbWpXcm1uVE9ZSEE?oc=5",
+      "published": "Thu, 31 Jul 2025",
+      "excerpt": "삼성전자, 2025년 2분기 실적 발표 - Samsung Newsroom"
+    },
+    {
+      "title": "테슬라, 애플 찍고 엔비디아까지?…\"우리 삼성전자가 달라졌어요\" - 인베스트조선",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQUUdTVkJKZUFqeExXbXlnM3k2UElub2JYSmVBampMUFdZTFU4b2hmUjltaWpDWVZlVlZzaVBvcjV6NUQxVzJobXFhSGhRTzNrT0JwdVlnTEhtTzE0UmRyN0U5VXVMWU5SZ3JGMFJLNEp4Mko3VkRpc0pnSURCdHpENmxyYw?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "테슬라, 애플 찍고 엔비디아까지?…\"우리 삼성전자가 달라졌어요\" - 인베스트조선"
+    },
+    {
+      "title": "삼성전자, 임원들에 자사주 인센티브… 노태문 사장 16억 - 조선일보",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPNzd6LUZfbVBrenJlMmZ2SzlhSlBNdV9FclpGUzNxdHFOcXFUNnlnSUw0SFBlb1JZS3lVR0YyVnFvYlduS3lvMVBBWldYSGhsUXNIeG9wcGpGUGpuaGdERmZpWjFWQkpMQzJkdS13N3BYeFo4Y0pRWWNJMF9EVG5GOG9ESdIBlwFBVV95cUxPM2Frd0p0YW8zTEh5cU0weGw3Ty1NZmdGdmZ1cUdVTmtkTzBSeUNuUGJrZnV2OC1SaV9Cb1gwZlE2WWJWV0YyX2xUM09ycTFHYnhfRUxfVncxTVpyNDYtSnZYQ1RpamRmZFE1MFRwQ1dpdE1BQ0M3REpmeVVFSFBXakpIWDdITFJmNHJFYU5LdjRMMkRnRXFF?oc=5",
+      "published": "Mon, 04 Aug 2025",
+      "excerpt": "삼성전자, 임원들에 자사주 인센티브… 노태문 사장 16억 - 조선일보"
+    },
+    {
+      "title": "삼성전자, 애플 차세대 칩 미국 파운드리 공장서 생산 - 중앙일보",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1PR2xXTlVPU1lTRHFfNzlPZHFqcnI0RENNek5KX3dHZkRxM1ZYbXFRM1lPZjE2YzRqY3JtMlpFREpsYXd1dW9fRDJoS0J3dUQ2S2xmSENn?oc=5",
+      "published": "Wed, 06 Aug 2025",
+      "excerpt": "삼성전자, 애플 차세대 칩 미국 파운드리 공장서 생산 - 중앙일보"
+    },
+    {
+      "title": "“삼성전자도 반도체 관세 피할 수 있을 듯”-블룸버그 - 뉴스1",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBZX01DWnJxcU1qZHgzZjVtek5tUW5DM1M0bllPMjhCblEyc0N3Y3JJeHhnLVpnQzM2U3hxZ2lpWENDQkZMOF9JQ0JRVldiUXJXbkdRcHA4ay0?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "“삼성전자도 반도체 관세 피할 수 있을 듯”-블룸버그 - 뉴스1"
+    },
+    {
+      "title": "HBM3E '가격 하락' 가능성 언급한 삼성전자…속내는 - 지디넷코리아",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5zdXQxV1hRZ01fQklnbTd6LVk2dGNuU3YxYmx2VVU5eThtVGZrOUxVU3QyRGtsMXg1U3RFNkJkVkJ3U25uQWk0NXFMOV9nVk1CTUVVRlZ3?oc=5",
+      "published": "Thu, 31 Jul 2025",
+      "excerpt": "HBM3E '가격 하락' 가능성 언급한 삼성전자…속내는 - 지디넷코리아"
+    },
+    {
+      "title": "삼성전자 아픈 손가락이었는데…바닥 친 파운드리, HBM 반등할까? - 매일경제",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4xbkNtaUNibkFnU3o0QUpOYWgtVUViMXF6T3ZDaG96SHRpYmlxeGFoTnFLQzg1Z3hvTzRRV3pkQ0hVWkhlZHg2WjRMU0NMMVpwVC1qMXB3?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "삼성전자 아픈 손가락이었는데…바닥 친 파운드리, HBM 반등할까? - 매일경제"
+    },
+    {
+      "title": "테슬라 삼성전자와 반도체 협력에도 성과 불투명, 구글 웨이모 추격 어려워 - 비즈니스포스트",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9qVjdnaDZTdUFaVjJTMVJNRkFxcHFtYzVxS2hxcW9ZTHZyRDZlTHZHMUJRaVlWRHJXOUJCWVlucXRNbXBkSURvUEdtSFczSVJPckdKbVR6UDBQV0lTUVRWVThEbExuczRjM0xqVDBKQ1JPMFE?oc=5",
+      "published": "Mon, 04 Aug 2025",
+      "excerpt": "테슬라 삼성전자와 반도체 협력에도 성과 불투명, 구글 웨이모 추격 어려워 - 비즈니스포스트"
+    }
+  ],
+  "risk": {
+    "keyword_hits": {
+      "리콜|recall|품질\\s?불량|defect|quality issue": 0,
+      "고객\\s?불만|customer complaint|불만|complaint": 0,
+      "제품\\s?사고|product accident|사고|accident": 0,
+      "품질\\s?관리|quality management|QC|QA": 0,
+      "환경\\s?사고|environmental accident|오염|pollution": 0,
+      "폐기물|waste|disposal|처리": 0,
+      "에너지\\s?사용|energy consumption|전력|electricity": 0,
+      "탄소\\s?배출|carbon emission|CO2|온실가스": 0,
+      "자원\\s?절약|resource saving|재활용|recycling": 0,
+      "산업\\s?재해|industrial accident|재해|disaster": 0,
+      "안전\\s?사고|safety accident|사고|accident": 0,
+      "근로\\s?환경|work environment|노동|labor": 0,
+      "건강\\s?검진|health check|검진|examination": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo|penalty|fine": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.2
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "준비됨"
+      },
+      "14001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "준비됨"
+      },
+      "45001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "준비됨"
+      }
+    },
+    "overall_score": 85.0,
+    "overall_status": "준비됨"
+  },
+  "_base_id": "삼성전자_samsung.com",
+  "_lang_base_id": "삼성전자_samsung.com_ko"
+}

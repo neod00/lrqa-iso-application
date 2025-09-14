@@ -1,0 +1,476 @@
+{
+  "timestamp": "2025-08-17T13:47:20Z",
+  "input": {
+    "company_name": "Tesla, Inc.",
+    "url": "https://www.tesla.com",
+    "country_hint": "US",
+    "lang": "en"
+  },
+  "entity": {
+    "name": "Tesla, Inc.",
+    "domain": "tesla.com"
+  },
+  "filings": [
+    {
+      "title": "8-K",
+      "date": "2025-08-04",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925073263/tm2522385d1_8k.htm"
+    },
+    {
+      "title": "10-Q",
+      "date": "2025-07-24",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "10-Q",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035806/tsla-20250630.htm"
+    },
+    {
+      "title": "8-K",
+      "date": "2025-07-23",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025035738/tsla-20250723.htm"
+    },
+    {
+      "title": "8-K",
+      "date": "2025-07-10",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025034692/tsla-20250709.htm"
+    },
+    {
+      "title": "8-K",
+      "date": "2025-07-02",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025033842/tsla-20250702.htm"
+    },
+    {
+      "title": "8-K",
+      "date": "2025-05-16",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925050072/tm2515421d1_8k.htm"
+    },
+    {
+      "title": "8-K",
+      "date": "2025-05-16",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025026148/tsla-20250515.htm"
+    },
+    {
+      "title": "10-Q",
+      "date": "2025-04-23",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "10-Q",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018911/tsla-20250331.htm"
+    },
+    {
+      "title": "8-K",
+      "date": "2025-04-22",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025018851/tsla-20250422.htm"
+    },
+    {
+      "title": "8-K",
+      "date": "2025-04-02",
+      "cik": "0001318605",
+      "company": "Tesla, Inc.",
+      "type": "8-K",
+      "source": "SEC",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025016070/tsla-20250402.htm"
+    }
+  ],
+  "news": [
+    {
+      "title": "Tesla, Elon Musk sued by shareholders over Robotaxi claims - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNVjE2M0VVMDJZWFJoeElkYjRuX3c5LWVVWW4yX1ZabHh6WE9JTEJWUnlwaDFkdElKb1lWOENZMXUyb2M0RWVmZUhZUlhPRi1abU9tTzdfQUpZOVh5VW5tM3pDQ2pQRURzOWc2SFpIbHptSktFRzFRd0J1N0x6RkdQVFMzdXgtdWdmMmhxOHVoaVBvSDZNQ3NOTGdZU2d0dUJVdUVOWEtYUmpGa0thcjJJLXJIQ3V2aGE1OUR6MWItYkZXUWpTSUU0RlRLbTJadw?oc=5",
+      "published": "Tue, 05 Aug 2025",
+      "excerpt": "Tesla, Elon Musk sued by shareholders over Robotaxi claims - Reuters"
+    },
+    {
+      "title": "Wells Fargo Reiterates ‘Sell’ Rating on Tesla, Inc. (TSLA); Morgan Stanley Maintains ‘Buy’ - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPREJtaU43Xzh5aHBDTHdIQXVtUzU0TkhJb1JBRGRJSFlLT21rTmpSNGR1b2tfVVF1T3lvVUJmaTFaNU9YWDRnVmMtR2RSS0FFYjkzdFhwYVY1aDFfTFJnVU9lNUtsRGhqNzdRUlZhcGIwVlRiUHhmZEQwbmVyQlVNcE1Cc3doUWM?oc=5",
+      "published": "Sun, 17 Aug 2025",
+      "excerpt": "Wells Fargo Reiterates ‘Sell’ Rating on Tesla, Inc. (TSLA); Morgan Stanley Maintains ‘Buy’ - Yahoo Finance"
+    },
+    {
+      "title": "Ex-Tesla HR pros allege they were ‘penalized and pushed out’ for reporting bias - HR Dive",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONXBHMTRqNVdhVGl6Q2tvU3VldVNMYV9RM2h0YWFQbWV2M21xQ1B0U29EUkxMVHk3cDNFbEloT2ExbENRUWdkaHZKRjdLcWZVRmdfOTd0UlFSMmFRX2Q0QlNMZExkcUJGUC1JZDRMRTlqNEgtaG13QzNkUUtPWEFobFBzMzR0OVZP?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "Ex-Tesla HR pros allege they were ‘penalized and pushed out’ for reporting bias - HR Dive"
+    },
+    {
+      "title": "Tesla, Inc. Sued for Securities Law Violations - Contact Levi & Korsinsky Before October 3, 2025 to Discuss Your Rights - TSLA - PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQZTZDX2ZFaDZKTV9DQXFrMWM4OFVIdTVvaFJ3R3BidkpubldDb24taTRaaE5qMlFHVWxXajRnZDU2SU9jaVpjVnFEZUhhWkc0S09JdTFiUzdndHJMeWh3YTE0WWdRVjl1emJyUm40blpwdEpjQzdkcW0zUE1WMmItRDBNVkRqME0xekFXZm84ZUhCY2lhYmE4NVJ6dlVnNWJoOGRZYVdhaEdZcWRqenFxUkFSZjdkTk1vd3dkWHR2ZmZHak5XVUNWMWJUVlJuUW03U19KWF9aRnpkOHNaN0dQYmVtOFVId2h0bmRmYWxIM3gyOVhiVENSaGJWcVJ0OTBWcUh5dkFYWXg?oc=5",
+      "published": "Fri, 15 Aug 2025",
+      "excerpt": "Tesla, Inc. Sued for Securities Law Violations - Contact Levi & Korsinsky Before October 3, 2025 to Discuss Your Rights - TSLA - PR Newswire"
+    },
+    {
+      "title": "The Gross Law Firm Reminds Tesla, Inc. Investors of the Pending Class Action Lawsuit with a Lead Plaintiff Deadline of October 3, 2025 - TSLA - Morningstar",
+      "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxQNzlfSVRmeHNLNVE1NkpPM204NHdQMnVXZ3k5Y1BORm11eUV6YndiVzVTNkZiTHJicl9zVGR3bnhycFJTWDJmTTRpT3pIeHV1RnU1SGlqYkk5MGwyOTN6M1VfQkhmallwR29nYjdkQWVxTDJOZy1yb1NIa0dLei0wd29ZVGw3NEFLc3V6TTMwNkZ4UXo3UXBGT2F1QW53WWhmSDRLMlg2ZWp5QU8tcGhIc1VGam9SZ2VTZkxSYmJJbWVVOUtWVUoybmVZYm9zOFZHRUx2SnNlQzV6dDZNbWZNTTQwc202bC1WUVpJd3dpc0pLcXgzNkd3WE82a0xGNUJJOXZjRkhmWUlSeFpTdnYyOC00VGFEV29IUWVkTnlzOVNtTDQ?oc=5",
+      "published": "Thu, 14 Aug 2025",
+      "excerpt": "The Gross Law Firm Reminds Tesla, Inc. Investors of the Pending Class Action Lawsuit with a Lead Plaintiff Deadline of October 3, 2025 - TSLA - Morningstar"
+    },
+    {
+      "title": "Tesla's Stock Should Be 10 Times Cheaper (Rating Downgrade) (NASDAQ:TSLA) - Seeking Alpha",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQWHVSZmNHeF9JbVQ3RmR0TS16TFdEd3gzZXlzZkRGOWE5azZKVnM3TFJCenpzTG85TDVadk13c2x5cVl2TVJnd3haS0ZuWkF5cDFYeGxxYkM1RHdjMTFPdGdqR1JVc3h5QzI5Q2pfbm4xVzY5Um5oQlJIdEdfQ1ZsVFFDLUR6YnpLT0ZhLW9DQVpLLWplV0pWQU9vMlctUQ?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "Tesla's Stock Should Be 10 Times Cheaper (Rating Downgrade) (NASDAQ:TSLA) - Seeking Alpha"
+    },
+    {
+      "title": "Sit Investment Associates Inc. Buys 1,156 Shares of Tesla, Inc. (NASDAQ:TSLA) - MarketBeat",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQT1ByMDh1Ynl4MGgwQ2szQktvaEdNc1poaTIzNFA2LWR2ZUk2Tkk0N3QyckpaYjZnYTVOVWp3dWEzOUc0dnZBX2NfZ2doVlprR19kRHRnMDdMZEZyVTBxLWhONEFtXzl0dXJSUDRNXy1iUGtZblpOamFBOEpDTTkwcUdNbEJXT01Cc3doOVIzSDM2QXpqNm0taXNTMEdSLWJ6dzVLU3FDck9XOGQtRWxCVWgxcHRGdTYxcWdaUkprRVZCRFBKbThydlBkbw?oc=5",
+      "published": "Sat, 16 Aug 2025",
+      "excerpt": "Sit Investment Associates Inc. Buys 1,156 Shares of Tesla, Inc. (NASDAQ:TSLA) - MarketBeat"
+    },
+    {
+      "title": "Tesla Secures Texas Rideshare Permit for Robotaxi Operation - Transport Topics",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1XakpHWm5ZLVVueEVWXzlnX0tFVVo3SkxvNVYxZGp2a0FKc3ZiZ1NhTkc4VHNOVTBYZ0I0RmU5RGVnZFJMaXVTcVlpMi1yNEIzRXlBeGttVzV0NnZQT2VMRFROc1ZSb19vNWNV?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "Tesla Secures Texas Rideshare Permit for Robotaxi Operation - Transport Topics"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "serpapi": {},
+  "risk": {
+    "finbert": {
+      "neg": 0.20223270438145846,
+      "neu": 0.7073082122951746,
+      "pos": 0.09045909880660474
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 4,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 2,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 6,
+    "risk_score_0to1": 0.278
+  },
+  "iso_assessment": {
+    "standards": {
+      "9001": {
+        "readiness_score": 87,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "14001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      },
+      "45001": {
+        "readiness_score": 85,
+        "relevant_hits": 0,
+        "status": "Ready"
+      }
+    },
+    "overall_score": 85.7,
+    "overall_status": "Ready",
+    "_industry": "finance"
+  },
+  "iso_recommendation": {
+    "standard": "9001",
+    "readiness_score": 87,
+    "status": "Ready",
+    "rationale": "[finance] Quality/customer/process signals suggest ISO 9001 to drive consistency and customer satisfaction.",
+    "next_steps": [
+      "Standardize core process maps and procedures",
+      "Optimize complaints and CAPA system",
+      "Institutionalize PDCA through internal audits and management review"
+    ],
+    "secondary": {
+      "standard": "14001",
+      "readiness_score": 85,
+      "status": "Ready",
+      "rationale": "[finance] Secondary: ISO 14001 strengthens ESG/regulatory readiness in the mid-term.",
+      "next_steps": [
+        "Update environmental legal register",
+        "Calibrate/verify monitoring equipment",
+        "Quantify waste/energy/carbon data"
+      ]
+    }
+  },
+  "baseline_risk_analysis": {
+    "overall_score": 65.1,
+    "finbert_analysis": {
+      "neg": 0.20223270438145846,
+      "neu": 0.7073082122951746,
+      "pos": 0.09045909880660474
+    },
+    "keyword_analysis": {
+      "total_hits": 6,
+      "detail": {
+        "리콜|recall": 0,
+        "소송|lawsuit|litigation|class action": 4,
+        "해킹|유출|breach|hack|data leak|ransom": 0,
+        "제재|sanction|embargo": 0,
+        "회계\\s?부정|fraud|accounting scandal": 0,
+        "규제\\s?위반|non-?compliance|violation": 2,
+        "폐업|bankruptcy|insolvency|파산": 0,
+        "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+        "손실|loss|deficit|적자": 0,
+        "부채|debt|liability|채무": 0,
+        "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+        "인수합병|M&A|merger|acquisition|합병": 0,
+        "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+        "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+        "내부\\s?고발|whistleblower|내부신고": 0,
+        "파업|strike|노사갈등|labor\\s?dispute": 0,
+        "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+        "품질\\s?문제|quality\\s?issue|불량품": 0,
+        "안전\\s?사고|safety\\s?accident|사고": 0,
+        "환경\\s?문제|environmental|pollution|오염": 0,
+        "건강\\s?위험|health\\s?risk|건강피해": 0,
+        "서비스\\s?중단|service\\s?outage|장애": 0,
+        "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+        "반독점|antitrust|monopoly|독점규제": 0,
+        "세금\\s?문제|tax\\s?issue|세무조사": 0,
+        "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+        "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+        "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+        "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+        "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+        "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+        "경기\\s?침체|recession|경기하락": 0,
+        "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+        "네트워크\\s?보안|network\\s?security|보안위협": 0,
+        "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+        "지적재산권|intellectual\\s?property|특허분쟁": 0,
+        "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+        "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+        "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+        "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+        "보이콧|boycott|불매운동": 0,
+        "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+        "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+        "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+        "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+        "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+        "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+        "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+        "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+        "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+        "테러|terrorism|테러위협": 0,
+        "자연재해|natural\\s?disaster|천재지변": 0
+      }
+    },
+    "risk_level": "보통",
+    "assessment_method": "FinBERT + Keyword Analysis"
+  },
+  "chatgpt_enhanced_analysis": {
+    "contextual_analysis": {
+      "hidden_risks": [
+        "주주 소송으로 인한 법적 리스크 증가",
+        "인력 관리 및 문화 문제로 인한 인재 유출 위험",
+        "Robotaxi 관련 기술 및 규제 불확실성",
+        "주식 평가 하락에 따른 투자자 신뢰도 저하",
+        "경쟁사와의 기술 격차 및 시장 점유율 감소"
+      ],
+      "market_context": "전기차 및 자율주행 차량 시장은 빠르게 성장하고 있으며, Tesla는 이 시장의 선두주자로 자리잡고 있습니다. 그러나 경쟁이 치열해지고 있으며, 특히 전통적인 자동차 제조사들이 전기차 시장에 진입하면서 시장 점유율이 위협받고 있습니다. 또한, 자율주행 기술의 상용화에 대한 기대와 우려가 동시에 존재하고 있습니다.",
+      "competitive_analysis": "Tesla는 여전히 전기차 시장에서 강력한 브랜드와 기술력을 보유하고 있지만, Ford, GM, Volkswagen 등 전통적인 자동차 제조사들이 전기차 모델을 출시하며 경쟁이 심화되고 있습니다. 이들 경쟁사들은 자본력과 생산능력을 바탕으로 시장 점유율을 확대하고 있으며, Tesla의 기술적 우위가 점차 약화될 가능성이 있습니다.",
+      "regulatory_implications": "자율주행 및 전기차에 대한 규제 환경이 변화하고 있으며, 특히 Robotaxi와 같은 서비스에 대한 규제가 강화될 수 있습니다. 이러한 규제 변화는 Tesla의 사업 모델에 직접적인 영향을 미칠 수 있으며, 법적 소송이 진행 중인 상황에서 더욱 주의가 필요합니다.",
+      "investor_sentiment": "최근 주식 평가 하락과 주주 소송으로 인해 투자자들의 신뢰도가 저하되고 있습니다. Wells Fargo의 'Sell' 평가와 같은 부정적인 투자 의견이 나오고 있는 반면, Morgan Stanley는 여전히 'Buy'를 유지하고 있어 투자자들 사이에서 의견이 분분합니다. 이러한 불확실성은 Tesla의 주가에 부정적인 영향을 미칠 수 있습니다.",
+      "recommendations": [
+        "법적 리스크를 최소화하기 위해 투명한 커뮤니케이션 및 주주와의 관계 개선 필요",
+        "인력 관리 및 조직 문화 개선을 위한 프로그램 도입",
+        "Robotaxi 관련 기술 개발 및 규제 대응 전략 강화",
+        "경쟁사 분석을 통해 시장 점유율 방어 및 기술 혁신 지속 추진"
+      ]
+    },
+    "risk_scenarios": [
+      {
+        "scenario_id": "RISK-001",
+        "title": "Securities Law Violations Lawsuit",
+        "description": "Tesla faces a class action lawsuit from shareholders regarding alleged securities law violations, which could lead to significant financial penalties and reputational damage.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "매우 높음",
+        "triggers": [
+          "주주 소송",
+          "법적 규제 강화"
+        ],
+        "mitigation_strategies": [
+          "법률 자문 강화",
+          "투명한 정보 공개"
+        ],
+        "timeline": "2025년 10월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-002",
+        "title": "Increased Regulatory Scrutiny",
+        "description": "As Tesla expands its Robotaxi operations, it may face increased regulatory scrutiny and potential sanctions from government agencies, impacting its operational capabilities.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "Robotaxi 운영 확대",
+          "정부 규제 변화"
+        ],
+        "mitigation_strategies": [
+          "규제 준수 강화",
+          "정부와의 관계 개선"
+        ],
+        "timeline": "2025년 12월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-003",
+        "title": "Data Breach Incident",
+        "description": "A potential data breach could expose sensitive customer information, leading to legal repercussions and loss of customer trust.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "해킹 시도 증가",
+          "보안 취약점 발견"
+        ],
+        "mitigation_strategies": [
+          "사이버 보안 강화",
+          "고객 정보 보호 정책 강화"
+        ],
+        "timeline": "2025년 11월",
+        "confidence": "낮음"
+      },
+      {
+        "scenario_id": "RISK-004",
+        "title": "Product Recall Due to Quality Issues",
+        "description": "Tesla may face a significant recall of vehicles due to quality control issues, resulting in financial losses and damage to brand reputation.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "품질 문제 발생",
+          "소비자 불만 증가"
+        ],
+        "mitigation_strategies": [
+          "품질 관리 시스템 강화",
+          "고객 피드백 시스템 운영"
+        ],
+        "timeline": "2026년 01월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-005",
+        "title": "Shareholder Discontent and Lawsuits",
+        "description": "Shareholder dissatisfaction with the company's performance and management decisions could lead to more lawsuits and a decline in stock price.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "주가 하락",
+          "경영진 결정에 대한 불만"
+        ],
+        "mitigation_strategies": [
+          "주주와의 소통 강화",
+          "투자자 신뢰 회복 전략 수립"
+        ],
+        "timeline": "2025년 09월",
+        "confidence": "보통"
+      }
+    ],
+    "personalized_reports": {
+      "executive": "# Tesla, Inc. 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\nTesla, Inc.는 최근 주주들로부터 로보택시 관련 주장으로 소송을 당하고 있으며, 이로 인해 회사의 주가와 평판에 부정적인 영향을 미칠 수 있습니다. Wells Fargo는 Tesla의 주식에 대해 '매도' 등급을 유지하고 있는 반면, Morgan Stanley는 '매수' 등급을 유지하고 있어 시장의 의견이 엇갈리고 있습니다. 또한, 최근 인사 부서의 전 직원들이 차별 보고로 인해 불이익을 당했다고 주장하며, 내부 고발과 관련된 리스크가 증가하고 있습니다. 이러한 상황 속에서도 Tesla는 텍사스에서 로보택시 운영을 위한 허가를 확보하여 새로운 사업 기회를 창출하고 있습니다.\n\n## 2. 주요 리스크 요인\n- **법적 리스크**: 로보택시 관련 주장에서 비롯된 주주 소송 및 증권법 위반 소송이 진행 중이며, 이는 회사의 재무적 부담을 증가시킬 수 있습니다.\n- **평판 리스크**: 인사 부서 전 직원들의 차별 주장으로 인해 회사의 브랜드 이미지와 직원 신뢰도가 하락할 위험이 있습니다.\n- **시장 불확실성**: Wells Fargo의 부정적인 평가와 Morgan Stanley의 긍정적인 평가 간의 상반된 의견은 투자자들 사이에서 혼란을 초래할 수 있습니다.\n\n## 3. 시장 기회\n- **로보택시 사업**: 텍사스에서 로보택시 운영 허가를 확보함으로써 새로운 수익 모델을 창출할 수 있는 기회를 확보했습니다.\n- **전기차 시장 성장**: 전 세계적으로 전기차 수요가 증가하고 있으며, Tesla는 이 시장에서 선도적인 위치를 차지하고 있습니다.\n- **지속 가능한 에너지 솔루션**: Tesla의 지속 가능한 에너지 솔루션에 대한 수요가 증가하고 있으며, 이는 회사의 장기적 성장 가능성을 높이고 있습니다.\n\n## 4. 권장사항\n- **법적 대응 강화**: 현재 진행 중인 소송에 대한 법적 대응을 강화하고, 주주와의 소통을 통해 신뢰를 회복할 수 있는 전략을 마련해야 합니다.\n- **내부 문화 개선**: 인사 관련 문제를 해결하기 위해 내부 고발 시스템을 강화하고, 직원들의 목소리를 반영할 수 있는 문화 조성을 위한 프로그램을 도입해야 합니다.\n- **투자자 커뮤니케이션**: 투자자들에게 회사의 비전과 전략을 명확히 전달하고, 시장의 우려를 해소하기 위한 정기적인 업데이트를 제공해야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 법적 리스크가 지속될 것으로 보이며, 주가 변동성이 클 것으로 예상됩니다. 내부 문제 해결을 위한 노력이 필요합니다.\n- **중기(2-3년)**: 로보택시 사업이 본격화되면 새로운 수익원이 될 수 있으며, 전기차 시장에서의 점유율 확대가 기대됩니다.\n- **장기(3-5년)**: 지속 가능한 에너지 솔루션과 전기차 시장의 성장에 힘입어 Tesla는 글로벌 리더로 자리매김할 가능성이 높습니다. 그러나 법적 문제와 내부 문화 개선이 선결 과제로 남아 있습니다.\n\n이 보고서는 Tesla, Inc.의 현재 상황과 향후 전략을 이해하는 데 도움이 될 것입니다. 경영진은 이러한 정보를 바탕으로 신속하고 효과적인 의사결정을 내릴 수 있을 것입니다.",
+      "investor": "# Tesla, Inc. 투자자 맞춤형 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\nTesla, Inc.는 최근 주주들로부터 로보택시 관련 주장으로 소송을 당했으며, Wells Fargo는 ‘매도’ 등급을 유지하는 반면, Morgan Stanley는 ‘매수’ 등급을 유지하고 있습니다. 이러한 상반된 평가는 Tesla의 주가에 대한 불확실성을 반영하고 있습니다. 또한, 최근 여러 법적 분쟁과 관련된 소식이 잇따르고 있으며, 이는 투자자에게 중요한 고려사항이 될 수 있습니다. 그러나 Texas에서 로보택시 운영을 위한 승인을 확보한 것은 긍정적인 신호로 해석될 수 있습니다.\n\n## 2. 주요 리스크 요인\n- **법적 분쟁**: Tesla는 현재 주주들로부터의 소송 및 증권법 위반 관련 소송에 직면해 있습니다. 이는 기업의 평판과 재무적 안정성에 부정적인 영향을 미칠 수 있습니다.\n- **신뢰도 저하**: 로보택시와 관련된 주장으로 인한 소송은 소비자와 투자자들의 신뢰를 저하시킬 수 있습니다.\n- **시장 반응**: Wells Fargo와 Morgan Stanley의 상반된 평가가 시장에서의 주가 변동성을 증가시킬 수 있습니다.\n\n## 3. 시장 기회\n- **로보택시 운영**: Texas에서의 로보택시 운영 허가는 Tesla의 새로운 수익원으로 작용할 수 있으며, 이는 장기적으로 기업의 성장 가능성을 높일 수 있습니다.\n- **전기차 시장 성장**: 전 세계적으로 전기차 수요가 증가하고 있으며, Tesla는 이 시장에서 선두주자로 자리 잡고 있습니다. 지속적인 기술 혁신과 브랜드 충성도는 긍정적인 요소입니다.\n- **투자자 관심**: 최근 Sit Investment Associates Inc.가 Tesla 주식을 추가 매입한 것은 여전히 투자자들 사이에서의 관심이 높음을 나타냅니다.\n\n## 4. 권장사항\n- **법적 대응 강화**: 현재 진행 중인 소송에 대한 법적 대응을 강화하고, 투자자들에게 투명한 정보를 제공하여 신뢰를 회복할 필요가 있습니다.\n- **소통 전략 개선**: 투자자와의 소통을 강화하고, 기업의 비전과 목표를 명확히 전달하여 긍정적인 이미지를 구축해야 합니다.\n- **기술 개발 지속**: 로보택시와 같은 혁신적인 기술 개발에 대한 투자를 지속하여 시장에서의 경쟁력을 유지해야 합니다.\n\n## 5. 향후 전망\n- **단기 전망**: 법적 분쟁이 지속되면서 주가의 변동성이 클 것으로 예상됩니다. 투자자들은 신중한 접근이 필요합니다.\n- **중기 전망**: 로보택시 운영이 본격화되면 새로운 수익원이 확보될 수 있으며, 이는 주가에 긍정적인 영향을 미칠 수 있습니다.\n- **장기 전망**: 전기차 시장의 지속적인 성장과 Tesla의 기술 혁신이 결합된다면, 기업의 가치가 크게 상승할 가능성이 있습니다. 그러나 법적 문제 해결 여부가 중요한 변수로 작용할 것입니다.\n\n이 보고서는 Tesla, Inc.에 대한 투자 결정을 내리는 데 있어 중요한 참고자료가 될 것입니다. 투자자들은 현재의 리스크와 기회를 종합적으로 고려하여 신중한 결정을 내리시기 바랍니다."
+    },
+    "analysis_method": "ChatGPT GPT-4o-mini + 기존 분석 시스템",
+    "ai_enhanced": true
+  },
+  "previous_scenario_titles": [],
+  "previous_scenario_scores": {},
+  "current_scenario_titles": [
+    "Securities Law Violations Lawsuit",
+    "Increased Regulatory Scrutiny",
+    "Data Breach Incident",
+    "Product Recall Due to Quality Issues",
+    "Shareholder Discontent and Lawsuits"
+  ],
+  "current_scenario_scores": {
+    "Securities Law Violations Lawsuit": 0,
+    "Increased Regulatory Scrutiny": 0,
+    "Data Breach Incident": 0,
+    "Product Recall Due to Quality Issues": 0,
+    "Shareholder Discontent and Lawsuits": 0
+  },
+  "_base_id": "Tesla_Inc._tesla.com"
+}

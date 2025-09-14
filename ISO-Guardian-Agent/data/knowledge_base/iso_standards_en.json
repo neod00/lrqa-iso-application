@@ -1,0 +1,116 @@
+{
+  "9001": {
+    "name": "Quality Management System",
+    "full_name": "ISO 9001:2015 Quality Management System",
+    "description": "Quality management system for customer satisfaction",
+    "version": "2015",
+    "requirements": [
+      "Customer focus",
+      "Continuous improvement",
+      "Process approach",
+      "Leadership",
+      "Engagement of people",
+      "Relationship management",
+      "Evidence-based decision making",
+      "Risk-based thinking"
+    ],
+    "benefits": [
+      "Quality improvement",
+      "Increased customer satisfaction",
+      "Cost reduction",
+      "Enhanced market competitiveness",
+      "Increased employee engagement",
+      "Improved process efficiency",
+      "Enhanced reliability",
+      "Sustainable growth"
+    ],
+    "keywords": [
+      "quality", "customer satisfaction", "continuous improvement", "process", "quality management",
+      "품질", "고객만족", "지속적개선", "프로세스", "품질관리"
+    ],
+    "target_industries": [
+      "Manufacturing", "Services", "Construction", "IT", "Healthcare", "Finance", "Logistics"
+    ],
+    "implementation_time": "6-12 months",
+    "audit_duration": "2-5 days (depending on company size)",
+    "certification_validity": "3 years",
+    "surveillance_audit": "Annual",
+    "recertification": "Every 3 years"
+  },
+  "14001": {
+    "name": "Environmental Management System",
+    "full_name": "ISO 14001:2015 Environmental Management System",
+    "description": "Management system for environmental protection",
+    "version": "2015",
+    "requirements": [
+      "Environmental policy",
+      "Legal compliance",
+      "Sustainability",
+      "Environmental objectives setting",
+      "Environmental performance measurement",
+      "Continuous improvement",
+      "Life cycle perspective",
+      "Environmental risk management"
+    ],
+    "benefits": [
+      "Environmental protection",
+      "Legal compliance",
+      "Image enhancement",
+      "Cost reduction",
+      "Environmental risk management",
+      "Sustainable management",
+      "Improved energy efficiency",
+      "Waste reduction"
+    ],
+    "keywords": [
+      "environment", "sustainability", "legal compliance", "environmental policy", "environmental management",
+      "환경", "지속가능성", "법규준수", "환경정책", "환경관리"
+    ],
+    "target_industries": [
+      "Manufacturing", "Chemical", "Energy", "Construction", "Logistics", "Food", "Textile"
+    ],
+    "implementation_time": "6-12 months",
+    "audit_duration": "2-5 days (depending on company size)",
+    "certification_validity": "3 years",
+    "surveillance_audit": "Annual",
+    "recertification": "Every 3 years"
+  },
+  "45001": {
+    "name": "Occupational Health and Safety Management System",
+    "full_name": "ISO 45001:2018 Occupational Health and Safety Management System",
+    "description": "System for workplace safety and employee health",
+    "version": "2018",
+    "requirements": [
+      "Safety policy",
+      "Risk management",
+      "Employee participation",
+      "Safety training",
+      "Accident prevention",
+      "Continuous improvement",
+      "Legal compliance",
+      "Emergency response"
+    ],
+    "benefits": [
+      "Accident reduction",
+      "Employee safety",
+      "Productivity improvement",
+      "Legal compliance",
+      "Insurance cost reduction",
+      "Enhanced corporate image",
+      "Increased employee satisfaction",
+      "Risk management"
+    ],
+    "keywords": [
+      "safety", "health", "risk management", "employee safety", "accident prevention",
+      "안전", "보건", "위험관리", "직원안전", "사고예방"
+    ],
+    "target_industries": [
+      "Manufacturing", "Construction", "Chemical", "Mining", "Logistics", "Energy", "Metal"
+    ],
+    "implementation_time": "6-12 months",
+    "audit_duration": "2-5 days (depending on company size)",
+    "certification_validity": "3 years",
+    "surveillance_audit": "Annual",
+    "recertification": "Every 3 years"
+  }
+}

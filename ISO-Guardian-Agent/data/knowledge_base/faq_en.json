@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What is ISO certification?",
+    "answer": "ISO certification is a system that recognizes that a company's management system is properly established according to standards established by the International Organization for Standardization.",
+    "category": "basic",
+    "keywords": ["iso", "certification", "what", "is"]
+  },
+  {
+    "question": "What is the difference between ISO 9001 and 14001?",
+    "answer": "ISO 9001 is a quality management system, and ISO 14001 is an environmental management system. 9001 focuses on customer satisfaction, while 14001 focuses on environmental protection.",
+    "category": "comparison",
+    "keywords": ["9001", "14001", "difference", "quality", "environment"]
+  },
+  {
+    "question": "How much does certification cost?",
+    "answer": "Certification costs vary depending on company size, complexity, and selected standards. Accurate quotes are provided after completing the application form.",
+    "category": "cost",
+    "keywords": ["cost", "price", "how much", "certification"]
+  },
+  {
+    "question": "How long does certification take?",
+    "answer": "The certification process typically takes 3-6 months from application to certificate issuance, depending on company size and complexity.",
+    "category": "timeline",
+    "keywords": ["how long", "time", "duration", "certification"]
+  },
+  {
+    "question": "What documents are required for certification?",
+    "answer": "Required documents include quality manual, procedures, work instructions, records, and evidence of system implementation. Specific requirements vary by standard.",
+    "category": "requirements",
+    "keywords": ["documents", "required", "what", "certification"]
+  },
+  {
+    "question": "Is training available for ISO standards?",
+    "answer": "Yes, LRQA offers various training programs including public training, online courses, and custom training tailored to your company's needs.",
+    "category": "education",
+    "keywords": ["training", "education", "available", "iso"]
+  },
+  {
+    "question": "What happens after certification?",
+    "answer": "After certification, you'll receive a certificate valid for 3 years, with annual surveillance audits to maintain certification status.",
+    "category": "post_certification",
+    "keywords": ["after", "certification", "what happens", "surveillance"]
+  },
+  {
+    "question": "Can multiple standards be integrated?",
+    "answer": "Yes, ISO 9001, 14001, and 45001 can be integrated into a single management system, which can reduce costs and improve efficiency.",
+    "category": "integration",
+    "keywords": ["integrated", "multiple", "standards", "9001", "14001", "45001"]
+  }
+]

@@ -1,0 +1,164 @@
+{
+  "certification_process": {
+    "overview": "LRQA의 ISO 인증 프로세스는 4단계로 구성되어 있으며, 일반적으로 3-6개월이 소요됩니다.",
+    "stages": [
+      {
+        "id": 1,
+        "name": "신청서 제출",
+        "description": "ISO-Guardian을 통한 신청서 작성 및 제출",
+        "duration": "1-2주",
+        "requirements": [
+          "회사 기본 정보",
+          "ISO 표준 선택",
+          "담당자 연락처",
+          "사업장 정보",
+          "직원 수 현황"
+        ],
+        "deliverables": [
+          "완성된 신청서",
+          "필요 서류 제출",
+          "견적서 확인"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "1단계 심사",
+        "description": "문서 검토 및 사전 심사",
+        "duration": "1-2주",
+        "requirements": [
+          "품질매뉴얼",
+          "절차서",
+          "기록서류",
+          "내부심사 결과",
+          "경영검토 결과"
+        ],
+        "deliverables": [
+          "1단계 심사 보고서",
+          "개선사항 목록",
+          "2단계 심사 일정"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "2단계 심사",
+        "description": "현장 심사 및 인증 심사",
+        "duration": "2-5일",
+        "requirements": [
+          "현장 방문 허가",
+          "직원 인터뷰 준비",
+          "시스템 운영 증거",
+          "개선사항 조치 결과"
+        ],
+        "deliverables": [
+          "2단계 심사 보고서",
+          "인증 권고사항",
+          "개선사항 목록"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "인증서 발급",
+        "description": "심사 통과 시 인증서 발급",
+        "duration": "1-2주",
+        "requirements": [
+          "심사 결과 검토",
+          "개선사항 조치 완료",
+          "인증서 제작",
+          "발급 및 등록"
+        ],
+        "deliverables": [
+          "ISO 인증서",
+          "인증서 등록",
+          "인증 마크 사용 가이드"
+        ]
+      }
+    ],
+    "timeline": "일반적으로 3-6개월 소요",
+    "requirements": [
+      "필요한 문서 준비",
+      "시스템 구축 및 운영",
+      "직원 교육 실시",
+      "내부심사 수행",
+      "경영진의 지속적 지원"
+    ],
+    "cost_factors": [
+      "기업 규모 (직원 수)",
+      "사업장 수",
+      "선택한 ISO 표준",
+      "인증 범위",
+      "통합 심사 여부",
+      "원격 심사 비율"
+    ],
+    "audit_criteria": {
+      "stage1": [
+        "문서의 완성도",
+        "시스템 구축 상태",
+        "준비도 평가",
+        "2단계 심사 가능성 판단"
+      ],
+      "stage2": [
+        "시스템 운영 효과성",
+        "법규 준수 여부",
+        "지속적 개선 활동",
+        "인증 요구사항 충족"
+      ]
+    },
+    "surveillance_audit": {
+      "frequency": "연 1회",
+      "duration": "1-3일",
+      "purpose": "시스템 유지 및 개선 확인",
+      "scope": "전체 시스템 또는 일부 영역"
+    },
+    "recertification": {
+      "frequency": "3년마다",
+      "duration": "2-5일",
+      "purpose": "인증 갱신",
+      "scope": "전체 시스템 재심사"
+    }
+  },
+  "audit_team": {
+    "lead_auditor": {
+      "qualification": "IRCA 인증 심사원",
+      "experience": "5년 이상",
+      "role": "심사 계획 수립 및 진행"
+    },
+    "technical_expert": {
+      "qualification": "해당 분야 전문가",
+      "experience": "3년 이상",
+      "role": "기술적 검토 및 평가"
+    },
+    "observer": {
+      "qualification": "심사원 교육 이수",
+      "experience": "1년 이상",
+      "role": "심사 과정 관찰 및 학습"
+    }
+  },
+  "preparation_guide": {
+    "documents_required": [
+      "품질매뉴얼",
+      "절차서",
+      "작업지침서",
+      "기록서류",
+      "내부심사 보고서",
+      "경영검토 보고서",
+      "교육 기록",
+      "불만처리 기록"
+    ],
+    "system_requirements": [
+      "정책 및 목표 설정",
+      "역할 및 책임 명확화",
+      "프로세스 정의",
+      "측정 및 모니터링",
+      "개선 활동",
+      "문서 관리",
+      "기록 관리"
+    ],
+    "training_requirements": [
+      "ISO 표준 이해 교육",
+      "내부심사원 교육",
+      "직무별 교육",
+      "의식 교육",
+      "응급상황 대응 교육"
+    ]
+  }
+}

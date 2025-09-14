@@ -1,0 +1,350 @@
+{
+  "timestamp": "2025-08-13T12:14:32Z",
+  "input": {
+    "company_name": "엔비디아",
+    "url": "https://www.nvidia.com",
+    "country_hint": "US",
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "엔비디아",
+    "domain": "nvidia.com"
+  },
+  "filings": [],
+  "news": [
+    {
+      "title": "균열 생기는 엔비디아 'AI GPU' 아성…\"AMD 제품 성능, 밀리지 않아\" - 중앙일보",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9SZ0pobDJzT3BucHdsaTFnMVJucVVYbDcxdEp1NEhNTTlxOWtSdklCZ2hYcEFmcnB5TG1DMXVQeG13OTFReFJmQWd6VjhYUm9LbTBINmJR?oc=5",
+      "published": "Sun, 10 Aug 2025",
+      "excerpt": "균열 생기는 엔비디아 'AI GPU' 아성…\"AMD 제품 성능, 밀리지 않아\" - 중앙일보"
+    },
+    {
+      "title": "“엔비디아, 中 반도체 판매 수익 15% 트럼프 정부에 지급 이례적 합의” - 조선일보",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSUE4X0tYdDN2UmkwWlg3MzFJTTNUV0FMWGZzR0RlOWNZQU1pdTBhSmZkRElMcDJsR0dtbExYMF9KbjVNckdmNEFSV0RHVGt1dHRrcUVHSV9JWHhDLVo4Zm94RElBVVBzamEtVjBXUGd3ek1Wb3FuQldtME1UNW9hQW1JMWPSAZgBQVVfeXFMTUlCejVIUlNGaC1IaEp2VEZJYW9STkhfcEtuOXFHY0tacWJWUE9Td1plQTNhcmptenBJanRTVVJYRUhiRUQwc0g0My1RYmhVTW9PamZaQnhyWUQtQ2hUbWR1WkJYOHV4MV9GSDdXZFVUbzd6U1NxOFA0U2RvWnNmMG1GcE9oQ3Y1c2h2VmxoTzQ3N2xVeVhwemM?oc=5",
+      "published": "Sun, 10 Aug 2025",
+      "excerpt": "“엔비디아, 中 반도체 판매 수익 15% 트럼프 정부에 지급 이례적 합의” - 조선일보"
+    },
+    {
+      "title": "엔비디아, 처음 보는 물건도 똑똑하게 ‘집을 수 있는' 로봇 손 기술 개발 - 로봇신문",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xeGZldnk3ZmI4OEFuWloyZFRyWFQ2TEdmZVRvbmdqb1JQUzB1Q3pkTTg2QWlOZGlHT3M3MzlETWNvSGFsSFhNZFpLMXU5SXBpZkhWZGZvZDBJYTdxSXFteVhKY1RIR1hzQUNsZg?oc=5",
+      "published": "Sun, 03 Aug 2025",
+      "excerpt": "엔비디아, 처음 보는 물건도 똑똑하게 ‘집을 수 있는' 로봇 손 기술 개발 - 로봇신문"
+    },
+    {
+      "title": "“200달러 시대 열리나”…실적발표 앞두고 질주한 엔비디아 - 매일경제",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1VYVZTcHIwRGlWWkduUE9pc3N5WDFDSzRldWp5YnhWT0w1b3BmU1UzMlN3MUgwbHViZHdjeUQ3ZkNVU0FoNGdCdGJQYi1NeWtDVkE?oc=5",
+      "published": "Sat, 09 Aug 2025",
+      "excerpt": "“200달러 시대 열리나”…실적발표 앞두고 질주한 엔비디아 - 매일경제"
+    },
+    {
+      "title": "엔비디아·AMD, 중국 매출 15% 미국 정부에 내기로…수출 허가 받는 조건 - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5qLThrZWw0ZFJHaE9MWVluVTJPeW4yTG00Sk93NlNXTFRqOWJKeEF5WVFoVHNPeWVPeUpUWEZfdU5QNHpIUEdZdkljcGNDYlQwdlF2M3NkMExBRmM00gFiQVVfeXFMUFhWaURWUmZCRFp0eFdwZmtjYUVwdWJkRXluTjFseGVoUmwweVBKWk1Sd2ZsSC1lRGk5WEdDVjA3VDN6M2V2X2o4QXlMYl9Db0QtY0RMNHBsZHY3U1VZaVd3S2c?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "엔비디아·AMD, 중국 매출 15% 미국 정부에 내기로…수출 허가 받는 조건 - BBC"
+    },
+    {
+      "title": "삼성전자, 엔비디아에 HBM3E 12단 메모리 3만~5만 개 공급 확정 - 글로벌이코노믹",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRFU4X0VDSnR6Y2lYVlVxN3RRSDVZQUhuODdsMHVuVlBEOFBaREpxQ25MOWhublVyckxvNzAtYS0wNHRITGxVNm9yUDNyMkxfYWhZTHBEVVlKc2VpS3IwU1pHaXlrUTl2RV9LNTlCV1I4VmR1MWN0cUVMQnBTR3d5Q1dvYW5UaTRk?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "삼성전자, 엔비디아에 HBM3E 12단 메모리 3만~5만 개 공급 확정 - 글로벌이코노믹"
+    },
+    {
+      "title": "엔비디아, RTX PRO 블랙웰 시리즈 공개 'AI·3D 속도 두 배' - 헬로티",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1zMXdNb2lEYzhJTFZ4X21acTIyVC0yMENxbExSN2gwXzAwb1NBZUpla2RQTmlWaXQ5ZkhDeVIzbmh0aTF1UjA0UmRFTEg5blByalVJemFtTXp5SUVnYjFJ?oc=5",
+      "published": "Wed, 13 Aug 2025",
+      "excerpt": "엔비디아, RTX PRO 블랙웰 시리즈 공개 'AI·3D 속도 두 배' - 헬로티"
+    },
+    {
+      "title": "삼성 '전통효자' 메모리도 반등 채비…엔비디아 납품이 신호탄될 듯 - 노컷뉴스",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9qQTI5dUFxZ1FCdTVDNG9fcHY4bmR1QjQxSXo2N2xub3I3TWExMnZiNG5KOHVtMUwwYkJweFBhWFcwVWRtQXNtMTlCS3k4dVRLMXc?oc=5",
+      "published": "Sat, 09 Aug 2025",
+      "excerpt": "삼성 '전통효자' 메모리도 반등 채비…엔비디아 납품이 신호탄될 듯 - 노컷뉴스"
+    }
+  ],
+  "social_media": [
+    {
+      "date": "2025-07-25 07:24",
+      "user": "Money-daily",
+      "content": "미국 기술주 top3 ✅ QQQ – 나스닥 100 대표 ETF\n: 애플, 마소, 엔비디아 등 성장주 중심\n→ 기술주 투자 입문자에게 적합\n\n✅ VGT – 순수 IT 섹터 ETF\n: 하드웨어·소프트웨어 기업 위주\n→ 테크에만 집중하고 싶다면 이거\n\n✅ XLK – 안정적 기술주 위주\n: 마소·애플 비중 큼, 변동성 적음\n→ 장기 보유·보수적 투자자에게 추천",
+      "url": "https://reddit.com/r/koreamoney/comments/1m8i7u7/미국_기술주_top3/",
+      "source": "Reddit",
+      "subreddit": "koreamoney",
+      "score": 1
+    },
+    {
+      "date": "2025-07-17 12:38",
+      "user": "Money-daily",
+      "content": "반도체에 투자한다면? CPU, GPU, 메모리, AI칩…\n세상 모든 기기에 반도체가 들어간다.\n👉 SMH는 반도체 핵심기업 ETF\n✔️ TSMC, 엔비디아, 브로드컴, 인텔, AMD 등\n✔️ \"AI도 결국 반도체 위에서 돈 번다\"\n\n“IT를 담고 싶다면 반도체부터 시작하라.”\nSMH는 미래 인프라 투자 그 자체다.",
+      "url": "https://reddit.com/r/koreamoney/comments/1m1x9g5/반도체에_투자한다면/",
+      "source": "Reddit",
+      "subreddit": "koreamoney",
+      "score": 1
+    },
+    {
+      "date": "2025-07-13 12:22",
+      "user": "Money-daily",
+      "content": "기술주 싸게 사는법 QQQ? VGT? 다 좋은데 수수료가 걸린다면?\n👉 FTEC은 가성비 갑\n✔️ 수수료 단 0.08%\n✔️ 구성은 VGT랑 거의 흡사\n✔️ 애플, 엔비디아, 마이크로소프트 다 있음\n\n“조용하지만 알찬 기술주 ETF, FTEC”\n모르는 사람만 못 담는 ETF다.",
+      "url": "https://reddit.com/r/koreamoney/comments/1lyiryd/기술주_싸게_사는법/",
+      "source": "Reddit",
+      "subreddit": "koreamoney",
+      "score": 1
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "risk": {
+    "finbert": {
+      "neg": 0.02467767521739006,
+      "neu": 0.8897372863509438,
+      "pos": 0.08558504351160744
+    },
+    "neg": {
+      "neg": 0.02467767521739006,
+      "neu": 0.8897372863509438,
+      "pos": 0.08558504351160744
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.095
+  },
+  "iso31000_risk_analysis": {
+    "iso31000_assessment": {
+      "risk_assessment": [
+        {
+          "risk_id": "sentiment_low_positive",
+          "name": "낮은 긍정적 감성",
+          "category": "평판 리스크",
+          "probability": 3,
+          "impact": 3,
+          "risk_score": 9,
+          "risk_level": "보통",
+          "description": "FinBERT 긍정적 감성 점수: 0.086",
+          "detection_date": "2025-08-13T21:14:32.142551",
+          "trend_analysis": {
+            "trend": "신규 감지",
+            "change_rate": 0.0,
+            "stability": "불안정"
+          },
+          "correlation_analysis": {
+            "correlated_risks": [],
+            "total_correlations": 0
+          },
+          "vulnerability_assessment": {
+            "vulnerability_score": 3.0,
+            "vulnerability_level": "보통",
+            "exposure_time": "간헐적"
+          },
+          "acceptability": "조건부 수용",
+          "priority": 10,
+          "urgency": "정기 모니터링",
+          "business_impact": {
+            "financial_impact": "일부 영향",
+            "operational_impact": "일부 영향",
+            "reputational_impact": "일부 영향",
+            "regulatory_impact": "일부 영향"
+          }
+        }
+      ],
+      "treatment_plans": [
+        {
+          "risk_id": "sentiment_low_positive",
+          "risk_name": "낮은 긍정적 감성",
+          "current_level": "보통",
+          "target_level": "낮음",
+          "strategies": [
+            "완화(Mitigate)",
+            "전이(Transfer)",
+            "수용(Accept)"
+          ],
+          "action_items": [
+            {
+              "action": "리스크 완화 조치",
+              "description": "낮은 긍정적 감성 완화를 위한 구체적 조치",
+              "responsible": "리스크 관리팀",
+              "deadline": "1개월"
+            },
+            {
+              "action": "리스크 전이",
+              "description": "보험 가입 또는 계약 조건 변경",
+              "responsible": "법무팀",
+              "deadline": "2주"
+            },
+            {
+              "action": "리스크 수용",
+              "description": "정기 모니터링 및 대응 계획 수립",
+              "responsible": "리스크 관리팀",
+              "deadline": "지속적"
+            }
+          ],
+          "timeline": "1개월 - 3개월",
+          "resources_needed": "보통 규모 (담당자 + 지원)",
+          "success_metrics": [
+            "낮은 긍정적 감성 발생 빈도 감소",
+            "낮은 긍정적 감성 영향도 감소",
+            "리스크 점수 9에서 목표 수준으로 감소",
+            "리스크 대응 조치 완료율 100%"
+          ],
+          "monitoring_plan": {
+            "frequency": "월간",
+            "indicators": [
+              "낮은 긍정적 감성 발생 여부",
+              "리스크 점수 변화"
+            ],
+            "reporting": "리스크 관리 보고서",
+            "escalation": "리스크 점수 증가 시 즉시 보고"
+          }
+        }
+      ],
+      "overall_risk_score": 9.0,
+      "overall_risk_level": "매우 높음",
+      "risk_trends": {
+        "trend_direction": "안정",
+        "trend_strength": "보통",
+        "key_drivers": [
+          "뉴스 감성",
+          "키워드 히트",
+          "소셜 미디어 반응"
+        ],
+        "volatility": "낮음",
+        "forecast": "향후 3개월 안정적 전망"
+      },
+      "compliance_status": {
+        "iso31000_compliance": "준수",
+        "risk_governance": "적절",
+        "risk_culture": "양호",
+        "risk_communication": "효과적",
+        "continuous_improvement": "진행 중"
+      },
+      "assessment_date": "2025-08-13T21:14:32.142598",
+      "iso31000_compliance": "준수",
+      "risk_categories_summary": {
+        "평판 리스크": {
+          "count": 1,
+          "total_score": 9,
+          "high_risks": 0,
+          "average_score": 9.0
+        }
+      }
+    },
+    "finbert_analysis": {
+      "neg": 0.02467767521739006,
+      "neu": 0.8897372863509438,
+      "pos": 0.08558504351160744
+    },
+    "keyword_analysis": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "integrated_risk_score": 9.0,
+    "risk_level": "매우 높음",
+    "assessment_method": "ISO 31000 + FinBERT + Keyword Analysis",
+    "compliance_status": "ISO 31000:2018 준수"
+  },
+  "_base_id": "엔비디아_nvidia.com"
+}

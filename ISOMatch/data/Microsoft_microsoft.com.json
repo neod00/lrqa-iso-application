@@ -1,0 +1,715 @@
+{
+  "timestamp": "2025-08-13T14:26:07Z",
+  "input": {
+    "company_name": "Microsoft",
+    "url": "https://www.microsoft.com",
+    "country_hint": null,
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "Microsoft",
+    "domain": "microsoft.com"
+  },
+  "filings": [],
+  "news": [
+    {
+      "title": "마이크로소프트, 오픈AI의 GPT-5 소비자, 개발자 및 기업용 제품에 통합 - Microsoft Source",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9zbHE0MXN5dngtRjZPT3kybkVlbVFzQWZES1F0cmh5TzhXTGE4NFpLWnNIZTByX0laWHRkRFhYcjRaem5IUlBhdWwzOHBjQWZ2TTVGSjJZNU1TQXhMOEkySkZxcFprUUM4dUk0NFp6VHE5dW8tR3lwaQ?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "마이크로소프트, 오픈AI의 GPT-5 소비자, 개발자 및 기업용 제품에 통합 - Microsoft Source"
+    },
+    {
+      "title": "MS, 코파일럿에 GPT-5 적용···윈도우 앱은 아직 GPT-4 활용 - cio.com",
+      "url": "https://news.google.com/rss/articles/CBMixAJBVV95cUxOMEdSaGZURTEwS21SRUp5UzBINFZqSlBKMXV2aTdjVlFDN3JFbTk1ckV3VTBwbUFab3MxZzBvcllCd09MenRXTWN2dHBsTnZ0SE5DMjlob1cwOVVpaW9fd3FIOU1zdEY4WHVyZ0Fpek9TNkM5WEJleDFEVS1FVTMxcG56Q3VOZk5GMmNYTHRUbEJNU3VTa1J6QU9OY1BGWGF4SjExZ1VObW5pWjlOV3dtVlRqVHhkSldjUmVHR3RRMWlZME9ScGpwb2gtR0RjbDhlNlhwTnZjZmRaNG1OMGZOVzEyXzJtS1IyX29lT2xoMWE5UHU2SHZmWktuSEpka1lPZGFIUEFWeVpOUDVUeXNRMWlkNGFQbFVFQVRxTHZZVndobGI3TTZKU0VJdHNTd213U1hzMlhSVENoWlg4NWN3VTFiSWw?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "MS, 코파일럿에 GPT-5 적용···윈도우 앱은 아직 GPT-4 활용 - cio.com"
+    },
+    {
+      "title": "Microsoft 고객, 10월에 Windows 10 PC가 폐기됨에 따라 소송 제기 - Cryptopolitan",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNQnJMcnozaGI3SlY4TzFOUUpkcDBUYnBOQUM3cFVxNGltRWsxMTFsOVN6X2RjSkFYX2syOWlqTXowc3o0eE5TY2RmT0Y1ZFRnc09hRUFYMEQwVEhoRFplOFNEQ25ienRoOUNaQVA2RjBoU2Z0RWpKV2hZU0I4MF9XNGxn?oc=5",
+      "published": "Sun, 10 Aug 2025",
+      "excerpt": "Microsoft 고객, 10월에 Windows 10 PC가 폐기됨에 따라 소송 제기 - Cryptopolitan"
+    },
+    {
+      "title": "마이크로소프트, 2분기 매출 18% 증가...시간 외7% 급등 - 조선일보",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPU3dlOEQxWGp2SkYwa090YXpPVTNQTWpUVXByQlgyWjR4VnhsV3ZnWTA4aWVnWUticTBkQjFpb1NObzhzYmJUUjlIaGRGRkdURFltSnI2Smw1LXUtbFVwbTljbHRiWmZnZWswM2VBUTNDZjFEdWpXX0kzSzFfUlhNRHpNY9IBlwFBVV95cUxPZU5DSWxjRmlGYTlKejlxazY3SFJTT0ZWRlZWaWZPSzVJVG9KdGZzelhaMjdPbjc0VFZiRW5qRjJyTExwNFJ3QUlvQW92elRBRU5BQ3lxc2ktdEdrR1I4ZWRYRFgyT3lVNlozLTJqTFhjaTJYbENSb0syY2NZS0RmTDVZa2hGNTBTa1NvVk1lN1RKY1R6VWZv?oc=5",
+      "published": "Thu, 31 Jul 2025",
+      "excerpt": "마이크로소프트, 2분기 매출 18% 증가...시간 외7% 급등 - 조선일보"
+    },
+    {
+      "title": "서울 AI 허브, 마이크로소프트와 ‘시민 체감형 AI 교육’ 강화 - 헬로티",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBCU0p0d0dkZ1J2dzVHcVV4bDFGdnllLWZvbWRDQl9fQllvVnlCWC11YnZsbmhIU0xVM20zTkI1eEl5enFQaUlfMnZxWF9nZ19vb0poQnNKc0FJUWpac0RR?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "서울 AI 허브, 마이크로소프트와 ‘시민 체감형 AI 교육’ 강화 - 헬로티"
+    },
+    {
+      "title": "Microsoft Azure allegedly enables indiscriminate mass surveillance of the Palestinian population - Business & Human Rights Resource Centre",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOWnA1Y3BwUmNWN1ZDSko3VnYyaGdHS2ljTml4bGlxRUxVcnh3bzVwdzdkZFE5Z09za3BTSHN5TjVlZldnMEEwcnRzMndBeTJSQ3J0R0h2WDYxNlhnU3lkZEc3eVNCZnVRMjE2U0VxeUFWc0tpX3kzZ3JkNXZCelVvVjhpZFJUMVFZTjBFbGxQWkUxQWVmZnVEWUE4MjJuUS0xMVV2TzhSSTBoR202eXJLenB3SE5jWDk2dTRRZ1ZycXluMkNpT2FGMXJaN0xfRm1ZRHM4MFdxY0x1QmZfR0JFUlBfYw?oc=5",
+      "published": "Wed, 06 Aug 2025",
+      "excerpt": "Microsoft Azure allegedly enables indiscriminate mass surveillance of the Palestinian population - Business & Human Rights Resource Centre"
+    },
+    {
+      "title": "\"아마존, 구글 이어 마이크로소프트까지\"···LG CNS, 생성형 AI 전문기업 '글로벌 인증 3관왕' - 인공지능신문",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBuWTR4S3BHcV9aMnN1RnRPYkFBZ2xaaS1rcFlsUEFlU2tnbWt1akNxMUsxTFZfV3RWQXNtQ2swdTBZQXZ5S25EV2YxeWJQS0lPa3ZjZ2xMNkNMMmJOVUV2LVhSc1BJLTQ?oc=5",
+      "published": "Thu, 31 Jul 2025",
+      "excerpt": "\"아마존, 구글 이어 마이크로소프트까지\"···LG CNS, 생성형 AI 전문기업 '글로벌 인증 3관왕' - 인공지능신문"
+    },
+    {
+      "title": "요구 사항을 충족하지 못하는 컴퓨터도 Microsoft에서 Windows 11로 업그레이드합니다. - Vietnam.vn",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPczhUbnBVeWY3cXhDbTQ3NmhuVEEtOFEzTjR3elNsZUR4ZmNwdzNYSFE5cDgzZ09HWkVDeVRpSzIwbWU5eC1KSDlDSm5hYkZDNU1vb0dNRTNPUHY5Z3JsMERVU0pGWlBGVzZaV3lQZWE4Tlp3OG4xc0s0WUc3VFZ6WExUZnFPVldsVkRfMnJlWngtZUtncXdYT3A2bw?oc=5",
+      "published": "Sat, 09 Aug 2025",
+      "excerpt": "요구 사항을 충족하지 못하는 컴퓨터도 Microsoft에서 Windows 11로 업그레이드합니다. - Vietnam.vn"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "risk": {
+    "finbert": {
+      "neg": 0.025517177768051624,
+      "neu": 0.8995505571365356,
+      "pos": 0.07493226090446115
+    },
+    "neg": {
+      "neg": 0.025517177768051624,
+      "neu": 0.8995505571365356,
+      "pos": 0.07493226090446115
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 2,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 2,
+    "risk_score_0to1": 0.208
+  },
+  "iso31000_risk_analysis": {
+    "overall_score": "48.3",
+    "risk_identification_score": "12.1",
+    "risk_identification_assessment": "긴급 개선 필요",
+    "risk_analysis_score": "12.1",
+    "risk_analysis_assessment": "긴급 개선 필요",
+    "risk_evaluation_score": "12.1",
+    "risk_evaluation_assessment": "긴급 개선 필요",
+    "risk_treatment_score": "12.1",
+    "risk_treatment_assessment": "긴급 개선 필요",
+    "iso31000_assessment": {
+      "risk_assessment": [
+        {
+          "risk_id": "keyword_0",
+          "name": "키워드 기반 리스크: 소송",
+          "category": "규제/준거 리스크",
+          "probability": 4,
+          "impact": 4,
+          "risk_score": 16,
+          "risk_level": "매우 높음",
+          "description": "키워드 히트 수: 2",
+          "detection_date": "2025-08-13T23:25:12.338940",
+          "trend_analysis": {
+            "trend": "신규 감지",
+            "change_rate": 0.0,
+            "stability": "불안정"
+          },
+          "correlation_analysis": {
+            "correlated_risks": [
+              {
+                "risk_id": "news_0",
+                "correlation": "높음",
+                "reason": "동일 카테고리"
+              }
+            ],
+            "total_correlations": 1
+          },
+          "vulnerability_assessment": {
+            "vulnerability_score": 4.0,
+            "vulnerability_level": "높음",
+            "exposure_time": "지속적"
+          },
+          "acceptability": "수용 불가 (회피 필요)",
+          "priority": 22,
+          "urgency": "1주 이내 대응 필요",
+          "business_impact": {
+            "financial_impact": "심각한 영향",
+            "operational_impact": "심각한 영향",
+            "reputational_impact": "심각한 영향",
+            "regulatory_impact": "심각한 영향"
+          }
+        },
+        {
+          "risk_id": "news_0",
+          "name": "소송 관련 리스크",
+          "category": "규제/준거 리스크",
+          "probability": 3,
+          "impact": 4,
+          "risk_score": 12,
+          "risk_level": "매우 높음",
+          "description": "뉴스: microsoft 고객, 10월에 windows 10 pc가 폐기됨에 따라 소송 제기 - cryptopolitan",
+          "detection_date": "2025-08-13T23:25:12.338886",
+          "trend_analysis": {
+            "trend": "신규 감지",
+            "change_rate": 0.0,
+            "stability": "불안정"
+          },
+          "correlation_analysis": {
+            "correlated_risks": [
+              {
+                "risk_id": "keyword_0",
+                "correlation": "높음",
+                "reason": "동일 카테고리"
+              }
+            ],
+            "total_correlations": 1
+          },
+          "vulnerability_assessment": {
+            "vulnerability_score": 3.5,
+            "vulnerability_level": "보통",
+            "exposure_time": "간헐적"
+          },
+          "acceptability": "수용 불가 (완화 필요)",
+          "priority": 16,
+          "urgency": "1개월 이내 대응 필요",
+          "business_impact": {
+            "financial_impact": "심각한 영향",
+            "operational_impact": "심각한 영향",
+            "reputational_impact": "심각한 영향",
+            "regulatory_impact": "심각한 영향"
+          }
+        },
+        {
+          "risk_id": "sentiment_low_positive",
+          "name": "낮은 긍정적 감성",
+          "category": "평판 리스크",
+          "probability": 3,
+          "impact": 3,
+          "risk_score": 9,
+          "risk_level": "보통",
+          "description": "FinBERT 긍정적 감성 점수: 0.075",
+          "detection_date": "2025-08-13T23:25:12.338926",
+          "trend_analysis": {
+            "trend": "신규 감지",
+            "change_rate": 0.0,
+            "stability": "불안정"
+          },
+          "correlation_analysis": {
+            "correlated_risks": [],
+            "total_correlations": 0
+          },
+          "vulnerability_assessment": {
+            "vulnerability_score": 3.0,
+            "vulnerability_level": "보통",
+            "exposure_time": "간헐적"
+          },
+          "acceptability": "조건부 수용",
+          "priority": 10,
+          "urgency": "정기 모니터링",
+          "business_impact": {
+            "financial_impact": "일부 영향",
+            "operational_impact": "일부 영향",
+            "reputational_impact": "일부 영향",
+            "regulatory_impact": "일부 영향"
+          }
+        },
+        {
+          "risk_id": "sentiment_high_neutral",
+          "name": "높은 불확실성",
+          "category": "전략적 리스크",
+          "probability": 2,
+          "impact": 3,
+          "risk_score": 6,
+          "risk_level": "낮음",
+          "description": "FinBERT 중립적 감성 점수: 0.900 - 정보 부족으로 인한 불확실성",
+          "detection_date": "2025-08-13T23:25:12.338930",
+          "trend_analysis": {
+            "trend": "신규 감지",
+            "change_rate": 0.0,
+            "stability": "불안정"
+          },
+          "correlation_analysis": {
+            "correlated_risks": [],
+            "total_correlations": 0
+          },
+          "vulnerability_assessment": {
+            "vulnerability_score": 2.5,
+            "vulnerability_level": "보통",
+            "exposure_time": "간헐적"
+          },
+          "acceptability": "조건부 수용",
+          "priority": 9,
+          "urgency": "정기 모니터링",
+          "business_impact": {
+            "financial_impact": "미미한 영향",
+            "operational_impact": "미미한 영향",
+            "reputational_impact": "미미한 영향",
+            "regulatory_impact": "미미한 영향"
+          }
+        }
+      ],
+      "treatment_plans": [
+        {
+          "risk_id": "keyword_0",
+          "risk_name": "키워드 기반 리스크: 소송",
+          "current_level": "매우 높음",
+          "target_level": "높음",
+          "strategies": [
+            "회피(Avoid)",
+            "긴급 완화",
+            "비상 계획 수립"
+          ],
+          "action_items": [
+            {
+              "action": "리스크 회피",
+              "description": "해당 사업 영역 중단 또는 변경",
+              "responsible": "경영진",
+              "deadline": "즉시"
+            },
+            {
+              "action": "리스크 완화 조치",
+              "description": "키워드 기반 리스크: 소송 완화를 위한 구체적 조치",
+              "responsible": "리스크 관리팀",
+              "deadline": "1개월"
+            }
+          ],
+          "timeline": "즉시 - 1주",
+          "resources_needed": "대규모 (전사적 대응)",
+          "success_metrics": [
+            "키워드 기반 리스크: 소송 발생 빈도 감소",
+            "키워드 기반 리스크: 소송 영향도 감소",
+            "리스크 점수 16에서 목표 수준으로 감소",
+            "리스크 대응 조치 완료율 100%"
+          ],
+          "monitoring_plan": {
+            "frequency": "일일",
+            "indicators": [
+              "키워드 기반 리스크: 소송 발생 여부",
+              "리스크 점수 변화"
+            ],
+            "reporting": "리스크 관리 보고서",
+            "escalation": "리스크 점수 증가 시 즉시 보고"
+          }
+        },
+        {
+          "risk_id": "news_0",
+          "risk_name": "소송 관련 리스크",
+          "current_level": "매우 높음",
+          "target_level": "높음",
+          "strategies": [
+            "회피(Avoid)",
+            "긴급 완화",
+            "비상 계획 수립"
+          ],
+          "action_items": [
+            {
+              "action": "리스크 회피",
+              "description": "해당 사업 영역 중단 또는 변경",
+              "responsible": "경영진",
+              "deadline": "즉시"
+            },
+            {
+              "action": "리스크 완화 조치",
+              "description": "소송 관련 리스크 완화를 위한 구체적 조치",
+              "responsible": "리스크 관리팀",
+              "deadline": "1개월"
+            }
+          ],
+          "timeline": "즉시 - 1주",
+          "resources_needed": "대규모 (전사적 대응)",
+          "success_metrics": [
+            "소송 관련 리스크 발생 빈도 감소",
+            "소송 관련 리스크 영향도 감소",
+            "리스크 점수 12에서 목표 수준으로 감소",
+            "리스크 대응 조치 완료율 100%"
+          ],
+          "monitoring_plan": {
+            "frequency": "일일",
+            "indicators": [
+              "소송 관련 리스크 발생 여부",
+              "리스크 점수 변화"
+            ],
+            "reporting": "리스크 관리 보고서",
+            "escalation": "리스크 점수 증가 시 즉시 보고"
+          }
+        },
+        {
+          "risk_id": "sentiment_low_positive",
+          "risk_name": "낮은 긍정적 감성",
+          "current_level": "보통",
+          "target_level": "낮음",
+          "strategies": [
+            "완화(Mitigate)",
+            "전이(Transfer)",
+            "수용(Accept)"
+          ],
+          "action_items": [
+            {
+              "action": "리스크 완화 조치",
+              "description": "낮은 긍정적 감성 완화를 위한 구체적 조치",
+              "responsible": "리스크 관리팀",
+              "deadline": "1개월"
+            },
+            {
+              "action": "리스크 전이",
+              "description": "보험 가입 또는 계약 조건 변경",
+              "responsible": "법무팀",
+              "deadline": "2주"
+            },
+            {
+              "action": "리스크 수용",
+              "description": "정기 모니터링 및 대응 계획 수립",
+              "responsible": "리스크 관리팀",
+              "deadline": "지속적"
+            }
+          ],
+          "timeline": "1개월 - 3개월",
+          "resources_needed": "보통 규모 (담당자 + 지원)",
+          "success_metrics": [
+            "낮은 긍정적 감성 발생 빈도 감소",
+            "낮은 긍정적 감성 영향도 감소",
+            "리스크 점수 9에서 목표 수준으로 감소",
+            "리스크 대응 조치 완료율 100%"
+          ],
+          "monitoring_plan": {
+            "frequency": "월간",
+            "indicators": [
+              "낮은 긍정적 감성 발생 여부",
+              "리스크 점수 변화"
+            ],
+            "reporting": "리스크 관리 보고서",
+            "escalation": "리스크 점수 증가 시 즉시 보고"
+          }
+        },
+        {
+          "risk_id": "sentiment_high_neutral",
+          "risk_name": "높은 불확실성",
+          "current_level": "낮음",
+          "target_level": "매우 낮음",
+          "strategies": [
+            "수용(Accept)",
+            "모니터링",
+            "간단한 완화"
+          ],
+          "action_items": [
+            {
+              "action": "리스크 수용",
+              "description": "정기 모니터링 및 대응 계획 수립",
+              "responsible": "리스크 관리팀",
+              "deadline": "지속적"
+            },
+            {
+              "action": "리스크 완화 조치",
+              "description": "높은 불확실성 완화를 위한 구체적 조치",
+              "responsible": "리스크 관리팀",
+              "deadline": "1개월"
+            }
+          ],
+          "timeline": "3개월 - 6개월",
+          "resources_needed": "소규모 (담당자)",
+          "success_metrics": [
+            "높은 불확실성 발생 빈도 감소",
+            "높은 불확실성 영향도 감소",
+            "리스크 점수 6에서 목표 수준으로 감소",
+            "리스크 대응 조치 완료율 100%"
+          ],
+          "monitoring_plan": {
+            "frequency": "분기별",
+            "indicators": [
+              "높은 불확실성 발생 여부",
+              "리스크 점수 변화"
+            ],
+            "reporting": "리스크 관리 보고서",
+            "escalation": "리스크 점수 증가 시 즉시 보고"
+          }
+        }
+      ],
+      "overall_risk_score": 12.07,
+      "overall_risk_level": "매우 높음",
+      "risk_trends": {
+        "trend_direction": "안정",
+        "trend_strength": "보통",
+        "key_drivers": [
+          "뉴스 감성",
+          "키워드 히트",
+          "소셜 미디어 반응"
+        ],
+        "volatility": "낮음",
+        "forecast": "향후 3개월 안정적 전망"
+      },
+      "compliance_status": {
+        "iso31000_compliance": "준수",
+        "risk_governance": "적절",
+        "risk_culture": "양호",
+        "risk_communication": "효과적",
+        "continuous_improvement": "진행 중"
+      },
+      "assessment_date": "2025-08-13T23:25:12.339012",
+      "iso31000_compliance": "준수",
+      "risk_categories_summary": {
+        "규제/준거 리스크": {
+          "count": 2,
+          "total_score": 28,
+          "high_risks": 2,
+          "average_score": 14.0
+        },
+        "평판 리스크": {
+          "count": 1,
+          "total_score": 9,
+          "high_risks": 0,
+          "average_score": 9.0
+        },
+        "전략적 리스크": {
+          "count": 1,
+          "total_score": 6,
+          "high_risks": 0,
+          "average_score": 6.0
+        }
+      }
+    },
+    "finbert_analysis": {
+      "neg": 0.025517177768051624,
+      "neu": 0.8995505571365356,
+      "pos": 0.07493226090446115
+    },
+    "keyword_analysis": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 2,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "integrated_risk_score": 12.07,
+    "risk_level": "매우 높음",
+    "assessment_method": "ISO 31000 + FinBERT + Keyword Analysis",
+    "compliance_status": "ISO 31000:2018 준수"
+  },
+  "chatgpt_enhanced_analysis": {
+    "contextual_analysis": {
+      "hidden_risks": [
+        "GPT-5 통합으로 인한 기술적 의존성 증가 및 경쟁사와의 기술 격차 확대",
+        "Windows 10 PC 폐기 소송으로 인한 법적 리스크 및 고객 신뢰도 저하",
+        "Azure의 감시 기능에 대한 비판으로 인한 브랜드 이미지 손상 및 사회적 반발",
+        "Windows 11 업그레이드 요구 사항 미충족 문제로 인한 사용자 불만 및 고객 이탈 가능성"
+      ],
+      "market_context": "마이크로소프트는 AI 기술 통합을 통해 제품 경쟁력을 강화하고 있으며, 매출이 증가하고 있는 긍정적인 시장 환경에 있다. 그러나 기술적 의존성과 법적 리스크가 동반되고 있어 주의가 필요하다.",
+      "competitive_analysis": "마이크로소프트는 오픈AI와의 협력을 통해 AI 분야에서의 입지를 강화하고 있으며, 아마존과 구글과 같은 경쟁사와의 경쟁이 치열해지고 있다. LG CNS와의 협력은 생성형 AI 분야에서의 기술력을 인정받는 계기가 될 수 있다.",
+      "regulatory_implications": "AI 기술의 사용과 관련하여 규제 환경이 강화될 가능성이 있으며, 특히 감시 기술에 대한 비판이 커질 경우 규제의 대상이 될 수 있다. 이는 기업 운영에 직접적인 영향을 미칠 수 있다.",
+      "investor_sentiment": "2분기 매출 증가와 같은 긍정적인 실적 발표로 인해 투자자 신뢰도가 높아지고 있으나, 법적 리스크와 사회적 반발이 지속될 경우 신뢰도에 부정적인 영향을 미칠 수 있다.",
+      "recommendations": [
+        "법적 리스크를 최소화하기 위해 고객과의 소통 강화 및 소송 대응 전략 마련",
+        "AI 기술 통합에 따른 기술적 의존성을 줄이기 위한 다양한 기술 파트너십 모색",
+        "사회적 반발을 줄이기 위해 윤리적 AI 사용 방침 및 투명성 강화",
+        "Windows 11 업그레이드 문제 해결을 위한 고객 지원 및 커뮤니케이션 강화"
+      ]
+    },
+    "risk_scenarios": [
+      {
+        "scenario_id": "fallback_1",
+        "title": "Microsoft 기술 혁신 가속화 리스크",
+        "description": "Microsoft의 기술 혁신이 가속화되면서 기존 제품과의 호환성 문제와 시장 경쟁 심화가 예상됩니다.",
+        "probability": "보통",
+        "impact": "높음",
+        "risk_level": "높음",
+        "triggers": [
+          "기술 변화 가속화",
+          "경쟁사 기술 혁신",
+          "시장 요구사항 변화"
+        ],
+        "mitigation_strategies": [
+          "지속적인 R&D 투자",
+          "기술 로드맵 수립",
+          "파트너십 강화"
+        ],
+        "timeline": "3-6개월 내",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "fallback_2",
+        "title": "Microsoft 규제 환경 변화 리스크",
+        "description": "글로벌 규제 환경의 변화로 인한 비즈니스 모델 조정 필요성과 규정 준수 비용 증가가 예상됩니다.",
+        "probability": "높음",
+        "impact": "보통",
+        "risk_level": "보통",
+        "triggers": [
+          "새로운 규제 도입",
+          "기존 규제 강화",
+          "국제 표준 변화"
+        ],
+        "mitigation_strategies": [
+          "규제 모니터링 체계 구축",
+          "규정 준수 팀 강화",
+          "정책 대응 전략 수립"
+        ],
+        "timeline": "6-12개월 내",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "fallback_3",
+        "title": "Microsoft 시장 경쟁 심화 리스크",
+        "description": "시장 경쟁이 심화되면서 가격 압박과 고객 이탈 위험이 증가할 수 있습니다.",
+        "probability": "높음",
+        "impact": "높음",
+        "risk_level": "높음",
+        "triggers": [
+          "신규 경쟁사 진입",
+          "기존 경쟁사 공격적 마케팅",
+          "고객 가격 민감도 증가"
+        ],
+        "mitigation_strategies": [
+          "차별화 전략 강화",
+          "고객 관계 관리 개선",
+          "비용 효율성 향상"
+        ],
+        "timeline": "1-3개월 내",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "fallback_4",
+        "title": "Microsoft 인재 확보 및 유지 리스크",
+        "description": "핵심 인재의 확보와 유지가 어려워지면서 기술 개발과 서비스 품질에 영향을 미칠 수 있습니다.",
+        "probability": "보통",
+        "impact": "보통",
+        "risk_level": "보통",
+        "triggers": [
+          "인재 시장 경쟁 심화",
+          "핵심 인재 이직",
+          "기술 변화에 따른 재교육 필요"
+        ],
+        "mitigation_strategies": [
+          "인재 개발 프로그램 강화",
+          "경쟁력 있는 보상 체계",
+          "기업 문화 개선"
+        ],
+        "timeline": "6-12개월 내",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "fallback_5",
+        "title": "Microsoft 글로벌 경제 불확실성 리스크",
+        "description": "글로벌 경제의 불확실성 증가로 인한 수요 변동과 환율 변동 위험이 예상됩니다.",
+        "probability": "보통",
+        "impact": "높음",
+        "risk_level": "높음",
+        "triggers": [
+          "경제 침체 우려",
+          "환율 변동성 증가",
+          "무역 분쟁 심화"
+        ],
+        "mitigation_strategies": [
+          "다양화 전략 추진",
+          "환율 위험 관리",
+          "지역별 전략 차별화"
+        ],
+        "timeline": "3-6개월 내",
+        "confidence": "보통"
+      }
+    ],
+    "personalized_reports": {
+      "executive": "# Microsoft 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\n최근 Microsoft는 오픈AI의 GPT-5를 소비자, 개발자 및 기업용 제품에 통합하며 인공지능(AI) 분야에서의 경쟁력을 강화하고 있습니다. 2분기 매출이 18% 증가한 가운데, 고객들은 Windows 10 PC의 폐기와 관련하여 소송을 제기하는 등 법적 리스크도 존재합니다. 이러한 상황에서 Microsoft는 AI 교육 프로그램을 통해 사회적 책임을 다하고 있으며, Azure 플랫폼의 사용에 대한 논란도 제기되고 있습니다.\n\n## 2. 주요 리스크 요인\n- **법적 리스크**: Windows 10 PC 폐기와 관련된 소송이 제기되어 고객 신뢰에 부정적인 영향을 미칠 수 있습니다.\n- **사회적 논란**: Microsoft Azure가 팔레스타인 인구에 대한 대규모 감시를 가능하게 한다는 주장으로 인해 기업 이미지에 타격을 줄 수 있습니다.\n- **기술적 리스크**: 코파일럿에 GPT-5를 적용했으나, 일부 Windows 앱은 여전히 GPT-4를 사용하고 있어 기술적 불균형이 발생할 수 있습니다.\n\n## 3. 시장 기회\n- **AI 통합**: GPT-5의 통합은 Microsoft 제품의 경쟁력을 높이고, 고객의 요구에 부응하는 혁신적인 솔루션을 제공할 수 있는 기회를 창출합니다.\n- **매출 성장**: 2분기 매출 18% 증가로 긍정적인 재무 성과를 보이고 있으며, 이는 향후 지속적인 성장 가능성을 시사합니다.\n- **AI 교육 프로그램**: 서울 AI 허브와의 협력을 통해 AI 교육을 강화함으로써 사회적 책임을 다하고, 새로운 고객층을 확보할 수 있는 기회를 제공합니다.\n\n## 4. 권장사항\n- **법적 대응 강화**: Windows 10 폐기와 관련된 소송에 대한 법적 대응을 강화하고, 고객과의 소통을 통해 신뢰를 회복할 필요가 있습니다.\n- **사회적 책임 강화**: Azure의 사용에 대한 사회적 논란을 해소하기 위해 투명한 정보 공개와 사회적 책임을 다하는 프로그램을 운영해야 합니다.\n- **기술 혁신 지속**: GPT-5 통합을 통해 기술적 우위를 지속적으로 확보하고, 고객의 피드백을 반영하여 제품 개선을 추진해야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 법적 리스크 관리와 AI 통합에 따른 매출 증가가 예상되며, 고객 신뢰 회복을 위한 노력이 필요합니다.\n- **중기(1-3년)**: AI 기술의 발전과 함께 Microsoft의 제품군이 더욱 강화될 것으로 보이며, 지속적인 매출 성장이 기대됩니다.\n- **장기(3-5년)**: AI와 클라우드 서비스의 융합으로 Microsoft는 시장에서의 입지를 더욱 확고히 할 수 있으며, 새로운 비즈니스 모델을 개발할 가능성이 높습니다.\n\n이 보고서는 Microsoft의 현재 상황과 향후 전략을 경영진이 이해하고 실행 가능한 조치를 취하는 데 도움을 주기 위해 작성되었습니다.",
+      "investor": "# Microsoft 투자 분석 보고서\n\n## 1. 실행 요약\n마이크로소프트(Microsoft)는 최근 인공지능(AI) 분야에서의 혁신과 매출 성장으로 주목받고 있습니다. 특히, 오픈AI의 GPT-5를 제품에 통합하여 소비자 및 기업 시장에서의 경쟁력을 강화하고 있으며, 2분기 매출이 18% 증가하는 성과를 기록했습니다. 그러나 Windows 10 폐기와 관련된 소송이 제기된 점은 주의가 필요합니다. 전반적으로 긍정적인 성장세와 함께 몇 가지 리스크 요소가 존재하는 상황입니다.\n\n## 2. 주요 리스크 요인\n- **소송 리스크**: Windows 10 PC 폐기와 관련하여 고객이 소송을 제기한 상황으로, 이는 브랜드 이미지와 재무적 영향을 미칠 수 있습니다.\n- **기술적 도태**: GPT-5와 같은 최신 기술을 활용하지 못하는 제품이 여전히 존재하여, 경쟁사와의 격차가 벌어질 수 있습니다.\n- **정치적 및 사회적 리스크**: Microsoft Azure가 이스라엘-팔레스타인 지역에서의 감시 활동에 연루되었다는 주장으로 인해 기업의 사회적 책임과 평판에 부정적인 영향을 미칠 수 있습니다.\n\n## 3. 시장 기회\n- **AI 통합 제품**: GPT-5의 통합을 통해 소비자 및 기업 시장에서의 경쟁력을 높이고 있으며, 이는 향후 매출 성장의 기회로 작용할 수 있습니다.\n- **클라우드 서비스 성장**: Azure와 같은 클라우드 서비스의 수요가 증가하고 있으며, 이는 지속적인 매출 증가로 이어질 가능성이 높습니다.\n- **AI 교육 프로그램**: 서울 AI 허브와의 협력을 통해 시민 체감형 AI 교육을 강화하고 있어, 사회적 책임을 다하는 동시에 브랜드 이미지 개선의 기회를 제공하고 있습니다.\n\n## 4. 권장사항\n- **법적 대응 강화**: Windows 10 폐기와 관련된 소송에 대해 적극적인 법적 대응을 마련하여 브랜드 이미지 보호 및 재무적 리스크 최소화에 힘써야 합니다.\n- **기술 혁신 지속**: 기존 제품의 기술적 업그레이드를 지속적으로 추진하고, GPT-5와 같은 최신 기술을 모든 제품에 통합하여 경쟁력을 유지해야 합니다.\n- **사회적 책임 강화**: 사회적 이슈에 대한 투명한 커뮤니케이션과 CSR 활동을 통해 기업의 평판을 관리하고, 고객의 신뢰를 회복해야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: AI 통합 제품의 출시와 매출 증가가 예상되며, 소송 관련 이슈가 해결되면 주가가 안정될 가능성이 높습니다.\n- **중기(2-3년)**: 클라우드 서비스와 AI 기술의 발전으로 지속적인 매출 성장이 예상되며, 시장 점유율 확대가 가능할 것입니다.\n- **장기(3-5년)**: AI와 클라우드 서비스의 융합이 더욱 심화되면서 Microsoft는 시장에서의 리더십을 강화할 것으로 보이며, 새로운 시장 기회를 창출할 수 있을 것입니다.\n\n이 보고서는 Microsoft의 현재 상황과 향후 전망을 종합적으로 분석한 것으로, 투자 결정을 내리는 데 도움이 되기를 바랍니다."
+    },
+    "analysis_method": "ChatGPT GPT-4o-mini + 기존 분석 시스템",
+    "ai_enhanced": true
+  },
+  "_base_id": "Microsoft_microsoft.com"
+}

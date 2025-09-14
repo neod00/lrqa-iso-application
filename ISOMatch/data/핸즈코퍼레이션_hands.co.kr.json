@@ -1,0 +1,137 @@
+{
+  "timestamp": "2025-08-13T10:38:06Z",
+  "input": {
+    "company_name": "핸즈코퍼레이션",
+    "url": "https://www.hands.co.kr",
+    "country_hint": null,
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "핸즈코퍼레이션",
+    "domain": "hands.co.kr"
+  },
+  "filings": [],
+  "news": [
+    {
+      "title": "엠에스오토텍, 0.00% VI 발동 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPY0lFMXZPZ08tUTBEckpwYlBvTEtPR1VXekxPYkpCZFBEbmJ5SDVYNk9PRTJkZXh5cGNUZjdCNDRnVzZwb1dWVzgzTDVqa2ZfVk8yRExFdTFtY2liSnpkcm5LaG9NYll4RTFiQzRRajAyUjBMQ2dyUkZsQjAwaEFycGhXY9IBlwFBVV95cUxNMmVONXV0NmthSWoxY3N5SDNxcll3eEhWbWJHQTRMZ0RnLTNoNEpFcW5TbllXYll1amg4bU9xMGQzNWhQelpJaXhUcjMxMmlaNmdnY3l1a3VsSVk5MUpqRG1NSVZ3OTRXRUhlUWRGekVZLVdvRHN1TVA2RFVCQTJILUdzdFdoOC1vVVNvTjNjTXpMbkZIWWUw?oc=5",
+      "published": "Thu, 31 Jul 2025",
+      "excerpt": "엠에스오토텍, 0.00% VI 발동 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "삼보산업, -10.13% VI 발동 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUHRnMTlkbVNVRTRQVDU2b1kxWmtlejYyY0NsLVY4UFp3R3FSd0pmbmdkamg0R2VteFJ3UWJfblpudGlPWVlQZ3k4bk1rTUJ6aDRndjhhLTkxcTJWTGpCbzhKQkNCZGhFS1JyYzhCMVJnZ0xyS0pWU1hZVi1vUFlOQlF4Y9IBlwFBVV95cUxNMWFjazJZNzBYM29lTW1SMGtMSmpjQm96VHhsZjNjVnhrejQ4Y2RrRnlnZFFHWFFxNXVxQXVnS2dJcm4zQWNTLXF3dWVyTDkxMmJUMHIxdEM0RjNKclRkUjFNdjZfN2N5RzY0emJ6RVJfeVlKLWZZazItY0JDcG9meWhBaXdoWGlhb05ZNVh3dWlZVEFISW9v?oc=5",
+      "published": "Wed, 13 Aug 2025",
+      "excerpt": "삼보산업, -10.13% VI 발동 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "삼보산업, +15.07% 상승폭 확대 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNSm5lclJMdGdJMnlGZFJYd1llaVN1SGtoMExqblNfYzNaNFhOY2JCeXFVbGRqNGpQcWtyeGZBcHF2enRZbndaZ0Rqb242VUlWNUhiYUluMjBiSHNIaDRnTW04Y2c0ZWJxNjVGVXVtN2t2RFI2eHVKdkxKZzA1V21iMGhHMNIBlwFBVV95cUxOWUNNNHlmQ3dWYUJ5UFdLU29KNVhnN1F2MUN5MExqc0VkQzhGN3M4cHlwR0ZIc3JGVzVOQUhHdm5sRHNIY3ItUEtldmI4SlBvQW9RNFR2c2w3QUdaVk5sU3NLSGdtM2RTcTByWGVQN2VSbE1oTW11S3l4TUQyTmJ3cElybWVPRmVCVkFrbGY5dHR4VVA1anZV?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "삼보산업, +15.07% 상승폭 확대 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "삼보산업, -1.87% VI 발동 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRDN5LWJDdzl5c1FYZWVlQjhydER4QS1FVW9DN0MtNE9NZDA4M2VDd2VqLVpLTHRRb3F2RjU0SFFvT0pYSUk5TjhIZUdMRTI5SjY4cXF6YTVKcmd1Um1YVTNtSzZMMjBFb2lFVGNsNlpzbWU5SF9UcjJKT0tZMFl2TWVOTdIBlwFBVV95cUxOSTNNRXd0azN6ZGVudWg0OTR4VjlISTU2djFkMkswV2FsOHZmQ0hmWFVyQjIyam9VSWhSLWNWVmtpTGUwR2V2bVBhTG1GT1FnZi1Vai1UdDQzYmVpLXR6a045dDJ4eVNvZFJFcjNDMVFZMWRhQmk4MUE0bVJ2TG55MnJWVno4ODQzUkNqTGlkRUlDUWhDVXBZ?oc=5",
+      "published": "Mon, 11 Aug 2025",
+      "excerpt": "삼보산업, -1.87% VI 발동 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "삼보산업, +29.76% 상한가 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxONkdIb2k4MFJ2S2VyWW1qYm4wZ3pWSnRjbVVBU25zRHViblI0TGhFZE4zVkZLVVJuRk1wc2NfbjVQdFczaDUzSC1oaUFzc2RlMy0xbG9CM2FvY2xhQW9HMUhmZkFiVjJKLUp0T29tMng1YjF5TnhJTzF0eE1mVGZrTWRtSdIBlwFBVV95cUxQaC1CNkYxeXNXcmNYbVhuNXZuc0x3RTF6Vms3Nzg5NmhEeUJXd1RMbF9xR0hHek4xN1dUNGh4T1Z2dWdPSjJqN0M0ajJidEkwSFJzNzY2S0NocWtJLVhkZEd6VVZ0VERYeU9YeFU5V3ZPQzZXWG5Td2VBTjRMakJSRHpDRUx3aGtJTDY3dFV0RWFhcGFhUlow?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "삼보산업, +29.76% 상한가 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "한국카본, +1.28% 52주 신고가 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNMUs0bXRJWUlSa3k1REtZNkd6dDhzQ01GZURvTE43blc4bmRieWlNVERQb0FXTlRkNVRFUFZvQWFOcUlxZ19zd0czWGR2UlMtb1dIWUVqNDJUR3ZmZXE1dW9MNW5iVDgtcE4zdVBjOXkzZjFCZXdiLURVUkZoQnFIUXZyNNIBlwFBVV95cUxPU1hJQ2FFcGpaRFl3M1RSV0RGc3F6QUtvUWpNSlcxR0pmLUNuSG83UDN0eFJYUlliYUlqQTVTSmF2MF9aSWM0TWVnU0tldTBrUmNXMkpMS0VOY203WHZSR0tXaXp3cnYxRzluR3lCUmlPNWVZNHJncWwxR1F3a1N2RC1pNEhXdHMtZThEOTg2YTF3Rm5DU0FF?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "한국카본, +1.28% 52주 신고가 - 조선비즈 - Chosun Biz"
+    },
+    {
+      "title": "한국카본, +1.11% 상승폭 확대 - 조선비즈 - Chosun Biz",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOQWlpUnRROTZrak5MM3Z6UTkyWmllWGRodTJ4VXBJaHU1RTJXSGZPX2FFMS1rTXJIWE1kcXUyMFEyaEx4Vl9JaFRDaTB5VkZ6V0hMc3VCZHJybEdUZHBwSXlYUXQ2ZElQRGVoY0hqc1BhZjJvZjFXSzN4ZUQ3QVQ5RnBnb9IBlwFBVV95cUxNbXhUWmpLZm5kNVV3QU04V19TVUNlNDFnZXFFM2NWQzJ4SmlQSW1adWNxMGpFX3hOemNNbmZpaWk5eDdwNUZTcnM0Zk5IRlF5SDFlTFhNOXM4dXItSXNqQ0dwZ3dqek1yNV9hNDJTRldxR2EyNFBIcW82NHBhb0F4TGVfQzZjNzdLaDJ5Ml9XTC1nUnFnRjV3?oc=5",
+      "published": "Wed, 13 Aug 2025",
+      "excerpt": "한국카본, +1.11% 상승폭 확대 - 조선비즈 - Chosun Biz"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "risk": {
+    "finbert": {
+      "neg": 0.021267191639968326,
+      "neu": 0.9321324399539402,
+      "pos": 0.046600384903805595
+    },
+    "neg": {
+      "neg": 0.021267191639968326,
+      "neu": 0.9321324399539402,
+      "pos": 0.046600384903805595
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.093
+  },
+  "_base_id": "핸즈코퍼레이션_hands.co.kr"
+}

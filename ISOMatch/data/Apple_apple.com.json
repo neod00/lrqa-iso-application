@@ -1,0 +1,350 @@
+{
+  "timestamp": "2025-08-15T15:18:06Z",
+  "input": {
+    "company_name": "Apple",
+    "url": "https://www.apple.com",
+    "country_hint": "US",
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "Apple",
+    "domain": "apple.com"
+  },
+  "filings": [],
+  "news": [
+    {
+      "title": "2025년 AirPods Pro 3: 예상 출시일, 소문난 기능 및 Apple의 계획 - zeera wireless",
+      "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNQnBQeUc5Rmp2aTJSUXdlVG5LTGJJeHJ5RHNJRUZ2OGktT2dMZUVTck43cll4S3BMb01nRHJTVXc4UFBVS1BuMG5mWHc2c08xQnBiY282eGktb0pqaXJWbkdwak1BWV8tTGJDNEd1MWd5OXdRWmpxSzUtQ0xXY3V4b2dHRTBZMDNwTTY1UjJVZGFUSlV4U0VydlV0cFBzV3NCZjFZdVkzZ1BmTUFuNXNScVplZjZ3UTZkWG5RR3RzZDE2azFOY3lteXJXbDdlWGlmeHhpUU9Zb2UtbWs3VU05NG4zRHJJRTF0ZERVRVVBRVpnMThfTEI1ZF9Qd0gzV1JyY29BUVdDcFprZTB1ZW5ILXBDTHNBaklubFl2blNyNTl0dDZQOXRmX1ZPOWd5Zw?oc=5",
+      "published": "Wed, 13 Aug 2025",
+      "excerpt": "2025년 AirPods Pro 3: 예상 출시일, 소문난 기능 및 Apple의 계획 - zeera wireless"
+    },
+    {
+      "title": "9월 4일, Apple Arcade에 NFL Retro Bowl ’26 독점 출시 - Apple",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdkhtQUxfc2R5SE04U090cmdCV1hKQVhWSkVoWnA2MGIyRkhydFd3YUhvdF96c1JSSFFwdzNETjd3YlFSaFoxelljMXA4T3dsVWpMc0JLMVBPeGpyZFc5YTVIeXo2Mk1KQ2JSWlgxUXZ0T3l1c2Ztak1yZmlXOFVzMjkzbHJlbldSZjc3RHBTWVdvemoydVcwUWdhcWRNWUxXWUlGS1lwVVY?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "9월 4일, Apple Arcade에 NFL Retro Bowl ’26 독점 출시 - Apple"
+    },
+    {
+      "title": "삼성전자, 미국서 애플 제품 생산… 애플은 미국에 140조원 규모 추구 투자 - 조선일보",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVDhfdnlOU2JKZFp6VnJOMkhoM0xMaFN5LXpFekZ5Y3lOb3hLQVRhQmZ4YXgxQkFXdnpTZlhycjRfS3cwVzhzUkNoRll4RlQ5OHNNc0c5Z3hiSTVWejdMSi1aM0hER1NBdHh6RHJXdUVweDdsRDlGT2xURXlfVDBUTGRENNIBlwFBVV95cUxOakhCMW1ZS2tVS3JaQ3FMbjMzMGpfSk5yWGNJZk45dDVQVEtmVkl6OE4yMHVFd2hNb0VqNzlic29lMERLZlVJQ1NEcUxzV05SdGJkYWdhZ2JSU0dsVlhqenBPSVI4cEhVRzlrM2dva0pDZGtqSXdMTlV2RFhUSWFnR0I5M2pkbXY5aUtqbjFnYm56empVak9r?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "삼성전자, 미국서 애플 제품 생산… 애플은 미국에 140조원 규모 추구 투자 - 조선일보"
+    },
+    {
+      "title": "애플, ‘Apple Cinemas’ 상표권 침해 소송… “소비자 혼동·브랜드 희석 우려” - 특허뉴스",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBxb3VlYXF4a0FEV0hNZnFTa2t3dGYyN2ZyUTlDLWM1MVBLT3ZQVDFpdGxQOTV4eVM0d0gyTjluaEVoNzlDTXU1cA?oc=5",
+      "published": "Wed, 13 Aug 2025",
+      "excerpt": "애플, ‘Apple Cinemas’ 상표권 침해 소송… “소비자 혼동·브랜드 희석 우려” - 특허뉴스"
+    },
+    {
+      "title": "“시리 문제로 애플 신제품 출시 계획 잇단 연기” 블룸버그 - cio.com",
+      "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxQb05nMVZUdXBVSTE4cmI2V3d4T0xUZlRNY2hJVlkxSm1KRmhrUW5HeWJVZVVPUVBVcFotNUk4aHl3eURWVWp1TWNCQUQxQjNMaE5BMmFGMFFnRGxXWl9tRklYSkl3OFRsMWlHbFhYeG5OOGZ3amotZ1prRXkyMldCWDZCZzVVeHVNbmlGV3EzbVpWSjRPNEFNb3FCRTkwV2Q2dXN2R1JrWGMxek81aGtOc21OWGhaYnB6d1ZwVFpIX2VyRzFKQm9adnI2dGMwek5wWTJNUmhjRFJObDhWNnFoWk5vN3EzLUVuTG9DUUxaWXhtN0tTZVlxZm5pLVNLcTdUZUR6a090SlN3MmU0cDJGdllIMndjek9zaVJpazBrZHJySGxoVGRfeHBjOElwVDNXM2NZRDFhWXg0VWtySUZxcm5n?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "“시리 문제로 애플 신제품 출시 계획 잇단 연기” 블룸버그 - cio.com"
+    },
+    {
+      "title": "삼성전자, 테슬라 이어 애플 차세대 칩도 생산한다 - 오피니언뉴스",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB4Ml9tMXRXVm85ZWliQ19nd0VfS0F0ZUdoZkZfWFVEUGVsNnZuU21JdlhBbkFIb2VZNFFWQ29GTTg0X25xX2FYNnVGVkhZMjBfQUJxTFNjRzc5T2lOa3NkeV9aTy1ERC1zYXo5SDIxZzFudw?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "삼성전자, 테슬라 이어 애플 차세대 칩도 생산한다 - 오피니언뉴스"
+    },
+    {
+      "title": "Apple Dumps Sony? Samsung to Make iPhone Camera Chips in Texas - 엠투데이",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1xdjNRNFRZNUZqRTRfLWhTa0RaNnctU3Jhb2hJQ29DcHV4Njd6eklkek1wSFJ6dWI3cGNIaFkwSWQxVHNTX21MYWZwOVg3bnIyWXBIejhHeVpRM1o1RnhubkdYT0xvWWs0U2cxVEpYMNIBc0FVX3lxTE13M0dBODBRSzdTQ0thckVYYzE4R3lLYnVnaUlxbWtHZTQ2VVVFOXpzMUpMb2xWdDRLQTV4OGtHR1o0cmNqblJVTUFKMmxhUXlWY3VnVDBBcmY0Z3MyUktMcS1yU3EwMlh5QUg3QnBOdXZnUmc?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "Apple Dumps Sony? Samsung to Make iPhone Camera Chips in Texas - 엠투데이"
+    },
+    {
+      "title": "애플, 다음달 출시될 iOS 26에 'GPT-5' 통합 예정 - AI타임스",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE00cDdMWnAzRXMyaXFodXVmSzFWeEJVaGhUN0hSLXhLeEp5dFYtYVlxOThBZmhDaERMLWpCdE41a2VacUEtbmNWRTBtaW5NODUzOHNoMTJ6bldrZm5uLW9UeFY0OXBRVUpPRVE?oc=5",
+      "published": "Sat, 09 Aug 2025",
+      "excerpt": "애플, 다음달 출시될 iOS 26에 'GPT-5' 통합 예정 - AI타임스"
+    }
+  ],
+  "social_media": [
+    {
+      "error": "Social media data collection failed"
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "serpapi": {},
+  "risk": {
+    "finbert": {
+      "neg": 0.03630655258893967,
+      "neu": 0.8857200816273689,
+      "pos": 0.07797334250062704
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 2,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 2,
+    "risk_score_0to1": 0.15
+  },
+  "baseline_risk_analysis": {
+    "overall_score": 83.0,
+    "finbert_analysis": {
+      "neg": 0.03630655258893967,
+      "neu": 0.8857200816273689,
+      "pos": 0.07797334250062704
+    },
+    "keyword_analysis": {
+      "total_hits": 2,
+      "detail": {
+        "리콜|recall": 0,
+        "소송|lawsuit|litigation|class action": 2,
+        "해킹|유출|breach|hack|data leak|ransom": 0,
+        "제재|sanction|embargo": 0,
+        "회계\\s?부정|fraud|accounting scandal": 0,
+        "규제\\s?위반|non-?compliance|violation": 0,
+        "폐업|bankruptcy|insolvency|파산": 0,
+        "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+        "손실|loss|deficit|적자": 0,
+        "부채|debt|liability|채무": 0,
+        "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+        "인수합병|M&A|merger|acquisition|합병": 0,
+        "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+        "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+        "내부\\s?고발|whistleblower|내부신고": 0,
+        "파업|strike|노사갈등|labor\\s?dispute": 0,
+        "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+        "품질\\s?문제|quality\\s?issue|불량품": 0,
+        "안전\\s?사고|safety\\s?accident|사고": 0,
+        "환경\\s?문제|environmental|pollution|오염": 0,
+        "건강\\s?위험|health\\s?risk|건강피해": 0,
+        "서비스\\s?중단|service\\s?outage|장애": 0,
+        "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+        "반독점|antitrust|monopoly|독점규제": 0,
+        "세금\\s?문제|tax\\s?issue|세무조사": 0,
+        "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+        "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+        "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+        "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+        "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+        "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+        "경기\\s?침체|recession|경기하락": 0,
+        "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+        "네트워크\\s?보안|network\\s?security|보안위협": 0,
+        "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+        "지적재산권|intellectual\\s?property|특허분쟁": 0,
+        "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+        "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+        "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+        "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+        "보이콧|boycott|불매운동": 0,
+        "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+        "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+        "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+        "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+        "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+        "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+        "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+        "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+        "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+        "테러|terrorism|테러위협": 0,
+        "자연재해|natural\\s?disaster|천재지변": 0
+      }
+    },
+    "risk_level": "낮음",
+    "assessment_method": "FinBERT + Keyword Analysis"
+  },
+  "chatgpt_enhanced_analysis": {
+    "contextual_analysis": {
+      "hidden_risks": [
+        "신제품 출시 지연: Siri 문제로 인해 신제품 출시가 잇따라 연기되고 있어 소비자 신뢰도 하락 가능성",
+        "공급망 의존도: 삼성전자가 Apple의 차세대 칩을 생산하게 되면서 공급망의 의존도가 증가하고, 이는 공급망 중단 시 리스크를 증가시킬 수 있음",
+        "브랜드 이미지 손상: 'Apple Cinemas' 상표권 침해 소송이 소비자 혼동 및 브랜드 희석 우려를 초래할 수 있음",
+        "기술적 통합 리스크: iOS 26에 'GPT-5' 통합 예정으로, 기술적 문제 발생 시 사용자 경험에 부정적 영향을 미칠 수 있음"
+      ],
+      "market_context": "Apple은 지속적으로 혁신적인 제품 출시를 통해 시장에서의 경쟁력을 유지하고 있으나, 신제품 출시 지연 및 기술적 문제로 인해 소비자 신뢰도에 부정적인 영향을 미칠 수 있다. 또한, Apple Arcade와 같은 서비스 확장은 시장 점유율을 높이는 데 기여할 수 있으나, 경쟁사와의 차별화가 필요하다.",
+      "competitive_analysis": "삼성전자가 Apple의 카메라 칩을 생산하게 되면서, Apple의 공급망 전략에 변화가 생길 수 있다. 이는 경쟁사와의 협력 관계를 강화하는 동시에, 기술적 우위를 유지하기 위한 지속적인 혁신이 필요함을 시사한다. 또한, Apple Arcade의 독점 출시가 소비자 유입에 긍정적인 영향을 미칠 수 있으나, 경쟁사들이 유사한 전략을 취할 경우 시장 점유율에 영향을 줄 수 있다.",
+      "regulatory_implications": "상표권 침해 소송은 Apple의 브랜드 이미지에 부정적인 영향을 미칠 수 있으며, 이는 향후 규제 환경 변화에 따라 더 큰 법적 리스크로 발전할 가능성이 있다. 또한, 반독점 규제가 강화될 경우, Apple의 시장 지배력에 대한 도전이 증가할 수 있다.",
+      "investor_sentiment": "투자자들은 Apple의 지속적인 혁신과 시장 점유율 확대에 긍정적인 시각을 가지고 있으나, 신제품 출시 지연 및 기술적 문제로 인해 신뢰도가 하락할 수 있다. 이는 단기적으로 주가에 부정적인 영향을 미칠 수 있다.",
+      "recommendations": [
+        "신제품 출시 일정 관리 및 품질 보증 프로세스를 강화하여 소비자 신뢰를 회복할 필요가 있음",
+        "공급망 다변화를 통해 특정 공급업체에 대한 의존도를 줄이고 리스크를 최소화해야 함",
+        "브랜드 이미지 보호를 위해 법적 대응 및 상표 관리 전략을 강화해야 함",
+        "기술적 통합 과정에서 발생할 수 있는 문제를 사전에 예방하기 위한 테스트 및 검증 프로세스를 강화해야 함"
+      ]
+    },
+    "risk_scenarios": [
+      {
+        "scenario_id": "RISK-001",
+        "title": "AirPods Pro 3 리콜",
+        "description": "2025년 AirPods Pro 3의 출시 후 품질 문제로 인한 대규모 리콜이 발생할 가능성이 있음.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "AirPods Pro 3 출시",
+          "소비자 불만",
+          "품질 검사 결과"
+        ],
+        "mitigation_strategies": [
+          "철저한 품질 관리",
+          "소비자 피드백 모니터링",
+          "신속한 대응 체계 구축"
+        ],
+        "timeline": "2025년 9월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-002",
+        "title": "Apple Cinemas 상표권 소송",
+        "description": "Apple Cinemas와 관련된 상표권 침해 소송이 진행되어 브랜드 이미지에 부정적인 영향을 미칠 가능성이 있음.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "보통",
+        "triggers": [
+          "소송 진행",
+          "소비자 반응",
+          "법원 판결"
+        ],
+        "mitigation_strategies": [
+          "법률 자문 강화",
+          "브랜드 보호 전략 수립",
+          "소송 대응팀 구성"
+        ],
+        "timeline": "2025년 10월",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "RISK-003",
+        "title": "데이터 유출 사건",
+        "description": "Apple의 시스템 해킹으로 인한 고객 데이터 유출 사건이 발생할 가능성이 있음.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "해킹 시도 증가",
+          "보안 취약점 발견",
+          "고객 불만 증가"
+        ],
+        "mitigation_strategies": [
+          "보안 시스템 강화",
+          "정기적인 보안 점검",
+          "고객 데이터 보호 정책 강화"
+        ],
+        "timeline": "2025년 9월",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "RISK-004",
+        "title": "신제품 출시 지연",
+        "description": "Siri 관련 문제로 인해 신제품 출시 일정이 지연될 가능성이 있음.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "보통",
+        "triggers": [
+          "Siri 문제 발생",
+          "개발 일정 조정",
+          "소비자 기대감 증가"
+        ],
+        "mitigation_strategies": [
+          "개발팀과의 긴밀한 협력",
+          "대체 계획 수립",
+          "소비자 커뮤니케이션 강화"
+        ],
+        "timeline": "2025년 10월",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "RISK-005",
+        "title": "삼성전자와의 협력 리스크",
+        "description": "삼성전자와의 협력으로 인해 생산 일정과 품질 문제가 발생할 가능성이 있음.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "보통",
+        "triggers": [
+          "삼성전자 생산 일정",
+          "품질 검사 결과",
+          "시장 반응"
+        ],
+        "mitigation_strategies": [
+          "다양한 공급망 확보",
+          "품질 관리 체계 강화",
+          "협력사와의 정기적인 회의"
+        ],
+        "timeline": "2025년 12월",
+        "confidence": "보통"
+      }
+    ],
+    "personalized_reports": {
+      "executive": "# Apple 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\nApple은 최근 몇 가지 중요한 제품 출시 및 파트너십을 통해 시장에서의 입지를 강화하고 있습니다. 2025년 AirPods Pro 3의 출시가 예상되며, Apple Arcade에서 NFL Retro Bowl ’26의 독점 출시가 예정되어 있습니다. 그러나 시리 관련 문제로 인해 신제품 출시 일정이 지연되고 있으며, 삼성전자가 Apple의 차세대 칩을 생산하는 등 공급망 변화가 감지되고 있습니다. 이러한 변화는 Apple의 브랜드 이미지와 시장 점유율에 영향을 미칠 수 있습니다.\n\n## 2. 주요 리스크 요인\n- **법적 분쟁**: 최근 'Apple Cinemas' 상표권 침해 소송이 발생하여 소비자 혼동과 브랜드 희석 우려가 제기되고 있습니다. 이는 브랜드 이미지에 부정적인 영향을 미칠 수 있습니다.\n- **제품 출시 지연**: 시리 문제로 인해 신제품 출시가 잇따라 연기되고 있어, 소비자 신뢰도와 시장 경쟁력에 악영향을 미칠 수 있습니다.\n- **공급망 변화**: 삼성전자가 Apple의 차세대 칩과 카메라 칩을 생산하게 되면서, 공급망의 의존도가 높아지고 있습니다. 이는 공급망 중단 리스크를 증가시킬 수 있습니다.\n\n## 3. 시장 기회\n- **신제품 출시**: AirPods Pro 3와 같은 혁신적인 제품 출시가 예정되어 있어, 소비자 수요를 자극하고 매출 성장을 이끌어낼 가능성이 높습니다.\n- **게임 및 엔터테인먼트 시장 확장**: Apple Arcade의 NFL Retro Bowl ’26 독점 출시를 통해 게임 시장에서의 입지를 강화할 수 있습니다. 이는 젊은 소비자층을 타겟으로 한 새로운 수익원으로 작용할 수 있습니다.\n- **AI 통합**: iOS 26에 'GPT-5' 통합 예정은 Apple의 소프트웨어 경쟁력을 높이고, 사용자 경험을 개선할 수 있는 기회입니다.\n\n## 4. 권장사항\n- **법적 리스크 관리**: 법적 분쟁에 대한 사전 예방 조치를 강화하고, 브랜드 보호를 위한 전략을 수립해야 합니다.\n- **제품 출시 일정 조정**: 시리 문제를 해결하기 위한 기술적 지원을 강화하고, 신제품 출시 일정에 대한 명확한 커뮤니케이션 전략을 수립해야 합니다.\n- **공급망 다변화**: 삼성전자와의 파트너십을 활용하여 공급망의 안정성을 높이고, 대체 공급업체와의 관계를 구축하여 리스크를 분산시켜야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 신제품 출시와 함께 소비자 반응을 모니터링하며, 법적 분쟁 해결을 위한 노력을 지속해야 합니다. 시장 점유율을 유지하기 위한 마케팅 전략이 필요합니다.\n- **중기(2-3년)**: Apple Arcade와 같은 새로운 서비스의 성과를 분석하고, AI 통합을 통한 사용자 경험 개선이 이루어질 것으로 예상됩니다. 이 시기에 브랜드 이미지 회복이 중요합니다.\n- **장기(4-5년)**: 지속적인 혁신과 공급망 안정화를 통해 Apple은 시장에서의 경쟁력을 유지할 수 있을 것으로 보입니다. 새로운 기술과 제품 라인업이 소비자에게 긍정적인 반응을 이끌어낼 가능성이 높습니다.\n\n이 보고서는 Apple의 현재 상황과 향후 전략을 명확히 이해하고, 경영진이 필요한 결정을 내리는 데 도움을 주기 위해 작성되었습니다.",
+      "investor": "# Apple 투자자 맞춤형 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\nApple은 지속적인 혁신과 다양한 제품 라인업을 통해 시장에서 강력한 입지를 유지하고 있습니다. 최근의 뉴스에 따르면, Apple은 새로운 제품 출시와 전략적 파트너십을 통해 성장을 도모하고 있으며, 특히 미국 내 생산 확대와 같은 대규모 투자를 계획하고 있습니다. 그러나 일부 법적 분쟁과 제품 출시 지연이 우려 요소로 작용하고 있습니다. 전반적으로 Apple은 긍정적인 성장세를 보이고 있으나, 리스크 관리가 필요합니다.\n\n## 2. 주요 리스크 요인\n- **법적 분쟁**: Apple은 'Apple Cinemas' 상표권 침해 소송에 연루되어 있으며, 이는 브랜드 이미지에 부정적인 영향을 미칠 수 있습니다.\n- **제품 출시 지연**: Siri 관련 문제로 인해 신제품 출시 일정이 지연되고 있으며, 이는 소비자 신뢰도에 영향을 줄 수 있습니다.\n- **공급망 리스크**: 삼성전자가 Apple의 차세대 칩을 생산하는 등 공급망 변화가 예상되며, 이는 안정성에 영향을 미칠 수 있습니다.\n\n## 3. 시장 기회\n- **신제품 출시**: 2025년 AirPods Pro 3와 같은 새로운 제품 출시가 예상되며, 이는 소비자 수요를 자극할 수 있습니다.\n- **Apple Arcade 확장**: NFL Retro Bowl ’26의 독점 출시로 게임 시장에서의 입지를 강화할 수 있는 기회가 있습니다.\n- **AI 통합**: iOS 26에 'GPT-5' 통합 예정으로, 인공지능 기술을 활용한 서비스 개선이 기대됩니다.\n\n## 4. 권장사항\n- **법적 대응 강화**: 상표권 침해 소송에 대한 법적 대응을 강화하고, 브랜드 이미지 보호를 위한 전략을 마련해야 합니다.\n- **제품 출시 일정 관리**: 내부 프로세스를 점검하여 제품 출시 지연 문제를 최소화하고, 소비자 신뢰를 유지해야 합니다.\n- **공급망 다변화**: 공급망 리스크를 줄이기 위해 다양한 공급업체와의 협력을 강화하고, 미국 내 생산 확대를 지속적으로 추진해야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 법적 분쟁과 제품 출시 지연이 단기적으로 주가에 부정적인 영향을 미칠 수 있으나, 신제품 출시와 서비스 개선이 긍정적인 요소로 작용할 것입니다.\n- **중기(1-3년)**: Apple의 지속적인 혁신과 시장 점유율 확대가 예상되며, 특히 게임 및 AI 분야에서의 성장이 기대됩니다.\n- **장기(3-5년)**: Apple은 브랜드 충성도와 강력한 생태계를 바탕으로 안정적인 성장을 지속할 것으로 보이며, 새로운 시장 진출 및 기술 혁신이 주요 성장 동력이 될 것입니다.\n\n이 보고서는 Apple에 대한 투자 결정을 내리는 데 있어 유용한 정보를 제공하며, 리스크와 기회를 균형 있게 고려할 수 있도록 돕습니다."
+    },
+    "analysis_method": "ChatGPT GPT-4o-mini + 기존 분석 시스템",
+    "ai_enhanced": true
+  },
+  "previous_scenario_titles": [],
+  "previous_scenario_scores": {},
+  "current_scenario_titles": [
+    "AirPods Pro 3 리콜",
+    "Apple Cinemas 상표권 소송",
+    "데이터 유출 사건",
+    "신제품 출시 지연",
+    "삼성전자와의 협력 리스크"
+  ],
+  "current_scenario_scores": {
+    "AirPods Pro 3 리콜": 0,
+    "Apple Cinemas 상표권 소송": 0,
+    "데이터 유출 사건": 0,
+    "신제품 출시 지연": 0,
+    "삼성전자와의 협력 리스크": 0
+  },
+  "_base_id": "Apple_apple.com"
+}

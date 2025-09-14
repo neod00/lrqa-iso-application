@@ -1,0 +1,612 @@
+{
+  "timestamp": "2025-08-18T16:42:37Z",
+  "input": {
+    "company_name": "삼성전자",
+    "url": "https://samsung.com",
+    "country_hint": "KR",
+    "lang": "ko"
+  },
+  "entity": {
+    "name": "삼성전자",
+    "domain": "samsung.com"
+  },
+  "filings": [
+    {
+      "title": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "date": "20250818",
+      "rcp_no": "20250818000049",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250818000049"
+    },
+    {
+      "title": "지급수단별ㆍ지급기간별지급금액및분쟁조정기구에관한사항",
+      "date": "20250814",
+      "rcp_no": "20250814004256",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "지급수단별ㆍ지급기간별지급금액및분쟁조정기구에관한사항",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814004256"
+    },
+    {
+      "title": "동일인등출자계열회사와의상품ㆍ용역거래변경",
+      "date": "20250814",
+      "rcp_no": "20250814004245",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "동일인등출자계열회사와의상품ㆍ용역거래변경",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814004245"
+    },
+    {
+      "title": "동일인등출자계열회사와의상품ㆍ용역거래변경",
+      "date": "20250814",
+      "rcp_no": "20250814004228",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "동일인등출자계열회사와의상품ㆍ용역거래변경",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814004228"
+    },
+    {
+      "title": "동일인등출자계열회사와의상품ㆍ용역거래변경",
+      "date": "20250814",
+      "rcp_no": "20250814004200",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "동일인등출자계열회사와의상품ㆍ용역거래변경",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814004200"
+    },
+    {
+      "title": "주식등의대량보유상황보고서(일반)",
+      "date": "20250814",
+      "rcp_no": "20250814004144",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "주식등의대량보유상황보고서(일반)",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814004144"
+    },
+    {
+      "title": "반기보고서 (2025.06)",
+      "date": "20250814",
+      "rcp_no": "20250814003156",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "반기보고서 (2025.06)",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250814003156"
+    },
+    {
+      "title": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "date": "20250813",
+      "rcp_no": "20250813001429",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250813001429"
+    },
+    {
+      "title": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "date": "20250812",
+      "rcp_no": "20250812000466",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250812000466"
+    },
+    {
+      "title": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "date": "20250806",
+      "rcp_no": "20250806000314",
+      "corp_name": "삼성전자",
+      "corp_code": "00126380",
+      "type": "임원ㆍ주요주주특정증권등소유상황보고서",
+      "source": "DART",
+      "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250806000314"
+    }
+  ],
+  "news": [
+    {
+      "title": "삼성전자, 세계 최초 마이크로 RGB TV 내놓고 중국 따돌린다 - 조선일보",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSUFlVXJIWnZVbmdQZWItdFVzWVhPazJKcklMYXdERzBlTTl6T3gtOTg4eDZ0a3RfaEx5TGxZZkYtVlo0eWZoN2RwaGFpTlJkUEl1Z29XSmVnNkVYczFPelNnVlVBWkRsQnhDYkRQY3pINmE0aVQtWDJJR09kSEIwRzJyc9IBlwFBVV95cUxNSXNZdGhHazRCU1h6S05DNGdaRzFUaUNFX0pfb0RsdWZZd0tPcnNFLU1MbmpJWFV4clhYeDh1a0R1bGkzWm9iQUVnYWdpTGtSVTNQSjgtZW0ybkpDQy1wMExiMmJONFJNbXdweldibGZHVUJQN1E1TmtaWk1fS19pc1ZNZFR2SHdvcVdDbXVpUmh4MU1QOE9r?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "삼성전자, 세계 최초 마이크로 RGB TV 내놓고 중국 따돌린다 - 조선일보"
+    },
+    {
+      "title": "테슬라, 애플 찍고 엔비디아까지?…\"우리 삼성전자가 달라졌어요\" - 인베스트조선",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQUUdTVkJKZUFqeExXbXlnM3k2UElub2JYSmVBampMUFdZTFU4b2hmUjltaWpDWVZlVlZzaVBvcjV6NUQxVzJobXFhSGhRTzNrT0JwdVlnTEhtTzE0UmRyN0U5VXVMWU5SZ3JGMFJLNEp4Mko3VkRpc0pnSURCdHpENmxyYw?oc=5",
+      "published": "Fri, 08 Aug 2025",
+      "excerpt": "테슬라, 애플 찍고 엔비디아까지?…\"우리 삼성전자가 달라졌어요\" - 인베스트조선"
+    },
+    {
+      "title": "반도체 수주·릴레이 신제품 출시…삼성전자, 하반기 반등 시도 돌입 - 뉴스1",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1ENGFBY1B4OVJzMzJYcmI2M0E3NHBHYXhLUGlkVjVSZkFSaG5xXzdPSUljZnAwT1N6UWlhak9SZElDU2JDMTBlZ2VvUElab1V0TFhtamduWE44bzRsYmRyS0dCY3g?oc=5",
+      "published": "Thu, 14 Aug 2025",
+      "excerpt": "반도체 수주·릴레이 신제품 출시…삼성전자, 하반기 반등 시도 돌입 - 뉴스1"
+    },
+    {
+      "title": "삼성전자, 세계 최초 ‘마이크로 RGB TV’ 출시… 프리미엄 TV 기술의 새 기준 제시 - Samsung Newsroom",
+      "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxOaTBOWktRZVV3X2laRjRJa1RkajhJNThPYUZKWlBCTzBpcXNTcFVaektleF90b21mcF93am55bGhOQy1sTmNGTktwSzZMV1FxcHNJMVRuVXlyTmxSdUk2NnlOWDFXeFdNSm1wNi1Mc0dLWnlpSlFBUURkcm04SkFCaHRrQWVERXRXQXhIMkcwWU0tand6ZWJNTTFCeS0tMDFURms1XzE3REdrbDNSZVF0cDVOcWRQTkRwb2I1ZzM1djJWRno2TmpOamhUTUhkMG1YVGx5dDdER1pXWGNaYlB0Sl9CcVdJRTFfYUhSR2REMnNyaXZLUVNGRHI3UDdJWklwanYtZ2RiMXQzcFg0bWtnRG5IbHpSYU5Hd1UxS3I1Rm1PRGp5WThkcEtsS2VvZw?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "삼성전자, 세계 최초 ‘마이크로 RGB TV’ 출시… 프리미엄 TV 기술의 새 기준 제시 - Samsung Newsroom"
+    },
+    {
+      "title": "삼성전자 아픈 손가락이었는데…바닥 친 파운드리, HBM 반등할까? - 매일경제",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4xbkNtaUNibkFnU3o0QUpOYWgtVUViMXF6T3ZDaG96SHRpYmlxeGFoTnFLQzg1Z3hvTzRRV3pkQ0hVWkhlZHg2WjRMU0NMMVpwVC1qMXB3?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "삼성전자 아픈 손가락이었는데…바닥 친 파운드리, HBM 반등할까? - 매일경제"
+    },
+    {
+      "title": "삼성전자, 엔비디아에 HBM3E 12단 메모리 3만~5만 개 공급 확정 - 글로벌이코노믹",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQRFU4X0VDSnR6Y2lYVlVxN3RRSDVZQUhuODdsMHVuVlBEOFBaREpxQ25MOWhublVyckxvNzAtYS0wNHRITGxVNm9yUDNyMkxfYWhZTHBEVVlKc2VpS3IwU1pHaXlrUTl2RV9LNTlCV1I4VmR1MWN0cUVMQnBTR3d5Q1dvYW5UaTRk?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "삼성전자, 엔비디아에 HBM3E 12단 메모리 3만~5만 개 공급 확정 - 글로벌이코노믹"
+    },
+    {
+      "title": "마이크론 \"HBM4 진입장벽 높아져 수혜\", SK하이닉스 삼성전자에 우위 자신 - 비즈니스포스트",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ZeWY1NnhraERLOFhBRzZUcDhPQWR6aFhxdDcwNzJJOXJyUmlqSVBHLUtzZUxRWExsb0ozVW9wbmtKTHgzNEczWDNNeVk4bF90WDN0OXhqMnhUdTktVjhtbjA5OGJuQi03QlZVWTJwajhFY0U?oc=5",
+      "published": "Tue, 12 Aug 2025",
+      "excerpt": "마이크론 \"HBM4 진입장벽 높아져 수혜\", SK하이닉스 삼성전자에 우위 자신 - 비즈니스포스트"
+    },
+    {
+      "title": "트럼프 '반도체 100% 관세 부과'...삼성전자, SK하이닉스 등 한국 기업 영향은? - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBTaExVNTdaV1FESmxMTkN1YzdkWHZhSDFROTVTM2xFeExVM1VXZmFjYktXR3IxNzdUcmR2a0VFXy1XYUZHdThFUDJ1ektyV1BnWW1BUVFPUy1tN0ty0gFiQVVfeXFMTkFXVDQ0TDBkaGJaMTM2OFpQWjA2TmtHei1uM0tCMWVfY0JkMkx4clM3LVA2YlVIbTFIa3JYSXhvdmZMVnRCUUtxODFjVzZGLTctRnJfbV9yTW5NeUhpNXpGMGc?oc=5",
+      "published": "Thu, 07 Aug 2025",
+      "excerpt": "트럼프 '반도체 100% 관세 부과'...삼성전자, SK하이닉스 등 한국 기업 영향은? - BBC"
+    }
+  ],
+  "social_media": [
+    {
+      "date": "2025-08-08 00:03",
+      "user": "Ok-Area9472",
+      "content": "[CT-3375] 삼성이 잊은 CRT, 우리가 기억한다. **안녕하세요, 여러분.**  \n제 컬렉션에서 아주 특별한 텔레비전을 소개하고 싶습니다.  \n바로 삼성의 CRT 텔레비전, 모델명 CT-3375 / K-58입니다.  \n이 제품은 대한민국에서 제조되었으며, 제가 지금까지 조사한 바로는  \n**유일하거나 매우 희귀한 모델일 가능성이 있습니다.**\n\nhttps://preview.redd.it/eeqslxzo1m",
+      "url": "https://reddit.com/r/KoreanCRT/comments/1mk2h74/ct3375_삼성이_잊은_crt_우리가_기억한다/",
+      "source": "Reddit",
+      "subreddit": "KoreanCRT",
+      "score": 1
+    },
+    {
+      "date": "2025-07-22 21:08",
+      "user": "labor-attorney",
+      "content": "대법원 판결: 삼성전자 서비스 센터 하도급 회사 수리기사 불법파견으로 인정, 삼성전자를 실제 사용자로 인정한 사건이다.   \n대법원 판결: 삼성전자 서비스 센터 하도급 회사 수리기사 불법파견으로 인정, 삼성전자를 실제 사용자로 인정한 사건이다.  \n  \n[https://youtu.be/WlUIVjRVCHY?si=IGjViASlxQ3CFroD](https://youtu.be/WlUIVjRVCHY?si=IGjViASlxQ3CFroD)",
+      "url": "https://reddit.com/r/Korean_Law/comments/1m6cbvj/대법원_판결_삼성전자_서비스_센터_하도급_회사_수리기사_불법파견으로_인정_삼성전자를_실제/",
+      "source": "Reddit",
+      "subreddit": "Korean_Law",
+      "score": 1
+    }
+  ],
+  "tweets": [
+    {
+      "error": "Twitter API keys not configured"
+    }
+  ],
+  "serpapi": {},
+  "risk": {
+    "finbert": {
+      "neg": 0.030981088057160378,
+      "neu": 0.903434419631958,
+      "pos": 0.0655844859778881
+    },
+    "keyword_hits": {
+      "리콜|recall": 0,
+      "소송|lawsuit|litigation|class action": 0,
+      "해킹|유출|breach|hack|data leak|ransom": 0,
+      "제재|sanction|embargo": 0,
+      "회계\\s?부정|fraud|accounting scandal": 0,
+      "규제\\s?위반|non-?compliance|violation": 0,
+      "폐업|bankruptcy|insolvency|파산": 0,
+      "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+      "손실|loss|deficit|적자": 0,
+      "부채|debt|liability|채무": 0,
+      "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+      "인수합병|M&A|merger|acquisition|합병": 0,
+      "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+      "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+      "내부\\s?고발|whistleblower|내부신고": 0,
+      "파업|strike|노사갈등|labor\\s?dispute": 0,
+      "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+      "품질\\s?문제|quality\\s?issue|불량품": 0,
+      "안전\\s?사고|safety\\s?accident|사고": 0,
+      "환경\\s?문제|environmental|pollution|오염": 0,
+      "건강\\s?위험|health\\s?risk|건강피해": 0,
+      "서비스\\s?중단|service\\s?outage|장애": 0,
+      "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+      "반독점|antitrust|monopoly|독점규제": 0,
+      "세금\\s?문제|tax\\s?issue|세무조사": 0,
+      "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+      "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+      "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+      "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+      "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+      "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+      "경기\\s?침체|recession|경기하락": 0,
+      "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+      "네트워크\\s?보안|network\\s?security|보안위협": 0,
+      "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+      "지적재산권|intellectual\\s?property|특허분쟁": 0,
+      "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+      "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+      "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+      "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+      "보이콧|boycott|불매운동": 0,
+      "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+      "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+      "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+      "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+      "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+      "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+      "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+      "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+      "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+      "테러|terrorism|테러위협": 0,
+      "자연재해|natural\\s?disaster|천재지변": 0
+    },
+    "keyword_hits_total": 0,
+    "risk_score_0to1": 0.069
+  },
+  "iso_assessment": {
+    "standards": {
+      "14001": {
+        "readiness_score": 79.2,
+        "status": "준비됨",
+        "standard_name": "환경경영시스템",
+        "clause_details": {
+          "context": {
+            "name": "조직과 상황",
+            "score": 85,
+            "weight": 0.15,
+            "requirements": [
+              "환경경영시스템 범위 결정",
+              "환경 이슈와 요구사항 파악",
+              "이해관계자 요구사항"
+            ],
+            "gaps": [
+              "환경 이슈와 요구사항 파악의 구체적인 데이터 부족",
+              "이해관계자 요구사항에 대한 체계적인 분석 필요"
+            ]
+          },
+          "leadership": {
+            "name": "리더십",
+            "score": 80,
+            "weight": 0.2,
+            "requirements": [
+              "환경방침 수립과 의지",
+              "환경 책임과 권한",
+              "환경보호 약속"
+            ],
+            "gaps": [
+              "환경방침의 구체적인 실행 계획 부족",
+              "환경 책임과 권한의 명확한 정의 필요"
+            ]
+          },
+          "planning": {
+            "name": "기획",
+            "score": 75,
+            "weight": 0.25,
+            "requirements": [
+              "환경측면 식별과 평가",
+              "법규 및 기타 요구사항",
+              "환경목표와 달성 계획",
+              "리스크와 기회"
+            ],
+            "gaps": [
+              "환경측면 식별과 평가의 체계성 부족",
+              "법규 및 기타 요구사항에 대한 최신 정보 부족",
+              "환경목표와 달성 계획의 구체성 부족"
+            ]
+          },
+          "support": {
+            "name": "지원",
+            "score": 70,
+            "weight": 0.15,
+            "requirements": [
+              "자원 확보",
+              "환경 역량과 인식",
+              "소통과 참여",
+              "문서화된 정보"
+            ],
+            "gaps": [
+              "환경 역량과 인식 제고를 위한 교육 프로그램 부족",
+              "소통과 참여의 활성화를 위한 전략 필요"
+            ]
+          },
+          "operation": {
+            "name": "운영",
+            "score": 75,
+            "weight": 0.15,
+            "requirements": [
+              "운영 관리",
+              "비상상황 대비와 대응"
+            ],
+            "gaps": [
+              "운영 관리의 구체적인 절차 부족",
+              "비상상황 대비와 대응 계획의 체계성 부족"
+            ]
+          },
+          "evaluation": {
+            "name": "평가",
+            "score": 70,
+            "weight": 0.1,
+            "requirements": [
+              "모니터링과 측정",
+              "법규 준수 평가",
+              "내부심사",
+              "경영검토"
+            ],
+            "gaps": [
+              "모니터링과 측정의 정기적인 검토 필요",
+              "법규 준수 평가의 체계적인 접근 부족",
+              "내부심사 및 경영검토의 주기적 실시 필요"
+            ]
+          }
+        },
+        "industry_bonus": 3,
+        "assessment_method": "ChatGPT Enhanced Analysis"
+      }
+    },
+    "overall_score": 79.2,
+    "overall_status": "analyzed",
+    "_focus_standards": [
+      "14001"
+    ]
+  },
+  "iso_recommendation": {
+    "type": "custom_gap_analysis",
+    "company_specific_assessment": "삼성전자는 세계적인 제조업체로서, 지속 가능한 환경 관리 시스템의 필요성이 높습니다. 그러나 ISO 14001 인증 준비도는 79.2점으로, 환경 관리 정책 및 절차의 일부가 미비하여 개선이 필요합니다.",
+    "focus_standards": [
+      "14001"
+    ],
+    "primary_standard": "ISO 14001",
+    "key_gaps": [
+      "환경 목표 설정 및 성과 측정 체계 부족",
+      "환경 법규 준수 모니터링 미비",
+      "직원 교육 및 인식 제고 부족"
+    ],
+    "customized_recommendations": [
+      "환경 목표를 SMART 기준에 따라 설정하고, 성과 측정 지표를 개발하여 정기적으로 검토",
+      "환경 법규 준수를 위한 내부 감사 시스템 구축 및 정기적인 모니터링 실시",
+      "모든 직원 대상의 환경 관리 교육 프로그램 개발 및 시행",
+      "공급망의 환경 영향을 평가하고 개선 방안 마련",
+      "환경 관리 시스템의 지속적인 개선을 위한 피드백 메커니즘 구축"
+    ],
+    "implementation_roadmap": {
+      "phase1": "1-2개월: 환경 목표 설정 및 초기 교육 프로그램 개발",
+      "phase2": "3-6개월: 내부 감사 시스템 구축 및 법규 준수 모니터링 시작",
+      "phase3": "6-12개월: 성과 측정 체계 운영 및 지속적인 직원 교육 시행"
+    },
+    "estimated_cost_range": "5000만 원 ~ 1억 원",
+    "priority_areas": [
+      "환경 목표 설정 및 성과 측정 체계 구축",
+      "환경 법규 준수 모니터링 시스템 강화",
+      "직원 교육 및 인식 제고 프로그램 시행"
+    ],
+    "success_factors": [
+      "경영진의 강력한 지원 및 참여",
+      "전사적인 협력 및 커뮤니케이션",
+      "지속적인 피드백 및 개선 문화 정착"
+    ],
+    "overall_readiness": 79.2,
+    "assessment_method": "ChatGPT Custom Analysis",
+    "company_name": "삼성전자",
+    "analysis_date": "2025-08-19"
+  },
+  "baseline_risk_analysis": {
+    "overall_score": 91.8,
+    "finbert_analysis": {
+      "neg": 0.030981088057160378,
+      "neu": 0.903434419631958,
+      "pos": 0.0655844859778881
+    },
+    "keyword_analysis": {
+      "total_hits": 0,
+      "detail": {
+        "리콜|recall": 0,
+        "소송|lawsuit|litigation|class action": 0,
+        "해킹|유출|breach|hack|data leak|ransom": 0,
+        "제재|sanction|embargo": 0,
+        "회계\\s?부정|fraud|accounting scandal": 0,
+        "규제\\s?위반|non-?compliance|violation": 0,
+        "폐업|bankruptcy|insolvency|파산": 0,
+        "주가\\s?하락|stock\\s?decline|market\\s?crash|주가폭락": 0,
+        "손실|loss|deficit|적자": 0,
+        "부채|debt|liability|채무": 0,
+        "유동성\\s?위기|liquidity\\s?crisis|자금난": 0,
+        "인수합병|M&A|merger|acquisition|합병": 0,
+        "경영진\\s?교체|CEO\\s?change|management\\s?shakeup|사장교체": 0,
+        "이사회\\s?해임|board\\s?dismissal|이사해임": 0,
+        "내부\\s?고발|whistleblower|내부신고": 0,
+        "파업|strike|노사갈등|labor\\s?dispute": 0,
+        "조직\\s?개편|restructuring|reorganization|구조조정": 0,
+        "품질\\s?문제|quality\\s?issue|불량품": 0,
+        "안전\\s?사고|safety\\s?accident|사고": 0,
+        "환경\\s?문제|environmental|pollution|오염": 0,
+        "건강\\s?위험|health\\s?risk|건강피해": 0,
+        "서비스\\s?중단|service\\s?outage|장애": 0,
+        "법적\\s?분쟁|legal\\s?dispute|법적갈등": 0,
+        "반독점|antitrust|monopoly|독점규제": 0,
+        "세금\\s?문제|tax\\s?issue|세무조사": 0,
+        "허가\\s?취소|license\\s?revocation|인허가취소": 0,
+        "정부\\s?조사|government\\s?investigation|공권력조사": 0,
+        "시장\\s?점유율\\s?하락|market\\s?share\\s?decline|점유율하락": 0,
+        "경쟁사\\s?대응|competitor\\s?response|경쟁대응": 0,
+        "원자재\\s?가격\\s?상승|raw\\s?material\\s?price|원료가격": 0,
+        "환율\\s?변동|exchange\\s?rate|환율리스크": 0,
+        "경기\\s?침체|recession|경기하락": 0,
+        "시스템\\s?장애|system\\s?failure|시스템오류": 0,
+        "네트워크\\s?보안|network\\s?security|보안위협": 0,
+        "개인정보\\s?유출|personal\\s?data\\s?leak|개인정보침해": 0,
+        "지적재산권|intellectual\\s?property|특허분쟁": 0,
+        "기술\\s?도태|technology\\s?obsolescence|기술낙후": 0,
+        "브랜드\\s?이미지\\s?손상|brand\\s?damage|브랜드손상": 0,
+        "고객\\s?불만|customer\\s?complaint|고객민원": 0,
+        "소셜미디어\\s?위기|social\\s?media\\s?crisis|SNS위기": 0,
+        "보이콧|boycott|불매운동": 0,
+        "평판\\s?하락|reputation\\s?decline|이미지하락": 0,
+        "공급망\\s?중단|supply\\s?chain\\s?disruption|공급중단": 0,
+        "물류\\s?지연|logistics\\s?delay|배송지연": 0,
+        "공급업체\\s?문제|supplier\\s?issue|협력사문제": 0,
+        "재고\\s?부족|inventory\\s?shortage|재고부족": 0,
+        "운송\\s?사고|transportation\\s?accident|운송사고": 0,
+        "무역\\s?분쟁|trade\\s?dispute|무역갈등": 0,
+        "정치적\\s?불안정|political\\s?instability|정치불안": 0,
+        "국제\\s?분쟁|international\\s?conflict|국제갈등": 0,
+        "테러|terrorism|테러위협": 0,
+        "자연재해|natural\\s?disaster|천재지변": 0
+      }
+    },
+    "risk_level": "낮음",
+    "assessment_method": "FinBERT + Keyword Analysis"
+  },
+  "chatgpt_enhanced_analysis": {
+    "contextual_analysis": {
+      "hidden_risks": [
+        "반도체 시장의 변동성: HBM 반도체의 수요 증가에도 불구하고, 마이크론 및 SK하이닉스와의 경쟁 심화로 인한 가격 압박 가능성.",
+        "법적 리스크: 서비스 센터 하도급 문제로 인한 법적 책임 증가 및 브랜드 이미지 손상 가능성.",
+        "정치적 리스크: 미국의 반도체 관세 부과 가능성에 따른 수출 및 공급망에 대한 부정적 영향."
+      ],
+      "market_context": "삼성전자는 최근 마이크로 RGB TV와 같은 혁신적인 제품을 출시하며 프리미엄 시장에서의 입지를 강화하고 있습니다. 그러나 반도체 시장의 경쟁이 치열해지고 있으며, 특히 HBM 메모리 분야에서의 경쟁이 심화되고 있습니다. 또한, 글로벌 공급망의 불안정성과 정치적 리스크가 존재하여 시장의 예측 가능성을 낮추고 있습니다.",
+      "competitive_analysis": "삼성전자는 엔비디아와의 협력을 통해 HBM3E 메모리 공급 계약을 체결하며 기술적 우위를 점하고 있습니다. 그러나 SK하이닉스와 마이크론의 기술 발전이 빠르게 이루어지고 있어, 이들 기업과의 경쟁에서 지속적인 혁신이 필요합니다. 특히, SK하이닉스는 HBM4 진입장벽을 높여 삼성전자에 대한 우위를 주장하고 있어 주의가 필요합니다.",
+      "regulatory_implications": "미국의 반도체 100% 관세 부과 가능성은 삼성전자와 같은 한국 기업에 직접적인 영향을 미칠 수 있습니다. 이는 공급망의 재편성과 비용 증가를 초래할 수 있으며, 글로벌 시장에서의 경쟁력을 약화시킬 수 있습니다.",
+      "investor_sentiment": "삼성전자의 혁신적인 제품 출시와 반도체 수주 증가로 인해 투자자들의 긍정적인 심리가 형성되고 있으나, 법적 리스크와 정치적 불확실성으로 인해 시장 신뢰도는 다소 낮아질 수 있습니다. 따라서 투자자들은 삼성전자의 장기적인 성장 가능성을 주의 깊게 살펴봐야 합니다.",
+      "recommendations": [
+        "반도체 시장의 변동성을 관리하기 위해 다양한 공급망 전략을 수립하고, 경쟁사 대비 가격 경쟁력을 유지할 수 있는 방안을 모색할 것.",
+        "법적 리스크를 줄이기 위해 서비스 센터 운영 방식을 개선하고, 하도급 업체와의 관계를 명확히 할 필요가 있음.",
+        "정치적 리스크를 고려하여, 미국 및 기타 주요 시장에서의 규제 변화에 대한 모니터링 체계를 강화할 것."
+      ]
+    },
+    "risk_scenarios": [
+      {
+        "scenario_id": "risk_001",
+        "title": "품질 문제로 인한 대규모 리콜",
+        "description": "삼성전자가 최근 출시한 마이크로 RGB TV에서 품질 문제가 발생하여 대규모 리콜이 필요할 수 있음. 이는 소비자 신뢰를 저하시킬 위험이 존재.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "품질 문제 발생",
+          "소비자 불만 증가"
+        ],
+        "mitigation_strategies": [
+          "품질 관리 강화",
+          "소비자 피드백 모니터링"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "risk_002",
+        "title": "사이버 공격으로 인한 데이터 유출",
+        "description": "삼성전자의 시스템이 해킹당해 고객 데이터가 유출될 위험이 증가하고 있으며, 이는 법적 문제를 초래할 수 있음.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "매우 높음",
+        "triggers": [
+          "해킹 시도 증가",
+          "보안 시스템 취약점 발견"
+        ],
+        "mitigation_strategies": [
+          "보안 시스템 강화",
+          "정기적인 보안 점검"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "높음"
+      },
+      {
+        "scenario_id": "risk_003",
+        "title": "반도체 수출 제재로 인한 매출 감소",
+        "description": "미국의 반도체 수출 제재가 강화되면서 삼성전자의 반도체 매출이 감소할 위험이 존재.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "정치적 긴장 증가",
+          "무역 규제 강화"
+        ],
+        "mitigation_strategies": [
+          "다양한 시장 개발",
+          "법률 자문 강화"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "risk_004",
+        "title": "소송으로 인한 법적 비용 증가",
+        "description": "삼성전자가 제품 결함으로 인해 소송에 휘말릴 경우, 법적 비용과 평판 손상이 우려됨.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "소비자 불만 증가",
+          "법적 소송 제기"
+        ],
+        "mitigation_strategies": [
+          "법적 리스크 관리 강화",
+          "소비자와의 소통 강화"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      },
+      {
+        "scenario_id": "risk_005",
+        "title": "회계 부정 의혹으로 인한 신뢰도 하락",
+        "description": "회계 부정 의혹이 제기될 경우, 삼성전자의 신뢰도가 하락하고 주가에 부정적인 영향을 미칠 수 있음.",
+        "probability": null,
+        "impact": null,
+        "risk_level": "높음",
+        "triggers": [
+          "회계 감사 결과",
+          "언론 보도"
+        ],
+        "mitigation_strategies": [
+          "투명한 회계 관리",
+          "외부 감사 강화"
+        ],
+        "timeline": "6개월 이내",
+        "confidence": "보통"
+      }
+    ],
+    "personalized_reports": {
+      "executive": "# 삼성전자 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\n삼성전자는 최근 세계 최초의 마이크로 RGB TV를 출시하며 기술 혁신을 선도하고 있으며, 반도체 부문에서도 긍정적인 신호를 보이고 있습니다. 특히 엔비디아와의 협력을 통해 HBM3E 메모리 공급 계약을 체결하며 반도체 시장에서의 입지를 강화하고 있습니다. 그러나 파운드리 부문에서의 부진과 외부 경제 요인으로 인한 리스크도 존재합니다.\n\n## 2. 주요 리스크 요인\n- **파운드리 부문 부진**: 파운드리 사업이 아픈 손가락으로 지적받고 있으며, 시장 회복 여부가 불확실합니다.\n- **외부 경제 요인**: 반도체 100% 관세 부과와 같은 정치적 불안정성이 삼성전자의 글로벌 운영에 부정적인 영향을 미칠 수 있습니다.\n- **소송 및 법적 분쟁**: 최근 삼성전자 서비스 센터 하도급 회사와 관련된 불법파견 판결이 부정적인 이미지를 초래할 수 있습니다.\n\n## 3. 시장 기회\n- **프리미엄 TV 시장**: 마이크로 RGB TV의 출시로 프리미엄 TV 시장에서의 경쟁력을 강화할 수 있는 기회가 있습니다.\n- **반도체 수요 증가**: AI 및 데이터 센터의 발전으로 인해 반도체 수요가 증가하고 있으며, 삼성전자는 이를 통해 매출 성장을 기대할 수 있습니다.\n- **글로벌 파트너십**: 엔비디아와의 협력은 새로운 시장 진출 및 기술 혁신을 위한 기회를 제공합니다.\n\n## 4. 권장사항\n- **파운드리 부문 강화**: 파운드리 사업의 경쟁력을 높이기 위해 R&D 투자 및 기술 개발을 강화해야 합니다.\n- **위기 관리 체계 구축**: 외부 경제 요인에 대한 리스크 관리 체계를 강화하고, 법적 분쟁에 대한 대응 전략을 마련해야 합니다.\n- **마케팅 전략 재정비**: 마이크로 RGB TV 출시와 같은 혁신적인 제품에 대한 마케팅을 강화하여 소비자 인식을 높여야 합니다.\n\n## 5. 향후 전망\n- **단기(1년)**: 반도체 시장의 회복과 함께 프리미엄 제품의 판매 증가가 예상되며, 파운드리 부문에서의 개선이 필요합니다.\n- **중기(2-3년)**: AI 및 데이터 센터의 발전으로 반도체 수요가 지속적으로 증가할 것으로 보이며, 글로벌 파트너십을 통해 시장 점유율을 확대할 수 있습니다.\n- **장기(4-5년)**: 지속적인 기술 혁신과 글로벌 시장에서의 경쟁력을 바탕으로 삼성전자는 안정적인 성장세를 유지할 것으로 기대됩니다.\n\n이 보고서는 삼성전자의 현재 상황과 미래 전망을 종합적으로 분석하여 경영진의 의사결정에 도움을 주기 위해 작성되었습니다.",
+      "investor": "# 삼성전자 비즈니스 인텔리전스 보고서\n\n## 1. 실행 요약\n삼성전자는 최근 세계 최초의 마이크로 RGB TV를 출시하며 기술 혁신을 선도하고 있으며, 반도체 분야에서도 HBM3E 메모리 공급 계약을 체결하는 등 긍정적인 신호를 보이고 있습니다. 그러나 반도체 시장의 변동성과 글로벌 경제 불확실성은 여전히 리스크 요인으로 작용하고 있습니다. 이러한 상황 속에서 삼성전자는 하반기 반등을 시도하고 있으며, 투자자들에게는 긍정적인 투자 기회를 제공할 수 있는 요소가 다수 존재합니다.\n\n## 2. 주요 리스크 요인\n- **글로벌 경제 불확실성**: 반도체 및 전자제품 시장의 경기 침체 우려가 지속되고 있으며, 이는 삼성전자의 매출에 부정적인 영향을 미칠 수 있습니다.\n- **경쟁 심화**: 엔비디아, 애플 등 경쟁사들이 기술 혁신을 지속적으로 추진하고 있어, 시장 점유율 확보에 어려움이 있을 수 있습니다.\n- **정치적 리스크**: 미국의 반도체 관련 정책 변화, 특히 관세 부과와 같은 정치적 불안정성이 삼성전자에 미치는 영향이 우려됩니다.\n\n## 3. 시장 기회\n- **기술 혁신**: 마이크로 RGB TV 출시와 같은 혁신적인 제품은 프리미엄 시장에서의 경쟁력을 강화할 수 있으며, 새로운 소비자 수요를 창출할 가능성이 높습니다.\n- **반도체 수요 증가**: AI 및 데이터 센터의 확산으로 HBM 메모리와 같은 고성능 반도체에 대한 수요가 증가하고 있으며, 이는 삼성전자의 매출 성장에 기여할 수 있습니다.\n- **글로벌 시장 확장**: 중국 시장에서의 경쟁 우위를 확보함으로써, 삼성전자는 새로운 고객층을 확보할 수 있는 기회를 가질 수 있습니다.\n\n## 4. 권장사항\n- **기술 투자 강화**: 지속적인 R&D 투자로 혁신적인 제품 개발을 추진하고, 시장의 변화에 민첩하게 대응할 수 있는 체계를 구축해야 합니다.\n- **리스크 관리 체계 구축**: 정치적 및 경제적 리스크를 관리하기 위한 체계적인 리스크 관리 방안을 마련하고, 글로벌 시장의 변동성에 대비해야 합니다.\n- **파트너십 확대**: 엔비디아와 같은 주요 기업과의 협업을 통해 기술적 시너지를 창출하고, 시장에서의 경쟁력을 강화해야 합니다.\n\n## 5. 향후 전망\n- **단기 전망**: 하반기 반등 시도가 성공할 경우, 삼성전자의 주가는 긍정적인 흐름을 보일 것으로 예상됩니다. 반도체 수요가 증가하면서 매출이 회복될 가능성이 높습니다.\n- **중기 전망**: 기술 혁신과 시장 점유율 확대가 이루어질 경우, 삼성전자는 안정적인 성장세를 유지할 수 있을 것입니다. 특히, HBM 메모리와 같은 고부가가치 제품의 수요가 증가할 것입니다.\n- **장기 전망**: 글로벌 전자제품 시장에서의 지속적인 기술 리더십과 혁신이 이루어진다면, 삼성전자는 향후 5년 이상 안정적인 성장세를 이어갈 가능성이 높습니다. \n\n이 보고서는 삼성전자의 현재 상황과 향후 전망을 종합적으로 분석하여 투자자에게 유용한 정보를 제공하고자 하였습니다."
+    },
+    "analysis_method": "ChatGPT GPT-4o-mini + 기존 분석 시스템",
+    "ai_enhanced": true
+  },
+  "previous_scenario_titles": [
+    "리콜로 인한 브랜드 이미지 손상",
+    "해킹 공격으로 인한 데이터 유출",
+    "반도체 시장의 공급망 불안정",
+    "규제 강화로 인한 법적 리스크",
+    "소송으로 인한 재정적 부담"
+  ],
+  "previous_scenario_scores": {
+    "리콜로 인한 브랜드 이미지 손상": 0,
+    "해킹 공격으로 인한 데이터 유출": 0,
+    "반도체 시장의 공급망 불안정": 0,
+    "규제 강화로 인한 법적 리스크": 0,
+    "소송으로 인한 재정적 부담": 0
+  },
+  "current_scenario_titles": [
+    "품질 문제로 인한 대규모 리콜",
+    "사이버 공격으로 인한 데이터 유출",
+    "반도체 수출 제재로 인한 매출 감소",
+    "소송으로 인한 법적 비용 증가",
+    "회계 부정 의혹으로 인한 신뢰도 하락"
+  ],
+  "current_scenario_scores": {
+    "품질 문제로 인한 대규모 리콜": 0,
+    "사이버 공격으로 인한 데이터 유출": 0,
+    "반도체 수출 제재로 인한 매출 감소": 0,
+    "소송으로 인한 법적 비용 증가": 0,
+    "회계 부정 의혹으로 인한 신뢰도 하락": 0
+  },
+  "_base_id": "삼성전자_samsung.com"
+}

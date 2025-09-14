@@ -1,0 +1,116 @@
+{
+  "9001": {
+    "name": "품질경영시스템",
+    "full_name": "ISO 9001:2015 품질경영시스템",
+    "description": "고객 만족을 위한 품질 관리 시스템",
+    "version": "2015",
+    "requirements": [
+      "고객 중심",
+      "지속적 개선", 
+      "프로세스 접근법",
+      "리더십",
+      "사람들의 참여",
+      "관계 관리",
+      "증거 기반 의사결정",
+      "위험 기반 사고"
+    ],
+    "benefits": [
+      "품질 향상",
+      "고객 만족도 증가",
+      "비용 절감",
+      "시장 경쟁력 향상",
+      "직원 참여도 증대",
+      "프로세스 효율성 개선",
+      "신뢰성 향상",
+      "지속가능한 성장"
+    ],
+    "keywords": [
+      "품질", "고객만족", "지속적개선", "프로세스", "품질관리",
+      "quality", "customer satisfaction", "continuous improvement"
+    ],
+    "target_industries": [
+      "제조업", "서비스업", "건설업", "IT", "의료", "금융", "물류"
+    ],
+    "implementation_time": "6-12개월",
+    "audit_duration": "2-5일 (기업 규모에 따라)",
+    "certification_validity": "3년",
+    "surveillance_audit": "연 1회",
+    "recertification": "3년마다"
+  },
+  "14001": {
+    "name": "환경경영시스템",
+    "full_name": "ISO 14001:2015 환경경영시스템",
+    "description": "환경 보호를 위한 경영 시스템",
+    "version": "2015",
+    "requirements": [
+      "환경 정책",
+      "법규 준수",
+      "지속가능성",
+      "환경 목표 설정",
+      "환경 성과 측정",
+      "지속적 개선",
+      "생명주기 관점",
+      "환경 리스크 관리"
+    ],
+    "benefits": [
+      "환경 보호",
+      "법규 준수",
+      "이미지 향상",
+      "비용 절감",
+      "환경 리스크 관리",
+      "지속가능한 경영",
+      "에너지 효율성 개선",
+      "폐기물 감소"
+    ],
+    "keywords": [
+      "환경", "지속가능성", "법규준수", "환경정책", "환경관리",
+      "environment", "sustainability", "environmental management"
+    ],
+    "target_industries": [
+      "제조업", "화학업", "에너지", "건설업", "물류", "식품업", "섬유업"
+    ],
+    "implementation_time": "6-12개월",
+    "audit_duration": "2-5일 (기업 규모에 따라)",
+    "certification_validity": "3년",
+    "surveillance_audit": "연 1회",
+    "recertification": "3년마다"
+  },
+  "45001": {
+    "name": "안전보건경영시스템",
+    "full_name": "ISO 45001:2018 안전보건경영시스템",
+    "description": "직장 안전과 직원 건강을 위한 시스템",
+    "version": "2018",
+    "requirements": [
+      "안전 정책",
+      "위험 관리",
+      "직원 참여",
+      "안전 교육",
+      "사고 예방",
+      "지속적 개선",
+      "법규 준수",
+      "응급 대응"
+    ],
+    "benefits": [
+      "사고 감소",
+      "직원 안전",
+      "생산성 향상",
+      "법규 준수",
+      "보험료 절감",
+      "기업 이미지 향상",
+      "직원 만족도 증가",
+      "리스크 관리"
+    ],
+    "keywords": [
+      "안전", "보건", "위험관리", "직원안전", "사고예방",
+      "safety", "health", "occupational health", "risk management"
+    ],
+    "target_industries": [
+      "제조업", "건설업", "화학업", "광업", "물류", "에너지", "금속업"
+    ],
+    "implementation_time": "6-12개월",
+    "audit_duration": "2-5일 (기업 규모에 따라)",
+    "certification_validity": "3년",
+    "surveillance_audit": "연 1회",
+    "recertification": "3년마다"
+  }
+}
