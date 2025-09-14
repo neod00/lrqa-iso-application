@@ -51,11 +51,15 @@ exports.handler = async (event, context) => {
         // 견적서 데이터 변환
         const quotationData = convertApplicationToQuotationData(applicationData);
         
-        // 간단한 테스트용 Word 문서 생성
-        const buffer = await createSimpleTestDocument(quotationData);
+        // 간단한 JSON 응답 테스트
+        const testData = {
+            message: "견적서 생성 테스트",
+            companyName: quotationData.companyName,
+            quotationNumber: quotationData.quotationNumber,
+            totalCost: quotationData.totalCost
+        };
         
-        // Base64로 인코딩
-        const base64File = buffer.toString('base64');
+        const base64File = Buffer.from(JSON.stringify(testData, null, 2)).toString('base64');
 
         console.log('=== 견적서 생성 완료 ===');
 
@@ -68,7 +72,7 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({
                 success: true,
                 message: '견적서가 성공적으로 생성되었습니다.',
-                filename: `LRQA_견적서_${applicationData['법인명(국문)'] || 'Unknown'}_${new Date().toISOString().split('T')[0]}.docx`,
+                filename: `LRQA_견적서_${applicationData['법인명(국문)'] || 'Unknown'}_${new Date().toISOString().split('T')[0]}.txt`,
                 fileData: base64File
             })
         };
