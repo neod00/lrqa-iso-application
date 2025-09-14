@@ -822,20 +822,22 @@
             if (!isAuthenticated) return;
             
             try {
-                // 로컬 환경에서는 샘플 데이터 사용
-                const stats = {
-                    total: 0,
-                    new: 0,
-                    monthly: 0,
-                    completed: 0
-                };
+                const response = await fetch('/.netlify/functions/get-applications');
+                const result = await response.json();
                 
-                document.getElementById('totalApplications').textContent = stats.total;
-                document.getElementById('newApplications').textContent = stats.new;
-                document.getElementById('monthlyApplications').textContent = stats.monthly;
-                document.getElementById('completedApplications').textContent = stats.completed;
-                
-                showMessage('대시보드가 로드되었습니다. (로컬 모드)', 'success');
+                if (result.success) {
+                    const applications = result.data.applications;
+                    const stats = result.data.stats;
+                    
+                    document.getElementById('totalApplications').textContent = stats.total;
+                    document.getElementById('newApplications').textContent = stats.new;
+                    document.getElementById('monthlyApplications').textContent = stats.monthly;
+                    document.getElementById('completedApplications').textContent = stats.completed;
+                    
+                    showMessage('대시보드가 로드되었습니다.', 'success');
+                } else {
+                    showMessage(result.message || '대시보드 로드 중 오류가 발생했습니다.', 'error');
+                }
             } catch (error) {
                 console.error('Error loading dashboard:', error);
                 showMessage('대시보드 로드 중 오류가 발생했습니다.', 'error');
@@ -871,13 +873,13 @@
                             console.log('신청서 처리 중:', app);
                             return `
                                 <tr>
-                                    <td>${formatDate(app.timestamp || app.submittedAt)}</td>
-                                    <td>${app.companyName || '-'}</td>
-                                    <td>${app.contactName || '-'}</td>
-                                    <td>${app.contactPhone || '-'}</td>
-                                    <td>${Array.isArray(app.isoStandards) ? app.isoStandards.map(iso => iso.toUpperCase().replace('ISO', 'ISO ')).join(', ') : '-'}</td>
+                                    <td>${formatDate(app['신청일시'] || app.timestamp || app.submittedAt)}</td>
+                                    <td>${app['법인명(국문)'] || app['법인명(영문)'] || app.companyName || '-'}</td>
+                                    <td>${app['담당자명'] || app.contactName || '-'}</td>
+                                    <td>${app['담당자전화'] || app.contactPhone || '-'}</td>
+                                    <td>${app['인증범위'] || (Array.isArray(app.isoStandards) ? app.isoStandards.map(iso => iso.toUpperCase().replace('ISO', 'ISO ')).join(', ') : '-')}</td>
                                     <td>
-                                        <span class="status-badge ${getStatusClass(app.status)}">${getStatusText(app.status)}</span>
+                                        <span class="status-badge ${getStatusClass(app['상태'] || app.status)}">${getStatusText(app['상태'] || app.status)}</span>
                                     </td>
                                     <td>
                                         <div class="action-buttons">
