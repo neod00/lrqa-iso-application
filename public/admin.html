@@ -2403,8 +2403,8 @@
                     return;
                 }
 
-                // Python 백엔드 API 호출 (Vercel 인증 우회)
-                const quotationResponse = await fetch('https://lrqa-iso-application-1ysvzpqdd-dal-kims-projects.vercel.app/generate-quotation?_vercel_share=NVY1htMEJWVYhJXPrhN2lcQyEzGcUXTP', {
+                // Python 백엔드 API 호출 (Vercel 배포 보호 비활성화됨)
+                const quotationResponse = await fetch('https://lrqa-iso-application-1ysvzpqdd-dal-kims-projects.vercel.app/generate-quotation', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
