@@ -1,145 +1,159 @@
+const { google } = require('googleapis');
+
+// Google Sheets 설정
+const SHEET_ID = process.env.GOOGLE_SHEET_ID;
+const SHEET_NAME = 'ISO_Applications';
+
+// CORS 헤더
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Methods': 'GET, OPTIONS',
+  'Content-Type': 'application/json'
+};
+
+// Google Sheets API 클라이언트 초기화
+async function getGoogleSheetsClient() {
+  const auth = new google.auth.GoogleAuth({
+    credentials: {
+      type: 'service_account',
+      project_id: process.env.GOOGLE_PROJECT_ID,
+      private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
+      private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      client_id: process.env.GOOGLE_CLIENT_ID,
+      auth_uri: 'https://accounts.google.com/o/oauth2/auth',
+      token_uri: 'https://oauth2.googleapis.com/token',
+      auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
+      client_x509_cert_url: `https://www.googleapis.com/robot/v1/metadata/x509/${process.env.GOOGLE_CLIENT_EMAIL}`
+    },
+    scopes: ['https://www.googleapis.com/auth/spreadsheets']
+  });
+
+  const sheets = google.sheets({ version: 'v4', auth });
+  return sheets;
+}
+
+// 신청서 데이터 가져오기
+async function getApplications() {
+  const sheets = await getGoogleSheetsClient();
+  
+  try {
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: SHEET_ID,
+      range: `${SHEET_NAME}!A:Z`
+    });
+
+    const rows = response.data.values || [];
+    if (rows.length === 0) {
+      return [];
+    }
+
+    // 첫 번째 행은 헤더이므로 제외
+    const headers = rows[0];
+    const data = rows.slice(1);
+
+    const applications = data.map(row => {
+      const obj = {};
+      headers.forEach((header, index) => {
+        obj[header] = row[index] || '';
+      });
+      return obj;
+    });
+
+    // 신청일시 기준으로 최신순 정렬
+    applications.sort((a, b) => {
+      const dateA = new Date(a['신청일시'] || 0);
+      const dateB = new Date(b['신청일시'] || 0);
+      return dateB - dateA; // 최신순 (내림차순)
+    });
+
+    return applications;
+  } catch (error) {
+    console.error('Error fetching applications:', error);
+    throw error;
+  }
+}
+
+// 통계 데이터 생성
+function generateStats(applications) {
+  const now = new Date();
+  const currentMonth = now.getMonth();
+  const currentYear = now.getFullYear();
+
+  const stats = {
+    total: applications.length,
+    new: 0,
+    monthly: 0,
+    completed: 0
+  };
+
+  applications.forEach(app => {
+    const status = app['상태'] || '';
+    const dateStr = app['신청일시'] || '';
+    
+    if (status === '신규') {
+      stats.new++;
+    } else if (status === '완료') {
+      stats.completed++;
+    }
+
+    // 이달의 신청서 카운트
+    if (dateStr) {
+      const appDate = new Date(dateStr);
+      if (appDate.getMonth() === currentMonth && appDate.getFullYear() === currentYear) {
+        stats.monthly++;
+      }
+    }
+  });
+
+  return stats;
+}
+
+// 메인 핸들러
 exports.handler = async (event, context) => {
-    // CORS 헤더 설정
-    const headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Content-Type': 'application/json'
+  // CORS 처리
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers
     };
+  }
 
-    // OPTIONS 요청 처리
-    if (event.httpMethod === 'OPTIONS') {
-        return {
-            statusCode: 200,
-            headers,
-            body: ''
-        };
-    }
+  if (event.httpMethod !== 'GET') {
+    return {
+      statusCode: 405,
+      headers,
+      body: JSON.stringify({ error: 'Method not allowed' })
+    };
+  }
 
-    try {
-        // 샘플 신청서 데이터 (관리자 화면용)
-        const sampleApplications = [
-            {
-                id: 'APP-2025-001',
-                '신청일시': '2025-09-13T12:39:02.710Z',
-                '법인명(국문)': '테스트 컴퍼니',
-                '법인명(영문)': 'Test Company',
-                '담당자명': '김테스트',
-                '담당자전화': '010-1234-5678',
-                '담당자이메일': 'kim.test@testcompany.com',
-                '인증범위': 'ISO 9001, ISO 14001, ISO 45001',
-                '상태': '신규',
-                '총직원수': '100',
-                '희망년도': '2025',
-                '희망월': '12월',
-                companyName: '테스트 컴퍼니 (Test Company)',
-                contactName: '김테스트 (대리)',
-                totalEmployees: 100,
-                siteCount: 1,
-                isoStandards: ['iso9001', 'iso14001', 'iso45001'],
-                desiredAuditDate: '2025-12'
-            },
-            {
-                id: 'APP-2025-002',
-                '신청일시': '2025-09-13T14:15:30.000Z',
-                '법인명(국문)': '스마트테크솔루션',
-                '법인명(영문)': 'Smart Tech Solutions',
-                '담당자명': '박스마트',
-                '담당자전화': '010-2345-6789',
-                '담당자이메일': 'park.smart@smarttech.co.kr',
-                '인증범위': 'ISO 9001, ISO 14001, ISO 45001',
-                '상태': '신규',
-                '총직원수': '85',
-                '희망년도': '2025',
-                '희망월': '11월',
-                companyName: '스마트테크솔루션 (Smart Tech Solutions)',
-                contactName: '박스마트 (CTO)',
-                totalEmployees: 85,
-                siteCount: 2,
-                isoStandards: ['iso9001', 'iso14001', 'iso45001'],
-                desiredAuditDate: '2025-11'
-            },
-            {
-                id: 'APP-2025-003',
-                '신청일시': '2025-09-10T14:20:00Z',
-                '법인명(국문)': '예시 기업',
-                '법인명(영문)': 'Example Corp',
-                '담당자명': '이담당',
-                '담당자전화': '010-9876-5432',
-                '담당자이메일': 'lee@example.com',
-                '인증범위': 'ISO 9001',
-                '상태': '진행중',
-                '총직원수': '50',
-                '희망년도': '2025',
-                '희망월': '11월',
-                companyName: '예시 기업 (Example Corp)',
-                contactName: '이담당 (과장)',
-                totalEmployees: 50,
-                siteCount: 1,
-                isoStandards: ['iso9001'],
-                desiredAuditDate: '2025-11'
-            },
-            {
-                id: 'APP-2025-004',
-                '신청일시': '2025-09-09T16:45:00Z',
-                '법인명(국문)': '샘플 회사',
-                '법인명(영문)': 'Sample Company',
-                '담당자명': '박담당',
-                '담당자전화': '010-5555-6666',
-                '담당자이메일': 'park@sample.com',
-                '인증범위': 'ISO 9001, ISO 14001',
-                '상태': '완료',
-                '총직원수': '30',
-                '희망년도': '2025',
-                '희망월': '10월',
-                companyName: '샘플 회사 (Sample Company)',
-                contactName: '박담당 (대리)',
-                totalEmployees: 30,
-                siteCount: 1,
-                isoStandards: ['iso9001', 'iso14001'],
-                desiredAuditDate: '2025-10'
-            }
-        ];
+  try {
+    const applications = await getApplications();
+    const stats = generateStats(applications);
 
-        // 통계 계산
-        const stats = {
-            total: sampleApplications.length,
-            new: sampleApplications.filter(app => app.상태 === '신규').length,
-            monthly: sampleApplications.filter(app => {
-                const date = new Date(app.신청일시);
-                const now = new Date();
-                return date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear();
-            }).length,
-            completed: sampleApplications.filter(app => app.상태 === '완료').length
-        };
-
-        // Google Sheets URL (샘플)
-        const sheetUrl = 'https://docs.google.com/spreadsheets/d/1sample_sheet_id';
-
-        return {
-            statusCode: 200,
-            headers,
-            body: JSON.stringify({
-                success: true,
-                data: {
-                    applications: sampleApplications,
-                    stats: stats,
-                    sheetUrl: sheetUrl
-                }
-            })
-        };
-
-    } catch (error) {
-        console.error('Error in get-applications:', error);
-        
-        return {
-            statusCode: 500,
-            headers,
-            body: JSON.stringify({
-                success: false,
-                message: '신청서 데이터를 불러오는 중 오류가 발생했습니다.',
-                error: error.message
-            })
-        };
-    }
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({
+        success: true,
+        data: {
+          applications,
+          stats,
+          sheetUrl: `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit`
+        }
+      })
+    };
+  } catch (error) {
+    console.error('Error processing request:', error);
+    
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({ 
+        success: false, 
+        message: '데이터 로드 중 오류가 발생했습니다.' 
+      })
+    };
+  }
 };
