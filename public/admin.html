@@ -1650,6 +1650,10 @@
                                 <div class="form-input short">${application['우편번호'] || ''}</div>
                             </div>
                             <div class="form-row">
+                                <div class="form-label">행정구역</div>
+                                <div class="form-input medium">${application['행정구역'] || ''}</div>
+                            </div>
+                            <div class="form-row">
                                 <div class="form-label">대표전화번호</div>
                                 <div class="form-input medium">${application['대표전화번호'] || ''}</div>
                                 <div class="form-label">국가</div>
@@ -1666,6 +1670,34 @@
                             <div class="form-row">
                                 <div class="form-label">법인등록번호</div>
                                 <div class="form-input medium">${application['법인등록번호'] || ''}</div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-label">사업자등록번호</div>
+                                <div class="form-input medium">${application['사업자등록번호'] || ''}</div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-label">과세당국</div>
+                                <div class="form-input medium">${application['과세당국'] || ''}</div>
+                            </div>
+                            <div class="form-row">
+                                <div style="font-size: 11px; margin-right: 10px;">모회사/계열사 여부</div>
+                                <div style="font-size: 11px;">${application['모회사/계열사여부'] || '미입력'}</div>
+                            </div>
+                            <div class="form-row">
+                                <div style="font-size: 11px; margin-right: 10px;">중앙관리시스템 여부</div>
+                                <div style="font-size: 11px;">${application['중앙관리시스템여부'] || '미입력'}</div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-label">인증포함사업장수</div>
+                                <div class="form-input short">${application['인증포함사업장수'] || ''}</div>
+                            </div>
+                            <div class="form-row full-width">
+                                <div class="form-label">사업장목록</div>
+                                <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['사업장목록'] || ''}</div>
+                            </div>
+                            <div class="form-row">
+                                <div style="font-size: 11px; margin-right: 10px;">표준적용여부</div>
+                                <div style="font-size: 11px;">${application['표준적용여부'] || '미입력'}</div>
                             </div>
                         </div>
 
@@ -1731,7 +1763,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-label">기타(인증 규격 작성)</div>
-                                <div class="form-input">${application['기타인증규격'] || ''}</div>
+                                <div class="form-input">${application['기타표준'] || ''}</div>
                             </div>
                             <div class="form-row">
                                 <div style="font-size: 11px; margin-right: 10px;">2개 이상 인증 신청시 통합심사 진행 여부</div>
@@ -1755,7 +1787,7 @@
                                 <div class="section-title">인증 범위 확인</div>
                                 <div class="form-row full-width">
                                     <div style="font-size: 11px; margin-bottom: 10px;">인증서에 활동 내용을 어떻게 기재하고 싶으십니까?</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['인증범위'] || ''}</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['활동내용기재'] || ''}</div>
                                 </div>
                             </div>
                             
@@ -1764,11 +1796,11 @@
                                 <div class="section-title">법적 의무</div>
                                 <div class="form-row full-width">
                                     <div style="font-size: 11px; margin-bottom: 10px;">조직이 운영하기 위해 필요한 사업장 허가, 라이선스 또는 이와 유사한 규제 기관의 승인이 있습니까?</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['규제기관승인'] || ''}</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['규제기관승인여부'] || ''}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">법적 의무와 관련하여 해결되지 않은 미해결 문제가 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['미해결문제'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['법적의무미해결문제'] || '미입력'}</div>
                                 </div>
                             </div>
                             
