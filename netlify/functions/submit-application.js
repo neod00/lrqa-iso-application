@@ -98,7 +98,7 @@ async function setupSheetHeaders(sheets) {
     '활동내용기재', '규제기관승인여부', '법적의무미해결문제', '기존인증보유여부',
     '기존표준', '기존인증기관', '인증만료일',
     // 직원 현황
-    '총직원수', '정규직수', '비정규직수', '하청업체직원수', '임시직수',
+    '빈열', '총직원수', '정규직수', '비정규직수', '하청업체직원수', '임시직수',
     '다중사업장직원현황', '외주프로세스여부', '반복작업그룹여부',
     '작업성격설명', '시간외승인활동여부', '계절변동설명',
     // 교대 근무
@@ -248,6 +248,7 @@ async function addApplicationRow(sheets, formData) {
     formData.existingCertBody || '',
     formData.certExpiryDate || '',
     // 직원 현황
+    '', // 빈 열 추가 (데이터 정렬을 위해)
     formData.totalEmployees || '',
     formData.permanentEmployees || '',
     formData.temporaryEmployees || '',
