@@ -41,7 +41,7 @@ async function getApplications() {
   try {
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
-      range: `${SHEET_NAME}!A:Z`
+      range: `${SHEET_NAME}!A:ZZ`
     });
 
     const rows = response.data.values || [];
