@@ -1805,9 +1805,9 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-label">하청업체 직원수</div>
-                                    <div class="form-input short">${application['하청업체직원수'] || ''}</div>
+                                    <div class="form-input short">${application['하청업체직원수'] ? application['하청업체직원수'] + '명' : ''}</div>
                                     <div class="form-label">임시직 직원수</div>
-                                    <div class="form-input short">${application['임시직수'] || ''}</div>
+                                    <div class="form-input short">${application['임시직수'] ? application['임시직수'] + '명' : ''}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">다수 사업장인 경우 사업장별로 직원 수를 표기했습니까?</div>
