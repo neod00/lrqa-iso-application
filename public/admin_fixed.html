@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRQA 관리자 시스템</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 로그인 섹션 */
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* 관리자 콘텐츠 */
+        .admin-content {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .admin-content.authenticated {
+            display: block;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .admin-header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .admin-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* 탭 네비게이션 */
+        .admin-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 30px;
+        }
+
+        .admin-tab {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .admin-tab.active {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-tab:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 탭 콘텐츠 */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* 신청서 목록 */
+        .applications-list {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .list-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 10px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-btn, .clear-search-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn {
+            background: #667eea;
+            color: white;
+        }
+
+        .search-btn:hover {
+            background: #5a6fd8;
+        }
+
+        .clear-search-btn {
+            background: #6c757d;
+            color: white;
+        }
+
+        .clear-search-btn:hover {
+            background: #5a6268;
+        }
+
+        /* 테이블 */
+        .applications-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .applications-table th,
+        .applications-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e1e5e9;
+        }
+
+        .applications-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .applications-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-processing {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .action-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-quote {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-quote:hover {
+            background: #218838;
+        }
+
+        .btn-view {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-view:hover {
+            background: #138496;
+        }
+
+        .btn-edit {
+            background: #ffc107;
+            color: #212529;
+        }
+
+        .btn-edit:hover {
+            background: #e0a800;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
+
+        /* 통계 카드 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .admin-container {
+                padding: 10px;
+            }
+
+            .list-controls {
+                flex-direction: column;
+            }
+
+            .search-container {
+                min-width: auto;
+            }
+
+            .applications-table {
+                font-size: 14px;
+            }
+
+            .applications-table th,
+            .applications-table td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- 로그인 섹션 -->
+        <div id="loginSection" class="login-section">
+            <h2 style="text-align: center; margin-bottom: 30px;">LRQA 관리자 로그인</h2>
+            <form id="loginForm" class="login-form">
+                <input type="text" id="username" placeholder="사용자명" required>
+                <input type="password" id="password" placeholder="비밀번호" required>
+                <button type="submit" class="login-btn">로그인</button>
+            </form>
+        </div>
+
+        <!-- 관리자 콘텐츠 -->
+        <div id="adminContent" class="admin-content">
+            <!-- 관리자 헤더 -->
+            <header class="admin-header">
+                <h1>LRQA 관리자 시스템</h1>
+                <p>ISO 인증심사 신청서 관리 시스템</p>
+                <button onclick="logout()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">로그아웃</button>
+            </header>
+
+            <!-- 탭 네비게이션 -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="showTab('dashboard')">대시보드</button>
+                <button class="admin-tab" onclick="showTab('applications')">신청서 목록</button>
+                <button class="admin-tab" onclick="showTab('reports')">보고서</button>
+                <button class="admin-tab" onclick="showTab('settings')">설정</button>
+            </div>
+
+            <!-- 대시보드 탭 -->
+            <div id="dashboard" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="totalApplications">0</h3>
+                        <p>총 신청서</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="pendingApplications">0</h3>
+                        <p>대기 중</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="completedApplications">0</h3>
+                        <p>완료</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="thisMonthApplications">0</h3>
+                        <p>이번 달</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 신청서 목록 탭 -->
+            <div id="applications" class="tab-content">
+                <div class="applications-list">
+                    <div class="list-controls">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="회사명, 담당자명, 연락처로 검색..." class="search-input">
+                            <button onclick="performSearch()" class="search-btn">검색</button>
+                            <button onclick="clearSearch()" class="clear-search-btn">초기화</button>
+                        </div>
+                    </div>
+
+                    <table class="applications-table">
+                        <thead>
+                            <tr>
+                                <th>신청번호</th>
+                                <th>회사명</th>
+                                <th>담당자</th>
+                                <th>연락처</th>
+                                <th>신청일</th>
+                                <th>상태</th>
+                                <th>작업</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicationsTableBody">
+                            <!-- 신청서 데이터가 여기에 동적으로 로드됩니다 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 보고서 탭 -->
+            <div id="reports" class="tab-content">
+                <h2>보고서</h2>
+                <p>보고서 기능이 여기에 표시됩니다.</p>
+            </div>
+
+            <!-- 설정 탭 -->
+            <div id="settings" class="tab-content">
+                <h2>설정</h2>
+                <p>시스템 설정이 여기에 표시됩니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 인증 상태 확인
+        let isAuthenticated = false;
+        
+        // 로그인 처리
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // 간단한 인증 (실제 환경에서는 보안 방법 사용)
+            if (username === 'admin' && password === 'lrqa2025') {
+                isAuthenticated = true;
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('adminContent').classList.add('authenticated');
+                loadDashboard();
+            } else {
+                alert('로그인 정보가 올바르지 않습니다.');
+            }
+        });
+
+        // 로그아웃
+        function logout() {
+            isAuthenticated = false;
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('adminContent').classList.remove('authenticated');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+
+        // 탭 전환
+        function showTab(tabName) {
+            // 모든 탭 비활성화
+            const tabs = document.querySelectorAll('.admin-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // 선택한 탭 활성화
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // 대시보드 로드
+        function loadDashboard() {
+            // 실제 환경에서는 서버에서 데이터를 가져옵니다
+            const mockData = {
+                total: 25,
+                pending: 8,
+                completed: 17,
+                thisMonth: 5
+            };
+            
+            document.getElementById('totalApplications').textContent = mockData.total;
+            document.getElementById('pendingApplications').textContent = mockData.pending;
+            document.getElementById('completedApplications').textContent = mockData.completed;
+            document.getElementById('thisMonthApplications').textContent = mockData.thisMonth;
+            
+            loadApplications();
+        }
+
+        // 신청서 목록 로드
+        function loadApplications() {
+            // 실제 환경에서는 서버에서 데이터를 가져옵니다
+            const mockApplications = [
+                {
+                    id: 'APP001',
+                    company: '김달주식회사',
+                    contact: '김달수',
+                    phone: '02-1234-5678',
+                    date: '2025-01-14',
+                    status: 'pending',
+                    standards: ['ISO 9001', 'ISO 14001']
+                },
+                {
+                    id: 'APP002',
+                    company: 'ABC제조업체',
+                    contact: '이영희',
+                    phone: '02-2345-6789',
+                    date: '2025-01-13',
+                    status: 'processing',
+                    standards: ['ISO 9001']
+                },
+                {
+                    id: 'APP003',
+                    company: 'DEF환경기업',
+                    contact: '박민수',
+                    phone: '02-3456-7890',
+                    date: '2025-01-12',
+                    status: 'completed',
+                    standards: ['ISO 14001', 'ISO 45001']
+                }
+            ];
+            
+            const tbody = document.getElementById('applicationsTableBody');
+            tbody.innerHTML = '';
+            
+            mockApplications.forEach(app => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${app.id}</td>
+                    <td>${app.company}</td>
+                    <td>${app.contact}</td>
+                    <td>${app.phone}</td>
+                    <td>${app.date}</td>
+                    <td><span class="status-badge status-${app.status}">${getStatusText(app.status)}</span></td>
+                    <td>
+                        <button class="action-btn btn-quote" onclick="generateQuote('${app.id}')">견적서</button>
+                        <button class="action-btn btn-view" onclick="viewApplication('${app.id}')">보기</button>
+                        <button class="action-btn btn-edit" onclick="editApplication('${app.id}')">수정</button>
+                        <button class="action-btn btn-delete" onclick="deleteApplication('${app.id}')">삭제</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // 상태 텍스트 변환
+        function getStatusText(status) {
+            const statusMap = {
+                'pending': '대기 중',
+                'processing': '처리 중',
+                'completed': '완료'
+            };
+            return statusMap[status] || status;
+        }
+
+        // 견적서 생성
+        function generateQuote(applicationId) {
+            alert(`견적서 생성: ${applicationId}\n\n이 기능은 견적서 생성 시스템과 연동됩니다.`);
+            // 실제 환경에서는 견적서 생성 API를 호출합니다
+        }
+
+        // 신청서 보기
+        function viewApplication(applicationId) {
+            alert(`신청서 보기: ${applicationId}\n\n신청서 상세 정보가 표시됩니다.`);
+        }
+
+        // 신청서 수정
+        function editApplication(applicationId) {
+            alert(`신청서 수정: ${applicationId}\n\n신청서 수정 폼이 표시됩니다.`);
+        }
+
+        // 신청서 삭제
+        function deleteApplication(applicationId) {
+            if (confirm(`신청서 ${applicationId}를 삭제하시겠습니까?`)) {
+                alert(`신청서 ${applicationId}가 삭제되었습니다.`);
+                loadApplications(); // 목록 새로고침
+            }
+        }
+
+        // 검색 기능
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('#applicationsTableBody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // 검색 초기화
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            const rows = document.querySelectorAll('#applicationsTableBody tr');
+            rows.forEach(row => {
+                row.style.display = '';
+            });
+        }
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 로그인 상태 확인 (실제 환경에서는 쿠키나 세션을 확인)
+            const savedAuth = localStorage.getItem('isAuthenticated');
+            if (savedAuth === 'true') {
+                isAuthenticated = true;
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('adminContent').classList.add('authenticated');
+                loadDashboard();
+            }
+        });
+
+        // 로그인 시 상태 저장
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'admin' && password === 'lrqa2025') {
+                isAuthenticated = true;
+                localStorage.setItem('isAuthenticated', 'true');
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('adminContent').classList.add('authenticated');
+                loadDashboard();
+            } else {
+                alert('로그인 정보가 올바르지 않습니다.');
+            }
+        });
+
+        // 로그아웃 시 상태 제거
+        function logout() {
+            isAuthenticated = false;
+            localStorage.removeItem('isAuthenticated');
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('adminContent').classList.remove('authenticated');
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
+    </script>
+</body>
+</html>
