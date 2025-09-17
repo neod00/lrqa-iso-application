@@ -250,8 +250,8 @@ async function addApplicationRow(sheets, formData) {
     // 직원 현황
     formData.totalEmployees || '',
     formData.permanentEmployees || '',
-    formData.temporaryEmployees || '',
     formData.contractorEmployees || '',
+    formData.temporaryEmployees || '',
     formData.casualEmployees || '',
     formData.multiSiteEmployees || '',
     formData.outsourcing || '',
