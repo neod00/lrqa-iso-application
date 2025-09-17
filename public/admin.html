@@ -1769,10 +1769,10 @@
                                 <div style="font-size: 11px; margin-right: 10px;">2개 이상 인증 신청시 통합심사 진행 여부</div>
                                 <div style="font-size: 11px;">${application['다중표준시스템'] || '미입력'}</div>
                             </div>
-                            <div class="form-row">
-                                <div class="form-label">희망하는 심사일정</div>
-                                <div class="form-input medium">${application['희망심사일정'] || ''}</div>
-                            </div>
+                                <div class="form-row">
+                                    <div class="form-label">희망하는 심사일정</div>
+                                    <div class="form-input medium">${application['희망심사일정'] || application['desiredAuditDate'] || application['희망하는심사일정'] || '미입력'}</div>
+                                </div>
                         </div>
 
                         <div class="footer">
