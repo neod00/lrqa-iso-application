@@ -1698,7 +1698,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-label">컨설턴트 이름</div>
-                                <div class="form-input">${application['컨설턴트이름'] || ''}</div>
+                                <div class="form-input">${application['컨설턴트명'] || ''}</div>
                             </div>
                             <div class="form-row">
                                 <div class="form-label">컨설팅 기관</div>
@@ -1804,14 +1804,14 @@
                                     <div class="form-input short">${application['비정규직수'] ? application['비정규직수'] + '명' : ''}</div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-label">협력업체 직원수</div>
-                                    <div class="form-input short">${application['협력업체직원수'] || ''}</div>
+                                    <div class="form-label">하청업체 직원수</div>
+                                    <div class="form-input short">${application['하청업체직원수'] || ''}</div>
                                     <div class="form-label">임시직 직원수</div>
-                                    <div class="form-input short">${application['임시직직원수'] || ''}</div>
+                                    <div class="form-input short">${application['임시직수'] || ''}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">다수 사업장인 경우 사업장별로 직원 수를 표기했습니까?</div>
-                                    <div style="font-size: 11px;">${application['다수사업장직원수'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['다중사업장직원현황'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row full-width">
                                     <div style="font-size: 11px; margin-bottom: 10px;">직원 수 또는 사업장이 계절에 따라 변동된다면 설명하세요.</div>
@@ -1819,19 +1819,19 @@
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">경영시스템 범위에 포함된 활동이 사내외주처리 되는 활동이 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['외주처리활동'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['외주프로세스여부'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row full-width">
                                     <div style="font-size: 11px; margin-bottom: 10px;">만약 예라면 사내외주활동의 세부사항 및 인원을 기술하여 주십시오.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['외주활동세부사항'] || ''}</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['작업성격설명'] || ''}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">반복적인 작업을 수행하는 직원 그룹이 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['반복작업직원그룹'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['반복작업그룹여부'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">오전 9시부터 오후 6시까지 시간(일 근무 8시간) 외에만 진행되는 승인에 중요한 활동이 있습니까?</div>
-                                    <div style="font-size: 11px;">${application['시간외중요활동'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['시간외승인활동여부'] || '미입력'}</div>
                                 </div>
                             </div>
                             
@@ -1844,22 +1844,47 @@
                         <!-- Page 5: 교대 근무 및 인증 변경 -->
                         <div class="page-break">
                             <!-- 교대 근무 -->
-                            <div style="font-size: 11px; margin-bottom: 15px;">
-                                조직의 교대 근무 방식에 대해 전반적으로 설명하며, 각 교대 근무 방식에 해당하는 근무 시간 또는 인원을 표시하세요.
-                            </div>
-                            
-                            <div style="font-size: 11px; margin-bottom: 10px;">
-                                ${application['교대근무설명'] || '미입력'}
-                            </div>
-                            
-                            <div class="form-row">
-                                <div style="font-size: 11px; margin-right: 10px;">임시 사업장이 있나요?</div>
-                                <div style="font-size: 11px;">${application['임시사업장'] || '미입력'}</div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div style="font-size: 11px; margin-right: 10px;">고객사 위치에서 서비스를 제공하나요?</div>
-                                <div style="font-size: 11px;">${application['고객사위치서비스'] || '미입력'}</div>
+                            <div class="section">
+                                <div class="section-title">교대 근무</div>
+                                <div style="font-size: 11px; margin-bottom: 15px;">
+                                    조직의 교대 근무 방식에 대해 전반적으로 설명하며, 각 교대 근무 방식에 해당하는 근무 시간 또는 인원을 표시하세요.
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">교대 근무 횟수</div>
+                                    <div class="form-input short">${application['교대근무횟수'] || ''}</div>
+                                    <div class="form-label">교대 근무 시간</div>
+                                    <div class="form-input short">${application['교대근무시간'] || ''}</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">교대 총 직원수</div>
+                                    <div class="form-input short">${application['교대총직원수'] || ''}</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">교대조 1</div>
+                                    <div class="form-input medium">${application['교대조1'] || ''}</div>
+                                    <div class="form-label">교대조 2</div>
+                                    <div class="form-input medium">${application['교대조2'] || ''}</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-label">교대조 3</div>
+                                    <div class="form-input medium">${application['교대조3'] || ''}</div>
+                                    <div class="form-label">교대조 4</div>
+                                    <div class="form-input medium">${application['교대조4'] || ''}</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div style="font-size: 11px; margin-right: 10px;">임시 사업장이 있나요?</div>
+                                    <div style="font-size: 11px;">${application['임시사업장여부'] || '미입력'}</div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div style="font-size: 11px; margin-right: 10px;">고객사 위치에서 서비스를 제공하나요?</div>
+                                    <div style="font-size: 11px;">${application['고객사위치서비스'] || '미입력'}</div>
+                                </div>
                             </div>
                             
                             <!-- 인증 변경 -->
@@ -1867,19 +1892,31 @@
                                 <div class="section-title">인증 변경</div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">기존 인증을 LRQA로 전환하기 위해 견적을 요청하십니까?</div>
-                                    <div style="font-size: 11px;">${application['LRQA전환'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['기존인증LRQA이전요청'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">현재 보유한 인증이 인정기관(KAB, UKAS, ANAB 등)에서 인정받은 인증입니까?</div>
-                                    <div style="font-size: 11px;">${application['공식인정인증'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['공식인정인증여부'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row full-width">
                                     <div style="font-size: 11px; margin-bottom: 10px;">현재 인증 기관에서 LRQA로 전환하려는 이유를 알려주세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['전환이유'] || ''}</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['인증기관이전사유'] || ''}</div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-label">LRQA 마지막 방문 일자</div>
-                                    <div class="form-input medium">${application['LRQA마지막방문'] || ''}</div>
+                                    <div class="form-input medium">${application['LRQA마지막방문일자'] || ''}</div>
+                                </div>
+                                <div class="form-row">
+                                    <div style="font-size: 11px; margin-right: 10px;">미해결 부적합 문서가 있습니까?</div>
+                                    <div style="font-size: 11px;">${application['미해결부적합문서'] || '미입력'}</div>
+                                </div>
+                                <div class="form-row">
+                                    <div style="font-size: 11px; margin-right: 10px;">LRQA 인증기관 연락 동의</div>
+                                    <div style="font-size: 11px;">${application['LRQA인증기관연락동의'] || '미입력'}</div>
+                                </div>
+                                <div class="form-row full-width">
+                                    <div style="font-size: 11px; margin-bottom: 10px;">첨부 문서</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['첨부문서'] || ''}</div>
                                 </div>
                             </div>
                             
@@ -1913,7 +1950,7 @@
                                 </div>
                                 <div class="form-row full-width">
                                     <div style="font-size: 11px; margin-bottom: 10px;">주요 프로세스를 나열하고 주요 유해 및 위험 요소와 해당 법적 요건/허가 사항을 간략하게 설명하세요.</div>
-                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO45001위험요소'] || ''}</div>
+                                    <div class="textarea" style="min-height: 40px; border: none; border-bottom: 1px solid #333;">${application['ISO45001유해위험'] || ''}</div>
                                 </div>
                             </div>
                             
@@ -1933,15 +1970,15 @@
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">원격 심사가 가능하다면 원격 심사를 받으시겠습니까?</div>
-                                    <div style="font-size: 11px;">${application['원격심사'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['원격심사여부'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">예비 심사에 대한 견적을 받으시겠습니까?</div>
-                                    <div style="font-size: 11px;">${application['예비심사견적'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['예비심사견적수신'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">신청한 인증과 관련된 교육 과정에 대한 정보를 받으시겠습니까?</div>
-                                    <div style="font-size: 11px;">${application['교육과정정보'] || '미입력'}</div>
+                                    <div style="font-size: 11px;">${application['교육과정정보수신'] || '미입력'}</div>
                                 </div>
                                 <div class="form-row full-width">
                                     <div style="font-size: 11px; margin-bottom: 10px;">추가 참고해야 할 정보를 입력해 주세요.</div>
@@ -1961,6 +1998,10 @@
                                 <div class="form-row">
                                     <div style="font-size: 11px; margin-right: 10px;">LRQA의 데이터 프로세스에 대해 동의하십니까?</div>
                                     <div style="font-size: 11px;">${application['데이터처리동의'] || '미입력'}</div>
+                                </div>
+                                <div class="form-row">
+                                    <div style="font-size: 11px; margin-right: 10px;">마케팅 정보 수신에 동의하십니까?</div>
+                                    <div style="font-size: 11px;">${application['마케팅동의'] || '미입력'}</div>
                                 </div>
                             </div>
                             
