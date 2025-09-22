@@ -900,7 +900,7 @@
             }
         }
 
-        // 견적서 생성 실행
+        // 견적서 생성 실행 (핵심두뇌 API 사용)
         async function generateQuotation() {
             const applicationSelect = document.getElementById('quotationApplicationSelect');
             const selectedOption = applicationSelect.selectedOptions[0];
@@ -921,39 +921,165 @@
                 console.log('선택된 신청서 데이터:', applicationData);
                 console.log('관리자 이메일:', adminEmailInput.value);
                 
-                // 견적서 생성 요청
-                const response = await fetch('/.netlify/functions/generate-word-quotation', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        applicationId: selectedOption.value,
-                        quotationData: applicationData,
-                        adminEmail: adminEmailInput.value
-                    })
-                });
-
-                console.log('견적서 생성 응답 상태:', response.status);
-                const result = await response.json();
-                console.log('견적서 생성 결과:', result);
+                // 핵심두뇌 API를 사용한 정확한 견적 계산
+                const quotationData = await calculateQuotationWithCoreAPI(applicationData);
                 
-                if (result.success) {
-                    showMessage('견적서가 성공적으로 생성되었습니다! 관리자 이메일로 전송되었습니다.', 'success');
-                    hideQuotationCreateModal();
+                if (quotationData.success) {
+                    // Word 견적서 생성 요청
+                    const response = await fetch('/.netlify/functions/generate-word-quotation', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            applicationId: selectedOption.value,
+                            quotationData: quotationData.data,
+                            adminEmail: adminEmailInput.value
+                        })
+                    });
+
+                    console.log('견적서 생성 응답 상태:', response.status);
+                    const result = await response.json();
+                    console.log('견적서 생성 결과:', result);
                     
-                    // 견적서 다운로드 또는 미리보기
-                    if (result.quotation) {
-                        downloadQuotation(result.quotation);
+                    if (result.success) {
+                        showMessage('IAF MD5 표준에 따른 정확한 견적서가 생성되었습니다!', 'success');
+                        hideQuotationCreateModal();
+                        
+                        // 견적서 다운로드 또는 미리보기
+                        if (result.quotation) {
+                            downloadQuotation(result.quotation);
+                        }
+                    } else {
+                        showMessage(result.message || '견적서 생성 중 오류가 발생했습니다.', 'error');
                     }
                 } else {
-                    showMessage(result.message || '견적서 생성 중 오류가 발생했습니다.', 'error');
+                    showMessage(quotationData.error || '견적 계산 중 오류가 발생했습니다.', 'error');
                 }
                 
             } catch (error) {
                 console.error('견적서 생성 오류:', error);
                 showMessage('견적서 생성 중 오류가 발생했습니다: ' + error.message, 'error');
             }
+        }
+
+        // 핵심두뇌 API를 사용한 견적 계산
+        async function calculateQuotationWithCoreAPI(applicationData) {
+            try {
+                // 신청서 데이터를 핵심두뇌 API 형식으로 변환
+                const coreAPIData = convertApplicationDataToCoreAPI(applicationData);
+                
+                console.log('핵심두뇌 API 요청 데이터:', coreAPIData);
+                
+                // 핵심두뇌 API 호출
+                const response = await fetch('/.netlify/functions/adj-quote-calculator', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(coreAPIData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API 호출 실패: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('핵심두뇌 API 응답:', result);
+                
+                return result;
+                
+            } catch (error) {
+                console.error('핵심두뇌 API 호출 오류:', error);
+                return {
+                    success: false,
+                    error: error.message
+                };
+            }
+        }
+
+        // 신청서 데이터를 핵심두뇌 API 형식으로 변환
+        function convertApplicationDataToCoreAPI(applicationData) {
+            // 신청서 데이터에서 필요한 정보 추출
+            const clientName = applicationData['법인명(국문)'] || applicationData['회사명'] || 'Unknown Company';
+            const contactPerson = applicationData['담당자명'] || 'Unknown Contact';
+            const contactPhone = applicationData['담당자 전화'] || applicationData['연락처'] || '';
+            const contactEmail = applicationData['담당자 이메일'] || '';
+            const totalEmployees = parseInt(applicationData['총 직원수'] || '0');
+            const standards = applicationData['인증범위'] || [];
+            
+            // 표준 타입 변환
+            const standardTypes = [];
+            if (Array.isArray(standards)) {
+                standards.forEach(standard => {
+                    if (standard.includes('9001') || standard.includes('QMS')) {
+                        standardTypes.push('ISO9001');
+                    }
+                    if (standard.includes('14001') || standard.includes('EMS')) {
+                        standardTypes.push('ISO14001');
+                    }
+                    if (standard.includes('45001') || standard.includes('OHSMS')) {
+                        standardTypes.push('ISO45001');
+                    }
+                });
+            }
+            
+            // 기본 사이트 정보 생성
+            const site = {
+                name: clientName,
+                address: applicationData['주소'] || 'Unknown Address',
+                standards: standardTypes,
+                total_headcount: totalEmployees,
+                part_time_count: 0,
+                contractor_count: 0,
+                shift_workers: 0,
+                seasonal_factor: 1.0,
+                site_type: 'PERMANENT',
+                is_headquarters: true,
+                is_sampled: true,
+                sampling_priority: 1,
+                complexity_score: 5.0,
+                risk_level: 'MEDIUM',
+                business_sector: 'OFFICE', // 기본값, 실제로는 업종에 따라 설정
+                geographical_region: 'DOMESTIC',
+                management_system_maturity: 'MEDIUM',
+                repetitive_process: false,
+                remote_audit_ratio: 0.0
+            };
+
+            // 조직 정보 생성
+            const organization = {
+                client_name: clientName,
+                contact_person: contactPerson,
+                contact_phone: contactPhone,
+                contact_email: contactEmail,
+                sites: [site],
+                options: {
+                    is_integrated: standardTypes.length > 1,
+                    integration_level: standardTypes.length > 1 ? 0.8 : 0.0,
+                    integrated_documentation: standardTypes.length > 1,
+                    integrated_management_review: standardTypes.length > 1,
+                    integrated_internal_audit: standardTypes.length > 1,
+                    integrated_policy_objectives: standardTypes.length > 1,
+                    integrated_system_processes: standardTypes.length > 1,
+                    integrated_improvement: standardTypes.length > 1,
+                    integrated_management_support: standardTypes.length > 1,
+                    audit_team_competence: []
+                },
+                multisite_config: {
+                    total_sites: 1,
+                    sampling_method: 'STATISTICAL',
+                    geographical_dispersion: 'LOW',
+                    management_system_centralization: 'HIGH',
+                    headquarters_audit_ratio: 1.0
+                }
+            };
+
+            return {
+                client_name: clientName,
+                organization: organization,
+                cab_name: 'standard'
+            };
         }
 
         // 견적서 다운로드
@@ -1871,6 +1997,63 @@
         .btn-secondary:hover {
             background-color: #545b62;
         }
+
+        /* IAF MD5 표준 정보 스타일 */
+        .iaf-md5-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #007bff;
+            margin: 15px 0;
+        }
+
+        .iaf-md5-info h4 {
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .standard-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .standard-features .feature-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .standard-features .feature-item h5 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .standard-features .feature-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .standard-features .feature-item li {
+            padding: 3px 0;
+            color: #495057;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .standard-features .feature-item li:before {
+            content: "• ";
+            color: #28a745;
+            font-weight: bold;
+        }
     </style>
 
     <!-- 견적서 생성 모달 -->
@@ -1892,6 +2075,47 @@
                     <label for="adminEmailInput">관리자 이메일 주소</label>
                     <input type="email" id="adminEmailInput" class="form-control" placeholder="견적서를 받을 이메일 주소를 입력하세요" required>
                     <small class="form-text text-muted">생성된 견적서가 이 이메일로 전송됩니다.</small>
+                </div>
+                
+                <!-- IAF MD5 표준 정보 섹션 -->
+                <div class="form-group">
+                    <div class="iaf-md5-info">
+                        <h4>🎯 IAF MD5 표준 기반 견적 계산</h4>
+                        <div class="standard-features">
+                            <div class="feature-item">
+                                <h5>✅ 정확한 심사일수 계산</h5>
+                                <ul>
+                                    <li>IAF MD5 표준 테이블 준수</li>
+                                    <li>ENP(Effective Number of Personnel) 정확 계산</li>
+                                    <li>복잡도별 심사일수 산정</li>
+                                </ul>
+                            </div>
+                            <div class="feature-item">
+                                <h5>🔧 감소/증가 요인 적용</h5>
+                                <ul>
+                                    <li>설계 책임 없음, 성숙한 관리시스템 등</li>
+                                    <li>복잡한 물류, 다국어 사용 등</li>
+                                    <li>표준별 특화 요인 반영</li>
+                                </ul>
+                            </div>
+                            <div class="feature-item">
+                                <h5>🏢 다중사이트 지원</h5>
+                                <ul>
+                                    <li>IAF MD1 다중사이트 조직 지원</li>
+                                    <li>샘플링 방식 적용</li>
+                                    <li>본사/지점별 개별 계산</li>
+                                </ul>
+                            </div>
+                            <div class="feature-item">
+                                <h5>🔄 통합심사 할인</h5>
+                                <ul>
+                                    <li>KAB-AR-MD11 표준 준수</li>
+                                    <li>통합수준 평가 (7가지 기준)</li>
+                                    <li>심사팀 적격성 고려</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="form-group">

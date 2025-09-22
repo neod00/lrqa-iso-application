@@ -5,6 +5,7 @@
 
 const { spawn } = require('child_process');
 const path = require('path');
+const fetch = require('node-fetch');
 
 exports.handler = async (event, context) => {
     // CORS 헤더 설정
@@ -43,29 +44,14 @@ exports.handler = async (event, context) => {
         const requestData = JSON.parse(event.body);
         console.log('받은 데이터:', Object.keys(requestData));
 
-        // Python 엔진 경로 설정
-        const pythonPath = process.env.PYTHON_PATH || 'python';
-        const enginePath = path.join(__dirname, '..', '..', 'adj_quote_engine');
-        
-        console.log('Python 경로:', pythonPath);
-        console.log('엔진 경로:', enginePath);
-
-        // 임시 JSON 파일 생성
-        const fs = require('fs');
-        const os = require('os');
-        const tempFile = path.join(os.tmpdir(), `adj_quote_${Date.now()}.json`);
+        // 핵심두뇌 API 직접 호출 (Python 엔진 대신)
+        console.log('핵심두뇌 API 직접 호출 시작');
         
         try {
-            fs.writeFileSync(tempFile, JSON.stringify(requestData, null, 2));
-            console.log('임시 파일 생성:', tempFile);
-
-            // Python 엔진 실행
-            const result = await runPythonEngine(pythonPath, enginePath, tempFile);
+            // 핵심두뇌 API 엔진 직접 실행
+            const result = await runCoreAPIEngine(requestData);
             
-            // 임시 파일 삭제
-            fs.unlinkSync(tempFile);
-            
-            console.log('ADJ v2.2 계산 완료');
+            console.log('핵심두뇌 API 계산 완료');
             return {
                 statusCode: 200,
                 headers,
@@ -73,14 +59,7 @@ exports.handler = async (event, context) => {
             };
 
         } catch (error) {
-            // 임시 파일 정리
-            try {
-                if (fs.existsSync(tempFile)) {
-                    fs.unlinkSync(tempFile);
-                }
-            } catch (cleanupError) {
-                console.warn('임시 파일 정리 실패:', cleanupError);
-            }
+            console.error('핵심두뇌 API 실행 오류:', error);
             throw error;
         }
 
@@ -99,89 +78,43 @@ exports.handler = async (event, context) => {
 };
 
 /**
- * Python ADJ v2.2 엔진 실행
+ * 핵심두뇌 API 엔진 직접 실행
  */
-function runPythonEngine(pythonPath, enginePath, inputFile) {
-    return new Promise((resolve, reject) => {
-        console.log('Python 엔진 실행 시작');
+async function runCoreAPIEngine(requestData) {
+    try {
+        console.log('핵심두뇌 API 엔진 실행 시작');
         
-        // Python 스크립트 실행
-        const pythonProcess = spawn(pythonPath, [
-            '-c',
-            `
-import sys
-import os
-import json
-sys.path.append('${enginePath}')
+        // 핵심두뇌 API 서버 URL (로컬 또는 원격)
+        const coreAPIUrl = process.env.CORE_API_URL || 'http://localhost:5001';
+        
+        console.log('핵심두뇌 API URL:', coreAPIUrl);
+        
+        // 핵심두뇌 API 호출
+        const response = await fetch(`${coreAPIUrl}/calculate-audit-days`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData)
+        });
 
-try:
-    from adj_quote_engine.js_integration import js_integration
-    
-    # JSON 파일 읽기
-    with open('${inputFile}', 'r', encoding='utf-8') as f:
-        js_data = json.load(f)
-    
-    # 견적 계산
-    result = js_integration.calculate_quote_from_js(js_data)
-    
-    # 결과 출력
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    
-except Exception as e:
-    error_result = {
-        "success": False,
-        "error": str(e),
-        "message": "Python 엔진 실행 중 오류가 발생했습니다."
+        if (!response.ok) {
+            throw new Error(`핵심두뇌 API 호출 실패: ${response.status} ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log('핵심두뇌 API 응답:', result);
+        
+        return result;
+        
+    } catch (error) {
+        console.error('핵심두뇌 API 호출 오류:', error);
+        
+        // API 호출 실패 시 기본 응답 반환
+        return {
+            success: false,
+            error: error.message,
+            message: '핵심두뇌 API 호출 중 오류가 발생했습니다.'
+        };
     }
-    print(json.dumps(error_result, ensure_ascii=False, indent=2))
-    sys.exit(1)
-            `
-        ], {
-            cwd: enginePath,
-            stdio: ['pipe', 'pipe', 'pipe']
-        });
-
-        let outputData = '';
-        let errorData = '';
-
-        pythonProcess.stdout.on('data', (data) => {
-            outputData += data.toString();
-            console.log('Python stdout:', data.toString());
-        });
-
-        pythonProcess.stderr.on('data', (data) => {
-            errorData += data.toString();
-            console.error('Python stderr:', data.toString());
-        });
-
-        pythonProcess.on('close', (code) => {
-            console.log(`Python 프로세스 종료 코드: ${code}`);
-            
-            if (code === 0) {
-                try {
-                    const result = JSON.parse(outputData);
-                    resolve(result);
-                } catch (parseError) {
-                    console.error('JSON 파싱 오류:', parseError);
-                    console.error('출력 데이터:', outputData);
-                    reject(new Error('Python 엔진 출력 파싱 실패'));
-                }
-            } else {
-                console.error('Python 엔진 실행 실패');
-                console.error('에러 출력:', errorData);
-                reject(new Error(`Python 엔진 실행 실패 (코드: ${code}): ${errorData}`));
-            }
-        });
-
-        pythonProcess.on('error', (error) => {
-            console.error('Python 프로세스 오류:', error);
-            reject(new Error(`Python 프로세스 실행 실패: ${error.message}`));
-        });
-
-        // 타임아웃 설정 (30초)
-        setTimeout(() => {
-            pythonProcess.kill();
-            reject(new Error('Python 엔진 실행 타임아웃'));
-        }, 30000);
-    });
 }
