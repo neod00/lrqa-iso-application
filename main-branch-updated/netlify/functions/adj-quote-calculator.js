@@ -84,8 +84,8 @@ async function runCoreAPIEngine(requestData) {
     try {
         console.log('핵심두뇌 API 엔진 실행 시작');
         
-        // 핵심두뇌 API 서버 URL (로컬 또는 원격)
-        const coreAPIUrl = process.env.CORE_API_URL || 'http://localhost:5001';
+        // 핵심두뇌 API 서버 URL (Vercel 배포된 API 사용)
+        const coreAPIUrl = process.env.CORE_API_URL || 'https://lrqa-iso-application-hqhk5q4qp-dal-kims-projects.vercel.app';
         
         console.log('핵심두뇌 API URL:', coreAPIUrl);
         

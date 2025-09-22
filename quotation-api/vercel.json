@@ -2,14 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "simple_server.py",
+      "src": "audit_days_api.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "simple_server.py"
+      "dest": "audit_days_api.py"
     }
-  ]
+  ],
+  "env": {
+    "PYTHONPATH": "./adj_quote_engine"
+  }
 }
