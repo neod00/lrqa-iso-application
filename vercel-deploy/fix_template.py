@@ -31,13 +31,20 @@ def fix_template_delimiters():
                 if file_info.filename == "word/document.xml":
                     content_str = content.decode('utf-8')
                     
-                    # {{ }}를 { }로 변경
-                    content_str = content_str.replace('{{ ', '{')
-                    content_str = content_str.replace(' }}', '}')
+                    # 모든 {{ }} 패턴을 { }로 변경 (더 정확한 정규식 사용)
+                    import re
+                    
+                    # {{ 변수명 }} 패턴을 { 변수명 }으로 변경
+                    content_str = re.sub(r'\{\{\s*([^}]+)\s*\}\}', r'{\1}', content_str)
+                    
+                    # 남은 {{ 또는 }} 패턴도 처리
+                    content_str = content_str.replace('{{', '{')
+                    content_str = content_str.replace('}}', '}')
                     
                     # 변경된 내용을 다시 바이트로 변환
                     content = content_str.encode('utf-8')
                     print(f"구분자 변경 완료: {file_info.filename}")
+                    print(f"변경 전후 비교: {{ client_name }} -> { client_name }")
                 
                 # 파일 쓰기
                 zip_write.writestr(file_info, content)

@@ -526,7 +526,11 @@ async function generateWordDocument(quotationData, quotationNumber) {
       const doc = new Docxtemplater(zip, {
         paragraphLoop: true,
         linebreaks: true,
-        errorLogging: true
+        errorLogging: true,
+        delimiters: {
+          start: '{{',
+          end: '}}'
+        }
       });
       
       console.log('=== docxtemplater 설정 확인 ===');
