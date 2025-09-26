@@ -2,8 +2,8 @@ import zipfile
 import os
 import re
 
-def fix_template_final():
-    """템플릿을 완전히 수정하여 변수들을 올바른 위치에 배치합니다."""
+def fix_template_structure():
+    """템플릿 구조를 수정하여 변수들을 올바른 위치로 이동합니다."""
     
     template_path = 'public/templates/LRQA_quotation.docx'
     
@@ -24,18 +24,19 @@ def fix_template_final():
                         content_str = content.decode('utf-8')
                         original_content = content_str
                         
-                        print(f"\n=== {file_info.filename} 최종 수정 중 ===")
+                        print(f"\n=== {file_info.filename} 구조 수정 중 ===")
                         
-                        # 1. </w:document> 태그 밖의 모든 내용 제거
+                        # </w:document> 태그 밖에 있는 변수들을 찾아서 제거
+                        # </w:document> 태그 이후의 모든 내용을 제거
                         document_end_pattern = r'</w:document>.*$'
                         if re.search(document_end_pattern, content_str, re.DOTALL):
                             content_str = re.sub(document_end_pattern, '</w:document>', content_str, flags=re.DOTALL)
-                            print("✅ </w:document> 태그 밖의 내용 제거 완료")
+                            print("✅ </w:document> 태그 밖의 변수들 제거 완료")
                         
-                        # 2. </w:body> 태그 바로 앞에 변수들 추가
-                        # </w:sectPr> 태그 바로 앞에 변수들을 추가 (</w:body> 태그 안에)
-                        sectpr_pattern = r'(<w:sectPr[^>]*>.*?</w:sectPr>)'
-                        if re.search(sectpr_pattern, content_str, re.DOTALL):
+                        # 이제 올바른 위치에 변수들을 추가
+                        # </w:body> 태그 바로 앞에 변수들을 추가
+                        body_end_pattern = r'(</w:body>)'
+                        if re.search(body_end_pattern, content_str):
                             # 추가할 변수들
                             variables_to_add = [
                                 '{{ quotation_date }}',
@@ -59,22 +60,21 @@ def fix_template_final():
                                 '{{ has_iso45001 }}'
                             ]
                             
-                            # 변수들을 </w:sectPr> 태그 앞에 추가
+                            # 변수들을 </w:body> 태그 앞에 추가
                             variables_xml = ''
                             for var in variables_to_add:
                                 variables_xml += f'<w:p><w:r><w:t>{var}</w:t></w:r></w:p>'
                             
                             content_str = re.sub(
-                                sectpr_pattern, 
+                                body_end_pattern, 
                                 f'{variables_xml}\\1', 
-                                content_str,
-                                flags=re.DOTALL
+                                content_str
                             )
-                            print(f"✅ {len(variables_to_add)}개 변수를 </w:body> 태그 안에 추가")
+                            print(f"✅ {len(variables_to_add)}개 변수를 올바른 위치에 추가")
                         
                         # 변경사항이 있는지 확인
                         if content_str != original_content:
-                            print(f"✅ 템플릿 최종 수정 완료")
+                            print(f"✅ 템플릿 구조 수정 완료")
                         else:
                             print(f"⚠️  변경사항 없음")
                         
@@ -87,7 +87,7 @@ def fix_template_final():
         # 임시 파일을 원본 파일로 교체
         os.replace(template_path + '.tmp', template_path)
         
-        print(f"\n🎉 템플릿 최종 수정 완료: {template_path}")
+        print(f"\n🎉 템플릿 구조 수정 완료: {template_path}")
         return True
         
     except Exception as e:
@@ -95,4 +95,4 @@ def fix_template_final():
         return False
 
 if __name__ == '__main__':
-    fix_template_final()
+    fix_template_structure()
