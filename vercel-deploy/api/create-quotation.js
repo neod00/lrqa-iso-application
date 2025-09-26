@@ -74,10 +74,21 @@ function createQuotationData(data) {
   // 디버깅: 전송된 데이터 확인
   console.log('전송된 데이터:', JSON.stringify(data, null, 2));
   console.log('standards 배열:', data.standards);
+  console.log('applicationData ISO표준:', data.applicationData?.['ISO표준']);
   
-  // 표준 타입 변환
+  // 표준 타입 변환 - applicationData에서 ISO표준 필드 확인
   const standards = [];
-  for (const std of data.standards || []) {
+  let standardsToProcess = data.standards || [];
+  
+  // applicationData에서 ISO표준 필드가 있는 경우 사용
+  if (data.applicationData && data.applicationData['ISO표준']) {
+    const isoStandard = data.applicationData['ISO표준'];
+    if (isoStandard && isoStandard.trim()) {
+      standardsToProcess = [isoStandard];
+    }
+  }
+  
+  for (const std of standardsToProcess) {
     const stdLower = std.toLowerCase();
     console.log(`표준 처리: "${std}" -> "${stdLower}"`);
     if (stdLower.includes('9001')) {
@@ -394,8 +405,8 @@ async function generateWordDocument(quotationData, quotationNumber) {
       }
     });
     
-    // 템플릿 데이터 설정
-    doc.setData(templateData);
+    // 템플릿 데이터 설정 (새로운 방식)
+    doc.compile(templateData);
     
     // 템플릿 렌더링
     try {
