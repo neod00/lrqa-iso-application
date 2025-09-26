@@ -45,6 +45,10 @@ exports.handler = async (event, context) => {
         const siteCount = quotationData.siteCount || 1;
         const isoStandards = quotationData.isoStandards || [];
         const desiredAuditDate = quotationData.desiredAuditDate || '2025-12';
+        
+        // 디버깅: 전송된 데이터 확인
+        console.log('전송된 견적서 데이터:', JSON.stringify(quotationData, null, 2));
+        console.log('ISO 표준 배열:', isoStandards);
 
         // ISO 표준 한글명 매핑
         const isoStandardNames = {
@@ -150,9 +154,9 @@ exports.handler = async (event, context) => {
             
             // 표준 정보
             standards_text: selectedStandards,
-            has_iso9001: isoStandards.includes('iso9001'),
-            has_iso14001: isoStandards.includes('iso14001'),
-            has_iso45001: isoStandards.includes('iso45001'),
+            has_iso9001: isoStandards.some(std => std.toLowerCase().includes('9001')),
+            has_iso14001: isoStandards.some(std => std.toLowerCase().includes('14001')),
+            has_iso45001: isoStandards.some(std => std.toLowerCase().includes('45001')),
             iso9001_name: 'ISO 9001 품질경영시스템',
             iso14001_name: 'ISO 14001 환경경영시스템',
             iso45001_name: 'ISO 45001 안전보건경영시스템',
@@ -198,6 +202,12 @@ exports.handler = async (event, context) => {
             prepared_title: '사업개발본부'
         };
 
+        // 디버깅: has_iso 변수들 확인
+        console.log('ISO 표준 체크 결과:');
+        console.log('has_iso9001:', templateData.has_iso9001);
+        console.log('has_iso14001:', templateData.has_iso14001);
+        console.log('has_iso45001:', templateData.has_iso45001);
+        
         console.log('템플릿 데이터:', JSON.stringify(templateData, null, 2));
 
         // 템플릿 파일 읽기
