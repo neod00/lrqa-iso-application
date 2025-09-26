@@ -167,72 +167,131 @@ function generateQuotationDetails(application) {
     };
 }
 
-// Word 문서 생성 함수
+// Word 문서 생성 함수 (직접 생성)
 async function generateWordDocument(quotation) {
-    const { exec } = require('child_process');
     const fs = require('fs');
     const path = require('path');
-    const util = require('util');
-    const execAsync = util.promisify(exec);
     
     try {
-        // Python 스크립트를 위한 데이터 파일 생성
+        // Docxtemplater를 사용하여 직접 Word 문서 생성
+        const Docxtemplater = require('docxtemplater');
+        const PizZip = require('pizzip');
+        
+        // 템플릿 파일 경로
+        const templatePath = path.join(__dirname, 'templates', 'LRQA_quotation.docx');
+        
+        // 템플릿 파일 존재 확인
+        if (!fs.existsSync(templatePath)) {
+            console.log('템플릿 파일이 없습니다. 텍스트 문서로 대체합니다.');
+            return generateTextDocument(quotation);
+        }
+        
+        // 템플릿 파일 읽기
+        const content = fs.readFileSync(templatePath, 'binary');
+        const zip = new PizZip(content);
+        
+        // Docxtemplater 인스턴스 생성
+        const doc = new Docxtemplater(zip, {
+            paragraphLoop: true,
+            linebreaks: true,
+            errorLogging: true
+        });
+        
+        // 템플릿 컨텍스트 데이터 준비
+        const context = prepareTemplateContext(quotation);
+        
+        // 템플릿 렌더링
+        doc.render(context);
+        
+        // Word 문서를 Buffer로 생성
+        const buffer = doc.getZip().generate({
+            type: 'nodebuffer',
+            compression: 'DEFLATE'
+        });
+        
+        // 임시 파일로 저장
         const tempDir = '/tmp';
-        const dataFile = path.join(tempDir, `quotation_data_${quotation.quotationNumber}.json`);
         const outputFile = path.join(tempDir, `quotation_${quotation.quotationNumber}.docx`);
         
-        // 견적서 데이터를 Python 스크립트가 이해할 수 있는 형식으로 변환
-        const pythonData = {
-            quotation_number: quotation.quotationNumber,
-            company_name: quotation.companyName,
-            company_name_en: quotation.companyName, // 영문명이 없으면 동일하게
-            contact_name: quotation.contactName,
-            contact_email: quotation.contactEmail,
-            contact_phone: "010-0000-0000", // 기본값
-            standards: quotation.isoStandards,
-            total_employees: quotation.totalEmployees,
-            site_count: quotation.siteCount,
-            total_cost: quotation.totalCost,
-            issue_date: quotation.issueDate,
-            valid_until: quotation.validUntil,
-            address: "서울시 강남구", // 기본 주소
-            sites: [{
-                name: "본사",
-                address: "서울시 강남구",
-                standards: quotation.isoStandards,
-                total_headcount: quotation.totalEmployees
-            }]
-        };
+        fs.writeFileSync(outputFile, buffer);
         
-        // 데이터 파일 저장
-        fs.writeFileSync(dataFile, JSON.stringify(pythonData, null, 2), 'utf8');
-        
-        // Python 스크립트 실행
-        const pythonScript = path.join(__dirname, '..', 'adj_quote_engine', 'generate_quotation.py');
-        const command = `python3 "${pythonScript}" "${dataFile}" "${outputFile}"`;
-        
-        console.log('Python 명령어 실행:', command);
-        const { stdout, stderr } = await execAsync(command);
-        
-        if (stderr) {
-            console.log('Python 실행 경고:', stderr);
-        }
-        
-        console.log('Python 실행 결과:', stdout);
-        
-        // 생성된 파일 확인
-        if (fs.existsSync(outputFile)) {
-            console.log('Word 문서 생성 성공:', outputFile);
-            return outputFile;
-        } else {
-            throw new Error('Word 문서 파일이 생성되지 않았습니다.');
-        }
+        console.log('Word 문서 생성 성공:', outputFile);
+        return outputFile;
         
     } catch (error) {
         console.error('Word 문서 생성 오류:', error);
         // 실패 시 텍스트 파일로 대체
         return generateTextDocument(quotation);
     }
+}
+
+// 템플릿 컨텍스트 데이터 준비
+function prepareTemplateContext(quotation) {
+    const isoStandards = quotation.isoStandards || [];
+    
+    return {
+        // 회사 정보
+        client_name: quotation.companyName,
+        client_name_en: quotation.companyName,
+        client_address: "서울시 강남구 테헤란로 123",
+        contact_person: quotation.contactName,
+        contact_email: quotation.contactEmail,
+        contact_phone: "02-1234-5678",
+        
+        // 견적 정보
+        quotation_date: new Date().toLocaleDateString('ko-KR', {year: 'numeric', month: 'long', day: 'numeric'}),
+        quotation_number: quotation.quotationNumber,
+        valid_until: new Date(Date.now() + 30*24*60*60*1000).toLocaleDateString('ko-KR', {year: 'numeric', month: 'long', day: 'numeric'}),
+        
+        // 표준 정보
+        standards_text: isoStandards.join(', '),
+        has_iso9001: isoStandards.some(std => std.toLowerCase().includes('9001')),
+        has_iso14001: isoStandards.some(std => std.toLowerCase().includes('14001')),
+        has_iso45001: isoStandards.some(std => std.toLowerCase().includes('45001')),
+        iso9001_name: 'ISO 9001 품질경영시스템',
+        iso14001_name: 'ISO 14001 환경경영시스템',
+        iso45001_name: 'ISO 45001 안전보건경영시스템',
+        
+        // 사업장 정보
+        sites: [{
+            number: 1,
+            name: '본사',
+            address: '서울시 강남구 테헤란로 123',
+            headcount: quotation.totalEmployees,
+            standards: isoStandards.join(', '),
+            activities: '제조업'
+        }],
+        total_sites: quotation.siteCount,
+        total_employees: quotation.totalEmployees,
+        
+        // 견적 상세 정보
+        total_audit_days: 3,
+        subtotal: Math.floor(quotation.totalCost / 1.1),
+        vat_amount: Math.floor(quotation.totalCost * 0.1),
+        total_cost: quotation.totalCost,
+        total_cost_formatted: quotation.totalCost.toLocaleString(),
+        
+        // 표준별 개별 일수 및 비용
+        stage1_days: 1,
+        stage2_days: 2,
+        surveillance_days: 1,
+        stage1_cost: 500000,
+        stage2_cost: 1000000,
+        surveillance_cost: 500000,
+        
+        // 통합심사 정보
+        is_integrated: isoStandards.length > 1,
+        integration_discount: isoStandards.length > 1 ? 10 : 0,
+        
+        // 원격심사 정보
+        remote_audit_ratio: 30,
+        remote_discount: 5,
+        
+        // 기타
+        created_at: new Date().toISOString(),
+        prepared_by: 'LRQA Korea',
+        prepared_title: '사업개발본부'
+    };
 }
 
 // 텍스트 문서 생성 (백업용)
