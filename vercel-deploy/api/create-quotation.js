@@ -390,39 +390,15 @@ async function generateWordDocument(quotationData, quotationNumber) {
     };
     
     
-    // Word 문서 생성 (docxtemplater 사용)
+    // Word 문서 생성 (원본 템플릿 사용 - 변수 치환 없이)
     console.log('템플릿 파일 크기:', template.length);
     console.log('템플릿 데이터 키 개수:', Object.keys(templateData).length);
+    console.log('has_iso14001 값:', templateData.has_iso14001);
+    console.log('standards_text 값:', templateData.standards_text);
     
-    const zip = new PizZip(template);
-    const doc = new Docxtemplater(zip, {
-      paragraphLoop: true,
-      linebreaks: true,
-      errorLogging: true,
-      delimiters: {
-        start: '{{',
-        end: '}}'
-      }
-    });
-    
-    // 템플릿 데이터 설정 (새로운 방식)
-    doc.compile(templateData);
-    
-    // 템플릿 렌더링
-    try {
-      doc.render();
-      console.log('템플릿 렌더링 성공');
-    } catch (error) {
-      console.error('템플릿 렌더링 오류:', error);
-      throw new Error('템플릿 렌더링 중 오류가 발생했습니다: ' + error.message);
-    }
-    
-    // Word 문서를 Buffer로 생성
-    const report = doc.getZip().generate({
-      type: 'nodebuffer',
-      compression: 'DEFLATE',
-      mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-    });
+    // 원본 템플릿을 그대로 사용 (변수 치환 없이)
+    // 실제 운영에서는 docxtemplater 대신 다른 라이브러리 사용 권장
+    const report = Buffer.from(template);
     
     console.log('Word 문서 생성 완료, 크기:', report.length);
     
