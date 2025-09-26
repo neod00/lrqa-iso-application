@@ -37,7 +37,7 @@ export default async function handler(req, res) {
     }
 
     // 견적서 데이터 생성
-    const quotationData = createQuotationData(body);
+    const quotationData = await createQuotationData(body);
     
     // Word 문서 생성
     const wordDocumentBuffer = await generateWordDocument(quotationData, body.quotation_number || 'default');
@@ -78,11 +78,67 @@ export default async function handler(req, res) {
   }
 }
 
-function createQuotationData(data) {
+async function callCoreBrainAPI(applicationData) {
+  try {
+    const coreBrainUrl = 'http://localhost:5001/calculate-audit-days';
+    
+    // applicationData를 핵심두뇌 API 형식으로 변환
+    const requestData = {
+      client_name: applicationData['법인명(국문)'] || 'Unknown',
+      sites: [{
+        name: applicationData['법인명(국문)'] || 'Unknown',
+        address: applicationData['본사주소'] || '서울시 강남구',
+        standards: [applicationData['ISO표준'] || 'ISO9001'],
+        total_headcount: parseInt(applicationData['총직원수']) || 30,
+        business_sector: 'MANUFACTURING',
+        management_system_maturity: 'MEDIUM'
+      }],
+      standards: [applicationData['ISO표준'] || 'ISO9001'],
+      options: {
+        stage1: true,
+        stage2: true,
+        surveillance: true,
+        recert: true
+      }
+    };
+    
+    console.log('핵심두뇌 API 호출:', coreBrainUrl);
+    console.log('요청 데이터:', JSON.stringify(requestData, null, 2));
+    
+    const response = await fetch(coreBrainUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestData)
+    });
+    
+    if (response.ok) {
+      const result = await response.json();
+      console.log('핵심두뇌 API 응답:', result);
+      return result;
+    } else {
+      console.log('핵심두뇌 API 호출 실패:', response.status, response.statusText);
+      return null;
+    }
+  } catch (error) {
+    console.log('핵심두뇌 API 호출 오류:', error.message);
+    return null;
+  }
+}
+
+async function createQuotationData(data) {
   // 디버깅: 전송된 데이터 확인
   console.log('전송된 데이터:', JSON.stringify(data, null, 2));
   console.log('standards 배열:', data.standards);
   console.log('applicationData ISO표준:', data.applicationData?.['ISO표준']);
+  
+  // 핵심두뇌 API 호출 시도
+  let coreBrainResult = null;
+  if (data.applicationData) {
+    console.log('핵심두뇌 API 호출 시도...');
+    coreBrainResult = await callCoreBrainAPI(data.applicationData);
+  }
   
   // 표준 타입 변환 - applicationData에서 ISO표준 필드 확인
   const standards = [];
@@ -113,36 +169,53 @@ function createQuotationData(data) {
   console.log('변환된 standards:', standards);
   console.log('has_iso14001 계산:', standards.includes('ISO 14001'));
 
-  // 기본 견적 계산 (간단한 버전)
-  const totalEmployees = parseInt(data.total_employees) || 30;
-  const standardCount = standards.length;
+  // 핵심두뇌 API 결과가 있으면 사용, 없으면 기본 계산
+  let totalAuditDays, subtotalCost, vatAmount, totalCost, breakdowns;
   
-  // ENP 계산 (간단한 버전)
-  const enp = Math.max(totalEmployees, 1);
-  
-  // 심사일수 계산 (간단한 버전)
-  const baseDays = Math.max(2, Math.ceil(enp / 25)); // 최소 2일, 25명당 1일 추가
-  const stage1Days = Math.ceil(baseDays * 0.3); // Stage 1: 30%
-  const stage2Days = baseDays; // Stage 2: 100%
-  const surveillanceDays = Math.ceil(baseDays * 0.6); // Surveillance: 60%
-  const totalAuditDays = (stage1Days + stage2Days + surveillanceDays) * standardCount;
-  
-  // 비용 계산 (기존 템플릿 기준으로 수정)
-  const dayRate = 1400000; // 1일 140만원 (기존 템플릿 기준)
-  const vatRate = 0.1; // 10% 부가세
-  const subtotalCost = totalAuditDays * dayRate;
-  const vatAmount = subtotalCost * vatRate;
-  const totalCost = subtotalCost + vatAmount;
+  if (coreBrainResult && coreBrainResult.success) {
+    console.log('핵심두뇌 API 결과 사용');
+    totalAuditDays = coreBrainResult.total_audit_days;
+    breakdowns = coreBrainResult.breakdowns || [];
+    
+    // 비용 계산
+    const dayRate = 1400000; // 1일 140만원
+    const vatRate = 0.1; // 10% 부가세
+    subtotalCost = totalAuditDays * dayRate;
+    vatAmount = subtotalCost * vatRate;
+    totalCost = subtotalCost + vatAmount;
+  } else {
+    console.log('기본 견적 계산 사용');
+    // 기본 견적 계산 (간단한 버전)
+    const totalEmployees = parseInt(data.total_employees) || 30;
+    const standardCount = standards.length;
+    
+    // ENP 계산 (간단한 버전)
+    const enp = Math.max(totalEmployees, 1);
+    
+    // 심사일수 계산 (간단한 버전)
+    const baseDays = Math.max(2, Math.ceil(enp / 25)); // 최소 2일, 25명당 1일 추가
+    const stage1Days = Math.ceil(baseDays * 0.3); // Stage 1: 30%
+    const stage2Days = baseDays; // Stage 2: 100%
+    const surveillanceDays = Math.ceil(baseDays * 0.6); // Surveillance: 60%
+    totalAuditDays = (stage1Days + stage2Days + surveillanceDays) * standardCount;
+    
+    // 비용 계산 (기존 템플릿 기준으로 수정)
+    const dayRate = 1400000; // 1일 140만원 (기존 템플릿 기준)
+    const vatRate = 0.1; // 10% 부가세
+    subtotalCost = totalAuditDays * dayRate;
+    vatAmount = subtotalCost * vatRate;
+    totalCost = subtotalCost + vatAmount;
 
-  // 견적 상세 정보
-  const breakdowns = standards.map(standard => ({
-    standard: standard,
-    stage1_days: stage1Days,
-    stage2_days: stage2Days,
-    surveillance_days: surveillanceDays,
-    total_days: stage1Days + stage2Days + surveillanceDays,
-    total_cost: (stage1Days + stage2Days + surveillanceDays) * dayRate
-  }));
+    // 견적 상세 정보
+    breakdowns = standards.map(standard => ({
+      standard: standard,
+      stage1_days: stage1Days,
+      stage2_days: stage2Days,
+      surveillance_days: surveillanceDays,
+      total_days: stage1Days + stage2Days + surveillanceDays,
+      total_cost: (stage1Days + stage2Days + surveillanceDays) * dayRate
+    }));
+  }
 
   // applicationData에서 올바른 필드 매핑
   const applicationData = data.applicationData || {};
@@ -156,7 +229,7 @@ function createQuotationData(data) {
   console.log('standards:', standards);
   console.log('has_iso14001:', standards.includes('ISO 14001'));
   
-  const result = {
+  const quotationData = {
     company_name: applicationData['법인명(국문)'] || data.company_name || '알 수 없음',
     company_name_en: applicationData['법인명(영문)'] || data.company_name_en || 'Unknown',
     contact_name: applicationData['담당자명'] || data.contact_name || '알 수 없음',
@@ -186,13 +259,13 @@ function createQuotationData(data) {
     created_at: new Date().toISOString()
   };
   
-  console.log('=== result 객체 확인 ===');
-  console.log('result.company_name:', result.company_name);
-  console.log('result.standards:', result.standards);
-  console.log('result.has_iso14001:', result.has_iso14001);
-  console.log('result.total_employees:', result.total_employees);
+  console.log('=== quotationData 객체 확인 ===');
+  console.log('quotationData.company_name:', quotationData.company_name);
+  console.log('quotationData.standards:', quotationData.standards);
+  console.log('quotationData.has_iso14001:', quotationData.has_iso14001);
+  console.log('quotationData.total_employees:', quotationData.total_employees);
   
-  return result;
+  return quotationData;
 }
 
 async function generateWordDocument(quotationData, quotationNumber) {
