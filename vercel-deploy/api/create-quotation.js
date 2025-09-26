@@ -100,10 +100,10 @@ function createQuotationData(data) {
   const enp = Math.max(totalEmployees, 1);
   
   // 심사일수 계산 (간단한 버전)
-  const baseDays = Math.ceil(enp / 25) * 2; // 25명당 2일 기준
-  const stage1Days = baseDays * 0.3;
-  const stage2Days = baseDays;
-  const surveillanceDays = baseDays * 0.6;
+  const baseDays = Math.max(2, Math.ceil(enp / 25)); // 최소 2일, 25명당 1일 추가
+  const stage1Days = Math.ceil(baseDays * 0.3); // Stage 1: 30%
+  const stage2Days = baseDays; // Stage 2: 100%
+  const surveillanceDays = Math.ceil(baseDays * 0.6); // Surveillance: 60%
   const totalAuditDays = (stage1Days + stage2Days + surveillanceDays) * standardCount;
   
   // 비용 계산 (기존 템플릿 기준으로 수정)
@@ -245,6 +245,11 @@ async function generateWordDocument(quotationData, quotationNumber) {
       vat_amount_text: quotationData.vat_amount.toLocaleString(),
       total_cost: quotationData.total_cost,
       total_cost_text: quotationData.total_cost.toLocaleString(),
+      
+      // 여행비 포함 총 비용
+      travel_expense: 500000, // 50만원 여행비
+      total_cost_with_travel: quotationData.total_cost + 500000,
+      total_cost_with_travel_formatted: (quotationData.total_cost + 500000).toLocaleString(),
       
       // 개별 비용 변수들
       initial_audit_cost: quotationData.breakdowns.reduce((sum, b) => sum + (b.stage1_days + b.stage2_days) * 1400000, 0),
