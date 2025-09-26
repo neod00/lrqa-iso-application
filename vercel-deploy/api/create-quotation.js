@@ -144,15 +144,18 @@ function createQuotationData(data) {
     total_cost: (stage1Days + stage2Days + surveillanceDays) * dayRate
   }));
 
+  // applicationData에서 올바른 필드 매핑
+  const applicationData = data.applicationData || {};
+  
   return {
-    company_name: data.company_name || '알 수 없음',
-    company_name_en: data.company_name_en || data.company_name || 'Unknown',
-    contact_name: data.contact_name || '알 수 없음',
-    contact_email: data.contact_email || 'unknown@example.com',
-    contact_phone: data.contact_phone || '010-0000-0000',
-    address: data.address || '서울시 강남구',
+    company_name: applicationData['법인명(국문)'] || data.company_name || '알 수 없음',
+    company_name_en: applicationData['법인명(영문)'] || data.company_name_en || 'Unknown',
+    contact_name: applicationData['담당자명'] || data.contact_name || '알 수 없음',
+    contact_email: applicationData['담당자이메일'] || data.contact_email || 'unknown@example.com',
+    contact_phone: applicationData['담당자전화'] || data.contact_phone || '010-0000-0000',
+    address: applicationData['본사주소'] || data.address || '서울시 강남구',
     standards: standards,
-    total_employees: totalEmployees,
+    total_employees: parseInt(applicationData['총직원수']) || totalEmployees,
     total_audit_days: totalAuditDays,
     subtotal_cost: subtotalCost,
     vat_amount: vatAmount,
@@ -168,6 +171,9 @@ function createQuotationData(data) {
       'ISO 표준 요구사항에 따라 Stage 1 및 Stage 2 심사를 진행합니다.',
       '통합심사 시 할인 혜택이 적용됩니다.'
     ],
+    has_iso9001: standards.includes('ISO 9001'),
+    has_iso14001: standards.includes('ISO 14001'),
+    has_iso45001: standards.includes('ISO 45001'),
     created_at: new Date().toISOString()
   };
 }
