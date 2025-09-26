@@ -445,13 +445,14 @@ async function generateWordDocument(quotationData, quotationNumber) {
         }
       });
       
-      // 템플릿 데이터 설정
+      // 템플릿 데이터 설정 (최신 방식)
       console.log('=== 템플릿 데이터 설정 ===');
       console.log('templateData 키 개수:', Object.keys(templateData).length);
       console.log('templateData.has_iso14001:', templateData.has_iso14001);
       console.log('templateData.client_name:', templateData.client_name);
       
-      doc.setData(templateData);
+      // 최신 docxtemplater API 사용
+      doc.compile(templateData);
       
       // 템플릿 렌더링
       console.log('=== 템플릿 렌더링 시작 ===');
