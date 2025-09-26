@@ -60,7 +60,12 @@ export default async function handler(req, res) {
     
     // Word 문서를 직접 반환
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-    res.setHeader('Content-Disposition', `attachment; filename="quotation_${quotationData.company_name}_${new Date().toISOString().slice(0, 10)}.docx"`);
+    
+    // 파일명을 URL 인코딩하여 한글 문제 해결
+    const fileName = `quotation_${quotationData.company_name}_${new Date().toISOString().slice(0, 10)}.docx`;
+    const encodedFileName = encodeURIComponent(fileName);
+    res.setHeader('Content-Disposition', `attachment; filename*=UTF-8''${encodedFileName}`);
+    
     res.status(200).send(wordDocumentBuffer);
     
   } catch (error) {
