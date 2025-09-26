@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     const quotationData = createQuotationData(body);
     
     // Word 문서 생성
-    const wordDocumentUrl = await generateWordDocument(quotationData, body.quotation_number || 'default');
+    const wordDocumentBuffer = await generateWordDocument(quotationData, body.quotation_number || 'default');
     
     // 응답 데이터 구성
     const responseData = {
@@ -53,12 +53,15 @@ export default async function handler(req, res) {
         total_audit_days: quotationData.total_audit_days,
         standards: quotationData.standards,
         breakdowns: quotationData.breakdowns,
-        word_document_url: wordDocumentUrl,
+        word_document_buffer: wordDocumentBuffer,
         created_at: new Date().toISOString()
       }
     };
     
-    res.status(200).json(responseData);
+    // Word 문서를 직접 반환
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    res.setHeader('Content-Disposition', `attachment; filename="quotation_${quotationData.company_name}_${new Date().toISOString().slice(0, 10)}.docx"`);
+    res.status(200).send(wordDocumentBuffer);
     
   } catch (error) {
     console.error('Error creating quotation:', error);
@@ -390,16 +393,42 @@ async function generateWordDocument(quotationData, quotationNumber) {
     };
     
     
-    // Word 문서 생성 (원본 템플릿을 그대로 사용)
+    // Word 문서 생성 (docxtemplater 올바른 사용)
     console.log('템플릿 파일 크기:', template.length);
     console.log('템플릿 데이터 키 개수:', Object.keys(templateData).length);
     console.log('has_iso14001 값:', templateData.has_iso14001);
     console.log('standards_text 값:', templateData.standards_text);
     
-    // 원본 템플릿을 그대로 사용 (Buffer 변환 없이)
-    const report = template;
-    
-    console.log('Word 문서 생성 완료, 크기:', report.length);
+    try {
+      // docxtemplater 사용
+      const zip = new PizZip(template);
+      const doc = new Docxtemplater(zip, {
+        paragraphLoop: true,
+        linebreaks: true,
+        errorLogging: true
+      });
+      
+      // 템플릿 데이터 설정
+      doc.setData(templateData);
+      
+      // 템플릿 렌더링
+      doc.render();
+      
+      // Word 문서를 Buffer로 생성
+      const report = doc.getZip().generate({
+        type: 'nodebuffer',
+        compression: 'DEFLATE'
+      });
+      
+      console.log('Word 문서 생성 완료, 크기:', report.length);
+      return report;
+      
+    } catch (error) {
+      console.error('docxtemplater 오류:', error);
+      // 오류 발생 시 원본 템플릿 반환
+      console.log('오류로 인해 원본 템플릿 반환');
+      return template;
+    }
     
     // 임시 파일로 저장 (실제 환경에서는 클라우드 스토리지 사용)
     const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
