@@ -526,13 +526,24 @@ async function generateWordDocument(quotationData, quotationNumber) {
       const doc = new Docxtemplater(zip, {
         paragraphLoop: true,
         linebreaks: true,
-        errorLogging: true
+        errorLogging: true,
+        delimiters: {
+          start: '{{',
+          end: '}}'
+        }
       });
       
       console.log('=== docxtemplater 설정 확인 ===');
       console.log('delimiters:', doc.getDelimiters());
       console.log('paragraphLoop:', doc.getOptions().paragraphLoop);
       console.log('linebreaks:', doc.getOptions().linebreaks);
+      
+      // 템플릿 내용 확인
+      console.log('=== 템플릿 내용 확인 ===');
+      const templateContent = zip.file('word/document.xml').asText();
+      console.log('템플릿에 quotation_date 포함:', templateContent.includes('quotation_date'));
+      console.log('템플릿에 {{ quotation_date }} 포함:', templateContent.includes('{{ quotation_date }}'));
+      console.log('템플릿 내용 샘플:', templateContent.substring(0, 500));
       
       // 템플릿 데이터 설정 (안정적인 방식)
       console.log('=== 템플릿 데이터 설정 ===');
