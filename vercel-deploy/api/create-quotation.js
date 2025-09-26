@@ -70,19 +70,27 @@ export default async function handler(req, res) {
 }
 
 function createQuotationData(data) {
+  // 디버깅: 전송된 데이터 확인
+  console.log('전송된 데이터:', JSON.stringify(data, null, 2));
+  console.log('standards 배열:', data.standards);
+  
   // 표준 타입 변환
   const standards = [];
   for (const std of data.standards || []) {
-    if (std === 'ISO 9001' || std === 'ISO9001') {
+    const stdLower = std.toLowerCase();
+    console.log(`표준 처리: "${std}" -> "${stdLower}"`);
+    if (stdLower.includes('9001')) {
       standards.push('ISO 9001');
-    } else if (std === 'ISO 14001' || std === 'ISO14001') {
+    } else if (stdLower.includes('14001')) {
       standards.push('ISO 14001');
-    } else if (std === 'ISO 45001' || std === 'ISO45001') {
+    } else if (stdLower.includes('45001')) {
       standards.push('ISO 45001');
     } else {
       standards.push('ISO 9001'); // 기본값
     }
   }
+  
+  console.log('변환된 standards:', standards);
 
   // 기본 견적 계산 (간단한 버전)
   const totalEmployees = parseInt(data.total_employees) || 30;
