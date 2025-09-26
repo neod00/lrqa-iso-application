@@ -1021,8 +1021,8 @@
                 console.log('선택된 신청서 데이터:', applicationData);
                 console.log('관리자 이메일:', adminEmailInput.value);
                 
-                // 견적서 생성 요청
-                const response = await fetch('/.netlify/functions/generate-word-quotation', {
+                // 견적서 생성 요청 (Vercel API 호출)
+                const response = await fetch('https://lrqa-iso-application.vercel.app/api/create-quotation', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
