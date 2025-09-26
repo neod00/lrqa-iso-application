@@ -194,7 +194,7 @@ async function generateWordDocument(quotationData, quotationNumber) {
       try {
         console.log('경로 시도:', templatePath);
         if (fs.existsSync(templatePath)) {
-          template = fs.readFileSync(templatePath);
+          template = fs.readFileSync(templatePath, { encoding: null }); // 바이너리 모드로 읽기
           console.log('템플릿 파일 로드 성공: ' + templatePath);
           templateFound = true;
           break;
