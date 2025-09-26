@@ -380,11 +380,18 @@ async function generateWordDocument(quotationData, quotationNumber) {
     
     
     // Word 문서 생성 (docxtemplater 사용)
+    console.log('템플릿 파일 크기:', template.length);
+    console.log('템플릿 데이터 키 개수:', Object.keys(templateData).length);
+    
     const zip = new PizZip(template);
     const doc = new Docxtemplater(zip, {
       paragraphLoop: true,
       linebreaks: true,
-      errorLogging: true
+      errorLogging: true,
+      delimiters: {
+        start: '{{',
+        end: '}}'
+      }
     });
     
     // 템플릿 데이터 설정
@@ -393,6 +400,7 @@ async function generateWordDocument(quotationData, quotationNumber) {
     // 템플릿 렌더링
     try {
       doc.render();
+      console.log('템플릿 렌더링 성공');
     } catch (error) {
       console.error('템플릿 렌더링 오류:', error);
       throw new Error('템플릿 렌더링 중 오류가 발생했습니다: ' + error.message);
@@ -401,8 +409,11 @@ async function generateWordDocument(quotationData, quotationNumber) {
     // Word 문서를 Buffer로 생성
     const report = doc.getZip().generate({
       type: 'nodebuffer',
-      compression: 'DEFLATE'
+      compression: 'DEFLATE',
+      mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     });
+    
+    console.log('Word 문서 생성 완료, 크기:', report.length);
     
     // 임시 파일로 저장 (실제 환경에서는 클라우드 스토리지 사용)
     const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
