@@ -14,12 +14,6 @@
       "maxDuration": 30
     }
   },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
-    }
-  ],
   "env": {
     "PYTHONPATH": "./adj_quote_engine"
   }
