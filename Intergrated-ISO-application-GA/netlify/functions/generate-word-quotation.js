@@ -49,6 +49,7 @@ exports.handler = async (event, context) => {
         // 디버깅: 전송된 데이터 확인
         console.log('전송된 견적서 데이터:', JSON.stringify(quotationData, null, 2));
         console.log('ISO 표준 배열:', isoStandards);
+        console.log('has_iso14001 계산:', isoStandards.some(std => std.toLowerCase().includes('14001')));
 
         // ISO 표준 한글명 매핑
         const isoStandardNames = {
