@@ -1,5 +1,36 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ],
   "env": {
     "PYTHONPATH": "./adj_quote_engine"
+  },
+  "functions": {
+    "api/create-quotation.js": {
+      "maxDuration": 60
+    },
+    "api/download-quotation.js": {
+      "maxDuration": 60
+    },
+    "api/send-email.js": {
+      "maxDuration": 30
+    },
+    "api/submit-application.js": {
+      "maxDuration": 30
+    }
   }
 }
