@@ -533,19 +533,54 @@ async function generateWordDocument(quotationData, quotationNumber) {
         }
       });
       
+      console.log('=== docxtemplater 설정 확인 ===');
+      console.log('delimiters:', doc.getDelimiters());
+      console.log('paragraphLoop:', doc.getOptions().paragraphLoop);
+      console.log('linebreaks:', doc.getOptions().linebreaks);
+      
       // 템플릿 데이터 설정 (안정적인 방식)
       console.log('=== 템플릿 데이터 설정 ===');
       console.log('templateData 키 개수:', Object.keys(templateData).length);
       console.log('templateData.has_iso14001:', templateData.has_iso14001);
       console.log('templateData.client_name:', templateData.client_name);
       
+      // 주요 변수들 상세 로그
+      console.log('=== 주요 템플릿 변수 상세 확인 ===');
+      console.log('client_name:', templateData.client_name);
+      console.log('client_address:', templateData.client_address);
+      console.log('standards_text:', templateData.standards_text);
+      console.log('quotation_date:', templateData.quotation_date);
+      console.log('quotation_number:', templateData.quotation_number);
+      console.log('total_sites:', templateData.total_sites);
+      console.log('total_employees:', templateData.total_employees);
+      console.log('total_audit_days:', templateData.total_audit_days);
+      console.log('total_cost_with_travel_formatted:', templateData.total_cost_with_travel_formatted);
+      console.log('iso14001_surveillance_days:', templateData.iso14001_surveillance_days);
+      console.log('travel_expense_formatted:', templateData.travel_expense_formatted);
+      
+      // 템플릿에서 사용하는 모든 변수명 확인
+      console.log('=== 템플릿 변수명 전체 목록 ===');
+      const allKeys = Object.keys(templateData);
+      allKeys.forEach(key => {
+        console.log(`${key}:`, templateData[key]);
+      });
+      
       // 안정적인 docxtemplater API 사용
       doc.setData(templateData);
       
       // 템플릿 렌더링
       console.log('=== 템플릿 렌더링 시작 ===');
-      doc.render();
-      console.log('=== 템플릿 렌더링 완료 ===');
+      try {
+        doc.render();
+        console.log('=== 템플릿 렌더링 완료 ===');
+      } catch (renderError) {
+        console.error('=== 템플릿 렌더링 오류 ===');
+        console.error('오류 메시지:', renderError.message);
+        console.error('오류 스택:', renderError.stack);
+        
+        // 렌더링 오류가 있어도 계속 진행
+        console.log('렌더링 오류 무시하고 계속 진행...');
+      }
       
       // Word 문서를 Buffer로 생성
       const report = doc.getZip().generate({
