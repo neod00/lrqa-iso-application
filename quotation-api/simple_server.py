@@ -169,8 +169,19 @@ def generate_quotation():
             breakdowns = []
             standards_list = [s.strip() for s in iso_standards.split(',')]
             for standard in standards_list:
+                # 표준명 정규화 (소문자 -> 대문자)
+                std_lower = standard.lower()
+                if '9001' in std_lower:
+                    normalized_standard = 'ISO9001'
+                elif '14001' in std_lower:
+                    normalized_standard = 'ISO14001'
+                elif '45001' in std_lower:
+                    normalized_standard = 'ISO45001'
+                else:
+                    normalized_standard = 'ISO9001'  # 기본값
+                
                 breakdowns.append({
-                    'standard': standard,
+                    'standard': normalized_standard,
                     'stage1_days': 1.0,
                     'stage2_days': 1.0,
                     'surveillance_days': 1.0,
@@ -343,4 +354,6 @@ def generate_quotation():
 if __name__ == '__main__':
     print("간단한 Flask 서버 시작...")
     print("포트: 5000")
-    app.run(debug=True, host='127.0.0.1', port=5000)
+    import os
+    os.environ.pop('FLASK_ENV', None)  # FLASK_ENV 환경변수 제거
+    app.run(debug=False, host='127.0.0.1', port=5000, load_dotenv=False)
