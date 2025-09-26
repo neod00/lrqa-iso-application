@@ -91,6 +91,7 @@ function createQuotationData(data) {
   }
   
   console.log('변환된 standards:', standards);
+  console.log('has_iso14001 계산:', standards.includes('ISO 14001'));
 
   // 기본 견적 계산 (간단한 버전)
   const totalEmployees = parseInt(data.total_employees) || 30;
@@ -226,6 +227,17 @@ async function generateWordDocument(quotationData, quotationNumber) {
       has_iso9001: quotationData.standards.includes('ISO 9001'),
       has_iso14001: quotationData.standards.includes('ISO 14001'),
       has_iso45001: quotationData.standards.includes('ISO 45001'),
+      
+      // 디버깅: 표준 확인 변수들 로그
+      debug_standards: quotationData.standards,
+      debug_has_iso9001: quotationData.standards.includes('ISO 9001'),
+      debug_has_iso14001: quotationData.standards.includes('ISO 14001'),
+      debug_has_iso45001: quotationData.standards.includes('ISO 45001'),
+      
+      // 템플릿 디버깅을 위한 추가 변수들
+      debug_total_audit_days: quotationData.total_audit_days,
+      debug_total_cost: quotationData.total_cost,
+      debug_total_cost_with_travel: quotationData.total_cost + 500000,
       iso9001_name: 'ISO 9001 품질경영시스템',
       iso14001_name: 'ISO 14001 환경경영시스템',
       iso45001_name: 'ISO 45001 안전보건경영시스템',
