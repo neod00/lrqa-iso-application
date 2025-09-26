@@ -152,6 +152,12 @@ async function createQuotationData(data) {
     }
   }
   
+  // ISO표준이 비어있으면 기본값 설정
+  if (standardsToProcess.length === 0) {
+    console.log('ISO표준이 비어있음, 기본값 ISO9001 설정');
+    standardsToProcess = ['ISO9001'];
+  }
+  
   for (const std of standardsToProcess) {
     const stdLower = std.toLowerCase();
     console.log(`표준 처리: "${std}" -> "${stdLower}"`);
