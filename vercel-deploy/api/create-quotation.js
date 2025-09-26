@@ -529,14 +529,6 @@ async function generateWordDocument(quotationData, quotationNumber) {
         errorLogging: true
       });
       
-      // 구분자 설정 (별도로 설정)
-      doc.setOptions({
-        delimiters: {
-          start: '{{',
-          end: '}}'
-        }
-      });
-      
       console.log('=== docxtemplater 설정 확인 ===');
       console.log('delimiters:', doc.getDelimiters());
       console.log('paragraphLoop:', doc.getOptions().paragraphLoop);
