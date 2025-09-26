@@ -390,15 +390,14 @@ async function generateWordDocument(quotationData, quotationNumber) {
     };
     
     
-    // Word 문서 생성 (원본 템플릿 사용 - 변수 치환 없이)
+    // Word 문서 생성 (원본 템플릿을 그대로 사용)
     console.log('템플릿 파일 크기:', template.length);
     console.log('템플릿 데이터 키 개수:', Object.keys(templateData).length);
     console.log('has_iso14001 값:', templateData.has_iso14001);
     console.log('standards_text 값:', templateData.standards_text);
     
-    // 원본 템플릿을 그대로 사용 (변수 치환 없이)
-    // 실제 운영에서는 docxtemplater 대신 다른 라이브러리 사용 권장
-    const report = Buffer.from(template);
+    // 원본 템플릿을 그대로 사용 (Buffer 변환 없이)
+    const report = template;
     
     console.log('Word 문서 생성 완료, 크기:', report.length);
     
