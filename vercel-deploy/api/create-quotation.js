@@ -147,7 +147,16 @@ function createQuotationData(data) {
   // applicationData에서 올바른 필드 매핑
   const applicationData = data.applicationData || {};
   
-  return {
+  console.log('=== applicationData 확인 ===');
+  console.log('applicationData 존재:', !!applicationData);
+  console.log('applicationData 키 개수:', Object.keys(applicationData).length);
+  console.log('법인명(국문):', applicationData['법인명(국문)']);
+  console.log('담당자명:', applicationData['담당자명']);
+  console.log('총직원수:', applicationData['총직원수']);
+  console.log('standards:', standards);
+  console.log('has_iso14001:', standards.includes('ISO 14001'));
+  
+  const result = {
     company_name: applicationData['법인명(국문)'] || data.company_name || '알 수 없음',
     company_name_en: applicationData['법인명(영문)'] || data.company_name_en || 'Unknown',
     contact_name: applicationData['담당자명'] || data.contact_name || '알 수 없음',
@@ -176,6 +185,14 @@ function createQuotationData(data) {
     has_iso45001: standards.includes('ISO 45001'),
     created_at: new Date().toISOString()
   };
+  
+  console.log('=== result 객체 확인 ===');
+  console.log('result.company_name:', result.company_name);
+  console.log('result.standards:', result.standards);
+  console.log('result.has_iso14001:', result.has_iso14001);
+  console.log('result.total_employees:', result.total_employees);
+  
+  return result;
 }
 
 async function generateWordDocument(quotationData, quotationNumber) {
