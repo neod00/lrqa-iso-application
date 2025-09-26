@@ -224,6 +224,11 @@ async function generateWordDocument(quotationData, quotationNumber) {
     }
     
     // 템플릿 데이터 준비 (LRQA_quotation.docx 템플릿에 맞게)
+    console.log('=== 템플릿 데이터 준비 시작 ===');
+    console.log('quotationData.company_name:', quotationData.company_name);
+    console.log('quotationData.standards:', quotationData.standards);
+    console.log('quotationData.has_iso14001:', quotationData.has_iso14001);
+    
     const templateData = {
       // 기본 정보 (템플릿에서 사용하는 변수명으로 수정)
       client_name: quotationData.company_name,
@@ -410,14 +415,25 @@ async function generateWordDocument(quotationData, quotationNumber) {
       const doc = new Docxtemplater(zip, {
         paragraphLoop: true,
         linebreaks: true,
-        errorLogging: true
+        errorLogging: true,
+        delimiters: {
+          start: '{{',
+          end: '}}'
+        }
       });
       
       // 템플릿 데이터 설정
+      console.log('=== 템플릿 데이터 설정 ===');
+      console.log('templateData 키 개수:', Object.keys(templateData).length);
+      console.log('templateData.has_iso14001:', templateData.has_iso14001);
+      console.log('templateData.client_name:', templateData.client_name);
+      
       doc.setData(templateData);
       
       // 템플릿 렌더링
+      console.log('=== 템플릿 렌더링 시작 ===');
       doc.render();
+      console.log('=== 템플릿 렌더링 완료 ===');
       
       // Word 문서를 Buffer로 생성
       const report = doc.getZip().generate({
