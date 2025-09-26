@@ -578,12 +578,13 @@ async function generateWordDocument(quotationData, quotationNumber) {
       });
       
       // 안정적인 docxtemplater API 사용
-      doc.setData(templateData);
+      // doc.render(templateData)로 변경 (setData는 deprecated)
+      doc.render(templateData);
       
       // 템플릿 렌더링
       console.log('=== 템플릿 렌더링 시작 ===');
       try {
-        doc.render();
+        // 이미 위에서 doc.render(templateData) 호출됨
         console.log('=== 템플릿 렌더링 완료 ===');
       } catch (renderError) {
         console.error('=== 템플릿 렌더링 오류 ===');
