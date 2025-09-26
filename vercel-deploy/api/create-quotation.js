@@ -3,7 +3,8 @@
  * docx-templates를 사용하여 LRQA_quotation.docx 템플릿으로 Word 문서 생성
  */
 
-import { createReport } from 'docx-templates';
+import Docxtemplater from 'docxtemplater';
+import PizZip from 'pizzip';
 import fs from 'fs';
 import path from 'path';
 
@@ -378,37 +379,29 @@ async function generateWordDocument(quotationData, quotationNumber) {
     };
     
     
-    // Word 문서 생성
-    const report = await createReport({
-      template,
-      data: templateData,
-      cmdDelimiter: ['{{', '}}'], // Jinja2 스타일 구분자
-      literalXmlDelimiter: ['{', '}'],
-      processLineBreaks: true,
-      additionalJsContext: {
-        // 추가 JavaScript 함수들
-        formatCurrency: (amount) => {
-          if (typeof amount === 'number') {
-            return amount.toLocaleString('ko-KR');
-          }
-          return amount;
-        },
-        format_currency: (amount) => {
-          if (typeof amount === 'number') {
-            return amount.toLocaleString('ko-KR');
-          }
-          return amount;
-        },
-        formatDate: (date) => new Date(date).toLocaleDateString('ko-KR'),
-        getStandardName: (standard) => {
-          const names = {
-            'ISO 9001': '품질경영시스템',
-            'ISO 14001': '환경경영시스템',
-            'ISO 45001': '안전보건경영시스템'
-          };
-          return names[standard] || standard;
-        }
-      }
+    // Word 문서 생성 (docxtemplater 사용)
+    const zip = new PizZip(template);
+    const doc = new Docxtemplater(zip, {
+      paragraphLoop: true,
+      linebreaks: true,
+      errorLogging: true
+    });
+    
+    // 템플릿 데이터 설정
+    doc.setData(templateData);
+    
+    // 템플릿 렌더링
+    try {
+      doc.render();
+    } catch (error) {
+      console.error('템플릿 렌더링 오류:', error);
+      throw new Error('템플릿 렌더링 중 오류가 발생했습니다: ' + error.message);
+    }
+    
+    // Word 문서를 Buffer로 생성
+    const report = doc.getZip().generate({
+      type: 'nodebuffer',
+      compression: 'DEFLATE'
     });
     
     // 임시 파일로 저장 (실제 환경에서는 클라우드 스토리지 사용)

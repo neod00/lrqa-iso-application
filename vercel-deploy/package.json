@@ -11,8 +11,8 @@
     "setup-gcs": "node scripts/setup-gcs.js"
   },
   "dependencies": {
-    "docx": "^8.5.0",
-    "docx-templates": "^4.9.0"
+    "docxtemplater": "^3.47.0",
+    "pizzip": "^3.1.6"
   },
   "engines": {
     "node": ">=20.0.0"
