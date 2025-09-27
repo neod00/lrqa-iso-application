@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/create-quotation.py": {
-      "runtime": "@vercel/python@3.9.0",
+      "runtime": "vercel-python@3.9",
       "maxDuration": 60
     },
     "api/download-quotation.js": {
