@@ -18,6 +18,7 @@ LRQA의 ISO 9001, 14001, 45001 인증심사 신청서 작성 및 견적서 생�
 - **ENP(유효인원수) 산정**: 정규직, 외주, 파트타임, 교대근무자 등을 고려한 정확한 계산
 - **통합심사 및 원격심사 감축**: 최대 15%까지 할인 적용
 - **Stage별 일수 계산**: Stage1(30%), Stage2(100%), Surveillance(60%), Recert(100%)
+- **Jinja2 템플릿 시스템**: 안전하고 유연한 Word 문서 생성
 - **Word 문서 자동 생성**: 상세한 견적서를 .docx 형식으로 출력
 
 ### 3. 관리자 대시보드
@@ -26,12 +27,20 @@ LRQA의 ISO 9001, 14001, 45001 인증심사 신청서 작성 및 견적서 생�
 - **데이터 내보내기**: CSV, Google Sheets 연동
 - **통계 대시보드**: 신청서 현황 및 분석
 
+### 4. Jinja2 템플릿 시스템 (NEW!)
+- **안전한 변수 치환**: `{{ 변수명 }}` 문법으로 안전한 템플릿 처리
+- **포맷팅 필터**: `{{ total_cost|format_currency }}` 등 유연한 데이터 포맷팅
+- **조건문 지원**: `{% if has_iso9001 %}포함{% endif %}` 등 동적 콘텐츠 생성
+- **오류 처리**: 템플릿 렌더링 오류 시 상세한 디버깅 정보 제공
+- **테스트 도구**: `test_template.py`로 템플릿 검증 가능
+
 ## 🛠️ 기술 스택
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Backend**: Python 3.8+
 - **견적 엔진**: ADJ v2.2 기반 Python 모듈
-- **문서 생성**: python-docx
+- **템플릿 엔진**: Jinja2 (안전한 변수 치환 및 필터)
+- **문서 생성**: python-docx + DocxTemplate
 - **배포**: GitHub Pages + Netlify
 
 ## 📁 프로젝트 구조
@@ -48,6 +57,16 @@ LRQA의 ISO 9001, 14001, 45001 인증심사 신청서 작성 및 견적서 생�
 │   ├── adj_rules_v22.py   # ADJ v2.2 규칙
 │   ├── pricing.py         # 가격 계산
 │   └── quote_docx.py      # Word 문서 생성
+├── quotation-api/          # 견적서 API 서버
+│   ├── simple_server.py   # Flask API 서버
+│   ├── audit_days_api.py  # 심사일수 계산 API
+│   ├── test_template.py   # 템플릿 테스트
+│   ├── jinja2_template_guide.md  # Jinja2 사용 가이드
+│   └── JINJA2_MIGRATION_REPORT.md  # 마이그레이션 보고서
+├── vercel-deploy/          # Vercel 배포 파일
+│   └── public/templates/   # Word 템플릿
+│       ├── LRQA_quotation.docx  # 기본 템플릿
+│       └── LRQA_quotation_improved.docx  # Jinja2 개선 템플릿
 └── test_data/             # 테스트 데이터
 ```
 
@@ -75,6 +94,14 @@ cd adj_quote_engine
 python cli.py --input ../test_data/iphone_company_test.json --output test_quotation.docx --verbose
 ```
 
+### 3. Jinja2 템플릿 테스트
+
+```bash
+# 템플릿 렌더링 테스트
+cd quotation-api
+python test_template.py
+```
+
 ## 📖 사용 방법
 
 ### 1. 신청서 작성
@@ -94,6 +121,36 @@ python cli.py --input ../test_data/iphone_company_test.json --output test_quotat
 2. "견적서 생성하기" 버튼 클릭
 3. 신청서 데이터 입력
 4. Word 문서 자동 생성
+
+### 4. Jinja2 템플릿 사용
+
+#### 템플릿 문법
+```jinja2
+<!-- 기본 변수 -->
+{{ client_name }}
+{{ quotation_date }}
+
+<!-- 필터 사용 -->
+{{ total_cost|format_currency }}
+{{ total_employees|format_number }}명
+{{ quotation_date|format_date }}
+
+<!-- 조건문 -->
+{% if has_iso9001 %}
+ISO 9001 품질경영시스템 심사
+{% endif %}
+
+<!-- 반복문 -->
+{% for breakdown in breakdowns %}
+{{ breakdown.standard }}: {{ breakdown.days|format_number }}일
+{% endfor %}
+```
+
+#### 사용 가능한 필터
+- `format_currency`: 통화 형식 (예: 1,500,000원)
+- `format_number`: 숫자 천단위 구분자 (예: 1,500)
+- `format_date`: 날짜 형식 (예: 2024년 01월 15일)
+- `format_boolean`: 불린 값 한글 변환 (예: 예/아니오)
 
 ## 🔧 설정
 
