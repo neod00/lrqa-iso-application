@@ -1,8 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "api/create-quotation.py": {
-      "runtime": "python@3.9",
+    "api/create-quotation.js": {
       "maxDuration": 60
     },
     "api/download-quotation.js": {
@@ -14,8 +13,5 @@
     "api/submit-application.js": {
       "maxDuration": 30
     }
-  },
-  "env": {
-    "PYTHONPATH": "./adj_quote_engine"
   }
 }
