@@ -88,7 +88,7 @@ def convert_application_to_api_format(application_data):
     
     return api_data
 
-# Jinja2 필터 정의
+# Jinja2 필터 및 함수 정의
 def format_currency(value):
     """통화 형식으로 포맷팅"""
     if value is None:
@@ -110,20 +110,119 @@ def format_number(value):
     except (ValueError, TypeError):
         return str(value)
 
-# DocxTemplate 클래스를 상속받아서 필터를 미리 등록
+def format_date(value, format_str='%Y년 %m월 %d일'):
+    """날짜 형식으로 포맷팅"""
+    if value is None:
+        return ""
+    try:
+        if isinstance(value, str):
+            # 문자열인 경우 datetime으로 파싱 시도
+            from datetime import datetime
+            if len(value) == 8 and value.isdigit():  # YYYYMMDD 형식
+                dt = datetime.strptime(value, '%Y%m%d')
+            else:
+                dt = datetime.fromisoformat(value.replace('Z', '+00:00'))
+        else:
+            dt = value
+        return dt.strftime(format_str)
+    except (ValueError, TypeError, AttributeError):
+        return str(value)
+
+def format_boolean(value, true_text="예", false_text="아니오"):
+    """불린 값을 한글로 변환"""
+    if value is None:
+        return false_text
+    return true_text if bool(value) else false_text
+
+def safe_divide(dividend, divisor, default=0):
+    """안전한 나눗셈 (0으로 나누기 방지)"""
+    try:
+        if divisor == 0 or divisor is None:
+            return default
+        return float(dividend) / float(divisor)
+    except (ValueError, TypeError):
+        return default
+
+# DocxTemplate 클래스를 상속받아서 필터와 함수를 미리 등록
 class CustomDocxTemplate(DocxTemplate):
     def __init__(self, tpl_path):
         super().__init__(tpl_path)
-        # Jinja2 환경에 필터 등록 (안전한 방법)
+        # Jinja2 환경에 필터와 함수 등록
         try:
             if hasattr(self, 'jinja_env') and self.jinja_env is not None:
-                self.jinja_env.filters['format_currency'] = format_currency
-                self.jinja_env.filters['format_number'] = format_number
-                print("CustomDocxTemplate: 필터 등록 완료")
+                # 필터 등록
+                self.jinja_env.filters.update({
+                    'format_currency': format_currency,
+                    'format_number': format_number,
+                    'format_date': format_date,
+                    'format_boolean': format_boolean,
+                    'safe_divide': safe_divide
+                })
+                
+                # 전역 함수 등록
+                self.jinja_env.globals.update({
+                    'format_currency': format_currency,
+                    'format_number': format_number,
+                    'format_date': format_date,
+                    'format_boolean': format_boolean,
+                    'safe_divide': safe_divide
+                })
+                
+                print("CustomDocxTemplate: Jinja2 필터 및 함수 등록 완료")
             else:
                 print("CustomDocxTemplate: jinja_env가 없음")
         except Exception as e:
             print(f"CustomDocxTemplate: 필터 등록 실패 - {e}")
+    
+    def render_with_error_handling(self, context):
+        """오류 처리가 포함된 템플릿 렌더링"""
+        try:
+            # 컨텍스트 검증
+            self._validate_context(context)
+            
+            # 템플릿 렌더링
+            self.render(context)
+            print("템플릿 렌더링 성공")
+            return True
+            
+        except Exception as e:
+            print(f"템플릿 렌더링 오류: {e}")
+            print(f"컨텍스트 키들: {list(context.keys()) if context else 'None'}")
+            
+            # 누락된 변수 찾기
+            self._find_missing_variables(context)
+            return False
+    
+    def _validate_context(self, context):
+        """컨텍스트 유효성 검사"""
+        required_vars = [
+            'client_name', 'quotation_date', 'quotation_number',
+            'total_audit_days', 'total_cost'
+        ]
+        
+        missing_vars = [var for var in required_vars if var not in context or context[var] is None]
+        if missing_vars:
+            print(f"경고: 필수 변수가 누락되었습니다: {missing_vars}")
+    
+    def _find_missing_variables(self, context):
+        """템플릿에서 사용되는 변수와 컨텍스트 변수 비교"""
+        try:
+            # 템플릿 소스에서 변수 추출 (간단한 정규식)
+            import re
+            template_source = str(self.jinja_env.get_template('document.xml').source)
+            template_vars = set(re.findall(r'\{\{\s*([^}]+)\s*\}\}', template_source))
+            context_vars = set(context.keys()) if context else set()
+            
+            missing_in_context = template_vars - context_vars
+            extra_in_context = context_vars - template_vars
+            
+            if missing_in_context:
+                print(f"템플릿에 있지만 컨텍스트에 없는 변수: {missing_in_context}")
+            if extra_in_context:
+                print(f"컨텍스트에 있지만 템플릿에 없는 변수: {extra_in_context}")
+                
+        except Exception as e:
+            print(f"변수 비교 중 오류: {e}")
 
 @app.route('/health', methods=['GET'])
 def health_check():
@@ -144,8 +243,8 @@ def generate_quotation():
         if not os.path.exists(template_path):
             return jsonify({'error': f'템플릿 파일을 찾을 수 없습니다: {template_path}'}), 404
         
-        # 기존 LRQA_quotation.docx 템플릿 사용
-        doc = DocxTemplate(template_path)
+        # CustomDocxTemplate 사용 (Jinja2 필터 및 함수 포함)
+        doc = CustomDocxTemplate(template_path)
         
         # 핵심두뇌 API 호출하여 정확한 계산 결과 가져오기
         core_brain_result = call_core_brain_api(application_data)
@@ -261,7 +360,7 @@ def generate_quotation():
         print(f"핵심두뇌 일수: 9001={iso9001_stage1_2_days}일, 14001={iso14001_stage1_2_days}일, 45001={iso45001_stage1_2_days}일")
         print(f"총 심사일수: {total_days}일, 총 비용: {total_cost:,.0f}원")
         
-        # 템플릿 컨텍스트 (모든 필요한 변수 제공)
+        # Jinja2 템플릿 컨텍스트 (원시 데이터 제공, 필터는 템플릿에서 사용)
         context = {
             # 기본 정보
             'client_name': client_name,
@@ -279,55 +378,56 @@ def generate_quotation():
             'has_iso14001': has_iso14001,
             'has_iso45001': has_iso45001,
             
-            # 기본 계산값
-            'total_cost': int(total_cost),
-            'vat_amount': int(vat_amount),
-            'final_cost': int(final_cost),
+            # 기본 계산값 (원시 데이터)
+            'total_cost': total_cost,
+            'vat_amount': vat_amount,
+            'final_cost': final_cost,
             'total_audit_days': total_days,
-            'day_rate': int(day_rate),
+            'day_rate': day_rate,
             
-            # ISO 9001 관련
+            # ISO 9001 관련 (원시 데이터)
             'iso9001_stage1_days': iso9001_stage1_days,
             'iso9001_stage2_days': iso9001_stage2_days,
             'iso9001_stage1_2_days': iso9001_stage1_2_days,
             'iso9001_surveillance_days': iso9001_surveillance_days,
-            'iso9001_stage1_2_cost': int(iso9001_stage1_2_cost),
+            'iso9001_stage1_2_cost': iso9001_stage1_2_cost,
             
-            # ISO 14001 관련
+            # ISO 14001 관련 (원시 데이터)
             'iso14001_stage1_days': iso14001_stage1_days,
             'iso14001_stage2_days': iso14001_stage2_days,
             'iso14001_stage1_2_days': iso14001_stage1_2_days,
             'iso14001_surveillance_days': iso14001_surveillance_days,
-            'iso14001_stage1_2_cost': int(iso14001_stage1_2_cost),
+            'iso14001_stage1_2_cost': iso14001_stage1_2_cost,
             
-            # ISO 45001 관련
+            # ISO 45001 관련 (원시 데이터)
             'iso45001_stage1_days': iso45001_stage1_days,
             'iso45001_stage2_days': iso45001_stage2_days,
             'iso45001_stage1_2_days': iso45001_stage1_2_days,
             'iso45001_surveillance_days': iso45001_surveillance_days,
-            'iso45001_stage1_2_cost': int(iso45001_stage1_2_cost),
+            'iso45001_stage1_2_cost': iso45001_stage1_2_cost,
             
-            # 기타 비용
-            'travel_expense': int(travel_expense),
-            'total_cost_with_travel': int(total_cost_with_travel),
+            # 기타 비용 (원시 데이터)
+            'travel_expense': travel_expense,
+            'total_cost_with_travel': total_cost_with_travel,
             
-            # 필터 사용 우회를 위한 미리 포맷팅된 값들
-            'total_cost_formatted': f"{int(total_cost):,}원",
-            'vat_amount_formatted': f"{int(vat_amount):,}원",
-            'final_cost_formatted': f"{int(final_cost):,}원",
-            'day_rate_formatted': f"{int(day_rate):,}원",
-            'total_audit_days_formatted': f"{total_days:.1f}일",
-            'iso9001_stage1_2_cost_formatted': f"{int(iso9001_stage1_2_cost):,}원",
-            'iso14001_stage1_2_cost_formatted': f"{int(iso14001_stage1_2_cost):,}원",
-            'iso45001_stage1_2_cost_formatted': f"{int(iso45001_stage1_2_cost):,}원",
-            'travel_expense_formatted': f"{int(travel_expense):,}원",
-            'total_cost_with_travel_formatted': f"{int(total_cost_with_travel):,}원"
+            # Jinja2 템플릿에서 사용할 수 있는 추가 데이터
+            'breakdowns': core_brain_result.get('breakdowns', []) if core_brain_result else [],
+            'assumptions': core_brain_result.get('assumptions', []) if core_brain_result else [],
+            
+            # 디버깅용 메타데이터
+            'debug_info': {
+                'api_success': core_brain_result is not None,
+                'calculation_method': 'core_brain' if core_brain_result else 'fallback',
+                'generated_at': datetime.now().isoformat()
+            }
         }
         
-        print(f"컨텍스트: {context}")
+        print(f"Jinja2 컨텍스트 생성 완료: {len(context)}개 변수")
+        print(f"디버깅 정보: {context['debug_info']}")
         
-        # 템플릿 렌더링
-        doc.render(context)
+        # Jinja2 오류 처리가 포함된 템플릿 렌더링
+        if not doc.render_with_error_handling(context):
+            return jsonify({'error': '템플릿 렌더링 중 오류가 발생했습니다. 로그를 확인해주세요.'}), 500
         
         print("템플릿 기반 Word 문서 생성 완료")
         
