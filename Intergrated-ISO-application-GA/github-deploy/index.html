@@ -2210,14 +2210,14 @@
                     const result = await response.json();
                     showMessage('success', '제출 완료!', '신청서가 성공적으로 제출되었습니다.\n\n빠른 시일 내에 담당자가 연락드리겠습니다.');
                     
-                    // 폼 데이터 초기화
-                    localStorage.removeItem('iso_application_form');
-                    document.querySelectorAll('.form-input, .textarea').forEach(input => {
-                        input.value = '';
-                    });
-                    document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
-                        input.checked = false;
-                    });
+                    // 폼 데이터 초기화 제거 - 사용자가 제출 후에도 데이터를 유지할 수 있도록 함
+                    // localStorage.removeItem('iso_application_form');
+                    // document.querySelectorAll('.form-input, .textarea').forEach(input => {
+                    //     input.value = '';
+                    // });
+                    // document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+                    //     input.checked = false;
+                    // });
                 } else {
                     throw new Error('서버 오류가 발생했습니다.');
                 }
