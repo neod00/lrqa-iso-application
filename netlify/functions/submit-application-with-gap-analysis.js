@@ -6,7 +6,7 @@ const fs = require('fs');
 
 // 🆕 AI 웹사이트 분석을 위한 패키지
 const OpenAI = require('openai');
-const axios = require('axios');
+const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 
 // Google Sheets 설정
@@ -253,14 +253,15 @@ async function scrapeWebsite(url) {
       url = 'https://' + url;
     }
     
-    const response = await axios.get(url, {
+    const response = await fetch(url, {
       timeout: 10000,  // 10초 타임아웃
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
       }
     });
     
-    const $ = cheerio.load(response.data);
+    const html = await response.text();
+    const $ = cheerio.load(html);
     
     // 메타 정보 및 주요 텍스트 추출
     const title = $('title').text().trim();
