@@ -141,6 +141,7 @@ const translations = {
         'form.disclaimer.html': '모든 정보는 정확하고 최신의 상태를 유지하기 위해 최선을 다했으나, 일부 내용의 부정확성이나 변경 사항에 대해 LRQA는 책임을 지지 않습니다. LRQA에 대한 자세한 내용은 <a href="https://www.lrqa.com/ko-kr/" target="_blank" style="color: #10b981;">여기</a>를 참조하세요. © LRQA Group Limited 2025',
         'form.dark.mode': '다크모드',
         'form.save.temp': '임시저장',
+        'form.confirm': '확인',
         'form.quotation.help': 'ISO 표준 선택 후 견적을 계산할 수 있습니다.',
         'form.legal.issues': '법적 의무와 관련하여 해결되지 않은 미해결 문제가 있습니까?',
         'form.table.expiry_date': '인증 만료일',
@@ -539,6 +540,7 @@ const translations = {
         'form.disclaimer.html': 'While we have made every effort to ensure that all information is accurate and up-to-date, LRQA is not responsible for any inaccuracies or changes in some content. For detailed information about LRQA, please refer to <a href="https://www.lrqa.com/en-gb/" target="_blank" style="color: #10b981;">here</a>. © LRQA Group Limited 2025',
         'form.dark.mode': 'Dark Mode',
         'form.save.temp': 'Save Temporarily',
+        'form.confirm': 'Confirm',
         'form.quotation.help': 'You can calculate a quote after selecting ISO standards.',
         'form.legal.issues': 'Are there any unresolved issues related to legal obligations?',
         'form.table.expiry_date': 'Expiry Date',
@@ -1118,7 +1120,8 @@ const translations = {
         'form.placeholders.shift.time': '勤務時間',
         'form.placeholders.shift.employees': '従業員数',
         'form.dark.mode': 'ダークモード',
-        'form.save.temp': '一時保存'
+        'form.save.temp': '一時保存',
+        'form.confirm': '確認'
     },
     zh: {
         'form.title': '认证审核申请表',
@@ -1369,7 +1372,8 @@ const translations = {
         'form.placeholders.shift.time': '工作时间',
         'form.placeholders.shift.employees': '员工人数',
         'form.dark.mode': '深色模式',
-        'form.save.temp': '临时保存'
+        'form.save.temp': '临时保存',
+        'form.confirm': '确认'
     },
     es: {
         'form.title': 'Formulario de solicitud de auditoría de certificación',
@@ -1620,7 +1624,8 @@ const translations = {
         'form.placeholders.shift.time': 'Horas de trabajo',
         'form.placeholders.shift.employees': 'Número de empleados',
         'form.dark.mode': 'Modo oscuro',
-        'form.save.temp': 'Guardar temporalmente'
+        'form.save.temp': 'Guardar temporalmente',
+        'form.confirm': 'Confirmar'
     },
     de: {
         'form.title': 'Zertifizierungsaudit-Antragsformular',
@@ -1834,7 +1839,8 @@ const translations = {
         'form.placeholders.shift.time': 'Arbeitszeiten',
         'form.placeholders.shift.employees': 'Anzahl der Mitarbeiter',
         'form.dark.mode': 'Dunkler Modus',
-        'form.save.temp': 'Temporär speichern'
+        'form.save.temp': 'Temporär speichern',
+        'form.confirm': 'Bestätigen'
     },
     fr: {
         'form.title': 'Formulaire de demande d\'audit de certification',
@@ -2048,7 +2054,8 @@ const translations = {
         'form.placeholders.shift.time': 'Heures de travail',
         'form.placeholders.shift.employees': 'Nombre d\'employés',
         'form.dark.mode': 'Mode sombre',
-        'form.save.temp': 'Sauvegarder temporairement'
+        'form.save.temp': 'Sauvegarder temporairement',
+        'form.confirm': 'Confirmer'
     },
     th: {
         'form.title': 'แบบฟอร์มใบสมัครการตรวจสอบการรับรอง',
@@ -2271,7 +2278,8 @@ const translations = {
         'form.placeholders.shift.time': 'ชั่วโมงทำงาน',
         'form.placeholders.shift.employees': 'จำนวนพนักงาน',
         'form.dark.mode': 'โหมดมืด',
-        'form.save.temp': 'บันทึกชั่วคราว'
+        'form.save.temp': 'บันทึกชั่วคราว',
+        'form.confirm': 'ยืนยัน'
     },
     vi: {
         'form.title': 'Mẫu đơn đăng ký kiểm toán chứng nhận',
@@ -2494,7 +2502,8 @@ const translations = {
         'form.placeholders.shift.time': 'Giờ làm việc',
         'form.placeholders.shift.employees': 'Số nhân viên',
         'form.dark.mode': 'Chế độ tối',
-        'form.save.temp': 'Lưu tạm thời'
+        'form.save.temp': 'Lưu tạm thời',
+        'form.confirm': 'Xác nhận'
     },
     ar: {
         'form.title': 'نموذج طلب تدقيق الشهادة',
@@ -2717,7 +2726,8 @@ const translations = {
         'form.placeholders.shift.time': 'ساعات العمل',
         'form.placeholders.shift.employees': 'عدد الموظفين',
         'form.dark.mode': 'الوضع المظلم',
-        'form.save.temp': 'حفظ مؤقت'
+        'form.save.temp': 'حفظ مؤقت',
+        'form.confirm': 'تأكيد'
     }
 };
 

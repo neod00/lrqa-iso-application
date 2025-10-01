@@ -606,6 +606,7 @@
             line-height: 1.5;
             margin-bottom: 25px;
             color: #666;
+            white-space: pre-line;
         }
         
         .message-btn {
@@ -666,6 +667,7 @@
         
         body.dark-mode .message-content {
             color: #cccccc;
+            white-space: pre-line;
         }
         
         /* 견적 시스템 버튼 스타일 - 메인 신청서와 분리 */
@@ -1730,10 +1732,10 @@
                                    color: white; 
                                    border: none; 
                                    padding: 15px 40px; 
-                                   font-size: 16px;
-                                   font-weight: bold;
-                                   border-radius: 8px;
-                                   cursor: pointer;
+                                   font-size: 16px; 
+                                   font-weight: bold; 
+                                   border-radius: 8px; 
+                                   cursor: pointer; 
                                    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
                                    transition: all 0.3s ease;">
                         인쇄하기
@@ -2092,7 +2094,22 @@
                 dataProcessConsent: formData.dataProcessConsent || '',
                 signature: formData.signature || '', // 서명 필드
                 signatureDate: formData.signatureDate || '', // 날짜 필드
-                marketingConsent: 'yes' // 마케팅 동의는 기본값으로 설정
+                marketingConsent: 'yes', // 마케팅 동의는 기본값으로 설정
+                
+                // 갭분석을 위한 추가 필드들
+                qualityDocuments: formData.qualityDocuments || [],
+                customerSatisfaction: formData.customerSatisfaction || false,
+                internalAudit: formData.internalAudit || false,
+                managementReview: formData.managementReview || false,
+                environmentalImpactAssessment: formData.environmentalImpactAssessment || false,
+                environmentalCompliance: formData.environmentalCompliance || false,
+                environmentalObjectives: formData.environmentalObjectives || false,
+                emergencyResponse: formData.emergencyResponse || false,
+                riskAssessment: formData.riskAssessment || false,
+                ohsPolicy: formData.ohsPolicy || false,
+                ohsObjectives: formData.ohsObjectives || false,
+                incidentInvestigation: formData.incidentInvestigation || false,
+                ohsTraining: formData.ohsTraining || false
             };
             
             return mappedData;
@@ -2569,8 +2586,11 @@
                 steps.forEach(step => {
                     step.classList.remove('active', 'completed');
                     step.style.borderLeftColor = '#ecf0f1';
-                    const lastSpan = step.querySelector('span:last-child');
-                    if (lastSpan) lastSpan.style.color = '#7f8c8d';
+                    const textSpan = step.querySelector('.step-text span');
+                    if (textSpan) {
+                        textSpan.style.color = '#7f8c8d';
+                        textSpan.style.fontWeight = 'normal';
+                    }
                 });
                 
                 // 첫 번째 스텝 활성화
@@ -2627,12 +2647,12 @@
                 // 성공 메시지
                 hideGapAnalysisModal();
                 showMessage('success', '갭분석 완료!', 
-                    '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\\n\\n보고서는 이메일로 발송되었으니 확인해 주세요.');
+                    '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\n\n보고서는 이메일로 발송되었으니 확인해 주세요.');
                 
             } catch (error) {
                 console.error('갭분석 오류:', error);
                 hideGapAnalysisModal();
-                showMessage('error', '갭분석 실패', '갭분석 처리 중 오류가 발생했습니다.\\n\\n잠시 후 다시 시도해 주세요.');
+                showMessage('error', '갭분석 실패', '갭분석 처리 중 오류가 발생했습니다.\n\n잠시 후 다시 시도해 주세요.');
             } finally {
                 isGapAnalysisInProgress = false;
             }
@@ -2644,8 +2664,11 @@
                 const stepElement = document.getElementById(stepId);
                 if (stepElement && active) {
                     stepElement.style.borderLeftColor = '#00d4aa';
-                    stepElement.querySelector('span:last-child').style.color = '#2c3e50';
-                    stepElement.querySelector('span:last-child').style.fontWeight = '500';
+                    const textSpan = stepElement.querySelector('.step-text span');
+                    if (textSpan) {
+                        textSpan.style.color = '#2c3e50';
+                        textSpan.style.fontWeight = '500';
+                    }
                 }
                 setTimeout(resolve, 100);
             });
@@ -2812,11 +2835,11 @@
 
         // 진행률 업데이트
         function updateProgress(percentage) {
-            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
             
-            if (progressBar) {
-                progressBar.style.width = percentage + '%';
+            if (progressFill) {
+                progressFill.style.width = percentage + '%';
             }
             if (progressText) {
                 progressText.textContent = percentage + '% 완료';
@@ -2914,25 +2937,35 @@
                 </div>
                 
                 <div class="analysis-steps">
-                    <div id="step1" class="step">
+                    <div id="step1" class="analysis-step">
                         <div class="step-icon">⏳</div>
-                        <div class="step-text">신청서 데이터 처리중...</div>
+                        <div class="step-text">
+                            <span>신청서 데이터 처리중...</span>
                     </div>
-                    <div id="step2" class="step">
+                    </div>
+                    <div id="step2" class="analysis-step">
                         <div class="step-icon">🏢</div>
-                        <div class="step-text">기업 정보 수집중...</div>
+                        <div class="step-text">
+                            <span>기업 정보 수집중...</span>
                     </div>
-                    <div id="step3" class="step">
+                    </div>
+                    <div id="step3" class="analysis-step">
                         <div class="step-icon">🤖</div>
-                        <div class="step-text">AI 리스크 분석중...</div>
+                        <div class="step-text">
+                            <span>AI 리스크 분석중...</span>
                     </div>
-                    <div id="step4" class="step">
+                    </div>
+                    <div id="step4" class="analysis-step">
                         <div class="step-icon">📊</div>
-                        <div class="step-text">갭분석 보고서 생성중...</div>
+                        <div class="step-text">
+                            <span>갭분석 보고서 생성중...</span>
                     </div>
-                    <div id="step5" class="step">
+                    </div>
+                    <div id="step5" class="analysis-step">
                         <div class="step-icon">📧</div>
-                        <div class="step-text">이메일 발송중...</div>
+                        <div class="step-text">
+                            <span>이메일 발송중...</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2941,6 +2974,43 @@
 
     <style>
         /* 갭분석 모달 스타일 */
+        .analysis-step {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #ecf0f1;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .analysis-step.active {
+            border-left-color: #00d4aa;
+            background: #e8f5e8;
+        }
+        
+        .analysis-step.completed {
+            border-left-color: #28a745;
+            background: #d4edda;
+        }
+        
+        .step-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .step-text {
+            flex: 1;
+        }
+        
+        .step-text span {
+            color: #7f8c8d;
+            font-weight: normal;
+            transition: all 0.3s ease;
+        }
+        
         .modal {
             position: fixed;
             top: 0;
@@ -3282,15 +3352,21 @@
                     // 갭분석 보고서 생성 시뮬레이션
                     await new Promise(resolve => setTimeout(resolve, 2000));
                     
+                    // 실제 갭분석 수행
+                    const findings = this.generateFindings(selectedStandards, formData);
+                    const recommendations = this.generateRecommendations(selectedStandards, formData, findings);
+                    const riskLevel = this.calculateRiskLevel(formData, selectedStandards, findings);
+                    
                     // 보고서 데이터 생성
                     const reportData = {
                         companyName: formData.companyNameKo || formData.companyNameEn || 'Unknown Company',
                         selectedStandards: selectedStandards,
                         analysisDate: new Date().toISOString(),
                         reportId: 'GAP-' + Date.now(),
-                        findings: this.generateFindings(selectedStandards),
-                        recommendations: this.generateRecommendations(selectedStandards),
-                        riskLevel: this.calculateRiskLevel(formData, selectedStandards)
+                        findings: findings,
+                        recommendations: recommendations,
+                        riskLevel: riskLevel,
+                        formData: formData // 추가 정보 포함
                     };
                     
                     // 보고서를 로컬 스토리지에 저장
@@ -3306,88 +3382,303 @@
                 }
             }
             
-            // 갭분석 결과 생성
-            generateFindings(standards) {
+            // 갭분석 결과 생성 (실제 로직)
+            generateFindings(standards, formData) {
                 const findings = [];
+                
                 standards.forEach(standard => {
                     switch(standard) {
                         case 'iso9001':
-                            findings.push({
-                                standard: 'ISO 9001:2015',
-                                category: '품질경영시스템',
-                                finding: '문서화된 절차 부족',
-                                severity: 'Medium',
-                                description: '품질경영시스템 절차가 충분히 문서화되지 않았습니다.'
-                            });
+                            findings.push(...this.analyzeISO9001(formData));
                             break;
                         case 'iso14001':
-                            findings.push({
-                                standard: 'ISO 14001:2015',
-                                category: '환경경영시스템',
-                                finding: '환경영향평가 미실시',
-                                severity: 'High',
-                                description: '환경영향평가가 체계적으로 수행되지 않았습니다.'
-                            });
+                            findings.push(...this.analyzeISO14001(formData));
                             break;
                         case 'iso45001':
-                            findings.push({
-                                standard: 'ISO 45001:2018',
-                                category: '안전보건경영시스템',
-                                finding: '위험성평가 부족',
-                                severity: 'High',
-                                description: '작업장 위험성평가가 체계적으로 수행되지 않았습니다.'
-                            });
+                            findings.push(...this.analyzeISO45001(formData));
                             break;
                     }
                 });
+                
                 return findings;
             }
             
-            // 권장사항 생성
-            generateRecommendations(standards) {
+            // ISO 9001 분석
+            analyzeISO9001(formData) {
+                const findings = [];
+                
+                // 문서화 체계 분석
+                if (!formData.qualityDocuments || formData.qualityDocuments.length === 0) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '문서화 체계',
+                        finding: '품질경영시스템 문서 부족',
+                        severity: 'High',
+                        description: '품질경영시스템에 필요한 핵심 문서들이 부족합니다. 품질매뉴얼, 절차서, 작업지침서 등이 필요합니다.'
+                    });
+                }
+                
+                // 고객 만족도 관리
+                if (!formData.customerSatisfaction) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '고객 만족도',
+                        finding: '고객 만족도 측정 체계 부재',
+                        severity: 'Medium',
+                        description: '고객 만족도를 측정하고 개선하는 체계적인 방법이 필요합니다.'
+                    });
+                }
+                
+                // 내부심사 체계
+                if (!formData.internalAudit) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '내부심사',
+                        finding: '내부심사 체계 미구축',
+                        severity: 'High',
+                        description: '품질경영시스템의 효과성을 검증하기 위한 내부심사 체계가 필요합니다.'
+                    });
+                }
+                
+                // 경영검토
+                if (!formData.managementReview) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '경영검토',
+                        finding: '경영검토 절차 부재',
+                        severity: 'High',
+                        description: '최고경영자가 품질경영시스템을 검토하는 정기적인 절차가 필요합니다.'
+                    });
+                }
+                
+                return findings;
+            }
+            
+            // ISO 14001 분석
+            analyzeISO14001(formData) {
+                const findings = [];
+                
+                // 환경영향평가
+                if (!formData.environmentalImpactAssessment) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '환경영향평가',
+                        finding: '환경영향평가 미실시',
+                        severity: 'High',
+                        description: '조직의 활동, 제품, 서비스가 환경에 미치는 영향을 체계적으로 평가하는 절차가 필요합니다.'
+                    });
+                }
+                
+                // 환경법규 준수
+                if (!formData.environmentalCompliance) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '법규 준수',
+                        finding: '환경법규 준수 체계 부재',
+                        severity: 'High',
+                        description: '적용 가능한 환경법규를 식별하고 준수하는 체계가 필요합니다.'
+                    });
+                }
+                
+                // 환경목표 및 계획
+                if (!formData.environmentalObjectives) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '환경목표',
+                        finding: '환경목표 및 계획 부재',
+                        severity: 'Medium',
+                        description: '환경성과 개선을 위한 구체적인 목표와 실행계획이 필요합니다.'
+                    });
+                }
+                
+                // 비상사태 대응
+                if (!formData.emergencyResponse) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '비상사태 대응',
+                        finding: '환경 비상사태 대응체계 부재',
+                        severity: 'High',
+                        description: '환경사고 발생 시 신속하고 효과적으로 대응할 수 있는 체계가 필요합니다.'
+                    });
+                }
+                
+                return findings;
+            }
+            
+            // ISO 45001 분석
+            analyzeISO45001(formData) {
+                const findings = [];
+                
+                // 위험성평가
+                if (!formData.riskAssessment) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '위험성평가',
+                        finding: '작업장 위험성평가 미실시',
+                        severity: 'High',
+                        description: '작업장의 위험요인을 식별하고 평가하는 체계적인 절차가 필요합니다.'
+                    });
+                }
+                
+                // 안전보건정책
+                if (!formData.ohsPolicy) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '안전보건정책',
+                        finding: '안전보건정책 부재',
+                        severity: 'High',
+                        description: '최고경영자가 승인한 안전보건정책이 필요합니다.'
+                    });
+                }
+                
+                // 안전보건목표
+                if (!formData.ohsObjectives) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '안전보건목표',
+                        finding: '안전보건목표 부재',
+                        severity: 'Medium',
+                        description: '안전보건성과 개선을 위한 구체적인 목표가 필요합니다.'
+                    });
+                }
+                
+                // 사고조사 및 부적합 관리
+                if (!formData.incidentInvestigation) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '사고관리',
+                        finding: '사고조사 체계 부재',
+                        severity: 'High',
+                        description: '사고 및 부적합 발생 시 원인을 분석하고 재발방지 대책을 수립하는 체계가 필요합니다.'
+                    });
+                }
+                
+                // 안전보건교육
+                if (!formData.ohsTraining) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '안전보건교육',
+                        finding: '안전보건교육 체계 부재',
+                        severity: 'Medium',
+                        description: '직원들의 안전보건 의식 향상을 위한 체계적인 교육 프로그램이 필요합니다.'
+                    });
+                }
+                
+                return findings;
+            }
+            
+            // 권장사항 생성 (실제 로직)
+            generateRecommendations(standards, formData, findings) {
                 const recommendations = [];
-                standards.forEach(standard => {
-                    switch(standard) {
-                        case 'iso9001':
-                            recommendations.push({
-                                standard: 'ISO 9001:2015',
-                                priority: 'High',
-                                recommendation: '품질경영시스템 절차 문서화',
-                                timeline: '3개월',
-                                description: '모든 핵심 프로세스에 대한 절차를 문서화하고 정기적으로 검토하세요.'
-                            });
-                            break;
-                        case 'iso14001':
-                            recommendations.push({
-                                standard: 'ISO 14001:2015',
-                                priority: 'High',
-                                recommendation: '환경영향평가 체계 구축',
-                                timeline: '2개월',
-                                description: '환경영향평가 절차를 수립하고 정기적으로 수행하세요.'
-                            });
-                            break;
-                        case 'iso45001':
-                            recommendations.push({
-                                standard: 'ISO 45001:2018',
-                                priority: 'High',
-                                recommendation: '위험성평가 체계 구축',
-                                timeline: '2개월',
-                                description: '작업장 위험성평가 절차를 수립하고 정기적으로 수행하세요.'
-                            });
-                            break;
+                
+                // 발견사항 기반 권장사항 생성
+                findings.forEach(finding => {
+                    const recommendation = this.generateRecommendationForFinding(finding, formData);
+                    if (recommendation) {
+                        recommendations.push(recommendation);
                     }
                 });
+                
+                // 추가적인 일반 권장사항
+                recommendations.push(...this.generateGeneralRecommendations(standards, formData));
+                
                 return recommendations;
             }
             
-            // 위험도 계산
-            calculateRiskLevel(formData, standards) {
+            // 발견사항별 권장사항 생성
+            generateRecommendationForFinding(finding, formData) {
+                const baseRecommendation = {
+                    standard: finding.standard,
+                    priority: finding.severity,
+                    finding: finding.finding,
+                    timeline: this.calculateTimeline(finding.severity),
+                    description: this.getDetailedRecommendation(finding)
+                };
+                
+                return baseRecommendation;
+            }
+            
+            // 심각도별 소요시간 계산
+            calculateTimeline(severity) {
+                switch(severity) {
+                    case 'High': return '1-2개월';
+                    case 'Medium': return '2-3개월';
+                    case 'Low': return '3-6개월';
+                    default: return '2-3개월';
+                }
+            }
+            
+            // 상세 권장사항 생성
+            getDetailedRecommendation(finding) {
+                const recommendations = {
+                    '품질경영시스템 문서 부족': '품질매뉴얼, 절차서, 작업지침서를 체계적으로 작성하고 문서관리 절차를 수립하세요. 문서 버전 관리와 승인 체계를 구축하는 것이 중요합니다.',
+                    '고객 만족도 측정 체계 부재': '고객 설문조사, 인터뷰, 불만처리 시스템을 통해 고객 만족도를 정기적으로 측정하고 개선사항을 도출하세요.',
+                    '내부심사 체계 미구축': '내부심사원 양성, 심사 계획 수립, 심사 실시 및 결과 보고 체계를 구축하세요. 연 1회 이상 정기심사를 실시하는 것이 권장됩니다.',
+                    '경영검토 절차 부재': '최고경영자가 참여하는 정기적인 경영검토 회의를 개최하고, 품질경영시스템의 적합성, 적절성, 효과성을 검토하세요.',
+                    '환경영향평가 미실시': '조직의 모든 활동, 제품, 서비스를 대상으로 환경영향을 식별하고 평가하는 절차를 수립하세요. 정기적인 재평가가 필요합니다.',
+                    '환경법규 준수 체계 부재': '적용 가능한 환경법규를 식별하고 준수 여부를 정기적으로 점검하는 체계를 구축하세요. 법규 변경사항을 모니터링하는 절차도 필요합니다.',
+                    '환경목표 및 계획 부재': '환경정책에 부합하는 구체적이고 측정 가능한 환경목표를 설정하고, 달성을 위한 실행계획을 수립하세요.',
+                    '환경 비상사태 대응체계 부재': '환경사고 발생 시 신속한 대응을 위한 비상대응계획을 수립하고, 정기적인 훈련을 실시하세요.',
+                    '작업장 위험성평가 미실시': '모든 작업장과 작업을 대상으로 위험요인을 식별하고 평가하는 체계를 구축하세요. 위험도에 따른 우선순위 관리가 중요합니다.',
+                    '안전보건정책 부재': '최고경영자가 승인한 안전보건정책을 수립하고 모든 직원에게 공표하세요. 정책은 정기적으로 검토하고 개선해야 합니다.',
+                    '안전보건목표 부재': '안전보건정책에 부합하는 구체적인 목표를 설정하고, 달성을 위한 실행계획과 성과측정 방법을 수립하세요.',
+                    '사고조사 체계 부재': '사고 및 부적합 발생 시 원인분석, 재발방지 대책 수립, 효과성 검증을 위한 체계적인 절차를 구축하세요.',
+                    '안전보건교육 체계 부재': '직원별 역할과 책임에 맞는 안전보건교육 프로그램을 개발하고, 정기적인 교육을 실시하세요.'
+                };
+                
+                return recommendations[finding.finding] || '해당 항목에 대한 구체적인 개선 방안을 수립하고 단계적으로 실행하세요.';
+            }
+            
+            // 일반 권장사항 생성
+            generateGeneralRecommendations(standards, formData) {
+                const recommendations = [];
+                
+                // 통합경영시스템 권장사항
+                if (standards.length > 1) {
+                    recommendations.push({
+                        standard: '통합경영시스템',
+                        priority: 'High',
+                        finding: '통합경영시스템 구축',
+                        timeline: '6-12개월',
+                        description: '여러 표준을 통합하여 효율적인 경영시스템을 구축하세요. 중복된 절차를 통합하고 일관된 관리체계를 수립하는 것이 중요합니다.'
+                    });
+                }
+                
+                // 직원 교육 권장사항
+                const employeeCount = parseInt(formData.totalEmployees) || 0;
+                if (employeeCount > 50) {
+                    recommendations.push({
+                        standard: '교육 및 역량',
+                        priority: 'Medium',
+                        finding: '체계적인 교육 프로그램',
+                        timeline: '3-6개월',
+                        description: '직원 규모에 맞는 체계적인 교육 프로그램을 수립하고, 경영시스템에 대한 이해도를 높이세요.'
+                    });
+                }
+                
+                // 지속적 개선 권장사항
+                recommendations.push({
+                    standard: '지속적 개선',
+                    priority: 'Medium',
+                    finding: '지속적 개선 체계',
+                    timeline: '지속적',
+                    description: 'PDCA 사이클을 통한 지속적 개선 문화를 정착시키고, 정기적인 성과 측정 및 개선 활동을 수행하세요.'
+                });
+                
+                return recommendations;
+            }
+            
+            // 위험도 계산 (실제 로직)
+            calculateRiskLevel(formData, standards, findings) {
                 let riskScore = 0;
                 
                 // 회사 규모에 따른 기본 점수
                 const employeeCount = parseInt(formData.totalEmployees) || 0;
-                if (employeeCount < 50) riskScore += 2;
+                if (employeeCount < 10) riskScore += 3;
+                else if (employeeCount < 50) riskScore += 2;
                 else if (employeeCount < 200) riskScore += 1;
+                else if (employeeCount < 1000) riskScore += 0;
+                else riskScore += 1; // 대기업의 경우 복잡성 증가
                 
                 // 선택된 표준 수에 따른 점수
                 riskScore += standards.length;
@@ -3395,10 +3686,32 @@
                 // 기존 인증 보유 여부
                 if (!formData.existingCertifications || formData.existingCertifications.length === 0) {
                     riskScore += 2;
+                } else {
+                    riskScore -= 1; // 기존 인증 보유 시 위험도 감소
                 }
                 
-                if (riskScore <= 2) return 'Low';
-                else if (riskScore <= 4) return 'Medium';
+                // 발견사항의 심각도에 따른 점수
+                findings.forEach(finding => {
+                    switch(finding.severity) {
+                        case 'High': riskScore += 3; break;
+                        case 'Medium': riskScore += 2; break;
+                        case 'Low': riskScore += 1; break;
+                    }
+                });
+                
+                // 컨설턴트 사용 여부
+                if (formData.consultantName && formData.consultantName.trim() !== '') {
+                    riskScore -= 1; // 컨설턴트 사용 시 위험도 감소
+                }
+                
+                // 법적 의무 문제 여부
+                if (formData.legalIssues === 'yes') {
+                    riskScore += 2;
+                }
+                
+                // 위험도 결정
+                if (riskScore <= 3) return 'Low';
+                else if (riskScore <= 7) return 'Medium';
                 else return 'High';
             }
             
