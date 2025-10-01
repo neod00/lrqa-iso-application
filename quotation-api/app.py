@@ -14,11 +14,11 @@ from adj_quote_engine.models import (
     QuoteResult, Organization, Site, StandardType, 
     IntegrationInputs, Options, ProgramBreakdown, ComplexityLevel
 )
-from adj_quote_engine.calculator import QuoteCalculator
+# from adj_quote_engine.calculator import QuoteCalculator  # 임시 주석 처리
 from adj_quote_engine.quote_template import LRQAQuotationTemplate
 
 app = Flask(__name__)
-CORS(app)  # CORS 허용
+CORS(app, origins=['*'], allow_headers=['Content-Type'], methods=['GET', 'POST', 'OPTIONS'])  # CORS 허용
 
 def generate_advanced_html_report(gap_result, company_name):
     """Apple 보고서 스타일의 고급 HTML 보고서 생성"""
@@ -31,7 +31,13 @@ def generate_advanced_html_report(gap_result, company_name):
     }
     
     # 표준 목록 생성
-    standards_text = ', '.join([standard_names.get(std, std) for std in gap_result.get('standards', [])])
+    standards_list = []
+    for std in gap_result.get('standards', []):
+        if isinstance(std, dict) and 'standard' in std:
+            standards_list.append(standard_names.get(std['standard'], std['standard']))
+        elif isinstance(std, str):
+            standards_list.append(standard_names.get(std, std))
+    standards_text = ', '.join(standards_list)
     
     # 갭 분석 섹션 생성
     gap_analysis_html = ""
@@ -446,9 +452,10 @@ def generate_quotation():
         # 1. 신청서 데이터를 QuoteResult 객체로 변환
         quote_result = convert_application_to_quote_result(application_data)
         
-        # 2. adj_quote_engine으로 정교한 계산
-        calculator = QuoteCalculator()
-        calculated_result = calculator.calculate_quotation(quote_result)
+        # 2. adj_quote_engine으로 정교한 계산 (임시 주석 처리)
+        # calculator = QuoteCalculator()
+        # calculated_result = calculator.calculate_quotation(quote_result)
+        calculated_result = quote_result  # 임시로 원본 데이터 사용
         
         # 3. LRQA 템플릿으로 Word 문서 생성
         template_generator = LRQAQuotationTemplate()
@@ -554,4 +561,11 @@ def save_gap_analysis_report():
         return jsonify({'error': str(e), 'message': '갭분석 보고서 저장 중 오류가 발생했습니다.'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    # .env 파일 로드 비활성화
+    import os
+    os.environ.pop('FLASK_APP', None)
+    os.environ.pop('FLASK_ENV', None)
+    # dotenv 로딩 비활성화
+    import flask.cli
+    flask.cli.load_dotenv = lambda *args, **kwargs: None
+    app.run(debug=True, host='0.0.0.0', port=5000)
