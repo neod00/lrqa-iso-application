@@ -2582,7 +2582,10 @@
                 const progressFill = document.getElementById('progressFill');
                 const progressText = document.getElementById('progressText');
                 if (progressFill) progressFill.style.width = '0%';
-                if (progressText) progressText.textContent = '0% 완료';
+                if (progressText) {
+                    const isEnglish = document.documentElement.lang === 'en';
+                    progressText.textContent = `0% ${isEnglish ? 'Complete' : '완료'}`;
+                }
                 
                 // 모든 스텝 초기화
                 const steps = document.querySelectorAll('.analysis-step');
@@ -2695,7 +2698,8 @@
             }
             
             if (progressText) {
-                progressText.textContent = `${Math.round(percentage)}% 완료`;
+                const isEnglish = document.documentElement.lang === 'en';
+                progressText.textContent = `${Math.round(percentage)}% ${isEnglish ? 'Complete' : '완료'}`;
             }
         }
         
@@ -2793,7 +2797,8 @@
                         score: gapResult.score,
                         keyRisks: gapResult.keyRisks,
                         recommendations: gapResult.recommendations,
-                        formData: formData
+                        formData: formData,
+                        language: document.documentElement.lang
                     };
                     
                     // 보고서를 로컬 스토리지에 저장
@@ -2852,7 +2857,8 @@
                         findings: findings,
                         recommendations: recommendations,
                         riskLevel: riskLevel,
-                        formData: formData
+                        formData: formData,
+                        language: document.documentElement.lang
                     };
                     
                     if (progressCallback) {
@@ -3231,7 +3237,8 @@
             // 보고서 다운로드 생성
             async generateReportDownload(reportData) {
                 // 고급 HTML 보고서 사용 (API에서 받은 경우)
-                const reportHtml = reportData.reportHtml || generateReportHTML(reportData);
+                const currentLanguage = reportData.language || document.documentElement.lang;
+                const reportHtml = reportData.reportHtml || generateReportHTML(reportData, currentLanguage);
                 
                 // 1. 브라우저 다운로드
                 const blob = new Blob([reportHtml], { type: 'text/html' });
@@ -3918,8 +3925,9 @@
     <!-- 갭분석 보고서 생성 스크립트 -->
     <script>
         // 갭분석 보고서 HTML 생성 함수 (예전 Apple 보고서 형태로 복원)
-        function generateReportHTML(reportData) {
-            const isEnglish = document.documentElement.lang === 'en';
+        function generateReportHTML(reportData, language = null) {
+            // 언어 정보가 명시적으로 전달되지 않은 경우 현재 페이지 언어 감지
+            const isEnglish = language !== null ? language === 'en' : document.documentElement.lang === 'en';
             const lang = isEnglish ? 'en' : 'ko';
             const title = isEnglish ? 'Gap Analysis Report - ' : '사전평가 갭분석 보고서 - ';
             
