@@ -2545,19 +2545,22 @@
             const website = document.querySelector('input[name="website"]').value.trim();
             
             if (!companyName) {
-                alert('갭분석을 위해 회사명을 입력해주세요.');
+                const isEnglish = document.documentElement.lang === 'en';
+                alert(isEnglish ? 'Please enter company name for gap analysis.' : '갭분석을 위해 회사명을 입력해주세요.');
                 return;
             }
             
             if (!website) {
-                alert('갭분석을 위해 회사 웹사이트를 입력해주세요.');
+                const isEnglish = document.documentElement.lang === 'en';
+                alert(isEnglish ? 'Please enter company website for gap analysis.' : '갭분석을 위해 회사 웹사이트를 입력해주세요.');
                 return;
             }
             
             // ISO 표준 선택 확인
             const isoStandards = document.querySelectorAll('input[name="isoStandards"]:checked');
             if (isoStandards.length === 0) {
-                alert('갭분석을 위해 ISO 표준을 선택해주세요.');
+                const isEnglish = document.documentElement.lang === 'en';
+                alert(isEnglish ? 'Please select ISO standards for gap analysis.' : '갭분석을 위해 ISO 표준을 선택해주세요.');
                 return;
             }
             
@@ -2620,12 +2623,13 @@
         
         // 갭분석 프로세스 시작
         async function startGapAnalysisProcess() {
+            const isEnglish = document.documentElement.lang === 'en';
             const analysisSteps = [
-                { id: 'step1', text: '신청서 데이터 처리중...', duration: 2000 },
-                { id: 'step2', text: '기업 정보 수집중...', duration: 3000 },
-                { id: 'step3', text: 'AI 리스크 분석중...', duration: 4000 },
-                { id: 'step4', text: '갭분석 보고서 생성중...', duration: 2000 },
-                { id: 'step5', text: '이메일 발송중...', duration: 1500 }
+                { id: 'step1', text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...', duration: 2000 },
+                { id: 'step2', text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...', duration: 3000 },
+                { id: 'step3', text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...', duration: 4000 },
+                { id: 'step4', text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...', duration: 2000 },
+                { id: 'step5', text: isEnglish ? 'Sending email...' : '이메일 발송중...', duration: 1500 }
             ];
             
             try {
@@ -2646,13 +2650,20 @@
                 
                 // 성공 메시지
                 hideGapAnalysisModal();
-                showMessage('success', '갭분석 완료!', 
-                    '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\n\n보고서는 이메일로 발송되었으니 확인해 주세요.');
+                const isEnglish = document.documentElement.lang === 'en';
+                showMessage('success', isEnglish ? 'Gap Analysis Complete!' : '갭분석 완료!', 
+                    isEnglish ? 
+                        'Application has been submitted and a customized gap analysis report has been generated.\n\nPlease check your email for the report.' :
+                        '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\n\n보고서는 이메일로 발송되었으니 확인해 주세요.');
                 
             } catch (error) {
-                console.error('갭분석 오류:', error);
+                console.error('Gap analysis error:', error);
                 hideGapAnalysisModal();
-                showMessage('error', '갭분석 실패', '갭분석 처리 중 오류가 발생했습니다.\n\n잠시 후 다시 시도해 주세요.');
+                const isEnglish = document.documentElement.lang === 'en';
+                showMessage('error', isEnglish ? 'Gap Analysis Failed' : '갭분석 실패', 
+                    isEnglish ? 
+                        'An error occurred during gap analysis processing.\n\nPlease try again later.' :
+                        '갭분석 처리 중 오류가 발생했습니다.\n\n잠시 후 다시 시도해 주세요.');
             } finally {
                 isGapAnalysisInProgress = false;
             }
@@ -2691,12 +2702,13 @@
         // 갭분석 엔진 클래스 (submitFormWithGapAnalysis 함수 앞으로 이동)
         class GapAnalysisEngine {
             constructor() {
+                const isEnglish = document.documentElement.lang === 'en';
                 this.steps = [
-                    { id: 'step1', text: '신청서 데이터 처리중...', duration: 2000 },
-                    { id: 'step2', text: '기업 정보 수집중...', duration: 3000 },
-                    { id: 'step3', text: 'AI 리스크 분석중...', duration: 4000 },
-                    { id: 'step4', text: '갭분석 보고서 생성중...', duration: 2000 },
-                    { id: 'step5', text: '이메일 발송중...', duration: 1500 }
+                    { id: 'step1', text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...', duration: 2000 },
+                    { id: 'step2', text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...', duration: 3000 },
+                    { id: 'step3', text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...', duration: 4000 },
+                    { id: 'step4', text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...', duration: 2000 },
+                    { id: 'step5', text: isEnglish ? 'Sending email...' : '이메일 발송중...', duration: 1500 }
                 ];
             }
             
@@ -2720,11 +2732,12 @@
             // 갭분석 보고서 생성 (API 호출 방식)
             async generateGapAnalysis(formData, selectedStandards, progressCallback) {
                 try {
-                    console.log('🚀 고급 갭분석 API 호출 시작...');
+                    console.log('🚀 Starting advanced gap analysis API call...');
                     
                     // 진행 상황 업데이트
                     if (progressCallback) {
-                        progressCallback({ progress: 20, text: '신청서 데이터 처리중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 20, text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...' });
                     }
                     
                     // Netlify Functions API 호출 (웹 배포용)
@@ -2741,7 +2754,8 @@
                     });
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 40, text: '기업 정보 수집중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 40, text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...' });
                     }
                     
                     if (!response.ok) {
@@ -2749,20 +2763,23 @@
                     }
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 60, text: 'AI 리스크 분석중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 60, text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...' });
                     }
                     
                     const result = await response.json();
                     
                     if (!result.success) {
-                        throw new Error(result.message || '갭분석 생성 실패');
+                        const isEnglish = document.documentElement.lang === 'en';
+                        throw new Error(result.message || (isEnglish ? 'Gap analysis generation failed' : '갭분석 생성 실패'));
                     }
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 80, text: '갭분석 보고서 생성중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 80, text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...' });
                     }
                     
-                    console.log('✅ 고급 갭분석 완료:', result.gapAnalysisResult);
+                    console.log('✅ Advanced gap analysis completed:', result.gapAnalysisResult);
                     
                     // 갭분석 결과에서 보고서 데이터 생성
                     const gapResult = result.gapAnalysisResult;
@@ -2786,15 +2803,16 @@
                     this.generateReportDownload(reportData);
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 100, text: '갭분석 완료!' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                    progressCallback({ progress: 100, text: isEnglish ? 'Gap Analysis Complete!' : '갭분석 완료!' });
                     }
                     
                     return reportData;
                 } catch (error) {
-                    console.error('갭분석 보고서 생성 오류:', error);
+                    console.error('Gap analysis report generation error:', error);
                     
                     // API 실패 시 기존 방식으로 폴백
-                    console.log('🔄 기존 방식으로 폴백...');
+                    console.log('🔄 Falling back to existing method...');
                     return await this.generateGapAnalysisFallback(formData, selectedStandards, progressCallback);
                 }
             }
@@ -2802,26 +2820,29 @@
             // 폴백 갭분석 (기존 방식)
             async generateGapAnalysisFallback(formData, selectedStandards, progressCallback) {
                 try {
-                    // 갭분석 보고서 생성 시뮬레이션
+                    // Gap analysis report generation simulation
                     if (progressCallback) {
-                        progressCallback({ progress: 20, text: '신청서 데이터 처리중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 20, text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...' });
                     }
                     await new Promise(resolve => setTimeout(resolve, 1000));
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 40, text: '기업 정보 수집중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 40, text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...' });
                     }
                     
-                    // 실제 갭분석 수행
+                    // Actual gap analysis execution
                     const findings = this.generateFindings(selectedStandards, formData);
                     const recommendations = this.generateRecommendations(selectedStandards, formData, findings);
                     const riskLevel = this.calculateRiskLevel(formData, selectedStandards, findings);
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 60, text: 'AI 리스크 분석중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 60, text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...' });
                     }
                     
-                    // 보고서 데이터 생성
+                    // Report data generation
                     const reportData = {
                         companyName: formData.companyNameKo || formData.companyNameEn || 'Unknown Company',
                         standards: selectedStandards,
@@ -2835,7 +2856,8 @@
                     };
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 80, text: '갭분석 보고서 생성중...' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                        progressCallback({ progress: 80, text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...' });
                     }
                     
                     // 보고서를 로컬 스토리지에 저장
@@ -2845,12 +2867,13 @@
                     this.generateReportDownload(reportData);
                     
                     if (progressCallback) {
-                        progressCallback({ progress: 100, text: '갭분석 완료!' });
+                        const isEnglish = document.documentElement.lang === 'en';
+                    progressCallback({ progress: 100, text: isEnglish ? 'Gap Analysis Complete!' : '갭분석 완료!' });
                     }
                     
                     return reportData;
                 } catch (error) {
-                    console.error('폴백 갭분석 보고서 생성 오류:', error);
+                    console.error('Fallback gap analysis report generation error:', error);
                     throw error;
                 }
             }
@@ -3242,12 +3265,12 @@
                     
                     if (response.ok) {
                         const result = await response.json();
-                        console.log('갭분석 보고서가 sample-reports 폴더에 저장되었습니다:', result.filename);
+                        console.log('Gap analysis report saved to sample-reports folder:', result.filename);
                     } else {
-                        console.error('갭분석 보고서 저장 실패:', response.statusText);
+                        console.error('Gap analysis report save failed:', response.statusText);
                     }
                 } catch (error) {
-                    console.error('갭분석 보고서 저장 중 오류:', error);
+                    console.error('Error saving gap analysis report:', error);
                 }
             }
         }
@@ -3281,9 +3304,10 @@
                 try {
                     gapAnalysisEngine = new GapAnalysisEngine();
                 } catch (error) {
-                    console.error('갭분석 엔진 초기화 오류:', error);
+                    console.error('Gap analysis engine initialization error:', error);
                     hideGapAnalysisModal();
-                    alert('갭분석 엔진을 초기화할 수 없습니다.');
+                    const isEnglish = document.documentElement.lang === 'en';
+                    alert(isEnglish ? 'Unable to initialize gap analysis engine.' : '갭분석 엔진을 초기화할 수 없습니다.');
                     return;
                 }
                 
@@ -3303,7 +3327,7 @@
                         }
                     });
                 } catch (error) {
-                    console.error('갭분석 진행 시뮬레이션 오류:', error);
+                    console.error('Gap analysis progress simulation error:', error);
                 }
                 
                 // 7. 갭분석 실행
@@ -3322,7 +3346,7 @@
                         }
                     });
                 } catch (error) {
-                    console.error('갭분석 실행 오류:', error);
+                    console.error('Gap analysis execution error:', error);
                     // 갭분석 실패해도 일반 제출은 계속 진행
                 }
                 
@@ -3334,15 +3358,18 @@
                 
                 // 10. 성공 메시지 표시
                 if (gapResult && submitResult.success) {
-                    showSuccess('신청서가 성공적으로 제출되었습니다. 갭분석 보고서가 이메일로 발송되었습니다.');
+                    const isEnglish = document.documentElement.lang === 'en';
+                    showSuccess(isEnglish ? 'Application submitted successfully. Gap analysis report has been sent by email.' : '신청서가 성공적으로 제출되었습니다. 갭분석 보고서가 이메일로 발송되었습니다.');
                 } else {
-                    showSuccess('신청서가 제출되었습니다. 갭분석 보고서 생성 중 오류가 발생했을 수 있습니다.');
+                    const isEnglish = document.documentElement.lang === 'en';
+                    showSuccess(isEnglish ? 'Application submitted. There may have been an error in generating the gap analysis report.' : '신청서가 제출되었습니다. 갭분석 보고서 생성 중 오류가 발생했을 수 있습니다.');
                 }
                 
             } catch (error) {
-                console.error('갭분석 제출 오류:', error);
+                console.error('Gap analysis submission error:', error);
                 hideGapAnalysisModal();
-                showError('갭분석 제출 중 오류가 발생했습니다: ' + error.message);
+                const isEnglish = document.documentElement.lang === 'en';
+                showError(isEnglish ? 'An error occurred during gap analysis submission: ' + error.message : '갭분석 제출 중 오류가 발생했습니다: ' + error.message);
             }
         }
 
@@ -3417,7 +3444,8 @@
                 progressFill.style.width = percentage + '%';
             }
             if (progressText) {
-                progressText.textContent = percentage + '% 완료';
+                const isEnglish = document.documentElement.lang === 'en';
+                progressText.textContent = percentage + '% ' + (isEnglish ? 'Complete' : '완료');
             }
         }
 
@@ -3498,7 +3526,7 @@
     <div id="gapAnalysisModal" class="modal" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>🔍 ISO 갭분석 진행중</h3>
+                <h3 data-i18n="gap.analysis.progress.title">🔍 ISO 갭분석 진행중</h3>
             </div>
             <div class="modal-body">
                 <div class="progress-container">
@@ -3506,7 +3534,7 @@
                         <div id="progressFill" class="progress-fill"></div>
                     </div>
                     <div class="progress-text">
-                        <span id="progressText">분석을 시작합니다...</span>
+                        <span id="progressText" data-i18n="gap.analysis.progress.starting">분석을 시작합니다...</span>
                         <span id="estimatedTime" class="estimated-time"></span>
                     </div>
                 </div>
@@ -3515,32 +3543,32 @@
                     <div id="step1" class="analysis-step">
                         <div class="step-icon">⏳</div>
                         <div class="step-text">
-                            <span>신청서 데이터 처리중...</span>
+                            <span data-i18n="gap.analysis.step1">신청서 데이터 처리중...</span>
                     </div>
                     </div>
                     <div id="step2" class="analysis-step">
                         <div class="step-icon">🏢</div>
                         <div class="step-text">
-                            <span>기업 정보 수집중...</span>
+                            <span data-i18n="gap.analysis.step2">기업 정보 수집중...</span>
                     </div>
                     </div>
                     <div id="step3" class="analysis-step">
                         <div class="step-icon">🤖</div>
                         <div class="step-text">
-                            <span>AI 리스크 분석중...</span>
+                            <span data-i18n="gap.analysis.step3">AI 리스크 분석중...</span>
                     </div>
                     </div>
                     <div id="step4" class="analysis-step">
                         <div class="step-icon">📊</div>
                         <div class="step-text">
-                            <span>갭분석 보고서 생성중...</span>
+                            <span data-i18n="gap.analysis.step4">갭분석 보고서 생성중...</span>
                     </div>
                     </div>
                     <div id="step5" class="analysis-step">
                         <div class="step-icon">📧</div>
                         <div class="step-text">
-                            <span>이메일 발송중...</span>
-                        </div>
+                            <span data-i18n="gap.analysis.step5">이메일 발송중...</span>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -3891,12 +3919,16 @@
     <script>
         // 갭분석 보고서 HTML 생성 함수 (예전 Apple 보고서 형태로 복원)
         function generateReportHTML(reportData) {
+            const isEnglish = document.documentElement.lang === 'en';
+            const lang = isEnglish ? 'en' : 'ko';
+            const title = isEnglish ? 'Gap Analysis Report - ' : '사전평가 갭분석 보고서 - ';
+            
             return '<!DOCTYPE html>' +
-                '<html lang="ko">' +
+                '<html lang="' + lang + '">' +
                 '<head>' +
                 '<meta charset="UTF-8">' +
                 '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
-                '<title>사전평가 갭분석 보고서 - ' + reportData.companyName + '</title>' +
+                '<title>' + title + reportData.companyName + '</title>' +
                 '<style>' +
                 'body { font-family: "Malgun Gothic", "맑은 고딕", Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; line-height: 1.6; }' +
                 '.header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 40px 0; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }' +
@@ -3947,69 +3979,79 @@
                 '<body>' +
                 '<div class="header">' +
                 '<div class="logo-container">' +
-                '<img src="../lrqa-logo.png" alt="LRQA 로고" class="lrqa-logo">' +
+                '<img src="../lrqa-logo.png" alt="LRQA Logo" class="lrqa-logo">' +
                 '<div class="apple-logo">🍎</div>' +
                 '</div>' +
-                '<h1>사전평가 갭분석 보고서</h1>' +
-                '<div class="subtitle">ISO 경영시스템 표준 갭분석 - ' + reportData.companyName + ' (AI 통합)</div>' +
+                '<h1>' + (isEnglish ? 'Gap Analysis Report' : '사전평가 갭분석 보고서') + '</h1>' +
+                '<div class="subtitle">' + (isEnglish ? 'ISO Management System Standards Gap Analysis - ' : 'ISO 경영시스템 표준 갭분석 - ') + reportData.companyName + (isEnglish ? ' (AI Integrated)' : ' (AI 통합)') + '</div>' +
                 '</div>' +
                 '<div class="container">' +
                 '<div class="meta-info">' +
                 '<div class="meta-grid">' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">고객 조직</div>' +
+                '<div class="meta-label">' + (isEnglish ? 'Client Organization' : '고객 조직') + '</div>' +
                 '<div class="meta-value">' + reportData.companyName + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">평가 표준</div>' +
+                '<div class="meta-label">' + (isEnglish ? 'Assessment Standards' : '평가 표준') + '</div>' +
                 '<div class="meta-value">' + reportData.standards.join(', ') + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">평가 일자</div>' +
-                '<div class="meta-value">' + new Date().toLocaleDateString('ko-KR') + '</div>' +
+                '<div class="meta-label">' + (isEnglish ? 'Assessment Date' : '평가 일자') + '</div>' +
+                '<div class="meta-value">' + new Date().toLocaleDateString(isEnglish ? 'en-US' : 'ko-KR') + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">LRQA 참조번호</div>' +
+                '<div class="meta-label">' + (isEnglish ? 'LRQA Reference Number' : 'LRQA 참조번호') + '</div>' +
                 '<div class="meta-value">GAP-2025-' + reportData.companyName.replace(/\s+/g, '-').toUpperCase() + '-IMS-001</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">평가팀</div>' +
-                '<div class="meta-value">수석심사원: LRQA 공인심사원</div>' +
+                '<div class="meta-label">' + (isEnglish ? 'Assessment Team' : '평가팀') + '</div>' +
+                '<div class="meta-value">' + (isEnglish ? 'Lead Auditor: LRQA Certified Auditor' : '수석심사원: LRQA 공인심사원') + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">고객 담당자</div>' +
-                '<div class="meta-value">최고경영진 / 품질담당자</div>' +
+                '<div class="meta-label">' + (isEnglish ? 'Client Contact' : '고객 담당자') + '</div>' +
+                '<div class="meta-value">' + (isEnglish ? 'Top Management / Quality Manager' : '최고경영진 / 품질담당자') + '</div>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
                 '<div class="executive-summary">' +
-                '<h3>📊 경영진 요약</h3>' +
-                '<p>본 보고서는 ' + reportData.companyName + '의 ' + reportData.standards.join(', ') + ' 표준 준비도를 종합적으로 평가한 결과입니다. LRQA의 전문적인 갭분석 방법론을 통해 조직의 현재 상태를 정확히 진단하고, 인증 준비를 위한 구체적인 로드맵을 제시합니다.</p>' +
-                '<p>총 ' + reportData.findings.length + '개의 주요 발견사항이 식별되었으며, 이는 조직의 경영시스템 구축 및 개선을 위한 구체적인 방향을 제시합니다. 특히 경영진의 직접적인 관심과 지원이 필요한 핵심 영역들을 명확히 식별하여 우선순위를 제시합니다.</p>' +
+                '<h3>📊 ' + (isEnglish ? 'Executive Summary' : '경영진 요약') + '</h3>' +
+                '<p>' + (isEnglish ? 
+                    'This report presents a comprehensive assessment of ' + reportData.companyName + '\'s readiness for ' + reportData.standards.join(', ') + ' standards. Through LRQA\'s professional gap analysis methodology, we have accurately diagnosed the organization\'s current state and provided a concrete roadmap for certification preparation.' :
+                    '본 보고서는 ' + reportData.companyName + '의 ' + reportData.standards.join(', ') + ' 표준 준비도를 종합적으로 평가한 결과입니다. LRQA의 전문적인 갭분석 방법론을 통해 조직의 현재 상태를 정확히 진단하고, 인증 준비를 위한 구체적인 로드맵을 제시합니다.') + '</p>' +
+                '<p>' + (isEnglish ? 
+                    'A total of ' + reportData.findings.length + ' key findings have been identified, providing specific direction for the organization\'s management system development and improvement. We have clearly identified core areas requiring direct management attention and support, presenting them in order of priority.' :
+                    '총 ' + reportData.findings.length + '개의 주요 발견사항이 식별되었으며, 이는 조직의 경영시스템 구축 및 개선을 위한 구체적인 방향을 제시합니다. 특히 경영진의 직접적인 관심과 지원이 필요한 핵심 영역들을 명확히 식별하여 우선순위를 제시합니다.') + '</p>' +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🎯 평가 범위 및 방법론</h2>' +
-                '<p>LRQA의 6단계 갭분석 방법론을 통해 조직의 현재 상태를 종합적으로 평가했습니다. 평가는 다음 영역에 중점을 두고 수행되었습니다:</p>' +
+                '<h2>🎯 ' + (isEnglish ? 'Assessment Scope and Methodology' : '평가 범위 및 방법론') + '</h2>' +
+                '<p>' + (isEnglish ? 
+                    'The organization\'s current state has been comprehensively assessed through LRQA\'s 6-step gap analysis methodology. The assessment focused on the following areas:' :
+                    'LRQA의 6단계 갭분석 방법론을 통해 조직의 현재 상태를 종합적으로 평가했습니다. 평가는 다음 영역에 중점을 두고 수행되었습니다:') + '</p>' +
                 '<ul>' +
-                '<li><strong>경영시스템 문서화 수준:</strong> 정책, 절차, 지침서의 체계성과 완성도</li>' +
-                '<li><strong>프로세스 및 절차의 체계성:</strong> 핵심 프로세스의 정의, 실행, 모니터링 체계</li>' +
-                '<li><strong>법적 요구사항 준수도:</strong> 관련 법규 및 규정의 이해와 준수 수준</li>' +
-                '<li><strong>지속적 개선 체계:</strong> PDCA 사이클을 통한 지속적 개선 활동</li>' +
-                '<li><strong>리더십 및 경영진의 참여도:</strong> 최고경영진의 의지와 조직 내 리더십</li>' +
+                '<li><strong>' + (isEnglish ? 'Management System Documentation Level:' : '경영시스템 문서화 수준:') + '</strong> ' + (isEnglish ? 'Systematicity and completeness of policies, procedures, and guidelines' : '정책, 절차, 지침서의 체계성과 완성도') + '</li>' +
+                '<li><strong>' + (isEnglish ? 'Process and Procedure Systematization:' : '프로세스 및 절차의 체계성:') + '</strong> ' + (isEnglish ? 'Definition, execution, and monitoring systems of core processes' : '핵심 프로세스의 정의, 실행, 모니터링 체계') + '</li>' +
+                '<li><strong>' + (isEnglish ? 'Legal Requirements Compliance:' : '법적 요구사항 준수도:') + '</strong> ' + (isEnglish ? 'Understanding and compliance level with relevant laws and regulations' : '관련 법규 및 규정의 이해와 준수 수준') + '</li>' +
+                '<li><strong>' + (isEnglish ? 'Continuous Improvement System:' : '지속적 개선 체계:') + '</strong> ' + (isEnglish ? 'Continuous improvement activities through PDCA cycle' : 'PDCA 사이클을 통한 지속적 개선 활동') + '</li>' +
+                '<li><strong>' + (isEnglish ? 'Leadership and Management Participation:' : '리더십 및 경영진의 참여도:') + '</strong> ' + (isEnglish ? 'Top management commitment and organizational leadership' : '최고경영진의 의지와 조직 내 리더십') + '</li>' +
                 '</ul>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>⚠️ 평가 중 다루지 않은 영역</h2>' +
-                '<p>본 평가는 신청서에 제공된 정보를 바탕으로 수행되었으며, 현장 방문이나 추가 문서 검토는 포함되지 않았습니다. 따라서 실제 운영 상황과 차이가 있을 수 있음을 유의하시기 바랍니다.</p>' +
-                '<p>정확한 평가를 위해서는 현장 심사와 추가 문서 검토가 필요하며, 본 보고서는 예비 분석 결과임을 명확히 합니다.</p>' +
+                '<h2>⚠️ ' + (isEnglish ? 'Areas Not Covered in Assessment' : '평가 중 다루지 않은 영역') + '</h2>' +
+                '<p>' + (isEnglish ? 
+                    'This assessment was conducted based on information provided in the application form and did not include on-site visits or additional document reviews. Therefore, there may be differences from actual operational situations, which should be noted.' :
+                    '본 평가는 신청서에 제공된 정보를 바탕으로 수행되었으며, 현장 방문이나 추가 문서 검토는 포함되지 않았습니다. 따라서 실제 운영 상황과 차이가 있을 수 있음을 유의하시기 바랍니다.') + '</p>' +
+                '<p>' + (isEnglish ? 
+                    'For accurate assessment, on-site audit and additional document review are necessary, and this report is clearly a preliminary analysis result.' :
+                    '정확한 평가를 위해서는 현장 심사와 추가 문서 검토가 필요하며, 본 보고서는 예비 분석 결과임을 명확히 합니다.') + '</p>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🔍 LRQA 카테고리별 갭 분석</h2>' +
+                '<h2>🔍 ' + (isEnglish ? 'LRQA Category-wise Gap Analysis' : 'LRQA 카테고리별 갭 분석') + '</h2>' +
                 '<div class="gap-analysis">' +
                 '<div class="gap-category">' +
-                '<h4>카테고리 A - 즉시 조치 필요 (High Priority)</h4>' +
+                '<h4>' + (isEnglish ? 'Category A - Immediate Action Required (High Priority)' : '카테고리 A - 즉시 조치 필요 (High Priority)') + '</h4>' +
                 reportData.findings.filter(f => f.priority === 'high').map(finding =>
                     '<div class="gap-item high">' +
                     '<div class="gap-title">' + finding.title + '</div>' +
@@ -4018,7 +4060,7 @@
                 ).join('') +
                 '</div>' +
                 '<div class="gap-category">' +
-                '<h4>카테고리 B - 단기 개선 필요 (Medium Priority)</h4>' +
+                '<h4>' + (isEnglish ? 'Category B - Short-term Improvement Required (Medium Priority)' : '카테고리 B - 단기 개선 필요 (Medium Priority)') + '</h4>' +
                 reportData.findings.filter(f => f.priority === 'medium').map(finding =>
                     '<div class="gap-item medium">' +
                     '<div class="gap-title">' + finding.title + '</div>' +
@@ -4027,7 +4069,7 @@
                 ).join('') +
                 '</div>' +
                 '<div class="gap-category">' +
-                '<h4>카테고리 C - 장기 개선 권장 (Low Priority)</h4>' +
+                '<h4>' + (isEnglish ? 'Category C - Long-term Improvement Recommended (Low Priority)' : '카테고리 C - 장기 개선 권장 (Low Priority)') + '</h4>' +
                 reportData.findings.filter(f => f.priority === 'low').map(finding =>
                     '<div class="gap-item low">' +
                     '<div class="gap-title">' + finding.title + '</div>' +
@@ -4038,32 +4080,34 @@
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🎯 경영진 관심이 필요한 영역</h2>' +
-                '<p>다음 영역들은 경영진의 직접적인 관심과 지원이 필요한 핵심 영역입니다:</p>' +
+                '<h2>🎯 ' + (isEnglish ? 'Areas Requiring Management Attention' : '경영진 관심이 필요한 영역') + '</h2>' +
+                '<p>' + (isEnglish ? 
+                    'The following areas are core areas that require direct management attention and support:' :
+                    '다음 영역들은 경영진의 직접적인 관심과 지원이 필요한 핵심 영역입니다:') + '</p>' +
                 '<ul>' +
-                '<li><strong>경영시스템 정책 및 목표 수립:</strong> 조직의 방향성을 제시하는 명확한 정책과 측정 가능한 목표 설정</li>' +
-                '<li><strong>필요한 자원의 할당 및 배치:</strong> 인증 준비를 위한 인력, 예산, 시설 등 자원의 체계적 배치</li>' +
-                '<li><strong>조직 내 의사소통 체계 구축:</strong> 효과적인 의사소통을 통한 조직 내 인식 제고</li>' +
-                '<li><strong>지속적 개선을 위한 모니터링 체계:</strong> 성과 측정 및 개선 활동을 위한 체계적 모니터링</li>' +
+                '<li><strong>' + (isEnglish ? 'Management System Policy and Objective Setting:' : '경영시스템 정책 및 목표 수립:') + '</strong> ' + (isEnglish ? 'Establishing clear policies that provide organizational direction and measurable objectives' : '조직의 방향성을 제시하는 명확한 정책과 측정 가능한 목표 설정') + '</li>' +
+                '<li><strong>' + (isEnglish ? 'Resource Allocation and Deployment:' : '필요한 자원의 할당 및 배치:') + '</strong> ' + (isEnglish ? 'Systematic deployment of resources such as personnel, budget, and facilities for certification preparation' : '인증 준비를 위한 인력, 예산, 시설 등 자원의 체계적 배치') + '</li>' +
+                '<li><strong>' + (isEnglish ? 'Internal Communication System Development:' : '조직 내 의사소통 체계 구축:') + '</strong> ' + (isEnglish ? 'Enhancing organizational awareness through effective communication' : '효과적인 의사소통을 통한 조직 내 인식 제고') + '</li>' +
+                '<li><strong>' + (isEnglish ? 'Monitoring System for Continuous Improvement:' : '지속적 개선을 위한 모니터링 체계:') + '</strong> ' + (isEnglish ? 'Systematic monitoring for performance measurement and improvement activities' : '성과 측정 및 개선 활동을 위한 체계적 모니터링') + '</li>' +
                 '</ul>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>📈 정식 인증을 위한 준비도 평가</h2>' +
+                '<h2>📈 ' + (isEnglish ? 'Readiness Assessment for Formal Certification' : '정식 인증을 위한 준비도 평가') + '</h2>' +
                 '<table class="readiness-table">' +
                 '<thead>' +
-                '<tr><th>영역</th><th>현재 준비도</th><th>목표 준비도</th><th>예상 소요기간</th><th>주요 개선사항</th></tr>' +
+                '<tr><th>' + (isEnglish ? 'Area' : '영역') + '</th><th>' + (isEnglish ? 'Current Readiness' : '현재 준비도') + '</th><th>' + (isEnglish ? 'Target Readiness' : '목표 준비도') + '</th><th>' + (isEnglish ? 'Estimated Duration' : '예상 소요기간') + '</th><th>' + (isEnglish ? 'Key Improvements' : '주요 개선사항') + '</th></tr>' +
                 '</thead>' +
                 '<tbody>' +
-                '<tr><td>문서화</td><td>40%</td><td>90%</td><td>3-4개월</td><td>정책, 절차서, 지침서 체계화</td></tr>' +
-                '<tr><td>프로세스 구축</td><td>35%</td><td>85%</td><td>4-6개월</td><td>핵심 프로세스 정의 및 실행</td></tr>' +
-                '<tr><td>교육 및 인식제고</td><td>30%</td><td>80%</td><td>2-3개월</td><td>전 직원 대상 교육 프로그램</td></tr>' +
-                '<tr><td>내부심사 체계</td><td>20%</td><td>75%</td><td>3-4개월</td><td>내부심사원 양성 및 체계 구축</td></tr>' +
-                '<tr><td>경영검토</td><td>25%</td><td>70%</td><td>2-3개월</td><td>정기적 경영검토 체계 수립</td></tr>' +
+                '<tr><td>' + (isEnglish ? 'Documentation' : '문서화') + '</td><td>40%</td><td>90%</td><td>' + (isEnglish ? '3-4 months' : '3-4개월') + '</td><td>' + (isEnglish ? 'Systematization of policies, procedures, and guidelines' : '정책, 절차서, 지침서 체계화') + '</td></tr>' +
+                '<tr><td>' + (isEnglish ? 'Process Development' : '프로세스 구축') + '</td><td>35%</td><td>85%</td><td>' + (isEnglish ? '4-6 months' : '4-6개월') + '</td><td>' + (isEnglish ? 'Definition and implementation of core processes' : '핵심 프로세스 정의 및 실행') + '</td></tr>' +
+                '<tr><td>' + (isEnglish ? 'Training and Awareness' : '교육 및 인식제고') + '</td><td>30%</td><td>80%</td><td>' + (isEnglish ? '2-3 months' : '2-3개월') + '</td><td>' + (isEnglish ? 'Training programs for all employees' : '전 직원 대상 교육 프로그램') + '</td></tr>' +
+                '<tr><td>' + (isEnglish ? 'Internal Audit System' : '내부심사 체계') + '</td><td>20%</td><td>75%</td><td>' + (isEnglish ? '3-4 months' : '3-4개월') + '</td><td>' + (isEnglish ? 'Internal auditor training and system development' : '내부심사원 양성 및 체계 구축') + '</td></tr>' +
+                '<tr><td>' + (isEnglish ? 'Management Review' : '경영검토') + '</td><td>25%</td><td>70%</td><td>' + (isEnglish ? '2-3 months' : '2-3개월') + '</td><td>' + (isEnglish ? 'Establishment of regular management review system' : '정기적 경영검토 체계 수립') + '</td></tr>' +
                 '</tbody>' +
                 '</table>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>💡 LRQA 전문가 권고사항</h2>' +
+                '<h2>💡 ' + (isEnglish ? 'LRQA Expert Recommendations' : 'LRQA 전문가 권고사항') + '</h2>' +
                 '<div class="recommendations">' +
                 reportData.recommendations.map(rec =>
                     '<div class="recommendation-item">' +
@@ -4074,36 +4118,40 @@
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>📅 권장 실행 타임라인</h2>' +
+                '<h2>📅 ' + (isEnglish ? 'Recommended Implementation Timeline' : '권장 실행 타임라인') + '</h2>' +
                 '<div class="timeline">' +
                 '<div class="timeline-item">' +
-                '<h4>1단계: 기초 구축 (1-2개월)</h4>' +
-                '<p>경영시스템 정책 수립, 기본 문서 작성, 초기 교육 실시, 전담 조직 구성</p>' +
+                '<h4>' + (isEnglish ? 'Phase 1: Foundation Building (1-2 months)' : '1단계: 기초 구축 (1-2개월)') + '</h4>' +
+                '<p>' + (isEnglish ? 'Management system policy establishment, basic documentation, initial training, dedicated organization formation' : '경영시스템 정책 수립, 기본 문서 작성, 초기 교육 실시, 전담 조직 구성') + '</p>' +
                 '</div>' +
                 '<div class="timeline-item">' +
-                '<h4>2단계: 프로세스 구현 (2-4개월)</h4>' +
-                '<p>핵심 프로세스 구축, 모니터링 체계 설립, 내부심사 준비, 성과 측정 체계 구축</p>' +
+                '<h4>' + (isEnglish ? 'Phase 2: Process Implementation (2-4 months)' : '2단계: 프로세스 구현 (2-4개월)') + '</h4>' +
+                '<p>' + (isEnglish ? 'Core process development, monitoring system establishment, internal audit preparation, performance measurement system development' : '핵심 프로세스 구축, 모니터링 체계 설립, 내부심사 준비, 성과 측정 체계 구축') + '</p>' +
                 '</div>' +
                 '<div class="timeline-item">' +
-                '<h4>3단계: 최적화 및 인증 준비 (1-2개월)</h4>' +
-                '<p>시스템 최적화, 경영검토 실시, 인증 신청 준비, 최종 점검 및 보완</p>' +
+                '<h4>' + (isEnglish ? 'Phase 3: Optimization and Certification Preparation (1-2 months)' : '3단계: 최적화 및 인증 준비 (1-2개월)') + '</h4>' +
+                '<p>' + (isEnglish ? 'System optimization, management review implementation, certification application preparation, final inspection and supplementation' : '시스템 최적화, 경영검토 실시, 인증 신청 준비, 최종 점검 및 보완') + '</p>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>⚠️ 평가 제한사항</h2>' +
+                '<h2>⚠️ ' + (isEnglish ? 'Assessment Limitations' : '평가 제한사항') + '</h2>' +
                 '<ul>' +
-                '<li>본 평가는 신청서 정보를 바탕으로 한 예비 분석입니다.</li>' +
-                '<li>현장 방문이나 추가 문서 검토는 포함되지 않았습니다.</li>' +
-                '<li>실제 운영 상황과 차이가 있을 수 있습니다.</li>' +
-                '<li>정확한 평가를 위해서는 현장 심사가 필요합니다.</li>' +
-                '<li>조직의 특수한 상황이나 내부 요인은 고려되지 않았을 수 있습니다.</li>' +
+                '<li>' + (isEnglish ? 'This assessment is a preliminary analysis based on application information.' : '본 평가는 신청서 정보를 바탕으로 한 예비 분석입니다.') + '</li>' +
+                '<li>' + (isEnglish ? 'On-site visits or additional document reviews are not included.' : '현장 방문이나 추가 문서 검토는 포함되지 않았습니다.') + '</li>' +
+                '<li>' + (isEnglish ? 'There may be differences from actual operational situations.' : '실제 운영 상황과 차이가 있을 수 있습니다.') + '</li>' +
+                '<li>' + (isEnglish ? 'On-site audit is necessary for accurate assessment.' : '정확한 평가를 위해서는 현장 심사가 필요합니다.') + '</li>' +
+                '<li>' + (isEnglish ? 'Special organizational circumstances or internal factors may not have been considered.' : '조직의 특수한 상황이나 내부 요인은 고려되지 않았을 수 있습니다.') + '</li>' +
                 '</ul>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🔒 기밀성</h2>' +
-                '<p>본 보고서는 ' + reportData.companyName + '의 기밀 정보를 포함하고 있으며, LRQA의 엄격한 기밀성 정책에 따라 보호됩니다. 본 보고서는 해당 조직의 승인 없이 제3자에게 공개될 수 없습니다.</p>' +
-                '<p>보고서의 내용은 LRQA의 전문적 판단에 기반하며, 조직의 특정 상황에 맞는 맞춤형 권고사항을 포함하고 있습니다.</p>' +
+                '<h2>🔒 ' + (isEnglish ? 'Confidentiality' : '기밀성') + '</h2>' +
+                '<p>' + (isEnglish ? 
+                    'This report contains confidential information of ' + reportData.companyName + ' and is protected under LRQA\'s strict confidentiality policy. This report cannot be disclosed to third parties without the organization\'s approval.' :
+                    '본 보고서는 ' + reportData.companyName + '의 기밀 정보를 포함하고 있으며, LRQA의 엄격한 기밀성 정책에 따라 보호됩니다. 본 보고서는 해당 조직의 승인 없이 제3자에게 공개될 수 없습니다.') + '</p>' +
+                '<p>' + (isEnglish ? 
+                    'The report content is based on LRQA\'s professional judgment and includes customized recommendations tailored to the organization\'s specific circumstances.' :
+                    '보고서의 내용은 LRQA의 전문적 판단에 기반하며, 조직의 특정 상황에 맞는 맞춤형 권고사항을 포함하고 있습니다.') + '</p>' +
                 '</div>' +
                 '</div>' +
                 '<div class="footer">' +
