@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -356,6 +357,33 @@
             display: flex;
             gap: 10px;
             z-index: 1000;
+            align-items: center;
+        }
+        
+        /* 언어 선택기 */
+        .language-selector {
+            position: relative;
+        }
+        
+        .language-dropdown {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            font-size: 14px;
+            cursor: pointer;
+            min-width: 120px;
+        }
+        
+        .language-dropdown:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        
+        .dark-mode .language-dropdown {
+            background: #333;
+            color: white;
+            border-color: #555;
         }
         
         .control-btn {
@@ -578,6 +606,7 @@
             line-height: 1.5;
             margin-bottom: 25px;
             color: #666;
+            white-space: pre-line;
         }
         
         .message-btn {
@@ -638,6 +667,7 @@
         
         body.dark-mode .message-content {
             color: #cccccc;
+            white-space: pre-line;
         }
         
         /* 견적 시스템 버튼 스타일 - 메인 신청서와 분리 */
@@ -671,167 +701,180 @@
         }
     </style>
     
-    <!-- 견적 시스템 CSS -->
-    <link rel="stylesheet" href="quotation-system/css/quotation-styles.css">
+    <!-- 견적 시스템 CSS는 인라인으로 포함됨 -->
 </head>
 <body>
     <div class="container">
         <!-- 컨트롤 버튼 -->
         <div class="control-buttons">
-            <button type="button" class="control-btn dark-mode-btn" onclick="toggleDarkMode()">다크모드</button>
-            <button type="button" class="control-btn save-btn" onclick="saveFormData()">임시저장</button>
+            <div class="language-selector">
+                <select id="languageSelect" class="language-dropdown">
+                    <option value="ko">🇰🇷 한국어</option>
+                    <option value="en">🇺🇸 English</option>
+                    <option value="ja">🇯🇵 日本語</option>
+                    <option value="zh">🇨🇳 中文</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="de">🇩🇪 Deutsch</option>
+                    <option value="fr">🇫🇷 Français</option>
+                    <option value="th">🇹🇭 ไทย</option>
+                    <option value="vi">🇻🇳 Tiếng Việt</option>
+                    <option value="ar">🇸🇦 العربية</option>
+                </select>
+            </div>
+            <button type="button" class="control-btn dark-mode-btn" onclick="toggleDarkMode()" data-i18n="form.dark.mode">다크모드</button>
+            <button type="button" class="control-btn save-btn" onclick="saveFormData()" data-i18n="form.save.temp">임시저장</button>
         </div>
         
         <!-- Page 1 -->
         <div class="header">
             <div class="lrqa-logo"></div>
-            <h1>인증 심사 신청서</h1>
-            <h2>표준 ISO 9001, 14001, 45001</h2>
+            <h1 data-i18n="form.title">인증 심사 신청서</h1>
+            <h2 data-i18n="form.subtitle">표준 ISO 9001, 14001, 45001</h2>
         </div>
         
-        <div class="intro-text">
+        <div class="intro-text" data-i18n="form.intro">
             LRQA의 무료 견적을 받고 싶다면 다음 양식을 완전히 작성하여 제출해 주시기 바랍니다.:
         </div>
         
         <div class="section">
-            <div class="section-title">회사 정보</div>
+            <div class="section-title" data-i18n="form.company.info">회사 정보</div>
             
             <div class="form-row">
-                <span class="form-label required">법인명 (국문/영문)</span>
-                <input type="text" class="form-input" name="companyNameKo" placeholder="인증서에 반영될 정확한 국문/영문 회사명을 입력해주세요." required>
+                <span class="form-label required" data-i18n="form.company.name">법인명 (국문/영문)</span>
+                <input type="text" class="form-input" name="companyNameKo" placeholder="인증서에 반영될 정확한 국문/영문 회사명을 입력해주세요." data-i18n-placeholder="form.company.name.placeholder" required>
             </div>
             
             <div class="form-row">
-                <span class="form-label">상호명 (해당되는 경우)</span>
+                <span class="form-label" data-i18n="form.company.trade_name">상호명 (해당되는 경우)</span>
                 <input type="text" class="form-input" name="tradeName">
             </div>
             
             <div class="form-row">
-                <span class="form-label required">본사 주소</span>
+                <span class="form-label required" data-i18n="form.company.address">본사 주소</span>
                 <input type="text" class="form-input" name="headOfficeAddress" required>
             </div>
             
             <div class="form-row">
-                <span class="form-label">시</span>
+                <span class="form-label" data-i18n="form.company.city">시</span>
                 <input type="text" class="form-input medium" name="city">
-                <span class="form-label">행정 구역(도)</span>
+                <span class="form-label" data-i18n="form.company.region">행정 구역(도)</span>
                 <input type="text" class="form-input medium" name="province">
             </div>
             
             <div class="form-row">
-                <span class="form-label">우편 번호</span>
+                <span class="form-label" data-i18n="form.company.postal">우편 번호</span>
                 <input type="text" class="form-input short" name="postalCode">
-                <span class="form-label">국가</span>
+                <span class="form-label" data-i18n="form.company.country">국가</span>
                 <input type="text" class="form-input medium" name="country">
             </div>
             
             <div class="form-row">
-                <span class="form-label">대표 전화 번호</span>
+                <span class="form-label" data-i18n="form.company.phone">대표 전화 번호</span>
                 <input type="text" class="form-input medium" name="mainPhone">
-                <span class="form-label">대표 이메일 주소</span>
+                <span class="form-label" data-i18n="form.company.email">대표 이메일 주소</span>
                 <input type="text" class="form-input" name="mainEmail">
             </div>
             
             <div class="form-row">
-                <span style="font-size: 11px; margin-right: 10px;">현재 위 양식에 기재된 주소와 본인의 실제 우편 주소가 다를 경우, "예"를 체크하고 아래를 입력해주세요.</span>
+                <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.address.different">현재 위 양식에 기재된 주소와 본인의 실제 우편 주소가 다를 경우, "예"를 체크하고 아래를 입력해주세요.</span>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="address_different" value="yes">
                         <span class="checkmark"></span>
                     </div>
-                    <span>예</span>
+                    <span data-i18n="form.options.yes">예</span>
                 </div>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="address_different" value="no">
                         <span class="checkmark"></span>
                     </div>
-                    <span>아니요</span>
+                    <span data-i18n="form.options.no">아니요</span>
                 </div>
             </div>
             
             <div class="form-row">
-                <span class="form-label">웹사이트</span>
+                <span class="form-label" data-i18n="form.company.website">웹사이트</span>
                 <input type="text" class="form-input medium" name="website">
-                <span class="form-label">사업자 등록번호</span>
+                <span class="form-label" data-i18n="form.company.registration">사업자 등록번호</span>
                 <input type="text" class="form-input medium" name="businessRegNumber">
             </div>
             
             <div class="form-row">
-                <span class="form-label">법인 등록 번호</span>
+                <span class="form-label" data-i18n="form.company.corporate">법인 등록 번호</span>
                 <input type="text" class="form-input medium" name="corporateRegNumber">
-                <span class="form-label">과세당국</span>
+                <span class="form-label" data-i18n="form.company.tax">과세당국</span>
                 <input type="text" class="form-input medium" name="taxAuthority">
             </div>
             
             <div class="form-row">
-                <span style="font-size: 11px; margin-right: 10px;">귀사는 그룹 계열사에 속해 있거나 모회사가 소유하고 있습니까?</span>
+                <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.group.company">귀사는 그룹 계열사에 속해 있거나 모회사가 소유하고 있습니까?</span>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="groupAffiliation" value="yes">
                         <span class="checkmark"></span>
                     </div>
-                    <span>예</span>
+                    <span data-i18n="form.options.yes">예</span>
                 </div>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="groupAffiliation" value="no">
                         <span class="checkmark"></span>
                     </div>
-                    <span>아니요</span>
+                    <span data-i18n="form.options.no">아니요</span>
                 </div>
             </div>
             
             <div class="form-row">
-                <span style="font-size: 11px; margin-right: 10px;">두 개 이상의 사이트를 운영하는 경우 경영시스템이 중앙에서 관리하고 있습니까?</span>
+                <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.central.management">두 개 이상의 사이트를 운영하는 경우 경영시스템이 중앙에서 관리하고 있습니까?</span>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="centralSystem" value="yes">
                         <span class="checkmark"></span>
                     </div>
-                    <span>예</span>
+                    <span data-i18n="form.options.yes">예</span>
                 </div>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="centralSystem" value="no">
                         <span class="checkmark"></span>
                     </div>
-                    <span>아니요</span>
+                    <span data-i18n="form.options.no">아니요</span>
                 </div>
             </div>
             
             <div class="form-row">
-                <span class="form-label required">본 인증에 포함되는 사업장은 몇개 인가요?</span>
+                <span class="form-label required" data-i18n="form.sites.count">본 인증에 포함되는 사업장은 몇개 인가요?</span>
                 <input type="text" class="form-input short" name="siteCount" required>
             </div>
             
             <div style="margin: 15px 0; font-size: 11px;">
-                다음을 포함한 사업장 목록을 첨부하세요.
+                <span data-i18n="form.sites.attachment">다음을 포함한 사업장 목록을 첨부하세요.</span>
             </div>
             
             <table class="table">
                 <thead>
                     <tr>
-                        <th>주소</th>
-                        <th>활동</th>
-                        <th>직원</th>
+                        <th data-i18n="form.table.address">주소</th>
+                        <th data-i18n="form.table.activity">활동</th>
+                        <th data-i18n="form.table.employees">직원</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" placeholder="사업장 주소"></td>
-                        <td><input type="text" placeholder="주요 활동"></td>
-                        <td><input type="text" placeholder="직원 수"></td>
+                        <td><input type="text" placeholder="사업장 주소" data-i18n-placeholder="form.site.address.placeholder"></td>
+                        <td><input type="text" placeholder="주요 활동" data-i18n-placeholder="form.site.activity.placeholder"></td>
+                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" placeholder="사업장 주소"></td>
-                        <td><input type="text" placeholder="주요 활동"></td>
-                        <td><input type="text" placeholder="직원 수"></td>
+                        <td><input type="text" placeholder="사업장 주소" data-i18n-placeholder="form.site.address.placeholder"></td>
+                        <td><input type="text" placeholder="주요 활동" data-i18n-placeholder="form.site.activity.placeholder"></td>
+                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                     </tr>
                     <tr>
-                        <td><input type="text" placeholder="사업장 주소"></td>
-                        <td><input type="text" placeholder="주요 활동"></td>
-                        <td><input type="text" placeholder="직원 수"></td>
+                        <td><input type="text" placeholder="사업장 주소" data-i18n-placeholder="form.site.address.placeholder"></td>
+                        <td><input type="text" placeholder="주요 활동" data-i18n-placeholder="form.site.activity.placeholder"></td>
+                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                     </tr>
                 </tbody>
             </table>
@@ -839,62 +882,62 @@
         
         <div class="footer">
             <div class="lrqa-footer-logo">LRQA</div>
-            <div>인증 심사 신청서 |1</div>
+            <div data-i18n="form.footer.page1">인증 심사 신청서 |1</div>
         </div>
         
         <!-- Page 2 -->
         <div class="page-break">
             <div class="section">
-                <div class="section-title">연락처 세부 정보</div>
+                <div class="section-title" data-i18n="form.contact.details">연락처 세부 정보</div>
                 
                 <div class="form-row">
-                    <span class="form-label required">담당자 성함 (직급/직책 포함)</span>
+                    <span class="form-label required" data-i18n="form.contact.name">담당자 성함 (직급/직책 포함)</span>
                     <input type="text" class="form-input" name="contactName" required>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label required">부서</span>
+                    <span class="form-label required" data-i18n="form.contact.department">부서</span>
                     <input type="text" class="form-input" name="department" required>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label required">이메일 주소</span>
+                    <span class="form-label required" data-i18n="form.contact.email">이메일 주소</span>
                     <input type="email" class="form-input" name="contactEmail" required>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label required">전화 번호</span>
+                    <span class="form-label required" data-i18n="form.contact.phone">전화 번호</span>
                     <input type="text" class="form-input medium" name="contactPhone" required>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label required">휴대폰 번호</span>
+                    <span class="form-label required" data-i18n="form.contact.mobile">휴대폰 번호</span>
                     <input type="text" class="form-input medium" name="mobilePhone" required>
                 </div>
             </div>
             
             <div class="section">
-                <div class="section-title">컨설턴트 정보</div>
+                <div class="section-title" data-i18n="form.consultant.title">컨설턴트 정보</div>
                 
                 <div style="margin-bottom: 15px; font-size: 11px;">
-                    경영시스템 준비를 위해 컨설턴트의 자문을 받는 경우 세부정보를 입력하세요.
+                    <span data-i18n="form.consultant.description">경영시스템 준비를 위해 컨설턴트의 자문을 받는 경우 세부정보를 입력하세요.</span>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">컨설턴트 이름</span>
+                    <span class="form-label" data-i18n="form.consultant.name">컨설턴트 이름</span>
                     <input type="text" class="form-input" name="consultantName">
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">컨설팅 기관</span>
+                    <span class="form-label" data-i18n="form.consultant.org">컨설팅 기관</span>
                     <input type="text" class="form-input" name="consultingOrg">
                 </div>
                 
                 <div style="margin: 20px 0; font-size: 11px;">
-                    <div style="margin-bottom: 10px;">LRQA에 대해 어떻게 알게 되었습니까?</div>
+                    <div style="margin-bottom: 10px;" data-i18n="form.awareness.question">LRQA에 대해 어떻게 알게 되었습니까?</div>
                     
                     <div class="section-title" style="margin-bottom: 15px; background-color: #00d4aa; color: white; padding: 8px 12px; font-size: 11px;">
-                        LRQA 인지 경로
+                        <span data-i18n="form.awareness.path">LRQA 인지 경로</span>
                     </div>
                     
                     <div class="checkbox-grid">
@@ -903,116 +946,116 @@
                                 <input type="checkbox" name="howKnowLrqa" value="advertising">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>광고/홍보</span>
+                            <span data-i18n="form.awareness.advertising">광고/홍보</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="email">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>이메일</span>
+                            <span data-i18n="form.awareness.email">이메일</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="social_media">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>소셜 미디어</span>
+                            <span data-i18n="form.awareness.social">소셜 미디어</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="webinar">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>웨비나</span>
+                            <span data-i18n="form.awareness.webinar">웨비나</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="customer_visit">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>고객 방문</span>
+                            <span data-i18n="form.awareness.visit">고객 방문</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="event">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>이벤트</span>
+                            <span data-i18n="form.awareness.event">이벤트</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="telemarketing">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>텔레마케팅</span>
+                            <span data-i18n="form.awareness.telemarketing">텔레마케팅</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="self_assessment">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>자체 평가</span>
+                            <span data-i18n="form.awareness.self">자체 평가</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="mail">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>우편물</span>
+                            <span data-i18n="form.awareness.mail">우편물</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="recommendation">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>추천</span>
+                            <span data-i18n="form.awareness.referral">추천</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="tools">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>도구</span>
+                            <span data-i18n="form.awareness.tool">도구</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="website">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>웹사이트</span>
+                            <span data-i18n="form.awareness.website">웹사이트</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="howKnowLrqa" value="other">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>기타</span>
+                            <span data-i18n="form.awareness.other">기타</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">향후 LRQA에서 신청 규격 관련한 이벤트에 대한 세부 정보를 받고 싶으시다면 "예"를 눌러주세요.</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.event.notification">향후 LRQA에서 신청 규격 관련한 이벤트에 대한 세부 정보를 받고 싶으시다면 "예"를 눌러주세요.</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="futureEvents" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="futureEvents" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
             </div>
             
             <div class="section">
-                <div class="section-title">평가 요구 사항</div>
+                <div class="section-title" data-i18n="form.evaluation.requirements">평가 요구 사항</div>
                 
                 <div style="display: flex; gap: 30px; margin-bottom: 15px;">
                     <div class="checkbox-group">
@@ -1020,49 +1063,49 @@
                             <input type="checkbox" name="isoStandards" value="iso9001">
                             <span class="checkmark"></span>
                         </div>
-                        <span>ISO 9001 - 품질</span>
+                        <span data-i18n="form.iso.9001">ISO 9001 - 품질</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="checkbox" name="isoStandards" value="iso45001">
                             <span class="checkmark"></span>
                         </div>
-                        <span>ISO 14001 - 환경</span>
+                        <span data-i18n="form.iso.14001">ISO 14001 - 환경</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="checkbox" name="isoStandards" value="iso14001">
                             <span class="checkmark"></span>
                         </div>
-                        <span>ISO 45001 - 안전보건</span>
+                        <span data-i18n="form.iso.45001">ISO 45001 - 안전보건</span>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">기타(인증 규격 작성):</span>
+                    <span class="form-label" data-i18n="form.other.standards">기타(인증 규격 작성):</span>
                     <input type="text" class="form-input" name="otherStandards">
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">2개 이상 인증 신청시 통합심사 진행 여부</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.integrated.audit">2개 이상 인증 신청시 통합심사 진행 여부</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="multiStandardSystem" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="multiStandardSystem" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label required">희망하는 심사일정을 선택해주세요.</span>
+                    <span class="form-label required" data-i18n="form.audit.schedule">희망하는 심사일정을 선택해주세요.</span>
                     <div class="date-input">
                         <input type="month" class="form-input medium" name="desiredAuditDate" required>
                     </div>
@@ -1070,101 +1113,101 @@
                 
                 <!-- 견적 시스템 표시 버튼 -->
                 <div class="quotation-button-container">
-                    <button type="button" class="quotation-show-btn" id="showQuotationCalculatorBtn">
+                    <button type="button" class="quotation-show-btn" id="showQuotationCalculatorBtn" data-i18n="form.quotation.show">
                         🧮 견적 계산기 표시
                     </button>
-                    <small class="quotation-help-text">ISO 표준 선택 후 견적을 계산할 수 있습니다.</small>
+                    <small class="quotation-help-text" data-i18n="form.quotation.help">ISO 표준 선택 후 견적을 계산할 수 있습니다.</small>
                 </div>
             </div>
             
             <div class="footer">
                 <div class="lrqa-footer-logo">LRQA</div>
-                <div>인증 심사 신청서 |2</div>
+                <div data-i18n="form.footer.page2">인증 심사 신청서 |2</div>
             </div>
         </div>
         
         <!-- Page 3 -->
         <div class="page-break">
             <div class="section">
-                <div class="section-title">인증 범위 확인</div>
+                <div class="section-title" data-i18n="form.scope.title">인증 범위 확인</div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">인증서에 활동 내용을 어떻게 기재하고 싶으십니까?</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.certification.scope.question">인증서에 활동 내용을 어떻게 기재하고 싶으십니까?</span>
                     <textarea class="textarea" rows="4" name="certificationScope"></textarea>
                 </div>
             </div>
             
             <div class="section">
-                <div class="section-title">법적 의무</div>
+                <div class="section-title" data-i18n="form.legal.title">법적 의무</div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">조직이 운영하기 위해 필요한 사업장 허가, 라이선스 또는 이와 유사한 규제 기관의 승인이 있습니까?</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.regulatory.approval.question">조직이 운영하기 위해 필요한 사업장 허가, 라이선스 또는 이와 유사한 규제 기관의 승인이 있습니까?</span>
                     <textarea class="textarea" rows="3" name="regulatoryApproval"></textarea>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">법적 의무와 관련하여 해결되지 않은 미해결 문제가 있습니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.legal.issues">법적 의무와 관련하여 해결되지 않은 미해결 문제가 있습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="legalIssues" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="legalIssues" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
             </div>
             
             <div class="section">
-                <div class="section-title">기존 인증</div>
+                <div class="section-title" data-i18n="form.existing.certification">기존 인증</div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">현재 기존 경영시스템 인증을 보유하고 있습니까? 그렇다면 아래에 기재해 주세요:</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.existing.certification.question">현재 기존 경영시스템 인증을 보유하고 있습니까? 그렇다면 아래에 기재해 주세요:</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="existingCertification" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="existingCertification" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>표준</th>
-                            <th>인증 기관</th>
-                            <th>인증 만료일</th>
+                            <th data-i18n="form.table.standard">표준</th>
+                            <th data-i18n="form.table.certification_body">인증 기관</th>
+                            <th data-i18n="form.table.expiry_date">인증 만료일</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="text" placeholder="인증 표준"></td>
-                            <td><input type="text" placeholder="인증 기관명"></td>
-                            <td><input type="date" placeholder="만료일"></td>
+                            <td><input type="text" placeholder="인증 표준" data-i18n-placeholder="form.certification.standard.placeholder"></td>
+                            <td><input type="text" placeholder="인증 기관명" data-i18n-placeholder="form.certification.body.placeholder"></td>
+                            <td><input type="date" placeholder="만료일" data-i18n-placeholder="form.certification.expiry.placeholder"></td>
                         </tr>
                         <tr>
-                            <td><input type="text" placeholder="인증 표준"></td>
-                            <td><input type="text" placeholder="인증 기관명"></td>
-                            <td><input type="date" placeholder="만료일"></td>
+                            <td><input type="text" placeholder="인증 표준" data-i18n-placeholder="form.certification.standard.placeholder"></td>
+                            <td><input type="text" placeholder="인증 기관명" data-i18n-placeholder="form.certification.body.placeholder"></td>
+                            <td><input type="date" placeholder="만료일" data-i18n-placeholder="form.certification.expiry.placeholder"></td>
                         </tr>
                         <tr>
-                            <td><input type="text" placeholder="인증 표준"></td>
-                            <td><input type="text" placeholder="인증 기관명"></td>
-                            <td><input type="date" placeholder="만료일"></td>
+                            <td><input type="text" placeholder="인증 표준" data-i18n-placeholder="form.certification.standard.placeholder"></td>
+                            <td><input type="text" placeholder="인증 기관명" data-i18n-placeholder="form.certification.body.placeholder"></td>
+                            <td><input type="date" placeholder="만료일" data-i18n-placeholder="form.certification.expiry.placeholder"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1172,282 +1215,282 @@
             
             <div class="footer">
                 <div class="lrqa-footer-logo">LRQA</div>
-                <div>인증 심사 신청서 |3</div>
+                <div data-i18n="form.footer.page3">인증 심사 신청서 |3</div>
             </div>
         </div>
         
         <!-- Page 4 -->
         <div class="page-break">
             <div class="section">
-                <div class="section-title">직원 현황</div>
+                <div class="section-title" data-i18n="form.employees.status">직원 현황</div>
                 
                             <div class="form-row">
-                <span class="form-label required">총 직원 수</span>
+                <span class="form-label required" data-i18n="form.employees.total">총 직원 수</span>
                 <input type="text" class="form-input short" name="totalEmployees" required>
             </div>
                 
                 <div class="form-row">
-                    <span class="form-label">정규직 직원 수</span>
+                    <span class="form-label" data-i18n="form.employees.permanent">정규직 직원 수</span>
                     <input type="text" class="form-input short" name="permanentEmployees">
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">비정규직 직원 수</span>
+                    <span class="form-label" data-i18n="form.employees.temporary">비정규직 직원 수</span>
                     <input type="text" class="form-input short" name="temporaryEmployees">
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">협력업체 직원 수</span>
+                    <span class="form-label" data-i18n="form.employees.contractor">협력업체 직원 수</span>
                     <input type="text" class="form-input short" name="contractorEmployees">
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">임시직 직원 수</span>
+                    <span class="form-label" data-i18n="form.employees.casual">임시직 직원 수</span>
                     <input type="text" class="form-input short" name="casualEmployees">
-                    <span style="font-size: 11px; margin-left: 20px; margin-right: 10px;">다수 사업장인 경우 사업장별로 직원 수를 표기했습니까?</span>
+                    <span style="font-size: 11px; margin-left: 20px; margin-right: 10px;" data-i18n="form.employees.multiple.sites">다수 사업장인 경우 사업장별로 직원 수를 표기했습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="multiSiteEmployees" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="multiSiteEmployees" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">직원 수 또는 사업장이 계절에 따라 변동된다면 설명하세요.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.employees.seasonal.variation">직원 수 또는 사업장이 계절에 따라 변동된다면 설명하세요.</span>
                     <textarea class="textarea" rows="3" name="seasonalVariation"></textarea>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">경영시스템 범위에 포함된 활동이 사내외주처리 되는 활동이 있습니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.activities.outsourcing">경영시스템 범위에 포함된 활동이 사내외주처리 되는 활동이 있습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="outsourcing" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="outsourcing" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">만약 예라면 사내외주활동의 세부사항 및 인원을 기술하여 주십시오.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.activities.outsourcing.details">만약 예라면 사내외주활동의 세부사항 및 인원을 기술하여 주십시오.</span>
                     <textarea class="textarea" rows="3" name="workDescription"></textarea>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">반복적인 작업을 수행하는 직원 그룹이 있습니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.employees.repetitive.work">반복적인 작업을 수행하는 직원 그룹이 있습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="repeatGroup" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="repeatGroup" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
-                <div style="margin: 15px 0; font-size: 11px;">
+                <div style="margin: 15px 0; font-size: 11px;" data-i18n="form.employees.work.description">
                     그렇다면 아래 개요에 작업의 성격과 작업당 인원을 표시해 주세요.
                 </div>
                 
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>작업의 성격과 설명</th>
-                            <th>총 참여 직원 수</th>
+                            <th data-i18n="form.work.nature">작업의 성격과 설명</th>
+                            <th data-i18n="form.work.total.employees">총 참여 직원 수</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="text" placeholder="작업의 성격과 설명"></td>
-                            <td><input type="text" placeholder="직원 수"></td>
+                            <td><input type="text" placeholder="작업의 성격과 설명" data-i18n-placeholder="form.work.nature.placeholder"></td>
+                            <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                         </tr>
                         <tr>
-                            <td><input type="text" placeholder="작업의 성격과 설명"></td>
-                            <td><input type="text" placeholder="직원 수"></td>
+                            <td><input type="text" placeholder="작업의 성격과 설명" data-i18n-placeholder="form.work.nature.placeholder"></td>
+                            <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                         </tr>
                         <tr>
-                            <td><input type="text" placeholder="작업의 성격과 설명"></td>
-                            <td><input type="text" placeholder="직원 수"></td>
+                            <td><input type="text" placeholder="작업의 성격과 설명" data-i18n-placeholder="form.work.nature.placeholder"></td>
+                            <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                         </tr>
                     </tbody>
                 </table>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">오전 9시부터 오후 6시까지 시간(일 근무 8시간) 외에만 진행되는 승인에 중요한 활동이 있습니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.activities.after.hours">오전 9시부터 오후 6시까지 시간(일 근무 8시간) 외에만 진행되는 승인에 중요한 활동이 있습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="overtimeActivities" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="overtimeActivities" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
             </div>
             
             <div class="footer">
                 <div class="lrqa-footer-logo">LRQA</div>
-                <div>인증 심사 신청서 |4</div>
+                <div data-i18n="form.footer.page4">인증 심사 신청서 |4</div>
             </div>
         </div>
         
         <!-- Page 5 -->
         <div class="page-break">
             <div class="form-row full-width">
-                <span style="font-size: 11px; margin-bottom: 10px;">조직의 교대 근무 방식에 대해 전반적으로 설명하며, 각 교대 근무 방식에 해당하는 근무 시간 또는 인원을 표시하세요. 아래 항목에 적합하지 않은 경우 교대 근무 방식에 대한 별도의 설명을 추가하세요.</span>
+                <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.employees.shift.work">조직의 교대 근무 방식에 대해 전반적으로 설명하며, 각 교대 근무 방식에 해당하는 근무 시간 또는 인원을 표시하세요. 아래 항목에 적합하지 않은 경우 교대 근무 방식에 대한 별도의 설명을 추가하세요.</span>
             </div>
             
             <table class="table">
                 <thead>
                     <tr>
-                        <th>교대 근무 횟수</th>
-                        <th>교대 근무 시간</th>
-                        <th>총 직원 수</th>
+                        <th data-i18n="form.shift.number">교대 근무 횟수</th>
+                        <th data-i18n="form.shift.time">교대 근무 시간</th>
+                        <th data-i18n="form.shift.total.employees">총 직원 수</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>교대조 1</td>
-                        <td><input type="text" placeholder="근무 시간"></td>
-                        <td><input type="text" placeholder="직원 수"></td>
+                        <td data-i18n="form.shift.1">교대조 1</td>
+                        <td><input type="text" placeholder="근무 시간" data-i18n-placeholder="form.shift.time.placeholder"></td>
+                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                     </tr>
                     <tr>
-                        <td>교대조 2</td>
-                        <td><input type="text" placeholder="근무 시간"></td>
-                        <td><input type="text" placeholder="직원 수"></td>
+                        <td data-i18n="form.shift.2">교대조 2</td>
+                        <td><input type="text" placeholder="근무 시간" data-i18n-placeholder="form.shift.time.placeholder"></td>
+                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                     </tr>
                     <tr>
-                        <td>교대조 3</td>
-                        <td><input type="text" placeholder="근무 시간"></td>
-                        <td><input type="text" placeholder="직원 수"></td>
+                        <td data-i18n="form.shift.3">교대조 3</td>
+                        <td><input type="text" placeholder="근무 시간" data-i18n-placeholder="form.shift.time.placeholder"></td>
+                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                     </tr>
                     <tr>
-                        <td>교대조 4</td>
-                        <td><input type="text" placeholder="근무 시간"></td>
-                        <td><input type="text" placeholder="직원 수"></td>
+                        <td data-i18n="form.shift.4">교대조 4</td>
+                        <td><input type="text" placeholder="근무 시간" data-i18n-placeholder="form.shift.time.placeholder"></td>
+                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
                     </tr>
                 </tbody>
             </table>
             
             <div class="form-row">
-                <span style="font-size: 11px; margin-right: 10px;">임시 사업장이 있나요?</span>
+                <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.temporary.sites">임시 사업장이 있나요?</span>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="temporarySite" value="yes">
                         <span class="checkmark"></span>
                     </div>
-                    <span>예</span>
+                    <span data-i18n="form.options.yes">예</span>
                 </div>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="temporarySite" value="no">
                         <span class="checkmark"></span>
                     </div>
-                    <span>아니요</span>
+                    <span data-i18n="form.options.no">아니요</span>
                 </div>
             </div>
             
             <div class="form-row">
-                <span style="font-size: 11px; margin-right: 10px;">고객사 위치에서 서비스를 제공하나요, 제공한다면 어떤 유형의 서비스를 제공합니까?</span>
+                <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.customer.location.services">고객사 위치에서 서비스를 제공하나요, 제공한다면 어떤 유형의 서비스를 제공합니까?</span>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="customerLocationService" value="yes">
                         <span class="checkmark"></span>
                     </div>
-                    <span>예</span>
+                    <span data-i18n="form.options.yes">예</span>
                 </div>
                 <div class="checkbox-group">
                     <div class="checkbox">
                         <input type="radio" name="customerLocationService" value="no">
                         <span class="checkmark"></span>
                     </div>
-                    <span>아니요</span>
+                    <span data-i18n="form.options.no">아니요</span>
                 </div>
             </div>
             
             <div class="section">
-                <div class="section-title">인증 변경</div>
+                <div class="section-title" data-i18n="form.certification.change.title">인증 변경</div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">기존 인증을 LRQA로 전환환하기 위해 견적을 요청하십니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.certification.transfer.request">기존 인증을 LRQA로 전환환하기 위해 견적을 요청하십니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="transferToLrqa" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="transferToLrqa" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">현재 보유한 인증이 인정기관(KAB, UKAS, ANAB 등)에서 인정받은 인증입니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.certification.accredited">현재 보유한 인증이 인정기관(KAB, UKAS, ANAB 등)에서 인정받은 인증입니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="officialAccreditation" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="officialAccreditation" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">현재 인증 기관에서 LRQA로 전환환하려는 이유를 알려주세요.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.certification.transfer.reason">현재 인증 기관에서 LRQA로 전환환하려는 이유를 알려주세요.</span>
                     <textarea class="textarea" rows="3" name="transferReason"></textarea>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">LRQA 마지막 방문 일자</span>
+                    <span class="form-label" data-i18n="form.lrqa.last.visit">LRQA 마지막 방문 일자</span>
                 </div>
                 
                 <div class="form-row">
-                    <span class="form-label">날짜입니다:</span>
+                    <span class="form-label" data-i18n="form.date.label">날짜입니다:</span>
                     <input type="text" class="form-input medium" name="lastLrqaVisit">
                 </div>
                 
                 <div style="margin: 20px 0; font-size: 11px;">
-                    <div style="margin-bottom: 10px;">아래 문서를 첨부하세요.</div>
+                    <div style="margin-bottom: 10px;" data-i18n="form.documents.attach">아래 문서를 첨부하세요.</div>
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                         <div class="checkbox-group">
@@ -1455,37 +1498,37 @@
                                 <input type="checkbox" name="documents" value="current_cert">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>회사의 현재 인증서(모든 사이트 포함)</span>
+                            <span data-i18n="form.documents.certificate">회사의 현재 인증서(모든 사이트 포함)</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="documents" value="nonconformity">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>미해결된 부적합 상태 관련 문서</span>
+                            <span data-i18n="form.documents.nonconformity">미해결된 부적합 상태 관련 문서</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="documents" value="last_visit">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>최근 심사보고서 (최초 심사보고서 또는 최근 갱신 심사보고서) </span>
+                            <span data-i18n="form.documents.audit_report">최근 심사보고서 (최초 심사보고서 또는 최근 갱신 심사보고서) </span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="checkbox" name="documents" value="other">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>기타 다른 관련 문서</span>
+                            <span data-i18n="form.documents.other">기타 다른 관련 문서</span>
                         </div>
                     </div>
                    
                     <div style="margin-top: 10px;">
-                        유효한 인증을 위한 심사 프로그램
+                        <span data-i18n="form.audit.program">유효한 인증을 위한 심사 프로그램</span>
                     </div>
                     
                     <div style="margin-top: 15px;">
-                        LRQA가 현재 인증 기관에 연락하는 것에 동의하십니까?
+                        <span data-i18n="form.certification.contact.consent">LRQA가 현재 인증 기관에 연락하는 것에 동의하십니까?</span>
                     </div>
                     
                     <div class="form-row">
@@ -1494,14 +1537,14 @@
                                 <input type="radio" name="lrqaContactConsent" value="yes">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>예</span>
+                            <span data-i18n="form.options.yes">예</span>
                         </div>
                         <div class="checkbox-group">
                             <div class="checkbox">
                                 <input type="radio" name="lrqaContactConsent" value="no">
                                 <span class="checkmark"></span>
                             </div>
-                            <span>아니요</span>
+                            <span data-i18n="form.options.no">아니요</span>
                         </div>
                     </div>
                 </div>
@@ -1509,151 +1552,151 @@
             
             <div class="footer">
                 <div class="lrqa-footer-logo">LRQA</div>
-                <div>인증 심사 신청서 |5</div>
+                <div data-i18n="form.footer.page5">인증 심사 신청서 |5</div>
             </div>
         </div>
         
         <!-- Page 6 -->
         <div class="page-break">
             <div class="section">
-                <div class="section-title">ISO 14001 인증을 신청한 경우에만 작성</div>
+                <div class="section-title" data-i18n="form.iso14001.title">ISO 14001 인증을 신청한 경우에만 작성</div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">조직이 운영하는 사업 분야(예: 화학 또는 엔지니어링 분야 등)와 사업장 위치(공단 지역, 상업 지역 등)를 간략하게 설명하세요. 또한 조직이 보유하고 있는 환경 관련 법적 허가가 있는지 여부와 종류를 기재하세요.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.iso14001.business.description">조직이 운영하는 사업 분야(예: 화학 또는 엔지니어링 분야 등)와 사업장 위치(공단 지역, 상업 지역 등)를 간략하게 설명하세요. 또한 조직이 보유하고 있는 환경 관련 법적 허가가 있는지 여부와 종류를 기재하세요.</span>
                     <textarea class="textarea" rows="5" name="iso14001Business"></textarea>
                 </div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">주요 프로세스를 나열하고 각 프로세스와 관련된 주요 환경 위험을 간략하게 설명하세요.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.iso14001.processes.risks">주요 프로세스를 나열하고 각 프로세스와 관련된 주요 환경 위험을 간략하게 설명하세요.</span>
                     <textarea class="textarea" rows="5" name="iso14001Risks"></textarea>
                 </div>
             </div>
             
             <div class="section">
-                <div class="section-title">ISO 45001 인증을 신청한 경우에만 작성</div>
+                <div class="section-title" data-i18n="form.iso45001.title">ISO 45001 인증을 신청한 경우에만 작성</div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">조직이 운영하는 사업 분야(예: 화학 또는 엔지니어링 분야 등)와 현장 위치(공단 지역, 상업 지역 등)를 간략하게 설명하세요.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.iso45001.business.description">조직이 운영하는 사업 분야(예: 화학 또는 엔지니어링 분야 등)와 현장 위치(공단 지역, 상업 지역 등)를 간략하게 설명하세요.</span>
                     <textarea class="textarea" rows="4" name="iso45001Business"></textarea>
                 </div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">주요 프로세스를 나열하고 주요 유해 및 위험 요소와 해당 법적 요건/허가 사항을 간략하게 설명하세요.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.iso45001.hazards.requirements">주요 프로세스를 나열하고 주요 유해 및 위험 요소와 해당 법적 요건/허가 사항을 간략하게 설명하세요.</span>
                     <textarea class="textarea" rows="5" name="iso45001Hazards"></textarea>
                 </div>
             </div>
             
             <div class="footer">
                 <div class="lrqa-footer-logo">LRQA</div>
-                <div>인증 심사 신청서 |6</div>
+                <div data-i18n="form.footer.page6">인증 심사 신청서 |6</div>
             </div>
         </div>
         
         <!-- Page 7 -->
         <div class="page-break">
             <div class="section">
-                <div class="section-title">추가 정보</div>
+                <div class="section-title" data-i18n="form.additional.title">추가 정보</div>
                 
                 <div style="margin-bottom: 15px; font-size: 11px;">
-                    아래 정보는 인증에 포함될 활동을 더 잘 정의하고 견적을 올바르게 작성하기 위해 필요합니다.
+                    <span data-i18n="form.additional.info.description">아래 정보는 인증에 포함될 활동을 더 잘 정의하고 견적을 올바르게 작성하기 위해 필요합니다.</span>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">원격 심사가 가능하다면 원격 심사를 받으시겠습니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.remote.audit">원격 심사가 가능하다면 원격 심사를 받으시겠습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="remoteAudit" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="remoteAudit" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">예비 심사에 대한 견적을 받으시겠습니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.preliminary.audit">예비 심사에 대한 견적을 받으시겠습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="preAuditQuote" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="preAuditQuote" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">신청한 인증과 관련된 교육 과정에 대한 정보를 받으시겠습니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.training.information">신청한 인증과 관련된 교육 과정에 대한 정보를 받으시겠습니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="trainingInfo" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="trainingInfo" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="form-row full-width">
-                    <span style="font-size: 11px; margin-bottom: 10px;">추가 참고해야 할 정보를 입력해 주세요.</span>
+                    <span style="font-size: 11px; margin-bottom: 10px;" data-i18n="form.additional.reference.info">추가 참고해야 할 정보를 입력해 주세요.</span>
                     <textarea class="textarea" rows="4" name="additionalInfo"></textarea>
                 </div>
             </div>
             
             <div class="section">
-                <div class="section-title">데이터 수집 및 보존</div>
+                <div class="section-title" data-i18n="form.data.title">데이터 수집 및 보존</div>
                 
                 <div style="font-size: 11px; line-height: 1.4; margin-bottom: 15px;">
-                    적용 가능한 규정에 따라, 데이터 수집의 목적은 필요한 견적을 작성하기 위한 것입니다. 신청자는 자신의 책임 하에 데이터를 제공하지 않을 권리가 있지만, 이는 제안 내용의 정확성에 영향을 미칠 수 있음을 알려드립니다.
+                    <span data-i18n="form.data.collection.purpose">적용 가능한 규정에 따라, 데이터 수집의 목적은 필요한 견적을 작성하기 위한 것입니다. 신청자는 자신의 책임 하에 데이터를 제공하지 않을 권리가 있지만, 이는 제안 내용의 정확성에 영향을 미칠 수 있음을 알려드립니다.</span>
                 </div>
                 
                 <div style="font-size: 11px; line-height: 1.4; margin-bottom: 15px;">
-                    작성된 데이터는 전자 아카이브에 저장되고, 가장 엄격한 기밀로 취급되며, 법률에 의해 요구되거나 인증과 관련된 활동을 수행하기 위한 목적으로만 LRQA가 자체적으로 업무를 위임한 제3자와의 거래에 대해서만 보고됩니다. 신청자는 요청된 정보를 제공함으로써 위와 같은 데이터 처리 및 편집을 LRQA에 허용하는 것으로 간주됩니다.
+                    <span data-i18n="form.data.processing">작성된 데이터는 전자 아카이브에 저장되고, 가장 엄격한 기밀로 취급되며, 법률에 의해 요구되거나 인증과 관련된 활동을 수행하기 위한 목적으로만 LRQA가 자체적으로 업무를 위임한 제3자와의 거래에 대해서만 보고됩니다. 신청자는 요청된 정보를 제공함으로써 위와 같은 데이터 처리 및 편집을 LRQA에 허용하는 것으로 간주됩니다.</span>
                 </div>
                 
                 <div class="form-row">
-                    <span style="font-size: 11px; margin-right: 10px;">LRQA의 데이터 프로세스에 대해 동의하십니까?</span>
+                    <span style="font-size: 11px; margin-right: 10px;" data-i18n="form.data.consent">LRQA의 데이터 프로세스에 대해 동의하십니까?</span>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="dataProcessConsent" value="yes">
                             <span class="checkmark"></span>
                         </div>
-                        <span>예</span>
+                        <span data-i18n="form.options.yes">예</span>
                     </div>
                     <div class="checkbox-group">
                         <div class="checkbox">
                             <input type="radio" name="dataProcessConsent" value="no">
                             <span class="checkmark"></span>
                         </div>
-                        <span>아니요</span>
+                        <span data-i18n="form.options.no">아니요</span>
                     </div>
                 </div>
                 
                 <div class="signature-section">
                     <div>
-                        <div style="font-size: 11px; margin-bottom: 5px;">서명 <span style="color: #e74c3c; font-weight: bold;">*</span></div>
-                        <input type="text" class="form-input" name="signature" placeholder="서명을 입력하세요" style="border: 1px solid #333; padding: 8px; width: 200px;" required>
+                        <div style="font-size: 11px; margin-bottom: 5px;" data-i18n="form.signature">서명 <span style="color: #e74c3c; font-weight: bold;">*</span></div>
+                        <input type="text" class="form-input" name="signature" placeholder="서명을 입력하세요" data-i18n-placeholder="form.signature.placeholder" style="border: 1px solid #333; padding: 8px; width: 200px;" required>
                     </div>
                     <div>
-                        <div style="font-size: 11px; margin-bottom: 5px;">날짜: <span style="color: #e74c3c; font-weight: bold;">*</span></div>
+                        <div style="font-size: 11px; margin-bottom: 5px;" data-i18n="form.date">날짜: <span style="color: #e74c3c; font-weight: bold;">*</span></div>
                         <div class="date-input">
                             <input type="date" class="form-input" name="signatureDate" style="border: 1px solid #333; padding: 8px; width: 200px;" value="" required>
                         </div>
@@ -1661,7 +1704,7 @@
                 </div>
                 
                 <div style="font-size: 11px; line-height: 1.4; margin: 20px 0;">
-                    본인은 LRQA가 상업적 목적, 서비스 홍보 및 시장 조사를 위해 직접 또는 담당 회사를 통해 데이터를 사용할 수 있도록 동의의합니다.
+                    <span data-i18n="form.data.marketing.consent">본인은 LRQA가 상업적 목적, 서비스 홍보 및 시장 조사를 위해 직접 또는 담당 회사를 통해 데이터를 사용할 수 있도록 동의의합니다.</span>
                 </div>
             </div>
 
@@ -1669,7 +1712,7 @@
             <!-- 제출 버튼 섹션 -->
             <div style="text-align: center; margin: 40px 0; padding: 20px;">
                 <div style="display: flex; gap: 15px; justify-content: center; align-items: center; flex-wrap: wrap;">
-                    <button type="button" class="submit-btn" onclick="submitForm()" 
+                    <button type="button" class="submit-btn" onclick="submitForm()" data-i18n="form.submit.title" 
                             style="background: linear-gradient(135deg, #00d4aa 0%, #00b894 100%); 
                                    color: white; 
                                    border: none; 
@@ -1683,23 +1726,8 @@
                         신청서 제출
                     </button>
                     
-                    <button type="button" class="gap-analysis-btn" id="gapAnalysisBtn" 
-                            style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); 
-                                   color: white; 
-                                   border: none; 
-                                   padding: 15px 40px; 
-                                   font-size: 16px; 
-                                   font-weight: bold; 
-                                   border-radius: 8px; 
-                                   cursor: pointer; 
-                                   box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
-                                   transition: all 0.3s ease;
-                                   position: relative;">
-                        <span style="margin-right: 8px;">🔍</span>
-                        ISO 갭분석 + 제출
-                    </button>
                     
-                    <button type="button" class="print-btn" onclick="printForm()" 
+                    <button type="button" class="print-btn" onclick="printForm()" data-i18n="form.print.title" 
                             style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%); 
                                    color: white; 
                                    border: none; 
@@ -1712,27 +1740,74 @@
                                    transition: all 0.3s ease;">
                         인쇄하기
                     </button>
+                    
                 </div>
                 <div style="margin-top: 15px; font-size: 12px; color: #666;">
-                    제출 전 모든 필수 항목을 확인해 주세요.<br>
-                    <strong style="color: #e74c3c;">🔍 갭분석:</strong> 선택한 ISO 표준에 대한 맞춤형 갭분석 보고서가 함께 제공됩니다.
+                    <span data-i18n="form.submit.check">제출 전 모든 필수 항목을 확인해 주세요.</span>
                 </div>
+                
+                <!-- 갭분석 링크를 더 눈에 띄게 -->
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="#" onclick="showGapAnalysisInfo()" 
+                       style="display: inline-flex; align-items: center; padding: 12px 24px; 
+                              background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+                              color: #333; text-decoration: none; border-radius: 25px; 
+                              font-size: 14px; font-weight: 600; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+                              transition: all 0.3s ease; border: 2px solid #ffd700; cursor: pointer;">
+                        <span style="margin-right: 8px; font-size: 16px;">💡</span>
+                        <span data-i18n="form.gap.analysis.info.suggestion">갭분석 약식보고서도 필요하신가요?</span>
+                        <span style="margin-left: 8px; font-weight: bold; text-decoration: underline;" data-i18n="form.gap.analysis.info.click">여기 클릭</span>
+                    </a>
+                </div>
+                
+                <!-- 추가 서비스 버튼들 -->
+                <div style="margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <!-- LRQA 최신뉴스 보기 버튼 -->
+                    <a href="https://www.lrqa.com/ko-kr/latest-news/" target="_blank" 
+                       style="display: inline-flex; align-items: center; padding: 10px 20px; 
+                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                              color: white; text-decoration: none; border-radius: 25px; 
+                              font-size: 13px; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                              transition: all 0.3s ease; border: none; cursor: pointer;">
+                        <span style="margin-right: 8px;">📰</span>
+                        <span data-i18n="form.news.latest">LRQA 최신뉴스 보기</span>
+                    </a>
+                    
+                    <!-- 키워드 뉴스레터 신청하기 버튼 -->
+                    <a href="https://script.google.com/macros/s/AKfycby3nyuGeBzA5U_dzTE9zS7wfFgfGVFV73wLOWYdC8BtqeNNsdICawoWgfbs4ULEnO7MWg/exec" target="_blank"
+                       style="display: inline-flex; align-items: center; padding: 10px 20px; 
+                              background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                              color: white; text-decoration: none; border-radius: 25px; 
+                              font-size: 13px; font-weight: 600; box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+                              transition: all 0.3s ease; border: none; cursor: pointer;">
+                        <span style="margin-right: 8px;">📧</span>
+                        <span data-i18n="form.newsletter.subscribe">키워드 뉴스레터 신청하기</span>
+                    </a>
+                </div>
+                
+                <!-- 호버 효과를 위한 CSS -->
+                <style>
+                    .news-button:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                    }
+                </style>
             </div>
         </div>
         
         <!-- 문의하기 섹션 추가 -->
         <div class="contact-section">
             <div class="contact-left">
-                <div class="contact-title">문의하기</div>
+                <div class="contact-title" data-i18n="form.contact.us">문의하기</div>
                 
                 <div class="contact-form">
-                    <input type="text" class="contact-input" value="로이드인증원(LRQA Korea) 사업개발본부" readonly>
+                    <input type="text" class="contact-input" value="로이드인증원(LRQA Korea) 사업개발본부" data-i18n-value="form.contact.details.lrqa" readonly>
                     <input type="text" class="contact-input" value="T. +82 2 736 6231" readonly>
                     <input type="text" class="contact-input" value="E. zzzkorea-sales@lrqa.com" readonly>
                 </div>
                 
                 <div class="contact-footer">
-                    모든 정보는 정확하고 최신의 상태를 유지하기 위해 최선을 다했으나, 일부 내용의 부정확성이나 변경 사항에 대해 LRQA는 책임을 지지 않습니다. LRQA에 대한 자세한 내용은 <a href="https://www.lrqa.com/ko-kr/" target="_blank" style="color: #10b981;">여기</a>를 참조하세요. © LRQA Group Limited 2023
+                    <span data-i18n-html="form.disclaimer.html"></span>
                 </div>
             </div>
             
@@ -1746,7 +1821,7 @@
         
         <div class="footer">
             <div class="lrqa-footer-logo">LRQA</div>
-            <div>인증 심사 신청서 |8</div>
+            <div data-i18n="form.footer.page8">인증 심사 신청서 |8</div>
         </div>
     </div>
     
@@ -1756,10 +1831,11 @@
             <div class="message-icon" id="messageIcon">✓</div>
             <div class="message-title" id="messageTitle">성공!</div>
             <div class="message-content" id="messageContent">메시지 내용이 여기에 표시됩니다.</div>
-            <button class="message-btn" onclick="closeMessage()">확인</button>
+            <button class="message-btn" onclick="closeMessage()" data-i18n="form.confirm">확인</button>
         </div>
     </div>
     
+    <script src="simple-i18n.js"></script>
     <script>
         // 체크박스 기능
         document.addEventListener('DOMContentLoaded', function() {
@@ -2018,7 +2094,22 @@
                 dataProcessConsent: formData.dataProcessConsent || '',
                 signature: formData.signature || '', // 서명 필드
                 signatureDate: formData.signatureDate || '', // 날짜 필드
-                marketingConsent: 'yes' // 마케팅 동의는 기본값으로 설정
+                marketingConsent: 'yes', // 마케팅 동의는 기본값으로 설정
+                
+                // 갭분석을 위한 추가 필드들
+                qualityDocuments: formData.qualityDocuments || [],
+                customerSatisfaction: formData.customerSatisfaction || false,
+                internalAudit: formData.internalAudit || false,
+                managementReview: formData.managementReview || false,
+                environmentalImpactAssessment: formData.environmentalImpactAssessment || false,
+                environmentalCompliance: formData.environmentalCompliance || false,
+                environmentalObjectives: formData.environmentalObjectives || false,
+                emergencyResponse: formData.emergencyResponse || false,
+                riskAssessment: formData.riskAssessment || false,
+                ohsPolicy: formData.ohsPolicy || false,
+                ohsObjectives: formData.ohsObjectives || false,
+                incidentInvestigation: formData.incidentInvestigation || false,
+                ohsTraining: formData.ohsTraining || false
             };
             
             return mappedData;
@@ -2242,14 +2333,14 @@
                     const result = await response.json();
                     showMessage('success', '제출 완료!', '신청서가 성공적으로 제출되었습니다.\n\n빠른 시일 내에 담당자가 연락드리겠습니다.');
                     
-                    // 폼 데이터 초기화
-                    localStorage.removeItem('iso_application_form');
-                    document.querySelectorAll('.form-input, .textarea').forEach(input => {
-                        input.value = '';
-                    });
-                    document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
-                        input.checked = false;
-                    });
+                    // 폼 데이터 초기화 제거 - 사용자가 제출 후에도 데이터를 유지할 수 있도록 함
+                    // localStorage.removeItem('iso_application_form');
+                    // document.querySelectorAll('.form-input, .textarea').forEach(input => {
+                    //     input.value = '';
+                    // });
+                    // document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+                    //     input.checked = false;
+                    // });
                 } else {
                     throw new Error('서버 오류가 발생했습니다.');
                 }
@@ -2428,7 +2519,13 @@
             
             // 페이지 이탈 경고 설정
             window.addEventListener('beforeunload', function(e) {
-                if (hasUnsavedChanges && hasUnsavedChanges()) {
+                const formData = collectFormData();
+                const hasData = Object.values(formData).some(value => 
+                    (typeof value === 'string' && value.trim()) || 
+                    (Array.isArray(value) && value.length > 0)
+                );
+                
+                if (hasData) {
                     e.preventDefault();
                     e.returnValue = '';
                 }
@@ -2448,19 +2545,19 @@
             const website = document.querySelector('input[name="website"]').value.trim();
             
             if (!companyName) {
-                showMessage('갭분석을 위해 회사명을 입력해주세요.', 'error');
+                alert('갭분석을 위해 회사명을 입력해주세요.');
                 return;
             }
             
             if (!website) {
-                showMessage('갭분석을 위해 회사 웹사이트를 입력해주세요.', 'error');
+                alert('갭분석을 위해 회사 웹사이트를 입력해주세요.');
                 return;
             }
             
             // ISO 표준 선택 확인
             const isoStandards = document.querySelectorAll('input[name="isoStandards"]:checked');
             if (isoStandards.length === 0) {
-                showMessage('갭분석을 위해 ISO 표준을 선택해주세요.', 'error');
+                alert('갭분석을 위해 ISO 표준을 선택해주세요.');
                 return;
             }
             
@@ -2489,8 +2586,11 @@
                 steps.forEach(step => {
                     step.classList.remove('active', 'completed');
                     step.style.borderLeftColor = '#ecf0f1';
-                    const lastSpan = step.querySelector('span:last-child');
-                    if (lastSpan) lastSpan.style.color = '#7f8c8d';
+                    const textSpan = step.querySelector('.step-text span');
+                    if (textSpan) {
+                        textSpan.style.color = '#7f8c8d';
+                        textSpan.style.fontWeight = 'normal';
+                    }
                 });
                 
                 // 첫 번째 스텝 활성화
@@ -2547,12 +2647,12 @@
                 // 성공 메시지
                 hideGapAnalysisModal();
                 showMessage('success', '갭분석 완료!', 
-                    '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\\n\\n보고서는 이메일로 발송되었으니 확인해 주세요.');
+                    '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\n\n보고서는 이메일로 발송되었으니 확인해 주세요.');
                 
             } catch (error) {
                 console.error('갭분석 오류:', error);
                 hideGapAnalysisModal();
-                showMessage('error', '갭분석 실패', '갭분석 처리 중 오류가 발생했습니다.\\n\\n잠시 후 다시 시도해 주세요.');
+                showMessage('error', '갭분석 실패', '갭분석 처리 중 오류가 발생했습니다.\n\n잠시 후 다시 시도해 주세요.');
             } finally {
                 isGapAnalysisInProgress = false;
             }
@@ -2564,8 +2664,11 @@
                 const stepElement = document.getElementById(stepId);
                 if (stepElement && active) {
                     stepElement.style.borderLeftColor = '#00d4aa';
-                    stepElement.querySelector('span:last-child').style.color = '#2c3e50';
-                    stepElement.querySelector('span:last-child').style.fontWeight = '500';
+                    const textSpan = stepElement.querySelector('.step-text span');
+                    if (textSpan) {
+                        textSpan.style.color = '#2c3e50';
+                        textSpan.style.fontWeight = '500';
+                    }
                 }
                 setTimeout(resolve, 100);
             });
@@ -2582,6 +2685,570 @@
             
             if (progressText) {
                 progressText.textContent = `${Math.round(percentage)}% 완료`;
+            }
+        }
+        
+        // 갭분석 엔진 클래스 (submitFormWithGapAnalysis 함수 앞으로 이동)
+        class GapAnalysisEngine {
+            constructor() {
+                this.steps = [
+                    { id: 'step1', text: '신청서 데이터 처리중...', duration: 2000 },
+                    { id: 'step2', text: '기업 정보 수집중...', duration: 3000 },
+                    { id: 'step3', text: 'AI 리스크 분석중...', duration: 4000 },
+                    { id: 'step4', text: '갭분석 보고서 생성중...', duration: 2000 },
+                    { id: 'step5', text: '이메일 발송중...', duration: 1500 }
+                ];
+            }
+            
+            async simulateProgress(callback) {
+                for (let i = 0; i < this.steps.length; i++) {
+                    const step = this.steps[i];
+                    const progress = ((i + 1) / this.steps.length) * 100;
+                    
+                    if (callback) {
+                        callback({
+                            stepIndex: i,
+                            progress: progress,
+                            step: step
+                        });
+                    }
+                    
+                    await new Promise(resolve => setTimeout(resolve, step.duration));
+                }
+            }
+            
+            // 갭분석 보고서 생성 (API 호출 방식)
+            async generateGapAnalysis(formData, selectedStandards, progressCallback) {
+                try {
+                    console.log('🚀 고급 갭분석 API 호출 시작...');
+                    
+                    // 진행 상황 업데이트
+                    if (progressCallback) {
+                        progressCallback({ progress: 20, text: '신청서 데이터 처리중...' });
+                    }
+                    
+                    // Netlify Functions API 호출 (웹 배포용)
+                    const response = await fetch('/api/submit-application-with-gap-analysis', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            formData: formData,
+                            selectedStandards: selectedStandards,
+                            gapAnalysisOnly: true  // 갭분석만 수행하도록 플래그 추가
+                        })
+                    });
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 40, text: '기업 정보 수집중...' });
+                    }
+                    
+                    if (!response.ok) {
+                        throw new Error(`API 호출 실패: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 60, text: 'AI 리스크 분석중...' });
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (!result.success) {
+                        throw new Error(result.message || '갭분석 생성 실패');
+                    }
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 80, text: '갭분석 보고서 생성중...' });
+                    }
+                    
+                    console.log('✅ 고급 갭분석 완료:', result.gapAnalysisResult);
+                    
+                    // 갭분석 결과에서 보고서 데이터 생성
+                    const gapResult = result.gapAnalysisResult;
+                    const reportData = {
+                        companyName: formData.companyName || formData.companyNameKo || 'Unknown Company',
+                        standards: selectedStandards,
+                        selectedStandards: selectedStandards,
+                        analysisDate: new Date().toISOString(),
+                        reportId: 'GAP-' + Date.now(),
+                        gapAnalysis: gapResult,
+                        score: gapResult.score,
+                        keyRisks: gapResult.keyRisks,
+                        recommendations: gapResult.recommendations,
+                        formData: formData
+                    };
+                    
+                    // 보고서를 로컬 스토리지에 저장
+                    localStorage.setItem('gapAnalysisReport', JSON.stringify(reportData));
+                    
+                    // 보고서 다운로드 링크 생성
+                    this.generateReportDownload(reportData);
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 100, text: '갭분석 완료!' });
+                    }
+                    
+                    return reportData;
+                } catch (error) {
+                    console.error('갭분석 보고서 생성 오류:', error);
+                    
+                    // API 실패 시 기존 방식으로 폴백
+                    console.log('🔄 기존 방식으로 폴백...');
+                    return await this.generateGapAnalysisFallback(formData, selectedStandards, progressCallback);
+                }
+            }
+            
+            // 폴백 갭분석 (기존 방식)
+            async generateGapAnalysisFallback(formData, selectedStandards, progressCallback) {
+                try {
+                    // 갭분석 보고서 생성 시뮬레이션
+                    if (progressCallback) {
+                        progressCallback({ progress: 20, text: '신청서 데이터 처리중...' });
+                    }
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 40, text: '기업 정보 수집중...' });
+                    }
+                    
+                    // 실제 갭분석 수행
+                    const findings = this.generateFindings(selectedStandards, formData);
+                    const recommendations = this.generateRecommendations(selectedStandards, formData, findings);
+                    const riskLevel = this.calculateRiskLevel(formData, selectedStandards, findings);
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 60, text: 'AI 리스크 분석중...' });
+                    }
+                    
+                    // 보고서 데이터 생성
+                    const reportData = {
+                        companyName: formData.companyNameKo || formData.companyNameEn || 'Unknown Company',
+                        standards: selectedStandards,
+                        selectedStandards: selectedStandards,
+                        analysisDate: new Date().toISOString(),
+                        reportId: 'GAP-' + Date.now(),
+                        findings: findings,
+                        recommendations: recommendations,
+                        riskLevel: riskLevel,
+                        formData: formData
+                    };
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 80, text: '갭분석 보고서 생성중...' });
+                    }
+                    
+                    // 보고서를 로컬 스토리지에 저장
+                    localStorage.setItem('gapAnalysisReport', JSON.stringify(reportData));
+                    
+                    // 보고서 다운로드 링크 생성
+                    this.generateReportDownload(reportData);
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 100, text: '갭분석 완료!' });
+                    }
+                    
+                    return reportData;
+                } catch (error) {
+                    console.error('폴백 갭분석 보고서 생성 오류:', error);
+                    throw error;
+                }
+            }
+            
+            // 갭분석 결과 생성 (실제 로직)
+            generateFindings(standards, formData) {
+                const findings = [];
+                
+                standards.forEach(standard => {
+                    switch(standard) {
+                        case 'iso9001':
+                            findings.push(...this.analyzeISO9001(formData));
+                            break;
+                        case 'iso14001':
+                            findings.push(...this.analyzeISO14001(formData));
+                            break;
+                        case 'iso45001':
+                            findings.push(...this.analyzeISO45001(formData));
+                            break;
+                    }
+                });
+                
+                return findings;
+            }
+            
+            // ISO 9001 분석
+            analyzeISO9001(formData) {
+                const findings = [];
+                
+                // 문서화 체계 분석
+                if (!formData.qualityDocuments || formData.qualityDocuments.length === 0) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '문서화 체계',
+                        finding: '품질경영시스템 문서 부족',
+                        title: '품질경영시스템 문서 부족',
+                        severity: 'High',
+                        description: '품질경영시스템에 필요한 핵심 문서들이 부족합니다. 품질매뉴얼, 절차서, 작업지침서 등이 필요합니다.'
+                    });
+                }
+                
+                // 고객 만족도 관리
+                if (!formData.customerSatisfaction) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '고객 만족도',
+                        finding: '고객 만족도 측정 체계 부재',
+                        title: '고객 만족도 측정 체계 부재',
+                        severity: 'Medium',
+                        description: '고객 만족도를 측정하고 개선하는 체계적인 방법이 필요합니다.'
+                    });
+                }
+                
+                // 내부심사 체계
+                if (!formData.internalAudit) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '내부심사',
+                        finding: '내부심사 체계 미구축',
+                        title: '내부심사 체계 미구축',
+                        severity: 'High',
+                        description: '품질경영시스템의 효과성을 검증하기 위한 내부심사 체계가 필요합니다.'
+                    });
+                }
+                
+                // 경영검토
+                if (!formData.managementReview) {
+                    findings.push({
+                        standard: 'ISO 9001:2015',
+                        category: '경영검토',
+                        finding: '경영검토 절차 부재',
+                        title: '경영검토 절차 부재',
+                        severity: 'High',
+                        description: '최고경영자가 품질경영시스템을 검토하는 정기적인 절차가 필요합니다.'
+                    });
+                }
+                
+                return findings;
+            }
+            
+            // ISO 14001 분석
+            analyzeISO14001(formData) {
+                const findings = [];
+                
+                // 환경영향평가
+                if (!formData.environmentalImpactAssessment) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '환경영향평가',
+                        finding: '환경영향평가 미실시',
+                        title: '환경영향평가 미실시',
+                        severity: 'High',
+                        description: '조직의 활동, 제품, 서비스가 환경에 미치는 영향을 체계적으로 평가하는 절차가 필요합니다.'
+                    });
+                }
+                
+                // 환경법규 준수
+                if (!formData.environmentalCompliance) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '법규 준수',
+                        finding: '환경법규 준수 체계 부재',
+                        title: '환경법규 준수 체계 부재',
+                        severity: 'High',
+                        description: '적용 가능한 환경법규를 식별하고 준수하는 체계가 필요합니다.'
+                    });
+                }
+                
+                // 환경목표 및 계획
+                if (!formData.environmentalObjectives) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '환경목표',
+                        finding: '환경목표 및 계획 부재',
+                        title: '환경목표 및 계획 부재',
+                        severity: 'Medium',
+                        description: '환경성과 개선을 위한 구체적인 목표와 실행계획이 필요합니다.'
+                    });
+                }
+                
+                // 비상사태 대응
+                if (!formData.emergencyResponse) {
+                    findings.push({
+                        standard: 'ISO 14001:2015',
+                        category: '비상사태 대응',
+                        finding: '환경 비상사태 대응체계 부재',
+                        title: '환경 비상사태 대응체계 부재',
+                        severity: 'High',
+                        description: '환경사고 발생 시 신속하고 효과적으로 대응할 수 있는 체계가 필요합니다.'
+                    });
+                }
+                
+                return findings;
+            }
+            
+            // ISO 45001 분석
+            analyzeISO45001(formData) {
+                const findings = [];
+                
+                // 위험성평가
+                if (!formData.riskAssessment) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '위험성평가',
+                        finding: '작업장 위험성평가 미실시',
+                        title: '작업장 위험성평가 미실시',
+                        severity: 'High',
+                        description: '작업장의 위험요인을 식별하고 평가하는 체계적인 절차가 필요합니다.'
+                    });
+                }
+                
+                // 안전보건정책
+                if (!formData.ohsPolicy) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '안전보건정책',
+                        finding: '안전보건정책 부재',
+                        title: '안전보건정책 부재',
+                        severity: 'High',
+                        description: '최고경영자가 승인한 안전보건정책이 필요합니다.'
+                    });
+                }
+                
+                // 안전보건목표
+                if (!formData.ohsObjectives) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '안전보건목표',
+                        finding: '안전보건목표 부재',
+                        title: '안전보건목표 부재',
+                        severity: 'Medium',
+                        description: '안전보건성과 개선을 위한 구체적인 목표가 필요합니다.'
+                    });
+                }
+                
+                // 사고조사 및 부적합 관리
+                if (!formData.incidentInvestigation) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '사고관리',
+                        finding: '사고조사 체계 부재',
+                        title: '사고조사 체계 부재',
+                        severity: 'High',
+                        description: '사고 및 부적합 발생 시 원인을 분석하고 재발방지 대책을 수립하는 체계가 필요합니다.'
+                    });
+                }
+                
+                // 안전보건교육
+                if (!formData.ohsTraining) {
+                    findings.push({
+                        standard: 'ISO 45001:2018',
+                        category: '안전보건교육',
+                        finding: '안전보건교육 체계 부재',
+                        title: '안전보건교육 체계 부재',
+                        severity: 'Medium',
+                        description: '직원들의 안전보건 의식 향상을 위한 체계적인 교육 프로그램이 필요합니다.'
+                    });
+                }
+                
+                return findings;
+            }
+            
+            // 권장사항 생성 (실제 로직)
+            generateRecommendations(standards, formData, findings) {
+                const recommendations = [];
+                
+                // 발견사항 기반 권장사항 생성
+                findings.forEach(finding => {
+                    const recommendation = this.generateRecommendationForFinding(finding, formData);
+                    if (recommendation) {
+                        recommendations.push(recommendation);
+                    }
+                });
+                
+                // 추가적인 일반 권장사항
+                recommendations.push(...this.generateGeneralRecommendations(standards, formData));
+                
+                return recommendations;
+            }
+            
+            // 발견사항별 권장사항 생성
+            generateRecommendationForFinding(finding, formData) {
+                const baseRecommendation = {
+                    standard: finding.standard,
+                    priority: finding.severity,
+                    finding: finding.finding,
+                    title: finding.finding,
+                    timeline: this.calculateTimeline(finding.severity),
+                    description: this.getDetailedRecommendation(finding)
+                };
+                
+                return baseRecommendation;
+            }
+            
+            // 심각도별 소요시간 계산
+            calculateTimeline(severity) {
+                switch(severity) {
+                    case 'High': return '1-2개월';
+                    case 'Medium': return '2-3개월';
+                    case 'Low': return '3-6개월';
+                    default: return '2-3개월';
+                }
+            }
+            
+            // 상세 권장사항 생성
+            getDetailedRecommendation(finding) {
+                const recommendations = {
+                    '품질경영시스템 문서 부족': '품질매뉴얼, 절차서, 작업지침서를 체계적으로 작성하고 문서관리 절차를 수립하세요. 문서 버전 관리와 승인 체계를 구축하는 것이 중요합니다.',
+                    '고객 만족도 측정 체계 부재': '고객 설문조사, 인터뷰, 불만처리 시스템을 통해 고객 만족도를 정기적으로 측정하고 개선사항을 도출하세요.',
+                    '내부심사 체계 미구축': '내부심사원 양성, 심사 계획 수립, 심사 실시 및 결과 보고 체계를 구축하세요. 연 1회 이상 정기심사를 실시하는 것이 권장됩니다.',
+                    '경영검토 절차 부재': '최고경영자가 참여하는 정기적인 경영검토 회의를 개최하고, 품질경영시스템의 적합성, 적절성, 효과성을 검토하세요.',
+                    '환경영향평가 미실시': '조직의 모든 활동, 제품, 서비스를 대상으로 환경영향을 식별하고 평가하는 절차를 수립하세요. 정기적인 재평가가 필요합니다.',
+                    '환경법규 준수 체계 부재': '적용 가능한 환경법규를 식별하고 준수 여부를 정기적으로 점검하는 체계를 구축하세요. 법규 변경사항을 모니터링하는 절차도 필요합니다.',
+                    '환경목표 및 계획 부재': '환경정책에 부합하는 구체적이고 측정 가능한 환경목표를 설정하고, 달성을 위한 실행계획을 수립하세요.',
+                    '환경 비상사태 대응체계 부재': '환경사고 발생 시 신속한 대응을 위한 비상대응계획을 수립하고, 정기적인 훈련을 실시하세요.',
+                    '작업장 위험성평가 미실시': '모든 작업장과 작업을 대상으로 위험요인을 식별하고 평가하는 체계를 구축하세요. 위험도에 따른 우선순위 관리가 중요합니다.',
+                    '안전보건정책 부재': '최고경영자가 승인한 안전보건정책을 수립하고 모든 직원에게 공표하세요. 정책은 정기적으로 검토하고 개선해야 합니다.',
+                    '안전보건목표 부재': '안전보건정책에 부합하는 구체적인 목표를 설정하고, 달성을 위한 실행계획과 성과측정 방법을 수립하세요.',
+                    '사고조사 체계 부재': '사고 및 부적합 발생 시 원인분석, 재발방지 대책 수립, 효과성 검증을 위한 체계적인 절차를 구축하세요.',
+                    '안전보건교육 체계 부재': '직원별 역할과 책임에 맞는 안전보건교육 프로그램을 개발하고, 정기적인 교육을 실시하세요.'
+                };
+                
+                return recommendations[finding.finding] || '해당 항목에 대한 구체적인 개선 방안을 수립하고 단계적으로 실행하세요.';
+            }
+            
+            // 일반 권장사항 생성
+            generateGeneralRecommendations(standards, formData) {
+                const recommendations = [];
+                
+                // 통합경영시스템 권장사항
+                if (standards.length > 1) {
+                    recommendations.push({
+                        standard: '통합경영시스템',
+                        priority: 'High',
+                        finding: '통합경영시스템 구축',
+                        title: '통합경영시스템 구축',
+                        timeline: '6-12개월',
+                        description: '여러 표준을 통합하여 효율적인 경영시스템을 구축하세요. 중복된 절차를 통합하고 일관된 관리체계를 수립하는 것이 중요합니다.'
+                    });
+                }
+                
+                // 직원 교육 권장사항
+                const employeeCount = parseInt(formData.totalEmployees) || 0;
+                if (employeeCount > 50) {
+                    recommendations.push({
+                        standard: '교육 및 역량',
+                        priority: 'Medium',
+                        finding: '체계적인 교육 프로그램',
+                        title: '체계적인 교육 프로그램',
+                        timeline: '3-6개월',
+                        description: '직원 규모에 맞는 체계적인 교육 프로그램을 수립하고, 경영시스템에 대한 이해도를 높이세요.'
+                    });
+                }
+                
+                // 지속적 개선 권장사항
+                recommendations.push({
+                    standard: '지속적 개선',
+                    priority: 'Medium',
+                    finding: '지속적 개선 체계',
+                    title: '지속적 개선 체계',
+                    timeline: '지속적',
+                    description: 'PDCA 사이클을 통한 지속적 개선 문화를 정착시키고, 정기적인 성과 측정 및 개선 활동을 수행하세요.'
+                });
+                
+                return recommendations;
+            }
+            
+            // 위험도 계산 (실제 로직)
+            calculateRiskLevel(formData, standards, findings) {
+                let riskScore = 0;
+                
+                // 회사 규모에 따른 기본 점수
+                const employeeCount = parseInt(formData.totalEmployees) || 0;
+                if (employeeCount < 10) riskScore += 3;
+                else if (employeeCount < 50) riskScore += 2;
+                else if (employeeCount < 200) riskScore += 1;
+                else if (employeeCount < 1000) riskScore += 0;
+                else riskScore += 1; // 대기업의 경우 복잡성 증가
+                
+                // 선택된 표준 수에 따른 점수
+                riskScore += standards.length;
+                
+                // 기존 인증 보유 여부
+                if (!formData.existingCertifications || formData.existingCertifications.length === 0) {
+                    riskScore += 2;
+                } else {
+                    riskScore -= 1; // 기존 인증 보유 시 위험도 감소
+                }
+                
+                // 발견사항의 심각도에 따른 점수
+                findings.forEach(finding => {
+                    switch(finding.severity) {
+                        case 'High': riskScore += 3; break;
+                        case 'Medium': riskScore += 2; break;
+                        case 'Low': riskScore += 1; break;
+                    }
+                });
+                
+                // 컨설턴트 사용 여부
+                if (formData.consultantName && formData.consultantName.trim() !== '') {
+                    riskScore -= 1; // 컨설턴트 사용 시 위험도 감소
+                }
+                
+                // 법적 의무 문제 여부
+                if (formData.legalIssues === 'yes') {
+                    riskScore += 2;
+                }
+                
+                // 위험도 결정
+                if (riskScore <= 3) return 'Low';
+                else if (riskScore <= 7) return 'Medium';
+                else return 'High';
+            }
+            
+            // 보고서 다운로드 생성
+            async generateReportDownload(reportData) {
+                // 고급 HTML 보고서 사용 (API에서 받은 경우)
+                const reportHtml = reportData.reportHtml || generateReportHTML(reportData);
+                
+                // 1. 브라우저 다운로드
+                const blob = new Blob([reportHtml], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                
+                const downloadLink = document.createElement('a');
+                downloadLink.href = url;
+                downloadLink.download = `${reportData.companyName}_AI_통합_갭분석보고서_${new Date().getFullYear()}.html`;
+                downloadLink.style.display = 'none';
+                document.body.appendChild(downloadLink);
+                
+                // 자동 다운로드
+                setTimeout(() => {
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    URL.revokeObjectURL(url);
+                }, 1000);
+                
+                // 2. sample-reports 폴더에 저장 (새로운 방식)
+                try {
+                    const response = await fetch('http://localhost:5000/save-gap-analysis-report', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            reportHtml: reportHtml,
+                            companyName: reportData.companyName
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('갭분석 보고서가 sample-reports 폴더에 저장되었습니다:', result.filename);
+                    } else {
+                        console.error('갭분석 보고서 저장 실패:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('갭분석 보고서 저장 중 오류:', error);
+                }
             }
         }
         
@@ -2616,7 +3283,7 @@
                 } catch (error) {
                     console.error('갭분석 엔진 초기화 오류:', error);
                     hideGapAnalysisModal();
-                    showError('갭분석 엔진을 초기화할 수 없습니다.');
+                    alert('갭분석 엔진을 초기화할 수 없습니다.');
                     return;
                 }
                 
@@ -2642,7 +3309,18 @@
                 // 7. 갭분석 실행
                 let gapResult = null;
                 try {
-                    gapResult = await gapAnalysisEngine.generateGapAnalysis(formData, selectedStandards);
+                    gapResult = await gapAnalysisEngine.generateGapAnalysis(formData, selectedStandards, (step) => {
+                        updateProgress(step.progress);
+                        // 진행 단계 업데이트
+                        const steps = document.querySelectorAll('.analysis-step');
+                        const currentStepIndex = Math.floor(step.progress / 20);
+                        if (steps[currentStepIndex]) {
+                            steps[currentStepIndex].classList.add('active');
+                            if (currentStepIndex > 0) {
+                                steps[currentStepIndex - 1].classList.add('completed');
+                            }
+                        }
+                    });
                 } catch (error) {
                     console.error('갭분석 실행 오류:', error);
                     // 갭분석 실패해도 일반 제출은 계속 진행
@@ -2676,6 +3354,30 @@
                 modal.style.display = 'none';
             }
         }
+        
+        // 갭분석 정보 모달 표시
+        window.showGapAnalysisInfo = function() {
+            const modal = document.getElementById('gapAnalysisInfoModal');
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+        }
+        
+        // 갭분석 정보 모달 숨기기
+        window.hideGapAnalysisInfo = function() {
+            const modal = document.getElementById('gapAnalysisInfoModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // 갭분석 요청하기
+        window.requestGapAnalysis = function() {
+            hideGapAnalysisInfo();
+            handleGapAnalysisSubmit();
+        }
+        
+        
 
         // 갭분석 진행 시뮬레이션
         async function simulateGapAnalysisProgress() {
@@ -2708,11 +3410,11 @@
 
         // 진행률 업데이트
         function updateProgress(percentage) {
-            const progressBar = document.getElementById('progressBar');
+            const progressFill = document.getElementById('progressFill');
             const progressText = document.getElementById('progressText');
             
-            if (progressBar) {
-                progressBar.style.width = percentage + '%';
+            if (progressFill) {
+                progressFill.style.width = percentage + '%';
             }
             if (progressText) {
                 progressText.textContent = percentage + '% 완료';
@@ -2731,12 +3433,66 @@
     </script>
 
     
-    <!-- 견적 시스템 JavaScript -->
-    <script src="quotation-system/js/SmartQuotationSystem.js"></script>
-    <script src="quotation-system/js/ADJv22QuotationEngine.js"></script>
-    <script src="quotation-system/js/WordDocumentGenerator.js"></script>
-    <script src="quotation-system/js/QuotationCalculator.js"></script>
-    <script src="quotation-system/js/QuotationSystemManager.js"></script>
+    <!-- 견적 시스템 JavaScript는 인라인으로 포함됨 -->
+
+    <!-- 갭분석 정보 모달 -->
+    <div id="gapAnalysisInfoModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3 data-i18n="form.gap.analysis.info.title">📊 갭분석 약식보고서란?</h3>
+                <span class="close" onclick="hideGapAnalysisInfo()">&times;</span>
+            </div>
+                    <div class="modal-body">
+                        <div style="text-align: left; line-height: 1.6;">
+                            <!-- 중요 안내사항 -->
+                            <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); 
+                                        border: 2px solid #ffc107; border-radius: 10px; padding: 15px; 
+                                        margin-bottom: 20px; text-align: center;">
+                                <h4 style="color: #856404; margin: 0 0 10px 0; font-size: 16px;">
+                                    ⚠️ <span data-i18n="form.gap.analysis.info.important.title">중요 안내사항</span>
+                                </h4>
+                                <p style="color: #856404; margin: 0; font-size: 14px; font-weight: 600;">
+                                    <span data-i18n="form.gap.analysis.info.important.text">정확하고 신뢰할 수 있는 갭분석 보고서를 위해 신청서의 모든 내용을 성실하고 정확하게 작성해 주세요.</span>
+                                </p>
+                            </div>
+                            
+                            <h4 style="color: #2c3e50; margin-bottom: 15px;">✅ <span data-i18n="form.gap.analysis.info.diagnosis.title">현재 상태 진단</span></h4>
+                            <ul style="margin-bottom: 20px; padding-left: 20px;">
+                                <li data-i18n="form.gap.analysis.info.diagnosis.1">현재 경영시스템 상태 진단</li>
+                                <li data-i18n="form.gap.analysis.info.diagnosis.2">ISO 표준별 준비도 평가</li>
+                                <li data-i18n="form.gap.analysis.info.diagnosis.3">개선이 필요한 핵심 영역</li>
+                            </ul>
+                            
+                            <h4 style="color: #2c3e50; margin-bottom: 15px;">💡 <span data-i18n="form.gap.analysis.info.provided.title">제공 정보</span></h4>
+                            <ul style="margin-bottom: 20px; padding-left: 20px;">
+                                <li data-i18n="form.gap.analysis.info.provided.1">위험도 및 우선순위 평가</li>
+                                <li data-i18n="form.gap.analysis.info.provided.2">구체적 권장사항 및 실행 계획</li>
+                                <li data-i18n="form.gap.analysis.info.provided.3">예상 소요시간 및 비용 절감 효과</li>
+                            </ul>
+                            
+                            <h4 style="color: #2c3e50; margin-bottom: 15px;">⚡ <span data-i18n="form.gap.analysis.info.features.title">특징</span></h4>
+                            <ul style="margin-bottom: 20px; padding-left: 20px;">
+                                <li>💰 <span data-i18n="form.gap.analysis.info.features.1">무료 제공</span></li>
+                                <li>⏱️ <span data-i18n="form.gap.analysis.info.features.2">5분 내 완료</span></li>
+                                <li>🎯 <span data-i18n="form.gap.analysis.info.features.3">맞춤형 분석</span></li>
+                                <li>📥 <span data-i18n="form.gap.analysis.info.features.4">즉시 다운로드</span></li>
+                            </ul>
+                        </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <button onclick="requestGapAnalysis()" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); 
+                            color: white; border: none; padding: 12px 30px; border-radius: 6px; 
+                            cursor: pointer; font-size: 16px; font-weight: bold; margin-right: 10px;" data-i18n="form.gap.analysis.info.request">
+                        갭분석 요청하기
+                    </button>
+                    <button onclick="hideGapAnalysisInfo()" style="background: #6c757d; color: white; 
+                            border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 16px;" data-i18n="form.gap.analysis.info.close">
+                        닫기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- 갭분석 모달 -->
     <div id="gapAnalysisModal" class="modal" style="display: none;">
@@ -2756,25 +3512,35 @@
                 </div>
                 
                 <div class="analysis-steps">
-                    <div id="step1" class="step">
+                    <div id="step1" class="analysis-step">
                         <div class="step-icon">⏳</div>
-                        <div class="step-text">신청서 데이터 처리중...</div>
+                        <div class="step-text">
+                            <span>신청서 데이터 처리중...</span>
                     </div>
-                    <div id="step2" class="step">
+                    </div>
+                    <div id="step2" class="analysis-step">
                         <div class="step-icon">🏢</div>
-                        <div class="step-text">기업 정보 수집중...</div>
+                        <div class="step-text">
+                            <span>기업 정보 수집중...</span>
                     </div>
-                    <div id="step3" class="step">
+                    </div>
+                    <div id="step3" class="analysis-step">
                         <div class="step-icon">🤖</div>
-                        <div class="step-text">AI 리스크 분석중...</div>
+                        <div class="step-text">
+                            <span>AI 리스크 분석중...</span>
                     </div>
-                    <div id="step4" class="step">
+                    </div>
+                    <div id="step4" class="analysis-step">
                         <div class="step-icon">📊</div>
-                        <div class="step-text">갭분석 보고서 생성중...</div>
+                        <div class="step-text">
+                            <span>갭분석 보고서 생성중...</span>
                     </div>
-                    <div id="step5" class="step">
+                    </div>
+                    <div id="step5" class="analysis-step">
                         <div class="step-icon">📧</div>
-                        <div class="step-text">이메일 발송중...</div>
+                        <div class="step-text">
+                            <span>이메일 발송중...</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2783,6 +3549,43 @@
 
     <style>
         /* 갭분석 모달 스타일 */
+        .analysis-step {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #ecf0f1;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .analysis-step.active {
+            border-left-color: #00d4aa;
+            background: #e8f5e8;
+        }
+        
+        .analysis-step.completed {
+            border-left-color: #28a745;
+            background: #d4edda;
+        }
+        
+        .step-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .step-text {
+            flex: 1;
+        }
+        
+        .step-text span {
+            color: #7f8c8d;
+            font-weight: normal;
+            transition: all 0.3s ease;
+        }
+        
         .modal {
             position: fixed;
             top: 0;
@@ -2822,9 +3625,39 @@
             font-size: 24px;
             font-weight: 600;
         }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -5px;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+        }
 
         .modal-body {
             padding: 30px;
+            color: #333333;
+        }
+        
+        .modal-body h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .modal-body ul {
+            color: #333333;
+        }
+        
+        .modal-body li {
+            color: #333333;
+            margin-bottom: 8px;
         }
 
         .progress-container {
@@ -3054,8 +3887,234 @@
     </style>
 
 
-    <!-- 갭분석 엔진 스크립트 -->
-    <script src="/quotation-system/js/GapAnalysisEngine.js"></script>
-</body>
-</html>
-
+    <!-- 갭분석 보고서 생성 스크립트 -->
+    <script>
+        // 갭분석 보고서 HTML 생성 함수 (예전 Apple 보고서 형태로 복원)
+        function generateReportHTML(reportData) {
+            return '<!DOCTYPE html>' +
+                '<html lang="ko">' +
+                '<head>' +
+                '<meta charset="UTF-8">' +
+                '<meta name="viewport" content="width=device-width, initial-scale=1.0">' +
+                '<title>사전평가 갭분석 보고서 - ' + reportData.companyName + '</title>' +
+                '<style>' +
+                'body { font-family: "Malgun Gothic", "맑은 고딕", Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; line-height: 1.6; }' +
+                '.header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 40px 0; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }' +
+                '.logo-container { display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }' +
+                '.lrqa-logo { height: 60px; margin-right: 20px; }' +
+                '.apple-logo { font-size: 3em; margin-left: 20px; }' +
+                '.header h1 { margin: 0; font-size: 2.8em; font-weight: 300; letter-spacing: 1px; }' +
+                '.subtitle { margin: 10px 0 0 0; font-size: 1.3em; opacity: 0.9; font-weight: 400; }' +
+                '.container { max-width: 1200px; margin: 0 auto; padding: 30px; }' +
+                '.meta-info { background: white; padding: 30px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }' +
+                '.meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }' +
+                '.meta-item { padding: 20px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #3b82f6; }' +
+                '.meta-label { font-weight: 600; color: #1e3a8a; margin-bottom: 8px; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; }' +
+                '.meta-value { color: #374151; font-size: 1.1em; }' +
+                '.section { background: white; margin: 25px 0; padding: 35px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }' +
+                '.section h2 { color: #1e3a8a; border-bottom: 3px solid #3b82f6; padding-bottom: 15px; margin-bottom: 25px; font-size: 1.8em; font-weight: 600; }' +
+                '.section h3 { color: #374151; margin-top: 30px; margin-bottom: 20px; font-size: 1.4em; font-weight: 600; }' +
+                '.executive-summary { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 30px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #3b82f6; }' +
+                '.executive-summary h3 { color: #1e3a8a; margin-top: 0; }' +
+                '.gap-analysis { margin: 30px 0; }' +
+                '.gap-category { margin: 25px 0; }' +
+                '.gap-category h4 { color: #1e3a8a; font-size: 1.2em; margin-bottom: 15px; padding: 10px 15px; background: #f1f5f9; border-radius: 5px; }' +
+                '.gap-item { background: #fff; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #3b82f6; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }' +
+                '.gap-item.high { border-left-color: #dc3545; background: #fff5f5; }' +
+                '.gap-item.medium { border-left-color: #ffc107; background: #fffbf0; }' +
+                '.gap-item.low { border-left-color: #17a2b8; background: #f0f9ff; }' +
+                '.gap-title { font-weight: 600; color: #1e3a8a; margin-bottom: 10px; font-size: 1.1em; }' +
+                '.gap-description { color: #4a5568; line-height: 1.6; }' +
+                '.readiness-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }' +
+                '.readiness-table th { background: #1e3a8a; color: white; padding: 15px; text-align: left; font-weight: 600; }' +
+                '.readiness-table td { padding: 15px; border-bottom: 1px solid #e2e8f0; }' +
+                '.readiness-table tr:hover { background: #f8fafc; }' +
+                '.recommendations { margin: 30px 0; }' +
+                '.recommendation-item { background: #f0f9ff; padding: 20px; margin: 15px 0; border-radius: 8px; border-left: 4px solid #3b82f6; }' +
+                '.recommendation-title { font-weight: 600; color: #1e3a8a; margin-bottom: 10px; }' +
+                '.recommendation-text { color: #4a5568; line-height: 1.6; }' +
+                '.timeline { position: relative; padding-left: 40px; margin: 30px 0; }' +
+                '.timeline::before { content: ""; position: absolute; left: 20px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #3b82f6, #1e3a8a); }' +
+                '.timeline-item { position: relative; margin-bottom: 30px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }' +
+                '.timeline-item::before { content: ""; position: absolute; left: -32px; top: 25px; width: 15px; height: 15px; background: #3b82f6; border-radius: 50%; border: 3px solid white; }' +
+                '.timeline-item h4 { margin: 0 0 10px 0; color: #1e3a8a; font-size: 1.2em; }' +
+                '.timeline-item p { margin: 0; color: #6b7280; }' +
+                '.footer { background: #1e3a8a; color: white; text-align: center; padding: 30px; margin-top: 50px; }' +
+                '.footer p { margin: 0; opacity: 0.9; font-size: 1.1em; }' +
+                '@media print { body { background: white; } .section { box-shadow: none; border: 1px solid #ddd; } }' +
+                '</style>' +
+                '</head>' +
+                '<body>' +
+                '<div class="header">' +
+                '<div class="logo-container">' +
+                '<img src="../lrqa-logo.png" alt="LRQA 로고" class="lrqa-logo">' +
+                '<div class="apple-logo">🍎</div>' +
+                '</div>' +
+                '<h1>사전평가 갭분석 보고서</h1>' +
+                '<div class="subtitle">ISO 경영시스템 표준 갭분석 - ' + reportData.companyName + ' (AI 통합)</div>' +
+                '</div>' +
+                '<div class="container">' +
+                '<div class="meta-info">' +
+                '<div class="meta-grid">' +
+                '<div class="meta-item">' +
+                '<div class="meta-label">고객 조직</div>' +
+                '<div class="meta-value">' + reportData.companyName + '</div>' +
+                '</div>' +
+                '<div class="meta-item">' +
+                '<div class="meta-label">평가 표준</div>' +
+                '<div class="meta-value">' + reportData.standards.join(', ') + '</div>' +
+                '</div>' +
+                '<div class="meta-item">' +
+                '<div class="meta-label">평가 일자</div>' +
+                '<div class="meta-value">' + new Date().toLocaleDateString('ko-KR') + '</div>' +
+                '</div>' +
+                '<div class="meta-item">' +
+                '<div class="meta-label">LRQA 참조번호</div>' +
+                '<div class="meta-value">GAP-2025-' + reportData.companyName.replace(/\s+/g, '-').toUpperCase() + '-IMS-001</div>' +
+                '</div>' +
+                '<div class="meta-item">' +
+                '<div class="meta-label">평가팀</div>' +
+                '<div class="meta-value">수석심사원: LRQA 공인심사원</div>' +
+                '</div>' +
+                '<div class="meta-item">' +
+                '<div class="meta-label">고객 담당자</div>' +
+                '<div class="meta-value">최고경영진 / 품질담당자</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="section">' +
+                '<div class="executive-summary">' +
+                '<h3>📊 경영진 요약</h3>' +
+                '<p>본 보고서는 ' + reportData.companyName + '의 ' + reportData.standards.join(', ') + ' 표준 준비도를 종합적으로 평가한 결과입니다. LRQA의 전문적인 갭분석 방법론을 통해 조직의 현재 상태를 정확히 진단하고, 인증 준비를 위한 구체적인 로드맵을 제시합니다.</p>' +
+                '<p>총 ' + reportData.findings.length + '개의 주요 발견사항이 식별되었으며, 이는 조직의 경영시스템 구축 및 개선을 위한 구체적인 방향을 제시합니다. 특히 경영진의 직접적인 관심과 지원이 필요한 핵심 영역들을 명확히 식별하여 우선순위를 제시합니다.</p>' +
+                '</div>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>🎯 평가 범위 및 방법론</h2>' +
+                '<p>LRQA의 6단계 갭분석 방법론을 통해 조직의 현재 상태를 종합적으로 평가했습니다. 평가는 다음 영역에 중점을 두고 수행되었습니다:</p>' +
+                '<ul>' +
+                '<li><strong>경영시스템 문서화 수준:</strong> 정책, 절차, 지침서의 체계성과 완성도</li>' +
+                '<li><strong>프로세스 및 절차의 체계성:</strong> 핵심 프로세스의 정의, 실행, 모니터링 체계</li>' +
+                '<li><strong>법적 요구사항 준수도:</strong> 관련 법규 및 규정의 이해와 준수 수준</li>' +
+                '<li><strong>지속적 개선 체계:</strong> PDCA 사이클을 통한 지속적 개선 활동</li>' +
+                '<li><strong>리더십 및 경영진의 참여도:</strong> 최고경영진의 의지와 조직 내 리더십</li>' +
+                '</ul>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>⚠️ 평가 중 다루지 않은 영역</h2>' +
+                '<p>본 평가는 신청서에 제공된 정보를 바탕으로 수행되었으며, 현장 방문이나 추가 문서 검토는 포함되지 않았습니다. 따라서 실제 운영 상황과 차이가 있을 수 있음을 유의하시기 바랍니다.</p>' +
+                '<p>정확한 평가를 위해서는 현장 심사와 추가 문서 검토가 필요하며, 본 보고서는 예비 분석 결과임을 명확히 합니다.</p>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>🔍 LRQA 카테고리별 갭 분석</h2>' +
+                '<div class="gap-analysis">' +
+                '<div class="gap-category">' +
+                '<h4>카테고리 A - 즉시 조치 필요 (High Priority)</h4>' +
+                reportData.findings.filter(f => f.priority === 'high').map(finding =>
+                    '<div class="gap-item high">' +
+                    '<div class="gap-title">' + finding.title + '</div>' +
+                    '<div class="gap-description">' + finding.description + '</div>' +
+                    '</div>'
+                ).join('') +
+                '</div>' +
+                '<div class="gap-category">' +
+                '<h4>카테고리 B - 단기 개선 필요 (Medium Priority)</h4>' +
+                reportData.findings.filter(f => f.priority === 'medium').map(finding =>
+                    '<div class="gap-item medium">' +
+                    '<div class="gap-title">' + finding.title + '</div>' +
+                    '<div class="gap-description">' + finding.description + '</div>' +
+                    '</div>'
+                ).join('') +
+                '</div>' +
+                '<div class="gap-category">' +
+                '<h4>카테고리 C - 장기 개선 권장 (Low Priority)</h4>' +
+                reportData.findings.filter(f => f.priority === 'low').map(finding =>
+                    '<div class="gap-item low">' +
+                    '<div class="gap-title">' + finding.title + '</div>' +
+                    '<div class="gap-description">' + finding.description + '</div>' +
+                    '</div>'
+                ).join('') +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>🎯 경영진 관심이 필요한 영역</h2>' +
+                '<p>다음 영역들은 경영진의 직접적인 관심과 지원이 필요한 핵심 영역입니다:</p>' +
+                '<ul>' +
+                '<li><strong>경영시스템 정책 및 목표 수립:</strong> 조직의 방향성을 제시하는 명확한 정책과 측정 가능한 목표 설정</li>' +
+                '<li><strong>필요한 자원의 할당 및 배치:</strong> 인증 준비를 위한 인력, 예산, 시설 등 자원의 체계적 배치</li>' +
+                '<li><strong>조직 내 의사소통 체계 구축:</strong> 효과적인 의사소통을 통한 조직 내 인식 제고</li>' +
+                '<li><strong>지속적 개선을 위한 모니터링 체계:</strong> 성과 측정 및 개선 활동을 위한 체계적 모니터링</li>' +
+                '</ul>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>📈 정식 인증을 위한 준비도 평가</h2>' +
+                '<table class="readiness-table">' +
+                '<thead>' +
+                '<tr><th>영역</th><th>현재 준비도</th><th>목표 준비도</th><th>예상 소요기간</th><th>주요 개선사항</th></tr>' +
+                '</thead>' +
+                '<tbody>' +
+                '<tr><td>문서화</td><td>40%</td><td>90%</td><td>3-4개월</td><td>정책, 절차서, 지침서 체계화</td></tr>' +
+                '<tr><td>프로세스 구축</td><td>35%</td><td>85%</td><td>4-6개월</td><td>핵심 프로세스 정의 및 실행</td></tr>' +
+                '<tr><td>교육 및 인식제고</td><td>30%</td><td>80%</td><td>2-3개월</td><td>전 직원 대상 교육 프로그램</td></tr>' +
+                '<tr><td>내부심사 체계</td><td>20%</td><td>75%</td><td>3-4개월</td><td>내부심사원 양성 및 체계 구축</td></tr>' +
+                '<tr><td>경영검토</td><td>25%</td><td>70%</td><td>2-3개월</td><td>정기적 경영검토 체계 수립</td></tr>' +
+                '</tbody>' +
+                '</table>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>💡 LRQA 전문가 권고사항</h2>' +
+                '<div class="recommendations">' +
+                reportData.recommendations.map(rec =>
+                    '<div class="recommendation-item">' +
+                    '<div class="recommendation-title">' + rec.title + '</div>' +
+                    '<div class="recommendation-text">' + rec.description + '</div>' +
+                    '</div>'
+                ).join('') +
+                '</div>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>📅 권장 실행 타임라인</h2>' +
+                '<div class="timeline">' +
+                '<div class="timeline-item">' +
+                '<h4>1단계: 기초 구축 (1-2개월)</h4>' +
+                '<p>경영시스템 정책 수립, 기본 문서 작성, 초기 교육 실시, 전담 조직 구성</p>' +
+                '</div>' +
+                '<div class="timeline-item">' +
+                '<h4>2단계: 프로세스 구현 (2-4개월)</h4>' +
+                '<p>핵심 프로세스 구축, 모니터링 체계 설립, 내부심사 준비, 성과 측정 체계 구축</p>' +
+                '</div>' +
+                '<div class="timeline-item">' +
+                '<h4>3단계: 최적화 및 인증 준비 (1-2개월)</h4>' +
+                '<p>시스템 최적화, 경영검토 실시, 인증 신청 준비, 최종 점검 및 보완</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>⚠️ 평가 제한사항</h2>' +
+                '<ul>' +
+                '<li>본 평가는 신청서 정보를 바탕으로 한 예비 분석입니다.</li>' +
+                '<li>현장 방문이나 추가 문서 검토는 포함되지 않았습니다.</li>' +
+                '<li>실제 운영 상황과 차이가 있을 수 있습니다.</li>' +
+                '<li>정확한 평가를 위해서는 현장 심사가 필요합니다.</li>' +
+                '<li>조직의 특수한 상황이나 내부 요인은 고려되지 않았을 수 있습니다.</li>' +
+                '</ul>' +
+                '</div>' +
+                '<div class="section">' +
+                '<h2>🔒 기밀성</h2>' +
+                '<p>본 보고서는 ' + reportData.companyName + '의 기밀 정보를 포함하고 있으며, LRQA의 엄격한 기밀성 정책에 따라 보호됩니다. 본 보고서는 해당 조직의 승인 없이 제3자에게 공개될 수 없습니다.</p>' +
+                '<p>보고서의 내용은 LRQA의 전문적 판단에 기반하며, 조직의 특정 상황에 맞는 맞춤형 권고사항을 포함하고 있습니다.</p>' +
+                '</div>' +
+                '</div>' +
+                '<div class="footer">' +
+                '<p>© 2025 LRQA Group Limited. All rights reserved. | YOUR FUTURE. OUR FOCUS.</p>' +
+                '</div>' +
+                '</body>' +
+                '</html>';
+        }
+    </script>
+    
+    <!-- 갭분석 엔진 스크립트 (이동됨: 클래스는 submitFormWithGapAnalysis 함수 앞에 정의됨) -->
+    <!-- 갭분석 엔진 스크립트 (이동됨: 클래스는 submitFormWithGapAnalysis 함수 앞에 정의됨) -->
+    <script>
+        // 갭분석 엔진 클래스는 submitFormWithGapAnalysis 함수 앞에 이미 정의됨
