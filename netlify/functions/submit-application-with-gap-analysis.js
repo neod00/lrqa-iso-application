@@ -6,7 +6,7 @@ const fs = require('fs');
 
 // 🆕 AI 웹사이트 분석을 위한 패키지
 const OpenAI = require('openai');
-const fetch = require('node-fetch');
+// Node.js 내장 fetch 사용 (Node.js 18+)
 const cheerio = require('cheerio');
 
 // Google Sheets 설정
