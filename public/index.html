@@ -2745,7 +2745,18 @@
                 // 7. 갭분석 실행
                 let gapResult = null;
                 try {
-                    gapResult = await gapAnalysisEngine.generateGapAnalysis(formData, selectedStandards);
+                    gapResult = await gapAnalysisEngine.generateGapAnalysis(formData, selectedStandards, (step) => {
+                        updateProgress(step.progress);
+                        // 진행 단계 업데이트
+                        const steps = document.querySelectorAll('.analysis-step');
+                        const currentStepIndex = Math.floor(step.progress / 20);
+                        if (steps[currentStepIndex]) {
+                            steps[currentStepIndex].classList.add('active');
+                            if (currentStepIndex > 0) {
+                                steps[currentStepIndex - 1].classList.add('completed');
+                            }
+                        }
+                    });
                 } catch (error) {
                     console.error('갭분석 실행 오류:', error);
                     // 갭분석 실패해도 일반 제출은 계속 진행
@@ -3571,43 +3582,64 @@
             }
             
             // 갭분석 보고서 생성 (API 호출 방식)
-            async generateGapAnalysis(formData, selectedStandards) {
+            async generateGapAnalysis(formData, selectedStandards, progressCallback) {
                 try {
                     console.log('🚀 고급 갭분석 API 호출 시작...');
                     
-                    // API 호출
-                    const response = await fetch('http://localhost:5000/api/gap-analysis', {
+                    // 진행 상황 업데이트
+                    if (progressCallback) {
+                        progressCallback({ progress: 20, text: '신청서 데이터 처리중...' });
+                    }
+                    
+                    // Netlify Functions API 호출
+                    const response = await fetch('/api/submit-application-with-gap-analysis', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
                             formData: formData,
-                            selectedStandards: selectedStandards
+                            selectedStandards: selectedStandards,
+                            gapAnalysisOnly: true  // 갭분석만 수행하도록 플래그 추가
                         })
                     });
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 40, text: '기업 정보 수집중...' });
+                    }
                     
                     if (!response.ok) {
                         throw new Error(`API 호출 실패: ${response.status} ${response.statusText}`);
                     }
                     
+                    if (progressCallback) {
+                        progressCallback({ progress: 60, text: 'AI 리스크 분석중...' });
+                    }
+                    
                     const result = await response.json();
                     
                     if (!result.success) {
-                        throw new Error(result.error || '갭분석 생성 실패');
+                        throw new Error(result.message || '갭분석 생성 실패');
                     }
                     
-                    console.log('✅ 고급 갭분석 완료:', result.data);
+                    if (progressCallback) {
+                        progressCallback({ progress: 80, text: '갭분석 보고서 생성중...' });
+                    }
                     
-                    // 보고서 데이터 생성
+                    console.log('✅ 고급 갭분석 완료:', result.gapAnalysisResult);
+                    
+                    // 갭분석 결과에서 보고서 데이터 생성
+                    const gapResult = result.gapAnalysisResult;
                     const reportData = {
-                        companyName: result.data.companyName,
+                        companyName: formData.companyName || formData.companyNameKo || 'Unknown Company',
                         standards: selectedStandards,
                         selectedStandards: selectedStandards,
                         analysisDate: new Date().toISOString(),
                         reportId: 'GAP-' + Date.now(),
-                        gapAnalysis: result.data.gapAnalysis,
-                        reportHtml: result.data.reportHtml,
+                        gapAnalysis: gapResult,
+                        score: gapResult.score,
+                        keyRisks: gapResult.keyRisks,
+                        recommendations: gapResult.recommendations,
                         formData: formData
                     };
                     
@@ -3617,26 +3649,41 @@
                     // 보고서 다운로드 링크 생성
                     this.generateReportDownload(reportData);
                     
+                    if (progressCallback) {
+                        progressCallback({ progress: 100, text: '갭분석 완료!' });
+                    }
+                    
                     return reportData;
                 } catch (error) {
                     console.error('갭분석 보고서 생성 오류:', error);
                     
                     // API 실패 시 기존 방식으로 폴백
                     console.log('🔄 기존 방식으로 폴백...');
-                    return await this.generateGapAnalysisFallback(formData, selectedStandards);
+                    return await this.generateGapAnalysisFallback(formData, selectedStandards, progressCallback);
                 }
             },
             
             // 폴백 갭분석 (기존 방식)
-            async generateGapAnalysisFallback(formData, selectedStandards) {
+            async generateGapAnalysisFallback(formData, selectedStandards, progressCallback) {
                 try {
                     // 갭분석 보고서 생성 시뮬레이션
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    if (progressCallback) {
+                        progressCallback({ progress: 20, text: '신청서 데이터 처리중...' });
+                    }
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 40, text: '기업 정보 수집중...' });
+                    }
                     
                     // 실제 갭분석 수행
                     const findings = this.generateFindings(selectedStandards, formData);
                     const recommendations = this.generateRecommendations(selectedStandards, formData, findings);
                     const riskLevel = this.calculateRiskLevel(formData, selectedStandards, findings);
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 60, text: 'AI 리스크 분석중...' });
+                    }
                     
                     // 보고서 데이터 생성
                     const reportData = {
@@ -3651,11 +3698,19 @@
                         formData: formData
                     };
                     
+                    if (progressCallback) {
+                        progressCallback({ progress: 80, text: '갭분석 보고서 생성중...' });
+                    }
+                    
                     // 보고서를 로컬 스토리지에 저장
                     localStorage.setItem('gapAnalysisReport', JSON.stringify(reportData));
                     
                     // 보고서 다운로드 링크 생성
                     this.generateReportDownload(reportData);
+                    
+                    if (progressCallback) {
+                        progressCallback({ progress: 100, text: '갭분석 완료!' });
+                    }
                     
                     return reportData;
                 } catch (error) {

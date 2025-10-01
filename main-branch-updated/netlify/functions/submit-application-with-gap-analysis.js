@@ -974,8 +974,16 @@ exports.handler = async (event, context) => {
 
   try {
     console.log('JSON 파싱 시도...');
-    const formData = JSON.parse(event.body);
-    console.log('JSON 파싱 완료, 데이터 키:', Object.keys(formData));
+    const requestData = JSON.parse(event.body);
+    console.log('JSON 파싱 완료, 데이터 키:', Object.keys(requestData));
+    
+    // 갭분석 전용 요청인지 확인
+    const isGapAnalysisOnly = requestData.gapAnalysisOnly === true;
+    const formData = requestData.formData || requestData;
+    const selectedStandards = requestData.selectedStandards || formData.selectedISOStandards || [];
+    
+    console.log('갭분석 전용 요청:', isGapAnalysisOnly);
+    console.log('선택된 표준:', selectedStandards);
     
     // 필수 필드 검증
     console.log('갭분석 필수 필드 검증...');
@@ -1001,7 +1009,7 @@ exports.handler = async (event, context) => {
       };
     }
     
-    if (!formData.selectedISOStandards || formData.selectedISOStandards.length === 0) {
+    if (!selectedStandards || selectedStandards.length === 0) {
       return {
         statusCode: 400,
         headers,
@@ -1042,10 +1050,26 @@ exports.handler = async (event, context) => {
       await addGapAnalysisRow(sheets, formData, gapAnalysisResult);
     }
     
-    // 갭분석 결과 이메일 전송 (개발/프로덕션 공통)
-    console.log('갭분석 결과 이메일 전송...');
-    await sendGapAnalysisEmail(formData, gapAnalysisResult);
+    // 갭분석 전용 요청인 경우 이메일 전송 생략
+    if (!isGapAnalysisOnly) {
+      console.log('갭분석 결과 이메일 전송...');
+      await sendGapAnalysisEmail(formData, gapAnalysisResult);
+    }
     
+    // 갭분석 전용 요청인 경우 갭분석 결과만 반환
+    if (isGapAnalysisOnly) {
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({ 
+          success: true, 
+          message: '갭분석이 성공적으로 완료되었습니다.',
+          gapAnalysisResult: gapAnalysisResult
+        })
+      };
+    }
+    
+    // 일반 신청서 제출 응답
     return {
       statusCode: 200,
       headers,
