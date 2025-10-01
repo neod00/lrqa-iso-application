@@ -121,5 +121,46 @@ def generate_quotation():
         traceback.print_exc()
         return jsonify({'error': str(e), 'message': '견적서 생성 중 오류가 발생했습니다.'}), 500
 
+@app.route('/save-gap-analysis-report', methods=['POST'])
+def save_gap_analysis_report():
+    """갭분석 보고서를 sample-reports 폴더에 저장하는 API"""
+    try:
+        data = request.json
+        report_html = data['reportHtml']
+        company_name = data['companyName']
+        
+        # sample-reports 폴더 경로 설정
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        parent_dir = os.path.dirname(current_dir)
+        sample_reports_dir = os.path.join(parent_dir, 'sample-reports')
+        
+        # sample-reports 폴더가 없으면 생성
+        if not os.path.exists(sample_reports_dir):
+            os.makedirs(sample_reports_dir)
+        
+        # 파일명 생성 (Apple_Inc_AI_통합_갭분석보고서_2025.html 형태)
+        current_date = datetime.now().strftime('%Y')
+        filename = f"{company_name}_AI_통합_갭분석보고서_{current_date}.html"
+        file_path = os.path.join(sample_reports_dir, filename)
+        
+        # HTML 파일 저장
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(report_html)
+        
+        print(f"갭분석 보고서 저장 완료: {file_path}")
+        
+        return jsonify({
+            'success': True, 
+            'message': '갭분석 보고서가 sample-reports 폴더에 저장되었습니다.',
+            'filePath': file_path,
+            'filename': filename
+        })
+        
+    except Exception as e:
+        print(f"갭분석 보고서 저장 오류: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e), 'message': '갭분석 보고서 저장 중 오류가 발생했습니다.'}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))

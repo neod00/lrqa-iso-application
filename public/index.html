@@ -3734,12 +3734,13 @@
             }
             
             // 보고서 다운로드 생성
-            generateReportDownload(reportData) {
+            async generateReportDownload(reportData) {
                 const reportHtml = generateReportHTML(reportData);
+                
+                // 1. 브라우저 다운로드 (기존 방식)
                 const blob = new Blob([reportHtml], { type: 'text/html' });
                 const url = URL.createObjectURL(blob);
                 
-                // 다운로드 링크 생성
                 const downloadLink = document.createElement('a');
                 downloadLink.href = url;
                 downloadLink.download = `갭분석보고서_${reportData.companyName}_${new Date().toISOString().split('T')[0]}.html`;
@@ -3752,6 +3753,29 @@
                     document.body.removeChild(downloadLink);
                     URL.revokeObjectURL(url);
                 }, 1000);
+                
+                // 2. sample-reports 폴더에 저장 (새로운 방식)
+                try {
+                    const response = await fetch('/save-gap-analysis-report', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            reportHtml: reportHtml,
+                            companyName: reportData.companyName
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('갭분석 보고서가 sample-reports 폴더에 저장되었습니다:', result.filename);
+                    } else {
+                        console.error('갭분석 보고서 저장 실패:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('갭분석 보고서 저장 중 오류:', error);
+                }
             }
             
         }
