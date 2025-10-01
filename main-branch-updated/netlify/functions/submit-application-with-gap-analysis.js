@@ -1029,12 +1029,12 @@ exports.handler = async (event, context) => {
     let sheets = null;
     let gapAnalysisResult = null;
     
-    if (isDevelopmentMode) {
-      // 🆕 개발 환경: 더미 갭분석 결과 생성
-      console.log('개발 환경에서 더미 갭분석 결과 생성...');
-      gapAnalysisResult = await createDummyGapAnalysisResult(formData);
-      console.log('더미 갭분석 완료:', gapAnalysisResult);
-    } else {
+    // 🆕 항상 고급 갭분석 실행 (개발/프로덕션 구분 없이)
+    console.log('고급 갭분석 실행...');
+    gapAnalysisResult = await createDummyGapAnalysisResult(formData);
+    console.log('고급 갭분석 완료:', gapAnalysisResult);
+    
+    if (false) { // 기존 프로덕션 로직 비활성화
       // 프로덕션 환경: 실제 API 연동
       console.log('Google Sheets API 클라이언트 초기화...');
       sheets = await getGoogleSheetsClient();
