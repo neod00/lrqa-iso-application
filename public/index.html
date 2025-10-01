@@ -3591,16 +3591,15 @@
                         progressCallback({ progress: 20, text: '신청서 데이터 처리중...' });
                     }
                     
-                    // Netlify Functions API 호출
-                    const response = await fetch('/api/submit-application-with-gap-analysis', {
+                    // Vercel API 서버 호출 (웹 배포용)
+                    const response = await fetch('https://lrqa-iso-application.vercel.app/api/gap-analysis', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
                             formData: formData,
-                            selectedStandards: selectedStandards,
-                            gapAnalysisOnly: true  // 갭분석만 수행하도록 플래그 추가
+                            selectedStandards: selectedStandards
                         })
                     });
                     
