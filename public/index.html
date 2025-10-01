@@ -3743,7 +3743,7 @@
                 
                 const downloadLink = document.createElement('a');
                 downloadLink.href = url;
-                downloadLink.download = `갭분석보고서_${reportData.companyName}_${new Date().toISOString().split('T')[0]}.html`;
+                downloadLink.download = `${reportData.companyName}_AI_통합_갭분석보고서_${new Date().getFullYear()}.html`;
                 downloadLink.style.display = 'none';
                 document.body.appendChild(downloadLink);
                 
@@ -3756,7 +3756,7 @@
                 
                 // 2. sample-reports 폴더에 저장 (새로운 방식)
                 try {
-                    const response = await fetch('/save-gap-analysis-report', {
+                    const response = await fetch('http://localhost:5000/save-gap-analysis-report', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
