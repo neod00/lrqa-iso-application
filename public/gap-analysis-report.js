@@ -32,19 +32,20 @@ function generateReportHTML(reportData) {
         '<div class="summary">' +
         '<p><strong>회사명:</strong> ' + reportData.companyName + '</p>' +
         '<p><strong>분석 일자:</strong> ' + new Date().toLocaleDateString('ko-KR') + '</p>' +
-        '<p><strong>분석된 표준:</strong> ' + reportData.standards.join(', ') + '</p>' +
+        '<p><strong>분석된 표준:</strong> ' + (reportData.selectedStandards || reportData.standards || []).join(', ') + '</p>' +
         '<p><strong>전체 위험도:</strong> <span class="risk-' + reportData.riskLevel.toLowerCase() + '">' + reportData.riskLevel + '</span></p>' +
         '</div>' +
         '</div>' +
         '<div class="section">' +
         '<h2>🔍 발견사항</h2>' +
         '<div class="findings">' +
-        reportData.findings.map(finding => 
+        (reportData.findings || []).map(finding => 
             '<div class="finding">' +
-            '<h3>' + finding.title + '</h3>' +
-            '<p><strong>영역:</strong> ' + finding.area + '</p>' +
-            '<p><strong>위험도:</strong> <span class="risk-' + finding.riskLevel.toLowerCase() + '">' + finding.riskLevel + '</span></p>' +
-            '<p><strong>설명:</strong> ' + finding.description + '</p>' +
+            '<h3>' + (finding.finding || finding.title || '발견사항') + '</h3>' +
+            '<p><strong>표준:</strong> ' + (finding.standard || 'N/A') + '</p>' +
+            '<p><strong>영역:</strong> ' + (finding.category || finding.area || 'N/A') + '</p>' +
+            '<p><strong>위험도:</strong> <span class="risk-' + (finding.severity || finding.riskLevel || 'medium').toLowerCase() + '">' + (finding.severity || finding.riskLevel || 'Medium') + '</span></p>' +
+            '<p><strong>설명:</strong> ' + (finding.description || 'N/A') + '</p>' +
             '</div>'
         ).join('') +
         '</div>' +
@@ -52,12 +53,12 @@ function generateReportHTML(reportData) {
         '<div class="section">' +
         '<h2>💡 권장사항</h2>' +
         '<div class="recommendations">' +
-        reportData.recommendations.map(rec => 
+        (reportData.recommendations || []).map(rec => 
             '<div class="recommendation">' +
-            '<h3>' + rec.title + '</h3>' +
-            '<p><strong>우선순위:</strong> ' + rec.priority + '</p>' +
-            '<p><strong>예상 소요시간:</strong> ' + rec.estimatedTime + '</p>' +
-            '<p><strong>설명:</strong> ' + rec.description + '</p>' +
+            '<h3>' + (rec.title || rec.recommendation || '권장사항') + '</h3>' +
+            '<p><strong>우선순위:</strong> ' + (rec.priority || 'Medium') + '</p>' +
+            '<p><strong>예상 소요시간:</strong> ' + (rec.timeline || rec.estimatedTime || '1-3개월') + '</p>' +
+            '<p><strong>설명:</strong> ' + (rec.description || 'N/A') + '</p>' +
             '</div>'
         ).join('') +
         '</div>' +
@@ -65,8 +66,8 @@ function generateReportHTML(reportData) {
         '<div class="section">' +
         '<h2>📊 통계</h2>' +
         '<table>' +
-        '<tr><td>총 발견사항</td><td>' + reportData.findings.length + '개</td></tr>' +
-        '<tr><td>총 권장사항</td><td>' + reportData.recommendations.length + '개</td></tr>' +
+        '<tr><td>총 발견사항</td><td>' + (reportData.findings || []).length + '개</td></tr>' +
+        '<tr><td>총 권장사항</td><td>' + (reportData.recommendations || []).length + '개</td></tr>' +
         '<tr><td>전체 위험도</td><td class="risk-' + reportData.riskLevel.toLowerCase() + '">' + reportData.riskLevel + '</td></tr>' +
         '</table>' +
         '</div>' +
