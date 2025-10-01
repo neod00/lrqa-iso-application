@@ -3360,7 +3360,8 @@
                     // 보고서 데이터 생성
                     const reportData = {
                         companyName: formData.companyNameKo || formData.companyNameEn || 'Unknown Company',
-                        selectedStandards: selectedStandards,
+                        standards: selectedStandards, // generateReportHTML과 호환성을 위해 standards로 변경
+                        selectedStandards: selectedStandards, // 기존 호환성 유지
                         analysisDate: new Date().toISOString(),
                         reportId: 'GAP-' + Date.now(),
                         findings: findings,
@@ -3413,6 +3414,7 @@
                         standard: 'ISO 9001:2015',
                         category: '문서화 체계',
                         finding: '품질경영시스템 문서 부족',
+                        title: '품질경영시스템 문서 부족', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '품질경영시스템에 필요한 핵심 문서들이 부족합니다. 품질매뉴얼, 절차서, 작업지침서 등이 필요합니다.'
                     });
@@ -3424,6 +3426,7 @@
                         standard: 'ISO 9001:2015',
                         category: '고객 만족도',
                         finding: '고객 만족도 측정 체계 부재',
+                        title: '고객 만족도 측정 체계 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'Medium',
                         description: '고객 만족도를 측정하고 개선하는 체계적인 방법이 필요합니다.'
                     });
@@ -3435,6 +3438,7 @@
                         standard: 'ISO 9001:2015',
                         category: '내부심사',
                         finding: '내부심사 체계 미구축',
+                        title: '내부심사 체계 미구축', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '품질경영시스템의 효과성을 검증하기 위한 내부심사 체계가 필요합니다.'
                     });
@@ -3446,6 +3450,7 @@
                         standard: 'ISO 9001:2015',
                         category: '경영검토',
                         finding: '경영검토 절차 부재',
+                        title: '경영검토 절차 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '최고경영자가 품질경영시스템을 검토하는 정기적인 절차가 필요합니다.'
                     });
@@ -3464,6 +3469,7 @@
                         standard: 'ISO 14001:2015',
                         category: '환경영향평가',
                         finding: '환경영향평가 미실시',
+                        title: '환경영향평가 미실시', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '조직의 활동, 제품, 서비스가 환경에 미치는 영향을 체계적으로 평가하는 절차가 필요합니다.'
                     });
@@ -3475,6 +3481,7 @@
                         standard: 'ISO 14001:2015',
                         category: '법규 준수',
                         finding: '환경법규 준수 체계 부재',
+                        title: '환경법규 준수 체계 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '적용 가능한 환경법규를 식별하고 준수하는 체계가 필요합니다.'
                     });
@@ -3486,6 +3493,7 @@
                         standard: 'ISO 14001:2015',
                         category: '환경목표',
                         finding: '환경목표 및 계획 부재',
+                        title: '환경목표 및 계획 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'Medium',
                         description: '환경성과 개선을 위한 구체적인 목표와 실행계획이 필요합니다.'
                     });
@@ -3497,6 +3505,7 @@
                         standard: 'ISO 14001:2015',
                         category: '비상사태 대응',
                         finding: '환경 비상사태 대응체계 부재',
+                        title: '환경 비상사태 대응체계 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '환경사고 발생 시 신속하고 효과적으로 대응할 수 있는 체계가 필요합니다.'
                     });
@@ -3515,6 +3524,7 @@
                         standard: 'ISO 45001:2018',
                         category: '위험성평가',
                         finding: '작업장 위험성평가 미실시',
+                        title: '작업장 위험성평가 미실시', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '작업장의 위험요인을 식별하고 평가하는 체계적인 절차가 필요합니다.'
                     });
@@ -3526,6 +3536,7 @@
                         standard: 'ISO 45001:2018',
                         category: '안전보건정책',
                         finding: '안전보건정책 부재',
+                        title: '안전보건정책 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '최고경영자가 승인한 안전보건정책이 필요합니다.'
                     });
@@ -3537,6 +3548,7 @@
                         standard: 'ISO 45001:2018',
                         category: '안전보건목표',
                         finding: '안전보건목표 부재',
+                        title: '안전보건목표 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'Medium',
                         description: '안전보건성과 개선을 위한 구체적인 목표가 필요합니다.'
                     });
@@ -3548,6 +3560,7 @@
                         standard: 'ISO 45001:2018',
                         category: '사고관리',
                         finding: '사고조사 체계 부재',
+                        title: '사고조사 체계 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'High',
                         description: '사고 및 부적합 발생 시 원인을 분석하고 재발방지 대책을 수립하는 체계가 필요합니다.'
                     });
@@ -3559,6 +3572,7 @@
                         standard: 'ISO 45001:2018',
                         category: '안전보건교육',
                         finding: '안전보건교육 체계 부재',
+                        title: '안전보건교육 체계 부재', // generateReportHTML 호환성을 위해 추가
                         severity: 'Medium',
                         description: '직원들의 안전보건 의식 향상을 위한 체계적인 교육 프로그램이 필요합니다.'
                     });
@@ -3591,6 +3605,7 @@
                     standard: finding.standard,
                     priority: finding.severity,
                     finding: finding.finding,
+                    title: finding.finding, // generateReportHTML 호환성을 위해 추가
                     timeline: this.calculateTimeline(finding.severity),
                     description: this.getDetailedRecommendation(finding)
                 };
@@ -3639,6 +3654,7 @@
                         standard: '통합경영시스템',
                         priority: 'High',
                         finding: '통합경영시스템 구축',
+                        title: '통합경영시스템 구축', // generateReportHTML 호환성을 위해 추가
                         timeline: '6-12개월',
                         description: '여러 표준을 통합하여 효율적인 경영시스템을 구축하세요. 중복된 절차를 통합하고 일관된 관리체계를 수립하는 것이 중요합니다.'
                     });
@@ -3651,6 +3667,7 @@
                         standard: '교육 및 역량',
                         priority: 'Medium',
                         finding: '체계적인 교육 프로그램',
+                        title: '체계적인 교육 프로그램', // generateReportHTML 호환성을 위해 추가
                         timeline: '3-6개월',
                         description: '직원 규모에 맞는 체계적인 교육 프로그램을 수립하고, 경영시스템에 대한 이해도를 높이세요.'
                     });
@@ -3661,6 +3678,7 @@
                     standard: '지속적 개선',
                     priority: 'Medium',
                     finding: '지속적 개선 체계',
+                    title: '지속적 개선 체계', // generateReportHTML 호환성을 위해 추가
                     timeline: '지속적',
                     description: 'PDCA 사이클을 통한 지속적 개선 문화를 정착시키고, 정기적인 성과 측정 및 개선 활동을 수행하세요.'
                 });
