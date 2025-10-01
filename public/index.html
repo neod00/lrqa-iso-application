@@ -3570,8 +3570,65 @@
                 }
             }
             
-            // 갭분석 보고서 생성
+            // 갭분석 보고서 생성 (API 호출 방식)
             async generateGapAnalysis(formData, selectedStandards) {
+                try {
+                    console.log('🚀 고급 갭분석 API 호출 시작...');
+                    
+                    // API 호출
+                    const response = await fetch('/api/gap-analysis', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            formData: formData,
+                            selectedStandards: selectedStandards
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`API 호출 실패: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (!result.success) {
+                        throw new Error(result.error || '갭분석 생성 실패');
+                    }
+                    
+                    console.log('✅ 고급 갭분석 완료:', result.data);
+                    
+                    // 보고서 데이터 생성
+                    const reportData = {
+                        companyName: result.data.companyName,
+                        standards: selectedStandards,
+                        selectedStandards: selectedStandards,
+                        analysisDate: new Date().toISOString(),
+                        reportId: 'GAP-' + Date.now(),
+                        gapAnalysis: result.data.gapAnalysis,
+                        reportHtml: result.data.reportHtml,
+                        formData: formData
+                    };
+                    
+                    // 보고서를 로컬 스토리지에 저장
+                    localStorage.setItem('gapAnalysisReport', JSON.stringify(reportData));
+                    
+                    // 보고서 다운로드 링크 생성
+                    this.generateReportDownload(reportData);
+                    
+                    return reportData;
+                } catch (error) {
+                    console.error('갭분석 보고서 생성 오류:', error);
+                    
+                    // API 실패 시 기존 방식으로 폴백
+                    console.log('🔄 기존 방식으로 폴백...');
+                    return await this.generateGapAnalysisFallback(formData, selectedStandards);
+                }
+            },
+            
+            // 폴백 갭분석 (기존 방식)
+            async generateGapAnalysisFallback(formData, selectedStandards) {
                 try {
                     // 갭분석 보고서 생성 시뮬레이션
                     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -3584,14 +3641,14 @@
                     // 보고서 데이터 생성
                     const reportData = {
                         companyName: formData.companyNameKo || formData.companyNameEn || 'Unknown Company',
-                        standards: selectedStandards, // generateReportHTML과 호환성을 위해 standards로 변경
-                        selectedStandards: selectedStandards, // 기존 호환성 유지
+                        standards: selectedStandards,
+                        selectedStandards: selectedStandards,
                         analysisDate: new Date().toISOString(),
                         reportId: 'GAP-' + Date.now(),
                         findings: findings,
                         recommendations: recommendations,
                         riskLevel: riskLevel,
-                        formData: formData // 추가 정보 포함
+                        formData: formData
                     };
                     
                     // 보고서를 로컬 스토리지에 저장
@@ -3602,7 +3659,7 @@
                     
                     return reportData;
                 } catch (error) {
-                    console.error('갭분석 보고서 생성 오류:', error);
+                    console.error('폴백 갭분석 보고서 생성 오류:', error);
                     throw error;
                 }
             }
@@ -3959,9 +4016,10 @@
             
             // 보고서 다운로드 생성
             async generateReportDownload(reportData) {
-                const reportHtml = generateReportHTML(reportData);
+                // 고급 HTML 보고서 사용 (API에서 받은 경우)
+                const reportHtml = reportData.reportHtml || generateReportHTML(reportData);
                 
-                // 1. 브라우저 다운로드 (기존 방식)
+                // 1. 브라우저 다운로드
                 const blob = new Blob([reportHtml], { type: 'text/html' });
                 const url = URL.createObjectURL(blob);
                 
