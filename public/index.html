@@ -3146,48 +3146,82 @@
             
             // 심각도별 소요시간 계산
             calculateTimeline(severity) {
+                const isKorean = document.documentElement.lang === 'ko';
                 switch(severity) {
-                    case 'High': return '1-2개월';
-                    case 'Medium': return '2-3개월';
-                    case 'Low': return '3-6개월';
-                    default: return '2-3개월';
+                    case 'High': return isKorean ? '1-2개월' : '1-2 months';
+                    case 'Medium': return isKorean ? '2-3개월' : '2-3 months';
+                    case 'Low': return isKorean ? '3-6개월' : '3-6 months';
+                    default: return isKorean ? '2-3개월' : '2-3 months';
                 }
             }
             
             // 상세 권장사항 생성
             getDetailedRecommendation(finding) {
+                const isKorean = document.documentElement.lang === 'ko';
+                
                 const recommendations = {
-                    '품질경영시스템 문서 부족': '품질매뉴얼, 절차서, 작업지침서를 체계적으로 작성하고 문서관리 절차를 수립하세요. 문서 버전 관리와 승인 체계를 구축하는 것이 중요합니다.',
-                    '고객 만족도 측정 체계 부재': '고객 설문조사, 인터뷰, 불만처리 시스템을 통해 고객 만족도를 정기적으로 측정하고 개선사항을 도출하세요.',
-                    '내부심사 체계 미구축': '내부심사원 양성, 심사 계획 수립, 심사 실시 및 결과 보고 체계를 구축하세요. 연 1회 이상 정기심사를 실시하는 것이 권장됩니다.',
-                    '경영검토 절차 부재': '최고경영자가 참여하는 정기적인 경영검토 회의를 개최하고, 품질경영시스템의 적합성, 적절성, 효과성을 검토하세요.',
-                    '환경영향평가 미실시': '조직의 모든 활동, 제품, 서비스를 대상으로 환경영향을 식별하고 평가하는 절차를 수립하세요. 정기적인 재평가가 필요합니다.',
-                    '환경법규 준수 체계 부재': '적용 가능한 환경법규를 식별하고 준수 여부를 정기적으로 점검하는 체계를 구축하세요. 법규 변경사항을 모니터링하는 절차도 필요합니다.',
-                    '환경목표 및 계획 부재': '환경정책에 부합하는 구체적이고 측정 가능한 환경목표를 설정하고, 달성을 위한 실행계획을 수립하세요.',
-                    '환경 비상사태 대응체계 부재': '환경사고 발생 시 신속한 대응을 위한 비상대응계획을 수립하고, 정기적인 훈련을 실시하세요.',
-                    '작업장 위험성평가 미실시': '모든 작업장과 작업을 대상으로 위험요인을 식별하고 평가하는 체계를 구축하세요. 위험도에 따른 우선순위 관리가 중요합니다.',
-                    '안전보건정책 부재': '최고경영자가 승인한 안전보건정책을 수립하고 모든 직원에게 공표하세요. 정책은 정기적으로 검토하고 개선해야 합니다.',
-                    '안전보건목표 부재': '안전보건정책에 부합하는 구체적인 목표를 설정하고, 달성을 위한 실행계획과 성과측정 방법을 수립하세요.',
-                    '사고조사 체계 부재': '사고 및 부적합 발생 시 원인분석, 재발방지 대책 수립, 효과성 검증을 위한 체계적인 절차를 구축하세요.',
-                    '안전보건교육 체계 부재': '직원별 역할과 책임에 맞는 안전보건교육 프로그램을 개발하고, 정기적인 교육을 실시하세요.'
+                    '품질경영시스템 문서 부족': isKorean ? 
+                        '품질매뉴얼, 절차서, 작업지침서를 체계적으로 작성하고 문서관리 절차를 수립하세요. 문서 버전 관리와 승인 체계를 구축하는 것이 중요합니다.' :
+                        'Systematically develop quality manuals, procedures, and work instructions, and establish document management procedures. Building a version control and approval system is crucial.',
+                    '고객 만족도 측정 체계 부재': isKorean ?
+                        '고객 설문조사, 인터뷰, 불만처리 시스템을 통해 고객 만족도를 정기적으로 측정하고 개선사항을 도출하세요.' :
+                        'Regularly measure customer satisfaction through surveys, interviews, and complaint handling systems, and identify improvement areas.',
+                    '내부심사 체계 미구축': isKorean ?
+                        '내부심사원 양성, 심사 계획 수립, 심사 실시 및 결과 보고 체계를 구축하세요. 연 1회 이상 정기심사를 실시하는 것이 권장됩니다.' :
+                        'Establish internal auditor training, audit planning, audit execution, and reporting systems. It is recommended to conduct regular audits at least once a year.',
+                    '경영검토 절차 부재': isKorean ?
+                        '최고경영자가 참여하는 정기적인 경영검토 회의를 개최하고, 품질경영시스템의 적합성, 적절성, 효과성을 검토하세요.' :
+                        'Hold regular management review meetings with top management participation to review the suitability, adequacy, and effectiveness of the quality management system.',
+                    '환경영향평가 미실시': isKorean ?
+                        '조직의 모든 활동, 제품, 서비스를 대상으로 환경영향을 식별하고 평가하는 절차를 수립하세요. 정기적인 재평가가 필요합니다.' :
+                        'Establish procedures to identify and assess environmental impacts of all organizational activities, products, and services. Regular reassessment is necessary.',
+                    '환경법규 준수 체계 부재': isKorean ?
+                        '적용 가능한 환경법규를 식별하고 준수 여부를 정기적으로 점검하는 체계를 구축하세요. 법규 변경사항을 모니터링하는 절차도 필요합니다.' :
+                        'Build a system to identify applicable environmental laws and regularly check compliance. Procedures to monitor legal changes are also necessary.',
+                    '환경목표 및 계획 부재': isKorean ?
+                        '환경정책에 부합하는 구체적이고 측정 가능한 환경목표를 설정하고, 달성을 위한 실행계획을 수립하세요.' :
+                        'Set specific and measurable environmental objectives aligned with the environmental policy and establish action plans to achieve them.',
+                    '환경 비상사태 대응체계 부재': isKorean ?
+                        '환경사고 발생 시 신속한 대응을 위한 비상대응계획을 수립하고, 정기적인 훈련을 실시하세요.' :
+                        'Develop emergency response plans for rapid response to environmental incidents and conduct regular training.',
+                    '작업장 위험성평가 미실시': isKorean ?
+                        '모든 작업장과 작업을 대상으로 위험요인을 식별하고 평가하는 체계를 구축하세요. 위험도에 따른 우선순위 관리가 중요합니다.' :
+                        'Build a system to identify and assess risk factors for all workplaces and tasks. Priority management based on risk level is important.',
+                    '안전보건정책 부재': isKorean ?
+                        '최고경영자가 승인한 안전보건정책을 수립하고 모든 직원에게 공표하세요. 정책은 정기적으로 검토하고 개선해야 합니다.' :
+                        'Establish an occupational health and safety policy approved by top management and communicate it to all employees. The policy should be regularly reviewed and improved.',
+                    '안전보건목표 부재': isKorean ?
+                        '안전보건정책에 부합하는 구체적인 목표를 설정하고, 달성을 위한 실행계획과 성과측정 방법을 수립하세요.' :
+                        'Set specific objectives aligned with the occupational health and safety policy and establish action plans and performance measurement methods to achieve them.',
+                    '사고조사 체계 부재': isKorean ?
+                        '사고 및 부적합 발생 시 원인분석, 재발방지 대책 수립, 효과성 검증을 위한 체계적인 절차를 구축하세요.' :
+                        'Establish systematic procedures for cause analysis, recurrence prevention measures, and effectiveness verification when accidents and non-conformities occur.',
+                    '안전보건교육 체계 부재': isKorean ?
+                        '직원별 역할과 책임에 맞는 안전보건교육 프로그램을 개발하고, 정기적인 교육을 실시하세요.' :
+                        'Develop occupational health and safety education programs tailored to each employee\'s role and responsibilities, and conduct regular training.'
                 };
                 
-                return recommendations[finding.finding] || '해당 항목에 대한 구체적인 개선 방안을 수립하고 단계적으로 실행하세요.';
+                return recommendations[finding.finding] || (isKorean ? 
+                    '해당 항목에 대한 구체적인 개선 방안을 수립하고 단계적으로 실행하세요.' :
+                    'Develop specific improvement measures for the relevant item and implement them step by step.');
             }
             
             // 일반 권장사항 생성
             generateGeneralRecommendations(standards, formData) {
+                const isKorean = document.documentElement.lang === 'ko';
                 const recommendations = [];
                 
                 // 통합경영시스템 권장사항
                 if (standards.length > 1) {
                     recommendations.push({
-                        standard: '통합경영시스템',
+                        standard: isKorean ? '통합경영시스템' : 'Integrated Management System',
                         priority: 'High',
-                        finding: '통합경영시스템 구축',
-                        title: '통합경영시스템 구축',
-                        timeline: '6-12개월',
-                        description: '여러 표준을 통합하여 효율적인 경영시스템을 구축하세요. 중복된 절차를 통합하고 일관된 관리체계를 수립하는 것이 중요합니다.'
+                        finding: isKorean ? '통합경영시스템 구축' : 'Integrated Management System Development',
+                        title: isKorean ? '통합경영시스템 구축' : 'Integrated Management System Development',
+                        timeline: isKorean ? '6-12개월' : '6-12 months',
+                        description: isKorean ? 
+                            '여러 표준을 통합하여 효율적인 경영시스템을 구축하세요. 중복된 절차를 통합하고 일관된 관리체계를 수립하는 것이 중요합니다.' :
+                            'Build an efficient management system by integrating multiple standards. It is important to integrate duplicate procedures and establish a consistent management system.'
                     });
                 }
                 
@@ -3195,23 +3229,27 @@
                 const employeeCount = parseInt(formData.totalEmployees) || 0;
                 if (employeeCount > 50) {
                     recommendations.push({
-                        standard: '교육 및 역량',
+                        standard: isKorean ? '교육 및 역량' : 'Training and Competence',
                         priority: 'Medium',
-                        finding: '체계적인 교육 프로그램',
-                        title: '체계적인 교육 프로그램',
-                        timeline: '3-6개월',
-                        description: '직원 규모에 맞는 체계적인 교육 프로그램을 수립하고, 경영시스템에 대한 이해도를 높이세요.'
+                        finding: isKorean ? '체계적인 교육 프로그램' : 'Systematic Training Program',
+                        title: isKorean ? '체계적인 교육 프로그램' : 'Systematic Training Program',
+                        timeline: isKorean ? '3-6개월' : '3-6 months',
+                        description: isKorean ? 
+                            '직원 규모에 맞는 체계적인 교육 프로그램을 수립하고, 경영시스템에 대한 이해도를 높이세요.' :
+                            'Establish a systematic training program appropriate for the employee size and increase understanding of the management system.'
                     });
                 }
                 
                 // 지속적 개선 권장사항
                 recommendations.push({
-                    standard: '지속적 개선',
+                    standard: isKorean ? '지속적 개선' : 'Continuous Improvement',
                     priority: 'Medium',
-                    finding: '지속적 개선 체계',
-                    title: '지속적 개선 체계',
-                    timeline: '지속적',
-                    description: 'PDCA 사이클을 통한 지속적 개선 문화를 정착시키고, 정기적인 성과 측정 및 개선 활동을 수행하세요.'
+                    finding: isKorean ? '지속적 개선 체계' : 'Continuous Improvement System',
+                    title: isKorean ? '지속적 개선 체계' : 'Continuous Improvement System',
+                    timeline: isKorean ? '지속적' : 'Ongoing',
+                    description: isKorean ? 
+                        'PDCA 사이클을 통한 지속적 개선 문화를 정착시키고, 정기적인 성과 측정 및 개선 활동을 수행하세요.' :
+                        'Establish a culture of continuous improvement through the PDCA cycle and perform regular performance measurement and improvement activities.'
                 });
                 
                 return recommendations;
@@ -4150,8 +4188,8 @@
                 '<div class="section">' +
                 '<h2>🎯 ' + (isKorean ? '경영진 관심이 필요한 영역' : 'Areas Requiring Management Attention') + '</h2>' +
                 '<p>' + (isKorean ? 
-                    'The following areas are core areas that require direct management attention and support:' :
-                    '다음 영역들은 경영진의 직접적인 관심과 지원이 필요한 핵심 영역입니다:') + '</p>' +
+                    '다음 영역들은 경영진의 직접적인 관심과 지원이 필요한 핵심 영역입니다:' :
+                    'The following areas are core areas that require direct management attention and support:') + '</p>' +
                 '<ul>' +
                 '<li><strong>' + (isKorean ? '경영시스템 정책 및 목표 수립:' : 'Management System Policy and Objective Setting:') + '</strong> ' + (isKorean ? '조직의 방향성을 제시하는 명확한 정책과 측정 가능한 목표 설정' : 'Establishing clear policies that provide organizational direction and measurable objectives') + '</li>' +
                 '<li><strong>' + (isKorean ? '필요한 자원의 할당 및 배치:' : 'Resource Allocation and Deployment:') + '</strong> ' + (isKorean ? '인증 준비를 위한 인력, 예산, 시설 등 자원의 체계적 배치' : 'Systematic deployment of resources such as personnel, budget, and facilities for certification preparation') + '</li>' +
@@ -4190,36 +4228,36 @@
                 '<div class="timeline">' +
                 '<div class="timeline-item">' +
                 '<h4>' + (isKorean ? '1단계: 기초 구축 (1-2개월)' : 'Phase 1: Foundation Building (1-2 months)') + '</h4>' +
-                '<p>' + (isKorean ? 'Management system policy establishment, basic documentation, initial training, dedicated organization formation' : '경영시스템 정책 수립, 기본 문서 작성, 초기 교육 실시, 전담 조직 구성') + '</p>' +
+                '<p>' + (isKorean ? '경영시스템 정책 수립, 기본 문서 작성, 초기 교육 실시, 전담 조직 구성' : 'Management system policy establishment, basic documentation, initial training, dedicated organization formation') + '</p>' +
                 '</div>' +
                 '<div class="timeline-item">' +
                 '<h4>' + (isKorean ? '2단계: 프로세스 구현 (2-4개월)' : 'Phase 2: Process Implementation (2-4 months)') + '</h4>' +
-                '<p>' + (isKorean ? 'Core process development, monitoring system establishment, internal audit preparation, performance measurement system development' : '핵심 프로세스 구축, 모니터링 체계 설립, 내부심사 준비, 성과 측정 체계 구축') + '</p>' +
+                '<p>' + (isKorean ? '핵심 프로세스 구축, 모니터링 체계 설립, 내부심사 준비, 성과 측정 체계 구축' : 'Core process development, monitoring system establishment, internal audit preparation, performance measurement system development') + '</p>' +
                 '</div>' +
                 '<div class="timeline-item">' +
                 '<h4>' + (isKorean ? '3단계: 최적화 및 인증 준비 (1-2개월)' : 'Phase 3: Optimization and Certification Preparation (1-2 months)') + '</h4>' +
-                '<p>' + (isKorean ? 'System optimization, management review implementation, certification application preparation, final inspection and supplementation' : '시스템 최적화, 경영검토 실시, 인증 신청 준비, 최종 점검 및 보완') + '</p>' +
+                '<p>' + (isKorean ? '시스템 최적화, 경영검토 실시, 인증 신청 준비, 최종 점검 및 보완' : 'System optimization, management review implementation, certification application preparation, final inspection and supplementation') + '</p>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>⚠️ ' + (isKorean ? 'Assessment Limitations' : '평가 제한사항') + '</h2>' +
+                '<h2>⚠️ ' + (isKorean ? '평가 제한사항' : 'Assessment Limitations') + '</h2>' +
                 '<ul>' +
-                '<li>' + (isKorean ? 'This assessment is a preliminary analysis based on application information.' : '본 평가는 신청서 정보를 바탕으로 한 예비 분석입니다.') + '</li>' +
-                '<li>' + (isKorean ? 'On-site visits or additional document reviews are not included.' : '현장 방문이나 추가 문서 검토는 포함되지 않았습니다.') + '</li>' +
-                '<li>' + (isKorean ? 'There may be differences from actual operational situations.' : '실제 운영 상황과 차이가 있을 수 있습니다.') + '</li>' +
-                '<li>' + (isKorean ? 'On-site audit is necessary for accurate assessment.' : '정확한 평가를 위해서는 현장 심사가 필요합니다.') + '</li>' +
-                '<li>' + (isKorean ? 'Special organizational circumstances or internal factors may not have been considered.' : '조직의 특수한 상황이나 내부 요인은 고려되지 않았을 수 있습니다.') + '</li>' +
+                '<li>' + (isKorean ? '본 평가는 신청서 정보를 바탕으로 한 예비 분석입니다.' : 'This assessment is a preliminary analysis based on application information.') + '</li>' +
+                '<li>' + (isKorean ? '현장 방문이나 추가 문서 검토는 포함되지 않았습니다.' : 'On-site visits or additional document reviews are not included.') + '</li>' +
+                '<li>' + (isKorean ? '실제 운영 상황과 차이가 있을 수 있습니다.' : 'There may be differences from actual operational situations.') + '</li>' +
+                '<li>' + (isKorean ? '정확한 평가를 위해서는 현장 심사가 필요합니다.' : 'On-site audit is necessary for accurate assessment.') + '</li>' +
+                '<li>' + (isKorean ? '조직의 특수한 상황이나 내부 요인은 고려되지 않았을 수 있습니다.' : 'Special organizational circumstances or internal factors may not have been considered.') + '</li>' +
                 '</ul>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🔒 ' + (isKorean ? 'Confidentiality' : '기밀성') + '</h2>' +
+                '<h2>🔒 ' + (isKorean ? '기밀성' : 'Confidentiality') + '</h2>' +
                 '<p>' + (isKorean ? 
-                    'This report contains confidential information of ' + reportData.companyName + ' and is protected under LRQA\'s strict confidentiality policy. This report cannot be disclosed to third parties without the organization\'s approval.' :
-                    '본 보고서는 ' + reportData.companyName + '의 기밀 정보를 포함하고 있으며, LRQA의 엄격한 기밀성 정책에 따라 보호됩니다. 본 보고서는 해당 조직의 승인 없이 제3자에게 공개될 수 없습니다.') + '</p>' +
+                    '본 보고서는 ' + reportData.companyName + '의 기밀 정보를 포함하고 있으며, LRQA의 엄격한 기밀성 정책에 따라 보호됩니다. 본 보고서는 해당 조직의 승인 없이 제3자에게 공개될 수 없습니다.' :
+                    'This report contains confidential information of ' + reportData.companyName + ' and is protected under LRQA\'s strict confidentiality policy. This report cannot be disclosed to third parties without the organization\'s approval.') + '</p>' +
                 '<p>' + (isKorean ? 
-                    'The report content is based on LRQA\'s professional judgment and includes customized recommendations tailored to the organization\'s specific circumstances.' :
-                    '보고서의 내용은 LRQA의 전문적 판단에 기반하며, 조직의 특정 상황에 맞는 맞춤형 권고사항을 포함하고 있습니다.') + '</p>' +
+                    '보고서의 내용은 LRQA의 전문적 판단에 기반하며, 조직의 특정 상황에 맞는 맞춤형 권고사항을 포함하고 있습니다.' :
+                    'The report content is based on LRQA\'s professional judgment and includes customized recommendations tailored to the organization\'s specific circumstances.') + '</p>' +
                 '</div>' +
                 '</div>' +
                 '<div class="footer">' +
