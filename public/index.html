@@ -2725,8 +2725,9 @@
         
         // 갭분석 엔진 클래스 (submitFormWithGapAnalysis 함수 앞으로 이동)
         class GapAnalysisEngine {
-            constructor() {
-                const isKorean = document.documentElement.lang === 'ko';
+            constructor(language = null) {
+                this.language = language || document.documentElement.lang;
+                const isKorean = this.language === 'ko';
                 this.steps = [
                     { id: 'step1', text: isKorean ? '신청서 데이터 처리중...' : 'Processing application data...', duration: 2000 },
                     { id: 'step2', text: isKorean ? '기업 정보 수집중...' : 'Collecting company information...', duration: 3000 },
@@ -3125,7 +3126,7 @@
                 });
                 
                 // 추가적인 일반 권장사항
-                recommendations.push(...this.generateGeneralRecommendations(standards, formData));
+                recommendations.push(...this.generateGeneralRecommendations(standards, formData, this.language));
                 
                 return recommendations;
             }
@@ -3137,16 +3138,16 @@
                     priority: finding.severity,
                     finding: finding.finding,
                     title: finding.finding,
-                    timeline: this.calculateTimeline(finding.severity),
-                    description: this.getDetailedRecommendation(finding)
+                    timeline: this.calculateTimeline(finding.severity, this.language),
+                    description: this.getDetailedRecommendation(finding, this.language)
                 };
                 
                 return baseRecommendation;
             }
             
             // 심각도별 소요시간 계산
-            calculateTimeline(severity) {
-                const isKorean = document.documentElement.lang === 'ko';
+            calculateTimeline(severity, language = null) {
+                const isKorean = language === 'ko';
                 switch(severity) {
                     case 'High': return isKorean ? '1-2개월' : '1-2 months';
                     case 'Medium': return isKorean ? '2-3개월' : '2-3 months';
@@ -3156,8 +3157,8 @@
             }
             
             // 상세 권장사항 생성
-            getDetailedRecommendation(finding) {
-                const isKorean = document.documentElement.lang === 'ko';
+            getDetailedRecommendation(finding, language = null) {
+                const isKorean = language === 'ko';
                 
                 const recommendations = {
                     '품질경영시스템 문서 부족': isKorean ? 
@@ -3207,8 +3208,8 @@
             }
             
             // 일반 권장사항 생성
-            generateGeneralRecommendations(standards, formData) {
-                const isKorean = document.documentElement.lang === 'ko';
+            generateGeneralRecommendations(standards, formData, language = null) {
+                const isKorean = language === 'ko';
                 const recommendations = [];
                 
                 // 통합경영시스템 권장사항
@@ -3390,7 +3391,9 @@
                 // 5. 갭분석 엔진 초기화
                 let gapAnalysisEngine;
                 try {
-                    gapAnalysisEngine = new GapAnalysisEngine();
+                    const currentLanguage = document.documentElement.lang;
+                    const reportLanguage = currentLanguage === 'ko' ? 'ko' : 'en';
+                    gapAnalysisEngine = new GapAnalysisEngine(reportLanguage);
                 } catch (error) {
                     console.error('Gap analysis engine initialization error:', error);
                     hideGapAnalysisModal();
@@ -4215,12 +4218,33 @@
                 '<div class="section">' +
                 '<h2>💡 ' + (isKorean ? 'LRQA 전문가 권고사항' : 'LRQA Expert Recommendations') + '</h2>' +
                 '<div class="recommendations">' +
-                reportData.recommendations.map(rec =>
-                    '<div class="recommendation-item">' +
-                    '<div class="recommendation-title">' + rec.title + '</div>' +
+                reportData.recommendations.map(rec => {
+                    // 권장사항 제목을 언어에 따라 매핑
+                    const titleMap = {
+                        '품질경영시스템 문서 부족': isKorean ? '품질경영시스템 문서 부족' : 'Quality Management System Documentation Deficiency',
+                        '고객 만족도 측정 체계 부재': isKorean ? '고객 만족도 측정 체계 부재' : 'Customer Satisfaction Measurement System Absence',
+                        '내부심사 체계 미구축': isKorean ? '내부심사 체계 미구축' : 'Internal Audit System Not Established',
+                        '경영검토 절차 부재': isKorean ? '경영검토 절차 부재' : 'Management Review Procedure Absence',
+                        '환경영향평가 미실시': isKorean ? '환경영향평가 미실시' : 'Environmental Impact Assessment Not Conducted',
+                        '환경법규 준수 체계 부재': isKorean ? '환경법규 준수 체계 부재' : 'Environmental Legal Compliance System Absence',
+                        '환경목표 및 계획 부재': isKorean ? '환경목표 및 계획 부재' : 'Environmental Objectives and Plans Absence',
+                        '환경 비상사태 대응체계 부재': isKorean ? '환경 비상사태 대응체계 부재' : 'Environmental Emergency Response System Absence',
+                        '작업장 위험성평가 미실시': isKorean ? '작업장 위험성평가 미실시' : 'Workplace Risk Assessment Not Conducted',
+                        '안전보건정책 부재': isKorean ? '안전보건정책 부재' : 'Occupational Health and Safety Policy Absence',
+                        '안전보건목표 부재': isKorean ? '안전보건목표 부재' : 'Occupational Health and Safety Objectives Absence',
+                        '사고조사 체계 부재': isKorean ? '사고조사 체계 부재' : 'Accident Investigation System Absence',
+                        '안전보건교육 체계 부재': isKorean ? '안전보건교육 체계 부재' : 'Occupational Health and Safety Education System Absence',
+                        '통합경영시스템 구축': isKorean ? '통합경영시스템 구축' : 'Integrated Management System Development',
+                        '체계적인 교육 프로그램': isKorean ? '체계적인 교육 프로그램' : 'Systematic Training Program',
+                        '지속적 개선 체계': isKorean ? '지속적 개선 체계' : 'Continuous Improvement System'
+                    };
+                    const displayTitle = titleMap[rec.title] || rec.title;
+                    
+                    return '<div class="recommendation-item">' +
+                    '<div class="recommendation-title">' + displayTitle + '</div>' +
                     '<div class="recommendation-text">' + rec.description + '</div>' +
-                    '</div>'
-                ).join('') +
+                    '</div>';
+                }).join('') +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
