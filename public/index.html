@@ -2745,6 +2745,9 @@
                     }
                     
                     // Netlify Functions API 호출 (웹 배포용)
+                    const apiCurrentLanguage = document.documentElement.lang;
+                    const apiReportLanguage = apiCurrentLanguage === 'ko' ? 'ko' : 'en'; // 한글만 한글 보고서, 나머지는 영어
+                    
                     const response = await fetch('/api/submit-application-with-gap-analysis', {
                         method: 'POST',
                         headers: {
@@ -2753,7 +2756,8 @@
                         body: JSON.stringify({
                             formData: formData,
                             selectedStandards: selectedStandards,
-                            gapAnalysisOnly: true  // 갭분석만 수행하도록 플래그 추가
+                            gapAnalysisOnly: true,  // 갭분석만 수행하도록 플래그 추가
+                            language: apiReportLanguage  // 보고서 언어 정보 전달
                         })
                     });
                     
@@ -2787,6 +2791,9 @@
                     
                     // 갭분석 결과에서 보고서 데이터 생성
                     const gapResult = result.gapAnalysisResult;
+                    const dataCurrentLanguage = document.documentElement.lang;
+                    const dataReportLanguage = dataCurrentLanguage === 'ko' ? 'ko' : 'en'; // 한글만 한글 보고서, 나머지는 영어
+                    
                     const reportData = {
                         companyName: formData.companyName || formData.companyNameKo || 'Unknown Company',
                         standards: selectedStandards,
@@ -2798,7 +2805,7 @@
                         keyRisks: gapResult.keyRisks,
                         recommendations: gapResult.recommendations,
                         formData: formData,
-                        language: document.documentElement.lang
+                        language: dataReportLanguage  // 보고서 언어 (한글만 한글, 나머지는 영어)
                     };
                     
                     // 보고서를 로컬 스토리지에 저장
@@ -2848,6 +2855,9 @@
                     }
                     
                     // Report data generation
+                    const fallbackCurrentLanguage = document.documentElement.lang;
+                    const fallbackReportLanguage = fallbackCurrentLanguage === 'ko' ? 'ko' : 'en'; // 한글만 한글 보고서, 나머지는 영어
+                    
                     const reportData = {
                         companyName: formData.companyNameKo || formData.companyNameEn || 'Unknown Company',
                         standards: selectedStandards,
@@ -2858,7 +2868,7 @@
                         recommendations: recommendations,
                         riskLevel: riskLevel,
                         formData: formData,
-                        language: document.documentElement.lang
+                        language: fallbackReportLanguage  // 보고서 언어 (한글만 한글, 나머지는 영어)
                     };
                     
                     if (progressCallback) {
@@ -3238,7 +3248,10 @@
             async generateReportDownload(reportData) {
                 // 고급 HTML 보고서 사용 (API에서 받은 경우)
                 const currentLanguage = reportData.language || document.documentElement.lang;
-                const reportHtml = reportData.reportHtml || generateReportHTML(reportData, currentLanguage);
+                
+                // 한글을 제외한 모든 언어에서는 영어 보고서 생성
+                const reportLanguage = currentLanguage === 'ko' ? 'ko' : 'en';
+                const reportHtml = reportData.reportHtml || generateReportHTML(reportData, reportLanguage);
                 
                 // 1. 브라우저 다운로드
                 const blob = new Blob([reportHtml], { type: 'text/html' });
@@ -3246,7 +3259,13 @@
                 
                 const downloadLink = document.createElement('a');
                 downloadLink.href = url;
-                downloadLink.download = `${reportData.companyName}_AI_통합_갭분석보고서_${new Date().getFullYear()}.html`;
+                
+                // 언어에 따라 다운로드 파일명 설정 (한글만 한글 파일명, 나머지는 영어)
+                const isKorean = currentLanguage === 'ko';
+                const fileName = isKorean ? 
+                    `${reportData.companyName}_AI_통합_갭분석보고서_${new Date().getFullYear()}.html` :
+                    `${reportData.companyName}_AI_Integrated_Gap_Analysis_Report_${new Date().getFullYear()}.html`;
+                downloadLink.download = fileName;
                 downloadLink.style.display = 'none';
                 document.body.appendChild(downloadLink);
                 
