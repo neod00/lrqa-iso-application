@@ -2545,22 +2545,22 @@
             const website = document.querySelector('input[name="website"]').value.trim();
             
             if (!companyName) {
-                const isEnglish = document.documentElement.lang === 'en';
-                alert(isEnglish ? 'Please enter company name for gap analysis.' : '갭분석을 위해 회사명을 입력해주세요.');
+                const isKorean = document.documentElement.lang === 'ko';
+                alert(isKorean ? '갭분석을 위해 회사명을 입력해주세요.' : 'Please enter company name for gap analysis.');
                 return;
             }
             
             if (!website) {
-                const isEnglish = document.documentElement.lang === 'en';
-                alert(isEnglish ? 'Please enter company website for gap analysis.' : '갭분석을 위해 회사 웹사이트를 입력해주세요.');
+                const isKorean = document.documentElement.lang === 'ko';
+                alert(isKorean ? '갭분석을 위해 회사 웹사이트를 입력해주세요.' : 'Please enter company website for gap analysis.');
                 return;
             }
             
             // ISO 표준 선택 확인
             const isoStandards = document.querySelectorAll('input[name="isoStandards"]:checked');
             if (isoStandards.length === 0) {
-                const isEnglish = document.documentElement.lang === 'en';
-                alert(isEnglish ? 'Please select ISO standards for gap analysis.' : '갭분석을 위해 ISO 표준을 선택해주세요.');
+                const isKorean = document.documentElement.lang === 'ko';
+                alert(isKorean ? '갭분석을 위해 ISO 표준을 선택해주세요.' : 'Please select ISO standards for gap analysis.');
                 return;
             }
             
@@ -2583,8 +2583,8 @@
                 const progressText = document.getElementById('progressText');
                 if (progressFill) progressFill.style.width = '0%';
                 if (progressText) {
-                    const isEnglish = document.documentElement.lang === 'en';
-                    progressText.textContent = `0% ${isEnglish ? 'Complete' : '완료'}`;
+                    const isKorean = document.documentElement.lang === 'ko';
+                    progressText.textContent = `0% ${isKorean ? '완료' : 'Complete'}`;
                 }
                 
                 // 모든 스텝 초기화
@@ -2626,13 +2626,13 @@
         
         // 갭분석 프로세스 시작
         async function startGapAnalysisProcess() {
-            const isEnglish = document.documentElement.lang === 'en';
+            const isKorean = document.documentElement.lang === 'ko';
             const analysisSteps = [
-                { id: 'step1', text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...', duration: 2000 },
-                { id: 'step2', text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...', duration: 3000 },
-                { id: 'step3', text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...', duration: 4000 },
-                { id: 'step4', text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...', duration: 2000 },
-                { id: 'step5', text: isEnglish ? 'Sending email...' : '이메일 발송중...', duration: 1500 }
+                { id: 'step1', text: isKorean ? '신청서 데이터 처리중...' : 'Processing application data...', duration: 2000 },
+                { id: 'step2', text: isKorean ? '기업 정보 수집중...' : 'Collecting company information...', duration: 3000 },
+                { id: 'step3', text: isKorean ? 'AI 리스크 분석중...' : 'AI risk analysis in progress...', duration: 4000 },
+                { id: 'step4', text: isKorean ? '갭분석 보고서 생성중...' : 'Generating gap analysis report...', duration: 2000 },
+                { id: 'step5', text: isKorean ? '이메일 발송중...' : 'Sending email...', duration: 1500 }
             ];
             
             try {
@@ -2653,20 +2653,20 @@
                 
                 // 성공 메시지
                 hideGapAnalysisModal();
-                const isEnglish = document.documentElement.lang === 'en';
-                showMessage('success', isEnglish ? 'Gap Analysis Complete!' : '갭분석 완료!', 
-                    isEnglish ? 
-                        'Application has been submitted and a customized gap analysis report has been generated.\n\nPlease check your email for the report.' :
-                        '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\n\n보고서는 이메일로 발송되었으니 확인해 주세요.');
+                const isKorean = document.documentElement.lang === 'ko';
+                showMessage('success', isKorean ? '갭분석 완료!' : 'Gap Analysis Complete!', 
+                    isKorean ? 
+                        '신청서가 제출되었고, 맞춤형 갭분석 보고서가 생성되었습니다.\n\n보고서는 이메일로 발송되었으니 확인해 주세요.' :
+                        'Application has been submitted and a customized gap analysis report has been generated.\n\nPlease check your email for the report.');
                 
             } catch (error) {
                 console.error('Gap analysis error:', error);
                 hideGapAnalysisModal();
-                const isEnglish = document.documentElement.lang === 'en';
-                showMessage('error', isEnglish ? 'Gap Analysis Failed' : '갭분석 실패', 
-                    isEnglish ? 
-                        'An error occurred during gap analysis processing.\n\nPlease try again later.' :
-                        '갭분석 처리 중 오류가 발생했습니다.\n\n잠시 후 다시 시도해 주세요.');
+                const isKorean = document.documentElement.lang === 'ko';
+                showMessage('error', isKorean ? '갭분석 실패' : 'Gap Analysis Failed', 
+                    isKorean ? 
+                        '갭분석 처리 중 오류가 발생했습니다.\n\n잠시 후 다시 시도해 주세요.' :
+                        'An error occurred during gap analysis processing.\n\nPlease try again later.');
             } finally {
                 isGapAnalysisInProgress = false;
             }
@@ -2698,21 +2698,21 @@
             }
             
             if (progressText) {
-                const isEnglish = document.documentElement.lang === 'en';
-                progressText.textContent = `${Math.round(percentage)}% ${isEnglish ? 'Complete' : '완료'}`;
+                const isKorean = document.documentElement.lang === 'ko';
+                progressText.textContent = `${Math.round(percentage)}% ${isKorean ? '완료' : 'Complete'}`;
             }
         }
         
         // 갭분석 엔진 클래스 (submitFormWithGapAnalysis 함수 앞으로 이동)
         class GapAnalysisEngine {
             constructor() {
-                const isEnglish = document.documentElement.lang === 'en';
+                const isKorean = document.documentElement.lang === 'ko';
                 this.steps = [
-                    { id: 'step1', text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...', duration: 2000 },
-                    { id: 'step2', text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...', duration: 3000 },
-                    { id: 'step3', text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...', duration: 4000 },
-                    { id: 'step4', text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...', duration: 2000 },
-                    { id: 'step5', text: isEnglish ? 'Sending email...' : '이메일 발송중...', duration: 1500 }
+                    { id: 'step1', text: isKorean ? '신청서 데이터 처리중...' : 'Processing application data...', duration: 2000 },
+                    { id: 'step2', text: isKorean ? '기업 정보 수집중...' : 'Collecting company information...', duration: 3000 },
+                    { id: 'step3', text: isKorean ? 'AI 리스크 분석중...' : 'AI risk analysis in progress...', duration: 4000 },
+                    { id: 'step4', text: isKorean ? '갭분석 보고서 생성중...' : 'Generating gap analysis report...', duration: 2000 },
+                    { id: 'step5', text: isKorean ? '이메일 발송중...' : 'Sending email...', duration: 1500 }
                 ];
             }
             
@@ -2740,8 +2740,8 @@
                     
                     // 진행 상황 업데이트
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 20, text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 20, text: isKorean ? '신청서 데이터 처리중...' : 'Processing application data...' });
                     }
                     
                     // Netlify Functions API 호출 (웹 배포용)
@@ -2762,8 +2762,8 @@
                     });
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 40, text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 40, text: isKorean ? '기업 정보 수집중...' : 'Collecting company information...' });
                     }
                     
                     if (!response.ok) {
@@ -2771,8 +2771,8 @@
                     }
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 60, text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 60, text: isKorean ? 'AI 리스크 분석중...' : 'AI risk analysis in progress...' });
                     }
                     
                     const result = await response.json();
@@ -2783,8 +2783,8 @@
                     }
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 80, text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 80, text: isKorean ? '갭분석 보고서 생성중...' : 'Generating gap analysis report...' });
                     }
                     
                     console.log('✅ Advanced gap analysis completed:', result.gapAnalysisResult);
@@ -2815,8 +2815,8 @@
                     this.generateReportDownload(reportData);
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                    progressCallback({ progress: 100, text: isEnglish ? 'Gap Analysis Complete!' : '갭분석 완료!' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                    progressCallback({ progress: 100, text: isKorean ? '갭분석 완료!' : 'Gap Analysis Complete!' });
                     }
                     
                     return reportData;
@@ -2834,14 +2834,14 @@
                 try {
                     // Gap analysis report generation simulation
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 20, text: isEnglish ? 'Processing application data...' : '신청서 데이터 처리중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 20, text: isKorean ? '신청서 데이터 처리중...' : 'Processing application data...' });
                     }
                     await new Promise(resolve => setTimeout(resolve, 1000));
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 40, text: isEnglish ? 'Collecting company information...' : '기업 정보 수집중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 40, text: isKorean ? '기업 정보 수집중...' : 'Collecting company information...' });
                     }
                     
                     // Actual gap analysis execution
@@ -2850,8 +2850,8 @@
                     const riskLevel = this.calculateRiskLevel(formData, selectedStandards, findings);
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 60, text: isEnglish ? 'AI risk analysis in progress...' : 'AI 리스크 분석중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 60, text: isKorean ? 'AI 리스크 분석중...' : 'AI risk analysis in progress...' });
                     }
                     
                     // Report data generation
@@ -2872,8 +2872,8 @@
                     };
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        progressCallback({ progress: 80, text: isEnglish ? 'Generating gap analysis report...' : '갭분석 보고서 생성중...' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                        progressCallback({ progress: 80, text: isKorean ? '갭분석 보고서 생성중...' : 'Generating gap analysis report...' });
                     }
                     
                     // 보고서를 로컬 스토리지에 저장
@@ -2883,8 +2883,8 @@
                     this.generateReportDownload(reportData);
                     
                     if (progressCallback) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                    progressCallback({ progress: 100, text: isEnglish ? 'Gap Analysis Complete!' : '갭분석 완료!' });
+                        const isKorean = document.documentElement.lang === 'ko';
+                    progressCallback({ progress: 100, text: isKorean ? '갭분석 완료!' : 'Gap Analysis Complete!' });
                     }
                     
                     return reportData;
@@ -3332,8 +3332,8 @@
                 } catch (error) {
                     console.error('Gap analysis engine initialization error:', error);
                     hideGapAnalysisModal();
-                    const isEnglish = document.documentElement.lang === 'en';
-                    alert(isEnglish ? 'Unable to initialize gap analysis engine.' : '갭분석 엔진을 초기화할 수 없습니다.');
+                    const isKorean = document.documentElement.lang === 'ko';
+                    alert(isKorean ? '갭분석 엔진을 초기화할 수 없습니다.' : 'Unable to initialize gap analysis engine.');
                     return;
                 }
                 
@@ -3384,18 +3384,18 @@
                 
                 // 10. 성공 메시지 표시
                 if (gapResult && submitResult.success) {
-                    const isEnglish = document.documentElement.lang === 'en';
-                    showSuccess(isEnglish ? 'Application submitted successfully. Gap analysis report has been sent by email.' : '신청서가 성공적으로 제출되었습니다. 갭분석 보고서가 이메일로 발송되었습니다.');
+                    const isKorean = document.documentElement.lang === 'ko';
+                    showSuccess(isKorean ? '신청서가 성공적으로 제출되었습니다. 갭분석 보고서가 이메일로 발송되었습니다.' : 'Application submitted successfully. Gap analysis report has been sent by email.');
                 } else {
-                    const isEnglish = document.documentElement.lang === 'en';
-                    showSuccess(isEnglish ? 'Application submitted. There may have been an error in generating the gap analysis report.' : '신청서가 제출되었습니다. 갭분석 보고서 생성 중 오류가 발생했을 수 있습니다.');
+                    const isKorean = document.documentElement.lang === 'ko';
+                    showSuccess(isKorean ? '신청서가 제출되었습니다. 갭분석 보고서 생성 중 오류가 발생했을 수 있습니다.' : 'Application submitted. There may have been an error in generating the gap analysis report.');
                 }
                 
             } catch (error) {
                 console.error('Gap analysis submission error:', error);
                 hideGapAnalysisModal();
-                const isEnglish = document.documentElement.lang === 'en';
-                showError(isEnglish ? 'An error occurred during gap analysis submission: ' + error.message : '갭분석 제출 중 오류가 발생했습니다: ' + error.message);
+                const isKorean = document.documentElement.lang === 'ko';
+                showError(isKorean ? '갭분석 제출 중 오류가 발생했습니다: ' + error.message : 'An error occurred during gap analysis submission: ' + error.message);
             }
         }
 
