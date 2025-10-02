@@ -3267,10 +3267,14 @@
             // 보고서 다운로드 생성
             async generateReportDownload(reportData) {
                 // 고급 HTML 보고서 사용 (API에서 받은 경우)
-                const currentLanguage = reportData.language || document.documentElement.lang;
+                let currentLanguage = reportData.language || document.documentElement.lang;
                 
                 // 한글을 제외한 모든 언어에서는 영어 보고서 생성
-                const reportLanguage = currentLanguage === 'ko' ? 'ko' : 'en';
+                if (currentLanguage !== 'ko') {
+                    currentLanguage = 'en';
+                }
+                
+                const reportLanguage = currentLanguage;
                 const reportHtml = reportData.reportHtml || generateReportHTML(reportData, reportLanguage);
                 
                 // 1. 브라우저 다운로드
@@ -3972,7 +3976,13 @@
             console.log('🔍 generateReportHTML - reportData.language:', reportData.language);
             
             // 언어 감지: 1) 매개변수 우선, 2) reportData.language, 3) 현재 페이지 언어
-            const detectedLanguage = language || reportData.language || document.documentElement.lang;
+            let detectedLanguage = language || reportData.language || document.documentElement.lang;
+            
+            // 한글을 제외한 모든 언어에서는 영어 보고서 생성
+            if (detectedLanguage !== 'ko') {
+                detectedLanguage = 'en';
+            }
+            
             const isKorean = detectedLanguage === 'ko';
             
             console.log('🔍 generateReportHTML - detectedLanguage:', detectedLanguage);
