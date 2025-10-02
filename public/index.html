@@ -2778,8 +2778,8 @@
                     const result = await response.json();
                     
                     if (!result.success) {
-                        const isEnglish = document.documentElement.lang === 'en';
-                        throw new Error(result.message || (isEnglish ? 'Gap analysis generation failed' : '갭분석 생성 실패'));
+                        const isKorean = document.documentElement.lang === 'ko';
+                        throw new Error(result.message || (isKorean ? '갭분석 생성 실패' : 'Gap analysis generation failed'));
                     }
                     
                     if (progressCallback) {
@@ -3470,8 +3470,8 @@
                 progressFill.style.width = percentage + '%';
             }
             if (progressText) {
-                const isEnglish = document.documentElement.lang === 'en';
-                progressText.textContent = percentage + '% ' + (isEnglish ? 'Complete' : '완료');
+                const isKorean = document.documentElement.lang === 'ko';
+                progressText.textContent = percentage + '% ' + (isKorean ? '완료' : 'Complete');
             }
         }
 
@@ -3946,9 +3946,10 @@
         // 갭분석 보고서 HTML 생성 함수 (예전 Apple 보고서 형태로 복원)
         function generateReportHTML(reportData, language = null) {
             // 언어 정보가 명시적으로 전달되지 않은 경우 현재 페이지 언어 감지
-            const isEnglish = language !== null ? language === 'en' : document.documentElement.lang === 'en';
-            const lang = isEnglish ? 'en' : 'ko';
-            const title = isEnglish ? 'Gap Analysis Report - ' : '사전평가 갭분석 보고서 - ';
+            // 한글을 제외한 모든 언어에서는 영어 보고서 생성
+            const isKorean = language !== null ? language === 'ko' : document.documentElement.lang === 'ko';
+            const lang = isKorean ? 'ko' : 'en';
+            const title = isKorean ? '사전평가 갭분석 보고서 - ' : 'Gap Analysis Report - ';
             
             return '<!DOCTYPE html>' +
                 '<html lang="' + lang + '">' +
@@ -4009,76 +4010,76 @@
                 '<img src="../lrqa-logo.png" alt="LRQA Logo" class="lrqa-logo">' +
                 '<div class="apple-logo">🍎</div>' +
                 '</div>' +
-                '<h1>' + (isEnglish ? 'Gap Analysis Report' : '사전평가 갭분석 보고서') + '</h1>' +
-                '<div class="subtitle">' + (isEnglish ? 'ISO Management System Standards Gap Analysis - ' : 'ISO 경영시스템 표준 갭분석 - ') + reportData.companyName + (isEnglish ? ' (AI Integrated)' : ' (AI 통합)') + '</div>' +
+                '<h1>' + (isKorean ? '사전평가 갭분석 보고서' : 'Gap Analysis Report') + '</h1>' +
+                '<div class="subtitle">' + (isKorean ? 'ISO 경영시스템 표준 갭분석 - ' : 'ISO Management System Standards Gap Analysis - ') + reportData.companyName + (isKorean ? ' (AI 통합)' : ' (AI Integrated)') + '</div>' +
                 '</div>' +
                 '<div class="container">' +
                 '<div class="meta-info">' +
                 '<div class="meta-grid">' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">' + (isEnglish ? 'Client Organization' : '고객 조직') + '</div>' +
+                '<div class="meta-label">' + (isKorean ? '고객 조직' : 'Client Organization') + '</div>' +
                 '<div class="meta-value">' + reportData.companyName + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">' + (isEnglish ? 'Assessment Standards' : '평가 표준') + '</div>' +
+                '<div class="meta-label">' + (isKorean ? '평가 표준' : 'Assessment Standards') + '</div>' +
                 '<div class="meta-value">' + reportData.standards.join(', ') + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">' + (isEnglish ? 'Assessment Date' : '평가 일자') + '</div>' +
-                '<div class="meta-value">' + new Date().toLocaleDateString(isEnglish ? 'en-US' : 'ko-KR') + '</div>' +
+                '<div class="meta-label">' + (isKorean ? '평가 일자' : 'Assessment Date') + '</div>' +
+                '<div class="meta-value">' + new Date().toLocaleDateString(isKorean ? 'ko-KR' : 'en-US') + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">' + (isEnglish ? 'LRQA Reference Number' : 'LRQA 참조번호') + '</div>' +
+                '<div class="meta-label">' + (isKorean ? 'LRQA 참조번호' : 'LRQA Reference Number') + '</div>' +
                 '<div class="meta-value">GAP-2025-' + reportData.companyName.replace(/\s+/g, '-').toUpperCase() + '-IMS-001</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">' + (isEnglish ? 'Assessment Team' : '평가팀') + '</div>' +
-                '<div class="meta-value">' + (isEnglish ? 'Lead Auditor: LRQA Certified Auditor' : '수석심사원: LRQA 공인심사원') + '</div>' +
+                '<div class="meta-label">' + (isKorean ? '평가팀' : 'Assessment Team') + '</div>' +
+                '<div class="meta-value">' + (isKorean ? '수석심사원: LRQA 공인심사원' : 'Lead Auditor: LRQA Certified Auditor') + '</div>' +
                 '</div>' +
                 '<div class="meta-item">' +
-                '<div class="meta-label">' + (isEnglish ? 'Client Contact' : '고객 담당자') + '</div>' +
-                '<div class="meta-value">' + (isEnglish ? 'Top Management / Quality Manager' : '최고경영진 / 품질담당자') + '</div>' +
+                '<div class="meta-label">' + (isKorean ? '고객 담당자' : 'Client Contact') + '</div>' +
+                '<div class="meta-value">' + (isKorean ? '최고경영진 / 품질담당자' : 'Top Management / Quality Manager') + '</div>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
                 '<div class="executive-summary">' +
-                '<h3>📊 ' + (isEnglish ? 'Executive Summary' : '경영진 요약') + '</h3>' +
-                '<p>' + (isEnglish ? 
+                '<h3>📊 ' + (isKorean ? 'Executive Summary' : '경영진 요약') + '</h3>' +
+                '<p>' + (isKorean ? 
                     'This report presents a comprehensive assessment of ' + reportData.companyName + '\'s readiness for ' + reportData.standards.join(', ') + ' standards. Through LRQA\'s professional gap analysis methodology, we have accurately diagnosed the organization\'s current state and provided a concrete roadmap for certification preparation.' :
                     '본 보고서는 ' + reportData.companyName + '의 ' + reportData.standards.join(', ') + ' 표준 준비도를 종합적으로 평가한 결과입니다. LRQA의 전문적인 갭분석 방법론을 통해 조직의 현재 상태를 정확히 진단하고, 인증 준비를 위한 구체적인 로드맵을 제시합니다.') + '</p>' +
-                '<p>' + (isEnglish ? 
+                '<p>' + (isKorean ? 
                     'A total of ' + reportData.findings.length + ' key findings have been identified, providing specific direction for the organization\'s management system development and improvement. We have clearly identified core areas requiring direct management attention and support, presenting them in order of priority.' :
                     '총 ' + reportData.findings.length + '개의 주요 발견사항이 식별되었으며, 이는 조직의 경영시스템 구축 및 개선을 위한 구체적인 방향을 제시합니다. 특히 경영진의 직접적인 관심과 지원이 필요한 핵심 영역들을 명확히 식별하여 우선순위를 제시합니다.') + '</p>' +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🎯 ' + (isEnglish ? 'Assessment Scope and Methodology' : '평가 범위 및 방법론') + '</h2>' +
-                '<p>' + (isEnglish ? 
+                '<h2>🎯 ' + (isKorean ? 'Assessment Scope and Methodology' : '평가 범위 및 방법론') + '</h2>' +
+                '<p>' + (isKorean ? 
                     'The organization\'s current state has been comprehensively assessed through LRQA\'s 6-step gap analysis methodology. The assessment focused on the following areas:' :
                     'LRQA의 6단계 갭분석 방법론을 통해 조직의 현재 상태를 종합적으로 평가했습니다. 평가는 다음 영역에 중점을 두고 수행되었습니다:') + '</p>' +
                 '<ul>' +
-                '<li><strong>' + (isEnglish ? 'Management System Documentation Level:' : '경영시스템 문서화 수준:') + '</strong> ' + (isEnglish ? 'Systematicity and completeness of policies, procedures, and guidelines' : '정책, 절차, 지침서의 체계성과 완성도') + '</li>' +
-                '<li><strong>' + (isEnglish ? 'Process and Procedure Systematization:' : '프로세스 및 절차의 체계성:') + '</strong> ' + (isEnglish ? 'Definition, execution, and monitoring systems of core processes' : '핵심 프로세스의 정의, 실행, 모니터링 체계') + '</li>' +
-                '<li><strong>' + (isEnglish ? 'Legal Requirements Compliance:' : '법적 요구사항 준수도:') + '</strong> ' + (isEnglish ? 'Understanding and compliance level with relevant laws and regulations' : '관련 법규 및 규정의 이해와 준수 수준') + '</li>' +
-                '<li><strong>' + (isEnglish ? 'Continuous Improvement System:' : '지속적 개선 체계:') + '</strong> ' + (isEnglish ? 'Continuous improvement activities through PDCA cycle' : 'PDCA 사이클을 통한 지속적 개선 활동') + '</li>' +
-                '<li><strong>' + (isEnglish ? 'Leadership and Management Participation:' : '리더십 및 경영진의 참여도:') + '</strong> ' + (isEnglish ? 'Top management commitment and organizational leadership' : '최고경영진의 의지와 조직 내 리더십') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Management System Documentation Level:' : '경영시스템 문서화 수준:') + '</strong> ' + (isKorean ? 'Systematicity and completeness of policies, procedures, and guidelines' : '정책, 절차, 지침서의 체계성과 완성도') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Process and Procedure Systematization:' : '프로세스 및 절차의 체계성:') + '</strong> ' + (isKorean ? 'Definition, execution, and monitoring systems of core processes' : '핵심 프로세스의 정의, 실행, 모니터링 체계') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Legal Requirements Compliance:' : '법적 요구사항 준수도:') + '</strong> ' + (isKorean ? 'Understanding and compliance level with relevant laws and regulations' : '관련 법규 및 규정의 이해와 준수 수준') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Continuous Improvement System:' : '지속적 개선 체계:') + '</strong> ' + (isKorean ? 'Continuous improvement activities through PDCA cycle' : 'PDCA 사이클을 통한 지속적 개선 활동') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Leadership and Management Participation:' : '리더십 및 경영진의 참여도:') + '</strong> ' + (isKorean ? 'Top management commitment and organizational leadership' : '최고경영진의 의지와 조직 내 리더십') + '</li>' +
                 '</ul>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>⚠️ ' + (isEnglish ? 'Areas Not Covered in Assessment' : '평가 중 다루지 않은 영역') + '</h2>' +
-                '<p>' + (isEnglish ? 
+                '<h2>⚠️ ' + (isKorean ? 'Areas Not Covered in Assessment' : '평가 중 다루지 않은 영역') + '</h2>' +
+                '<p>' + (isKorean ? 
                     'This assessment was conducted based on information provided in the application form and did not include on-site visits or additional document reviews. Therefore, there may be differences from actual operational situations, which should be noted.' :
                     '본 평가는 신청서에 제공된 정보를 바탕으로 수행되었으며, 현장 방문이나 추가 문서 검토는 포함되지 않았습니다. 따라서 실제 운영 상황과 차이가 있을 수 있음을 유의하시기 바랍니다.') + '</p>' +
-                '<p>' + (isEnglish ? 
+                '<p>' + (isKorean ? 
                     'For accurate assessment, on-site audit and additional document review are necessary, and this report is clearly a preliminary analysis result.' :
                     '정확한 평가를 위해서는 현장 심사와 추가 문서 검토가 필요하며, 본 보고서는 예비 분석 결과임을 명확히 합니다.') + '</p>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🔍 ' + (isEnglish ? 'LRQA Category-wise Gap Analysis' : 'LRQA 카테고리별 갭 분석') + '</h2>' +
+                '<h2>🔍 ' + (isKorean ? 'LRQA Category-wise Gap Analysis' : 'LRQA 카테고리별 갭 분석') + '</h2>' +
                 '<div class="gap-analysis">' +
                 '<div class="gap-category">' +
-                '<h4>' + (isEnglish ? 'Category A - Immediate Action Required (High Priority)' : '카테고리 A - 즉시 조치 필요 (High Priority)') + '</h4>' +
+                '<h4>' + (isKorean ? 'Category A - Immediate Action Required (High Priority)' : '카테고리 A - 즉시 조치 필요 (High Priority)') + '</h4>' +
                 reportData.findings.filter(f => f.priority === 'high').map(finding =>
                     '<div class="gap-item high">' +
                     '<div class="gap-title">' + finding.title + '</div>' +
@@ -4087,7 +4088,7 @@
                 ).join('') +
                 '</div>' +
                 '<div class="gap-category">' +
-                '<h4>' + (isEnglish ? 'Category B - Short-term Improvement Required (Medium Priority)' : '카테고리 B - 단기 개선 필요 (Medium Priority)') + '</h4>' +
+                '<h4>' + (isKorean ? 'Category B - Short-term Improvement Required (Medium Priority)' : '카테고리 B - 단기 개선 필요 (Medium Priority)') + '</h4>' +
                 reportData.findings.filter(f => f.priority === 'medium').map(finding =>
                     '<div class="gap-item medium">' +
                     '<div class="gap-title">' + finding.title + '</div>' +
@@ -4096,7 +4097,7 @@
                 ).join('') +
                 '</div>' +
                 '<div class="gap-category">' +
-                '<h4>' + (isEnglish ? 'Category C - Long-term Improvement Recommended (Low Priority)' : '카테고리 C - 장기 개선 권장 (Low Priority)') + '</h4>' +
+                '<h4>' + (isKorean ? 'Category C - Long-term Improvement Recommended (Low Priority)' : '카테고리 C - 장기 개선 권장 (Low Priority)') + '</h4>' +
                 reportData.findings.filter(f => f.priority === 'low').map(finding =>
                     '<div class="gap-item low">' +
                     '<div class="gap-title">' + finding.title + '</div>' +
@@ -4107,34 +4108,34 @@
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🎯 ' + (isEnglish ? 'Areas Requiring Management Attention' : '경영진 관심이 필요한 영역') + '</h2>' +
-                '<p>' + (isEnglish ? 
+                '<h2>🎯 ' + (isKorean ? 'Areas Requiring Management Attention' : '경영진 관심이 필요한 영역') + '</h2>' +
+                '<p>' + (isKorean ? 
                     'The following areas are core areas that require direct management attention and support:' :
                     '다음 영역들은 경영진의 직접적인 관심과 지원이 필요한 핵심 영역입니다:') + '</p>' +
                 '<ul>' +
-                '<li><strong>' + (isEnglish ? 'Management System Policy and Objective Setting:' : '경영시스템 정책 및 목표 수립:') + '</strong> ' + (isEnglish ? 'Establishing clear policies that provide organizational direction and measurable objectives' : '조직의 방향성을 제시하는 명확한 정책과 측정 가능한 목표 설정') + '</li>' +
-                '<li><strong>' + (isEnglish ? 'Resource Allocation and Deployment:' : '필요한 자원의 할당 및 배치:') + '</strong> ' + (isEnglish ? 'Systematic deployment of resources such as personnel, budget, and facilities for certification preparation' : '인증 준비를 위한 인력, 예산, 시설 등 자원의 체계적 배치') + '</li>' +
-                '<li><strong>' + (isEnglish ? 'Internal Communication System Development:' : '조직 내 의사소통 체계 구축:') + '</strong> ' + (isEnglish ? 'Enhancing organizational awareness through effective communication' : '효과적인 의사소통을 통한 조직 내 인식 제고') + '</li>' +
-                '<li><strong>' + (isEnglish ? 'Monitoring System for Continuous Improvement:' : '지속적 개선을 위한 모니터링 체계:') + '</strong> ' + (isEnglish ? 'Systematic monitoring for performance measurement and improvement activities' : '성과 측정 및 개선 활동을 위한 체계적 모니터링') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Management System Policy and Objective Setting:' : '경영시스템 정책 및 목표 수립:') + '</strong> ' + (isKorean ? 'Establishing clear policies that provide organizational direction and measurable objectives' : '조직의 방향성을 제시하는 명확한 정책과 측정 가능한 목표 설정') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Resource Allocation and Deployment:' : '필요한 자원의 할당 및 배치:') + '</strong> ' + (isKorean ? 'Systematic deployment of resources such as personnel, budget, and facilities for certification preparation' : '인증 준비를 위한 인력, 예산, 시설 등 자원의 체계적 배치') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Internal Communication System Development:' : '조직 내 의사소통 체계 구축:') + '</strong> ' + (isKorean ? 'Enhancing organizational awareness through effective communication' : '효과적인 의사소통을 통한 조직 내 인식 제고') + '</li>' +
+                '<li><strong>' + (isKorean ? 'Monitoring System for Continuous Improvement:' : '지속적 개선을 위한 모니터링 체계:') + '</strong> ' + (isKorean ? 'Systematic monitoring for performance measurement and improvement activities' : '성과 측정 및 개선 활동을 위한 체계적 모니터링') + '</li>' +
                 '</ul>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>📈 ' + (isEnglish ? 'Readiness Assessment for Formal Certification' : '정식 인증을 위한 준비도 평가') + '</h2>' +
+                '<h2>📈 ' + (isKorean ? 'Readiness Assessment for Formal Certification' : '정식 인증을 위한 준비도 평가') + '</h2>' +
                 '<table class="readiness-table">' +
                 '<thead>' +
-                '<tr><th>' + (isEnglish ? 'Area' : '영역') + '</th><th>' + (isEnglish ? 'Current Readiness' : '현재 준비도') + '</th><th>' + (isEnglish ? 'Target Readiness' : '목표 준비도') + '</th><th>' + (isEnglish ? 'Estimated Duration' : '예상 소요기간') + '</th><th>' + (isEnglish ? 'Key Improvements' : '주요 개선사항') + '</th></tr>' +
+                '<tr><th>' + (isKorean ? 'Area' : '영역') + '</th><th>' + (isKorean ? 'Current Readiness' : '현재 준비도') + '</th><th>' + (isKorean ? 'Target Readiness' : '목표 준비도') + '</th><th>' + (isKorean ? 'Estimated Duration' : '예상 소요기간') + '</th><th>' + (isKorean ? 'Key Improvements' : '주요 개선사항') + '</th></tr>' +
                 '</thead>' +
                 '<tbody>' +
-                '<tr><td>' + (isEnglish ? 'Documentation' : '문서화') + '</td><td>40%</td><td>90%</td><td>' + (isEnglish ? '3-4 months' : '3-4개월') + '</td><td>' + (isEnglish ? 'Systematization of policies, procedures, and guidelines' : '정책, 절차서, 지침서 체계화') + '</td></tr>' +
-                '<tr><td>' + (isEnglish ? 'Process Development' : '프로세스 구축') + '</td><td>35%</td><td>85%</td><td>' + (isEnglish ? '4-6 months' : '4-6개월') + '</td><td>' + (isEnglish ? 'Definition and implementation of core processes' : '핵심 프로세스 정의 및 실행') + '</td></tr>' +
-                '<tr><td>' + (isEnglish ? 'Training and Awareness' : '교육 및 인식제고') + '</td><td>30%</td><td>80%</td><td>' + (isEnglish ? '2-3 months' : '2-3개월') + '</td><td>' + (isEnglish ? 'Training programs for all employees' : '전 직원 대상 교육 프로그램') + '</td></tr>' +
-                '<tr><td>' + (isEnglish ? 'Internal Audit System' : '내부심사 체계') + '</td><td>20%</td><td>75%</td><td>' + (isEnglish ? '3-4 months' : '3-4개월') + '</td><td>' + (isEnglish ? 'Internal auditor training and system development' : '내부심사원 양성 및 체계 구축') + '</td></tr>' +
-                '<tr><td>' + (isEnglish ? 'Management Review' : '경영검토') + '</td><td>25%</td><td>70%</td><td>' + (isEnglish ? '2-3 months' : '2-3개월') + '</td><td>' + (isEnglish ? 'Establishment of regular management review system' : '정기적 경영검토 체계 수립') + '</td></tr>' +
+                '<tr><td>' + (isKorean ? 'Documentation' : '문서화') + '</td><td>40%</td><td>90%</td><td>' + (isKorean ? '3-4 months' : '3-4개월') + '</td><td>' + (isKorean ? 'Systematization of policies, procedures, and guidelines' : '정책, 절차서, 지침서 체계화') + '</td></tr>' +
+                '<tr><td>' + (isKorean ? 'Process Development' : '프로세스 구축') + '</td><td>35%</td><td>85%</td><td>' + (isKorean ? '4-6 months' : '4-6개월') + '</td><td>' + (isKorean ? 'Definition and implementation of core processes' : '핵심 프로세스 정의 및 실행') + '</td></tr>' +
+                '<tr><td>' + (isKorean ? 'Training and Awareness' : '교육 및 인식제고') + '</td><td>30%</td><td>80%</td><td>' + (isKorean ? '2-3 months' : '2-3개월') + '</td><td>' + (isKorean ? 'Training programs for all employees' : '전 직원 대상 교육 프로그램') + '</td></tr>' +
+                '<tr><td>' + (isKorean ? 'Internal Audit System' : '내부심사 체계') + '</td><td>20%</td><td>75%</td><td>' + (isKorean ? '3-4 months' : '3-4개월') + '</td><td>' + (isKorean ? 'Internal auditor training and system development' : '내부심사원 양성 및 체계 구축') + '</td></tr>' +
+                '<tr><td>' + (isKorean ? 'Management Review' : '경영검토') + '</td><td>25%</td><td>70%</td><td>' + (isKorean ? '2-3 months' : '2-3개월') + '</td><td>' + (isKorean ? 'Establishment of regular management review system' : '정기적 경영검토 체계 수립') + '</td></tr>' +
                 '</tbody>' +
                 '</table>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>💡 ' + (isEnglish ? 'LRQA Expert Recommendations' : 'LRQA 전문가 권고사항') + '</h2>' +
+                '<h2>💡 ' + (isKorean ? 'LRQA Expert Recommendations' : 'LRQA 전문가 권고사항') + '</h2>' +
                 '<div class="recommendations">' +
                 reportData.recommendations.map(rec =>
                     '<div class="recommendation-item">' +
@@ -4145,38 +4146,38 @@
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>📅 ' + (isEnglish ? 'Recommended Implementation Timeline' : '권장 실행 타임라인') + '</h2>' +
+                '<h2>📅 ' + (isKorean ? 'Recommended Implementation Timeline' : '권장 실행 타임라인') + '</h2>' +
                 '<div class="timeline">' +
                 '<div class="timeline-item">' +
-                '<h4>' + (isEnglish ? 'Phase 1: Foundation Building (1-2 months)' : '1단계: 기초 구축 (1-2개월)') + '</h4>' +
-                '<p>' + (isEnglish ? 'Management system policy establishment, basic documentation, initial training, dedicated organization formation' : '경영시스템 정책 수립, 기본 문서 작성, 초기 교육 실시, 전담 조직 구성') + '</p>' +
+                '<h4>' + (isKorean ? 'Phase 1: Foundation Building (1-2 months)' : '1단계: 기초 구축 (1-2개월)') + '</h4>' +
+                '<p>' + (isKorean ? 'Management system policy establishment, basic documentation, initial training, dedicated organization formation' : '경영시스템 정책 수립, 기본 문서 작성, 초기 교육 실시, 전담 조직 구성') + '</p>' +
                 '</div>' +
                 '<div class="timeline-item">' +
-                '<h4>' + (isEnglish ? 'Phase 2: Process Implementation (2-4 months)' : '2단계: 프로세스 구현 (2-4개월)') + '</h4>' +
-                '<p>' + (isEnglish ? 'Core process development, monitoring system establishment, internal audit preparation, performance measurement system development' : '핵심 프로세스 구축, 모니터링 체계 설립, 내부심사 준비, 성과 측정 체계 구축') + '</p>' +
+                '<h4>' + (isKorean ? 'Phase 2: Process Implementation (2-4 months)' : '2단계: 프로세스 구현 (2-4개월)') + '</h4>' +
+                '<p>' + (isKorean ? 'Core process development, monitoring system establishment, internal audit preparation, performance measurement system development' : '핵심 프로세스 구축, 모니터링 체계 설립, 내부심사 준비, 성과 측정 체계 구축') + '</p>' +
                 '</div>' +
                 '<div class="timeline-item">' +
-                '<h4>' + (isEnglish ? 'Phase 3: Optimization and Certification Preparation (1-2 months)' : '3단계: 최적화 및 인증 준비 (1-2개월)') + '</h4>' +
-                '<p>' + (isEnglish ? 'System optimization, management review implementation, certification application preparation, final inspection and supplementation' : '시스템 최적화, 경영검토 실시, 인증 신청 준비, 최종 점검 및 보완') + '</p>' +
+                '<h4>' + (isKorean ? 'Phase 3: Optimization and Certification Preparation (1-2 months)' : '3단계: 최적화 및 인증 준비 (1-2개월)') + '</h4>' +
+                '<p>' + (isKorean ? 'System optimization, management review implementation, certification application preparation, final inspection and supplementation' : '시스템 최적화, 경영검토 실시, 인증 신청 준비, 최종 점검 및 보완') + '</p>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>⚠️ ' + (isEnglish ? 'Assessment Limitations' : '평가 제한사항') + '</h2>' +
+                '<h2>⚠️ ' + (isKorean ? 'Assessment Limitations' : '평가 제한사항') + '</h2>' +
                 '<ul>' +
-                '<li>' + (isEnglish ? 'This assessment is a preliminary analysis based on application information.' : '본 평가는 신청서 정보를 바탕으로 한 예비 분석입니다.') + '</li>' +
-                '<li>' + (isEnglish ? 'On-site visits or additional document reviews are not included.' : '현장 방문이나 추가 문서 검토는 포함되지 않았습니다.') + '</li>' +
-                '<li>' + (isEnglish ? 'There may be differences from actual operational situations.' : '실제 운영 상황과 차이가 있을 수 있습니다.') + '</li>' +
-                '<li>' + (isEnglish ? 'On-site audit is necessary for accurate assessment.' : '정확한 평가를 위해서는 현장 심사가 필요합니다.') + '</li>' +
-                '<li>' + (isEnglish ? 'Special organizational circumstances or internal factors may not have been considered.' : '조직의 특수한 상황이나 내부 요인은 고려되지 않았을 수 있습니다.') + '</li>' +
+                '<li>' + (isKorean ? 'This assessment is a preliminary analysis based on application information.' : '본 평가는 신청서 정보를 바탕으로 한 예비 분석입니다.') + '</li>' +
+                '<li>' + (isKorean ? 'On-site visits or additional document reviews are not included.' : '현장 방문이나 추가 문서 검토는 포함되지 않았습니다.') + '</li>' +
+                '<li>' + (isKorean ? 'There may be differences from actual operational situations.' : '실제 운영 상황과 차이가 있을 수 있습니다.') + '</li>' +
+                '<li>' + (isKorean ? 'On-site audit is necessary for accurate assessment.' : '정확한 평가를 위해서는 현장 심사가 필요합니다.') + '</li>' +
+                '<li>' + (isKorean ? 'Special organizational circumstances or internal factors may not have been considered.' : '조직의 특수한 상황이나 내부 요인은 고려되지 않았을 수 있습니다.') + '</li>' +
                 '</ul>' +
                 '</div>' +
                 '<div class="section">' +
-                '<h2>🔒 ' + (isEnglish ? 'Confidentiality' : '기밀성') + '</h2>' +
-                '<p>' + (isEnglish ? 
+                '<h2>🔒 ' + (isKorean ? 'Confidentiality' : '기밀성') + '</h2>' +
+                '<p>' + (isKorean ? 
                     'This report contains confidential information of ' + reportData.companyName + ' and is protected under LRQA\'s strict confidentiality policy. This report cannot be disclosed to third parties without the organization\'s approval.' :
                     '본 보고서는 ' + reportData.companyName + '의 기밀 정보를 포함하고 있으며, LRQA의 엄격한 기밀성 정책에 따라 보호됩니다. 본 보고서는 해당 조직의 승인 없이 제3자에게 공개될 수 없습니다.') + '</p>' +
-                '<p>' + (isEnglish ? 
+                '<p>' + (isKorean ? 
                     'The report content is based on LRQA\'s professional judgment and includes customized recommendations tailored to the organization\'s specific circumstances.' :
                     '보고서의 내용은 LRQA의 전문적 판단에 기반하며, 조직의 특정 상황에 맞는 맞춤형 권고사항을 포함하고 있습니다.') + '</p>' +
                 '</div>' +
