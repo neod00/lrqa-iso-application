@@ -2505,43 +2505,8 @@
         function changeLanguage(selectedLanguage) {
             // document.documentElement.lang 업데이트
             document.documentElement.lang = selectedLanguage;
-            
-            // 언어별 텍스트 업데이트
-            if (selectedLanguage === 'en') {
-                // 영어로 전환
-                document.querySelector('h1').textContent = 'Application form';
-                document.querySelector('h2').textContent = 'Standards ISO 9001, 14001, 45001';
-                document.querySelector('.form-description').textContent = 'To receive a free quote from LRQA, please complete and submit the following form:';
-                
-                // 버튼 텍스트 업데이트
-                const darkModeBtn = document.querySelector('.dark-mode-btn');
-                const saveBtn = document.querySelector('.save-btn');
-                if (darkModeBtn) darkModeBtn.textContent = 'Dark Mode';
-                if (saveBtn) saveBtn.textContent = 'Save Temporarily';
-                
-                // 갭분석 링크 텍스트 업데이트
-                const gapAnalysisLink = document.querySelector('a[href="#"]');
-                if (gapAnalysisLink) {
-                    gapAnalysisLink.innerHTML = '💡 Do you also need a gap analysis report? Click here';
-                }
-            } else if (selectedLanguage === 'ko') {
-                // 한국어로 전환
-                document.querySelector('h1').textContent = '인증 심사 신청서';
-                document.querySelector('h2').textContent = '표준 ISO 9001, 14001, 45001';
-                document.querySelector('.form-description').textContent = 'LRQA의 무료 견적을 받고 싶다면 다음 양식을 완전히 작성하여 제출해 주시기 바랍니다.:';
-                
-                // 버튼 텍스트 업데이트
-                const darkModeBtn = document.querySelector('.dark-mode-btn');
-                const saveBtn = document.querySelector('.save-btn');
-                if (darkModeBtn) darkModeBtn.textContent = '다크모드';
-                if (saveBtn) saveBtn.textContent = '임시저장';
-                
-                // 갭분석 링크 텍스트 업데이트
-                const gapAnalysisLink = document.querySelector('a[href="#"]');
-                if (gapAnalysisLink) {
-                    gapAnalysisLink.innerHTML = '💡 갭분석 약식보고서도 필요하신가요? 여기 클릭';
-                }
-            }
+            console.log('Language changed to:', selectedLanguage);
+            console.log('document.documentElement.lang is now:', document.documentElement.lang);
         }
 
         document.addEventListener('DOMContentLoaded', function() {
