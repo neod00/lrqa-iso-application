@@ -3947,7 +3947,17 @@
         function generateReportHTML(reportData, language = null) {
             // 언어 정보가 명시적으로 전달되지 않은 경우 현재 페이지 언어 감지
             // 한글을 제외한 모든 언어에서는 영어 보고서 생성
-            const isKorean = language !== null ? language === 'ko' : document.documentElement.lang === 'ko';
+            console.log('🔍 generateReportHTML - language parameter:', language);
+            console.log('🔍 generateReportHTML - document.documentElement.lang:', document.documentElement.lang);
+            console.log('🔍 generateReportHTML - reportData.language:', reportData.language);
+            
+            // 언어 감지: 1) 매개변수 우선, 2) reportData.language, 3) 현재 페이지 언어
+            const detectedLanguage = language || reportData.language || document.documentElement.lang;
+            const isKorean = detectedLanguage === 'ko';
+            
+            console.log('🔍 generateReportHTML - detectedLanguage:', detectedLanguage);
+            console.log('🔍 generateReportHTML - isKorean:', isKorean);
+            
             const lang = isKorean ? 'ko' : 'en';
             const title = isKorean ? '사전평가 갭분석 보고서 - ' : 'Gap Analysis Report - ';
             
