@@ -1272,6 +1272,9 @@
                 'applications.total': '총 0개 신청서',
                 'applications.prev': '이전',
                 'applications.next': '다음',
+                'applications.view': '보기',
+                'applications.edit': '수정',
+                'applications.quote': '견적서',
                 'export.title': '데이터 내보내기',
                 'export.description': '신청서 데이터를 다양한 형식으로 내보낼 수 있습니다.',
                 'export.csv': 'CSV로 내보내기',
@@ -1317,15 +1320,18 @@
                 'applications.clear': 'Clear',
                 'applications.refresh': 'Refresh List',
                 'applications.date': 'Application Date',
-                'applications.company': '회사명',
-                'applications.contact': '담당자',
-                'applications.phone': '연락처',
-                'applications.scope': '인증범위',
+                'applications.company': 'Company',
+                'applications.contact': 'Contact',
+                'applications.phone': 'Phone',
+                'applications.scope': 'Certification Scope',
                 'applications.status': 'Status',
                 'applications.actions': 'Actions',
                 'applications.total': 'Total 0 applications',
                 'applications.prev': 'Previous',
                 'applications.next': 'Next',
+                'applications.view': 'View',
+                'applications.edit': 'Edit',
+                'applications.quote': 'Quote',
                 'export.title': 'Data Export',
                 'export.description': 'Export application data in various formats.',
                 'export.csv': 'Export to CSV',
@@ -1353,6 +1359,43 @@
 
         // 현재 언어 설정
         let currentLanguage = 'ko';
+
+        // 상태값 번역 함수
+        function translateStatus(status) {
+            if (currentLanguage === 'en') {
+                const statusMap = {
+                    '신규': 'New',
+                    '진행중': 'In Progress',
+                    '완료': 'Completed'
+                };
+                return statusMap[status] || status;
+            }
+            return status;
+        }
+
+        // 날짜 형식 변환 함수
+        function formatDateForLanguage(dateString) {
+            if (!dateString) return '-';
+            
+            try {
+                const date = new Date(dateString);
+                if (currentLanguage === 'en') {
+                    return date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                    });
+                } else {
+                    return date.toLocaleDateString('ko-KR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                }
+            } catch (error) {
+                return dateString;
+            }
+        }
 
         // 언어 전환 함수
         function changeLanguage(language) {
@@ -1384,6 +1427,11 @@
                 } else {
                     themeText.textContent = language === 'ko' ? '다크모드' : 'Dark Mode';
                 }
+            }
+            
+            // 동적으로 생성된 테이블 데이터 다시 렌더링
+            if (typeof displayCurrentPage === 'function') {
+                displayCurrentPage();
             }
         }
 
@@ -1529,20 +1577,20 @@
             
             tbody.innerHTML = currentApplications.map(app => `
                 <tr>
-                    <td>${formatDate(app['신청일시'])}</td>
+                    <td>${formatDateForLanguage(app['신청일시'])}</td>
                     <td>${currentSearchTerm ? highlightSearchTerm(app['법인명(국문)'] || app['법인명(영문)'] || '-', currentSearchTerm) : (app['법인명(국문)'] || app['법인명(영문)'] || '-')}</td>
                     <td>${currentSearchTerm ? highlightSearchTerm(app['담당자명'] || '-', currentSearchTerm) : (app['담당자명'] || '-')}</td>
                     <td>${currentSearchTerm ? highlightSearchTerm(app['담당자전화'] || '-', currentSearchTerm) : (app['담당자전화'] || '-')}</td>
                     <td>${app['인증범위'] || '-'}</td>
                     <td>
-                        <span class="status-badge ${getStatusClass(app['상태'])}">${app['상태'] || '신규'}</span>
+                        <span class="status-badge ${getStatusClass(app['상태'])}">${translateStatus(app['상태'] || '신규')}</span>
                     </td>
                     <td>
                         <div class="action-buttons">
-                            <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')">보기</button>
-                            <button class="action-btn edit" onclick="editApplication('${app['신청일시']}')">수정</button>
+                            <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')" data-i18n="applications.view">보기</button>
+                            <button class="action-btn edit" onclick="editApplication('${app['신청일시']}')" data-i18n="applications.edit">수정</button>
 
-                            <button class="action-btn quote" onclick="generateQuotation('${app['신청일시']}')">견적서</button>
+                            <button class="action-btn quote" onclick="generateQuotation('${app['신청일시']}')" data-i18n="applications.quote">견적서</button>
                         </div>
                     </td>
                 </tr>
