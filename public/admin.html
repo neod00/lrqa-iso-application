@@ -1587,10 +1587,10 @@
                     </td>
                     <td>
                         <div class="action-buttons">
-                            <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')" data-i18n="applications.view">보기</button>
-                            <button class="action-btn edit" onclick="editApplication('${app['신청일시']}')" data-i18n="applications.edit">수정</button>
+                            <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')">${translations[currentLanguage]['applications.view']}</button>
+                            <button class="action-btn edit" onclick="editApplication('${app['신청일시']}')">${translations[currentLanguage]['applications.edit']}</button>
 
-                            <button class="action-btn quote" onclick="generateQuotation('${app['신청일시']}')" data-i18n="applications.quote">견적서</button>
+                            <button class="action-btn quote" onclick="generateQuotation('${app['신청일시']}')">${translations[currentLanguage]['applications.quote']}</button>
                         </div>
                     </td>
                 </tr>
