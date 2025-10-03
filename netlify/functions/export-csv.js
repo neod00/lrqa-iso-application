@@ -94,22 +94,23 @@ exports.handler = async (event, context) => {
     }
 
     try {
+        // 언어 파라미터 가져오기 (기본값: ko)
+        const lang = event.queryStringParameters?.lang || 'ko';
+        
         // 신청서 데이터 가져오기
         const applications = await getApplications();
 
-        if (applications.length === 0) {
-            return {
-                statusCode: 200,
-                headers: {
-                    ...headers,
-                    'Content-Disposition': 'attachment; filename="lrqa_applications.csv"'
-                },
-                body: '신청일시,법인명(국문),법인명(영문),담당자명,담당자전화,담당자이메일,인증범위,상태\n'
-            };
-        }
-
-        // CSV 헤더 정의
-        const headers_csv = [
+        // 언어별 CSV 헤더 정의
+        const headers_csv = lang === 'en' ? [
+            'Application Date',
+            'Company Name (Korean)',
+            'Company Name (English)',
+            'Contact Name',
+            'Contact Phone',
+            'Contact Email',
+            'Certification Scope',
+            'Status'
+        ] : [
             '신청일시',
             '법인명(국문)',
             '법인명(영문)',
@@ -119,6 +120,30 @@ exports.handler = async (event, context) => {
             '인증범위',
             '상태'
         ];
+
+        if (applications.length === 0) {
+            return {
+                statusCode: 200,
+                headers: {
+                    ...headers,
+                    'Content-Disposition': 'attachment; filename="lrqa_applications.csv"'
+                },
+                body: headers_csv.join(',') + '\n'
+            };
+        }
+
+        // 상태 번역 함수
+        const translateStatus = (status) => {
+            if (lang === 'en') {
+                switch (status) {
+                    case '신규': return 'New';
+                    case '진행중': return 'In Progress';
+                    case '완료': return 'Completed';
+                    default: return status || 'New';
+                }
+            }
+            return status || '신규';
+        };
 
         // CSV 데이터 생성
         let csvContent = headers_csv.join(',') + '\n';
@@ -132,7 +157,7 @@ exports.handler = async (event, context) => {
                 `"${(app['담당자전화'] || '').replace(/"/g, '""')}"`,
                 `"${(app['담당자이메일'] || '').replace(/"/g, '""')}"`,
                 `"${(app['인증범위'] || '').replace(/"/g, '""')}"`,
-                `"${(app['상태'] || '신규').replace(/"/g, '""')}"`
+                `"${translateStatus(app['상태']).replace(/"/g, '""')}"`
             ];
             csvContent += row.join(',') + '\n';
         });

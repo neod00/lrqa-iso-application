@@ -1809,7 +1809,8 @@
             try {
                 showMessage('CSV 파일을 준비 중입니다...', 'info');
                 
-                const response = await fetch('/.netlify/functions/export-csv');
+                // 현재 언어를 쿼리 파라미터로 전달
+                const response = await fetch(`/.netlify/functions/export-csv?lang=${currentLanguage}`);
                 if (response.ok) {
                     const blob = await response.blob();
                     const url = window.URL.createObjectURL(blob);
