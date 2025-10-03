@@ -8,11 +8,22 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- 테마 토글 버튼 -->
-    <button class="theme-toggle" id="themeToggle">
-        <span class="theme-toggle-icon">🌙</span>
-        <span class="theme-toggle-text">다크모드</span>
-    </button>
+    <!-- 컨트롤 버튼들 -->
+    <div class="control-buttons">
+        <!-- 언어 선택기 -->
+        <div class="language-selector">
+            <select id="languageSelect" class="language-dropdown">
+                <option value="ko">🇰🇷 한국어</option>
+                <option value="en">🇺🇸 English</option>
+            </select>
+        </div>
+        
+        <!-- 테마 토글 버튼 -->
+        <button class="theme-toggle" id="themeToggle">
+            <span class="theme-toggle-icon">🌙</span>
+            <span class="theme-toggle-text" data-i18n="theme.dark">다크모드</span>
+        </button>
+    </div>
     
     <style>
         /* CSS 변수 정의 */
@@ -51,12 +62,48 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* 테마 토글 버튼 스타일 */
-        .theme-toggle {
+        /* 컨트롤 버튼들 컨테이너 */
+        .control-buttons {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* 언어 선택기 */
+        .language-selector {
+            position: relative;
+        }
+        
+        .language-dropdown {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            min-width: 120px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px var(--shadow-color);
+        }
+        
+        .language-dropdown:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+        
+        .language-dropdown:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent-primary);
+        }
+        
+        /* 테마 토글 버튼 스타일 */
+        .theme-toggle {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             color: var(--text-primary);
@@ -960,11 +1007,11 @@
     <div class="admin-container">
         <!-- 로그인 섹션 -->
         <div id="loginSection" class="login-section">
-            <h2 style="text-align: center; margin-bottom: 30px;">LRQA 관리자 로그인</h2>
+            <h2 style="text-align: center; margin-bottom: 30px;" data-i18n="login.title">LRQA 관리자 로그인</h2>
             <form id="loginForm" class="login-form">
-                <input type="text" id="username" placeholder="사용자명" required>
-                <input type="password" id="password" placeholder="비밀번호" required>
-                <button type="submit" class="login-btn">로그인</button>
+                <input type="text" id="username" data-i18n-placeholder="login.username" placeholder="사용자명" required>
+                <input type="password" id="password" data-i18n-placeholder="login.password" placeholder="비밀번호" required>
+                <button type="submit" class="login-btn" data-i18n="login.button">로그인</button>
             </form>
         </div>
 
@@ -972,16 +1019,16 @@
         <div id="adminContent" class="admin-content">
             <!-- 관리자 헤더 -->
             <header class="admin-header">
-                <h1>LRQA 관리자 설정</h1>
-                <p>ISO 인증심사 신청서 관리 시스템</p>
-                <button onclick="logout()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">로그아웃</button>
+                <h1 data-i18n="header.title">LRQA 관리자 설정</h1>
+                <p data-i18n="header.subtitle">ISO 인증심사 신청서 관리 시스템</p>
+                <button onclick="logout()" style="position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;" data-i18n="header.logout">로그아웃</button>
             </header>
 
             <!-- 관리자 탭 -->
             <div class="admin-tabs">
-                <button class="admin-tab active" onclick="showTab('dashboard')">대시보드</button>
-                <button class="admin-tab" onclick="showTab('applications')">신청서 목록</button>
-                <button class="admin-tab" onclick="showTab('export')">데이터 내보내기</button>
+                <button class="admin-tab active" onclick="showTab('dashboard')" data-i18n="tabs.dashboard">대시보드</button>
+                <button class="admin-tab" onclick="showTab('applications')" data-i18n="tabs.applications">신청서 목록</button>
+                <button class="admin-tab" onclick="showTab('export')" data-i18n="tabs.export">데이터 내보내기</button>
             </div>
 
             <!-- 대시보드 탭 -->
@@ -989,48 +1036,48 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-number" id="totalApplications">-</div>
-                        <div class="stat-label">총 신청서</div>
+                        <div class="stat-label" data-i18n="dashboard.total">총 신청서</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="newApplications">-</div>
-                        <div class="stat-label">신규 신청서</div>
+                        <div class="stat-label" data-i18n="dashboard.new">신규 신청서</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="monthlyApplications">-</div>
-                        <div class="stat-label">이달의 신청서</div>
+                        <div class="stat-label" data-i18n="dashboard.monthly">이달의 신청서</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number" id="completedApplications">-</div>
-                        <div class="stat-label">완료된 신청서</div>
+                        <div class="stat-label" data-i18n="dashboard.completed">완료된 신청서</div>
                     </div>
                 </div>
                 
-                <button onclick="loadDashboard()" class="export-btn">데이터 새로고침</button>
+                <button onclick="loadDashboard()" class="export-btn" data-i18n="dashboard.refresh">데이터 새로고침</button>
             </div>
 
             <!-- 신청서 목록 탭 -->
             <div id="applications" class="tab-content">
-                <h3>신청서 목록</h3>
+                <h3 data-i18n="applications.title">신청서 목록</h3>
                 <div class="list-controls">
                     <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="회사명, 담당자명, 연락처로 검색..." class="search-input">
-                        <button onclick="performSearch()" class="search-btn">검색</button>
-                        <button onclick="clearSearch()" class="clear-search-btn">초기화</button>
+                        <input type="text" id="searchInput" data-i18n-placeholder="applications.search" placeholder="회사명, 담당자명, 연락처로 검색..." class="search-input">
+                        <button onclick="performSearch()" class="search-btn" data-i18n="applications.search_btn">검색</button>
+                        <button onclick="clearSearch()" class="clear-search-btn" data-i18n="applications.clear">초기화</button>
                     </div>
-                    <button onclick="loadApplications()" class="export-btn">목록 새로고침</button>
+                    <button onclick="loadApplications()" class="export-btn" data-i18n="applications.refresh">목록 새로고침</button>
                 </div>
                 
                 <div id="applicationsTableContainer">
                     <table class="applications-table">
                         <thead>
                             <tr>
-                                <th>신청일시</th>
-                                <th>회사명</th>
-                                <th>담당자</th>
-                                <th>연락처</th>
-                                <th>인증범위</th>
-                                <th>상태</th>
-                                <th>작업</th>
+                                <th data-i18n="applications.date">신청일시</th>
+                                <th data-i18n="applications.company">회사명</th>
+                                <th data-i18n="applications.contact">담당자</th>
+                                <th data-i18n="applications.phone">연락처</th>
+                                <th data-i18n="applications.scope">인증범위</th>
+                                <th data-i18n="applications.status">상태</th>
+                                <th data-i18n="applications.actions">작업</th>
                             </tr>
                         </thead>
                         <tbody id="applicationsTableBody">
@@ -1041,14 +1088,14 @@
                     <!-- 페이지네이션 -->
                     <div class="pagination-container">
                         <div class="pagination-info">
-                            <span id="paginationInfo">총 0개 신청서</span>
+                            <span id="paginationInfo" data-i18n="applications.total">총 0개 신청서</span>
                         </div>
                         <div class="pagination-controls">
-                            <button id="prevPageBtn" class="pagination-btn" onclick="goToPreviousPage()" disabled>이전</button>
+                            <button id="prevPageBtn" class="pagination-btn" onclick="goToPreviousPage()" disabled data-i18n="applications.prev">이전</button>
                             <div id="pageNumbers" class="page-numbers">
                                 <!-- 페이지 번호가 동적으로 생성됩니다 -->
                             </div>
-                            <button id="nextPageBtn" class="pagination-btn" onclick="goToNextPage()" disabled>다음</button>
+                            <button id="nextPageBtn" class="pagination-btn" onclick="goToNextPage()" disabled data-i18n="applications.next">다음</button>
                         </div>
                     </div>
                 </div>
@@ -1057,21 +1104,21 @@
             <!-- 데이터 내보내기 탭 -->
             <div id="export" class="tab-content">
                 <div class="export-section">
-                    <h3>데이터 내보내기</h3>
-                    <p>신청서 데이터를 다양한 형식으로 내보낼 수 있습니다.</p>
+                    <h3 data-i18n="export.title">데이터 내보내기</h3>
+                    <p data-i18n="export.description">신청서 데이터를 다양한 형식으로 내보낼 수 있습니다.</p>
                     
-                    <button onclick="exportToCSV()" class="export-btn">CSV로 내보내기</button>
-                    <button onclick="openGoogleSheet()" class="export-btn">Google Sheets 열기</button>
+                    <button onclick="exportToCSV()" class="export-btn" data-i18n="export.csv">CSV로 내보내기</button>
+                    <button onclick="openGoogleSheet()" class="export-btn" data-i18n="export.sheets">Google Sheets 열기</button>
                 </div>
             </div>
 
             <!-- 폼 편집 탭 (숨김) -->
             <div id="formedit" class="tab-content" style="display: none;">
-                <h3>신청서 폼 편집</h3>
+                <h3 data-i18n="formedit.title">신청서 폼 편집</h3>
                 <div id="formEditContainer">
-                    <p>질문/라벨/설명 텍스트를 수정할 수 있습니다.</p>
+                    <p data-i18n="formedit.description">질문/라벨/설명 텍스트를 수정할 수 있습니다.</p>
                     <form id="formEditForm"></form>
-                    <button type="button" class="export-btn" onclick="saveFormDefinition()">저장</button>
+                    <button type="button" class="export-btn" onclick="saveFormDefinition()" data-i18n="formedit.save">저장</button>
                 </div>
             </div>
         </div>
@@ -1081,7 +1128,7 @@
     <div id="editModal" class="modal" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>신청서 수정</h3>
+                <h3 data-i18n="modal.edit_title">신청서 수정</h3>
                 <span class="close" onclick="closeEditModal()">&times;</span>
             </div>
             <div class="modal-body">
@@ -1090,37 +1137,37 @@
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editCompanyName">법인명(국문)</label>
+                            <label for="editCompanyName" data-i18n="form.company_ko">법인명(국문)</label>
                             <input type="text" id="editCompanyName" name="editCompanyName">
                         </div>
                         <div class="form-group">
-                            <label for="editCompanyNameEn">법인명(영문)</label>
+                            <label for="editCompanyNameEn" data-i18n="form.company_en">법인명(영문)</label>
                             <input type="text" id="editCompanyNameEn" name="editCompanyNameEn">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editContactName">담당자명</label>
+                            <label for="editContactName" data-i18n="form.contact_name">담당자명</label>
                             <input type="text" id="editContactName" name="editContactName">
                         </div>
                         <div class="form-group">
-                            <label for="editContactPhone">담당자 전화</label>
+                            <label for="editContactPhone" data-i18n="form.contact_phone">담당자 전화</label>
                             <input type="text" id="editContactPhone" name="editContactPhone">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editContactEmail">담당자 이메일</label>
+                            <label for="editContactEmail" data-i18n="form.contact_email">담당자 이메일</label>
                             <input type="email" id="editContactEmail" name="editContactEmail">
                         </div>
                         <div class="form-group">
-                            <label for="editStatus">상태</label>
+                            <label for="editStatus" data-i18n="form.status">상태</label>
                             <select id="editStatus" name="editStatus">
-                                <option value="신규">신규</option>
-                                <option value="진행중">진행중</option>
-                                <option value="완료">완료</option>
+                                <option value="신규" data-i18n="status.new">신규</option>
+                                <option value="진행중" data-i18n="status.progress">진행중</option>
+                                <option value="완료" data-i18n="status.completed">완료</option>
                             </select>
                         </div>
                     </div>
@@ -1163,8 +1210,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" onclick="closeEditModal()" class="btn btn-cancel">취소</button>
-                <button type="button" onclick="saveEdit()" class="btn btn-save">저장</button>
+                <button type="button" onclick="closeEditModal()" class="btn btn-cancel" data-i18n="modal.cancel">취소</button>
+                <button type="button" onclick="saveEdit()" class="btn btn-save" data-i18n="modal.save">저장</button>
             </div>
         </div>
     </div>
@@ -1173,9 +1220,9 @@
     <div id="viewModal" class="modal" style="display: none;">
         <div class="modal-content" style="max-width: 95%; max-height: 95vh; width: 1200px;">
             <div class="modal-header">
-                <h3>신청서 상세 보기</h3>
+                <h3 data-i18n="modal.view_title">신청서 상세 보기</h3>
                 <div style="display: flex; gap: 10px;">
-                    <button type="button" onclick="downloadPDF()" class="btn btn-save">PDF 다운로드</button>
+                    <button type="button" onclick="downloadPDF()" class="btn btn-save" data-i18n="modal.download_pdf">PDF 다운로드</button>
                     <span class="close" onclick="closeViewModal()">&times;</span>
                 </div>
             </div>
@@ -1192,6 +1239,154 @@
     </div>
 
     <script>
+        // 다국어 지원 데이터
+        const translations = {
+            ko: {
+                'login.title': 'LRQA 관리자 로그인',
+                'login.username': '사용자명',
+                'login.password': '비밀번호',
+                'login.button': '로그인',
+                'header.title': 'LRQA 관리자 설정',
+                'header.subtitle': 'ISO 인증심사 신청서 관리 시스템',
+                'header.logout': '로그아웃',
+                'tabs.dashboard': '대시보드',
+                'tabs.applications': '신청서 목록',
+                'tabs.export': '데이터 내보내기',
+                'dashboard.total': '총 신청서',
+                'dashboard.new': '신규 신청서',
+                'dashboard.monthly': '이달의 신청서',
+                'dashboard.completed': '완료된 신청서',
+                'dashboard.refresh': '데이터 새로고침',
+                'applications.title': '신청서 목록',
+                'applications.search': '회사명, 담당자명, 연락처로 검색...',
+                'applications.search_btn': '검색',
+                'applications.clear': '초기화',
+                'applications.refresh': '목록 새로고침',
+                'applications.date': '신청일시',
+                'applications.company': '회사명',
+                'applications.contact': '담당자',
+                'applications.phone': '연락처',
+                'applications.scope': '인증범위',
+                'applications.status': '상태',
+                'applications.actions': '작업',
+                'applications.total': '총 0개 신청서',
+                'applications.prev': '이전',
+                'applications.next': '다음',
+                'export.title': '데이터 내보내기',
+                'export.description': '신청서 데이터를 다양한 형식으로 내보낼 수 있습니다.',
+                'export.csv': 'CSV로 내보내기',
+                'export.sheets': 'Google Sheets 열기',
+                'formedit.title': '신청서 폼 편집',
+                'formedit.description': '질문/라벨/설명 텍스트를 수정할 수 있습니다.',
+                'formedit.save': '저장',
+                'modal.edit_title': '신청서 수정',
+                'modal.view_title': '신청서 상세 보기',
+                'modal.cancel': '취소',
+                'modal.save': '저장',
+                'modal.download_pdf': 'PDF 다운로드',
+                'form.company_ko': '법인명(국문)',
+                'form.company_en': '법인명(영문)',
+                'form.contact_name': '담당자명',
+                'form.contact_phone': '담당자 전화',
+                'form.contact_email': '담당자 이메일',
+                'form.status': '상태',
+                'status.new': '신규',
+                'status.progress': '진행중',
+                'status.completed': '완료',
+                'theme.dark': '다크모드'
+            },
+            en: {
+                'login.title': 'LRQA Admin Login',
+                'login.username': 'Username',
+                'login.password': 'Password',
+                'login.button': 'Login',
+                'header.title': 'LRQA Admin Settings',
+                'header.subtitle': 'ISO Certification Application Management System',
+                'header.logout': 'Logout',
+                'tabs.dashboard': 'Dashboard',
+                'tabs.applications': 'Applications',
+                'tabs.export': 'Data Export',
+                'dashboard.total': 'Total Applications',
+                'dashboard.new': 'New Applications',
+                'dashboard.monthly': 'This Month',
+                'dashboard.completed': 'Completed',
+                'dashboard.refresh': 'Refresh Data',
+                'applications.title': 'Application List',
+                'applications.search': 'Search by company, contact, phone...',
+                'applications.search_btn': 'Search',
+                'applications.clear': 'Clear',
+                'applications.refresh': 'Refresh List',
+                'applications.date': 'Application Date',
+                'applications.company': 'Company',
+                'applications.contact': 'Contact',
+                'applications.phone': 'Phone',
+                'applications.scope': 'Certification Scope',
+                'applications.status': 'Status',
+                'applications.actions': 'Actions',
+                'applications.total': 'Total 0 applications',
+                'applications.prev': 'Previous',
+                'applications.next': 'Next',
+                'export.title': 'Data Export',
+                'export.description': 'Export application data in various formats.',
+                'export.csv': 'Export to CSV',
+                'export.sheets': 'Open Google Sheets',
+                'formedit.title': 'Form Editor',
+                'formedit.description': 'Edit questions, labels, and description texts.',
+                'formedit.save': 'Save',
+                'modal.edit_title': 'Edit Application',
+                'modal.view_title': 'Application Details',
+                'modal.cancel': 'Cancel',
+                'modal.save': 'Save',
+                'modal.download_pdf': 'Download PDF',
+                'form.company_ko': 'Company Name (Korean)',
+                'form.company_en': 'Company Name (English)',
+                'form.contact_name': 'Contact Name',
+                'form.contact_phone': 'Contact Phone',
+                'form.contact_email': 'Contact Email',
+                'form.status': 'Status',
+                'status.new': 'New',
+                'status.progress': 'In Progress',
+                'status.completed': 'Completed',
+                'theme.dark': 'Dark Mode'
+            }
+        };
+
+        // 현재 언어 설정
+        let currentLanguage = 'ko';
+
+        // 언어 전환 함수
+        function changeLanguage(language) {
+            currentLanguage = language;
+            document.documentElement.lang = language;
+            
+            // 모든 data-i18n 속성이 있는 요소들을 업데이트
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[language] && translations[language][key]) {
+                    element.textContent = translations[language][key];
+                }
+            });
+            
+            // placeholder 속성 업데이트
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                if (translations[language] && translations[language][key]) {
+                    element.placeholder = translations[language][key];
+                }
+            });
+            
+            // 테마 토글 텍스트 업데이트
+            const themeText = document.querySelector('.theme-toggle-text');
+            if (themeText) {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                if (isDark) {
+                    themeText.textContent = language === 'ko' ? '라이트모드' : 'Light Mode';
+                } else {
+                    themeText.textContent = language === 'ko' ? '다크모드' : 'Dark Mode';
+                }
+            }
+        }
+
         // 인증 상태 확인
         let isAuthenticated = false;
         
@@ -1502,6 +1697,16 @@
 
         // Enter 키로 검색 실행
         document.addEventListener('DOMContentLoaded', function() {
+            // 언어 선택 드롭다운 이벤트 리스너 추가
+            const languageSelect = document.getElementById('languageSelect');
+            if (languageSelect) {
+                languageSelect.addEventListener('change', function() {
+                    const selectedLanguage = this.value;
+                    changeLanguage(selectedLanguage);
+                });
+            }
+            
+            // 검색 입력 필드 이벤트 리스너
             const searchInput = document.getElementById('searchInput');
             if (searchInput) {
                 searchInput.addEventListener('keypress', function(e) {
@@ -1510,6 +1715,9 @@
                     }
                 });
             }
+            
+            // 초기 언어 설정
+            changeLanguage(currentLanguage);
         });
 
         // CSV 내보내기
@@ -2470,6 +2678,16 @@
             document.documentElement.setAttribute('data-theme', currentTheme);
             localStorage.setItem('theme', currentTheme);
             updateThemeToggleButton();
+            
+            // 언어에 따른 테마 토글 텍스트 업데이트
+            const themeText = document.querySelector('.theme-toggle-text');
+            if (themeText) {
+                if (currentTheme === 'dark') {
+                    themeText.textContent = currentLanguage === 'ko' ? '라이트모드' : 'Light Mode';
+                } else {
+                    themeText.textContent = currentLanguage === 'ko' ? '다크모드' : 'Dark Mode';
+                }
+            }
             
             // 부드러운 전환 효과
             document.body.classList.add('theme-transitioning');
