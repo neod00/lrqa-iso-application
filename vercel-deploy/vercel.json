@@ -4,6 +4,9 @@
     "api/create-quotation.js": {
       "maxDuration": 60
     },
+    "api/core-brain.js": {
+      "maxDuration": 60
+    },
     "api/download-quotation.js": {
       "maxDuration": 60
     },

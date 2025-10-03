@@ -80,7 +80,8 @@ export default async function handler(req, res) {
 
 async function callCoreBrainAPI(applicationData) {
   try {
-    const coreBrainUrl = 'http://localhost:5001/calculate-audit-days';
+    // Vercel 핵심두뇌 API URL (동일한 Vercel 프로젝트 내)
+    const coreBrainUrl = `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'}/api/core-brain`;
     
     // applicationData를 핵심두뇌 API 형식으로 변환
     const requestData = {
@@ -98,12 +99,14 @@ async function callCoreBrainAPI(applicationData) {
         stage1: true,
         stage2: true,
         surveillance: true,
-        recert: true
+        recert: true,
+        integrated_audit: false,
+        remote_audit: false
       }
     };
     
     console.log('핵심두뇌 API 호출 시도...');
-    console.log('핵심두뇌 API 호출:', coreBrainUrl);
+    console.log('핵심두뇌 API URL:', coreBrainUrl);
     console.log('요청 데이터:', JSON.stringify(requestData, null, 2));
     
     const response = await fetch(coreBrainUrl, {
@@ -120,7 +123,19 @@ async function callCoreBrainAPI(applicationData) {
     
     const result = await response.json();
     console.log('핵심두뇌 API 응답:', result);
-    return result;
+    
+    // Vercel API 응답 형식에 맞게 변환
+    if (result.success && result.data) {
+      return {
+        success: true,
+        total_audit_days: result.data.total_audit_days,
+        total_cost: result.data.total_cost,
+        breakdowns: result.data.breakdowns || [],
+        assumptions: result.data.assumptions || []
+      };
+    } else {
+      throw new Error(result.message || '핵심두뇌 API 응답 오류');
+    }
     
   } catch (error) {
     console.log('핵심두뇌 API 호출 오류:', error.message);
