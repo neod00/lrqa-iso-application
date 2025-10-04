@@ -2207,8 +2207,25 @@
         window.validateForm = function() {
             const errors = [];
             
-            // 필수 필드 검사
-            const requiredFields = [
+            // 현재 언어 감지
+            const currentLang = document.documentElement.lang || 'ko';
+            const isEnglish = currentLang === 'en';
+            
+            // 필수 필드 검사 (언어별)
+            const requiredFields = isEnglish ? [
+                { selector: 'input[name="companyNameKo"]', name: 'Company Name (Korean/English)' },
+                { selector: 'input[name="headOfficeAddress"]', name: 'Headquarters Address' },
+                { selector: 'input[name="siteCount"]', name: 'Number of sites included in this certification' },
+                { selector: 'input[name="contactName"]', name: 'Contact Person (including position/title)' },
+                { selector: 'input[name="department"]', name: 'Department' },
+                { selector: 'input[name="contactEmail"]', name: 'Email Address' },
+                { selector: 'input[name="contactPhone"]', name: 'Phone Number' },
+                { selector: 'input[name="mobilePhone"]', name: 'Mobile Number' },
+                { selector: 'input[name="desiredAuditDate"]', name: 'Desired Audit Schedule' },
+                { selector: 'input[name="totalEmployees"]', name: 'Total Number of Employees' },
+                { selector: 'input[name="signature"]', name: 'Signature' },
+                { selector: 'input[name="signatureDate"]', name: 'Date' }
+            ] : [
                 { selector: 'input[name="companyNameKo"]', name: '법인명 (국문/영문)' },
                 { selector: 'input[name="headOfficeAddress"]', name: '본사 주소' },
                 { selector: 'input[name="siteCount"]', name: '본 인증에 포함되는 사업장 수' },
@@ -2229,11 +2246,11 @@
                     // 월 타입 필드는 trim() 없이 검사
                     if (element.type === 'month') {
                         if (!element.value) {
-                            errors.push(`${field.name}은(는) 필수 입력 항목입니다.`);
+                            errors.push(isEnglish ? `${field.name} is a required field.` : `${field.name}은(는) 필수 입력 항목입니다.`);
                         }
                     } else {
                         if (!element.value.trim()) {
-                            errors.push(`${field.name}은(는) 필수 입력 항목입니다.`);
+                            errors.push(isEnglish ? `${field.name} is a required field.` : `${field.name}은(는) 필수 입력 항목입니다.`);
                         }
                     }
                 }
@@ -2242,7 +2259,7 @@
             // 데이터 프로세스 동의 검사
             const dataProcessConsent = document.querySelector('input[name="dataProcessConsent"]:checked');
             if (!dataProcessConsent) {
-                errors.push('LRQA의 데이터 프로세스에 대한 동의가 필요합니다.');
+                errors.push(isEnglish ? 'Consent to LRQA\'s data processing is required.' : 'LRQA의 데이터 프로세스에 대한 동의가 필요합니다.');
             }
             
             return errors;
@@ -2255,6 +2272,10 @@
             const messageTitle = document.getElementById('messageTitle');
             const messageContent = document.getElementById('messageContent');
             
+            // 현재 언어 감지
+            const currentLang = document.documentElement.lang || 'ko';
+            const isEnglish = currentLang === 'en';
+            
             if (type === 'success') {
                 icon.textContent = '✓';
                 icon.className = 'message-icon success-icon';
@@ -2265,7 +2286,15 @@
                 messageTitle.className = 'message-title error-title';
             }
             
-            messageTitle.textContent = title;
+            // 언어에 따라 제목 설정
+            if (type === 'error' && title === '입력 오류') {
+                messageTitle.textContent = isEnglish ? 'Input Error' : '입력 오류';
+            } else if (type === 'error' && title === '다음 항목을 확인해 주세요:') {
+                messageTitle.textContent = isEnglish ? 'Please check the following items:' : '다음 항목을 확인해 주세요:';
+            } else {
+                messageTitle.textContent = title;
+            }
+            
             messageContent.textContent = content;
             
             overlay.classList.add('show');
@@ -2305,7 +2334,15 @@
             const errors = validateForm();
             if (errors.length > 0) {
                 highlightErrorFields(); // 필수 필드 강조
-                showMessage('error', '입력 오류', '다음 항목을 확인해 주세요:\n\n' + errors.join('\n'));
+                
+                // 현재 언어 감지
+                const currentLang = document.documentElement.lang || 'ko';
+                const isEnglish = currentLang === 'en';
+                
+                const errorTitle = isEnglish ? 'Input Error' : '입력 오류';
+                const errorSubtitle = isEnglish ? 'Please check the following items:' : '다음 항목을 확인해 주세요:';
+                
+                showMessage('error', errorTitle, errorSubtitle + '\n\n' + errors.join('\n'));
                 return false;
             }
             

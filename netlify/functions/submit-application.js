@@ -437,23 +437,66 @@ LRQA Korea 자동 시스템
 
   const confirmSubject = `[LRQA] 인증심사 신청서 접수 확인`;
   const confirmBody = `
-안녕하세요, ${formData.contactName}님.
+안녕하세요, ${formData.contactName || '신청자'}님.
 
-LRQA Korea에서 인증심사 신청서 접수를 확인해드립니다.
+LRQA의 인증심사를 신청해주셔서 감사합니다. 아래와 같이 신청서 접수를 확인해드립니다.
 
-신청하신 내용:
-- 회사명: ${formData.companyNameKo || formData.companyNameEn}
-- 인증범위: ${formData.certificationScope}
-- 희망 심사 일정: ${formData.desiredAuditDate ? new Date(formData.desiredAuditDate + '-01').toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' }) : '미정'}
+=== 신청하신 내용 요약 ===
+회사명: ${formData.companyNameKo || formData.companyNameEn || 'N/A'}
+신청 표준: ${formData.isoStandards && formData.isoStandards.length > 0 
+  ? formData.isoStandards.map(std => {
+      switch(std) {
+        case 'iso9001': return 'ISO 9001 (품질경영시스템)';
+        case 'iso14001': return 'ISO 14001 (환경경영시스템)';
+        case 'iso45001': return 'ISO 45001 (안전보건경영시스템)';
+        default: return std;
+      }
+    }).join(', ')
+  : '신청 표준 정보 없음'
+}
+인증 범위: ${formData.certificationScope || '인증 범위 정보 없음'}
+희망 심사 일정: ${formData.desiredAuditDate ? new Date(formData.desiredAuditDate + '-01').toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' }) : 'N/A'}
+총 직원 수: ${formData.totalEmployees || 'N/A'}명
 
 담당자가 검토 후 빠른 시일 내에 연락드리겠습니다.
 
 문의사항이 있으시면 언제든지 연락해 주세요.
 이메일: ${ADMIN_EMAIL}
-전화: +82 10-5438-3060
 
 감사합니다.
-LRQA Korea 팀
+LRQA Limited.
+`;
+
+  const confirmSubjectEn = `[LRQA] Certification Audit Application Receipt Confirmation`;
+  const confirmBodyEn = `
+Dear ${formData.contactName || 'Applicant'},
+
+Thank you for submitting your certification audit application to LRQA.
+
+=== Application Summary ===
+Company Name: ${formData.companyNameKo || formData.companyNameEn || 'N/A'}
+Applied Standards: ${formData.isoStandards && formData.isoStandards.length > 0 
+  ? formData.isoStandards.map(std => {
+      switch(std) {
+        case 'iso9001': return 'ISO 9001 (Quality Management System)';
+        case 'iso14001': return 'ISO 14001 (Environmental Management System)';
+        case 'iso45001': return 'ISO 45001 (Occupational Health and Safety Management System)';
+        default: return std;
+      }
+    }).join(', ')
+  : 'No standard information'
+}
+Certification Scope: ${formData.certificationScope || 'No certification scope information'}
+Desired Audit Date: ${formData.desiredAuditDate ? new Date(formData.desiredAuditDate + '-01').toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : 'N/A'}
+Total Employees: ${formData.totalEmployees || 'N/A'}
+
+Our team will review your application and contact you shortly.
+
+If you have any questions, please feel free to contact us.
+Email: ${ADMIN_EMAIL}
+
+Thank you.
+LRQA Limited.
 `;
 
   try {
@@ -469,14 +512,20 @@ LRQA Korea 팀
     
     console.log('Admin email sent successfully');
 
-    // 신청자에게 확인 이메일 전송
+    // 신청자에게 확인 이메일 전송 (언어에 따라)
     if (formData.contactEmail) {
       console.log('Attempting to send confirmation email to:', formData.contactEmail);
+      
+      // 언어 감지 (기본값은 한국어)
+      const isEnglish = formData.language === 'en' || formData.language === 'english';
+      const finalSubject = isEnglish ? confirmSubjectEn : confirmSubject;
+      const finalBody = isEnglish ? confirmBodyEn : confirmBody;
+      
       await transporter.sendMail({
         from: SMTP_USER,
         to: formData.contactEmail,
-        subject: confirmSubject,
-        text: confirmBody
+        subject: finalSubject,
+        text: finalBody
       });
       console.log('Confirmation email sent successfully');
     }
@@ -547,32 +596,48 @@ exports.handler = async (event, context) => {
     }
     console.log('필수 필드 검증 완료');
 
-    // Google Sheets API 클라이언트 초기화
-    console.log('Google Sheets API 클라이언트 초기화 시도...');
-    const sheets = await getGoogleSheetsClient();
-    console.log('Google Sheets API 클라이언트 초기화 완료');
+    // Google Sheets API 클라이언트 초기화 및 데이터 저장
+    let sheetsSuccess = false;
+    try {
+      console.log('Google Sheets API 클라이언트 초기화 시도...');
+      const sheets = await getGoogleSheetsClient();
+      console.log('Google Sheets API 클라이언트 초기화 완료');
+      
+      // 시트 헤더 설정
+      console.log('시트 헤더 설정 시도...');
+      await setupSheetHeaders(sheets);
+      console.log('시트 헤더 설정 완료');
+      
+      // 데이터 행 추가
+      console.log('데이터 행 추가 시도...');
+      await addApplicationRow(sheets, formData);
+      console.log('데이터 행 추가 완료');
+      
+      sheetsSuccess = true;
+    } catch (sheetsError) {
+      console.error('Google Sheets 저장 중 오류 발생:', sheetsError.message);
+      console.error('Sheets error details:', sheetsError);
+      // Google Sheets 오류가 발생해도 계속 진행
+    }
     
-    // 시트 헤더 설정
-    console.log('시트 헤더 설정 시도...');
-    await setupSheetHeaders(sheets);
-    console.log('시트 헤더 설정 완료');
-    
-    // 데이터 행 추가
-    console.log('데이터 행 추가 시도...');
-    await addApplicationRow(sheets, formData);
-    console.log('데이터 행 추가 완료');
-    
-    // 이메일 알림 전송
+    // 이메일 알림 전송 (Google Sheets 성공/실패와 관계없이 항상 시도)
     console.log('이메일 알림 전송 시도...');
-    await sendNotificationEmail(formData);
-    console.log('이메일 알림 전송 완료');
+    try {
+      await sendNotificationEmail(formData);
+      console.log('이메일 알림 전송 완료');
+    } catch (emailError) {
+      console.error('이메일 발송 중 오류 발생:', emailError.message);
+      console.error('Email error details:', emailError);
+    }
     
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({ 
         success: true, 
-        message: '신청서가 성공적으로 제출되었습니다.' 
+        message: '신청서가 성공적으로 제출되었습니다.',
+        sheetsSaved: sheetsSuccess,
+        emailSent: true
       })
     };
     
