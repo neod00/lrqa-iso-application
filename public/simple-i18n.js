@@ -2791,7 +2791,7 @@ function t(key) {
 
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', function() {
-    const savedLanguage = 'ko'; // 항상 한국어로 시작
+    const savedLanguage = localStorage.getItem('language') || 'ko';
     currentLanguage = savedLanguage;
     
     const languageSelect = document.getElementById('languageSelect');
