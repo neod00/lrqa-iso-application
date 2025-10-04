@@ -1121,7 +1121,12 @@ const translations = {
         'form.placeholders.shift.employees': '従業員数',
         'form.dark.mode': 'ダークモード',
         'form.save.temp': '一時保存',
-        'form.confirm': '確認'
+        'form.confirm': '確認',
+        'form.submit.check': '提出前にすべての必須項目を確認してください。',
+        'form.gap.analysis.info.suggestion': 'ギャップ分析レポートも必要ですか？',
+        'form.gap.analysis.info.click': 'ここをクリック',
+        'form.news.latest': 'LRQA最新ニュースを見る',
+        'form.newsletter.subscribe': 'キーワードニュースレターに登録'
     },
     zh: {
         'form.title': '认证审核申请表',
@@ -1373,7 +1378,12 @@ const translations = {
         'form.placeholders.shift.employees': '员工人数',
         'form.dark.mode': '深色模式',
         'form.save.temp': '临时保存',
-        'form.confirm': '确认'
+        'form.confirm': '确认',
+        'form.submit.check': '提交前请检查所有必填项目。',
+        'form.gap.analysis.info.suggestion': '您也需要差距分析报告吗？',
+        'form.gap.analysis.info.click': '点击这里',
+        'form.news.latest': '查看LRQA最新消息',
+        'form.newsletter.subscribe': '订阅关键词新闻通讯'
     },
     es: {
         'form.title': 'Formulario de solicitud de auditoría de certificación',
@@ -1625,7 +1635,12 @@ const translations = {
         'form.placeholders.shift.employees': 'Número de empleados',
         'form.dark.mode': 'Modo oscuro',
         'form.save.temp': 'Guardar temporalmente',
-        'form.confirm': 'Confirmar'
+        'form.confirm': 'Confirmar',
+        'form.submit.check': 'Por favor verifique todos los elementos requeridos antes de enviar.',
+        'form.gap.analysis.info.suggestion': '¿También necesita un informe de análisis de brechas?',
+        'form.gap.analysis.info.click': 'Haga clic aquí',
+        'form.news.latest': 'Ver las últimas noticias de LRQA',
+        'form.newsletter.subscribe': 'Suscribirse al boletín de palabras clave'
     },
     de: {
         'form.title': 'Zertifizierungsaudit-Antragsformular',
@@ -1840,7 +1855,12 @@ const translations = {
         'form.placeholders.shift.employees': 'Anzahl der Mitarbeiter',
         'form.dark.mode': 'Dunkler Modus',
         'form.save.temp': 'Temporär speichern',
-        'form.confirm': 'Bestätigen'
+        'form.confirm': 'Bestätigen',
+        'form.submit.check': 'Bitte überprüfen Sie alle erforderlichen Felder vor der Einreichung.',
+        'form.gap.analysis.info.suggestion': 'Benötigen Sie auch einen Gap-Analyse-Bericht?',
+        'form.gap.analysis.info.click': 'Hier klicken',
+        'form.news.latest': 'LRQA Neueste Nachrichten anzeigen',
+        'form.newsletter.subscribe': 'Keyword-Newsletter abonnieren'
     },
     fr: {
         'form.title': 'Formulaire de demande d\'audit de certification',
@@ -2055,7 +2075,12 @@ const translations = {
         'form.placeholders.shift.employees': 'Nombre d\'employés',
         'form.dark.mode': 'Mode sombre',
         'form.save.temp': 'Sauvegarder temporairement',
-        'form.confirm': 'Confirmer'
+        'form.confirm': 'Confirmer',
+        'form.submit.check': 'Veuillez vérifier tous les éléments requis avant de soumettre.',
+        'form.gap.analysis.info.suggestion': 'Avez-vous également besoin d\'un rapport d\'analyse des écarts ?',
+        'form.gap.analysis.info.click': 'Cliquez ici',
+        'form.news.latest': 'Voir les dernières actualités LRQA',
+        'form.newsletter.subscribe': 'S\'abonner à la newsletter par mots-clés'
     },
     th: {
         'form.title': 'แบบฟอร์มใบสมัครการตรวจสอบการรับรอง',
@@ -2279,7 +2304,12 @@ const translations = {
         'form.placeholders.shift.employees': 'จำนวนพนักงาน',
         'form.dark.mode': 'โหมดมืด',
         'form.save.temp': 'บันทึกชั่วคราว',
-        'form.confirm': 'ยืนยัน'
+        'form.confirm': 'ยืนยัน',
+        'form.submit.check': 'กรุณาตรวจสอบรายการที่จำเป็นทั้งหมดก่อนส่ง',
+        'form.gap.analysis.info.suggestion': 'คุณต้องการรายงานการวิเคราะห์ช่องว่างด้วยหรือไม่?',
+        'form.gap.analysis.info.click': 'คลิกที่นี่',
+        'form.news.latest': 'ดูข่าวสารล่าสุดของ LRQA',
+        'form.newsletter.subscribe': 'สมัครรับจดหมายข่าวคำสำคัญ'
     },
     vi: {
         'form.title': 'Mẫu đơn đăng ký kiểm toán chứng nhận',
@@ -2503,7 +2533,12 @@ const translations = {
         'form.placeholders.shift.employees': 'Số nhân viên',
         'form.dark.mode': 'Chế độ tối',
         'form.save.temp': 'Lưu tạm thời',
-        'form.confirm': 'Xác nhận'
+        'form.confirm': 'Xác nhận',
+        'form.submit.check': 'Vui lòng kiểm tra tất cả các mục bắt buộc trước khi gửi.',
+        'form.gap.analysis.info.suggestion': 'Bạn có cần báo cáo phân tích khoảng cách không?',
+        'form.gap.analysis.info.click': 'Nhấp vào đây',
+        'form.news.latest': 'Xem tin tức mới nhất của LRQA',
+        'form.newsletter.subscribe': 'Đăng ký nhận bản tin từ khóa'
     },
     ar: {
         'form.title': 'نموذج طلب تدقيق الشهادة',
@@ -2727,7 +2762,12 @@ const translations = {
         'form.placeholders.shift.employees': 'عدد الموظفين',
         'form.dark.mode': 'الوضع المظلم',
         'form.save.temp': 'حفظ مؤقت',
-        'form.confirm': 'تأكيد'
+        'form.confirm': 'تأكيد',
+        'form.submit.check': 'يرجى التحقق من جميع العناصر المطلوبة قبل الإرسال.',
+        'form.gap.analysis.info.suggestion': 'هل تحتاج أيضاً إلى تقرير تحليل الفجوات؟',
+        'form.gap.analysis.info.click': 'انقر هنا',
+        'form.news.latest': 'عرض آخر أخبار LRQA',
+        'form.newsletter.subscribe': 'الاشتراك في النشرة الإخبارية للكلمات المفتاحية'
     }
 };
 
