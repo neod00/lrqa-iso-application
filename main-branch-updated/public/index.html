@@ -2207,9 +2207,9 @@
         window.validateForm = function() {
             const errors = [];
             
-            // 현재 언어 감지
-            const currentLang = document.documentElement.lang || 'ko';
-            const isEnglish = currentLang === 'en';
+        // 현재 언어 감지 (한국어가 아닌 모든 언어는 영어로 처리)
+        const currentLang = document.documentElement.lang || 'ko';
+        const isEnglish = currentLang !== 'ko';
             
             // 필수 필드 검사 (언어별)
             const requiredFields = isEnglish ? [
@@ -2272,9 +2272,9 @@
             const messageTitle = document.getElementById('messageTitle');
             const messageContent = document.getElementById('messageContent');
             
-            // 현재 언어 감지
-            const currentLang = document.documentElement.lang || 'ko';
-            const isEnglish = currentLang === 'en';
+        // 현재 언어 감지 (한국어가 아닌 모든 언어는 영어로 처리)
+        const currentLang = document.documentElement.lang || 'ko';
+        const isEnglish = currentLang !== 'ko';
             
             if (type === 'success') {
                 icon.textContent = '✓';
@@ -2335,9 +2335,9 @@
             if (errors.length > 0) {
                 highlightErrorFields(); // 필수 필드 강조
                 
-                // 현재 언어 감지
-                const currentLang = document.documentElement.lang || 'ko';
-                const isEnglish = currentLang === 'en';
+        // 현재 언어 감지 (한국어가 아닌 모든 언어는 영어로 처리)
+        const currentLang = document.documentElement.lang || 'ko';
+        const isEnglish = currentLang !== 'ko';
                 
                 const errorTitle = isEnglish ? 'Input Error' : '입력 오류';
                 const errorSubtitle = isEnglish ? 'Please check the following items:' : '다음 항목을 확인해 주세요:';
