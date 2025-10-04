@@ -2500,6 +2500,30 @@
             }
         });
         
+        // 언어 전환 기능
+        function changeLanguage(selectedLanguage) {
+            // document.documentElement.lang 업데이트
+            document.documentElement.lang = selectedLanguage;
+            console.log('Language changed to:', selectedLanguage);
+            console.log('document.documentElement.lang is now:', document.documentElement.lang);
+            
+            // LRQA 최신뉴스 버튼의 href 업데이트
+            updateNewsButtonHref(selectedLanguage);
+        }
+        
+        // 뉴스 버튼 href 업데이트 함수
+        function updateNewsButtonHref(language) {
+            const newsButton = document.querySelector('a[href*="lrqa.com"][href*="latest-news"]');
+            if (newsButton) {
+                if (language === 'ko') {
+                    newsButton.href = 'https://www.lrqa.com/ko-kr/latest-news/';
+                } else {
+                    newsButton.href = 'https://www.lrqa.com/en/latest-news/';
+                }
+                console.log('News button href updated to:', newsButton.href);
+            }
+        }
+
         // 페이지 로드 시 실행
         document.addEventListener('DOMContentLoaded', function() {
             // 오늘 날짜를 기본값으로 설정
@@ -2512,6 +2536,19 @@
             // 다크모드 상태 복원
             if (localStorage.getItem('darkMode') === 'true') {
                 document.body.classList.add('dark-mode');
+            }
+            
+            // 언어 선택 드롭다운 이벤트 리스너 추가
+            const languageSelect = document.getElementById('languageSelect');
+            if (languageSelect) {
+                languageSelect.addEventListener('change', function() {
+                    const selectedLanguage = this.value;
+                    changeLanguage(selectedLanguage);
+                });
+                
+                // 초기 언어 설정에 따라 뉴스 버튼 href 설정
+                const initialLanguage = languageSelect.value || 'ko';
+                updateNewsButtonHref(initialLanguage);
             }
             
             // 저장된 폼 데이터 복원
