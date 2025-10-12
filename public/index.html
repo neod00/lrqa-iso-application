@@ -2516,12 +2516,24 @@
             const btn = document.querySelector('.dark-mode-btn');
             if (btn) {
                 const isDark = document.body.classList.contains('dark-mode');
-                const isKorean = document.documentElement.lang === 'ko';
+                const language = document.documentElement.lang;
                 
                 if (isDark) {
-                    btn.textContent = isKorean ? '라이트모드' : 'Light Mode';
+                    if (language === 'ko') {
+                        btn.textContent = '라이트모드';
+                    } else if (language === 'ja') {
+                        btn.textContent = 'ライトモード';
+                    } else {
+                        btn.textContent = 'Light Mode';
+                    }
                 } else {
-                    btn.textContent = isKorean ? '다크모드' : 'Dark Mode';
+                    if (language === 'ko') {
+                        btn.textContent = '다크모드';
+                    } else if (language === 'ja') {
+                        btn.textContent = 'ダークモード';
+                    } else {
+                        btn.textContent = 'Dark Mode';
+                    }
                 }
             }
         }
