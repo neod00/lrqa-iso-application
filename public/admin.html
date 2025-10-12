@@ -1453,15 +1453,7 @@
             });
             
             // 테마 토글 텍스트 업데이트
-            const themeText = document.querySelector('.theme-toggle-text');
-            if (themeText) {
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                if (isDark) {
-                    themeText.textContent = language === 'ko' ? '라이트모드' : 'Light Mode';
-                } else {
-                    themeText.textContent = language === 'ko' ? '다크모드' : 'Dark Mode';
-                }
-            }
+            updateThemeToggleButton();
             
             // 동적으로 생성된 테이블 데이터 다시 렌더링
             if (typeof displayCurrentPage === 'function') {
@@ -2748,10 +2740,10 @@
             
             if (currentTheme === 'dark') {
                 icon.textContent = '☀️';
-                text.textContent = '라이트모드';
+                text.textContent = currentLanguage === 'ko' ? '라이트모드' : 'Light Mode';
             } else {
                 icon.textContent = '🌙';
-                text.textContent = '다크모드';
+                text.textContent = currentLanguage === 'ko' ? '다크모드' : 'Dark Mode';
             }
         }
 
@@ -2761,16 +2753,6 @@
             document.documentElement.setAttribute('data-theme', currentTheme);
             localStorage.setItem('theme', currentTheme);
             updateThemeToggleButton();
-            
-            // 언어에 따른 테마 토글 텍스트 업데이트
-            const themeText = document.querySelector('.theme-toggle-text');
-            if (themeText) {
-                if (currentTheme === 'dark') {
-                    themeText.textContent = currentLanguage === 'ko' ? '라이트모드' : 'Light Mode';
-                } else {
-                    themeText.textContent = currentLanguage === 'ko' ? '다크모드' : 'Dark Mode';
-                }
-            }
             
             // 부드러운 전환 효과
             document.body.classList.add('theme-transitioning');
