@@ -2511,16 +2511,28 @@
             input.click();
         };
         
+        // 다크모드 버튼 텍스트 업데이트 함수
+        function updateDarkModeButton() {
+            const btn = document.querySelector('.dark-mode-btn');
+            if (btn) {
+                const isDark = document.body.classList.contains('dark-mode');
+                const isKorean = document.documentElement.lang === 'ko';
+                
+                if (isDark) {
+                    btn.textContent = isKorean ? '라이트모드' : 'Light Mode';
+                } else {
+                    btn.textContent = isKorean ? '다크모드' : 'Dark Mode';
+                }
+            }
+        }
+
         // 다크모드 토글 함수
         window.toggleDarkMode = function() {
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', isDark);
             
-            const btn = document.querySelector('.dark-mode-btn');
-            if (btn) {
-                btn.textContent = isDark ? '라이트모드' : '다크모드';
-            }
+            updateDarkModeButton();
         };
         
         // 페이지 로드 시 다크모드 상태 복원
@@ -2528,11 +2540,8 @@
             const isDark = localStorage.getItem('darkMode') === 'true';
             if (isDark) {
                 document.body.classList.add('dark-mode');
-                const btn = document.querySelector('.dark-mode-btn');
-                if (btn) {
-                    btn.textContent = '라이트모드';
-                }
             }
+            updateDarkModeButton();
         });
         
         // 키보드 단축키
@@ -2586,6 +2595,9 @@
             
             // LRQA 최신뉴스 버튼의 href 업데이트
             updateNewsButtonHref(selectedLanguage);
+            
+            // 다크모드 버튼 텍스트 업데이트
+            updateDarkModeButton();
         }
         
         // 뉴스 버튼 href 업데이트 함수
