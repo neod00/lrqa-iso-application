@@ -358,6 +358,79 @@
             animation: float 3s ease-in-out infinite, pulse 2s ease-in-out infinite;
         }
 
+        /* 보고서 생성 진행상황 모달 */
+        .progress-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .progress-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+        }
+
+        .progress-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .progress-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .progress-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-secondary));
+            border-radius: 3px;
+            animation: progress 2s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
         @keyframes pulse {
             0%, 100% { opacity: 0.8; }
             50% { opacity: 1; }
@@ -1209,7 +1282,6 @@
                                 <th data-i18n="applications.contact">담당자</th>
                                 <th data-i18n="applications.phone">연락처</th>
                                 <th data-i18n="applications.scope">인증범위</th>
-                                <th data-i18n="applications.status">상태</th>
                                 <th data-i18n="applications.actions">작업</th>
                             </tr>
                         </thead>
@@ -1367,6 +1439,18 @@
             <div class="modal-footer">
                 <button type="button" onclick="closeViewModal()" class="btn btn-cancel">닫기</button>
                 <button type="button" onclick="editFromView()" class="btn btn-save">수정</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 보고서 생성 진행상황 모달 -->
+    <div id="reportProgressModal" class="progress-modal" style="display: none;">
+        <div class="progress-content">
+            <div class="progress-spinner"></div>
+            <h3 id="progressTitle">회사 보고서 생성 중...</h3>
+            <p id="progressMessage">AI가 회사 정보를 분석하고 있습니다. 잠시만 기다려주세요.</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
             </div>
         </div>
     </div>
@@ -1748,9 +1832,6 @@
                     <td>${currentSearchTerm ? highlightSearchTerm(app['담당자명'] || '-', currentSearchTerm) : (app['담당자명'] || '-')}</td>
                     <td>${currentSearchTerm ? highlightSearchTerm(app['담당자전화'] || '-', currentSearchTerm) : (app['담당자전화'] || '-')}</td>
                     <td>${app['인증범위'] || '-'}</td>
-                    <td>
-                        <span class="status-badge ${getStatusClass(app['상태'])}">${translateStatus(app['상태'] || '신규')}</span>
-                    </td>
                     <td>
                         <div class="action-buttons">
                             <button class="action-btn view" onclick="viewApplication('${app['신청일시']}')">${translations[currentLanguage]['applications.view']}</button>
@@ -3014,9 +3095,10 @@
         async function generateCompanyReport(companyName) {
             if (!isAuthenticated) return;
             
+            // 진행상황 모달 표시
+            showProgressModal(companyName);
+            
             try {
-                showMessage(`${companyName}의 회사 보고서를 생성 중입니다...`, 'info');
-                
                 // Netlify Function 호출
                 const response = await fetch('/.netlify/functions/company-report', {
                     method: 'POST',
@@ -3035,19 +3117,41 @@
                     if (reportWindow) {
                         reportWindow.document.write(await response.text());
                         reportWindow.document.close();
+                        hideProgressModal();
                         showMessage('회사 보고서가 생성되었습니다!', 'success');
                     } else {
+                        hideProgressModal();
                         showMessage('팝업이 차단되었습니다. 팝업을 허용해주세요.', 'error');
                     }
                 } else {
                     const errorData = await response.json();
+                    hideProgressModal();
                     showMessage(errorData.error || '회사 보고서 생성 중 오류가 발생했습니다.', 'error');
                 }
                 
             } catch (error) {
                 console.error('Error generating company report:', error);
+                hideProgressModal();
                 showMessage('회사 보고서 생성 중 오류가 발생했습니다.', 'error');
             }
+        }
+
+        // 진행상황 모달 표시
+        function showProgressModal(companyName) {
+            const modal = document.getElementById('reportProgressModal');
+            const title = document.getElementById('progressTitle');
+            const message = document.getElementById('progressMessage');
+            
+            title.textContent = `${companyName} 회사 보고서 생성 중...`;
+            message.textContent = 'AI가 회사 정보를 분석하고 있습니다. 잠시만 기다려주세요.';
+            
+            modal.style.display = 'flex';
+        }
+
+        // 진행상황 모달 숨기기
+        function hideProgressModal() {
+            const modal = document.getElementById('reportProgressModal');
+            modal.style.display = 'none';
         }
 
     </script>
