@@ -234,6 +234,26 @@
             background-color: #d1fae5;
             color: #065f46;
         }
+
+        /* 회사명 링크 스타일 */
+        .company-link {
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .company-link:hover {
+            color: #6d28d9;
+            text-decoration: underline;
+            border-bottom-color: #6d28d9;
+        }
+
+        .company-link:active {
+            color: #5b21b6;
+        }
         
         .action-buttons {
             display: flex;
@@ -1604,7 +1624,14 @@
             tbody.innerHTML = currentApplications.map(app => `
                 <tr>
                     <td>${formatDateForLanguage(app['신청일시'])}</td>
-                    <td>${currentSearchTerm ? highlightSearchTerm(app['법인명(국문)'] || app['법인명(영문)'] || '-', currentSearchTerm) : (app['법인명(국문)'] || app['법인명(영문)'] || '-')}</td>
+                    <td>
+                        <a href="javascript:void(0)" 
+                           onclick="generateCompanyReport('${(app['법인명(국문)'] || app['법인명(영문)'] || '').replace(/'/g, "\\'")}')" 
+                           class="company-link" 
+                           title="회사 보고서 생성">
+                            ${currentSearchTerm ? highlightSearchTerm(app['법인명(국문)'] || app['법인명(영문)'] || '-', currentSearchTerm) : (app['법인명(국문)'] || app['법인명(영문)'] || '-')}
+                        </a>
+                    </td>
                     <td>${currentSearchTerm ? highlightSearchTerm(app['담당자명'] || '-', currentSearchTerm) : (app['담당자명'] || '-')}</td>
                     <td>${currentSearchTerm ? highlightSearchTerm(app['담당자전화'] || '-', currentSearchTerm) : (app['담당자전화'] || '-')}</td>
                     <td>${app['인증범위'] || '-'}</td>
@@ -2867,6 +2894,46 @@
             } catch (error) {
                 console.error('Error generating quotation:', error);
                 showMessage('견적서 생성 중 오류가 발생했습니다.', 'error');
+            }
+        }
+
+        // 회사 보고서 생성 함수
+        async function generateCompanyReport(companyName) {
+            if (!isAuthenticated) return;
+            
+            try {
+                showMessage(`${companyName}의 회사 보고서를 생성 중입니다...`, 'info');
+                
+                // Netlify Function 호출
+                const response = await fetch('/.netlify/functions/company-report', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        companyName: companyName
+                    })
+                });
+                
+                if (response.ok) {
+                    // HTML 보고서를 새 창에서 열기
+                    const reportWindow = window.open('', '_blank', 'width=1000,height=800,scrollbars=yes,resizable=yes');
+                    
+                    if (reportWindow) {
+                        reportWindow.document.write(await response.text());
+                        reportWindow.document.close();
+                        showMessage('회사 보고서가 생성되었습니다!', 'success');
+                    } else {
+                        showMessage('팝업이 차단되었습니다. 팝업을 허용해주세요.', 'error');
+                    }
+                } else {
+                    const errorData = await response.json();
+                    showMessage(errorData.error || '회사 보고서 생성 중 오류가 발생했습니다.', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error generating company report:', error);
+                showMessage('회사 보고서 생성 중 오류가 발생했습니다.', 'error');
             }
         }
 
