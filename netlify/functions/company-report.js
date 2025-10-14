@@ -27,7 +27,7 @@ exports.handler = async (event, context) => {
             };
         }
 
-        const { companyName } = JSON.parse(event.body);
+        const { companyName, language = 'ko' } = JSON.parse(event.body);
         
         if (!companyName) {
             return {
@@ -62,8 +62,45 @@ exports.handler = async (event, context) => {
             };
         }
 
-        // ChatGPT API 호출을 위한 프롬프트 구성
-        const prompt = `
+        // ChatGPT API 호출을 위한 프롬프트 구성 (언어별)
+        const isEnglish = language === 'en';
+        
+        const prompt = isEnglish ? `
+Please write a comprehensive report about the following company:
+
+Company Name: ${companyName}
+
+Please write the report in HTML format including the following sections:
+
+1. Company Overview
+   - Company introduction
+   - Main business areas
+   - Year of establishment (if available)
+
+2. ISO Certification Status
+   - Types of ISO certifications held
+   - Year of certification
+   - Certification body
+   - Scope of certification
+
+3. Recent Business Status
+   - Recent news and announcements
+   - Business expansion or changes
+   - Major achievements or issues
+
+4. Market Position
+   - Industry standing
+   - Competitive advantages
+   - Key strengths
+
+5. Future Outlook
+   - Growth potential
+   - Notable developments
+
+Write the report in English and structure it using HTML tags.
+Each section should have appropriate titles and content.
+If information is insufficient, mark as "Information not available" or "To be confirmed".
+` : `
 다음 회사에 대한 종합적인 보고서를 작성해주세요:
 
 회사명: ${companyName}
@@ -137,11 +174,11 @@ exports.handler = async (event, context) => {
         // HTML 보고서 생성
         const htmlReport = `
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="${isEnglish ? 'en' : 'ko'}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${companyName} - 회사 보고서</title>
+    <title>${companyName} - ${isEnglish ? 'Company Report' : '회사 보고서'}</title>
     <style>
         body {
             font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -213,12 +250,12 @@ exports.handler = async (event, context) => {
     </style>
 </head>
 <body>
-    <button class="close-btn" onclick="window.close()">닫기</button>
+    <button class="close-btn" onclick="window.close()">${isEnglish ? 'Close' : '닫기'}</button>
     <div class="report-container">
         <div class="report-header">
             <h1 class="report-title">${companyName}</h1>
-            <p class="report-subtitle">회사 정보 보고서</p>
-            <p style="color: #999; font-size: 0.9rem;">생성일: ${new Date().toLocaleDateString('ko-KR')}</p>
+            <p class="report-subtitle">${isEnglish ? 'Company Information Report' : '회사 정보 보고서'}</p>
+            <p style="color: #999; font-size: 0.9rem;">${isEnglish ? 'Generated on: ' : '생성일: '}${new Date().toLocaleDateString(isEnglish ? 'en-US' : 'ko-KR')}</p>
         </div>
         <div class="report-content">
             ${reportContent}

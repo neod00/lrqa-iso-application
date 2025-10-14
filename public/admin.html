@@ -1492,6 +1492,11 @@
                 'applications.view': '보기',
                 'applications.edit': '수정',
                 'applications.quote': '견적서',
+                'report.progress_title': '회사 보고서 생성 중...',
+                'report.progress_message': 'AI가 회사 정보를 분석하고 있습니다. 잠시만 기다려주세요.',
+                'report.success': '회사 보고서가 생성되었습니다!',
+                'report.popup_blocked': '팝업이 차단되었습니다. 팝업을 허용해주세요.',
+                'report.error': '회사 보고서 생성 중 오류가 발생했습니다.',
                 'export.title': '데이터 내보내기',
                 'export.description': '신청서 데이터를 다양한 형식으로 내보낼 수 있습니다.',
                 'export.csv': 'CSV로 내보내기',
@@ -1566,6 +1571,11 @@
                 'applications.view': 'View',
                 'applications.edit': 'Edit',
                 'applications.quote': 'Quote',
+                'report.progress_title': 'Generating Company Report...',
+                'report.progress_message': 'AI is analyzing company information. Please wait a moment.',
+                'report.success': 'Company report has been generated successfully!',
+                'report.popup_blocked': 'Popup blocked. Please allow popups for this site.',
+                'report.error': 'An error occurred while generating the company report.',
                 'export.title': 'Data Export',
                 'export.description': 'Export application data in various formats.',
                 'export.csv': 'Export to CSV',
@@ -3106,7 +3116,8 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        companyName: companyName
+                        companyName: companyName,
+                        language: currentLanguage
                     })
                 });
                 
@@ -3118,21 +3129,21 @@
                         reportWindow.document.write(await response.text());
                         reportWindow.document.close();
                         hideProgressModal();
-                        showMessage('회사 보고서가 생성되었습니다!', 'success');
+                        showMessage(translations[currentLanguage]['report.success'], 'success');
                     } else {
                         hideProgressModal();
-                        showMessage('팝업이 차단되었습니다. 팝업을 허용해주세요.', 'error');
+                        showMessage(translations[currentLanguage]['report.popup_blocked'], 'error');
                     }
                 } else {
                     const errorData = await response.json();
                     hideProgressModal();
-                    showMessage(errorData.error || '회사 보고서 생성 중 오류가 발생했습니다.', 'error');
+                    showMessage(errorData.error || translations[currentLanguage]['report.error'], 'error');
                 }
                 
             } catch (error) {
                 console.error('Error generating company report:', error);
                 hideProgressModal();
-                showMessage('회사 보고서 생성 중 오류가 발생했습니다.', 'error');
+                showMessage(translations[currentLanguage]['report.error'], 'error');
             }
         }
 
@@ -3142,8 +3153,8 @@
             const title = document.getElementById('progressTitle');
             const message = document.getElementById('progressMessage');
             
-            title.textContent = `${companyName} 회사 보고서 생성 중...`;
-            message.textContent = 'AI가 회사 정보를 분석하고 있습니다. 잠시만 기다려주세요.';
+            title.textContent = `${companyName} ${translations[currentLanguage]['report.progress_title']}`;
+            message.textContent = translations[currentLanguage]['report.progress_message'];
             
             modal.style.display = 'flex';
         }
