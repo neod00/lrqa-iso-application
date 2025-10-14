@@ -254,7 +254,7 @@
             color: #5b21b6;
         }
 
-        /* 말풍선 스타일 */
+        /* 말풍선 스타일 - 항상 표시 */
         .tooltip-bubble {
             position: absolute;
             top: -45px;
@@ -269,9 +269,8 @@
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
             z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+            opacity: 1;
+            visibility: visible;
             animation: float 3s ease-in-out infinite;
             max-width: 250px;
             text-align: center;
@@ -285,12 +284,6 @@
             transform: translateX(-50%);
             border: 6px solid transparent;
             border-top-color: #7c3aed;
-        }
-
-        /* 호버 시 말풍선 표시 */
-        th:hover .tooltip-bubble {
-            opacity: 1;
-            visibility: visible;
         }
 
         /* 말풍선 애니메이션 */
