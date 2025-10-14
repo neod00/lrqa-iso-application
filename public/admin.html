@@ -254,6 +254,70 @@
         .company-link:active {
             color: #5b21b6;
         }
+
+        /* 말풍선 스타일 */
+        .tooltip-bubble {
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .tooltip-bubble::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #7c3aed;
+        }
+
+        /* 호버 시 말풍선 표시 */
+        th:hover .tooltip-bubble {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 말풍선 애니메이션 */
+        @keyframes float {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0px);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-3px);
+            }
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .tooltip-bubble {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+                max-width: 200px;
+                top: -40px;
+            }
+        }
+
+        /* 테이블 헤더 상대 위치 설정 */
+        th {
+            position: relative;
+        }
         
         .action-buttons {
             display: flex;
@@ -1092,7 +1156,12 @@
                         <thead>
                             <tr>
                                 <th data-i18n="applications.date">신청일시</th>
-                                <th data-i18n="applications.company">회사명</th>
+                                <th data-i18n="applications.company">
+                                    회사명
+                                    <div class="tooltip-bubble">
+                                        ✨ 회사명을 클릭해보세요! AI가 회사 정보를 분석해드립니다
+                                    </div>
+                                </th>
                                 <th data-i18n="applications.contact">담당자</th>
                                 <th data-i18n="applications.phone">연락처</th>
                                 <th data-i18n="applications.scope">인증범위</th>
