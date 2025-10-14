@@ -37,14 +37,28 @@ exports.handler = async (event, context) => {
             };
         }
 
+        // 환경변수 디버깅 로그
+        console.log('Environment variables check:', {
+            OPENAI_API_KEY: process.env.OPENAI_API_KEY ? 'Set (length: ' + process.env.OPENAI_API_KEY.length + ')' : 'Not set',
+            NODE_ENV: process.env.NODE_ENV,
+            allEnvKeys: Object.keys(process.env).filter(key => key.includes('OPENAI') || key.includes('CHATGPT'))
+        });
+
         // 환경변수에서 API 키 가져오기
         const apiKey = process.env.OPENAI_API_KEY;
         
         if (!apiKey) {
+            console.error('OpenAI API key not found in environment variables');
             return {
                 statusCode: 500,
                 headers,
-                body: JSON.stringify({ error: 'OpenAI API key not configured' })
+                body: JSON.stringify({ 
+                    error: 'OpenAI API key not configured',
+                    debug: {
+                        availableKeys: Object.keys(process.env).filter(key => key.includes('OPENAI') || key.includes('CHATGPT')),
+                        nodeEnv: process.env.NODE_ENV
+                    }
+                })
             };
         }
 
