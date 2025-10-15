@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인증 심사 신청서 - ISO 9001, 14001, 45001</title>
+    <title>인증 심사 신청서 - ISO 9001, 14001, 45001 (챗봇 통합)</title>
     <style>
         body {
             font-family: 'Malgun Gothic', Arial, sans-serif;
@@ -4120,6 +4120,338 @@
         .analysis-description strong {
             color: #1e293b;
         }
+
+        /* 챗봇 위젯 스타일 - 개선된 버전 */
+        .chatbot-container {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 300px;
+            height: 400px;
+            z-index: 1000;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 0.8em; /* 전체 글씨 크기 80% */
+            cursor: move; /* 드래그 가능 표시 */
+            user-select: none;
+        }
+
+        .chatbot-widget {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.65); /* 반투명 배경 - 매우 투명하게 */
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 2px solid rgba(0, 191, 165, 0.4);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-widget:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            background: linear-gradient(135deg, #00BFA5 0%, #4DD0E1 100%);
+            color: white;
+            min-height: 45px;
+            cursor: move;
+        }
+
+        .chatbot-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chatbot-avatar {
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .chatbot-header-info h3 {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .chatbot-header-info p {
+            margin: 0;
+            font-size: 9px;
+            opacity: 0.9;
+            line-height: 1.2;
+        }
+
+        .chatbot-controls {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .chatbot-control-btn {
+            width: 28px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 12px;
+            overflow-y: auto;
+            background: rgba(248, 250, 252, 0.3); /* 매우 투명하게 */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chatbot-message {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .chatbot-message.user {
+            flex-direction: row-reverse;
+        }
+
+        .chatbot-message-content {
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .chatbot-message.ai .chatbot-message-content {
+            background: rgba(255, 255, 255, 0.5); /* 매우 투명하게 */
+            color: #1e293b;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .chatbot-message.user .chatbot-message-content {
+            background: linear-gradient(135deg, #00BFA5 0%, #4DD0E1 100%);
+            color: white;
+        }
+
+        .chatbot-quick-actions {
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.5); /* 매우 투명하게 */
+            border-top: 1px solid rgba(226, 232, 240, 0.5);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .chatbot-quick-btn {
+            padding: 5px 10px;
+            background: rgba(241, 245, 249, 0.4); /* 매우 투명하게 */
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            border-radius: 16px;
+            font-size: 10px;
+            color: #1e293b;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .chatbot-quick-btn:hover {
+            background: rgba(226, 232, 240, 0.6);
+            color: #1e293b;
+        }
+
+        .chatbot-input {
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.5); /* 매우 투명하게 */
+            border-top: 1px solid rgba(226, 232, 240, 0.5);
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 6px 10px;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            border-radius: 16px;
+            font-size: 11px;
+            outline: none;
+            background: rgba(248, 250, 252, 0.4); /* 매우 투명하게 */
+        }
+
+        .chatbot-input input:focus {
+            border-color: #00BFA5;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .chatbot-send-btn {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #00BFA5 0%, #4DD0E1 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbot-send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 191, 165, 0.3);
+        }
+
+        .chatbot-minimized {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00BFA5 0%, #4DD0E1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 191, 165, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-minimized:hover {
+            transform: scale(1.1);
+        }
+
+        /* 드래그 중 스타일 */
+        .chatbot-container.dragging {
+            opacity: 0.8;
+            transform: scale(1.02);
+        }
+
+        /* 다크모드 챗봇 스타일 */
+        body.dark-mode .chatbot-widget {
+            background: rgba(30, 41, 59, 0.85); /* 다크 배경 */
+            border: 2px solid rgba(0, 191, 165, 0.6);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-mode .chatbot-widget:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        body.dark-mode .chatbot-header {
+            background: linear-gradient(135deg, #00897B 0%, #00ACC1 100%); /* 더 어두운 그라데이션 */
+        }
+
+        body.dark-mode .chatbot-messages {
+            background: rgba(15, 23, 42, 0.4); /* 다크 배경 */
+        }
+
+        body.dark-mode .chatbot-message.ai .chatbot-message-content {
+            background: rgba(51, 65, 85, 0.7); /* 다크 메시지 배경 */
+            color: #e2e8f0;
+            border: 1px solid rgba(71, 85, 105, 0.6);
+        }
+
+        body.dark-mode .chatbot-message.user .chatbot-message-content {
+            background: linear-gradient(135deg, #00897B 0%, #00ACC1 100%);
+            color: white;
+        }
+
+        body.dark-mode .chatbot-quick-actions {
+            background: rgba(30, 41, 59, 0.6);
+            border-top: 1px solid rgba(71, 85, 105, 0.6);
+        }
+
+        body.dark-mode .chatbot-quick-btn {
+            background: rgba(51, 65, 85, 0.6);
+            border: 1px solid rgba(71, 85, 105, 0.6);
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .chatbot-quick-btn:hover {
+            background: rgba(71, 85, 105, 0.8);
+            border-color: #00BFA5;
+        }
+
+        body.dark-mode .chatbot-input {
+            background: rgba(30, 41, 59, 0.6);
+            border-top: 1px solid rgba(71, 85, 105, 0.6);
+        }
+
+        body.dark-mode .chatbot-input input {
+            background: rgba(51, 65, 85, 0.6);
+            border: 1px solid rgba(71, 85, 105, 0.6);
+            color: #e2e8f0;
+        }
+
+        body.dark-mode .chatbot-input input::placeholder {
+            color: #94a3b8;
+        }
+
+        body.dark-mode .chatbot-input input:focus {
+            border-color: #00BFA5;
+            background: rgba(51, 65, 85, 0.8);
+        }
+
+        body.dark-mode .chatbot-send-btn {
+            background: linear-gradient(135deg, #00897B 0%, #00ACC1 100%);
+        }
+
+        body.dark-mode .chatbot-send-btn:hover {
+            background: linear-gradient(135deg, #00BFA5 0%, #4DD0E1 100%);
+        }
+
+        body.dark-mode .chatbot-minimized {
+            background: linear-gradient(135deg, #00897B 0%, #00ACC1 100%);
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .chatbot-container {
+                bottom: 5px;
+                right: 5px;
+                width: calc(100vw - 20px);
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chatbot-container {
+                width: calc(100vw - 10px);
+                height: 300px;
+                bottom: 5px;
+                right: 5px;
+            }
+        }
     </style>
 
 
@@ -4413,3 +4745,776 @@
     <!-- 갭분석 엔진 스크립트 (이동됨: 클래스는 submitFormWithGapAnalysis 함수 앞에 정의됨) -->
     <script>
         // 갭분석 엔진 클래스는 submitFormWithGapAnalysis 함수 앞에 이미 정의됨
+        
+        // 챗봇 JavaScript 기능
+        let isChatbotMinimized = false;
+        let isDragging = false;
+        let dragOffset = { x: 0, y: 0 };
+        let currentPosition = { x: 0, y: 0 };
+        let conversationHistory = []; // 대화 기록 저장
+        let chatbotLanguage = 'ko'; // 챗봇 언어 (기본값: 한국어)
+        
+        // 다국어 메시지
+        const messages = {
+            ko: {
+                title: "ISO-Guardian",
+                status: "온라인",
+                welcome: `안녕하세요! <strong>ISO-Guardian</strong>입니다. 🤖<br><br>
+                         ISO 인증에 대한 궁금한 점을 언제든 물어보세요!<br><br>
+                         📚 ISO 표준 정보<br>
+                         🔄 인증 프로세스<br>
+                         💰 비용 및 견적<br>
+                         📋 준비사항 안내<br><br>
+                         <em>교육적 정보와 LRQA 프로세스를 안내해드립니다.</em>`,
+                placeholder: "ISO에 대해 궁금한 점을 입력하세요...",
+                quickButtons: {
+                    iso9001: "📚 ISO 9001",
+                    process: "🔄 프로세스",
+                    cost: "💰 비용",
+                    preparation: "📋 준비"
+                },
+                quickQuestions: {
+                    iso9001: "ISO 9001이란?",
+                    process: "인증 프로세스",
+                    cost: "인증 비용",
+                    preparation: "준비 문서"
+                }
+            },
+            en: {
+                title: "ISO-Guardian",
+                status: "Online",
+                welcome: `Hello! I'm <strong>ISO-Guardian</strong>. 🤖<br><br>
+                         Feel free to ask me anything about ISO certification!<br><br>
+                         📚 ISO Standards Information<br>
+                         🔄 Certification Process<br>
+                         💰 Cost & Quotation<br>
+                         📋 Preparation Guide<br><br>
+                         <em>I provide educational information and LRQA process guidance.</em>`,
+                placeholder: "Ask me anything about ISO...",
+                quickButtons: {
+                    iso9001: "📚 ISO 9001",
+                    process: "🔄 Process",
+                    cost: "💰 Cost",
+                    preparation: "📋 Preparation"
+                },
+                quickQuestions: {
+                    iso9001: "What is ISO 9001?",
+                    process: "Certification process",
+                    cost: "Certification cost",
+                    preparation: "Required documents"
+                }
+            }
+        };
+        
+        // ISO-Guardian 지식베이스
+        const knowledgeBase = {
+            isoStandards: {
+                "9001": {
+                    name: "품질경영시스템",
+                    fullName: "ISO 9001:2015 품질경영시스템",
+                    description: "고객 만족을 위한 품질 관리 시스템",
+                    requirements: ["고객 중심", "지속적 개선", "프로세스 접근법", "리더십", "사람들의 참여", "관계 관리", "증거 기반 의사결정", "위험 기반 사고"],
+                    benefits: ["품질 향상", "고객 만족도 증가", "비용 절감", "시장 경쟁력 향상", "직원 참여도 증대", "프로세스 효율성 개선", "신뢰성 향상", "지속가능한 성장"],
+                    keywords: ["품질", "고객만족", "지속적개선", "프로세스", "품질관리"],
+                    implementationTime: "6-12개월",
+                    certificationValidity: "3년"
+                },
+                "14001": {
+                    name: "환경경영시스템",
+                    fullName: "ISO 14001:2015 환경경영시스템",
+                    description: "환경 보호를 위한 경영 시스템",
+                    requirements: ["환경 정책", "법규 준수", "지속가능성", "환경 목표 설정", "환경 성과 측정", "지속적 개선", "생명주기 관점", "환경 리스크 관리"],
+                    benefits: ["환경 보호", "법규 준수", "이미지 향상", "비용 절감", "환경 리스크 관리", "지속가능한 경영", "에너지 효율성 개선", "폐기물 감소"],
+                    keywords: ["환경", "지속가능성", "법규준수", "환경정책", "환경관리"],
+                    implementationTime: "6-12개월",
+                    certificationValidity: "3년"
+                },
+                "45001": {
+                    name: "안전보건경영시스템",
+                    fullName: "ISO 45001:2018 안전보건경영시스템",
+                    description: "직장 안전과 직원 건강을 위한 시스템",
+                    requirements: ["안전 정책", "위험 관리", "직원 참여", "안전 교육", "사고 예방", "지속적 개선", "법규 준수", "응급 대응"],
+                    benefits: ["사고 감소", "직원 안전", "생산성 향상", "법규 준수", "보험료 절감", "기업 이미지 향상", "직원 만족도 증가", "리스크 관리"],
+                    keywords: ["안전", "보건", "위험관리", "직원안전", "사고예방"],
+                    implementationTime: "6-12개월",
+                    certificationValidity: "3년"
+                }
+            },
+            lrqaProcess: {
+                overview: "LRQA의 ISO 인증 프로세스는 4단계로 구성되어 있으며, 일반적으로 3-6개월이 소요됩니다.",
+                stages: [
+                    { id: 1, name: "신청서 제출", description: "ISO-Guardian을 통한 신청서 작성 및 제출", duration: "1-2주" },
+                    { id: 2, name: "1단계 심사", description: "문서 검토 및 사전 심사", duration: "1-2주" },
+                    { id: 3, name: "2단계 심사", description: "현장 심사 및 인증 심사", duration: "2-5일" },
+                    { id: 4, name: "인증서 발급", description: "심사 통과 시 인증서 발급", duration: "1-2주" }
+                ],
+                requirements: ["필요한 문서 준비", "시스템 구축 및 운영", "직원 교육 실시", "내부심사 수행", "경영진의 지속적 지원"]
+            },
+            faq: [
+                { question: "ISO 인증이 무엇인가요?", answer: "ISO 인증은 국제표준화기구에서 제정한 표준에 따라 기업의 경영시스템이 적절히 구축되어 있음을 인정받는 제도입니다. 이를 통해 기업의 신뢰성과 경쟁력을 높일 수 있습니다.", keywords: ["iso", "인증", "표준"] },
+                { question: "ISO 9001과 14001의 차이점은?", answer: "ISO 9001은 품질경영시스템으로 고객 만족에 중점을 두고, ISO 14001은 환경경영시스템으로 환경 보호에 중점을 둡니다.", keywords: ["9001", "14001", "차이", "비교"] },
+                { question: "인증 비용은 얼마나 드나요?", answer: "인증 비용은 기업 규모, 복잡도, 선택한 표준, 사업장 수에 따라 달라집니다. 정확한 견적은 신청서 작성 후 ADJ v2.2 기준에 따라 계산됩니다.", keywords: ["비용", "견적", "가격"] },
+                { question: "인증서는 얼마나 유효한가요?", answer: "ISO 인증서는 3년간 유효하며, 매년 감시심사를 받아야 합니다. 3년 후에는 재인증을 받아야 합니다.", keywords: ["유효기간", "3년", "재인증"] },
+                { question: "소규모 기업도 ISO 인증을 받을 수 있나요?", answer: "네, 소규모 기업도 ISO 인증을 받을 수 있습니다. 오히려 소규모 기업의 경우 시스템 구축이 상대적으로 용이하고, 직원들의 참여도가 높아 성공 확률이 높습니다.", keywords: ["소규모", "중소기업", "가능"] }
+            ]
+        };
+        
+        // 현재 페이지 언어 감지
+        function detectPageLanguage() {
+            const languageSelect = document.getElementById('languageSelect');
+            if (languageSelect) {
+                const selectedLang = languageSelect.value;
+                // 한국어가 아니면 영어로
+                chatbotLanguage = selectedLang === 'ko' ? 'ko' : 'en';
+            } else {
+                // 언어 선택기가 없으면 HTML lang 속성 확인
+                const htmlLang = document.documentElement.lang;
+                chatbotLanguage = htmlLang === 'ko' ? 'ko' : 'en';
+            }
+            return chatbotLanguage;
+        }
+        
+        // 언어 변경 이벤트 리스너
+        function setupLanguageListener() {
+            const languageSelect = document.getElementById('languageSelect');
+            if (languageSelect) {
+                languageSelect.addEventListener('change', function() {
+                    detectPageLanguage();
+                    // 챗봇이 열려있으면 언어 업데이트
+                    if (!isChatbotMinimized) {
+                        updateChatbotLanguage();
+                        
+                        // 환영 메시지 업데이트 (첫 번째 메시지만)
+                        if (conversationHistory.length > 0 && conversationHistory[0].type === 'ai') {
+                            const msg = messages[chatbotLanguage];
+                            conversationHistory[0].content = msg.welcome;
+                            
+                            // 화면에 표시된 환영 메시지도 업데이트
+                            const messagesContainer = document.getElementById('chatbotMessages');
+                            if (messagesContainer && messagesContainer.children.length > 0) {
+                                const firstMessage = messagesContainer.children[0];
+                                const contentDiv = firstMessage.querySelector('.chatbot-message-content');
+                                if (contentDiv) {
+                                    contentDiv.innerHTML = msg.welcome;
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        
+        // 챗봇 언어 업데이트
+        function updateChatbotLanguage() {
+            const msg = messages[chatbotLanguage];
+            
+            // 헤더 업데이트
+            const chatbotTitle = document.getElementById('chatbotTitle');
+            const chatbotStatus = document.getElementById('chatbotStatus');
+            if (chatbotTitle) chatbotTitle.textContent = msg.title;
+            if (chatbotStatus) chatbotStatus.textContent = msg.status;
+            
+            // 입력창 플레이스홀더 업데이트
+            const input = document.getElementById('chatbotInput');
+            if (input) {
+                input.placeholder = msg.placeholder;
+            }
+            
+            // 빠른 질문 버튼 업데이트 또는 생성
+            const quickActionsContainer = document.getElementById('quickActions');
+            if (quickActionsContainer) {
+                quickActionsContainer.innerHTML = `
+                    <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.iso9001}')">${msg.quickButtons.iso9001}</button>
+                    <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.process}')">${msg.quickButtons.process}</button>
+                    <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.cost}')">${msg.quickButtons.cost}</button>
+                    <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.preparation}')">${msg.quickButtons.preparation}</button>
+                `;
+            }
+        }
+        
+        // 챗봇 토글 기능
+        function toggleChatbot() {
+            const container = document.getElementById('chatbotContainer');
+            
+            if (isChatbotMinimized) {
+                // 현재 언어 감지
+                detectPageLanguage();
+                const msg = messages[chatbotLanguage];
+                
+                // 챗봇 확장 - 대화 내용 복원
+                container.innerHTML = `
+                    <div class="chatbot-widget" id="chatbotWidget">
+                        <div class="chatbot-header">
+                            <div class="chatbot-header-left">
+                                <div class="chatbot-avatar">🤖</div>
+                                <div class="chatbot-header-info">
+                                    <h3>${msg.title}</h3>
+                                    <p>${msg.status}</p>
+                                </div>
+                            </div>
+                            <div class="chatbot-controls">
+                                <button class="chatbot-control-btn" onclick="toggleChatbot()" title="최소화">−</button>
+                            </div>
+                        </div>
+                        
+                        <div class="chatbot-messages" id="chatbotMessages"></div>
+                        
+                        <div class="chatbot-quick-actions">
+                            <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.iso9001}')">${msg.quickButtons.iso9001}</button>
+                            <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.process}')">${msg.quickButtons.process}</button>
+                            <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.cost}')">${msg.quickButtons.cost}</button>
+                            <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.preparation}')">${msg.quickButtons.preparation}</button>
+                        </div>
+                        
+                        <div class="chatbot-input">
+                            <input type="text" id="chatbotInput" placeholder="${msg.placeholder}" onkeypress="handleChatbotKeypress(event)">
+                            <button class="chatbot-send-btn" onclick="sendChatbotMessage()">📤</button>
+                        </div>
+                    </div>
+                `;
+                isChatbotMinimized = false;
+                
+                // 대화 내용 복원
+                restoreConversation();
+                
+                // 드래그 기능 다시 초기화
+                setTimeout(() => {
+                    initDragFunctionality();
+                }, 100);
+            } else {
+                // 챗봇 최소화
+                container.innerHTML = `
+                    <div class="chatbot-minimized" onclick="toggleChatbot()" title="챗봇 열기">
+                        🤖
+                    </div>
+                `;
+                isChatbotMinimized = true;
+            }
+        }
+        
+        // 대화 내용 복원
+        function restoreConversation() {
+            const messagesContainer = document.getElementById('chatbotMessages');
+            const msg = messages[chatbotLanguage];
+            
+            if (conversationHistory.length === 0) {
+                // 초기 환영 메시지 (현재 언어로)
+                const welcomeMessage = {
+                    type: 'ai',
+                    content: msg.welcome
+                };
+                conversationHistory.push(welcomeMessage);
+            }
+            
+            // 모든 대화 내용 표시
+            conversationHistory.forEach(msg => {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chatbot-message ${msg.type}`;
+                messageDiv.innerHTML = `
+                    <div class="chatbot-message-content">${msg.content}</div>
+                `;
+                messagesContainer.appendChild(messageDiv);
+            });
+            
+            // 스크롤을 맨 아래로
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // 빠른 질문 버튼 클릭
+        function askQuestion(question) {
+            const input = document.getElementById('chatbotInput');
+            input.value = question;
+            sendChatbotMessage();
+        }
+        
+        // Enter 키로 메시지 전송
+        function handleChatbotKeypress(event) {
+            if (event.key === 'Enter') {
+                sendChatbotMessage();
+            }
+        }
+        
+        // 메시지 전송
+        function sendChatbotMessage() {
+            const input = document.getElementById('chatbotInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // 사용자 메시지 추가
+            addChatbotMessage('user', message);
+            input.value = '';
+            
+            // AI 응답 생성
+            setTimeout(() => {
+                const response = generateChatbotResponse(message);
+                addChatbotMessage('ai', response);
+            }, 500);
+        }
+        
+        // 메시지 추가
+        function addChatbotMessage(type, content) {
+            const messagesContainer = document.getElementById('chatbotMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chatbot-message ${type}`;
+            messageDiv.innerHTML = `
+                <div class="chatbot-message-content">${content}</div>
+            `;
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            
+            // 대화 기록에 저장
+            conversationHistory.push({
+                type: type,
+                content: content,
+                timestamp: new Date().toISOString()
+            });
+            
+            // 최대 50개 메시지만 유지
+            if (conversationHistory.length > 50) {
+                conversationHistory = conversationHistory.slice(-50);
+            }
+        }
+        
+        // AI 기반 의도 분류
+        function classifyIntent(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            // ISO 표준별 분류
+            if (lowerMessage.includes('9001') || lowerMessage.includes('품질')) {
+                return { type: 'iso_standard', standard: '9001' };
+            }
+            if (lowerMessage.includes('14001') || lowerMessage.includes('환경')) {
+                return { type: 'iso_standard', standard: '14001' };
+            }
+            if (lowerMessage.includes('45001') || lowerMessage.includes('안전') || lowerMessage.includes('보건')) {
+                return { type: 'iso_standard', standard: '45001' };
+            }
+            
+            // 프로세스 관련
+            if (lowerMessage.includes('프로세스') || lowerMessage.includes('과정') || lowerMessage.includes('단계') || lowerMessage.includes('절차')) {
+                return { type: 'certification_process' };
+            }
+            
+            // 비용 관련
+            if (lowerMessage.includes('비용') || lowerMessage.includes('가격') || lowerMessage.includes('견적') || lowerMessage.includes('요금') || lowerMessage.includes('얼마')) {
+                return { type: 'pricing' };
+            }
+            
+            // 준비 관련
+            if (lowerMessage.includes('준비') || lowerMessage.includes('문서') || lowerMessage.includes('필요')) {
+                return { type: 'preparation' };
+            }
+            
+            // 교육 관련
+            if (lowerMessage.includes('교육') || lowerMessage.includes('훈련') || lowerMessage.includes('학습')) {
+                return { type: 'education' };
+            }
+            
+            // 유효기간 관련
+            if (lowerMessage.includes('유효') || lowerMessage.includes('기간') || lowerMessage.includes('3년')) {
+                return { type: 'validity' };
+            }
+            
+            // ISO 일반
+            if (lowerMessage.includes('iso') || lowerMessage.includes('인증') || lowerMessage.includes('표준')) {
+                return { type: 'iso_general' };
+            }
+            
+            // FAQ 검색
+            const matchedFAQ = findMatchingFAQ(message);
+            if (matchedFAQ) {
+                return { type: 'faq', faq: matchedFAQ };
+            }
+            
+            return { type: 'general' };
+        }
+        
+        // FAQ 매칭
+        function findMatchingFAQ(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            for (const faq of knowledgeBase.faq) {
+                const matchScore = faq.keywords.filter(keyword => 
+                    lowerMessage.includes(keyword.toLowerCase())
+                ).length;
+                
+                if (matchScore >= 2) {
+                    return faq;
+                }
+            }
+            
+            return null;
+        }
+        
+        // AI 응답 생성 (지식베이스 기반)
+        function generateChatbotResponse(message) {
+            const intent = classifyIntent(message);
+            
+            switch (intent.type) {
+                case 'iso_standard':
+                    return generateISOStandardResponse(intent.standard);
+                case 'certification_process':
+                    return generateProcessResponse();
+                case 'pricing':
+                    return generatePricingResponse();
+                case 'preparation':
+                    return generatePreparationResponse();
+                case 'education':
+                    return generateEducationResponse();
+                case 'validity':
+                    return generateValidityResponse();
+                case 'iso_general':
+                    return generateISOGeneralResponse();
+                case 'faq':
+                    return intent.faq.answer;
+                default:
+                    return generateGeneralResponse();
+            }
+        }
+        
+        // ISO 표준 응답 생성
+        function generateISOStandardResponse(standard) {
+            const info = knowledgeBase.isoStandards[standard];
+            if (!info) return generateGeneralResponse();
+            
+            if (chatbotLanguage === 'en') {
+                // 영어 응답
+                const standardNames = {
+                    '9001': 'Quality Management System',
+                    '14001': 'Environmental Management System',
+                    '45001': 'Occupational Health and Safety Management System'
+                };
+                const descriptions = {
+                    '9001': 'Quality management system for customer satisfaction',
+                    '14001': 'Management system for environmental protection',
+                    '45001': 'System for workplace safety and employee health'
+                };
+                
+                return `<strong>ISO ${standard}:2015 ${standardNames[standard]}</strong><br><br>` +
+                       `📋 <strong>Definition</strong>: ${descriptions[standard]}<br><br>` +
+                       `📝 <strong>Key Requirements</strong>:<br>` +
+                       `• Customer focus<br>` +
+                       `• Continuous improvement<br>` +
+                       `• Process approach<br>` +
+                       `• Leadership<br>` +
+                       `• People engagement<br><br>` +
+                       `✅ <strong>Expected Benefits</strong>:<br>` +
+                       `• Quality improvement<br>` +
+                       `• Increased customer satisfaction<br>` +
+                       `• Cost reduction<br>` +
+                       `• Enhanced market competitiveness<br>` +
+                       `• Improved process efficiency<br><br>` +
+                       `⏱️ <strong>Implementation Time</strong>: 6-12 months<br>` +
+                       `📅 <strong>Certification Validity</strong>: 3 years`;
+            } else {
+                // 한국어 응답
+                return `<strong>${info.fullName}</strong><br><br>` +
+                       `📋 <strong>정의</strong>: ${info.description}<br><br>` +
+                       `📝 <strong>주요 요구사항</strong>:<br>` +
+                       info.requirements.slice(0, 5).map(req => `• ${req}`).join('<br>') + '<br><br>' +
+                       `✅ <strong>기대 효과</strong>:<br>` +
+                       info.benefits.slice(0, 5).map(benefit => `• ${benefit}`).join('<br>') + '<br><br>' +
+                       `⏱️ <strong>구축 기간</strong>: ${info.implementationTime}<br>` +
+                       `📅 <strong>인증 유효기간</strong>: ${info.certificationValidity}`;
+            }
+        }
+        
+        // 프로세스 응답 생성
+        function generateProcessResponse() {
+            const process = knowledgeBase.lrqaProcess;
+            
+            return `<strong>LRQA ISO 인증 프로세스</strong><br><br>` +
+                   `${process.overview}<br><br>` +
+                   `🔄 <strong>인증 단계</strong>:<br>` +
+                   process.stages.map(stage => 
+                       `${stage.id}. <strong>${stage.name}</strong> (${stage.duration})<br>   ${stage.description}`
+                   ).join('<br>') + '<br><br>' +
+                   `📋 <strong>준비사항</strong>:<br>` +
+                   process.requirements.map(req => `• ${req}`).join('<br>');
+        }
+        
+        // 비용 응답 생성
+        function generatePricingResponse() {
+            return `<strong>ISO 인증 비용 안내</strong><br><br>` +
+                   `💰 <strong>비용 결정 요소</strong>:<br>` +
+                   `• 기업 규모 (직원 수)<br>` +
+                   `• 사업장 수<br>` +
+                   `• 선택한 ISO 표준<br>` +
+                   `• 인증 범위<br>` +
+                   `• 통합 심사 여부<br><br>` +
+                   `정확한 견적을 받으시려면 신청서를 작성해주세요. ` +
+                   `ADJ v2.2 기준에 따라 정확하게 계산해드립니다.<br><br>` +
+                   `💡 <strong>Tip</strong>: 통합 인증 시 비용 절감 효과가 있습니다!`;
+        }
+        
+        // 준비 응답 생성
+        function generatePreparationResponse() {
+            return `<strong>ISO 인증 준비 가이드</strong><br><br>` +
+                   `📋 <strong>필요 문서</strong>:<br>` +
+                   `• 품질매뉴얼<br>` +
+                   `• 절차서 및 작업지침서<br>` +
+                   `• 기록서류<br>` +
+                   `• 내부심사 보고서<br>` +
+                   `• 경영검토 보고서<br><br>` +
+                   `🔧 <strong>시스템 요구사항</strong>:<br>` +
+                   `• 정책 및 목표 설정<br>` +
+                   `• 역할 및 책임 명확화<br>` +
+                   `• 프로세스 정의<br>` +
+                   `• 측정 및 모니터링<br>` +
+                   `• 개선 활동<br><br>` +
+                   `📚 <strong>교육</strong>:<br>` +
+                   `• ISO 표준 이해 교육<br>` +
+                   `• 내부심사원 교육<br>` +
+                   `• 직무별 교육`;
+        }
+        
+        // 교육 응답 생성
+        function generateEducationResponse() {
+            return `<strong>LRQA 교육 프로그램</strong><br><br>` +
+                   `📚 <strong>교육 과정</strong>:<br>` +
+                   `• <strong>공개교육</strong>: 일반인 대상 교육 과정<br>` +
+                   `• <strong>온라인 교육</strong>: 언제든 접근 가능한 온라인 학습<br>` +
+                   `• <strong>맞춤형 교육</strong>: 기업별 특화 교육<br>` +
+                   `• <strong>내부심사원 교육</strong>: 내부심사원 양성 과정<br><br>` +
+                   `✅ <strong>교육 효과</strong>:<br>` +
+                   `• ISO 표준에 대한 이해 향상<br>` +
+                   `• 인증 준비 효율성 증대<br>` +
+                   `• 직원 역량 강화<br>` +
+                   `• 시스템 운영 능력 향상`;
+        }
+        
+        // 유효기간 응답 생성
+        function generateValidityResponse() {
+            return `<strong>ISO 인증서 유효기간</strong><br><br>` +
+                   `📅 <strong>인증서 유효기간</strong>: 3년<br><br>` +
+                   `🔍 <strong>감시심사</strong>:<br>` +
+                   `• 주기: 연 1회<br>` +
+                   `• 목적: 시스템 유지 및 개선 확인<br>` +
+                   `• 기간: 1-3일<br><br>` +
+                   `🔄 <strong>재인증</strong>:<br>` +
+                   `• 주기: 3년마다<br>` +
+                   `• 목적: 인증 갱신<br>` +
+                   `• 기간: 2-5일<br>` +
+                   `• 내용: 전체 시스템 재심사<br><br>` +
+                   `⚠️ <strong>주의</strong>: 감시심사를 통과하지 못하면 인증서가 취소될 수 있습니다.`;
+        }
+        
+        // ISO 일반 응답 생성
+        function generateISOGeneralResponse() {
+            return `<strong>ISO 인증 개요</strong><br><br>` +
+                   `ISO(국제표준화기구)는 전 세계적으로 통용되는 표준을 제정하는 비정부기구입니다.<br><br>` +
+                   `🏢 <strong>주요 ISO 표준</strong>:<br>` +
+                   `• <strong>ISO 9001</strong>: 품질경영시스템<br>` +
+                   `• <strong>ISO 14001</strong>: 환경경영시스템<br>` +
+                   `• <strong>ISO 45001</strong>: 안전보건경영시스템<br><br>` +
+                   `✨ <strong>인증의 이점</strong>:<br>` +
+                   `• 기업 신뢰성 향상<br>` +
+                   `• 시장 경쟁력 강화<br>` +
+                   `• 프로세스 효율성 개선<br>` +
+                   `• 고객 만족도 증대<br><br>` +
+                   `각 표준에 대해 더 자세히 알고 싶으시면 구체적으로 질문해주세요!`;
+        }
+        
+        // 일반 응답 생성
+        function generateGeneralResponse() {
+            if (chatbotLanguage === 'en') {
+                return `Hello! I'm ISO-Guardian. 🤖<br><br>` +
+                       `I can help you with the following questions about ISO certification:<br><br>` +
+                       `📚 <strong>ISO Standards</strong>: "What is ISO 9001?", "Environmental certification"<br>` +
+                       `🔄 <strong>Certification Process</strong>: "Certification process", "Audit stages"<br>` +
+                       `💰 <strong>Cost Information</strong>: "Certification cost", "Quotation"<br>` +
+                       `📋 <strong>Preparation</strong>: "Required documents", "How to prepare"<br>` +
+                       `📚 <strong>Training</strong>: "Training programs", "Internal auditor"<br><br>` +
+                       `Please ask me more specific questions for accurate answers!`;
+            } else {
+                return `안녕하세요! ISO-Guardian입니다. 🤖<br><br>` +
+                       `ISO 인증과 관련된 다음 질문을 도와드릴 수 있습니다:<br><br>` +
+                       `📚 <strong>ISO 표준</strong>: "ISO 9001이란?", "환경 인증"<br>` +
+                       `🔄 <strong>인증 프로세스</strong>: "인증 과정", "심사 단계"<br>` +
+                       `💰 <strong>비용 정보</strong>: "인증 비용", "견적"<br>` +
+                       `📋 <strong>준비사항</strong>: "필요 문서", "준비 방법"<br>` +
+                       `📚 <strong>교육</strong>: "교육 프로그램", "내부심사원"<br><br>` +
+                       `더 구체적으로 질문해주시면 정확한 답변을 드리겠습니다!`;
+            }
+        }
+        
+        // 드래그 기능
+        function initDragFunctionality() {
+            const container = document.getElementById('chatbotContainer');
+            const header = document.querySelector('.chatbot-header');
+            
+            if (!container || !header) return;
+            
+            // 마우스 다운 이벤트
+            header.addEventListener('mousedown', function(e) {
+                if (isChatbotMinimized) return;
+                
+                isDragging = true;
+                container.classList.add('dragging');
+                
+                const rect = container.getBoundingClientRect();
+                dragOffset.x = e.clientX - rect.left;
+                dragOffset.y = e.clientY - rect.top;
+                
+                e.preventDefault();
+            });
+            
+            // 마우스 이동 이벤트
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging || isChatbotMinimized) return;
+                
+                const x = e.clientX - dragOffset.x;
+                const y = e.clientY - dragOffset.y;
+                
+                // 화면 경계 내에서만 이동
+                const maxX = window.innerWidth - container.offsetWidth;
+                const maxY = window.innerHeight - container.offsetHeight;
+                
+                currentPosition.x = Math.max(0, Math.min(x, maxX));
+                currentPosition.y = Math.max(0, Math.min(y, maxY));
+                
+                container.style.left = currentPosition.x + 'px';
+                container.style.top = currentPosition.y + 'px';
+                container.style.right = 'auto';
+                container.style.bottom = 'auto';
+            });
+            
+            // 마우스 업 이벤트
+            document.addEventListener('mouseup', function() {
+                if (isDragging) {
+                    isDragging = false;
+                    container.classList.remove('dragging');
+                }
+            });
+            
+            // 터치 이벤트 (모바일 지원)
+            header.addEventListener('touchstart', function(e) {
+                if (isChatbotMinimized) return;
+                
+                isDragging = true;
+                container.classList.add('dragging');
+                
+                const touch = e.touches[0];
+                const rect = container.getBoundingClientRect();
+                dragOffset.x = touch.clientX - rect.left;
+                dragOffset.y = touch.clientY - rect.top;
+                
+                e.preventDefault();
+            });
+            
+            document.addEventListener('touchmove', function(e) {
+                if (!isDragging || isChatbotMinimized) return;
+                
+                const touch = e.touches[0];
+                const x = touch.clientX - dragOffset.x;
+                const y = touch.clientY - dragOffset.y;
+                
+                const maxX = window.innerWidth - container.offsetWidth;
+                const maxY = window.innerHeight - container.offsetHeight;
+                
+                currentPosition.x = Math.max(0, Math.min(x, maxX));
+                currentPosition.y = Math.max(0, Math.min(y, maxY));
+                
+                container.style.left = currentPosition.x + 'px';
+                container.style.top = currentPosition.y + 'px';
+                container.style.right = 'auto';
+                container.style.bottom = 'auto';
+                
+                e.preventDefault();
+            });
+            
+            document.addEventListener('touchend', function() {
+                if (isDragging) {
+                    isDragging = false;
+                    container.classList.remove('dragging');
+                }
+            });
+        }
+        
+        // 스크롤 시 챗봇 자동 최소화
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (isChatbotMinimized) return;
+            
+            // 스크롤 중에는 챗봇을 최소화하지 않음
+            clearTimeout(scrollTimeout);
+            
+            // 스크롤이 멈춘 후 2초 뒤에 자동 최소화
+            scrollTimeout = setTimeout(function() {
+                if (!isChatbotMinimized) {
+                    toggleChatbot();
+                }
+            }, 2000);
+        });
+        
+        // 드래그 기능 즉시 초기화
+        initDragFunctionality();
+        
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            initDragFunctionality();
+            
+            // 언어 감지 및 리스너 설정
+            detectPageLanguage();
+            setupLanguageListener();
+            
+            // 챗봇 UI 초기화 (현재 언어로)
+            updateChatbotLanguage();
+            
+            // 초기 환영 메시지 표시 (현재 언어로)
+            if (conversationHistory.length === 0) {
+                const msg = messages[chatbotLanguage];
+                const welcomeMessage = {
+                    type: 'ai',
+                    content: msg.welcome
+                };
+                conversationHistory.push(welcomeMessage);
+                
+                // 환영 메시지를 화면에 표시
+                const messagesContainer = document.getElementById('chatbotMessages');
+                if (messagesContainer) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = 'chatbot-message ai';
+                    messageDiv.innerHTML = `
+                        <div class="chatbot-message-content">${msg.welcome}</div>
+                    `;
+                    messagesContainer.appendChild(messageDiv);
+                }
+            }
+        });
+    </script>
+    
+    <!-- 챗봇 위젯 -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-widget" id="chatbotWidget">
+            <div class="chatbot-header">
+                <div class="chatbot-header-left">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div class="chatbot-header-info">
+                        <h3 id="chatbotTitle">ISO-Guardian</h3>
+                        <p id="chatbotStatus"></p>
+                    </div>
+                </div>
+                <div class="chatbot-controls">
+                    <button class="chatbot-control-btn" onclick="toggleChatbot()" title="최소화">−</button>
+                </div>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <!-- 환영 메시지는 JavaScript로 동적 생성 -->
+            </div>
+            
+            <div class="chatbot-quick-actions" id="quickActions">
+                <!-- 빠른 질문 버튼은 JavaScript로 동적 생성 -->
+            </div>
+            
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="" onkeypress="handleChatbotKeypress(event)">
+                <button class="chatbot-send-btn" onclick="sendChatbotMessage()">📤</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
