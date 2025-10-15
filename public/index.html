@@ -4771,13 +4771,15 @@
                     iso9001: "📚 ISO 9001",
                     process: "🔄 프로세스",
                     cost: "💰 비용",
-                    preparation: "📋 준비"
+                    preparation: "📋 준비",
+                    training: "🎓 교육정보"
                 },
                 quickQuestions: {
                     iso9001: "ISO 9001이란?",
                     process: "인증 프로세스",
                     cost: "인증 비용",
-                    preparation: "준비 문서"
+                    preparation: "준비 문서",
+                    training: "link:https://training-portal.lrqa.com/lmt/clmsBrowseV2.prMain?site=lrqaext&in_region=kr&in_lang=en"
                 }
             },
             en: {
@@ -4795,13 +4797,15 @@
                     iso9001: "📚 ISO 9001",
                     process: "🔄 Process",
                     cost: "💰 Cost",
-                    preparation: "📋 Preparation"
+                    preparation: "📋 Preparation",
+                    training: "🎓 Training"
                 },
                 quickQuestions: {
                     iso9001: "What is ISO 9001?",
                     process: "Certification process",
                     cost: "Certification cost",
-                    preparation: "Required documents"
+                    preparation: "Required documents",
+                    training: "link:https://training-portal.lrqa.com/lmt/clmsBrowseV2.prMain?site=lrqaext&in_region=kr&in_lang=en"
                 }
             }
         };
@@ -4928,6 +4932,7 @@
                     <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.process}')">${msg.quickButtons.process}</button>
                     <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.cost}')">${msg.quickButtons.cost}</button>
                     <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.preparation}')">${msg.quickButtons.preparation}</button>
+                    <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.training}')">${msg.quickButtons.training}</button>
                 `;
             }
         }
@@ -4964,6 +4969,7 @@
                             <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.process}')">${msg.quickButtons.process}</button>
                             <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.cost}')">${msg.quickButtons.cost}</button>
                             <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.preparation}')">${msg.quickButtons.preparation}</button>
+                            <button class="chatbot-quick-btn" onclick="askQuestion('${msg.quickQuestions.training}')">${msg.quickButtons.training}</button>
                         </div>
                         
                         <div class="chatbot-input">
@@ -5022,6 +5028,13 @@
         
         // 빠른 질문 버튼 클릭
         function askQuestion(question) {
+            // 링크인지 확인
+            if (question.startsWith('link:')) {
+                const url = question.substring(5); // 'link:' 제거
+                window.open(url, '_blank');
+                return;
+            }
+            
             const input = document.getElementById('chatbotInput');
             input.value = question;
             sendChatbotMessage();
