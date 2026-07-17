@@ -390,9 +390,9 @@
       <div class="completion-resources">
         <h2>다음 단계에 도움이 되는 자료</h2>
         <div class="completion-resource-grid">
-          <button type="button" class="completion-resource" data-completion-gap>
+          <button type="button" class="completion-resource completion-resource-disabled" disabled aria-disabled="true">
             <strong>갭분석 요청</strong>
-            <span>현재 인증 준비 수준을 확인합니다.</span>
+            <span>현재 준비 중인 기능입니다.</span>
           </button>
           <a class="completion-resource" data-completion-news href="https://www.lrqa.com/ko-kr/latest-news/" target="_blank" rel="noopener">
             <strong>LRQA 최신 뉴스</strong>
@@ -410,10 +410,6 @@
       </div>`;
 
     form.insertAdjacentElement('afterend', completion);
-
-    completion.querySelector('[data-completion-gap]')?.addEventListener('click', () => {
-      if (typeof window.showGapAnalysisInfo === 'function') window.showGapAnalysisInfo();
-    });
 
     completion.querySelector('[data-completion-new]')?.addEventListener('click', () => {
       document.querySelectorAll('#isoApplicationForm input, #isoApplicationForm textarea').forEach((field) => {

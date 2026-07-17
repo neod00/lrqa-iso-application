@@ -702,7 +702,7 @@
     </style>
     
     <!-- 견적 시스템 CSS는 인라인으로 포함됨 -->
-    <link rel="stylesheet" href="./ux-improvements.css?v=20260717-4">
+    <link rel="stylesheet" href="./ux-improvements.css?v=20260717-5">
 </head>
 <body>
     <div class="container">
@@ -1747,17 +1747,16 @@
                     <span data-i18n="form.submit.check">제출 전 모든 필수 항목을 확인해 주세요.</span>
                 </div>
                 
-                <!-- 갭분석 링크를 더 눈에 띄게 -->
+                <!-- 갭분석 기능은 준비가 완료될 때까지 비활성화 -->
                 <div style="margin-top: 20px; text-align: center;">
-                    <a href="#" onclick="showGapAnalysisInfo()" 
+                    <a aria-disabled="true" tabindex="-1"
                        style="display: inline-flex; align-items: center; padding: 12px 24px; 
-                              background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
-                              color: #333; text-decoration: none; border-radius: 25px; 
-                              font-size: 14px; font-weight: 600; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-                              transition: all 0.3s ease; border: 2px solid #ffd700; cursor: pointer;">
-                        <span style="margin-right: 8px; font-size: 16px;">💡</span>
-                        <span data-i18n="form.gap.analysis.info.suggestion">갭분석 약식보고서도 필요하신가요?</span>
-                        <span style="margin-left: 8px; font-weight: bold; text-decoration: underline;" data-i18n="form.gap.analysis.info.click">여기 클릭</span>
+                              background: #eef1f4;
+                              color: #687386; text-decoration: none; border-radius: 6px;
+                              font-size: 14px; font-weight: 600;
+                              border: 1px solid #cfd6df; cursor: not-allowed; pointer-events: none; opacity: 0.85;">
+                        <span>갭분석 약식보고서</span>
+                        <span style="margin-left: 8px; font-weight: 700;">준비 중</span>
                     </a>
                 </div>
                 
@@ -3721,10 +3720,10 @@
                         </div>
                 
                 <div style="text-align: center; margin-top: 20px;">
-                    <button onclick="requestGapAnalysis()" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); 
+                    <button type="button" disabled aria-disabled="true" style="background: #6b7280;
                             color: white; border: none; padding: 12px 30px; border-radius: 6px; 
-                            cursor: pointer; font-size: 16px; font-weight: bold; margin-right: 10px;" data-i18n="form.gap.analysis.info.request">
-                        갭분석 요청하기
+                            cursor: not-allowed; opacity: 0.6; font-size: 16px; font-weight: bold; margin-right: 10px;">
+                        갭분석 기능 준비 중
                     </button>
                     <button onclick="hideGapAnalysisInfo()" style="background: #6c757d; color: white; 
                             border: none; padding: 12px 30px; border-radius: 6px; cursor: pointer; font-size: 16px;" data-i18n="form.gap.analysis.info.close">
@@ -5534,6 +5533,6 @@
         </div>
     </div>
     
-    <script src="./ux-improvements.js?v=20260717-4"></script>
+    <script src="./ux-improvements.js?v=20260717-5"></script>
 </body>
 </html>

@@ -1029,6 +1029,21 @@ body.dark-mode .contact-section {
   font-size: 14px;
 }
 
+.completion-resource-disabled,
+.completion-resource-disabled:hover,
+.completion-resource-disabled:focus-visible {
+  background: #f3f5f6;
+  color: #788292;
+  cursor: not-allowed;
+  outline: 0;
+  opacity: 0.72;
+}
+
+.completion-resource-disabled strong,
+.completion-resource-disabled span {
+  color: #788292;
+}
+
 .completion-actions {
   margin-top: 32px;
   display: flex;
