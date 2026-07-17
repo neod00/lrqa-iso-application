@@ -686,3 +686,134 @@ body.dark-mode .wizard-step.is-active {
   }
 }
 .form-row[hidden] { display: none !important; }
+
+/* Keep paired label/input rows inside the form at desktop widths. */
+.form-row:has(> .form-label ~ .form-label) {
+  display: grid !important;
+  grid-template-columns:
+    minmax(160px, 220px)
+    minmax(0, 1fr)
+    minmax(130px, 180px)
+    minmax(0, 1fr);
+  align-items: start !important;
+}
+
+.form-row > .form-input,
+.form-row > .textarea,
+.form-row > select {
+  min-width: 0 !important;
+  flex: 1 1 0 !important;
+}
+
+/* The base page uses light !important rules, so dark mode needs a full override. */
+body.dark-mode {
+  background: #090c20 !important;
+  color: #f5f7fa !important;
+  color-scheme: dark;
+}
+
+body.dark-mode .container {
+  background: #15182e !important;
+  border-top-color: var(--lrqa-mint) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32) !important;
+}
+
+body.dark-mode .control-buttons,
+body.dark-mode .wizard-progress,
+body.dark-mode .wizard-nav {
+  background: #11142a !important;
+  border-color: #424960 !important;
+}
+
+body.dark-mode .wizard-step,
+body.dark-mode .wizard-progress-title,
+body.dark-mode .wizard-save-status,
+body.dark-mode .section,
+body.dark-mode .section div,
+body.dark-mode .section p,
+body.dark-mode .form-label,
+body.dark-mode .form-row > span,
+body.dark-mode .checkbox-group > span,
+body.dark-mode .contact-section,
+body.dark-mode .contact-footer {
+  color: #e7eaf0 !important;
+}
+
+body.dark-mode .wizard-step.is-active,
+body.dark-mode .wizard-step.is-complete,
+body.dark-mode a {
+  color: var(--lrqa-mint) !important;
+}
+
+body.dark-mode .intro-text {
+  background: #22283a !important;
+  color: #f5f7fa !important;
+  border-left-color: var(--lrqa-mint) !important;
+}
+
+body.dark-mode .section-title {
+  background: #090c20 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .form-input,
+body.dark-mode .textarea,
+body.dark-mode .table td input,
+body.dark-mode .contact-input,
+body.dark-mode .language-dropdown,
+body.dark-mode select {
+  background: #22263d !important;
+  color: #ffffff !important;
+  border-color: #626a80 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aeb5c5 !important;
+  opacity: 1;
+}
+
+body.dark-mode .table,
+body.dark-mode .table th,
+body.dark-mode .table td {
+  background: #1b1f35 !important;
+  color: #f5f7fa !important;
+  border-color: #596176 !important;
+}
+
+body.dark-mode .table th {
+  background: #090c20 !important;
+}
+
+body.dark-mode .dark-mode-btn {
+  background: #ffffff !important;
+  color: var(--lrqa-navy) !important;
+  border-color: #ffffff !important;
+}
+
+body.dark-mode .save-btn,
+body.dark-mode .wizard-next {
+  background: var(--lrqa-mint) !important;
+  color: var(--lrqa-navy) !important;
+  border-color: var(--lrqa-mint) !important;
+}
+
+body.dark-mode .wizard-back {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: #7e879b !important;
+}
+
+body.dark-mode .message-box,
+body.dark-mode .submit-section,
+body.dark-mode .contact-section {
+  background: #1b1f35 !important;
+  border-color: #596176 !important;
+}
+
+@media (max-width: 768px) {
+  .form-row:has(> .form-label ~ .form-label) {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
