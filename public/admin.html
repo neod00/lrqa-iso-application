@@ -1221,7 +1221,108 @@
                 margin-bottom: 20px;
             }
         }
-    </style>
+            .email-settings-panel {
+            max-width: 900px;
+            padding: 24px;
+            background: var(--card-background, #ffffff);
+            border: 1px solid #d7dde5;
+            border-radius: 8px;
+        }
+
+        .email-settings-intro {
+            margin: 0 0 22px;
+            color: #5d6678;
+            line-height: 1.6;
+        }
+
+        .email-setting-field {
+            margin-bottom: 20px;
+        }
+
+        .email-setting-field label {
+            display: block;
+            margin-bottom: 7px;
+            color: #0f1232;
+            font-weight: 700;
+        }
+
+        .email-setting-field input,
+        .email-setting-field textarea {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid #b8c0cc;
+            border-radius: 4px;
+            background: #ffffff;
+            color: #202536;
+            font: inherit;
+            box-sizing: border-box;
+        }
+
+        .email-setting-field textarea {
+            min-height: 330px;
+            resize: vertical;
+            line-height: 1.55;
+        }
+
+        .email-template-help {
+            margin: 8px 0 0;
+            color: #5d6678;
+            font-size: 0.86rem;
+            line-height: 1.6;
+        }
+
+        .email-template-help code {
+            display: inline-block;
+            margin: 2px 4px 2px 0;
+            padding: 2px 5px;
+            background: #edf4f3;
+            color: #0f1232;
+            border-radius: 3px;
+        }
+
+        .email-settings-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .email-settings-status {
+            min-height: 24px;
+            margin-top: 14px;
+            font-weight: 600;
+        }
+
+        .email-settings-status.success { color: #087f5b; }
+        .email-settings-status.error { color: #b42318; }
+
+        [data-theme="dark"] .email-settings-panel {
+            background: #1b1f35;
+            border-color: #596176;
+        }
+
+        [data-theme="dark"] .email-settings-intro,
+        [data-theme="dark"] .email-template-help {
+            color: #b9c0cf;
+        }
+
+        [data-theme="dark"] .email-setting-field label {
+            color: #f5f7fa;
+        }
+
+        [data-theme="dark"] .email-setting-field input,
+        [data-theme="dark"] .email-setting-field textarea {
+            background: #22263d;
+            color: #ffffff;
+            border-color: #626a80;
+        }
+
+        [data-theme="dark"] .email-template-help code {
+            background: #11142a;
+            color: #0ff2b2;
+        }
+</style>
 </head>
 <body>
     <div class="admin-container">
@@ -1249,6 +1350,7 @@
                 <button class="admin-tab active" onclick="showTab('dashboard')" data-i18n="tabs.dashboard">대시보드</button>
                 <button class="admin-tab" onclick="showTab('applications')" data-i18n="tabs.applications">신청서 목록</button>
                 <button class="admin-tab" onclick="showTab('export')" data-i18n="tabs.export">데이터 내보내기</button>
+                <button class="admin-tab" onclick="showTab('emailSettings'); loadEmailSettings()">메일 설정</button>
             </div>
 
             <!-- 대시보드 탭 -->
@@ -1337,6 +1439,41 @@
             </div>
 
             <!-- 폼 편집 탭 (숨김) -->
+
+            <div id="emailSettings" class="tab-content">
+                <div class="email-settings-panel">
+                    <h3>신청 접수 메일 설정</h3>
+                    <p class="email-settings-intro">
+                        신청서가 제출되면 아래 수신 이메일로 관리자 알림을 보내고,
+                        작성자에게 설정한 제목과 본문으로 접수 확인메일을 발송합니다.
+                    </p>
+                    <form id="emailSettingsForm" onsubmit="saveEmailSettings(event)">
+                        <div class="email-setting-field">
+                            <label for="notificationRecipient">신청 접수 알림 수신 이메일</label>
+                            <input type="email" id="notificationRecipient" required autocomplete="email">
+                        </div>
+                        <div class="email-setting-field">
+                            <label for="applicantEmailSubject">작성자 메일 제목</label>
+                            <input type="text" id="applicantEmailSubject" required>
+                        </div>
+                        <div class="email-setting-field">
+                            <label for="applicantEmailBody">작성자 메일 본문</label>
+                            <textarea id="applicantEmailBody" required></textarea>
+                            <p class="email-template-help">
+                                사용 가능한 치환값:
+                                <code>{{담당자명}}</code><code>{{회사명}}</code><code>{{신청표준}}</code>
+                                <code>{{인증범위}}</code><code>{{희망심사일정}}</code><code>{{사업장수}}</code>
+                                <code>{{총직원수}}</code><code>{{접수일시}}</code><code>{{문의이메일}}</code>
+                            </p>
+                        </div>
+                        <div class="email-settings-actions">
+                            <button type="submit" class="export-btn">메일 설정 저장</button>
+                            <button type="button" class="clear-search-btn" onclick="loadEmailSettings()">저장값 다시 불러오기</button>
+                        </div>
+                        <div id="emailSettingsStatus" class="email-settings-status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
             <div id="formedit" class="tab-content" style="display: none;">
                 <h3 data-i18n="formedit.title">신청서 폼 편집</h3>
                 <div id="formEditContainer">
@@ -1708,29 +1845,98 @@
         }
 
         // 인증 상태 확인
+        let adminCredentials = { username: '', password: '' };
+
+        async function requestEmailSettings(action, settings) {
+            const response = await fetch('/.netlify/functions/email-settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    action,
+                    username: adminCredentials.username,
+                    password: adminCredentials.password,
+                    settings
+                })
+            });
+            const result = await response.json();
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || '메일 설정 요청에 실패했습니다.');
+            }
+            return result;
+        }
+
+        function setEmailSettingsStatus(message, type) {
+            const status = document.getElementById('emailSettingsStatus');
+            if (!status) return;
+            status.textContent = message;
+            status.className = 'email-settings-status ' + (type || '');
+        }
+
+        async function loadEmailSettings() {
+            if (!isAuthenticated) return;
+            setEmailSettingsStatus('메일 설정을 불러오는 중입니다.', '');
+            try {
+                const result = await requestEmailSettings('get');
+                document.getElementById('notificationRecipient').value = result.settings.recipientEmail || '';
+                document.getElementById('applicantEmailSubject').value = result.settings.applicantSubject || '';
+                document.getElementById('applicantEmailBody').value = result.settings.applicantBody || '';
+                setEmailSettingsStatus(
+                    result.smtpConfigured
+                        ? '저장된 설정을 불러왔습니다. SMTP가 설정되어 있습니다.'
+                        : '저장된 설정을 불러왔습니다. Netlify의 SMTP_USER와 SMTP_PASS 설정이 필요합니다.',
+                    result.smtpConfigured ? 'success' : 'error'
+                );
+            } catch (error) {
+                setEmailSettingsStatus(error.message, 'error');
+            }
+        }
+
+        async function saveEmailSettings(event) {
+            event.preventDefault();
+            setEmailSettingsStatus('메일 설정을 저장하는 중입니다.', '');
+            try {
+                const settings = {
+                    recipientEmail: document.getElementById('notificationRecipient').value.trim(),
+                    applicantSubject: document.getElementById('applicantEmailSubject').value.trim(),
+                    applicantBody: document.getElementById('applicantEmailBody').value.trim()
+                };
+                const result = await requestEmailSettings('save', settings);
+                setEmailSettingsStatus(
+                    result.smtpConfigured
+                        ? '메일 설정이 저장되었습니다.'
+                        : '메일 설정은 저장됐지만 SMTP_USER와 SMTP_PASS 설정이 필요합니다.',
+                    result.smtpConfigured ? 'success' : 'error'
+                );
+            } catch (error) {
+                setEmailSettingsStatus(error.message, 'error');
+            }
+        }
         let isAuthenticated = false;
         
         // 로그인 처리
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            const username = document.getElementById('username').value;
+
+            const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value;
-            
-            // 간단한 인증 (실제 환경에서는 더 안전한 방법 사용)
-            if (username === 'admin' && password === 'lrqa2025') {
+
+            try {
+                adminCredentials = { username, password };
+                await requestEmailSettings('verify');
                 isAuthenticated = true;
                 document.getElementById('loginSection').style.display = 'none';
                 document.getElementById('adminContent').classList.add('authenticated');
                 loadDashboard();
-            } else {
-                alert('로그인 정보가 올바르지 않습니다.');
+            } catch (error) {
+                adminCredentials = { username: '', password: '' };
+                alert(error.message || '로그인 정보가 올바르지 않습니다.');
             }
         });
 
         // 로그아웃
         function logout() {
             isAuthenticated = false;
+            adminCredentials = { username: '', password: '' };
             document.getElementById('loginSection').style.display = 'block';
             document.getElementById('adminContent').classList.remove('authenticated');
             document.getElementById('username').value = '';
@@ -2802,7 +3008,8 @@
                                     -webkit-print-color-adjust: exact;
                                 }
                             }
-                        </style>
+
+</style>
                     </head>
                     <body>
                         ${content}

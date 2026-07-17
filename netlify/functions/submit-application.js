@@ -1,5 +1,6 @@
 const { google } = require('googleapis');
 const nodemailer = require('nodemailer');
+const { getEmailSettings } = require('./email-settings-store');
 
 // Google Sheets 설정
 const SHEET_ID = process.env.GOOGLE_SHEET_ID;
@@ -316,227 +317,137 @@ async function addApplicationRow(sheets, formData) {
 
 // 이메일 전송
 async function sendNotificationEmail(formData) {
-  console.log('Email function called with:', {
-    SMTP_USER: SMTP_USER ? 'Set' : 'Not set',
-    SMTP_PASS: SMTP_PASS ? 'Set' : 'Not set',
-    ADMIN_EMAIL: ADMIN_EMAIL
-  });
-  
-  if (!SMTP_USER || !SMTP_PASS) {
-    console.log('SMTP credentials not configured, skipping email notification');
-    return;
+  const result = {
+    configured: Boolean(SMTP_USER && SMTP_PASS),
+    adminSent: false,
+    applicantSent: false,
+    errors: []
+  };
+
+  if (!result.configured) {
+    result.errors.push('SMTP credentials are not configured.');
+    return result;
   }
 
-  // Gmail 또는 Outlook 자동 감지
-  const isGmail = SMTP_USER && SMTP_USER.includes('@gmail.com');
-  const isOutlook = SMTP_USER && (SMTP_USER.includes('@outlook.com') || SMTP_USER.includes('@hotmail.com'));
-  
+  const settings = await getEmailSettings();
+  const recipientEmail = settings.recipientEmail || ADMIN_EMAIL;
+  const standardLabels = {
+    iso9001: 'ISO 9001',
+    iso14001: 'ISO 14001',
+    iso45001: 'ISO 45001'
+  };
+  const standardValues = Array.isArray(formData.isoStandards)
+    ? formData.isoStandards
+    : String(formData.isoStandards || '').split(',').map((value) => value.trim()).filter(Boolean);
+  const standards = standardValues.map((value) => standardLabels[value] || value).join(', ') || '미입력';
+  const submittedAt = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+  const desiredAuditDate = formData.desiredAuditDate || '미정';
+  const companyName = formData.companyNameKo || formData.companyNameEn || formData.companyName || '회사명 미입력';
+
+  const replacements = {
+    '{{담당자명}}': formData.contactName || '신청자',
+    '{{회사명}}': companyName,
+    '{{신청표준}}': standards,
+    '{{인증범위}}': formData.certificationScope || '미입력',
+    '{{희망심사일정}}': desiredAuditDate,
+    '{{사업장수}}': formData.siteCount || '미입력',
+    '{{총직원수}}': formData.totalEmployees || '미입력',
+    '{{접수일시}}': submittedAt,
+    '{{문의이메일}}': recipientEmail
+  };
+
+  const renderTemplate = (template) => Object.entries(replacements).reduce(
+    (rendered, [placeholder, value]) => rendered.split(placeholder).join(String(value)),
+    String(template || '')
+  );
+
+  const smtpHost = process.env.SMTP_HOST;
   let transportConfig;
-  
-  if (isGmail) {
+  if (smtpHost) {
+    transportConfig = {
+      host: smtpHost,
+      port: Number(process.env.SMTP_PORT || 587),
+      secure: String(process.env.SMTP_SECURE || '').toLowerCase() === 'true',
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
+      tls: { minVersion: 'TLSv1.2' }
+    };
+  } else if (SMTP_USER.toLowerCase().endsWith('@gmail.com')) {
     transportConfig = {
       service: 'gmail',
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS
-      }
+      auth: { user: SMTP_USER, pass: SMTP_PASS }
     };
-  } else if (isOutlook) {
+  } else {
     transportConfig = {
       host: 'smtp.office365.com',
       port: 587,
       secure: false,
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS
-      }
-    };
-  } else {
-    // 기본 Gmail 설정
-    transportConfig = {
-      service: 'gmail',
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS
-      }
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
+      tls: { minVersion: 'TLSv1.2' }
     };
   }
-  
+
   const transporter = nodemailer.createTransport(transportConfig);
+  const from = process.env.SMTP_FROM || SMTP_USER;
+  const currentDomain = (process.env.URL || process.env.DEPLOY_URL || 'https://lrqa-iso-application.netlify.app').replace(/\/$/, '');
+  const adminUrl = currentDomain + '/admin.html';
 
-  // 신청 규격 파악
-  const getCertificationStandards = (isoStandards) => {
-    if (!isoStandards) return '';
-    
-    const standards = [];
-    const standardsMap = {
-      'iso9001': 'ISO 9001 - 품질',
-      'iso14001': 'ISO 14001 - 환경', 
-      'iso45001': 'ISO 45001 - 안전보건'
-    };
-    
-    if (typeof isoStandards === 'string') {
-      // 쉼표로 구분된 문자열인 경우
-      const standardArray = isoStandards.split(',').map(s => s.trim());
-      standardArray.forEach(standard => {
-        if (standardsMap[standard]) {
-          standards.push(standardsMap[standard]);
-        }
-      });
-    } else if (Array.isArray(isoStandards)) {
-      // 배열인 경우
-      isoStandards.forEach(standard => {
-        if (standardsMap[standard]) {
-          standards.push(standardsMap[standard]);
-        }
-      });
-    }
-    
-    return standards.join(', ');
-  };
-
-  const certificationStandards = getCertificationStandards(formData.isoStandards);
-  const subject = `[LRQA] 새로운 ${certificationStandards || 'ISO'} 인증심사 신청서 - ${formData.companyNameKo || formData.companyNameEn}`;
-  
-  // 현재 시간을 타임스탬프로 사용
-  const timestamp = new Date().toISOString();
-  
-  // 현재 도메인을 동적으로 가져오기
-  const getCurrentDomain = () => {
-    // Netlify 환경에서 제공하는 URL 정보 사용
-    const netlifyUrl = process.env.URL || process.env.DEPLOY_URL;
-    if (netlifyUrl) {
-      return netlifyUrl.replace('https://', '').replace('http://', '');
-    }
-    return 'your-domain.netlify.app';
-  };
-
-  const currentDomain = getCurrentDomain();
-  const adminUrl = `https://${currentDomain}/admin.html`;
-  
-  const adminBody = `
-새로운 ISO 인증심사 신청서가 제출되었습니다.
-
-회사명: ${formData.companyNameKo || formData.companyNameEn}
-담당자: ${formData.contactName}
-연락처: ${formData.contactPhone}
-이메일: ${formData.contactEmail}
-신청규격: ${certificationStandards || '미지정'}
-인증범위: ${formData.certificationScope}
-총 직원수: ${formData.totalEmployees}명
-희망 심사 일정: ${formData.desiredAuditDate ? new Date(formData.desiredAuditDate + '-01').toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' }) : '미정'}
-
-전체 내용은 관리자 페이지에서 확인하실 수 있습니다.
-관리자 페이지: ${adminUrl}
-
-신청서 제출 시간: ${new Date().toLocaleString('ko-KR')}
-
-감사합니다.
-LRQA Korea 자동 시스템
-`;
-
-  const confirmSubject = `[LRQA] 인증심사 신청서 접수 확인`;
-  const confirmBody = `
-안녕하세요, ${formData.contactName || '신청자'}님.
-
-LRQA의 인증심사를 신청해주셔서 감사합니다. 아래와 같이 신청서 접수를 확인해드립니다.
-
-=== 신청하신 내용 요약 ===
-회사명: ${formData.companyNameKo || formData.companyNameEn || 'N/A'}
-신청 표준: ${formData.isoStandards && formData.isoStandards.length > 0 
-  ? formData.isoStandards.map(std => {
-      switch(std) {
-        case 'iso9001': return 'ISO 9001 (품질경영시스템)';
-        case 'iso14001': return 'ISO 14001 (환경경영시스템)';
-        case 'iso45001': return 'ISO 45001 (안전보건경영시스템)';
-        default: return std;
-      }
-    }).join(', ')
-  : '신청 표준 정보 없음'
-}
-인증 범위: ${formData.certificationScope || '인증 범위 정보 없음'}
-희망 심사 일정: ${formData.desiredAuditDate ? new Date(formData.desiredAuditDate + '-01').toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' }) : 'N/A'}
-총 직원 수: ${formData.totalEmployees || 'N/A'}명
-
-담당자가 검토 후 빠른 시일 내에 연락드리겠습니다.
-
-문의사항이 있으시면 언제든지 연락해 주세요.
-이메일: ${ADMIN_EMAIL}
-
-감사합니다.
-LRQA Limited.
-`;
-
-  const confirmSubjectEn = `[LRQA] Certification Audit Application Receipt Confirmation`;
-  const confirmBodyEn = `
-Dear ${formData.contactName || 'Applicant'},
-
-Thank you for submitting your certification audit application to LRQA.
-
-=== Application Summary ===
-Company Name: ${formData.companyNameKo || formData.companyNameEn || 'N/A'}
-Applied Standards: ${formData.isoStandards && formData.isoStandards.length > 0 
-  ? formData.isoStandards.map(std => {
-      switch(std) {
-        case 'iso9001': return 'ISO 9001 (Quality Management System)';
-        case 'iso14001': return 'ISO 14001 (Environmental Management System)';
-        case 'iso45001': return 'ISO 45001 (Occupational Health and Safety Management System)';
-        default: return std;
-      }
-    }).join(', ')
-  : 'No standard information'
-}
-Certification Scope: ${formData.certificationScope || 'No certification scope information'}
-Desired Audit Date: ${formData.desiredAuditDate ? new Date(formData.desiredAuditDate + '-01').toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : 'N/A'}
-Total Employees: ${formData.totalEmployees || 'N/A'}
-
-Our team will review your application and contact you shortly.
-
-If you have any questions, please feel free to contact us.
-Email: ${ADMIN_EMAIL}
-
-Thank you.
-LRQA Limited.
-`;
+  const adminSubject = '[LRQA] 새 인증 심사 신청 - ' + companyName;
+  const adminBody = [
+    '새로운 ISO 인증 심사 신청서가 접수되었습니다.',
+    '',
+    '[신청 내용]',
+    '회사명: ' + companyName,
+    '담당자: ' + (formData.contactName || '미입력'),
+    '연락처: ' + (formData.contactPhone || formData.mobilePhone || '미입력'),
+    '이메일: ' + (formData.contactEmail || '미입력'),
+    '신청 표준: ' + standards,
+    '인증 범위: ' + (formData.certificationScope || '미입력'),
+    '희망 심사 일정: ' + desiredAuditDate,
+    '사업장 수: ' + (formData.siteCount || '미입력'),
+    '총 직원 수: ' + (formData.totalEmployees || '미입력'),
+    '접수 일시: ' + submittedAt,
+    '',
+    '관리자 화면: ' + adminUrl,
+    '',
+    'LRQA ISO 신청 관리 시스템'
+  ].join('\n');
 
   try {
-    console.log('Attempting to send admin email to:', ADMIN_EMAIL);
-    
-    // 관리자에게 알림 이메일 전송
     await transporter.sendMail({
-      from: SMTP_USER,
-      to: ADMIN_EMAIL,
-      subject: subject,
+      from,
+      to: recipientEmail,
+      replyTo: formData.contactEmail || undefined,
+      subject: adminSubject,
       text: adminBody
     });
-    
-    console.log('Admin email sent successfully');
-
-    // 신청자에게 확인 이메일 전송 (언어에 따라)
-    if (formData.contactEmail) {
-      console.log('Attempting to send confirmation email to:', formData.contactEmail);
-      
-      // 언어 감지 (기본값은 한국어)
-      const isEnglish = formData.language === 'en' || formData.language === 'english';
-      const finalSubject = isEnglish ? confirmSubjectEn : confirmSubject;
-      const finalBody = isEnglish ? confirmBodyEn : confirmBody;
-      
-      await transporter.sendMail({
-        from: SMTP_USER,
-        to: formData.contactEmail,
-        subject: finalSubject,
-        text: finalBody
-      });
-      console.log('Confirmation email sent successfully');
-    }
+    result.adminSent = true;
   } catch (error) {
-    console.error('Error sending email:', error);
-    console.error('Error details:', error.message);
-    console.error('Error stack:', error.stack);
+    console.error('Admin notification email failed:', error);
+    result.errors.push('관리자 알림메일: ' + error.message);
   }
+
+  if (formData.contactEmail) {
+    try {
+      await transporter.sendMail({
+        from,
+        to: formData.contactEmail,
+        replyTo: recipientEmail,
+        subject: renderTemplate(settings.applicantSubject),
+        text: renderTemplate(settings.applicantBody)
+      });
+      result.applicantSent = true;
+    } catch (error) {
+      console.error('Applicant confirmation email failed:', error);
+      result.errors.push('작성자 안내메일: ' + error.message);
+    }
+  } else {
+    result.errors.push('작성자 이메일이 입력되지 않았습니다.');
+  }
+
+  return result;
 }
 
-// 메인 핸들러
+// Main handler
 exports.handler = async (event, context) => {
   console.log('=== submit-application 함수 시작 ===');
   console.log('HTTP Method:', event.httpMethod);
@@ -622,12 +533,18 @@ exports.handler = async (event, context) => {
     
     // 이메일 알림 전송 (Google Sheets 성공/실패와 관계없이 항상 시도)
     console.log('이메일 알림 전송 시도...');
+    let emailResult = {
+      configured: false,
+      adminSent: false,
+      applicantSent: false,
+      errors: []
+    };
     try {
-      await sendNotificationEmail(formData);
-      console.log('이메일 알림 전송 완료');
+      emailResult = await sendNotificationEmail(formData);
+      console.log('Email notification result:', emailResult);
     } catch (emailError) {
-      console.error('이메일 발송 중 오류 발생:', emailError.message);
-      console.error('Email error details:', emailError);
+      console.error('Email notification processing failed:', emailError);
+      emailResult.errors.push(emailError.message);
     }
     
     return {
@@ -637,7 +554,10 @@ exports.handler = async (event, context) => {
         success: true, 
         message: '신청서가 성공적으로 제출되었습니다.',
         sheetsSaved: sheetsSuccess,
-        emailSent: true
+        emailSent: emailResult.applicantSent,
+        adminEmailSent: emailResult.adminSent,
+        emailConfigured: emailResult.configured,
+        emailErrors: emailResult.errors
       })
     };
     

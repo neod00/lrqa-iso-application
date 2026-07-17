@@ -368,7 +368,7 @@
       <div class="completion-contact">
         <span>입력하신 이메일</span>
         <strong data-completion-email>-</strong>
-        <p>담당자가 신청 내용을 검토한 후 빠른 시일 내에 연락드리겠습니다.</p>
+        <p data-completion-email-note>담당자가 신청 내용을 검토한 후 빠른 시일 내에 연락드리겠습니다.</p>
       </div>
 
       <div class="completion-summary" aria-label="접수 내용 요약">
@@ -446,7 +446,7 @@
     return standards.join(', ') || '선택 정보 없음';
   }
 
-  window.showApplicationCompletion = function (formData = {}) {
+  window.showApplicationCompletion = function (formData = {}, result = {}) {
     const completion = createCompletionView();
     const form = document.getElementById('isoApplicationForm');
     const progress = document.querySelector('.wizard-progress');
@@ -463,6 +463,12 @@
 
     completion.querySelector('[data-completion-company]').textContent = company;
     completion.querySelector('[data-completion-email]').textContent = email;
+    const emailNote = completion.querySelector('[data-completion-email-note]');
+    if (emailNote) {
+      emailNote.textContent = result.emailSent
+        ? '접수 확인메일을 발송했습니다. 메일이 보이지 않으면 스팸함도 확인해 주세요.'
+        : '담당자가 신청 내용을 검토한 후 빠른 시일 내에 연락드리겠습니다.';
+    }
     completion.querySelector('[data-summary-company]').textContent = company;
     completion.querySelector('[data-summary-contact]').textContent = contact;
     completion.querySelector('[data-summary-standards]').textContent = standards;
