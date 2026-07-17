@@ -344,6 +344,142 @@
     }
   }
 
+  function createCompletionView() {
+    const container = document.querySelector('.container');
+    const form = document.getElementById('isoApplicationForm');
+    if (!container || !form) return null;
+
+    let completion = document.getElementById('applicationCompletion');
+    if (completion) return completion;
+
+    completion = document.createElement('section');
+    completion.id = 'applicationCompletion';
+    completion.className = 'application-completion';
+    completion.hidden = true;
+    completion.setAttribute('aria-live', 'polite');
+    completion.innerHTML = `
+      <div class="completion-heading">
+        <div class="completion-check" aria-hidden="true">✓</div>
+        <p class="completion-eyebrow">신청서 접수 완료</p>
+        <h1>신청해 주셔서 감사합니다.</h1>
+        <p><strong data-completion-company>고객사</strong>의 인증 심사 신청서가 정상적으로 접수되었습니다.</p>
+      </div>
+
+      <div class="completion-contact">
+        <span>입력하신 이메일</span>
+        <strong data-completion-email>-</strong>
+        <p>담당자가 신청 내용을 검토한 후 빠른 시일 내에 연락드리겠습니다.</p>
+      </div>
+
+      <div class="completion-summary" aria-label="접수 내용 요약">
+        <div><span>회사명</span><strong data-summary-company>-</strong></div>
+        <div><span>담당자</span><strong data-summary-contact>-</strong></div>
+        <div><span>신청 표준</span><strong data-summary-standards>-</strong></div>
+        <div><span>접수 일시</span><strong data-summary-date>-</strong></div>
+      </div>
+
+      <div class="completion-process">
+        <h2>이후 진행 절차</h2>
+        <ol>
+          <li><span>1</span><div><strong>신청서 접수</strong><p>제출하신 내용이 접수되었습니다.</p></div></li>
+          <li><span>2</span><div><strong>내용 검토</strong><p>LRQA 담당자가 인증 범위와 심사 조건을 확인합니다.</p></div></li>
+          <li><span>3</span><div><strong>담당자 연락</strong><p>견적 및 다음 절차를 안내해 드립니다.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="completion-resources">
+        <h2>다음 단계에 도움이 되는 자료</h2>
+        <div class="completion-resource-grid">
+          <button type="button" class="completion-resource" data-completion-gap>
+            <strong>갭분석 요청</strong>
+            <span>현재 인증 준비 수준을 확인합니다.</span>
+          </button>
+          <a class="completion-resource" data-completion-news href="https://www.lrqa.com/ko-kr/latest-news/" target="_blank" rel="noopener">
+            <strong>LRQA 최신 뉴스</strong>
+            <span>인증 및 경영시스템 소식을 확인합니다.</span>
+          </a>
+          <a class="completion-resource" href="https://script.google.com/macros/s/AKfycby3nyuGeBzA5U_dzTE9zS7wfFgfGVFV73wLOWYdC8BtqeNNsdICawoWgfbs4ULEnO7MWg/exec" target="_blank" rel="noopener">
+            <strong>키워드 뉴스레터</strong>
+            <span>관심 분야의 주요 업데이트를 받아봅니다.</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="completion-actions">
+        <button type="button" class="completion-new-application" data-completion-new>새 신청서 작성</button>
+      </div>`;
+
+    form.insertAdjacentElement('afterend', completion);
+
+    completion.querySelector('[data-completion-gap]')?.addEventListener('click', () => {
+      if (typeof window.showGapAnalysisInfo === 'function') window.showGapAnalysisInfo();
+    });
+
+    completion.querySelector('[data-completion-new]')?.addEventListener('click', () => {
+      document.querySelectorAll('#isoApplicationForm input, #isoApplicationForm textarea').forEach((field) => {
+        if (field.type === 'checkbox' || field.type === 'radio') field.checked = false;
+        else field.value = '';
+      });
+      document.querySelectorAll('#isoApplicationForm select').forEach((field) => {
+        field.selectedIndex = 0;
+      });
+      sessionStorage.removeItem('iso_application_form');
+      sessionStorage.removeItem('iso_application_step');
+      localStorage.removeItem('iso_application_form_backup');
+      location.reload();
+    });
+
+    return completion;
+  }
+
+  function formatCompletionStandards(formData) {
+    const labels = {
+      iso9001: 'ISO 9001',
+      iso14001: 'ISO 14001',
+      iso45001: 'ISO 45001'
+    };
+    const values = Array.isArray(formData.isoStandards)
+      ? formData.isoStandards
+      : String(formData.isoStandards || '').split(',').map((value) => value.trim()).filter(Boolean);
+    const standards = values.map((value) => labels[value] || value);
+    if (formData.otherStandard) standards.push(formData.otherStandard);
+    return standards.join(', ') || '선택 정보 없음';
+  }
+
+  window.showApplicationCompletion = function (formData = {}) {
+    const completion = createCompletionView();
+    const form = document.getElementById('isoApplicationForm');
+    const progress = document.querySelector('.wizard-progress');
+    if (!completion || !form) return;
+
+    const company = formData.companyNameKo || formData.companyNameEn || '고객사';
+    const contact = formData.contactName || '-';
+    const email = formData.contactEmail || '-';
+    const standards = formatCompletionStandards(formData);
+    const submittedAt = new Intl.DateTimeFormat('ko-KR', {
+      dateStyle: 'long',
+      timeStyle: 'short'
+    }).format(new Date());
+
+    completion.querySelector('[data-completion-company]').textContent = company;
+    completion.querySelector('[data-completion-email]').textContent = email;
+    completion.querySelector('[data-summary-company]').textContent = company;
+    completion.querySelector('[data-summary-contact]').textContent = contact;
+    completion.querySelector('[data-summary-standards]').textContent = standards;
+    completion.querySelector('[data-summary-date]').textContent = submittedAt;
+
+    const news = completion.querySelector('[data-completion-news]');
+    if (news) news.href = document.documentElement.lang === 'ko'
+      ? 'https://www.lrqa.com/ko-kr/latest-news/'
+      : 'https://www.lrqa.com/en/latest-news/';
+
+    document.body.classList.add('application-complete');
+    form.hidden = true;
+    if (progress) progress.hidden = true;
+    completion.hidden = false;
+    document.getElementById('messageOverlay')?.classList.remove('show');
+    completion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   function refineSubmitArea() {
     const submitButton = document.querySelector('.submit-btn');
     const submitPanel = submitButton?.closest('div[style*="text-align: center"]');
