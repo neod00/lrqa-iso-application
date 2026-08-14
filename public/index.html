@@ -849,35 +849,21 @@
                 <input type="text" class="form-input short" name="siteCount" required>
             </div>
             
-            <div style="margin: 15px 0; font-size: 11px;">
+            <div style="margin: 15px 0 8px; font-size: 11px;">
                 <span data-i18n="form.sites.attachment">다음을 포함한 사업장 목록을 첨부하세요.</span>
+                <strong id="siteListRequiredNote" style="display: none; margin-left: 6px; color: #b42318;">다사업장 신청은 모든 사업장 정보를 입력해야 합니다.</strong>
             </div>
             
-            <table class="table">
+            <table class="table" id="siteListTable">
                 <thead>
                     <tr>
+                        <th id="siteNameHeader">사업장명</th>
                         <th data-i18n="form.table.address">주소</th>
                         <th data-i18n="form.table.activity">활동</th>
                         <th data-i18n="form.table.employees">직원</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" placeholder="사업장 주소" data-i18n-placeholder="form.site.address.placeholder"></td>
-                        <td><input type="text" placeholder="주요 활동" data-i18n-placeholder="form.site.activity.placeholder"></td>
-                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="사업장 주소" data-i18n-placeholder="form.site.address.placeholder"></td>
-                        <td><input type="text" placeholder="주요 활동" data-i18n-placeholder="form.site.activity.placeholder"></td>
-                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="사업장 주소" data-i18n-placeholder="form.site.address.placeholder"></td>
-                        <td><input type="text" placeholder="주요 활동" data-i18n-placeholder="form.site.activity.placeholder"></td>
-                        <td><input type="text" placeholder="직원 수" data-i18n-placeholder="form.site.employees.placeholder"></td>
-                    </tr>
-                </tbody>
+                <tbody id="siteListBody"></tbody>
             </table>
         </div>
         
@@ -1967,6 +1953,19 @@
                 }
             }
             
+            const siteCountField = document.querySelector('input[name="siteCount"]');
+            if (siteCountField) {
+                siteCountField.addEventListener('input', function() {
+                    renderSiteRows();
+                    saveFormData();
+                });
+                siteCountField.addEventListener('change', function() {
+                    renderSiteRows();
+                    saveFormData();
+                });
+            }
+            renderSiteRows();
+
             // 페이지 로드 시 저장된 데이터 복원
             loadSavedData();
             
@@ -1985,6 +1984,97 @@
             });
         });
         
+        function getDeclaredSiteCount() {
+            const field = document.querySelector('input[name="siteCount"]');
+            const parsed = Number.parseInt(field?.value || '1', 10);
+            return Math.max(1, Math.min(50, Number.isFinite(parsed) ? parsed : 1));
+        }
+
+        function getSiteEntries() {
+            return Array.from(document.querySelectorAll('#siteListBody tr')).map((row) => ({
+                name: row.querySelector('[data-site-field="name"]')?.value.trim() || '',
+                address: row.querySelector('[data-site-field="address"]')?.value.trim() || '',
+                activity: row.querySelector('[data-site-field="activity"]')?.value.trim() || '',
+                employees: row.querySelector('[data-site-field="employees"]')?.value.trim() || ''
+            }));
+        }
+
+        function persistSiteEntries() {
+            try {
+                sessionStorage.setItem('iso_application_form', JSON.stringify(collectFormData()));
+            } catch (error) {
+                console.warn('Unable to save site information locally.', error);
+            }
+        }
+
+        function renderSiteRows(savedEntries) {
+            const body = document.getElementById('siteListBody');
+            const note = document.getElementById('siteListRequiredNote');
+            const siteNameHeader = document.getElementById('siteNameHeader');
+            if (!body) return;
+
+            const existingEntries = Array.isArray(savedEntries) ? savedEntries : getSiteEntries();
+            const count = getDeclaredSiteCount();
+            const isEnglish = document.documentElement.lang !== 'ko';
+            const placeholders = isEnglish
+                ? ['Site name', 'Site address', 'Main activities', 'Employees']
+                : ['사업장명', '사업장 주소', '주요 활동/공정', '직원 수'];
+
+            if (siteNameHeader) siteNameHeader.textContent = isEnglish ? 'Site name' : '사업장명';
+
+            body.replaceChildren();
+            for (let index = 0; index < count; index += 1) {
+                const entry = existingEntries[index] || {};
+                const row = document.createElement('tr');
+                ['name', 'address', 'activity', 'employees'].forEach((field, fieldIndex) => {
+                    const cell = document.createElement('td');
+                    const input = document.createElement('input');
+                    input.type = field === 'employees' ? 'number' : 'text';
+                    input.min = field === 'employees' ? '0' : '';
+                    input.className = 'form-input site-list-input';
+                    input.name = `site_${index}_${field}`;
+                    input.dataset.siteField = field;
+                    input.placeholder = placeholders[fieldIndex];
+                    input.value = entry[field] || '';
+                    input.addEventListener('input', persistSiteEntries);
+                    cell.appendChild(input);
+                    row.appendChild(cell);
+                });
+                body.appendChild(row);
+            }
+
+            if (note) {
+                note.textContent = isEnglish
+                    ? 'For multi-site applications, complete every site.'
+                    : '다사업장 신청은 모든 사업장 정보를 입력해야 합니다.';
+                note.style.display = count > 1 ? 'inline' : 'none';
+            }
+        }
+
+        function validateSiteEntries(isEnglish, errors) {
+            const count = getDeclaredSiteCount();
+            const rawValue = document.querySelector('input[name="siteCount"]')?.value.trim() || '';
+            const parsedRawValue = Number.parseInt(rawValue, 10);
+            if (!/^\d+$/.test(rawValue) || !Number.isFinite(parsedRawValue) || parsedRawValue < 1 || parsedRawValue > 50) {
+                errors.push(isEnglish ? 'Enter a valid number of sites from 1 to 50.' : '인증에 포함되는 사업장 수는 1~50의 숫자로 입력해 주세요.');
+                return;
+            }
+
+            if (count <= 1) return;
+            getSiteEntries().slice(0, count).forEach((site, index) => {
+                const missing = [];
+                if (!site.name) missing.push(isEnglish ? 'name' : '사업장명');
+                if (!site.address) missing.push(isEnglish ? 'address' : '주소');
+                if (!site.activity) missing.push(isEnglish ? 'activities' : '활동');
+                if (!site.employees) missing.push(isEnglish ? 'employees' : '직원 수');
+                if (missing.length > 0) {
+                    errors.push(isEnglish
+                        ? `Complete site ${index + 1}: ${missing.join(', ')}.`
+                        : `사업장 ${index + 1}의 ${missing.join(', ')}을(를) 입력해 주세요.`);
+                }
+            });
+        }
+
         // 폼 데이터 수집 함수
         window.collectFormData = function() {
             const formData = {};
@@ -2022,6 +2112,12 @@
                 formData[name] = checkboxGroups[name];
             });
             
+            const siteEntries = getSiteEntries();
+            const siteList = siteEntries
+                .filter(site => site.name || site.address || site.activity || site.employees)
+                .map((site, index) => `사업장 ${index + 1}: ${site.name || '-'} | 주소: ${site.address || '-'} | 활동: ${site.activity || '-'} | 직원: ${site.employees || '-'}`)
+                .join('\n');
+
             // 백엔드 호환성을 위한 추가 필드 매핑
             const mappedData = {
                 // 기본 정보
@@ -2044,7 +2140,8 @@
                 groupAffiliation: formData.groupAffiliation || '',
                 centralSystem: formData.centralSystem || '',
                 siteCount: formData.siteCount || '',
-                siteList: '', // 테이블 데이터는 별도 처리 필요
+                siteList,
+                siteEntries,
                 isoStandards: formData.isoStandards ? formData.isoStandards.join(', ') : '',
                 standardApplied: formData.multiStandardSystem || '',
                 
@@ -2164,6 +2261,8 @@
                     textarea.value = data[textarea.name];
                 }
             });
+
+            renderSiteRows(Array.isArray(data.siteEntries) ? data.siteEntries : []);
             
             // 라디오 버튼
             document.querySelectorAll('input[type="radio"]').forEach(radio => {
@@ -2290,6 +2389,8 @@
             if (!dataProcessConsent) {
                 errors.push(isEnglish ? 'Consent to LRQA\'s data processing is required.' : 'LRQA의 데이터 프로세스에 대한 동의가 필요합니다.');
             }
+
+            validateSiteEntries(isEnglish, errors);
             
             return errors;
         };
